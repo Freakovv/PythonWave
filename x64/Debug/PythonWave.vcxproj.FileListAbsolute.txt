@@ -1,0 +1,6 @@
+E:\.Coding\.PythonWave\x64\Debug\PythonWave.vcxproj.AssemblyReference.cache
+E:\.Coding\.PythonWave\x64\Debug\PythonWave.login.resources
+E:\.Coding\.PythonWave\x64\Debug\PythonWave.vcxproj.GenerateResource.cache
+E:\.Coding\.PythonWave\x64\Debug\PythonWave.vcxproj.CopyComplete
+E:\.Coding\.PythonWave\x64\Debug\PythonWave.exe
+E:\.Coding\.PythonWave\x64\Debug\Guna.UI2.dll
