@@ -1,4 +1,4 @@
-# PythonWave
+# PythonWave: Immerse yourself in the wave of knowledge of the python programming language
 My first small project for course work on an academic subject
 "Fundamentals of algorithmization and programming"
 
@@ -17,3 +17,5 @@ The project plans to deploy the following functionality:
 - Implement the appropriate class hierarchy, work with information
 - Create an application help system
 - The program must save data to file(s) in *.docx, *.txt and (or) *.bin formats, and read data from them
+
+Development stack: C++, WinForms, Python, SQL 
