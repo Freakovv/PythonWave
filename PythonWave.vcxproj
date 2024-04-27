@@ -80,8 +80,7 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
+      <AdditionalDependencies>user32.lib</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <AdditionalLibraryDirectories>E:\.Coding\AdditionalLibrabyDirectories</AdditionalLibraryDirectories>
@@ -132,11 +131,12 @@
     <ClCompile Include="login.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarButtons.h" />
     <ClInclude Include="func.h" />
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="transitions.h" />
+    <ClInclude Include="includes.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="login.resx">

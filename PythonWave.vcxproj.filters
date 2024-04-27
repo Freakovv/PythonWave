@@ -23,10 +23,13 @@
     <ClInclude Include="login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="transitions.h">
+    <ClInclude Include="includes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BarButtons.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

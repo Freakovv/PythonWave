@@ -1,7 +1,6 @@
 #pragma once
 
 namespace PythonWave {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -21,6 +20,9 @@ namespace PythonWave {
 			//
 			//TODO: Add the constructor code here
 			//
+			fadetimer = gcnew System::Windows::Forms::Timer();
+			fadetimer->Interval = 10; // Set the interval (in milliseconds)
+			fadetimer->Tick += gcnew System::EventHandler(this, &login::fadetimer_Tick);
 		}
 
 	protected:
@@ -41,6 +43,8 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonExit;
 	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonMinimize;
 	private: Guna::UI2::WinForms::Guna2DragControl^ guna2DragControl1;
+
+	private: System::Windows::Forms::Timer^ fadetimer;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -102,7 +106,7 @@ namespace PythonWave {
 			this->ButtonMinimize->TabIndex = 0;
 			this->ButtonMinimize->TabStop = false;
 			this->ButtonMinimize->UseTransparentBackground = true;
-			this->ButtonMinimize->Click += gcnew System::EventHandler(this, &login::MinimizeWindow);
+			this->ButtonMinimize->Click += gcnew System::EventHandler(this, &login::MinimizeWindow_click);
 			// 
 			// ButtonExit
 			// 
@@ -116,7 +120,7 @@ namespace PythonWave {
 			this->ButtonExit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->ButtonExit->TabIndex = 1;
 			this->ButtonExit->TabStop = false;
-			this->ButtonExit->Click += gcnew System::EventHandler(this, &login::ExitWindow);
+			this->ButtonExit->Click += gcnew System::EventHandler(this, &login::ExitWindow_click);
 			// 
 			// login
 			// 
@@ -131,6 +135,7 @@ namespace PythonWave {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"login";
 			this->Text = L"login";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &login::login_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->EndInit();
@@ -138,10 +143,104 @@ namespace PythonWave {
 
 		}
 #pragma endregion
-	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
 
+		//ќбъ€вление функций венесеных в func.h
+
+	//--------------------------------------------------------------------------
+	private: System::Void ExitWindow_click(System::Object^ sender, System::EventArgs^ e) {
+		fade_mode = 2;
+		fadetimer->Start();
 	}
-	private: System::Void MinimizeWindow(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ExitWindow(System::Object^ sender, System::EventArgs^ e);
+	//--------------------------------------------------------------------------
+
+		   //јнимаци€ сворачивани€ окна
+
+	//--------------------------------------------------------------------------
+	//ќпредел€ем переменную, чтобы она знала, кака€ анимаци€ происходит
+	short fade_mode = 0; //0 Ч по€вление, 1 Ч минимизаци€, 2 Ч закрытиеы
+	short close_on_close = FALSE; 
+	//переменна€, сообщающа€ обработчику закрыти€ повторно анимировать или нет - это позвол€ет 
+	// this->Close(); дл€ запуска анимации, но позвол€ет избежать цикла.
+		
+		//WndProc
+		protected: virtual void WndProc(System::Windows::Forms::Message% msg) override {
+			switch (msg.Msg) {
+			case WM_SYSCOMMAND:
+				switch (msg.WParam.ToInt32()) {
+				case SC_MINIMIZE:
+					msg.Result = IntPtr::Zero;
+					fade_mode = 1;
+					fadetimer->Start();
+					return;
+					break;
+				}
+				break;
+			case WM_ACTIVATE: {
+				if (HIWORD(msg.WParam.ToInt32()) == 0) { //because non-zero wpa here means the form is minimized
+					this->WindowState = FormWindowState::Normal;
+					fade_mode = 0;
+					fadetimer->Start();
+					msg.Result = IntPtr::Zero;
+					return;
+				}
+			}
+			}
+
+			Form::WndProc(msg);
+
+		}
+		private: System::Void MinimizeWindow_click(System::Object^ sender, System::EventArgs^ e) {
+		SendMessage(HWND(this->Handle.ToPointer()), WM_SYSCOMMAND, SC_MINIMIZE, NULL);
+	}
+		//—ам код анимации событи€ (установлен на тик 10мс) и обработчик закрыти€ формы:
+		private: System::Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e) {
+		if (this->IsDisposed == true) { //In the event that the form opened/closed quickly and has not stopped properly, clean up to avoid crashes.
+		fadetimer->Stop();
+		return;
+	}
+		switch (fade_mode) {
+	case 0: //fading in
+		if (this->Opacity < 1)
+			this->Opacity += 0.2;
+		else {
+			fade_mode = -1;
+			fadetimer->Stop();
+		}
+		break;
+	case 1: //minimizing
+		if (this->Opacity > 0)
+			this->Opacity -= 0.2;
+		else {
+			fade_mode = -1;
+			fadetimer->Stop();
+			this->WindowState = Windows::Forms::FormWindowState::Minimized;
+		}
+		break;
+	case 2: //closing
+		if (this->Opacity > 0)
+			this->Opacity -= 0.2;
+		else {
+			fade_mode = -1;
+			fadetimer->Stop();
+			close_on_close = TRUE;
+			this->Close();
+		}
+		break;
+	}
+	}
+		private: System::Void login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+			if (close_on_close && fade_mode != 2) {
+				e->Cancel = true;
+				fade_mode = 2;
+				fadetimer->Start();
+			}
+		}	
+	//--------------------------------------------------------------------------
+
+
+		private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		}
+
 };
 }
