@@ -8,6 +8,6 @@ void login::MinimizeWindow(System::Object^ sender, System::EventArgs^ e) {
 	this->WindowState = FormWindowState::Minimized;
 }
 void login::ExitWindow(System::Object^ sender, System::EventArgs^ e) {
-	this->WindowState = FormWindowState::Minimized;
+	this->Close();
 }
 

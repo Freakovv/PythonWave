@@ -24,3 +24,6 @@
 
 # Exceptions
 !NoxiusUIBypass.exe
+
+# VS trash
+.vs

@@ -1,4 +1,4 @@
 ﻿  login.cpp
-E:\.Coding\.PythonWave\login.cpp(6,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+E:\.Coding\.PythonWave\PythonWave\login.cpp(6,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
   login.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  PythonWave.vcxproj -> E:\.Coding\.PythonWave\x64\Debug\PythonWave.exe
+  PythonWave.vcxproj -> E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWave.exe
