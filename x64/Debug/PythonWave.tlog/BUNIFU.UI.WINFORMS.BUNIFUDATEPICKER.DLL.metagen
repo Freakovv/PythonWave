@@ -1,0 +1,159 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuDatePicker, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuDatePicker: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.DateTimePicker
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Enabled 'get set' : 
+    Boolean DisplayWeekNumbers 'get set' : 
+    Boolean FillDatePicker 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Int32 Width 'get set' : 
+    Int32 Height 'get set' : 
+    Int32 LeftTextMargin 'get set' : 
+    System.Drawing.Color IconColor 'get set' : 
+    System.Drawing.Color DisabledColor 'get set' : 
+    System.Drawing.Color Color 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    System.Drawing.Image Icon 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    BorderThickness DateBorderThickness 'get set' : 
+    TextAlign DateTextAlign 'get set' : 
+    Indicator IconLocation 'get set' : 
+    Boolean RightToLeftLayout 'get set' : 
+    Boolean ShowUpDown 'get set' : 
+    Int32 DPHeight 'get set' : 
+  Methods:
+    get_Enabled(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Enabled(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisplayWeekNumbers(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisplayWeekNumbers(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FillDatePicker(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FillDatePicker(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderRadius(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Width(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Height(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LeftTextMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_LeftTextMargin(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IconColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IconColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Color(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Color(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BackColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BackColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ForeColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Icon(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Icon(Image): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Font(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Font(Font): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DateBorderThickness(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DateBorderThickness(BorderThickness): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DateTextAlign(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DateTextAlign(TextAlign): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IconLocation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IconLocation(Indicator): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RightToLeftLayout(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_RightToLeftLayout(Boolean): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ShowUpDown(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ShowUpDown(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DPHeight(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DPHeight(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    ChangeColor(Bitmap, Color): PrivateScope, Public, Static, HideBySig
+Struct Bunifu.UI.WinForms.BunifuDatePicker+Indicator: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Indicator Left = 0 : Public, Static, Literal, HasDefault
+    Indicator Right = 1 : Public, Static, Literal, HasDefault
+    Indicator None = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuDatePicker+TextAlign: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TextAlign Left = 0 : Public, Static, Literal, HasDefault
+    TextAlign Right = 1 : Public, Static, Literal, HasDefault
+    TextAlign Center = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuDatePicker+BorderThickness: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BorderThickness Thick = 0 : Public, Static, Literal, HasDefault
+    BorderThickness Thin = 1 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuDatePicker+BunifuDesigner: AutoLayout, AnsiClass, Class, NestedPublic, HasSecurity, BeforeFieldInit
+  :System.Windows.Forms.Design.ControlDesigner
+  Properties:
+    System.Windows.Forms.Design.SelectionRules SelectionRules 'get ' : 
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_SelectionRules(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuDatePicker+BunifuControlActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean FillDatePicker 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Int32 LeftTextMargin 'get set' : 
+    System.DateTime Value 'get set' : 
+    System.Drawing.Color Color 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    System.Drawing.Color IconColor 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    System.Drawing.Image Icon 'get set' : 
+    BorderThickness DateBorderThickness 'get set' : 
+    Indicator IconLocation 'get set' : 
+  Methods:
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+    get_FillDatePicker(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillDatePicker(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LeftTextMargin(): PrivateScope, Public, HideBySig, SpecialName
+    set_LeftTextMargin(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_Color(): PrivateScope, Public, HideBySig, SpecialName
+    set_Color(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IconColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(Font): PrivateScope, Public, HideBySig, SpecialName
+    get_Icon(): PrivateScope, Public, HideBySig, SpecialName
+    set_Icon(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_DateBorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_DateBorderThickness(BorderThickness): PrivateScope, Public, HideBySig, SpecialName
+    get_IconLocation(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconLocation(Indicator): PrivateScope, Public, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

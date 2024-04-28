@@ -1,0 +1,64 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed: 
+	hash=None, flags=None
+Assembly Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Bunifu.Licensing.LicenseProviders: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Bunifu.Licensing.LicenseProviders+UIWinFormsLicenseProvider: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.LicenseProvider
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetLicense(LicenseContext, Type, Object, Boolean): PrivateScope, Public, Virtual, HideBySig
+Class Bunifu.Licensing.LicenseProviders+DatavizBasicLicenseProvider: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.LicenseProvider
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetLicense(LicenseContext, Type, Object, Boolean): PrivateScope, Public, Virtual, HideBySig
+Class Bunifu.Licensing.LicenseProviders+DatavizAdvancedLicenseProvider: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.LicenseProvider
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetLicense(LicenseContext, Type, Object, Boolean): PrivateScope, Public, Virtual, HideBySig
+Class Bunifu.Licensing.LicenseProviders+ChartsLicenseProvider: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.LicenseProvider
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    GetLicense(LicenseContext, Type, Object, Boolean): PrivateScope, Public, Virtual, HideBySig
+Class Bunifu.Licensing.LicenseValidator: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Validate(ProductTypes, Type, Object): PrivateScope, Public, Static, HideBySig
+Struct Bunifu.Licensing.Options.ProductTypes: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Bunifu.Licensing.Options.ProductTypes UIWinForms = 0 : Public, Static, Literal, HasDefault
+    Bunifu.Licensing.Options.ProductTypes DatavizBasicWinForms = 1 : Public, Static, Literal, HasDefault
+    Bunifu.Licensing.Options.ProductTypes DatavizAdvancedWinForms = 2 : Public, Static, Literal, HasDefault
+    Bunifu.Licensing.Options.ProductTypes Charts = 4 : Public, Static, Literal, HasDefault
+    Bunifu.Licensing.Options.ProductTypes None = 3 : Public, Static, Literal, HasDefault
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

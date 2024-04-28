@@ -1,0 +1,172 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuRating: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean ReadOnly 'get set' : 
+    Boolean RightClickToClear 'get set' : 
+    Int32 Value 'get set' : 
+    Int32 Maximum 'get set' : 
+    Single OuterRadius 'get set' : 
+    Single InnerRadius 'get set' : 
+    Int32 Spacing 'get set' : 
+    Int32 BorderThickness 'get set' : 
+    RatingShapes Shape 'get set' : 
+    System.Drawing.Color DisabledEmptyFillColor 'get set' : 
+    System.Drawing.Color DisabledRatedFillColor 'get set' : 
+    System.Drawing.Color EmptyFillColor 'get set' : 
+    System.Drawing.Color EmptyBorderColor 'get set' : 
+    System.Drawing.Color HoverFillColor 'get set' : 
+    System.Drawing.Color HoverBorderColor 'get set' : 
+    System.Drawing.Color RatedFillColor 'get set' : 
+    System.Drawing.Color RatedBorderColor 'get set' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuRating+ValueChangedEventArgs] ValueChanged: 
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuRating+ValueHoveredEventArgs] ValueHovered: 
+  Methods:
+    get_ReadOnly(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ReadOnly(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RightClickToClear(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RightClickToClear(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Value(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Value(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Maximum(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Maximum(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_OuterRadius(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_OuterRadius(Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_InnerRadius(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_InnerRadius(Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Spacing(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Spacing(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderThickness(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderThickness(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Shape(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Shape(RatingShapes): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledEmptyFillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledEmptyFillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledRatedFillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledRatedFillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_EmptyFillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_EmptyFillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_EmptyBorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_EmptyBorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_HoverFillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_HoverFillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_HoverBorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_HoverBorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RatedFillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RatedFillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_RatedBorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_RatedBorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Clear(): PrivateScope, Public, HideBySig
+    Reset(): PrivateScope, Public, HideBySig
+    ResizeControl(): PrivateScope, Public, HideBySig
+    add_ValueChanged(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_ValueChanged(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_ValueHovered(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_ValueHovered(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Struct Bunifu.UI.WinForms.BunifuRating+RatingShapes: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    RatingShapes Star = 0 : Public, Static, Literal, HasDefault
+    RatingShapes Circle = 1 : Public, Static, Literal, HasDefault
+    RatingShapes Square = 2 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuRating+ValueHoveredEventArgs: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Boolean, Int32, Int32, Int32, System.Drawing.Point): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Focused 'get ' : 
+    Int32 Maximum 'get ' : 
+    Int32 CurrentValue 'get ' : 
+    Int32 HoveredValue 'get ' : 
+    System.Drawing.Point Position 'get ' : 
+  Methods:
+    get_Focused(): PrivateScope, Public, HideBySig, SpecialName
+    get_Maximum(): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentValue(): PrivateScope, Public, HideBySig, SpecialName
+    get_HoveredValue(): PrivateScope, Public, HideBySig, SpecialName
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuRating+ValueChangedEventArgs: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Maximum 'get ' : 
+    Int32 Value 'get ' : 
+  Methods:
+    get_Maximum(): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuRating+BunifuDesigner: AutoLayout, AnsiClass, Class, NestedPublic, HasSecurity, BeforeFieldInit
+  :System.Windows.Forms.Design.ControlDesigner
+  Properties:
+    System.Windows.Forms.Design.SelectionRules SelectionRules 'get ' : 
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_SelectionRules(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuRating+BunifuRatingActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Value 'get set' : 
+    Int32 Maximum 'get set' : 
+    Int32 BorderThickness 'get set' : 
+    Single OuterRadius 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+    System.Drawing.Color EmptyFillColor 'get set' : 
+    System.Drawing.Color EmptyBorderColor 'get set' : 
+    System.Drawing.Color HoverFillColor 'get set' : 
+    System.Drawing.Color HoverBorderColor 'get set' : 
+    System.Drawing.Color RatedFillColor 'get set' : 
+    System.Drawing.Color RatedBorderColor 'get set' : 
+    RatingShapes Shape 'get set' : 
+  Methods:
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Maximum(): PrivateScope, Public, HideBySig, SpecialName
+    set_Maximum(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_OuterRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_OuterRadius(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_BackColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_EmptyFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_EmptyFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_EmptyBorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_EmptyBorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_HoverFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_HoverFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_HoverBorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_HoverBorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_RatedFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_RatedFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_RatedBorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_RatedBorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Shape(): PrivateScope, Public, HideBySig, SpecialName
+    set_Shape(RatingShapes): PrivateScope, Public, HideBySig, SpecialName
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

@@ -117,10 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>192, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ButtonMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAaRJREFUSEvtlklOw0AQRS3RDskBWDCKczAcAAkQ12A+CzsQiAXLSEk7oAA3AcQp
+        IDgkDpH55RQScped9sCwyJO+2opdv9zV5e44E/4d3evqUqDVYd9z7zE+9rX7Roqu6beWOujq6iI/Xhz/
+        pjYfeO4ZzD8whmnCM0O8SP1dTy9zeD56urIDs46UJE2oxGvPq2yzTTYCTx1HMxCMbTSKVUdsZwfPNHfS
+        L5GH9cz9Rm0hT3mTRGX3vdoc2yeD5riUDIpJnbO9DH0ymO3Y7s0q8qRKchoTagYpsBypfU5jgvW4k4OK
+        C7NucxoTrO+zFFSKsMNxGhPqQCFghW9bEzTVWtyHvPm2iZi4pVb5tjV42fW4T2piNMBTPKA0afXAaUz+
+        rrlwtElBpaipdjmNCZ2nP7KBaHeQuoEQWOcLKbiIMJlTtk+GDn6xu3MKXi9hw5ll+3QGzamNMkoOjyGO
+        2C22tYP2bQqUDG0UxeI/Gttlgw7xPGWn8qJqm2yTj7DuzMDoBBpISb5rVCF1Zb2mNtDnQEcbzG9pF8LY
+        IfF1G+Pe2E9mwu/jOJ/hFKsZuuMCNwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="ButtonExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAKDFJREFUeF7t
@@ -298,19 +311,12 @@
         AAAAAAAAAAAAAAAAAAAAANCXiYn/D1y91FhflaRYAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ButtonMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAaRJREFUSEvtlklOw0AQRS3RDskBWDCKczAcAAkQ12A+CzsQiAXLSEk7oAA3AcQp
-        IDgkDpH55RQScped9sCwyJO+2opdv9zV5e44E/4d3evqUqDVYd9z7zE+9rX7Roqu6beWOujq6iI/Xhz/
-        pjYfeO4ZzD8whmnCM0O8SP1dTy9zeD56urIDs46UJE2oxGvPq2yzTTYCTx1HMxCMbTSKVUdsZwfPNHfS
-        L5GH9cz9Rm0hT3mTRGX3vdoc2yeD5riUDIpJnbO9DH0ymO3Y7s0q8qRKchoTagYpsBypfU5jgvW4k4OK
-        C7NucxoTrO+zFFSKsMNxGhPqQCFghW9bEzTVWtyHvPm2iZi4pVb5tjV42fW4T2piNMBTPKA0afXAaUz+
-        rrlwtElBpaipdjmNCZ2nP7KBaHeQuoEQWOcLKbiIMJlTtk+GDn6xu3MKXi9hw5ll+3QGzamNMkoOjyGO
-        2C22tYP2bQqUDG0UxeI/Gttlgw7xPGWn8qJqm2yTj7DuzMDoBBpISb5rVCF1Zb2mNtDnQEcbzG9pF8LY
-        IfF1G+Pe2E9mwu/jOJ/hFKsZuuMCNwAAAABJRU5ErkJggg==
-</value>
-  </data>
+  <metadata name="panelElipseEntrance.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>707, 17</value>
+  </metadata>
+  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1058, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAOgAAAEAIAAovQMAFgAAACgAAAAAAQAA0AEAAAEAIAAAAAAAAKADAAAAAAAAAAAAAAAAAAAA
@@ -4400,10 +4406,7 @@
         //////////////////8=
 </value>
   </data>
-  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>192, 17</value>
-  </metadata>
-  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>350, 17</value>
+  <metadata name="panelElipseAuthorize.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>27, 16</value>
   </metadata>
 </root>
