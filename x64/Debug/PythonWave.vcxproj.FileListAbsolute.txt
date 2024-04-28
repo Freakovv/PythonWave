@@ -38,3 +38,7 @@ E:\.Coding\archive\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
 E:\.Coding\archive\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
 E:\.Coding\archive\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
 E:\.Coding\archive\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll

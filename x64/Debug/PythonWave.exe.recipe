@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\.Coding\archive\.PythonWave\x64\Debug\PythonWave.exe</FullPath>
+      <FullPath>E:\.Coding\.PythonWave\x64\Debug\PythonWave.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

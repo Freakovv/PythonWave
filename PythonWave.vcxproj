@@ -132,6 +132,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\..\.PythonWave\UI\Bunifu\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRating">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
     </Reference>
@@ -187,12 +190,12 @@
     <ClCompile Include="login.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BarButtons.h" />
-    <ClInclude Include="func.h" />
+    <ClInclude Include="elements.h" />
+    <ClInclude Include="animations.h" />
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="includes.h" />
+    <ClInclude Include="libraries.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="login.resx">
