@@ -135,6 +135,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
       <HintPath>..\..\.PythonWave\UI\Bunifu\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>

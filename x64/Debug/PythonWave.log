@@ -37,6 +37,20 @@ E:\.Coding\.PythonWave\UI\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll : warning C
   E:\.Coding\.PythonWave\UI\Bunifu\Bunifu.UI.WinForms.BunifuButton.dll(0,1):
   This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
   
+E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'login.cpp')
+  E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'login.cpp')
+  E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\UI\buni\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
 E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
   (compiling source file 'login.cpp')
   E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll(0,1):
@@ -464,13 +478,13 @@ E:\.Coding\.PythonWave\UI\NoxiusUI\Siticone.Desktop.UI.dll : warning C4945: 'RSi
   E:\.Coding\.PythonWave\UI\NoxiusUI\Siticone.Desktop.UI.dll(0,1):
   This diagnostic occurred while importing type 'TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize' from assembly 'Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4'.
   
-E:\.Coding\.PythonWave\login.h(302,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(309,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\login.h(501,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(378,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\login.h(798,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(567,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
   login.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link

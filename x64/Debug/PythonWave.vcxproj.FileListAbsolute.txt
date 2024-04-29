@@ -41,3 +41,4 @@ E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
 E:\.Coding\.PythonWave\x64\Debug\Guna.UI2.dll
 E:\.Coding\.PythonWave\x64\Debug\Siticone.Desktop.UI.dll
 E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
