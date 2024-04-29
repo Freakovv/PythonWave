@@ -22,6 +22,8 @@ Assembly Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, Publ
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuSeparator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None
+Assembly Bunifu.UI.WinForms.BunifuShadowPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuShapes, Version=4.1.*, Culture=Invariant Language (Invariant Country): 
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
@@ -38,6 +40,8 @@ Assembly Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToke
 	hash=None, flags=None
 Assembly PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
+Assembly Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4: 
+	hash=None, flags=None
 Assembly System.ComponentModel.Composition, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
@@ -45,6 +49,8 @@ Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561
 Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None

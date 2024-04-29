@@ -1,6 +1,6 @@
-#pragma once
+ï»¿#pragma once
 #include <msclr\marshal_cppstd.h>
-#include <Windows.h>
+
 namespace PythonWave {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -40,51 +40,52 @@ namespace PythonWave {
 
 	protected:
 
-
 	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonExit;
 	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonMinimize;
 	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlForm;
 
-
 	private: System::Windows::Forms::Timer^ fadetimer;
 	private: System::Windows::Forms::Panel^ panelEntrance;
-	private: Guna::UI2::WinForms::Guna2Elipse^ panelElipseEntrance;
-
-
-
-
+	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
+	private: Guna::UI2::WinForms::Guna2Button^ buttonShowRegister;
+	private: Guna::UI2::WinForms::Guna2Button^ buttonShowAuthorize;
 
 	private:
 
 
 
-	private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
 
-
-
-
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button2;
 	private: Guna::UI2::WinForms::Guna2ShadowPanel^ panelAuthorize;
-	private: Guna::UI2::WinForms::Guna2Elipse^ panelElipseAuthorize;
+
+	private: Guna::UI2::WinForms::Guna2Elipse^ elipsePanelAuthorize;
+
 	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxLogin;
 	private: Guna::UI2::WinForms::Guna2TextBox^ guna2TextBox1;
-
 
 	private: System::Windows::Forms::Label^ label1;
 	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ guna2ToggleSwitch1;
 	private: Guna::UI2::WinForms::Guna2CircleButton^ guna2CircleButton1;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ guna2MessageDialog1;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageOption;
+
 	private: Bunifu::UI::WinForms::BunifuButton::BunifuButton^ bunifuButton1;
-	private: Guna::UI2::WinForms::Guna2ShadowPanel^ guna2ShadowPanel1;
+	private: Guna::UI2::WinForms::Guna2ShadowPanel^ panelRegister;
+
 	private: Bunifu::UI::WinForms::BunifuButton::BunifuButton^ buttonRegister;
 	private: System::Windows::Forms::Label^ labelTerms;
 	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ ToggleSwitchTerms;
 	private: Guna::UI2::WinForms::Guna2TextBox^ guna2TextBox2;
 	private: Guna::UI2::WinForms::Guna2TextBox^ guna2TextBox3;
 	private: System::Windows::Forms::LinkLabel^ linkLabelTerms;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ Terms;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageAcceptTerms;
+
 	private: Guna::UI2::WinForms::Guna2TextBox^ guna2TextBox4;
+	private: Siticone::Desktop::UI::WinForms::SiticoneDeviceInfo^ siticoneDeviceInfo1;
+
+	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxTerms;
+
+	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonCloseTerms;
+	private: Guna::UI2::WinForms::Guna2Elipse^ elipsePanelEntrance;
+
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -93,7 +94,6 @@ namespace PythonWave {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -104,14 +104,15 @@ namespace PythonWave {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(login::typeid));
-			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges3 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
-			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges4 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
+			Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges^ borderEdges2 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderEdges());
 			this->dragControlForm = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
 			this->ButtonMinimize = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->panelEntrance = (gcnew System::Windows::Forms::Panel());
-			this->panelAuthorize = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
-			this->guna2ShadowPanel1 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+			this->panelRegister = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+			this->ButtonCloseTerms = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
+			this->textBoxTerms = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->guna2TextBox4 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->linkLabelTerms = (gcnew System::Windows::Forms::LinkLabel());
 			this->labelTerms = (gcnew System::Windows::Forms::Label());
@@ -119,24 +120,26 @@ namespace PythonWave {
 			this->ToggleSwitchTerms = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
 			this->guna2TextBox2 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->guna2TextBox3 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->buttonShowAuthorize = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->panelAuthorize = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
 			this->bunifuButton1 = (gcnew Bunifu::UI::WinForms::BunifuButton::BunifuButton());
 			this->guna2CircleButton1 = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->guna2ToggleSwitch1 = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
 			this->guna2TextBox1 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->textBoxLogin = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->guna2Button2 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->panelElipseEntrance = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
-			this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
-			this->panelElipseAuthorize = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
-			this->guna2MessageDialog1 = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->Terms = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->buttonShowRegister = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
+			this->elipsePanelAuthorize = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+			this->MessageOption = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageAcceptTerms = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->elipsePanelEntrance = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->BeginInit();
 			this->panelEntrance->SuspendLayout();
+			this->panelRegister->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonCloseTerms))->BeginInit();
 			this->panelAuthorize->SuspendLayout();
-			this->guna2ShadowPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dragControlForm
@@ -179,51 +182,90 @@ namespace PythonWave {
 			// 
 			this->panelEntrance->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->panelEntrance->Controls->Add(this->panelRegister);
+			this->panelEntrance->Controls->Add(this->buttonShowAuthorize);
 			this->panelEntrance->Controls->Add(this->panelAuthorize);
-			this->panelEntrance->Controls->Add(this->guna2Button2);
-			this->panelEntrance->Controls->Add(this->guna2Button1);
+			this->panelEntrance->Controls->Add(this->buttonShowRegister);
 			this->panelEntrance->Location = System::Drawing::Point(290, 140);
 			this->panelEntrance->Name = L"panelEntrance";
 			this->panelEntrance->Size = System::Drawing::Size(700, 550);
 			this->panelEntrance->TabIndex = 2;
 			// 
-			// panelAuthorize
+			// panelRegister
 			// 
-			this->panelAuthorize->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->panelAuthorize->BackColor = System::Drawing::Color::Transparent;
-			this->panelAuthorize->Controls->Add(this->guna2ShadowPanel1);
-			this->panelAuthorize->Controls->Add(this->bunifuButton1);
-			this->panelAuthorize->Controls->Add(this->guna2CircleButton1);
-			this->panelAuthorize->Controls->Add(this->label1);
-			this->panelAuthorize->Controls->Add(this->guna2ToggleSwitch1);
-			this->panelAuthorize->Controls->Add(this->guna2TextBox1);
-			this->panelAuthorize->Controls->Add(this->textBoxLogin);
-			this->panelAuthorize->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+			this->panelRegister->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->panelRegister->BackColor = System::Drawing::Color::Transparent;
+			this->panelRegister->Controls->Add(this->ButtonCloseTerms);
+			this->panelRegister->Controls->Add(this->textBoxTerms);
+			this->panelRegister->Controls->Add(this->guna2TextBox4);
+			this->panelRegister->Controls->Add(this->linkLabelTerms);
+			this->panelRegister->Controls->Add(this->labelTerms);
+			this->panelRegister->Controls->Add(this->buttonRegister);
+			this->panelRegister->Controls->Add(this->ToggleSwitchTerms);
+			this->panelRegister->Controls->Add(this->guna2TextBox2);
+			this->panelRegister->Controls->Add(this->guna2TextBox3);
+			this->panelRegister->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->panelAuthorize->Location = System::Drawing::Point(3, 45);
-			this->panelAuthorize->Name = L"panelAuthorize";
-			this->panelAuthorize->ShadowColor = System::Drawing::Color::Black;
-			this->panelAuthorize->Size = System::Drawing::Size(694, 502);
-			this->panelAuthorize->TabIndex = 5;
+			this->panelRegister->Location = System::Drawing::Point(4, 47);
+			this->panelRegister->Name = L"panelRegister";
+			this->panelRegister->ShadowColor = System::Drawing::Color::Black;
+			this->panelRegister->Size = System::Drawing::Size(694, 502);
+			this->panelRegister->TabIndex = 6;
+			this->panelRegister->Visible = false;
 			// 
-			// guna2ShadowPanel1
+			// ButtonCloseTerms
 			// 
-			this->guna2ShadowPanel1->Anchor = System::Windows::Forms::AnchorStyles::Top;
-			this->guna2ShadowPanel1->BackColor = System::Drawing::Color::Transparent;
-			this->guna2ShadowPanel1->Controls->Add(this->guna2TextBox4);
-			this->guna2ShadowPanel1->Controls->Add(this->linkLabelTerms);
-			this->guna2ShadowPanel1->Controls->Add(this->labelTerms);
-			this->guna2ShadowPanel1->Controls->Add(this->buttonRegister);
-			this->guna2ShadowPanel1->Controls->Add(this->ToggleSwitchTerms);
-			this->guna2ShadowPanel1->Controls->Add(this->guna2TextBox2);
-			this->guna2ShadowPanel1->Controls->Add(this->guna2TextBox3);
-			this->guna2ShadowPanel1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
-				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->guna2ShadowPanel1->Location = System::Drawing::Point(3, 0);
-			this->guna2ShadowPanel1->Name = L"guna2ShadowPanel1";
-			this->guna2ShadowPanel1->ShadowColor = System::Drawing::Color::Black;
-			this->guna2ShadowPanel1->Size = System::Drawing::Size(694, 502);
-			this->guna2ShadowPanel1->TabIndex = 6;
+			this->ButtonCloseTerms->BackColor = System::Drawing::Color::Transparent;
+			this->ButtonCloseTerms->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonCloseTerms.Image")));
+			this->ButtonCloseTerms->ImageRotate = 0;
+			this->ButtonCloseTerms->Location = System::Drawing::Point(639, 19);
+			this->ButtonCloseTerms->Name = L"ButtonCloseTerms";
+			this->ButtonCloseTerms->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->ButtonCloseTerms->Size = System::Drawing::Size(20, 20);
+			this->ButtonCloseTerms->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->ButtonCloseTerms->TabIndex = 12;
+			this->ButtonCloseTerms->TabStop = false;
+			this->ButtonCloseTerms->UseTransparentBackground = true;
+			this->ButtonCloseTerms->Visible = false;
+			this->ButtonCloseTerms->Click += gcnew System::EventHandler(this, &login::buttonCloseTerms);
+			// 
+			// textBoxTerms
+			// 
+			this->textBoxTerms->Animated = true;
+			this->textBoxTerms->BackColor = System::Drawing::Color::Transparent;
+			this->textBoxTerms->BorderColor = System::Drawing::Color::Red;
+			this->textBoxTerms->BorderRadius = 20;
+			this->textBoxTerms->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxTerms->DefaultText = resources->GetString(L"textBoxTerms.DefaultText");
+			this->textBoxTerms->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
+				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
+			this->textBoxTerms->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
+				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
+			this->textBoxTerms->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxTerms->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxTerms->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->textBoxTerms->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxTerms->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxTerms->ForeColor = System::Drawing::SystemColors::Info;
+			this->textBoxTerms->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxTerms->Location = System::Drawing::Point(656, 458);
+			this->textBoxTerms->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxTerms->Multiline = true;
+			this->textBoxTerms->Name = L"textBoxTerms";
+			this->textBoxTerms->PasswordChar = '\0';
+			this->textBoxTerms->PlaceholderForeColor = System::Drawing::SystemColors::Info;
+			this->textBoxTerms->PlaceholderText = L"";
+			this->textBoxTerms->ReadOnly = true;
+			this->textBoxTerms->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBoxTerms->SelectedText = L"";
+			this->textBoxTerms->Size = System::Drawing::Size(684, 493);
+			this->textBoxTerms->TabIndex = 3;
+			this->textBoxTerms->Visible = false;
 			// 
 			// guna2TextBox4
 			// 
@@ -248,7 +290,7 @@ namespace PythonWave {
 			this->guna2TextBox4->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2TextBox4->ForeColor = System::Drawing::Color::White;
+			this->guna2TextBox4->ForeColor = System::Drawing::Color::Black;
 			this->guna2TextBox4->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox4->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2TextBox4.IconLeft")));
@@ -257,12 +299,13 @@ namespace PythonWave {
 			this->guna2TextBox4->Location = System::Drawing::Point(24, 240);
 			this->guna2TextBox4->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->guna2TextBox4->Name = L"guna2TextBox4";
-			this->guna2TextBox4->PasswordChar = '\0';
+			this->guna2TextBox4->PasswordChar = 'â—';
 			this->guna2TextBox4->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->guna2TextBox4->PlaceholderText = L"Ïîâòîðèòå ïàðîëü";
+			this->guna2TextBox4->PlaceholderText = L"ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ";
 			this->guna2TextBox4->SelectedText = L"";
 			this->guna2TextBox4->Size = System::Drawing::Size(262, 39);
 			this->guna2TextBox4->TabIndex = 11;
+			this->guna2TextBox4->UseSystemPasswordChar = true;
 			// 
 			// linkLabelTerms
 			// 
@@ -274,10 +317,10 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->linkLabelTerms->Location = System::Drawing::Point(165, 296);
 			this->linkLabelTerms->Name = L"linkLabelTerms";
-			this->linkLabelTerms->Size = System::Drawing::Size(164, 20);
+			this->linkLabelTerms->Size = System::Drawing::Size(183, 20);
 			this->linkLabelTerms->TabIndex = 10;
 			this->linkLabelTerms->TabStop = true;
-			this->linkLabelTerms->Text = L"óñëîâèÿ ñîãëàøåíèÿ";
+			this->linkLabelTerms->Text = L"ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ";
 			this->linkLabelTerms->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &login::linkLabel1_LinkClicked);
 			// 
 			// labelTerms
@@ -291,7 +334,7 @@ namespace PythonWave {
 			this->labelTerms->Name = L"labelTerms";
 			this->labelTerms->Size = System::Drawing::Size(104, 20);
 			this->labelTerms->TabIndex = 7;
-			this->labelTerms->Text = L"ß ïðèíèìàþ";
+			this->labelTerms->Text = L"Ð¯ Ð¿Ñ€Ð¸Ð½Ð¸Ð¼Ð°ÑŽ";
 			// 
 			// buttonRegister
 			// 
@@ -308,16 +351,16 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->buttonRegister->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonRegister.BackgroundImage")));
 			this->buttonRegister->BorderStyle = Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderStyles::Solid;
-			this->buttonRegister->ButtonText = L"Ðåãèñòðàöèÿ";
+			this->buttonRegister->ButtonText = L"Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ";
 			this->buttonRegister->ButtonTextMarginLeft = 0;
 			this->buttonRegister->ColorContrastOnClick = 45;
 			this->buttonRegister->ColorContrastOnHover = 45;
 			this->buttonRegister->Cursor = System::Windows::Forms::Cursors::Default;
-			//borderEdges3->BottomLeft = true;
-			//borderEdges3->BottomRight = true;
-			//borderEdges3->TopLeft = true;
-			//borderEdges3->TopRight = true;
-			this->buttonRegister->CustomizableEdges = borderEdges3;
+			borderEdges1->BottomLeft = true;
+			borderEdges1->BottomRight = true;
+			borderEdges1->TopLeft = true;
+			borderEdges1->TopRight = true;
+			this->buttonRegister->CustomizableEdges = borderEdges1;
 			this->buttonRegister->DialogResult = System::Windows::Forms::DialogResult::None;
 			this->buttonRegister->DisabledBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(191)),
 				static_cast<System::Int32>(static_cast<System::Byte>(191)), static_cast<System::Int32>(static_cast<System::Byte>(191)));
@@ -446,7 +489,7 @@ namespace PythonWave {
 			this->guna2TextBox2->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2TextBox2->ForeColor = System::Drawing::Color::White;
+			this->guna2TextBox2->ForeColor = System::Drawing::Color::Black;
 			this->guna2TextBox2->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox2->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2TextBox2.IconLeft")));
@@ -455,12 +498,13 @@ namespace PythonWave {
 			this->guna2TextBox2->Location = System::Drawing::Point(24, 182);
 			this->guna2TextBox2->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->guna2TextBox2->Name = L"guna2TextBox2";
-			this->guna2TextBox2->PasswordChar = '\0';
+			this->guna2TextBox2->PasswordChar = 'â—';
 			this->guna2TextBox2->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->guna2TextBox2->PlaceholderText = L"Ïàðîëü";
+			this->guna2TextBox2->PlaceholderText = L"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ";
 			this->guna2TextBox2->SelectedText = L"";
 			this->guna2TextBox2->Size = System::Drawing::Size(262, 39);
 			this->guna2TextBox2->TabIndex = 3;
+			this->guna2TextBox2->UseSystemPasswordChar = true;
 			// 
 			// guna2TextBox3
 			// 
@@ -485,7 +529,7 @@ namespace PythonWave {
 			this->guna2TextBox3->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2TextBox3->ForeColor = System::Drawing::Color::White;
+			this->guna2TextBox3->ForeColor = System::Drawing::Color::Black;
 			this->guna2TextBox3->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox3->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2TextBox3.IconLeft")));
@@ -496,10 +540,62 @@ namespace PythonWave {
 			this->guna2TextBox3->Name = L"guna2TextBox3";
 			this->guna2TextBox3->PasswordChar = '\0';
 			this->guna2TextBox3->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->guna2TextBox3->PlaceholderText = L"Ëîãèí";
+			this->guna2TextBox3->PlaceholderText = L"Ð›Ð¾Ð³Ð¸Ð½";
 			this->guna2TextBox3->SelectedText = L"";
 			this->guna2TextBox3->Size = System::Drawing::Size(262, 39);
 			this->guna2TextBox3->TabIndex = 2;
+			// 
+			// buttonShowAuthorize
+			// 
+			this->buttonShowAuthorize->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->buttonShowAuthorize->Animated = true;
+			this->buttonShowAuthorize->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->buttonShowAuthorize->Checked = true;
+			this->buttonShowAuthorize->CheckedState->CustomBorderColor = System::Drawing::Color::White;
+			this->buttonShowAuthorize->CheckedState->FillColor = System::Drawing::Color::Transparent;
+			this->buttonShowAuthorize->CheckedState->ForeColor = System::Drawing::Color::White;
+			this->buttonShowAuthorize->CustomBorderColor = System::Drawing::Color::Transparent;
+			this->buttonShowAuthorize->CustomBorderThickness = System::Windows::Forms::Padding(0, 0, 0, 2);
+			this->buttonShowAuthorize->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->buttonShowAuthorize->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->buttonShowAuthorize->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->buttonShowAuthorize->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->buttonShowAuthorize->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
+				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->buttonShowAuthorize->FocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)),
+				static_cast<System::Int32>(static_cast<System::Byte>(171)), static_cast<System::Int32>(static_cast<System::Byte>(174)));
+			this->buttonShowAuthorize->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonShowAuthorize->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonShowAuthorize->Location = System::Drawing::Point(0, 0);
+			this->buttonShowAuthorize->Name = L"buttonShowAuthorize";
+			this->buttonShowAuthorize->PressedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)),
+				static_cast<System::Int32>(static_cast<System::Byte>(171)), static_cast<System::Int32>(static_cast<System::Byte>(174)));
+			this->buttonShowAuthorize->Size = System::Drawing::Size(180, 45);
+			this->buttonShowAuthorize->TabIndex = 4;
+			this->buttonShowAuthorize->Text = L"ÐÐ²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ";
+			this->buttonShowAuthorize->TextRenderingHint = System::Drawing::Text::TextRenderingHint::SingleBitPerPixelGridFit;
+			this->buttonShowAuthorize->Click += gcnew System::EventHandler(this, &login::buttonShowAuthorize_Click);
+			// 
+			// panelAuthorize
+			// 
+			this->panelAuthorize->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->panelAuthorize->BackColor = System::Drawing::Color::Transparent;
+			this->panelAuthorize->Controls->Add(this->bunifuButton1);
+			this->panelAuthorize->Controls->Add(this->guna2CircleButton1);
+			this->panelAuthorize->Controls->Add(this->label1);
+			this->panelAuthorize->Controls->Add(this->guna2ToggleSwitch1);
+			this->panelAuthorize->Controls->Add(this->guna2TextBox1);
+			this->panelAuthorize->Controls->Add(this->textBoxLogin);
+			this->panelAuthorize->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
+				static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->panelAuthorize->Location = System::Drawing::Point(4, 47);
+			this->panelAuthorize->Name = L"panelAuthorize";
+			this->panelAuthorize->ShadowColor = System::Drawing::Color::Black;
+			this->panelAuthorize->Size = System::Drawing::Size(694, 502);
+			this->panelAuthorize->TabIndex = 5;
 			// 
 			// bunifuButton1
 			// 
@@ -516,16 +612,16 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuButton1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuButton1.BackgroundImage")));
 			this->bunifuButton1->BorderStyle = Bunifu::UI::WinForms::BunifuButton::BunifuButton::BorderStyles::Solid;
-			this->bunifuButton1->ButtonText = L"Âîéòè";
+			this->bunifuButton1->ButtonText = L"Ð’Ð¾Ð¹Ñ‚Ð¸";
 			this->bunifuButton1->ButtonTextMarginLeft = 0;
 			this->bunifuButton1->ColorContrastOnClick = 45;
 			this->bunifuButton1->ColorContrastOnHover = 45;
 			this->bunifuButton1->Cursor = System::Windows::Forms::Cursors::Default;
-			borderEdges4->BottomLeft = true;
-			borderEdges4->BottomRight = true;
-			borderEdges4->TopLeft = true;
-			borderEdges4->TopRight = true;
-			this->bunifuButton1->CustomizableEdges = borderEdges4;
+			borderEdges2->BottomLeft = true;
+			borderEdges2->BottomRight = true;
+			borderEdges2->TopLeft = true;
+			borderEdges2->TopRight = true;
+			this->bunifuButton1->CustomizableEdges = borderEdges2;
 			this->bunifuButton1->DialogResult = System::Windows::Forms::DialogResult::None;
 			this->bunifuButton1->DisabledBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(191)),
 				static_cast<System::Int32>(static_cast<System::Byte>(191)), static_cast<System::Int32>(static_cast<System::Byte>(191)));
@@ -643,7 +739,7 @@ namespace PythonWave {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(166, 22);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"Çàïîìíèòü ìåíÿ";
+			this->label1->Text = L"Ð—Ð°Ð¿Ð¾Ð¼Ð½Ð¸Ñ‚ÑŒ Ð¼ÐµÐ½Ñ";
 			// 
 			// guna2ToggleSwitch1
 			// 
@@ -690,7 +786,7 @@ namespace PythonWave {
 			this->guna2TextBox1->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2TextBox1->ForeColor = System::Drawing::Color::White;
+			this->guna2TextBox1->ForeColor = System::Drawing::Color::Black;
 			this->guna2TextBox1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->guna2TextBox1->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2TextBox1.IconLeft")));
@@ -699,12 +795,13 @@ namespace PythonWave {
 			this->guna2TextBox1->Location = System::Drawing::Point(24, 193);
 			this->guna2TextBox1->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->guna2TextBox1->Name = L"guna2TextBox1";
-			this->guna2TextBox1->PasswordChar = '\0';
+			this->guna2TextBox1->PasswordChar = 'â—';
 			this->guna2TextBox1->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->guna2TextBox1->PlaceholderText = L"Ïàðîëü";
+			this->guna2TextBox1->PlaceholderText = L"ÐŸÐ°Ñ€Ð¾Ð»ÑŒ";
 			this->guna2TextBox1->SelectedText = L"";
 			this->guna2TextBox1->Size = System::Drawing::Size(262, 39);
 			this->guna2TextBox1->TabIndex = 3;
+			this->guna2TextBox1->UseSystemPasswordChar = true;
 			// 
 			// textBoxLogin
 			// 
@@ -729,7 +826,7 @@ namespace PythonWave {
 			this->textBoxLogin->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->textBoxLogin->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->textBoxLogin->ForeColor = System::Drawing::Color::White;
+			this->textBoxLogin->ForeColor = System::Drawing::Color::Black;
 			this->textBoxLogin->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->textBoxLogin->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxLogin.IconLeft")));
@@ -740,113 +837,81 @@ namespace PythonWave {
 			this->textBoxLogin->Name = L"textBoxLogin";
 			this->textBoxLogin->PasswordChar = '\0';
 			this->textBoxLogin->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxLogin->PlaceholderText = L"Ëîãèí";
+			this->textBoxLogin->PlaceholderText = L"Ð›Ð¾Ð³Ð¸Ð½";
 			this->textBoxLogin->SelectedText = L"";
 			this->textBoxLogin->Size = System::Drawing::Size(262, 39);
 			this->textBoxLogin->TabIndex = 2;
 			// 
-			// guna2Button2
+			// buttonShowRegister
 			// 
-			this->guna2Button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->guna2Button2->Animated = true;
-			this->guna2Button2->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
-			this->guna2Button2->Checked = true;
-			this->guna2Button2->CheckedState->CustomBorderColor = System::Drawing::Color::White;
-			this->guna2Button2->CheckedState->FillColor = System::Drawing::Color::Transparent;
-			this->guna2Button2->CheckedState->ForeColor = System::Drawing::Color::White;
-			this->guna2Button2->CustomBorderColor = System::Drawing::Color::Transparent;
-			this->guna2Button2->CustomBorderThickness = System::Windows::Forms::Padding(0, 0, 0, 2);
-			this->guna2Button2->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button2->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button2->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button2->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button2->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
-				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->guna2Button2->FocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->guna2Button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button2->Location = System::Drawing::Point(0, 0);
-			this->guna2Button2->Name = L"guna2Button2";
-			this->guna2Button2->PressedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->guna2Button2->Size = System::Drawing::Size(180, 45);
-			this->guna2Button2->TabIndex = 4;
-			this->guna2Button2->Text = L"Àâòîðèçàöèÿ";
-			this->guna2Button2->TextRenderingHint = System::Drawing::Text::TextRenderingHint::SingleBitPerPixelGridFit;
-			// 
-			// guna2Button1
-			// 
-			this->guna2Button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
-			this->guna2Button1->Animated = true;
-			this->guna2Button1->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
-			this->guna2Button1->CheckedState->CustomBorderColor = System::Drawing::Color::Black;
-			this->guna2Button1->CheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->buttonShowRegister->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
+			this->buttonShowRegister->Animated = true;
+			this->buttonShowRegister->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->buttonShowRegister->CheckedState->CustomBorderColor = System::Drawing::Color::Black;
+			this->buttonShowRegister->CheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->CheckedState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)),
+			this->buttonShowRegister->CheckedState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(49)),
 				static_cast<System::Int32>(static_cast<System::Byte>(54)), static_cast<System::Int32>(static_cast<System::Byte>(63)));
-			this->guna2Button1->CustomBorderColor = System::Drawing::Color::Transparent;
-			this->guna2Button1->CustomBorderThickness = System::Windows::Forms::Padding(0, 0, 0, 2);
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->buttonShowRegister->CustomBorderColor = System::Drawing::Color::Transparent;
+			this->buttonShowRegister->CustomBorderThickness = System::Windows::Forms::Padding(0, 0, 0, 2);
+			this->buttonShowRegister->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->buttonShowRegister->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->buttonShowRegister->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->buttonShowRegister->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
-				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->guna2Button1->FocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->Location = System::Drawing::Point(175, 0);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->PressedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)), static_cast<System::Int32>(static_cast<System::Byte>(171)),
-				static_cast<System::Int32>(static_cast<System::Byte>(174)));
-			this->guna2Button1->Size = System::Drawing::Size(180, 45);
-			this->guna2Button1->TabIndex = 3;
-			this->guna2Button1->Text = L"Ðåãèñòðàöèÿ";
-			this->guna2Button1->TextRenderingHint = System::Drawing::Text::TextRenderingHint::SingleBitPerPixelGridFit;
+			this->buttonShowRegister->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
+				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->buttonShowRegister->FocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)),
+				static_cast<System::Int32>(static_cast<System::Byte>(171)), static_cast<System::Int32>(static_cast<System::Byte>(174)));
+			this->buttonShowRegister->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonShowRegister->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonShowRegister->Location = System::Drawing::Point(175, 0);
+			this->buttonShowRegister->Name = L"buttonShowRegister";
+			this->buttonShowRegister->PressedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(118)),
+				static_cast<System::Int32>(static_cast<System::Byte>(171)), static_cast<System::Int32>(static_cast<System::Byte>(174)));
+			this->buttonShowRegister->Size = System::Drawing::Size(180, 45);
+			this->buttonShowRegister->TabIndex = 3;
+			this->buttonShowRegister->Text = L"Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ";
+			this->buttonShowRegister->TextRenderingHint = System::Drawing::Text::TextRenderingHint::SingleBitPerPixelGridFit;
+			this->buttonShowRegister->Click += gcnew System::EventHandler(this, &login::buttonShowRegister_Click);
 			// 
-			// panelElipseEntrance
+			// borderlessForm
 			// 
-			this->panelElipseEntrance->BorderRadius = 20;
-			this->panelElipseEntrance->TargetControl = this->panelEntrance;
+			this->borderlessForm->BorderRadius = 20;
+			this->borderlessForm->ContainerControl = this;
+			this->borderlessForm->DockIndicatorTransparencyValue = 0;
+			this->borderlessForm->ResizeForm = false;
+			this->borderlessForm->TransparentWhileDrag = true;
 			// 
-			// guna2BorderlessForm1
+			// elipsePanelAuthorize
 			// 
-			this->guna2BorderlessForm1->BorderRadius = 20;
-			this->guna2BorderlessForm1->ContainerControl = this;
-			this->guna2BorderlessForm1->DockIndicatorTransparencyValue = 0;
-			this->guna2BorderlessForm1->ResizeForm = false;
-			this->guna2BorderlessForm1->TransparentWhileDrag = true;
+			this->elipsePanelAuthorize->BorderRadius = 30;
+			this->elipsePanelAuthorize->TargetControl = this->panelAuthorize;
 			// 
-			// panelElipseAuthorize
+			// MessageOption
 			// 
-			this->panelElipseAuthorize->BorderRadius = 30;
-			this->panelElipseAuthorize->TargetControl = this->panelAuthorize;
+			this->MessageOption->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageOption->Caption = nullptr;
+			this->MessageOption->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
+			this->MessageOption->Parent = this;
+			this->MessageOption->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageOption->Text = L"Ð­Ñ‚Ð¾ Ð¾Ð¿Ñ†Ð¸Ñ Ð¿Ð¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð²Ð°ÑˆÐ¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ñ€Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¼ Ð²Ñ…Ð¾Ð´Ðµ";
 			// 
-			// guna2MessageDialog1
+			// MessageAcceptTerms
 			// 
-			this->guna2MessageDialog1->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
-			this->guna2MessageDialog1->Caption = nullptr;
-			this->guna2MessageDialog1->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
-			this->guna2MessageDialog1->Parent = this;
-			this->guna2MessageDialog1->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
-			this->guna2MessageDialog1->Text = L"Ýòî îïöèÿ ïîçâîëÿåò ñîõðàíèòü âàøè äàííûå ïðè ïîñëåäóþùåì âõîäå";
+			this->MessageAcceptTerms->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNoCancel;
+			this->MessageAcceptTerms->Caption = L"";
+			this->MessageAcceptTerms->Icon = Guna::UI2::WinForms::MessageDialogIcon::Question;
+			this->MessageAcceptTerms->Parent = this;
+			this->MessageAcceptTerms->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageAcceptTerms->Text = L"ÐŸÑ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÑ‚Ðµ ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŒÑÐºÐ¾Ð³Ð¾ ÑÐ¾Ð³Ð»Ð°ÑˆÐµÐ½Ð¸Ñ\?";
 			// 
-			// Terms
+			// elipsePanelEntrance
 			// 
-			this->Terms->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
-			this->Terms->Caption = L"";
-			this->Terms->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
-			this->Terms->Parent = this;
-			this->Terms->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
-			this->Terms->Text = "Ïîäòâåðæäàþ, ÷òî îçíàêîìëåí ñ óñëîâèÿìè ïîëüçîâàòåëüñêîãî ñîãëàøåíèÿ";
+			this->elipsePanelEntrance->BorderRadius = 30;
+			this->elipsePanelEntrance->TargetControl = this->panelEntrance;
 			// 
 			// login
 			// 
@@ -863,17 +928,19 @@ namespace PythonWave {
 			this->Location = System::Drawing::Point(320, 180);
 			this->Name = L"login";
 			this->Opacity = 0;
-			this->Text = L"PythonWave: Àâòîðèçàöèÿ";
+			this->Text = L"PythonWave: ÐÐ²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &login::login_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->EndInit();
 			this->panelEntrance->ResumeLayout(false);
+			this->panelRegister->ResumeLayout(false);
+			this->panelRegister->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonCloseTerms))->EndInit();
 			this->panelAuthorize->ResumeLayout(false);
 			this->panelAuthorize->PerformLayout();
-			this->guna2ShadowPanel1->ResumeLayout(false);
-			this->guna2ShadowPanel1->PerformLayout();
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 
@@ -881,41 +948,40 @@ namespace PythonWave {
 	//////////////////////////////////////////////////////////////////////////////////////
 	private: System::Void ExitWindow_click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MinimizeWindow_click(System::Object^ sender, System::EventArgs^ e);
+
 	//////////////////////////////////////////////////////////////////////////////////////
-
-
 
 		//animations.h
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	short fade_mode = 0; 	//0 — ïîÿâëåíèå, 1 — ìèíèìèçàöèÿ, 2 — çàêðûòèå
-	short close_on_close = FALSE; //ñîîáùàåò îáðàáîò÷èêó çàêðûòèÿ ïîâòîðíî àíèìèðîâàòü èëè íåò
+	short fade_mode = 0; 	//0 â€” Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ðµ, 1 â€” Ð¼Ð¸Ð½Ð¸Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ñ, 2 â€” Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ðµ
+	short close_on_close = FALSE; //ÑÐ¾Ð¾Ð±Ñ‰Ð°ÐµÑ‚ Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÑƒ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð½Ð¾ Ð°Ð½Ð¸Ð¼Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¸Ð»Ð¸ Ð½ÐµÑ‚
 	//WndProc
-	//Îáðàáîò÷èê çàêðûòèÿ ôîðìû
+	//ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸Ðº Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ñ„Ð¾Ñ€Ð¼Ñ‹
 	protected: virtual void WndProc(System::Windows::Forms::Message% msg) override {
-	switch (msg.Msg) {
-	case WM_SYSCOMMAND:
-		switch (msg.WParam.ToInt32()) {
-		case SC_MINIMIZE:
-			msg.Result = IntPtr::Zero;
-			fade_mode = 1;
-			fadetimer->Start();
-			return;
+		switch (msg.Msg) {
+		case WM_SYSCOMMAND:
+			switch (msg.WParam.ToInt32()) {
+			case SC_MINIMIZE:
+				msg.Result = IntPtr::Zero;
+				fade_mode = 1;
+				fadetimer->Start();
+				return;
+				break;
+			}
 			break;
+		case WM_ACTIVATE: {
+			if (HIWORD(msg.WParam.ToInt32()) == 0) { //Ð¿Ð¾Ñ‚Ð¾Ð¼Ñƒ Ñ‡Ñ‚Ð¾ Ð½ÐµÐ½ÑƒÐ»ÐµÐ²Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ wpa Ð·Ð´ÐµÑÑŒ Ð¾Ð·Ð½Ð°Ñ‡Ð°ÐµÑ‚, Ñ‡Ñ‚Ð¾ Ñ„Ð¾Ñ€Ð¼Ð° ÑÐ²ÐµÑ€Ð½ÑƒÑ‚Ð°
+				this->WindowState = FormWindowState::Normal;
+				fade_mode = 0;
+				fadetimer->Start();
+				msg.Result = IntPtr::Zero;
+				return;
+			}
 		}
-		break;
-	case WM_ACTIVATE: {
-		if (HIWORD(msg.WParam.ToInt32()) == 0) { //ïîòîìó ÷òî íåíóëåâîå çíà÷åíèå wpa çäåñü îçíà÷àåò, ÷òî ôîðìà ñâåðíóòà
-			this->WindowState = FormWindowState::Normal;
-			fade_mode = 0;
-			fadetimer->Start();
-			msg.Result = IntPtr::Zero;
-			return;
 		}
-	}
-	}
 
-	Form::WndProc(msg);
-}
+		Form::WndProc(msg);
+	}
 	private: System::Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -925,20 +991,50 @@ namespace PythonWave {
 
 
 	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
-
+		//Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° ÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ñ… ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²
+		textBoxTerms->Location = System::Drawing::Point(5, 5);
+		panelRegister->Location = System::Drawing::Point(4, 47);
+		panelAuthorize->Location = System::Drawing::Point(4, 47);
 	}
 	private: System::Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-		guna2MessageDialog1->Text = "Ýòî îïöèÿ ïîçâîëÿåò ñîõðàíèòü âàøè äàííûå ïðè ïîñëåäóþùåì âõîäå";
-		guna2MessageDialog1->Show();
+		//Ð’Ñ‹Ð²Ð¾Ð´ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ Ð¾Ð± Ð¾Ð¿Ñ†Ð¸Ð¸ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+		MessageOption->Text = "Ð­Ñ‚Ð¾ Ð¾Ð¿Ñ†Ð¸Ñ Ð¿Ð¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð²Ð°ÑˆÐ¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿Ñ€Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ¼ Ð²Ñ…Ð¾Ð´Ðµ";
+		MessageOption->Show();
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		System::Windows::Forms::DialogResult result = Terms->Show();
+		//ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÑ‚ ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ
+		textBoxTerms->Visible = true;
+		ButtonCloseTerms->Visible = true;
+		ButtonCloseTerms->BringToFront(); //ÐšÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ð¾Ðµ Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ ÐºÐ½Ð¾Ð¿ÐºÐ¸
+	}
+	private: System::Void buttonCloseTerms(System::Object^ sender, System::EventArgs^ e) {
+		//Ð—Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÑ‚ ÑƒÑÐ»Ð¾Ð²Ð¸Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ
+		textBoxTerms->Visible = false;
+		ButtonCloseTerms->Visible = false;
+		//Ð¡Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°ÐµÑ‚ Ð¾ ÑÐ¾Ð³Ð»Ð°ÑÐ¸Ð¸, Ð¿Ð¾ÑÐ»Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ñ
+		System::Windows::Forms::DialogResult result = MessageAcceptTerms->Show();
 		if (result == System::Windows::Forms::DialogResult::Yes) {
 			ToggleSwitchTerms->Checked = true;
 		}
-		else {
+		else if (result == System::Windows::Forms::DialogResult::No) {
 			ToggleSwitchTerms->Checked = false;
 		}
+	}
+	private: System::Void ShowRegister(bool show) {
+		if (show) {
+			panelAuthorize->Visible = false;
+			panelRegister->Visible = true;
+		}
+		else {
+			panelAuthorize->Visible = true;
+			panelRegister ->Visible = false;
+		}
+	}
+	private: System::Void buttonShowAuthorize_Click(System::Object^ sender, System::EventArgs^ e) {
+		ShowRegister(false);
+	}
+	private: System::Void buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+		ShowRegister(true);
 	}
 };
 }

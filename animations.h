@@ -34,7 +34,7 @@ System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e)
 	case 2: // «акрыть
 		if (this->Opacity > 0) {
 			this->Opacity -= 0.2;
-			guna2BorderlessForm1->HasFormShadow = false;
+			borderlessForm->HasFormShadow = false;
 		}
 		else {
 			fade_mode = -1;
@@ -44,7 +44,7 @@ System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e)
 		break;
 	}
 	// ”становка тени в зависимости от состо€ни€ формы
-	guna2BorderlessForm1->HasFormShadow = (fade_mode != 1); // “ень должна быть видна, если форма не минимизирована
+	borderlessForm->HasFormShadow = (fade_mode != 1); // “ень должна быть видна, если форма не минимизирована
 }
 System::Void login::login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 	if (close_on_close && fade_mode != 2) {

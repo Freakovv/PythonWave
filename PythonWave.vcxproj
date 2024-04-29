@@ -73,7 +73,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -83,8 +88,11 @@
       <AdditionalDependencies>user32.lib</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>E:\.Coding\AdditionalLibrabyDirectories</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\.Coding\.PythonWave\UI;E:\.Coding\AdditionalLibrabyDirectories</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -111,7 +119,11 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <AdditionalLibraryDirectories>E:\.Coding\.PythonWave\UI;</AdditionalLibraryDirectories>
     </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing">
@@ -141,6 +153,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShapes">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
     </Reference>
@@ -159,11 +174,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Siticone.Desktop.UI">
+      <HintPath>UI\NoxiusUI\Siticone.Desktop.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
