@@ -11,7 +11,7 @@ int main(array<System::String^>^ args)
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 	PythonWave::login form;
-	// Открывает форму по центру, высчитывая по формуле, используя данные разрешения экрана
+	//РЈСЃС‚Р°РЅРѕРІРєР° С„РѕСЂРјС‹ РїРѕ С†РµРЅС‚СЂСѓ
 	form.StartPosition = FormStartPosition::Manual;
 	form.Location = Point((Screen::PrimaryScreen->Bounds.Width - form.Width) / 2,
 		(Screen::PrimaryScreen->Bounds.Height - form.Height) / 2);

@@ -1,17 +1,18 @@
 #pragma once
 #include "libraries.h"
 
+
 using namespace PythonWave;
 
-//«‰ÂÒ¸ ı‡ÌˇÚÒˇ ÙÛÌÍˆËË ÓÚ‚Â˜‡˛˘ËÂ Á‡ ‡ÌËÏ‡ˆË˛ ÓÍÌ‡
+//–ó–¥–µ—Å—å —Ö—Ä–∞–Ω—è—Ç—Å—è —Ñ—É–Ω–∫—Ü–∏–∏ –æ—Ç–≤–µ—á–∞—é—â–∏–µ –∑–∞ –∞–Ω–∏–º–∞—Ü–∏—é –æ–∫–Ω–∞
 System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (this->IsDisposed == true) {
-		// Œ·‡·ÓÚÍ‡ Á‡Í˚ÚËˇ ÙÓÏ˚
+		// –û–±—Ä–∞–±–æ—Ç–∫–∞ –∑–∞–∫—Ä—ã—Ç–∏—è —Ñ–æ—Ä–º—ã
 		fadetimer->Stop();
 		return;
 	}
 	switch (fade_mode) {
-	case 0: // œÓˇ‚ÎÂÌËÂ
+	case 0: // –ü–æ—è–≤–ª–µ–Ω–∏–µ
 		if (this->Opacity < 1) {
 			this->Opacity += 0.1;
 		}
@@ -21,7 +22,7 @@ System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e)
 			this->Size = System::Drawing::Size(1280, 720);
 		}
 		break;
-	case 1: // —‚ÂÌÛÚ¸
+	case 1: // –°–≤–µ—Ä–Ω—É—Ç—å
 		if (this->Opacity > 0) {
 			this->Opacity -= 0.2;
 		}
@@ -31,7 +32,7 @@ System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e)
 			this->WindowState = Windows::Forms::FormWindowState::Minimized;
 		}
 		break;
-	case 2: // «‡Í˚Ú¸
+	case 2: // –ó–∞–∫—Ä—ã—Ç—å
 		if (this->Opacity > 0) {
 			this->Opacity -= 0.2;
 			borderlessForm->HasFormShadow = false;
@@ -43,8 +44,8 @@ System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e)
 		}
 		break;
 	}
-	// ”ÒÚ‡ÌÓ‚Í‡ ÚÂÌË ‚ Á‡‚ËÒËÏÓÒÚË ÓÚ ÒÓÒÚÓˇÌËˇ ÙÓÏ˚
-	borderlessForm->HasFormShadow = (fade_mode != 1); // “ÂÌ¸ ‰ÓÎÊÌ‡ ·˚Ú¸ ‚Ë‰Ì‡, ÂÒÎË ÙÓÏ‡ ÌÂ ÏËÌËÏËÁËÓ‚‡Ì‡
+	// –£—Å—Ç–∞–Ω–æ–≤–∫–∞ —Ç–µ–Ω–∏ –≤ –∑–∞–≤–∏—Å–∏–º–æ—Å—Ç–∏ –æ—Ç —Å–æ—Å—Ç–æ—è–Ω–∏—è —Ñ–æ—Ä–º—ã
+	borderlessForm->HasFormShadow = (fade_mode != 1); // –¢–µ–Ω—å –¥–æ–ª–∂–Ω–∞ –±—ã—Ç—å –≤–∏–¥–Ω–∞, –µ—Å–ª–∏ —Ñ–æ—Ä–º–∞ –Ω–µ –º–∏–Ω–∏–º–∏–∑–∏—Ä–æ–≤–∞–Ω–∞
 }
 System::Void login::login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 	if (close_on_close && fade_mode != 2) {

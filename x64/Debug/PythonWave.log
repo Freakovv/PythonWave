@@ -478,13 +478,22 @@ E:\.Coding\.PythonWave\UI\NoxiusUI\Siticone.Desktop.UI.dll : warning C4945: 'RSi
   E:\.Coding\.PythonWave\UI\NoxiusUI\Siticone.Desktop.UI.dll(0,1):
   This diagnostic occurred while importing type 'TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize' from assembly 'Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4'.
   
-E:\.Coding\.PythonWave\login.h(309,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(419,46): warning C4305: 'argument': truncation from 'int' to 'wchar_t'
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\login.h(378,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(419,46): warning C4309: 'argument': truncation of constant value
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\login.h(567,40): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\login.h(488,45): warning C4305: 'argument': truncation from 'int' to 'wchar_t'
+  (compiling source file 'login.cpp')
+  
+E:\.Coding\.PythonWave\login.h(488,45): warning C4309: 'argument': truncation of constant value
+  (compiling source file 'login.cpp')
+  
+E:\.Coding\.PythonWave\login.h(713,42): warning C4305: 'argument': truncation from 'int' to 'wchar_t'
+  (compiling source file 'login.cpp')
+  
+E:\.Coding\.PythonWave\login.h(713,42): warning C4309: 'argument': truncation of constant value
   (compiling source file 'login.cpp')
   
   login.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link

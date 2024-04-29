@@ -103,6 +103,7 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2Button^ buttonRegister;
 	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 	private: Bunifu::UI::WinForms::BunifuCheckBox^ CheckBoxTerms;
+	private: Guna::UI2::WinForms::Guna2ShadowForm^ guna2ShadowForm1;
 
 
 
@@ -155,6 +156,7 @@ namespace PythonWave {
 			this->MessageOption = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->MessageAcceptTerms = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->elipsePanelEntrance = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+			this->guna2ShadowForm1 = (gcnew Guna::UI2::WinForms::Guna2ShadowForm(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->BeginInit();
 			this->panelEntrance->SuspendLayout();
@@ -227,7 +229,7 @@ namespace PythonWave {
 			this->panelRegister->Controls->Add(this->textBoxLoginReg);
 			this->panelRegister->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
 				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->panelRegister->Location = System::Drawing::Point(4, 47);
+			this->panelRegister->Location = System::Drawing::Point(495, 16);
 			this->panelRegister->Name = L"panelRegister";
 			this->panelRegister->ShadowColor = System::Drawing::Color::Black;
 			this->panelRegister->Size = System::Drawing::Size(694, 502);
@@ -326,6 +328,7 @@ namespace PythonWave {
 			this->buttonRegister->TabIndex = 13;
 			this->buttonRegister->Text = L"Регистрация";
 			this->buttonRegister->UseTransparentBackground = true;
+			this->buttonRegister->Click += gcnew System::EventHandler(this, &login::buttonRegister_Click);
 			// 
 			// ButtonCloseTerms
 			// 
@@ -617,6 +620,7 @@ namespace PythonWave {
 			this->guna2Button1->TabIndex = 14;
 			this->guna2Button1->Text = L"Войти";
 			this->guna2Button1->UseTransparentBackground = true;
+			this->guna2Button1->Click += gcnew System::EventHandler(this, &login::buttonComeIn_Click);
 			// 
 			// buttonQuestion
 			// 
@@ -952,6 +956,12 @@ namespace PythonWave {
 	private: System::Void buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e) {
 		ShowRegister(true);
 
+	}
+	private: System::Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
+	private: System::Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 	}
 };
 }
