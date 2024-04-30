@@ -1,0 +1,906 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuLabel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean AllowParentOverrides 'get set' : 
+    System.String Text 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+    System.Drawing.Text.TextRenderingHint TextRenderingHint 'get set' : 
+    System.Windows.Forms.BorderStyle BorderStyle 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    System.Windows.Forms.RightToLeft RightToLeft 'get set' : 
+    System.Drawing.ContentAlignment TextAlignment 'get set' : 
+    TextFormattingOptions TextFormat 'get set' : 
+    TextAlignments TextAlign 'get set' :  (Obsolete)
+    System.Windows.Forms.Cursor Cursor 'get set' : 
+    EllipsisFormat EllipsisFormat 'get set' : 
+    Boolean AutoEllipsis 'get set' : 
+    Boolean UseGdiPlusTextRendering 'get set' : 
+    Boolean ConvertNewlinesToBreakTags 'get set' : 
+    Boolean UseSystemCursors 'get set' : 
+    Boolean UseWaitCursor 'get set' : 
+    Boolean AvoidGeometryAntialias 'get set' : 
+    Boolean IsSelectionEnabled 'get set' : 
+    Boolean IsContextMenuEnabled 'get set' : 
+    Boolean AutoSizeHeightOnly 'get set' : 
+    Boolean AutoSize 'get set' : 
+    Boolean AllowDrop 'get set' : 
+    System.String BaseStylesheet 'get set' : 
+    System.Drawing.Size MaximumSize 'get set' : 
+    System.Drawing.Size MinimumSize 'get set' : 
+    System.Windows.Forms.Cursor CursorType 'get set' : 
+    System.String SelectedText 'get ' : 
+    System.String SelectedHtml 'get ' : 
+  Events:
+    System.EventHandler EllipsisFormatChanged: 
+    System.EventHandler BorderStyleChanged: 
+    System.EventHandler LoadComplete: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs] LinkClicked: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorEventArgs] RenderError: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadEventArgs] ImageLoad: 
+  Methods:
+    get_AllowParentOverrides(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AllowParentOverrides(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_BackColor(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_TextRenderingHint(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextRenderingHint(TextRenderingHint): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderStyle(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderStyle(BorderStyle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(Font): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_RightToLeft(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_RightToLeft(RightToLeft): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_TextAlignment(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlignment(ContentAlignment): PrivateScope, Public, HideBySig, SpecialName
+    get_TextFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextFormat(TextFormattingOptions): PrivateScope, Public, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(TextAlignments): PrivateScope, Public, HideBySig, SpecialName
+    get_Cursor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Cursor(Cursor): PrivateScope, Public, HideBySig, SpecialName
+    get_EllipsisFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_EllipsisFormat(EllipsisFormat): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoEllipsis(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AutoEllipsis(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_UseGdiPlusTextRendering(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseGdiPlusTextRendering(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ConvertNewlinesToBreakTags(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ConvertNewlinesToBreakTags(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_UseSystemCursors(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseSystemCursors(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_UseWaitCursor(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseWaitCursor(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidGeometryAntialias(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AvoidGeometryAntialias(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsSelectionEnabled(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IsSelectionEnabled(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsContextMenuEnabled(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IsContextMenuEnabled(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_AutoSizeHeightOnly(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_AutoSizeHeightOnly(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_AutoSize(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_AutoSize(Boolean): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_AllowDrop(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_AllowDrop(Boolean): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_BaseStylesheet(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BaseStylesheet(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_MaximumSize(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_MaximumSize(Size): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_MinimumSize(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_MinimumSize(Size): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_CursorType(): PrivateScope, Public, HideBySig, SpecialName
+    set_CursorType(Cursor): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectedText(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SelectedHtml(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    GetHtml(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    GetElementRectangle(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    ClearSelection(): PrivateScope, Public, HideBySig
+    ToSentenceCase(String): PrivateScope, Public, HideBySig
+    add_EllipsisFormatChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_EllipsisFormatChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_BorderStyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_BorderStyleChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.Ellipsis: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Fields:
+    System.String EllipsisChars : Public, Static, InitOnly
+  Methods:
+    Compact(String, Control, EllipsisFormat): PrivateScope, Public, Static, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.CssData: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  Methods:
+    Parse(RAdapter, String, Boolean(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    ContainsCssBlock(String, String(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    GetCssBlock(String, String(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    AddCssBlock(String, CssBlock): PrivateScope, Public, HideBySig
+    Combine(CssData): PrivateScope, Public, HideBySig
+    Clone(): PrivateScope, Public, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.HtmlContainerInt: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(TheArtOfDev.HtmlRenderer.Adapters.RAdapter): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    TheArtOfDev.HtmlRenderer.Core.CssData CssData 'get ' : 
+    Boolean AvoidGeometryAntialias 'get set' : 
+    Boolean AvoidAsyncImagesLoading 'get set' : 
+    Boolean AvoidImagesLateLoading 'get set' : 
+    Boolean IsSelectionEnabled 'get set' : 
+    Boolean IsContextMenuEnabled 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint ScrollOffset 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint Location 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize MaxSize 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize ActualSize 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize PageSize 'get set' : 
+    Int32 MarginTop 'get set' : 
+    Int32 MarginBottom 'get set' : 
+    Int32 MarginLeft 'get set' : 
+    Int32 MarginRight 'get set' : 
+    System.String SelectedText 'get ' : 
+    System.String SelectedHtml 'get ' : 
+  Events:
+    System.EventHandler LoadComplete: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs] LinkClicked: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRefreshEventArgs] Refresh: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlScrollEventArgs] ScrollChange: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorEventArgs] RenderError: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlStylesheetLoadEventArgs] StylesheetLoad: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadEventArgs] ImageLoad: 
+  Methods:
+    add_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_Refresh(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_Refresh(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_ScrollChange(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_ScrollChange(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_StylesheetLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_StylesheetLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_CssData(): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidGeometryAntialias(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidGeometryAntialias(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidAsyncImagesLoading(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidAsyncImagesLoading(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidImagesLateLoading(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidImagesLateLoading(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IsSelectionEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsSelectionEnabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IsContextMenuEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsContextMenuEnabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ScrollOffset(): PrivateScope, Public, HideBySig, SpecialName
+    set_ScrollOffset(RPoint): PrivateScope, Public, HideBySig, SpecialName
+    get_Location(): PrivateScope, Public, HideBySig, SpecialName
+    set_Location(RPoint): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxSize(RSize): PrivateScope, Public, HideBySig, SpecialName
+    get_ActualSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActualSize(RSize): PrivateScope, Public, HideBySig, SpecialName
+    get_PageSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_PageSize(RSize): PrivateScope, Public, HideBySig, SpecialName
+    get_MarginTop(): PrivateScope, Public, HideBySig, SpecialName
+    set_MarginTop(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MarginBottom(): PrivateScope, Public, HideBySig, SpecialName
+    set_MarginBottom(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MarginLeft(): PrivateScope, Public, HideBySig, SpecialName
+    set_MarginLeft(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MarginRight(): PrivateScope, Public, HideBySig, SpecialName
+    set_MarginRight(Int32): PrivateScope, Public, HideBySig, SpecialName
+    SetMargins(Int32): PrivateScope, Public, HideBySig
+    get_SelectedText(): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectedHtml(): PrivateScope, Public, HideBySig, SpecialName
+    SetHtml(String, CssData(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    ClearSelection(): PrivateScope, Public, HideBySig
+    GetHtml(HtmlGenerationStyle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    GetAttributeAt(RPoint, String): PrivateScope, Public, HideBySig
+    GetLinks(): PrivateScope, Public, HideBySig
+    GetLinkAt(RPoint): PrivateScope, Public, HideBySig
+    GetElementRectangle(String): PrivateScope, Public, HideBySig
+    PerformLayout(RGraphics): PrivateScope, Public, HideBySig
+    PerformPaint(RGraphics): PrivateScope, Public, HideBySig
+    HandleMouseDown(RControl, RPoint): PrivateScope, Public, HideBySig
+    HandleMouseUp(RControl, RPoint, RMouseEvent): PrivateScope, Public, HideBySig
+    HandleMouseDoubleClick(RControl, RPoint): PrivateScope, Public, HideBySig
+    HandleMouseMove(RControl, RPoint): PrivateScope, Public, HideBySig
+    HandleMouseLeave(RControl): PrivateScope, Public, HideBySig
+    HandleKeyDown(RControl, RKeyEvent): PrivateScope, Public, HideBySig
+    RequestRefresh(Boolean): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class TheArtOfDev.HtmlRenderer.Core.HtmlRendererUtils: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    MeasureHtmlByRestrictions(RGraphics, HtmlContainerInt, RSize, RSize): PrivateScope, Public, Static, HideBySig
+    Layout(RGraphics, HtmlContainerInt, RSize, RSize, RSize, Boolean, Boolean): PrivateScope, Public, Static, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Utils.ArgChecker: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    AssertIsTrue(Boolean, String): PrivateScope, Public, Static, HideBySig
+    AssertArgNotNull(Object, String): PrivateScope, Public, Static, HideBySig
+    AssertArgNotNull(IntPtr, String): PrivateScope, Public, Static, HideBySig
+    AssertArgNotNullOrEmpty(String, String): PrivateScope, Public, Static, HideBySig
+    AssertArgOfType(Object, String): PrivateScope, Public, Static, HideBySig
+    AssertFileExist(String, String): PrivateScope, Public, Static, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Handlers.DownloadFileAsyncCallback: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(Uri, String, Exception, Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(Uri, String, Exception, Boolean, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class TheArtOfDev.HtmlRenderer.Core.Entities.CssBlock: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(System.String, System.Collections.Generic.Dictionary`2[System.String,System.String], System.Collections.Generic.List`1[TheArtOfDev.HtmlRenderer.Core.Entities.CssBlockSelectorItem], Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Class 'get ' : 
+    System.Collections.Generic.List`1[TheArtOfDev.HtmlRenderer.Core.Entities.CssBlockSelectorItem] Selectors 'get ' : 
+    System.Collections.Generic.IDictionary`2[System.String,System.String] Properties 'get ' : 
+    Boolean Hover 'get ' : 
+  Methods:
+    get_Class(): PrivateScope, Public, HideBySig, SpecialName
+    get_Selectors(): PrivateScope, Public, HideBySig, SpecialName
+    get_Properties(): PrivateScope, Public, HideBySig, SpecialName
+    get_Hover(): PrivateScope, Public, HideBySig, SpecialName
+    Merge(CssBlock): PrivateScope, Public, HideBySig
+    Clone(): PrivateScope, Public, HideBySig
+    Equals(CssBlock): PrivateScope, Public, HideBySig
+    EqualsSelector(CssBlock): PrivateScope, Public, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Core.Entities.CssBlockSelectorItem: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Class 'get ' : 
+    Boolean DirectParent 'get ' : 
+  Methods:
+    get_Class(): PrivateScope, Public, HideBySig, SpecialName
+    get_DirectParent(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Core.Entities.HtmlGenerationStyle: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlGenerationStyle None = 0 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlGenerationStyle Inline = 1 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlGenerationStyle InHeader = 2 : Public, Static, Literal, HasDefault
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadCallback: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String, Object, RRect): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    BeginInvoke(String, Object, RRect, AsyncCallback, Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+  Properties:
+    System.String Src 'get ' : 
+    System.Collections.Generic.Dictionary`2[System.String,System.String] Attributes 'get ' : 
+    Boolean Handled 'get set' : 
+  Methods:
+    get_Src(): PrivateScope, Public, HideBySig, SpecialName
+    get_Attributes(): PrivateScope, Public, HideBySig, SpecialName
+    get_Handled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Handled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    Callback(): PrivateScope, Public, HideBySig
+    Callback(String): PrivateScope, Public, HideBySig
+    Callback(String, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+    Callback(Object): PrivateScope, Public, HideBySig
+    Callback(Object, Double, Double, Double, Double): PrivateScope, Public, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(System.String, System.Collections.Generic.Dictionary`2[System.String,System.String]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Link 'get ' : 
+    System.Collections.Generic.Dictionary`2[System.String,System.String] Attributes 'get ' : 
+    Boolean Handled 'get set' : 
+  Methods:
+    get_Link(): PrivateScope, Public, HideBySig, SpecialName
+    get_Attributes(): PrivateScope, Public, HideBySig, SpecialName
+    get_Handled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Handled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedException: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.Exception
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRefreshEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Layout 'get ' : 
+  Methods:
+    get_Layout(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType, System.String, System.Exception): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType Type 'get ' : 
+    System.String Message 'get ' : 
+    System.Exception Exception 'get ' : 
+  Methods:
+    get_Type(): PrivateScope, Public, HideBySig, SpecialName
+    get_Message(): PrivateScope, Public, HideBySig, SpecialName
+    get_Exception(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType General = 0 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType CssParsing = 1 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType HtmlParsing = 2 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType Image = 3 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType Paint = 4 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType Layout = 5 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType KeyboardMouse = 6 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType Iframe = 7 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorType ContextMenu = 8 : Public, Static, Literal, HasDefault
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlScrollEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double X   'get ' : 
+    Double Y   'get ' : 
+  Methods:
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class TheArtOfDev.HtmlRenderer.Core.Entities.HtmlStylesheetLoadEventArgs: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.EventArgs
+  Properties:
+    System.String Src 'get ' : 
+    System.Collections.Generic.Dictionary`2[System.String,System.String] Attributes 'get ' : 
+    System.String SetSrc 'get set' : 
+    System.String SetStyleSheet 'get set' : 
+    TheArtOfDev.HtmlRenderer.Core.CssData SetStyleSheetData 'get set' : 
+  Methods:
+    get_Src(): PrivateScope, Public, HideBySig, SpecialName
+    get_Attributes(): PrivateScope, Public, HideBySig, SpecialName
+    get_SetSrc(): PrivateScope, Public, HideBySig, SpecialName
+    set_SetSrc(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SetStyleSheet(): PrivateScope, Public, HideBySig, SpecialName
+    set_SetStyleSheet(String): PrivateScope, Public, HideBySig, SpecialName
+    get_SetStyleSheetData(): PrivateScope, Public, HideBySig, SpecialName
+    set_SetStyleSheetData(CssData): PrivateScope, Public, HideBySig, SpecialName
+Class TheArtOfDev.HtmlRenderer.Core.Entities.LinkElementData`1[T]: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  Type parameter: T
+    Void .ctor(System.String, System.String, T): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Id 'get ' : 
+    System.String Href 'get ' : 
+    T Rectangle 'get ' : 
+    Boolean IsAnchor 'get ' : 
+    System.String AnchorId 'get ' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    get_Href(): PrivateScope, Public, HideBySig, SpecialName
+    get_Rectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsAnchor(): PrivateScope, Public, HideBySig, SpecialName
+    get_AnchorId(): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class TheArtOfDev.HtmlRenderer.Adapters.RAdapter: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    TheArtOfDev.HtmlRenderer.Core.CssData DefaultCssData 'get ' : 
+  Methods:
+    get_DefaultCssData(): PrivateScope, Public, HideBySig, SpecialName
+    GetColor(String): PrivateScope, Public, HideBySig
+    GetPen(RColor): PrivateScope, Public, HideBySig
+    GetSolidBrush(RColor): PrivateScope, Public, HideBySig
+    GetLinearGradientBrush(RRect, RColor, RColor, Double): PrivateScope, Public, HideBySig
+    ConvertImage(Object): PrivateScope, Public, HideBySig
+    ImageFromStream(Stream): PrivateScope, Public, HideBySig
+    IsFontExists(String): PrivateScope, Public, HideBySig
+    AddFontFamily(RFontFamily): PrivateScope, Public, HideBySig
+    AddFontFamilyMapping(String, String): PrivateScope, Public, HideBySig
+    GetFont(String, Double, RFontStyle): PrivateScope, Public, HideBySig
+    GetLoadingImage(): PrivateScope, Public, HideBySig
+    GetLoadingFailedImage(): PrivateScope, Public, HideBySig
+    GetClipboardDataObject(String, String): PrivateScope, Public, HideBySig
+    SetToClipboard(String): PrivateScope, Public, HideBySig
+    SetToClipboard(String, String): PrivateScope, Public, HideBySig
+    SetToClipboard(RImage): PrivateScope, Public, HideBySig
+    GetContextMenu(): PrivateScope, Public, HideBySig
+    SaveToFile(RImage, String, String, RControl(Optional, HasDefault)): PrivateScope, Public, HideBySig
+Class TheArtOfDev.HtmlRenderer.Adapters.RBrush: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Dispose(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RContextMenu: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Int32 ItemsCount 'get ' : 
+  Methods:
+    get_ItemsCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    AddDivider(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    AddItem(String, Boolean, EventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    RemoveLastDivider(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Show(RControl, RPoint): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Dispose(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RControl: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    TheArtOfDev.HtmlRenderer.Adapters.RAdapter Adapter 'get ' : 
+    Boolean LeftMouseButton 'get ' : 
+    Boolean RightMouseButton 'get ' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint MouseLocation 'get ' : 
+  Methods:
+    get_Adapter(): PrivateScope, Public, HideBySig, SpecialName
+    get_LeftMouseButton(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_RightMouseButton(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_MouseLocation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    SetCursorDefault(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetCursorHand(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SetCursorIBeam(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DoDragDropCopy(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    MeasureString(String, RFont, Double, Int32&(Out), Double&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Invalidate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RFont: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    Double Size 'get ' : 
+    Double Height 'get ' : 
+    Double UnderlineOffset 'get ' : 
+    Double LeftPadding 'get ' : 
+  Methods:
+    get_Size(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_UnderlineOffset(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_LeftPadding(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    GetWhitespaceWidth(RGraphics): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RFontFamily: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    System.String Name 'get ' : 
+  Methods:
+    get_Name(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Class TheArtOfDev.HtmlRenderer.Adapters.RGraphics: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    GetPen(RColor): PrivateScope, Public, HideBySig
+    GetSolidBrush(RColor): PrivateScope, Public, HideBySig
+    GetLinearGradientBrush(RRect, RColor, RColor, Double): PrivateScope, Public, HideBySig
+    GetClip(): PrivateScope, Public, HideBySig
+    PopClip(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PushClip(RRect): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    PushClipExclude(RRect): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    SuspendClipping(): PrivateScope, Public, HideBySig
+    ResumeClipping(): PrivateScope, Public, HideBySig
+    SetAntiAliasSmoothingMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ReturnPreviousSmoothingMode(Object): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetTextureBrush(RImage, RRect, RPoint): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    GetGraphicsPath(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    MeasureString(String, RFont): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    MeasureString(String, RFont, Double, Int32&(Out), Double&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawString(String, RFont, RColor, RPoint, RSize, Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawLine(RPen, Double, Double, Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawRectangle(RPen, Double, Double, Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawRectangle(RBrush, Double, Double, Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawImage(RImage, RRect, RRect): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawImage(RImage, RRect): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawPath(RPen, RGraphicsPath): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawPath(RBrush, RGraphicsPath): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    DrawPolygon(RBrush, RPoint[]): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Dispose(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Methods:
+    Start(Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    LineTo(Double, Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ArcTo(Double, Double, Double, Corner): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    Dispose(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RImage: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Double Width 'get ' : 
+    Double Height 'get ' : 
+  Methods:
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Dispose(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class TheArtOfDev.HtmlRenderer.Adapters.RPen: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Properties:
+    Double Width 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle DashStyle 'set' : 
+  Methods:
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Width(Double): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_DashStyle(RDashStyle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Fields:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor Empty : Public, Static, InitOnly
+  Properties:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor Transparent 'get ' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor Black 'get ' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor White 'get ' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor WhiteSmoke 'get ' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RColor LightGray 'get ' : 
+    Byte R     'get ' : 
+    Byte G     'get ' : 
+    Byte B     'get ' : 
+    Byte A     'get ' : 
+    Boolean IsEmpty 'get ' : 
+  Methods:
+    get_Transparent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Black(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_White(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_WhiteSmoke(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_LightGray(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_R(): PrivateScope, Public, HideBySig, SpecialName
+    get_G(): PrivateScope, Public, HideBySig, SpecialName
+    get_B(): PrivateScope, Public, HideBySig, SpecialName
+    get_A(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+    op_Equality(RColor, RColor): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(RColor, RColor): PrivateScope, Public, Static, HideBySig, SpecialName
+    FromArgb(Int32, Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    FromArgb(Int32, Int32, Int32): PrivateScope, Public, Static, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle Solid = 0 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle Dash = 1 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle Dot = 2 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle DashDot = 3 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle DashDotDot = 4 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RDashStyle Custom = 5 : Public, Static, Literal, HasDefault
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle Regular = 0 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle Bold = 1 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle Italic = 2 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle Underline = 4 : Public, Static, Literal, HasDefault
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RFontStyle Strikeout = 8 : Public, Static, Literal, HasDefault
+Class TheArtOfDev.HtmlRenderer.Adapters.Entities.RKeyEvent: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(Boolean, Boolean, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Control 'get ' : 
+    Boolean AKeyCode 'get ' : 
+    Boolean CKeyCode 'get ' : 
+  Methods:
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_AKeyCode(): PrivateScope, Public, HideBySig, SpecialName
+    get_CKeyCode(): PrivateScope, Public, HideBySig, SpecialName
+Class TheArtOfDev.HtmlRenderer.Adapters.Entities.RMouseEvent: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean LeftButton 'get ' : 
+  Methods:
+    get_LeftButton(): PrivateScope, Public, HideBySig, SpecialName
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed
+  :System.ValueType
+    Void .ctor(Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint Empty : Public, Static, InitOnly
+  Properties:
+    Boolean IsEmpty 'get ' : 
+    Double X   'get set' : 
+    Double Y   'get set' : 
+  Methods:
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    set_X(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+    op_Addition(RPoint, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Subtraction(RPoint, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Equality(RPoint, RPoint): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(RPoint, RPoint): PrivateScope, Public, Static, HideBySig, SpecialName
+    Add(RPoint, RSize): PrivateScope, Public, Static, HideBySig
+    Subtract(RPoint, RSize): PrivateScope, Public, Static, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RRect: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Double, Double, Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint, TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RRect Empty : Public, Static, InitOnly
+  Properties:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint Location 'get set' : 
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize Size 'get set' : 
+    Double X   'get set' : 
+    Double Y   'get set' : 
+    Double Width 'get set' : 
+    Double Height 'get set' : 
+    Double Left 'get ' : 
+    Double Top 'get ' : 
+    Double Right 'get ' : 
+    Double Bottom 'get ' : 
+    Boolean IsEmpty 'get ' : 
+  Methods:
+    get_Location(): PrivateScope, Public, HideBySig, SpecialName
+    set_Location(RPoint): PrivateScope, Public, HideBySig, SpecialName
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    set_Size(RSize): PrivateScope, Public, HideBySig, SpecialName
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    set_X(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    set_Width(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    set_Height(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Left(): PrivateScope, Public, HideBySig, SpecialName
+    get_Top(): PrivateScope, Public, HideBySig, SpecialName
+    get_Right(): PrivateScope, Public, HideBySig, SpecialName
+    get_Bottom(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+    op_Equality(RRect, RRect): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(RRect, RRect): PrivateScope, Public, Static, HideBySig, SpecialName
+    FromLTRB(Double, Double, Double, Double): PrivateScope, Public, Static, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    Contains(Double, Double): PrivateScope, Public, HideBySig
+    Contains(RPoint): PrivateScope, Public, HideBySig
+    Contains(RRect): PrivateScope, Public, HideBySig
+    Inflate(Double, Double): PrivateScope, Public, HideBySig
+    Inflate(RSize): PrivateScope, Public, HideBySig
+    Inflate(RRect, Double, Double): PrivateScope, Public, Static, HideBySig
+    Intersect(RRect): PrivateScope, Public, HideBySig
+    Intersect(RRect, RRect): PrivateScope, Public, Static, HideBySig
+    IntersectsWith(RRect): PrivateScope, Public, HideBySig
+    Union(RRect, RRect): PrivateScope, Public, Static, HideBySig
+    Offset(RPoint): PrivateScope, Public, HideBySig
+    Offset(Double, Double): PrivateScope, Public, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(TheArtOfDev.HtmlRenderer.Adapters.Entities.RPoint): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize Empty : Public, Static, InitOnly
+  Properties:
+    Boolean IsEmpty 'get ' : 
+    Double Width 'get set' : 
+    Double Height 'get set' : 
+  Methods:
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+    get_Width(): PrivateScope, Public, HideBySig, SpecialName
+    set_Width(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Height(): PrivateScope, Public, HideBySig, SpecialName
+    set_Height(Double): PrivateScope, Public, HideBySig, SpecialName
+    op_Explicit(RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Addition(RSize, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Subtraction(RSize, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Equality(RSize, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    op_Inequality(RSize, RSize): PrivateScope, Public, Static, HideBySig, SpecialName
+    Add(RSize, RSize): PrivateScope, Public, Static, HideBySig
+    Subtract(RSize, RSize): PrivateScope, Public, Static, HideBySig
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+    ToPointF(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class TheArtOfDev.HtmlRenderer.WinForms.HtmlContainer: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Properties:
+    Boolean UseGdiPlusTextRendering 'get set' : 
+    TheArtOfDev.HtmlRenderer.Core.CssData CssData 'get ' : 
+    Boolean AvoidGeometryAntialias 'get set' : 
+    Boolean AvoidAsyncImagesLoading 'get set' : 
+    Boolean AvoidImagesLateLoading 'get set' : 
+    Boolean IsSelectionEnabled 'get set' : 
+    Boolean IsContextMenuEnabled 'get set' : 
+    System.Drawing.Point ScrollOffset 'get set' : 
+    System.Drawing.PointF Location 'get set' : 
+    System.Drawing.SizeF MaxSize 'get set' : 
+    System.Drawing.SizeF ActualSize 'get set' : 
+    System.String SelectedText 'get ' : 
+    System.String SelectedHtml 'get ' : 
+  Events:
+    System.EventHandler LoadComplete: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs] LinkClicked: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRefreshEventArgs] Refresh: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlScrollEventArgs] ScrollChange: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlRenderErrorEventArgs] RenderError: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlStylesheetLoadEventArgs] StylesheetLoad: 
+    System.EventHandler`1[TheArtOfDev.HtmlRenderer.Core.Entities.HtmlImageLoadEventArgs] ImageLoad: 
+  Methods:
+    add_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_LoadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_LinkClicked(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_Refresh(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_Refresh(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_ScrollChange(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_ScrollChange(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_RenderError(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_StylesheetLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_StylesheetLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_ImageLoad(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_UseGdiPlusTextRendering(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseGdiPlusTextRendering(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CssData(): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidGeometryAntialias(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidGeometryAntialias(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidAsyncImagesLoading(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidAsyncImagesLoading(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AvoidImagesLateLoading(): PrivateScope, Public, HideBySig, SpecialName
+    set_AvoidImagesLateLoading(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IsSelectionEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsSelectionEnabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IsContextMenuEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsContextMenuEnabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ScrollOffset(): PrivateScope, Public, HideBySig, SpecialName
+    set_ScrollOffset(Point): PrivateScope, Public, HideBySig, SpecialName
+    get_Location(): PrivateScope, Public, HideBySig, SpecialName
+    set_Location(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxSize(SizeF): PrivateScope, Public, HideBySig, SpecialName
+    get_ActualSize(): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectedText(): PrivateScope, Public, HideBySig, SpecialName
+    get_SelectedHtml(): PrivateScope, Public, HideBySig, SpecialName
+    ClearSelection(): PrivateScope, Public, HideBySig
+    SetHtml(String, CssData(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    GetHtml(HtmlGenerationStyle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    GetAttributeAt(Point, String): PrivateScope, Public, HideBySig
+    GetLinks(): PrivateScope, Public, HideBySig
+    GetLinkAt(Point): PrivateScope, Public, HideBySig
+    GetElementRectangle(String): PrivateScope, Public, HideBySig
+    PerformLayout(Graphics): PrivateScope, Public, HideBySig
+    PerformPaint(Graphics): PrivateScope, Public, HideBySig
+    HandleMouseDown(Control, MouseEventArgs): PrivateScope, Public, HideBySig
+    HandleMouseUp(Control, MouseEventArgs): PrivateScope, Public, HideBySig
+    HandleMouseDoubleClick(Control, MouseEventArgs): PrivateScope, Public, HideBySig
+    HandleMouseMove(Control, MouseEventArgs): PrivateScope, Public, HideBySig
+    HandleMouseLeave(Control): PrivateScope, Public, HideBySig
+    HandleKeyDown(Control, KeyEventArgs): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class TheArtOfDev.HtmlRenderer.WinForms.HtmlRender: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    AddFontFamily(FontFamily): PrivateScope, Public, Static, HideBySig
+    AddFontFamilyMapping(String, String): PrivateScope, Public, Static, HideBySig
+    ParseStyleSheet(String, Boolean(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    Measure(Graphics, String, Single(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    MeasureGdiPlus(Graphics, String, Single(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    Render(Graphics, String, Single(Optional, HasDefault), Single(Optional, HasDefault), Single(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    Render(Graphics, String, PointF, SizeF, CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderGdiPlus(Graphics, String, Single(Optional, HasDefault), Single(Optional, HasDefault), Single(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderGdiPlus(Graphics, String, PointF, SizeF, CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToMetafile(String, Single(Optional, HasDefault), Single(Optional, HasDefault), Single(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImage(Image, String, PointF(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImage(Image, String, PointF, SizeF, CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImage(String, Size, Color(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImage(String, Int32(Optional, HasDefault), Int32(Optional, HasDefault), Color(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImage(String, Size, Size, Color(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImageGdiPlus(String, Size, TextRenderingHint(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImageGdiPlus(String, Int32(Optional, HasDefault), Int32(Optional, HasDefault), TextRenderingHint(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RenderToImageGdiPlus(String, Size, Size, TextRenderingHint(Optional, HasDefault), CssData(Optional, HasDefault), EventHandler`1(Optional, HasDefault), EventHandler`1(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+Class TheArtOfDev.HtmlRenderer.WinForms.MetafileExtensions: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    SaveAsEmf(Metafile, String): PrivateScope, Public, Static, HideBySig
+    GetEnhMetaFileBits(Int32, Int32, Byte[]): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+    DeleteEnhMetaFile(Int32): PrivateScope, Public, Static, HideBySig, PinvokeImpl
+Struct Bunifu.UI.WinForms.BunifuLabel+TextAlignments: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TextAlignments Left = 0 : Public, Static, Literal, HasDefault
+    TextAlignments Right = 1 : Public, Static, Literal, HasDefault
+    TextAlignments Center = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuLabel+TextFormattingOptions: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TextFormattingOptions Default = 0 : Public, Static, Literal, HasDefault
+    TextFormattingOptions UpperCase = 1 : Public, Static, Literal, HasDefault
+    TextFormattingOptions LowerCase = 2 : Public, Static, Literal, HasDefault
+    TextFormattingOptions TitleCase = 3 : Public, Static, Literal, HasDefault
+    TextFormattingOptions SentenceCase = 4 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuLabel+BunifuDesigner: AutoLayout, AnsiClass, Class, NestedPublic, HasSecurity, BeforeFieldInit
+  :System.Windows.Forms.Design.ControlDesigner
+  Properties:
+    System.Windows.Forms.Design.SelectionRules SelectionRules 'get ' : 
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_SelectionRules(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuLabel+BunifuLabelActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Name 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    Boolean AutoSize 'get set' : 
+    Boolean AutoSizeHeightOnly 'get set' : 
+    Boolean AutoEllipsis 'get set' : 
+    System.Drawing.ContentAlignment TextAlign 'get set' : 
+    System.Windows.Forms.DockStyle Dock 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    System.String Text 'get set' : 
+  Methods:
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(Font): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoSize(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoSizeHeightOnly(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoSizeHeightOnly(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoEllipsis(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoEllipsis(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(ContentAlignment): PrivateScope, Public, HideBySig, SpecialName
+    get_Dock(): PrivateScope, Public, HideBySig, SpecialName
+    set_Dock(DockStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_BackColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Text(): PrivateScope, Public, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, HideBySig, SpecialName
+Struct Bunifu.UI.WinForms.Ellipsis+EllipsisFormat: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    EllipsisFormat None = 0 : Public, Static, Literal, HasDefault
+    EllipsisFormat End = 1 : Public, Static, Literal, HasDefault
+    EllipsisFormat Start = 2 : Public, Static, Literal, HasDefault
+    EllipsisFormat Middle = 3 : Public, Static, Literal, HasDefault
+    EllipsisFormat Path = 4 : Public, Static, Literal, HasDefault
+    EllipsisFormat Word = 8 : Public, Static, Literal, HasDefault
+Struct TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath+Corner: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Corner TopLeft = 0 : Public, Static, Literal, HasDefault
+    Corner TopRight = 1 : Public, Static, Literal, HasDefault
+    Corner BottomLeft = 2 : Public, Static, Literal, HasDefault
+    Corner BottomRight = 3 : Public, Static, Literal, HasDefault
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

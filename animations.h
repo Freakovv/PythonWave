@@ -3,8 +3,37 @@
 
 
 using namespace PythonWave;
-
 //Здесь хранятся функции отвечающие за анимацию окна
+
+short fade_mode = 0; 	//0 — появление, 1 — минимизация, 2 — закрытие
+short close_on_close = FALSE; //сообщает обработчику закрытия повторно анимировать или нет
+//WndProc
+//Обработчик закрытия формы
+void login::WndProc(System::Windows::Forms::Message% msg) {
+		switch (msg.Msg) {
+		case WM_SYSCOMMAND:
+			switch (msg.WParam.ToInt32()) {
+			case SC_MINIMIZE:
+				msg.Result = IntPtr::Zero;
+				fade_mode = 1;
+				fadetimer->Start();
+				return;
+				break;
+			}
+			break;
+		case WM_ACTIVATE: {
+			if (HIWORD(msg.WParam.ToInt32()) == 0) { //потому что ненулевое значение wpa здесь означает, что форма свернута
+				this->WindowState = FormWindowState::Normal;
+				fade_mode = 0;
+				fadetimer->Start();
+				msg.Result = IntPtr::Zero;
+				return;
+			}
+		}
+		}
+
+		Form::WndProc(msg);
+	}
 System::Void login::fadetimer_Tick(System::Object^ sender, System::EventArgs^ e) {
 	if (this->IsDisposed == true) {
 		// Обработка закрытия формы

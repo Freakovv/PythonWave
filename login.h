@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <msclr\marshal_cppstd.h>
 
 namespace PythonWave {
 	using namespace System;
@@ -64,15 +63,6 @@ namespace PythonWave {
 
 	private: System::Windows::Forms::Label^ labelRemember;
 	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ ButtonSwitchRemember;
-
-
-
-
-
-
-
-
-
 	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonQuestion;
 
 	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageOption;
@@ -865,40 +855,21 @@ namespace PythonWave {
 	//////////////////////////////////////////////////////////////////////////////////////
 	private: System::Void ExitWindow_click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MinimizeWindow_click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonQuestion_click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+	private: System::Void buttonCloseTerms(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ShowRegister(bool show);
+	private: System::Void buttonShowAuthorize_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void SetLocations();
 
 	//////////////////////////////////////////////////////////////////////////////////////
 
 		//animations.h
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	short fade_mode = 0; 	//0 — появление, 1 — минимизация, 2 — закрытие
-	short close_on_close = FALSE; //сообщает обработчику закрытия повторно анимировать или нет
-	//WndProc
-	//Обработчик закрытия формы
-	protected: virtual void WndProc(System::Windows::Forms::Message% msg) override {
-		switch (msg.Msg) {
-		case WM_SYSCOMMAND:
-			switch (msg.WParam.ToInt32()) {
-			case SC_MINIMIZE:
-				msg.Result = IntPtr::Zero;
-				fade_mode = 1;
-				fadetimer->Start();
-				return;
-				break;
-			}
-			break;
-		case WM_ACTIVATE: {
-			if (HIWORD(msg.WParam.ToInt32()) == 0) { //потому что ненулевое значение wpa здесь означает, что форма свернута
-				this->WindowState = FormWindowState::Normal;
-				fade_mode = 0;
-				fadetimer->Start();
-				msg.Result = IntPtr::Zero;
-				return;
-			}
-		}
-		}
-
-		Form::WndProc(msg);
-	}
+	public: virtual void WndProc(System::Windows::Forms::Message% msg) override;
 	private: System::Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -908,60 +879,8 @@ namespace PythonWave {
 
 
 	private: System::Void login_Load(System::Object^ sender, System::EventArgs^ e) {
-		//Установка корректных координат элементов
-		textBoxTerms->Location = System::Drawing::Point(5, 5);
-		panelRegister->Location = System::Drawing::Point(4, 47);
-		panelAuthorize->Location = System::Drawing::Point(4, 47);
+		SetLocations();
 	}
-	private: System::Void buttonQuestion_click(System::Object^ sender, System::EventArgs^ e) {
-		//Вывод информации об опции сохранения данных
-		MessageOption->Text = "Это опция позволяет сохранить ваши данные при последующем входе";
-		MessageOption->Show();
-	}
-	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		//Открывает условия пользования
-		textBoxTerms->Visible = true;
-		ButtonCloseTerms->Visible = true;
-
-		//Корректное отображение элементов
-		textBoxTerms->BringToFront();
-		ButtonCloseTerms->BringToFront();
-	}
-	private: System::Void buttonCloseTerms(System::Object^ sender, System::EventArgs^ e) {
-		//Закрывает условия пользования
-		textBoxTerms->Visible = false;
-		ButtonCloseTerms->Visible = false;
-		//Спрашивает о согласии, после закрытия
-		System::Windows::Forms::DialogResult result = MessageAcceptTerms->Show();
-		if (result == System::Windows::Forms::DialogResult::Yes) {
-			CheckBoxTerms->Checked = true;
-		}
-		else if (result == System::Windows::Forms::DialogResult::No) {
-			CheckBoxTerms->Checked = false;
-		}
-	}
-	private: System::Void ShowRegister(bool show) {
-		if (show) {
-			panelAuthorize->Visible = false;
-			panelRegister->Visible = true;
-		}
-		else {
-			panelAuthorize->Visible = true;
-			panelRegister ->Visible = false;
-		}
-	}
-	private: System::Void buttonShowAuthorize_Click(System::Object^ sender, System::EventArgs^ e) {
-		ShowRegister(false);
-	}
-	private: System::Void buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e) {
-		ShowRegister(true);
-
-	}
-	private: System::Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-	}
-	private: System::Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-	}
+	
 };
 }

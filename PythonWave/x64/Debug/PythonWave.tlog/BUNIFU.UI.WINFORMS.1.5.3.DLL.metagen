@@ -1,0 +1,1360 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Assembly System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class WindowsFormsControlLibrary1.transparentBg1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form, System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Bunifu.Framework.BunifuCustomTextbox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.TextBox
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Color BorderColor 'get set' : 
+  Methods:
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuCheckbox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Color CheckedOnColor 'get set' : 
+    System.Drawing.Color ChechedOffColor 'get set' : 
+    Boolean Checked 'get set' : 
+  Events:
+    System.EventHandler OnChange: 
+  Methods:
+    add_OnChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    set_CheckedOnColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_CheckedOnColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ChechedOffColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ChechedOffColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Checked(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Checked(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuCircleProgressbar: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 GetPassentage 'get ' : 
+    System.Drawing.Color ProgressColor 'get set' : 
+    Boolean LabelVisible 'get set' : 
+    System.Drawing.Color ProgressBackColor 'get set' : 
+    Int32 Value 'get set' : 
+    Int32 LineThickness 'get set' : 
+    Int32 LineProgressThickness 'get set' : 
+    Int32 MaxValue 'get set' : 
+    Int32 animationIterval 'get set' : 
+    Boolean animated 'get set' : 
+    Int32 animationSpeed 'get set' : 
+  Events:
+    System.EventHandler ProgressChanged: 
+  Methods:
+    get_GetPassentage(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ProgressColor(): PrivateScope, Public, HideBySig, SpecialName
+    get_LabelVisible(): PrivateScope, Public, HideBySig, SpecialName
+    set_LabelVisible(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressBackColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ProgressBackColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LineThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineProgressThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LineProgressThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxValue(): PrivateScope, Public, HideBySig, SpecialName
+    add_ProgressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ProgressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_animationIterval(): PrivateScope, Public, HideBySig, SpecialName
+    set_animationIterval(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_animated(): PrivateScope, Public, HideBySig, SpecialName
+    set_animated(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_animationSpeed(): PrivateScope, Public, HideBySig, SpecialName
+    set_animationSpeed(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuDatepicker: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Bunifu.Framework.UI.BunifuFlatButton Style : Public
+  Properties:
+    System.DateTime Value 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    System.Windows.Forms.DateTimePickerFormat Format 'get set' : 
+    System.String FormatCustom 'get set' : 
+  Events:
+    System.EventHandler onValueChanged: 
+  Methods:
+    add_onValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Format(): PrivateScope, Public, HideBySig, SpecialName
+    set_Format(DateTimePickerFormat): PrivateScope, Public, HideBySig, SpecialName
+    get_FormatCustom(): PrivateScope, Public, HideBySig, SpecialName
+    set_FormatCustom(String): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuColorTransition: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 ProgessValue 'get set' : 
+    System.Drawing.Color Value 'get ' : 
+    System.Drawing.Color Color1 'get set' : 
+    System.Drawing.Color Color2 'get set' : 
+  Events:
+    System.EventHandler OnValueChange: 
+  Methods:
+    get_ProgessValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgessValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    get_Color1(): PrivateScope, Public, HideBySig, SpecialName
+    set_Color1(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Color2(): PrivateScope, Public, HideBySig, SpecialName
+    set_Color2(Color): PrivateScope, Public, HideBySig, SpecialName
+    add_OnValueChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnValueChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    getColorScale(Int32, Color, Color): PrivateScope, Public, Static, HideBySig
+Class Bunifu.Framework.UI.BunifuCustomDataGrid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.DataGridView
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Drawing.Color Hcolor : Public
+    System.Drawing.Color HBgcolor : Public
+  Properties:
+    Boolean DoubleBuffered 'get set' : 
+    System.Drawing.Color HeaderBgColor 'get set' : 
+    System.Drawing.Color HeaderForeColor 'get set' : 
+  Methods:
+    set_DoubleBuffered(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_DoubleBuffered(): PrivateScope, Public, HideBySig, SpecialName
+    get_HeaderBgColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_HeaderBgColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_HeaderForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_HeaderForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    ApplyDoubleBuffer(DataGridView, Boolean): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuDragControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Windows.Forms.Control TargetControl 'get set' : 
+    System.ComponentModel.ISite Site 'get set' : 
+    Boolean Fixed 'get set' : 
+    Boolean Vertical 'get set' : 
+    Boolean Horizontal 'get set' : 
+  Methods:
+    Grab(Control): PrivateScope, Public, HideBySig
+    Grab(): PrivateScope, Public, HideBySig
+    Release(): PrivateScope, Public, HideBySig
+    Drag(Boolean(Optional, HasDefault), Boolean(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    get_TargetControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_TargetControl(Control): PrivateScope, Public, HideBySig, SpecialName
+    get_Site(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Site(ISite): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Fixed(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fixed(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Vertical(): PrivateScope, Public, HideBySig, SpecialName
+    set_Vertical(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Horizontal(): PrivateScope, Public, HideBySig, SpecialName
+    set_Horizontal(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuDropdown: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 _BorderRadius : Public
+    Bunifu.Framework.UI.BunifuFlatButton Style : Public
+  Properties:
+    Int32 BorderRadius 'get set' : 
+    Int32 selectedIndex 'get set' : 
+    System.String selectedValue 'get ' : 
+    ObjectCollection Items 'get set' : 
+    System.String[] items 'get set' : 
+    System.Drawing.Color onHoverColor 'get set' : 
+    System.Drawing.Color NomalColor 'get set' : 
+    Boolean Enabled 'get set' : 
+    System.Drawing.Color DisabledColor 'get set' : 
+  Events:
+    System.EventHandler onItemSelected: 
+    System.EventHandler onItemAdded: 
+    System.EventHandler onItemRemoved: 
+  Methods:
+    AddItem(String): PrivateScope, Public, HideBySig
+    RemoveItem(String): PrivateScope, Public, HideBySig
+    SelectedItem(String): PrivateScope, Public, HideBySig
+    RemoveAt(Int32): PrivateScope, Public, HideBySig
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    add_onItemSelected(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onItemSelected(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onItemAdded(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onItemAdded(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onItemRemoved(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onItemRemoved(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_selectedIndex(): PrivateScope, Public, HideBySig, SpecialName
+    set_selectedIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_selectedValue(): PrivateScope, Public, HideBySig, SpecialName
+    get_Items(): PrivateScope, Public, HideBySig, SpecialName
+    set_Items(ObjectCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_items(): PrivateScope, Public, HideBySig, SpecialName
+    set_items(String[]): PrivateScope, Public, HideBySig, SpecialName
+    Clear(): PrivateScope, Public, HideBySig
+    get_onHoverColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_onHoverColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_NomalColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_NomalColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Enabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Enabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_DisabledColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_DisabledColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuElipse: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.ComponentModel.ISite Site 'get set' : 
+    System.Windows.Forms.Control TargetControl 'get set' : 
+    Int32 ElipseRadius 'get set' : 
+  Events:
+    System.EventHandler TargetControlResized: 
+  Methods:
+    get_Site(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Site(ISite): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    add_TargetControlResized(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TargetControlResized(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_TargetControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_TargetControl(Control): PrivateScope, Public, HideBySig, SpecialName
+    get_ElipseRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_ElipseRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    ApplyElipse(Int32): PrivateScope, Public, HideBySig
+    ApplyElipse(): PrivateScope, Public, HideBySig
+    ApplyElipse(Control, Int32): PrivateScope, Public, HideBySig
+    ApplyElipse(Control): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuFlatButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Drawing.Color colbackground : Public
+    System.Drawing.Color colhover : Public
+    System.Drawing.Color colselected : Public
+    System.Windows.Forms.PictureBox limage : Public
+    System.Windows.Forms.PictureBox rimage : Public
+  Properties:
+    System.String ButtonText 'get set' : 
+    System.String Text 'get set' : 
+    Boolean Enabled 'get set' : 
+    System.Drawing.Color DisabledColor 'get set' : 
+    System.Drawing.ContentAlignment TextAlign 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    System.Drawing.Color Iconcolor 'get set' : 
+    Boolean IsTab 'get set' : 
+    System.Drawing.Image Iconimage 'get set' : 
+    Boolean IconVisible 'get set' : 
+    Boolean IconRightVisible 'get set' : 
+    Int32 IconMarginLeft 'get set' : 
+    Int32 IconMarginRight 'get set' : 
+    System.Drawing.Image Iconimage_Selected 'get set' : 
+    System.Drawing.Image Iconimage_right 'get set' : 
+    System.Drawing.Image Iconimage_right_Selected 'get set' : 
+    System.Drawing.Font TextFont 'get set' : 
+    System.Drawing.Color Textcolor 'get set' : 
+    System.Drawing.Color Normalcolor 'get set' : 
+    Double IconZoom 'get set' : 
+    Double IconRightZoom 'get set' : 
+    System.Drawing.Color OnHovercolor 'get set' : 
+    System.Drawing.Color Activecolor 'get set' : 
+    Boolean Active 'get set' : 
+    Boolean selected 'get set' : 
+    System.Drawing.Color OnHoverTextColor 'get set' : 
+  Events:
+    System.EventHandler MouseDown: 
+    System.EventHandler MouseUp: 
+  Methods:
+    get_ButtonText(): PrivateScope, Public, HideBySig, SpecialName
+    set_ButtonText(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Enabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Enabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_DisabledColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_DisabledColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(ContentAlignment): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Iconcolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Iconcolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IsTab(): PrivateScope, Public, HideBySig, SpecialName
+    set_IsTab(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Iconimage(): PrivateScope, Public, HideBySig, SpecialName
+    set_Iconimage(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_IconVisible(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconVisible(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IconRightVisible(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconRightVisible(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IconMarginLeft(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconMarginLeft(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_IconMarginRight(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconMarginRight(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Iconimage_Selected(): PrivateScope, Public, HideBySig, SpecialName
+    set_Iconimage_Selected(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_Iconimage_right(): PrivateScope, Public, HideBySig, SpecialName
+    set_Iconimage_right(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_Iconimage_right_Selected(): PrivateScope, Public, HideBySig, SpecialName
+    set_Iconimage_right_Selected(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_TextFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextFont(Font): PrivateScope, Public, HideBySig, SpecialName
+    get_Textcolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Textcolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Normalcolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Normalcolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IconZoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconZoom(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_IconRightZoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_IconRightZoom(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_OnHovercolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_OnHovercolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Activecolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Activecolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Active(): PrivateScope, Public, HideBySig, SpecialName
+    set_Active(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_selected(): PrivateScope, Public, HideBySig, SpecialName
+    set_selected(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_OnHoverTextColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_OnHoverTextColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    reset(): PrivateScope, Public, HideBySig
+    add_MouseDown(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseUp(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseUp(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuCustomLabel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Label
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Bunifu.Framework.UI.BunifuForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 BorderRadius 'get set' : 
+  Methods:
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuGauge: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Color ProgressColor1 'get set' : 
+    System.Drawing.Color ProgressColor2 'get set' : 
+    System.Drawing.Color ProgressBgColor 'get set' : 
+    Int32 Value 'get set' : 
+    System.String Suffix 'get set' : 
+    Int32 Thickness 'get set' : 
+  Methods:
+    get_ProgressColor1(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressColor1(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ProgressColor2(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressColor2(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ProgressBgColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressBgColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Suffix(): PrivateScope, Public, HideBySig, SpecialName
+    set_Suffix(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Thickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_Thickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuGradientPanel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Panel
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Color GradientTopLeft 'get set' : 
+    System.Drawing.Color GradientTopRight 'get set' : 
+    System.Drawing.Color GradientBottomLeft 'get set' : 
+    System.Drawing.Color GradientBottomRight 'get set' : 
+    Int32 Quality 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+  Methods:
+    get_GradientTopLeft(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_GradientTopLeft(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_GradientTopRight(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_GradientTopRight(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_GradientBottomLeft(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_GradientBottomLeft(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_GradientBottomRight(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_GradientBottomRight(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Quality(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Quality(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BackColor(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuHTTP_Utils: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Value 'get ' : 
+    System.Exception LastError 'get ' : 
+    System.String JobName 'get set' : 
+    System.String Url 'get set' : 
+    Boolean IsBusy 'get ' : 
+  Events:
+    System.EventHandler OnJobDone: 
+    System.EventHandler OnError: 
+    System.EventHandler onAborted: 
+    System.EventHandler onFileDownloadComplete: 
+    System.EventHandler onFileDownloadFail: 
+    System.EventHandler onBusyStateChanged: 
+    System.EventHandler OnDownloadProgressChanged: 
+  Methods:
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    get_LastError(): PrivateScope, Public, HideBySig, SpecialName
+    get_JobName(): PrivateScope, Public, HideBySig, SpecialName
+    set_JobName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Url(): PrivateScope, Public, HideBySig, SpecialName
+    set_Url(String): PrivateScope, Public, HideBySig, SpecialName
+    PostString(): PrivateScope, Public, HideBySig
+    PostString(String): PrivateScope, Public, HideBySig
+    PostString(Dictionary`2): PrivateScope, Public, HideBySig
+    PostString(String, String): PrivateScope, Public, HideBySig
+    PostString(String, String, String): PrivateScope, Public, HideBySig
+    AbortJob(): PrivateScope, Public, HideBySig
+    get_IsBusy(): PrivateScope, Public, HideBySig, SpecialName
+    add_OnJobDone(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnJobDone(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_OnError(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnError(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onAborted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onAborted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onFileDownloadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onFileDownloadComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onFileDownloadFail(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onFileDownloadFail(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onBusyStateChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onBusyStateChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_OnDownloadProgressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnDownloadProgressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    getFileSize(String): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuImageButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.PictureBox
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Zoom 'get set' : 
+    System.Drawing.Image ImageActive 'get set' : 
+  Methods:
+    get_Zoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zoom(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ImageActive(): PrivateScope, Public, HideBySig, SpecialName
+    set_ImageActive(Image): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuCards: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Panel
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Color color 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Boolean RightSahddow 'get set' : 
+    Boolean LeftSahddow 'get set' : 
+    Boolean BottomSahddow 'get set' : 
+    Int32 ShadowDepth 'get set' : 
+  Methods:
+    get_color(): PrivateScope, Public, HideBySig, SpecialName
+    set_color(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RightSahddow(): PrivateScope, Public, HideBySig, SpecialName
+    set_RightSahddow(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_LeftSahddow(): PrivateScope, Public, HideBySig, SpecialName
+    set_LeftSahddow(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BottomSahddow(): PrivateScope, Public, HideBySig, SpecialName
+    set_BottomSahddow(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_ShadowDepth(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShadowDepth(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuMaterialTextbox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 LineThickness 'get set' : 
+    System.Drawing.Color LineIdleColor 'get set' : 
+    System.Drawing.Color LineMouseHoverColor 'get set' : 
+    System.Drawing.Color LineFocusedColor 'get set' : 
+    System.Drawing.Color HintForeColor 'get set' : 
+    System.String HintText 'get set' : 
+    System.String Text 'get set' : 
+    System.Windows.Forms.HorizontalAlignment TextAlign 'get set' : 
+    Boolean isPassword 'get set' : 
+    System.Windows.Forms.CharacterCasing characterCasing 'get set' : 
+    Int32 MaxLength 'get set' : 
+    Boolean isOnFocused 'get ' : 
+    System.Windows.Forms.AutoCompleteSource AutoCompleteSource 'get set' : 
+    System.Windows.Forms.AutoCompleteMode AutoCompleteMode 'get set' : 
+    System.Windows.Forms.AutoCompleteStringCollection AutoCompleteCustomSource 'get set' : 
+  Events:
+    System.EventHandler OnValueChanged: 
+  Methods:
+    get_LineThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LineIdleColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineIdleColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_LineMouseHoverColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineMouseHoverColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_LineFocusedColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineFocusedColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+    get_HintForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_HintForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_HintText(): PrivateScope, Public, HideBySig, SpecialName
+    set_HintText(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(HorizontalAlignment): PrivateScope, Public, HideBySig, SpecialName
+    add_OnValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_isPassword(): PrivateScope, Public, HideBySig, SpecialName
+    set_isPassword(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_characterCasing(): PrivateScope, Public, HideBySig, SpecialName
+    set_characterCasing(CharacterCasing): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxLength(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxLength(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_isOnFocused(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoCompleteSource(AutoCompleteSource): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoCompleteSource(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoCompleteMode(AutoCompleteMode): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoCompleteMode(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoCompleteCustomSource(AutoCompleteStringCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_AutoCompleteCustomSource(): PrivateScope, Public, HideBySig, SpecialName
+    GetFocus(): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuMetroTextbox: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 BorderThickness 'get set' : 
+    System.Drawing.Color BorderColorIdle 'get set' : 
+    System.Drawing.Color BorderColorFocused 'get set' : 
+    System.Drawing.Color BorderColorMouseHover 'get set' : 
+    System.String Text 'get set' : 
+    System.Windows.Forms.HorizontalAlignment TextAlign 'get set' : 
+    Boolean isPassword 'get set' : 
+    Boolean isOnFocused 'get ' : 
+    System.Windows.Forms.CharacterCasing characterCasing 'get set' : 
+    Int32 MaxLength 'get set' : 
+  Events:
+    System.EventHandler OnValueChanged: 
+  Methods:
+    get_BorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColorIdle(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColorIdle(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColorFocused(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColorFocused(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColorMouseHover(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColorMouseHover(Color): PrivateScope, Public, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(HorizontalAlignment): PrivateScope, Public, HideBySig, SpecialName
+    add_OnValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_isPassword(): PrivateScope, Public, HideBySig, SpecialName
+    set_isPassword(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_isOnFocused(): PrivateScope, Public, HideBySig, SpecialName
+    get_characterCasing(): PrivateScope, Public, HideBySig, SpecialName
+    set_characterCasing(CharacterCasing): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxLength(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxLength(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuRange: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 BorderRadius 'get set' : 
+    Int32 RangeMax 'get set' : 
+    Int32 RangeMin 'get set' : 
+    Int32 MaximumRange 'get set' : 
+    System.Drawing.Color IndicatorColor 'get set' : 
+    System.Drawing.Color BackgroudColor 'get set' : 
+  Events:
+    System.EventHandler RangeChanged: 
+    System.EventHandler RangeMaxChanged: 
+    System.EventHandler RangeMinChanged: 
+  Methods:
+    add_RangeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RangeChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RangeMaxChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RangeMaxChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_RangeMinChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_RangeMinChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    get_RangeMax(): PrivateScope, Public, HideBySig, SpecialName
+    set_RangeMax(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_RangeMin(): PrivateScope, Public, HideBySig, SpecialName
+    set_RangeMin(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MaximumRange(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaximumRange(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_IndicatorColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IndicatorColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackgroudColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BackgroudColor(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuRating: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Value 'get set' : 
+  Events:
+    System.EventHandler onValueChanged: 
+  Methods:
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    add_onValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuSeparator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Vertical 'get set' : 
+    System.Drawing.Color LineColor 'get set' : 
+    Int32 Transparency 'get set' : 
+    Int32 LineThickness 'get set' : 
+  Methods:
+    get_Vertical(): PrivateScope, Public, HideBySig, SpecialName
+    set_Vertical(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_LineColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Transparency(): PrivateScope, Public, HideBySig, SpecialName
+    set_Transparency(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LineThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuiOSSwitch: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Value 'get set' : 
+    System.Drawing.Color OnColor 'get set' : 
+    System.Drawing.Color OffColor 'get set' : 
+  Events:
+    System.EventHandler OnValueChange: 
+  Methods:
+    add_OnValueChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_OnValueChange(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_OnColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_OnColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_OffColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_OffColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuThinButton2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean Onfocus : Public
+  Properties:
+    System.Drawing.Color ActiveLineColor 'get set' : 
+    System.Drawing.Color ActiveForecolor 'get set' : 
+    System.Drawing.Color ActiveFillColor 'get set' : 
+    Int32 ActiveCornerRadius 'get set' : 
+    Int32 ActiveBorderThickness 'get set' : 
+    System.Drawing.Color IdleLineColor 'get set' : 
+    System.Drawing.Color IdleForecolor 'get set' : 
+    System.Drawing.Color IdleFillColor 'get set' : 
+    Int32 IdleCornerRadius 'get set' : 
+    Int32 IdleBorderThickness 'get set' : 
+    System.Drawing.ContentAlignment TextAlign 'get set' : 
+    System.String ButtonText 'get set' : 
+  Events:
+    System.EventHandler Click: 
+    System.EventHandler MouseDown: 
+    System.EventHandler MouseEnter: 
+    System.EventHandler MouseHover: 
+    System.EventHandler MouseLeave: 
+    System.EventHandler MouseMove: 
+  Methods:
+    get_ActiveLineColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActiveLineColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ActiveForecolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActiveForecolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ActiveFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActiveFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ActiveCornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActiveCornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ActiveBorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_ActiveBorderThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_IdleLineColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IdleLineColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IdleForecolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IdleForecolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IdleFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IdleFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IdleCornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_IdleCornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_IdleBorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_IdleBorderThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TextAlign(): PrivateScope, Public, HideBySig, SpecialName
+    set_TextAlign(ContentAlignment): PrivateScope, Public, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+    get_ButtonText(): PrivateScope, Public, HideBySig, SpecialName
+    set_ButtonText(String): PrivateScope, Public, HideBySig, SpecialName
+    add_Click(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_Click(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseEnter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseEnter(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseHover(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseHover(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseLeave(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseMove(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseMove(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuTileButton: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Image Image 'get set' : 
+    System.String LabelText 'get set' : 
+    Int32 LabelPosition 'get set' : 
+    Int32 ImageZoom 'get set' : 
+    Int32 ImagePosition 'get set' : 
+    System.Drawing.Color color 'get set' : 
+    System.Drawing.Color colorActive 'get set' : 
+  Methods:
+    get_Image(): PrivateScope, Public, HideBySig, SpecialName
+    set_Image(Image): PrivateScope, Public, HideBySig, SpecialName
+    get_LabelText(): PrivateScope, Public, HideBySig, SpecialName
+    set_LabelText(String): PrivateScope, Public, HideBySig, SpecialName
+    get_LabelPosition(): PrivateScope, Public, HideBySig, SpecialName
+    set_LabelPosition(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ImageZoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_ImageZoom(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ImagePosition(): PrivateScope, Public, HideBySig, SpecialName
+    set_ImagePosition(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_color(): PrivateScope, Public, HideBySig, SpecialName
+    set_color(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_colorActive(): PrivateScope, Public, HideBySig, SpecialName
+    set_colorActive(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuSlider: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Value 'get set' : 
+    Int32 MaximumValue 'get set' : 
+    System.Drawing.Color IndicatorColor 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    System.Drawing.Color BackgroudColor 'get set' : 
+  Events:
+    System.EventHandler ValueChanged: 
+    System.EventHandler ValueChangeComplete: 
+  Methods:
+    add_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MaximumValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaximumValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_IndicatorColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IndicatorColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackgroudColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BackgroudColor(): PrivateScope, Public, HideBySig, SpecialName
+    add_ValueChangeComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ValueChangeComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuVTrackbar: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Value 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Int32 SliderRadius 'get set' : 
+    Int32 MaximumValue 'get set' : 
+    System.Drawing.Color IndicatorColor 'get set' : 
+    System.Drawing.Color BackgroudColor 'get set' : 
+  Events:
+    System.EventHandler ValueChanged: 
+  Methods:
+    add_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_SliderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_SliderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    get_MaximumValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaximumValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_IndicatorColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IndicatorColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackgroudColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BackgroudColor(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuWebClient: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Net.WebClient
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean AllowWriteStreamBuffering 'get set' : 
+    Boolean AllowReadStreamBuffering 'get set' : 
+  Methods:
+    get_AllowWriteStreamBuffering(): PrivateScope, Public, HideBySig, SpecialName
+    set_AllowWriteStreamBuffering(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_AllowReadStreamBuffering(): PrivateScope, Public, HideBySig, SpecialName
+    set_AllowReadStreamBuffering(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuSearchEngine: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String lastError : Public
+    Int32 Passentage : Public
+    System.String path : Public
+    System.String curFile : Public
+    System.String curFolder : Public
+    Boolean pause : Public
+    System.Collections.Generic.List`1[System.IO.FileInfo] Files : Public
+    System.Collections.Generic.List`1[System.IO.DirectoryInfo] Folders : Public
+  Events:
+    System.EventHandler onFileScan: 
+    System.EventHandler onScanError: 
+    System.EventHandler onFolderScan: 
+    System.EventHandler onFailed: 
+    System.EventHandler onAborted: 
+    System.EventHandler onScanComplete: 
+  Methods:
+    add_onFileScan(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onFileScan(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onScanError(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onScanError(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onFolderScan(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onFolderScan(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onFailed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onFailed(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onAborted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onAborted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_onScanComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_onScanComplete(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    startScan(String): PrivateScope, Public, HideBySig
+    abortScan(): PrivateScope, Public, HideBySig
+    restartScan(): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuSwitch: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 BorderRadius 'get set' : 
+    Boolean Value 'get set' : 
+    System.Drawing.Color Textcolor 'get set' : 
+    System.Drawing.Color Oncolor 'get set' : 
+    System.Drawing.Color Onoffcolor 'get set' : 
+  Methods:
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Textcolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Textcolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Oncolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Oncolor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Onoffcolor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Onoffcolor(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuTrackbar: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Value 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Int32 SliderRadius 'get set' : 
+    Int32 MaximumValue 'get set' : 
+    Int32 MinimumValue 'get set' : 
+    System.Drawing.Color IndicatorColor 'get set' : 
+    System.Drawing.Color BackgroudColor 'get set' : 
+  Events:
+    System.EventHandler ValueChanged: 
+  Methods:
+    add_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_ValueChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_SliderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_SliderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    get_MaximumValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaximumValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MinimumValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_MinimumValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_IndicatorColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_IndicatorColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackgroudColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BackgroudColor(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuProgressBar: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 _Value : Public
+    Int32 Maximum_Value : Public
+  Properties:
+    Int32 BorderRadius 'get set' : 
+    System.Drawing.Color ProgressColor 'get set' : 
+    Int32 Value 'get set' : 
+    Int32 MaximumValue 'get set' : 
+  Events:
+    System.EventHandler progressChanged: 
+  Methods:
+    add_progressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_progressChanged(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ProgressColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ProgressColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Value(): PrivateScope, Public, HideBySig, SpecialName
+    set_Value(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MaximumValue(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaximumValue(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.BunifuFormFadeTransition: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Delay 'get set' : 
+  Events:
+    System.EventHandler TransitionEnd: 
+  Methods:
+    ShowAsyc(Form): PrivateScope, Public, HideBySig
+    HideAsyc(Form, Boolean): PrivateScope, Public, HideBySig
+    get_Delay(): PrivateScope, Public, HideBySig, SpecialName
+    set_Delay(Int32): PrivateScope, Public, HideBySig, SpecialName
+    add_TransitionEnd(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_TransitionEnd(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.Framework.UI.Drag: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Grab(Control): PrivateScope, Public, HideBySig
+    Release(): PrivateScope, Public, HideBySig
+    MoveObject(Boolean(Optional, HasDefault), Boolean(Optional, HasDefault)): PrivateScope, Public, HideBySig
+Class Bunifu.Framework.UI.BunifuUserControl: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Value(): PrivateScope, Public, Static, HideBySig
+Class Bunifu.Framework.Lib.Elipse: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Apply(Form, Int32): PrivateScope, Public, Static, HideBySig
+    Apply(Control, Int32): PrivateScope, Public, Static, HideBySig
+Class BunifuAnimatorNS.Animation: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.PointF SlideCoeff 'get set' : 
+    Single RotateCoeff 'get set' : 
+    Single RotateLimit 'get set' : 
+    System.Drawing.PointF ScaleCoeff 'get set' : 
+    Single TransparencyCoeff 'get set' : 
+    Single LeafCoeff 'get set' : 
+    System.Drawing.PointF MosaicShift 'get set' : 
+    System.Drawing.PointF MosaicCoeff 'get set' : 
+    Int32 MosaicSize 'get set' : 
+    System.Drawing.PointF BlindCoeff 'get set' : 
+    Single TimeCoeff 'get set' : 
+    Single MinTime 'get set' : 
+    Single MaxTime 'get set' : 
+    System.Windows.Forms.Padding Padding 'get set' : 
+    Boolean AnimateOnlyDifferences 'get set' : 
+    Boolean IsNonLinearTransformNeeded 'get ' : 
+    BunifuAnimatorNS.Animation Rotate 'get ' : 
+    BunifuAnimatorNS.Animation HorizSlide 'get ' : 
+    BunifuAnimatorNS.Animation VertSlide 'get ' : 
+    BunifuAnimatorNS.Animation Scale 'get ' : 
+    BunifuAnimatorNS.Animation ScaleAndRotate 'get ' : 
+    BunifuAnimatorNS.Animation HorizSlideAndRotate 'get ' : 
+    BunifuAnimatorNS.Animation ScaleAndHorizSlide 'get ' : 
+    BunifuAnimatorNS.Animation Transparent 'get ' : 
+    BunifuAnimatorNS.Animation Leaf 'get ' : 
+    BunifuAnimatorNS.Animation Mosaic 'get ' : 
+    BunifuAnimatorNS.Animation Particles 'get ' : 
+    BunifuAnimatorNS.Animation VertBlind 'get ' : 
+    BunifuAnimatorNS.Animation HorizBlind 'get ' : 
+  Methods:
+    get_SlideCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_SlideCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_RotateCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_RotateCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_RotateLimit(): PrivateScope, Public, HideBySig, SpecialName
+    set_RotateLimit(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_ScaleCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_ScaleCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_TransparencyCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_TransparencyCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_LeafCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_LeafCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_MosaicShift(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicShift(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_MosaicCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_MosaicSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicSize(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BlindCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_BlindCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_TimeCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_MinTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MinTime(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxTime(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_Padding(): PrivateScope, Public, HideBySig, SpecialName
+    set_Padding(Padding): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimateOnlyDifferences(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimateOnlyDifferences(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_IsNonLinearTransformNeeded(): PrivateScope, Public, HideBySig, SpecialName
+    Clone(): PrivateScope, Public, HideBySig
+    get_Rotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_VertSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Scale(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ScaleAndRotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizSlideAndRotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ScaleAndHorizSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Transparent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Leaf(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Mosaic(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Particles(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_VertBlind(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizBlind(): PrivateScope, Public, Static, HideBySig, SpecialName
+    Add(Animation): PrivateScope, Public, HideBySig
+Struct BunifuAnimatorNS.AnimationType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BunifuAnimatorNS.AnimationType Custom = 0 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Rotate = 1 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType HorizSlide = 2 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType VertSlide = 3 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Scale = 4 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType ScaleAndRotate = 5 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType HorizSlideAndRotate = 6 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType ScaleAndHorizSlide = 7 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Transparent = 8 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Leaf = 9 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Mosaic = 10 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType Particles = 11 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType VertBlind = 12 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimationType HorizBlind = 13 : Public, Static, Literal, HasDefault
+Class BunifuAnimatorNS.BunifuTransition: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ComponentModel.IExtenderProvider
+  Properties:
+    Int32 MaxAnimationTime 'get set' : 
+    BunifuAnimatorNS.Animation DefaultAnimation 'get set' : 
+    System.Windows.Forms.Cursor Cursor 'get set' : 
+    Boolean IsCompleted 'get ' : 
+    Int32 Interval 'get set' : 
+    BunifuAnimatorNS.AnimationType AnimationType 'get set' : 
+    Single TimeStep 'get set' : 
+  Events:
+    System.EventHandler`1[BunifuAnimatorNS.AnimationCompletedEventArg] AnimationCompleted: 
+    System.EventHandler AllAnimationsCompleted: 
+    System.EventHandler`1[BunifuAnimatorNS.TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[BunifuAnimatorNS.NonLinearTransfromNeededEventArg] NonLinearTransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.MouseEventArgs] MouseDown: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    add_AnimationCompleted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_AnimationCompleted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_AllAnimationsCompleted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_AllAnimationsCompleted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxAnimationTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxAnimationTime(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DefaultAnimation(): PrivateScope, Public, HideBySig, SpecialName
+    set_DefaultAnimation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Cursor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Cursor(Cursor): PrivateScope, Public, HideBySig, SpecialName
+    get_IsCompleted(): PrivateScope, Public, HideBySig, SpecialName
+    get_Interval(): PrivateScope, Public, HideBySig, SpecialName
+    set_Interval(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimationType(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimationType(AnimationType): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeStep(): PrivateScope, Public, HideBySig, SpecialName
+    set_TimeStep(Single): PrivateScope, Public, HideBySig, SpecialName
+    Show(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    ShowSync(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    Hide(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    HideSync(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    BeginUpdate(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault), Rectangle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    EndUpdate(Control): PrivateScope, Public, HideBySig
+    EndUpdateSync(Control): PrivateScope, Public, HideBySig
+    WaitAllAnimations(): PrivateScope, Public, HideBySig
+    WaitAnimation(Control): PrivateScope, Public, HideBySig
+    AddToQueue(Control, AnimateMode, Boolean(Optional, HasDefault), Animation(Optional, HasDefault), Rectangle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    ClearQueue(): PrivateScope, Public, HideBySig
+    GetDecoration(Control): PrivateScope, Public, HideBySig
+    SetDecoration(Control, DecorationType): PrivateScope, Public, HideBySig
+    CanExtend(Object): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Struct BunifuAnimatorNS.DecorationType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BunifuAnimatorNS.DecorationType None = 0 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.DecorationType BottomMirror = 1 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.DecorationType Custom = 2 : Public, Static, Literal, HasDefault
+Class BunifuAnimatorNS.AnimationCompletedEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    BunifuAnimatorNS.AnimateMode Mode 'get set' : 
+  Methods:
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+Class BunifuAnimatorNS.TransfromNeededEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Drawing2D.Matrix Matrix 'get set' : 
+    Single CurrentTime 'get set' : 
+    System.Drawing.Rectangle ClientRectangle 'get set' : 
+    System.Drawing.Rectangle ClipRectangle 'get set' : 
+    BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    BunifuAnimatorNS.AnimateMode Mode 'get set' : 
+    Boolean UseDefaultMatrix 'get set' : 
+  Methods:
+    get_Matrix(): PrivateScope, Public, HideBySig, SpecialName
+    set_Matrix(Matrix): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClipRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    get_UseDefaultMatrix(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseDefaultMatrix(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class BunifuAnimatorNS.NonLinearTransfromNeededEventArg: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Single CurrentTime 'get set' : 
+    System.Drawing.Rectangle ClientRectangle 'get set' : 
+    Byte[] Pixels 'get set' : 
+    Int32 Stride 'get set' : 
+    System.Drawing.Rectangle SourceClientRectangle 'get set' : 
+    Byte[] SourcePixels 'get set' : 
+    Int32 SourceStride 'get set' : 
+    BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    BunifuAnimatorNS.AnimateMode Mode 'get set' : 
+    Boolean UseDefaultTransform 'get set' : 
+  Methods:
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_Pixels(): PrivateScope, Public, HideBySig, SpecialName
+    get_Stride(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourcePixels(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceStride(): PrivateScope, Public, HideBySig, SpecialName
+    set_SourceStride(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    get_UseDefaultTransform(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseDefaultTransform(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Struct BunifuAnimatorNS.AnimateMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BunifuAnimatorNS.AnimateMode Show = 0 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimateMode Hide = 1 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimateMode Update = 2 : Public, Static, Literal, HasDefault
+    BunifuAnimatorNS.AnimateMode BeginUpdate = 3 : Public, Static, Literal, HasDefault
+Class BunifuAnimatorNS.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Windows.Forms.Control, BunifuAnimatorNS.AnimateMode, BunifuAnimatorNS.Animation, Single, System.Drawing.Rectangle): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Bitmap Frame 'get set' : 
+    Single CurrentTime 'get set' : 
+    System.Windows.Forms.Control DoubleBitmap 'get set' : 
+    System.Windows.Forms.Control AnimatedControl 'get set' : 
+    Boolean IsCompleted 'get ' : 
+  Events:
+    System.EventHandler`1[BunifuAnimatorNS.TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[BunifuAnimatorNS.NonLinearTransfromNeededEventArg] NonLinearTransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+    System.EventHandler`1[System.Windows.Forms.MouseEventArgs] MouseDown: 
+  Methods:
+    get_Frame(): PrivateScope, Public, HideBySig, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_DoubleBitmap(): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimatedControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimatedControl(Control): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, HideBySig
+    Hide(): PrivateScope, Public, HideBySig
+    EndUpdate(): PrivateScope, Public, HideBySig
+    get_IsCompleted(): PrivateScope, Public, HideBySig, SpecialName
+Class BunifuAnimatorNS.DoubleBitmapControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    BunifuAnimatorNS.IFakeControl
+  Events:
+    System.EventHandler`1[BunifuAnimatorNS.TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+  Methods:
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Interface BunifuAnimatorNS.IFakeControl: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Drawing.Bitmap BgBmp 'get set' : 
+    System.Drawing.Bitmap Frame 'get set' : 
+  Events:
+    System.EventHandler`1[BunifuAnimatorNS.TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    get_BgBmp(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_BgBmp(Bitmap): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Frame(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class BunifuAnimatorNS.DoubleBitmapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    BunifuAnimatorNS.IFakeControl
+  Properties:
+    System.Drawing.Bitmap BgBmp 'get set' : 
+    System.Drawing.Bitmap Frame 'get set' : 
+  Events:
+    System.EventHandler`1[BunifuAnimatorNS.TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_BgBmp(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BgBmp(Bitmap): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Frame(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class BunifuAnimatorNS.Flags: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+Class BunifuAnimatorNS.PointFConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+    ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type): PrivateScope, Public, Virtual, HideBySig
+Struct BunifuAnimatorNS.Flags+WindowStyles: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    UInt32 value__ : Public, SpecialName, RTSpecialName
+    WindowStyles WS_OVERLAPPED = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_POPUP = 2147483648 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CHILD = 1073741824 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MINIMIZE = 536870912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_VISIBLE = 268435456 : Public, Static, Literal, HasDefault
+    WindowStyles WS_DISABLED = 134217728 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CLIPSIBLINGS = 67108864 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CLIPCHILDREN = 33554432 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MAXIMIZE = 16777216 : Public, Static, Literal, HasDefault
+    WindowStyles WS_BORDER = 8388608 : Public, Static, Literal, HasDefault
+    WindowStyles WS_DLGFRAME = 4194304 : Public, Static, Literal, HasDefault
+    WindowStyles WS_VSCROLL = 2097152 : Public, Static, Literal, HasDefault
+    WindowStyles WS_HSCROLL = 1048576 : Public, Static, Literal, HasDefault
+    WindowStyles WS_SYSMENU = 524288 : Public, Static, Literal, HasDefault
+    WindowStyles WS_THICKFRAME = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_GROUP = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TABSTOP = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MINIMIZEBOX = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MAXIMIZEBOX = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CAPTION = 12582912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TILED = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_ICONIC = 536870912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_SIZEBOX = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TILEDWINDOW = 13565952 : Public, Static, Literal, HasDefault
+    WindowStyles WS_OVERLAPPEDWINDOW = 13565952 : Public, Static, Literal, HasDefault
+    WindowStyles WS_POPUPWINDOW = 2156396544 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CHILDWINDOW = 1073741824 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_DLGMODALFRAME = 1 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOPARENTNOTIFY = 4 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TOPMOST = 8 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_ACCEPTFILES = 16 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TRANSPARENT = 32 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_MDICHILD = 64 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TOOLWINDOW = 128 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_WINDOWEDGE = 256 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CLIENTEDGE = 512 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CONTEXTHELP = 1024 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RIGHT = 4096 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LEFT = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RTLREADING = 8192 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LTRREADING = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LEFTSCROLLBAR = 16384 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RIGHTSCROLLBAR = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CONTROLPARENT = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_STATICEDGE = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_APPWINDOW = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_OVERLAPPEDWINDOW = 768 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_PALETTEWINDOW = 392 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LAYERED = 524288 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOINHERITLAYOUT = 1048576 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LAYOUTRTL = 4194304 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_COMPOSITED = 33554432 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOACTIVATE = 134217728 : Public, Static, Literal, HasDefault
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig
