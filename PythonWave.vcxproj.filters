@@ -41,6 +41,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="licenses.licx" />
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>
