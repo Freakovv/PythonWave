@@ -1,21 +1,54 @@
 #pragma once
 #include "libraries.h"
 
+
+
+
+
+	//
+	// Bar-кнопки, кнопки справочники
+	//
+	
+	//LOGIN
 	System::Void login::ExitWindow_click(System::Object^ sender, System::EventArgs^ e) {
 		fade_mode = 2;
 		fadetimer->Start();
 	}
-
 	System::Void login::MinimizeWindow_click(System::Object^ sender, System::EventArgs^ e) {
 		fade_mode = 1;
 		fadetimer->Start();
 	}
-
 	System::Void login::buttonQuestion_click(System::Object^ sender, System::EventArgs^ e) {
 		//Вывод информации об опции сохранения данных
 		MessageOption->Text = "Это опция позволяет сохранить ваши данные при последующем входе";
 		MessageOption->Show();
 	}
+
+	System::Void CreateProfile::ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->WindowState = Windows::Forms::FormWindowState::Minimized;
+	}
+	System::Void CreateProfile::ButtonExit_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::Windows::Forms::DialogResult result = MessageDialogExit->Show();
+		if (result == System::Windows::Forms::DialogResult::Yes)
+			this->Close();
+	}
+	System::Void CreateProfile::buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageDialogQuestion->Show();
+	}
+
+	//
+	// 
+	//
+
+
+
+
+
+
+
+
+
+
 	System::Void login::linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		//Открывает условия пользования
 		textBoxTerms->Visible = true;

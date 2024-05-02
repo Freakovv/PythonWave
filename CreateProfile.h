@@ -1,9 +1,10 @@
-#pragma once
+﻿#pragma once
 #include <msclr/marshal_cppstd.h>
 #include <string>
 #include <vcclr.h>
 #include <iostream>
 #include <random>
+#include <Windows.h>
 
 namespace PythonWave {
 
@@ -14,7 +15,7 @@ namespace PythonWave {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	//��� �������� ������ �� �����
+	//Для отправки письма на почту
 	using namespace System;
 	using namespace System::Net;
 	using namespace System::Net::Mail;
@@ -88,11 +89,26 @@ namespace PythonWave {
 
 	private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
 	private: System::Windows::Forms::Label^ labelSendStatus;
-	private: System::Windows::Forms::Label^ labelAcceptStatus;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogErrorSend;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ guna2MessageDialog2;
+	private: System::Windows::Forms::Label^ labelValidateStatus;
+
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageErrorSend;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageErrorValidate;
+
+
+
 	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ ButtonExit;
 	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogExit;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogQuestion;
+
+	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonQuestion;
+	private: System::Windows::Forms::Label^ labelTimer;
+
+	private: System::Windows::Forms::Timer^ timer;
+	private: System::Windows::Forms::LinkLabel^ linkReMail;
+
+
+
+
 
 
 
@@ -140,17 +156,23 @@ namespace PythonWave {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
 			this->labelSendStatus = (gcnew System::Windows::Forms::Label());
-			this->labelAcceptStatus = (gcnew System::Windows::Forms::Label());
-			this->MessageDialogErrorSend = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->guna2MessageDialog2 = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->labelValidateStatus = (gcnew System::Windows::Forms::Label());
+			this->MessageErrorSend = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageErrorValidate = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->MessageDialogExit = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageDialogQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
+			this->labelTimer = (gcnew System::Windows::Forms::Label());
+			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->linkReMail = (gcnew System::Windows::Forms::LinkLabel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// borderlessForm
 			// 
+			this->borderlessForm->BorderRadius = 20;
 			this->borderlessForm->ContainerControl = this;
 			this->borderlessForm->DockIndicatorTransparencyValue = 0.6;
 			this->borderlessForm->TransparentWhileDrag = true;
@@ -159,18 +181,17 @@ namespace PythonWave {
 			// 
 			this->labelWelcome->AllowParentOverrides = false;
 			this->labelWelcome->AutoEllipsis = true;
-			this->labelWelcome->AutoSize = false;
 			this->labelWelcome->Cursor = System::Windows::Forms::Cursors::Default;
 			this->labelWelcome->CursorType = System::Windows::Forms::Cursors::Default;
 			this->labelWelcome->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
 			this->labelWelcome->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelWelcome->Location = System::Drawing::Point(0, 0);
+			this->labelWelcome->Location = System::Drawing::Point(241, 10);
 			this->labelWelcome->Name = L"labelWelcome";
 			this->labelWelcome->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->labelWelcome->Size = System::Drawing::Size(643, 46);
+			this->labelWelcome->Size = System::Drawing::Size(158, 40);
 			this->labelWelcome->TabIndex = 0;
-			this->labelWelcome->Text = L"�������";
+			this->labelWelcome->Text = L"Профиль";
 			this->labelWelcome->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			this->labelWelcome->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
 			// 
@@ -207,6 +228,7 @@ namespace PythonWave {
 			this->textBoxMail->AutoRoundedCorners = true;
 			this->textBoxMail->BorderColor = System::Drawing::Color::White;
 			this->textBoxMail->BorderRadius = 22;
+			this->textBoxMail->BorderThickness = 2;
 			this->textBoxMail->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->textBoxMail->DefaultText = L"";
 			this->textBoxMail->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
@@ -237,11 +259,14 @@ namespace PythonWave {
 			this->textBoxMail->SelectedText = L"";
 			this->textBoxMail->Size = System::Drawing::Size(315, 46);
 			this->textBoxMail->TabIndex = 4;
+			this->textBoxMail->TextOffset = System::Drawing::Point(2, 0);
+			this->textBoxMail->Click += gcnew System::EventHandler(this, &CreateProfile::textBoxMail_Click);
 			// 
 			// bunifuDropdownSex
 			// 
 			this->bunifuDropdownSex->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuDropdownSex->BackgroundColor = System::Drawing::Color::White;
+			this->bunifuDropdownSex->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuDropdownSex->BorderColor = System::Drawing::Color::Silver;
 			this->bunifuDropdownSex->BorderRadius = 15;
 			this->bunifuDropdownSex->Color = System::Drawing::Color::Silver;
@@ -275,13 +300,13 @@ namespace PythonWave {
 			this->bunifuDropdownSex->ItemHeight = 26;
 			this->bunifuDropdownSex->ItemHighLightColor = System::Drawing::Color::DodgerBlue;
 			this->bunifuDropdownSex->ItemHighLightForeColor = System::Drawing::Color::White;
-			this->bunifuDropdownSex->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"�������", L"�������" });
+			this->bunifuDropdownSex->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Мужской", L"Женский" });
 			this->bunifuDropdownSex->ItemTopMargin = 3;
 			this->bunifuDropdownSex->Location = System::Drawing::Point(365, 296);
 			this->bunifuDropdownSex->Name = L"bunifuDropdownSex";
 			this->bunifuDropdownSex->Size = System::Drawing::Size(264, 32);
 			this->bunifuDropdownSex->TabIndex = 9;
-			this->bunifuDropdownSex->Text = L"���";
+			this->bunifuDropdownSex->Text = L"Пол";
 			this->bunifuDropdownSex->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownSex->TextLeftMargin = 5;
 			// 
@@ -289,21 +314,19 @@ namespace PythonWave {
 			// 
 			this->lableUsername->AllowParentOverrides = false;
 			this->lableUsername->AutoEllipsis = true;
-			this->lableUsername->AutoSize = false;
 			this->lableUsername->Cursor = System::Windows::Forms::Cursors::Default;
 			this->lableUsername->CursorType = System::Windows::Forms::Cursors::Default;
 			this->lableUsername->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
 			this->lableUsername->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->lableUsername->Location = System::Drawing::Point(0, 70);
+			this->lableUsername->Location = System::Drawing::Point(241, 76);
 			this->lableUsername->Name = L"lableUsername";
 			this->lableUsername->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->lableUsername->Size = System::Drawing::Size(643, 46);
+			this->lableUsername->Size = System::Drawing::Size(171, 40);
 			this->lableUsername->TabIndex = 11;
 			this->lableUsername->Text = L"USERNAME";
 			this->lableUsername->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			this->lableUsername->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			this->lableUsername->Click += gcnew System::EventHandler(this, &CreateProfile::bunifuLabel1_Click);
 			// 
 			// textBoxSecurityCode
 			// 
@@ -313,6 +336,7 @@ namespace PythonWave {
 			this->textBoxSecurityCode->AutoRoundedCorners = true;
 			this->textBoxSecurityCode->BorderColor = System::Drawing::Color::White;
 			this->textBoxSecurityCode->BorderRadius = 22;
+			this->textBoxSecurityCode->BorderThickness = 2;
 			this->textBoxSecurityCode->Cursor = System::Windows::Forms::Cursors::IBeam;
 			this->textBoxSecurityCode->DefaultText = L"";
 			this->textBoxSecurityCode->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
@@ -334,15 +358,17 @@ namespace PythonWave {
 			this->textBoxSecurityCode->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxSecurityCode.IconLeft")));
 			this->textBoxSecurityCode->IconLeftOffset = System::Drawing::Point(5, 0);
 			this->textBoxSecurityCode->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->textBoxSecurityCode->Location = System::Drawing::Point(14, 284);
+			this->textBoxSecurityCode->Location = System::Drawing::Point(14, 286);
 			this->textBoxSecurityCode->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->textBoxSecurityCode->Name = L"textBoxSecurityCode";
-			this->textBoxSecurityCode->PasswordChar = '\0';
+			this->textBoxSecurityCode->PasswordChar = '●';
 			this->textBoxSecurityCode->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxSecurityCode->PlaceholderText = L"���";
+			this->textBoxSecurityCode->PlaceholderText = L"Код";
 			this->textBoxSecurityCode->SelectedText = L"";
 			this->textBoxSecurityCode->Size = System::Drawing::Size(315, 46);
 			this->textBoxSecurityCode->TabIndex = 13;
+			this->textBoxSecurityCode->UseSystemPasswordChar = true;
+			this->textBoxSecurityCode->Visible = false;
 			// 
 			// bunifuDragControl1
 			// 
@@ -386,10 +412,10 @@ namespace PythonWave {
 			this->buttonSendCode->Name = L"buttonSendCode";
 			this->buttonSendCode->Size = System::Drawing::Size(226, 39);
 			this->buttonSendCode->TabIndex = 16;
-			this->buttonSendCode->Text = L"��������� ������";
+			this->buttonSendCode->Text = L"Отправить письмо";
 			this->buttonSendCode->TextOffset = System::Drawing::Point(14, 0);
 			this->buttonSendCode->UseTransparentBackground = true;
-			this->buttonSendCode->Click += gcnew System::EventHandler(this, &CreateProfile::guna2Button1_Click);
+			this->buttonSendCode->Click += gcnew System::EventHandler(this, &CreateProfile::buttonSendCode_Click);
 			// 
 			// buttonValidateCode
 			// 
@@ -422,19 +448,21 @@ namespace PythonWave {
 			this->buttonValidateCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonValidateCode.Image")));
 			this->buttonValidateCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonValidateCode->ImageSize = System::Drawing::Size(25, 25);
-			this->buttonValidateCode->Location = System::Drawing::Point(14, 337);
+			this->buttonValidateCode->Location = System::Drawing::Point(14, 339);
 			this->buttonValidateCode->Name = L"buttonValidateCode";
 			this->buttonValidateCode->Size = System::Drawing::Size(170, 39);
 			this->buttonValidateCode->TabIndex = 17;
-			this->buttonValidateCode->Text = L"�����������";
+			this->buttonValidateCode->Text = L"Подтвердить";
 			this->buttonValidateCode->TextOffset = System::Drawing::Point(14, 0);
 			this->buttonValidateCode->UseTransparentBackground = true;
+			this->buttonValidateCode->Visible = false;
 			this->buttonValidateCode->Click += gcnew System::EventHandler(this, &CreateProfile::buttonValidateCode_Click);
 			// 
 			// bunifuDropdownDay
 			// 
 			this->bunifuDropdownDay->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuDropdownDay->BackgroundColor = System::Drawing::Color::White;
+			this->bunifuDropdownDay->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuDropdownDay->BorderColor = System::Drawing::Color::Silver;
 			this->bunifuDropdownDay->BorderRadius = 15;
 			this->bunifuDropdownDay->Color = System::Drawing::Color::Silver;
@@ -477,16 +505,17 @@ namespace PythonWave {
 			this->bunifuDropdownDay->ItemTopMargin = 3;
 			this->bunifuDropdownDay->Location = System::Drawing::Point(368, 376);
 			this->bunifuDropdownDay->Name = L"bunifuDropdownDay";
-			this->bunifuDropdownDay->Size = System::Drawing::Size(72, 32);
+			this->bunifuDropdownDay->Size = System::Drawing::Size(79, 32);
 			this->bunifuDropdownDay->TabIndex = 19;
-			this->bunifuDropdownDay->Text = L"����";
+			this->bunifuDropdownDay->Text = L"День";
 			this->bunifuDropdownDay->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownDay->TextLeftMargin = 5;
 			// 
 			// bunifuDropdownMonth
 			// 
 			this->bunifuDropdownMonth->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuDropdownMonth->BackgroundColor = System::Drawing::Color::White;
+			this->bunifuDropdownMonth->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuDropdownMonth->BorderColor = System::Drawing::Color::Silver;
 			this->bunifuDropdownMonth->BorderRadius = 15;
 			this->bunifuDropdownMonth->Color = System::Drawing::Color::Silver;
@@ -522,22 +551,23 @@ namespace PythonWave {
 			this->bunifuDropdownMonth->ItemHighLightColor = System::Drawing::Color::DodgerBlue;
 			this->bunifuDropdownMonth->ItemHighLightForeColor = System::Drawing::Color::White;
 			this->bunifuDropdownMonth->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"������", L"�������", L"����", L"������",
-					L"���", L"����", L"����", L"������", L"��������", L"�������", L"������", L"�������"
+				L"Январь", L"Февраль", L"Март", L"Апрель",
+					L"Май", L"Июнь", L"Июль", L"Август", L"Сентябрь", L"Октябрь", L"Ноябрь", L"Декабрь"
 			});
 			this->bunifuDropdownMonth->ItemTopMargin = 3;
-			this->bunifuDropdownMonth->Location = System::Drawing::Point(446, 376);
+			this->bunifuDropdownMonth->Location = System::Drawing::Point(453, 376);
 			this->bunifuDropdownMonth->Name = L"bunifuDropdownMonth";
 			this->bunifuDropdownMonth->Size = System::Drawing::Size(101, 32);
 			this->bunifuDropdownMonth->TabIndex = 22;
-			this->bunifuDropdownMonth->Text = L"�����";
+			this->bunifuDropdownMonth->Text = L"Месяц";
 			this->bunifuDropdownMonth->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownMonth->TextLeftMargin = 5;
 			// 
 			// bunifuDropdownYear
 			// 
 			this->bunifuDropdownYear->BackColor = System::Drawing::Color::Transparent;
-			this->bunifuDropdownYear->BackgroundColor = System::Drawing::Color::White;
+			this->bunifuDropdownYear->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuDropdownYear->BorderColor = System::Drawing::Color::Silver;
 			this->bunifuDropdownYear->BorderRadius = 15;
 			this->bunifuDropdownYear->Color = System::Drawing::Color::Silver;
@@ -579,11 +609,11 @@ namespace PythonWave {
 					L"1990", L"1989", L"1988", L"1987", L"1986", L"1985", L"1984", L"1983", L"1982", L"1981", L"1980"
 			});
 			this->bunifuDropdownYear->ItemTopMargin = 3;
-			this->bunifuDropdownYear->Location = System::Drawing::Point(553, 376);
+			this->bunifuDropdownYear->Location = System::Drawing::Point(564, 376);
 			this->bunifuDropdownYear->Name = L"bunifuDropdownYear";
-			this->bunifuDropdownYear->Size = System::Drawing::Size(79, 32);
+			this->bunifuDropdownYear->Size = System::Drawing::Size(68, 32);
 			this->bunifuDropdownYear->TabIndex = 23;
-			this->bunifuDropdownYear->Text = L"���";
+			this->bunifuDropdownYear->Text = L"Год";
 			this->bunifuDropdownYear->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownYear->TextLeftMargin = 5;
 			// 
@@ -597,7 +627,7 @@ namespace PythonWave {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(239, 36);
 			this->label1->TabIndex = 24;
-			this->label1->Text = L"������ ������";
+			this->label1->Text = L"Личные данные";
 			// 
 			// label2
 			// 
@@ -608,9 +638,9 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->label2->Location = System::Drawing::Point(12, 143);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(290, 36);
+			this->label2->Size = System::Drawing::Size(300, 36);
 			this->label2->TabIndex = 25;
-			this->label2->Text = L"����������� email";
+			this->label2->Text = L"Подтвердите e-mail";
 			// 
 			// textBoxName
 			// 
@@ -640,13 +670,15 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->textBoxName->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxName.IconLeft")));
 			this->textBoxName->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxName->IconLeftSize = System::Drawing::Size(25, 25);
+			this->textBoxName->IconRightSize = System::Drawing::Size(0, 0);
 			this->textBoxName->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->textBoxName->Location = System::Drawing::Point(365, 185);
 			this->textBoxName->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->textBoxName->Name = L"textBoxName";
 			this->textBoxName->PasswordChar = '\0';
 			this->textBoxName->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxName->PlaceholderText = L"���";
+			this->textBoxName->PlaceholderText = L"Имя";
 			this->textBoxName->SelectedText = L"";
 			this->textBoxName->Size = System::Drawing::Size(264, 46);
 			this->textBoxName->TabIndex = 26;
@@ -679,13 +711,15 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->textBoxSurname->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxSurname.IconLeft")));
 			this->textBoxSurname->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxSurname->IconLeftSize = System::Drawing::Size(25, 25);
+			this->textBoxSurname->IconRightSize = System::Drawing::Size(0, 0);
 			this->textBoxSurname->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->textBoxSurname->Location = System::Drawing::Point(365, 238);
 			this->textBoxSurname->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
 			this->textBoxSurname->Name = L"textBoxSurname";
 			this->textBoxSurname->PasswordChar = '\0';
 			this->textBoxSurname->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxSurname->PlaceholderText = L"�������";
+			this->textBoxSurname->PlaceholderText = L"Фамилия";
 			this->textBoxSurname->SelectedText = L"";
 			this->textBoxSurname->Size = System::Drawing::Size(264, 46);
 			this->textBoxSurname->TabIndex = 27;
@@ -700,7 +734,7 @@ namespace PythonWave {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(242, 36);
 			this->label3->TabIndex = 28;
-			this->label3->Text = L"���� ��������";
+			this->label3->Text = L"Дата рождения";
 			// 
 			// guna2BorderlessForm1
 			// 
@@ -720,40 +754,40 @@ namespace PythonWave {
 			this->labelSendStatus->Name = L"labelSendStatus";
 			this->labelSendStatus->Size = System::Drawing::Size(67, 19);
 			this->labelSendStatus->TabIndex = 29;
-			this->labelSendStatus->Text = L"������";
+			this->labelSendStatus->Text = L"Статус";
 			this->labelSendStatus->Visible = false;
 			// 
-			// labelAcceptStatus
+			// labelValidateStatus
 			// 
-			this->labelAcceptStatus->AutoSize = true;
-			this->labelAcceptStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelValidateStatus->AutoSize = true;
+			this->labelValidateStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->labelAcceptStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->labelValidateStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelAcceptStatus->Location = System::Drawing::Point(190, 348);
-			this->labelAcceptStatus->Name = L"labelAcceptStatus";
-			this->labelAcceptStatus->Size = System::Drawing::Size(67, 19);
-			this->labelAcceptStatus->TabIndex = 30;
-			this->labelAcceptStatus->Text = L"������";
-			this->labelAcceptStatus->Visible = false;
+			this->labelValidateStatus->Location = System::Drawing::Point(190, 350);
+			this->labelValidateStatus->Name = L"labelValidateStatus";
+			this->labelValidateStatus->Size = System::Drawing::Size(67, 19);
+			this->labelValidateStatus->TabIndex = 30;
+			this->labelValidateStatus->Text = L"Статус";
+			this->labelValidateStatus->Visible = false;
 			// 
-			// MessageDialogErrorSend
+			// MessageErrorSend
 			// 
-			this->MessageDialogErrorSend->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
-			this->MessageDialogErrorSend->Caption = L"������";
-			this->MessageDialogErrorSend->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
-			this->MessageDialogErrorSend->Parent = this;
-			this->MessageDialogErrorSend->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
-			this->MessageDialogErrorSend->Text = L"������� ���������� ����� �����.";
+			this->MessageErrorSend->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageErrorSend->Caption = L"Ошибка";
+			this->MessageErrorSend->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
+			this->MessageErrorSend->Parent = this;
+			this->MessageErrorSend->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageErrorSend->Text = L"Введите корректный адрес эл. почты.";
 			// 
-			// guna2MessageDialog2
+			// MessageErrorValidate
 			// 
-			this->guna2MessageDialog2->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
-			this->guna2MessageDialog2->Caption = nullptr;
-			this->guna2MessageDialog2->Icon = Guna::UI2::WinForms::MessageDialogIcon::None;
-			this->guna2MessageDialog2->Parent = nullptr;
-			this->guna2MessageDialog2->Style = Guna::UI2::WinForms::MessageDialogStyle::Default;
-			this->guna2MessageDialog2->Text = nullptr;
+			this->MessageErrorValidate->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageErrorValidate->Caption = L"Неверный код";
+			this->MessageErrorValidate->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
+			this->MessageErrorValidate->Parent = nullptr;
+			this->MessageErrorValidate->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageErrorValidate->Text = L"";
 			// 
 			// ButtonExit
 			// 
@@ -771,12 +805,80 @@ namespace PythonWave {
 			// 
 			// MessageDialogExit
 			// 
-			this->MessageDialogExit->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
-			this->MessageDialogExit->Caption = L"�� ������������� ������ �����\?";
-			this->MessageDialogExit->Icon = Guna::UI2::WinForms::MessageDialogIcon::None;
+			this->MessageDialogExit->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
+			this->MessageDialogExit->Caption = L"Вы действительно хотите выйти\?";
+			this->MessageDialogExit->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
 			this->MessageDialogExit->Parent = this;
 			this->MessageDialogExit->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
-			this->MessageDialogExit->Text = L"��� ������, ��� ������� ����� ������...";
+			this->MessageDialogExit->Text = L"При выходе, ваш аккаунт будет удален...";
+			// 
+			// MessageDialogQuestion
+			// 
+			this->MessageDialogQuestion->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageDialogQuestion->Caption = L"Необходимая мера";
+			this->MessageDialogQuestion->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
+			this->MessageDialogQuestion->Parent = this;
+			this->MessageDialogQuestion->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageDialogQuestion->Text = L"Это может пригодится в будущем для восстановления вашего аккаунта.";
+			// 
+			// buttonQuestion
+			// 
+			this->buttonQuestion->Animated = true;
+			this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
+			this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonQuestion->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->buttonQuestion->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->buttonQuestion->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->buttonQuestion->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->buttonQuestion->FillColor = System::Drawing::Color::Transparent;
+			this->buttonQuestion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->buttonQuestion->ForeColor = System::Drawing::Color::White;
+			this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
+			this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
+			this->buttonQuestion->Location = System::Drawing::Point(309, 155);
+			this->buttonQuestion->Name = L"buttonQuestion";
+			this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonQuestion->Size = System::Drawing::Size(20, 20);
+			this->buttonQuestion->TabIndex = 33;
+			this->buttonQuestion->Text = L"guna2CircleButton1";
+			this->buttonQuestion->UseTransparentBackground = true;
+			this->buttonQuestion->Click += gcnew System::EventHandler(this, &CreateProfile::buttonQuestion_Click);
+			// 
+			// labelTimer
+			// 
+			this->labelTimer->AutoSize = true;
+			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->labelTimer->Location = System::Drawing::Point(14, 389);
+			this->labelTimer->Name = L"labelTimer";
+			this->labelTimer->Size = System::Drawing::Size(308, 19);
+			this->labelTimer->TabIndex = 35;
+			this->labelTimer->Text = L"Отправить повторно через ... секунд";
+			this->labelTimer->Visible = false;
+			// 
+			// timer
+			// 
+			this->timer->Interval = 1000;
+			this->timer->Tick += gcnew System::EventHandler(this, &CreateProfile::timer_Tick);
+			// 
+			// linkReMail
+			// 
+			this->linkReMail->AutoSize = true;
+			this->linkReMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
+			this->linkReMail->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->linkReMail->Location = System::Drawing::Point(14, 389);
+			this->linkReMail->Name = L"linkReMail";
+			this->linkReMail->Size = System::Drawing::Size(179, 19);
+			this->linkReMail->TabIndex = 36;
+			this->linkReMail->TabStop = true;
+			this->linkReMail->Text = L"Отправить повторно";
+			this->linkReMail->Visible = false;
+			this->linkReMail->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &CreateProfile::linkReMail_LinkClicked);
 			// 
 			// CreateProfile
 			// 
@@ -784,9 +886,12 @@ namespace PythonWave {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->ClientSize = System::Drawing::Size(643, 719);
+			this->ClientSize = System::Drawing::Size(640, 719);
+			this->Controls->Add(this->linkReMail);
+			this->Controls->Add(this->labelTimer);
+			this->Controls->Add(this->buttonQuestion);
 			this->Controls->Add(this->ButtonExit);
-			this->Controls->Add(this->labelAcceptStatus);
+			this->Controls->Add(this->labelValidateStatus);
 			this->Controls->Add(this->labelSendStatus);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->textBoxSurname);
@@ -816,67 +921,135 @@ namespace PythonWave {
 
 		}
 #pragma endregion
+	// Установка таймера до следующей отправки письма
+	private: int secondsLeft = 20;
 
-	private: int generateSecurityCode() {
+	// Генерация кода безопасности для отправки
+	private: int generateSecurityCode() {		
 		srand(time(NULL));
 		int Code = rand() % 90000 + 10000;
 		return Code;
-	}
-			private: int SecurityCode = generateSecurityCode();
+	} 
 
+	// Проверка корректности введенного email
+	bool IsValidEmail(String^ email) {
+		// Проверяем наличие символов '@' и '.'
+		return email->Contains("@") && email->Contains(".");
+	}
+
+	// Присваивание кода безопасности
+	private: int SecurityCode = generateSecurityCode(); 
+
+	// Функция для отправки письма
 	private: void SendEmail(String^ to, String^ subject, String^ body) {
 		try {
+			// Стандартная отправка письма
 			MailMessage^ mail = gcnew MailMessage("pythonwaveorg@mail.ru", to, subject, body);
 			SmtpClient^ client = gcnew SmtpClient("smtp.mail.ru");
+
 			client->Port = 587;
 			client->Credentials = gcnew NetworkCredential("pythonwaveorg@mail.ru", "UN73qgPCSqmSWg7qpUXT");
 			client->EnableSsl = true;
-
 			client->Send(mail);
-			labelSendStatus->Text = "�������";
-			labelSendStatus->Visible = true;
+
+			//Отчет о отправке письма
+			labelSendStatus->Text = "Успешно";
+
+			//Показ кнопок для ввода кода безопасности 
+			textBoxSecurityCode->Visible = true;
+			buttonValidateCode->Visible = true;
+			labelValidateStatus->Visible = true;
+
+			// Отсчет до следующей отправки
+			labelTimer->Visible = true; 
 		}
 		catch (Exception^ e) {
-			labelSendStatus->Visible = true;
-			labelSendStatus->Text = "������";
+			labelSendStatus->Text = "Ошибка";
 			MessageBox::Show(e->Message);
 		}
 	}
-	private: System::Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ userMail = textBoxMail->Text;
+
+	// Обработчик события кнопки отправки письма
+	private: System::Void buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e) {
+		labelSendStatus->Text = "В процессе..";
+		labelSendStatus->Visible = true;
+		String^ userMail = Convert::ToString(textBoxMail->Text);
 		if (IsValidEmail(userMail)) {
-			String^ mail = "������������ USER, ��� ��� �������������:" + Convert::ToString(SecurityCode);
-			SendEmail(userMail, "PythonWave: ��� ������������", mail);
+			String^ mail = "Здравствуйте, ваш код регистрации:" + Convert::ToString(SecurityCode);
+			SendEmail(userMail, "PythonWave: Код безопасности", mail);
+			//Выключение ввода и отсчет таймера
+			textBoxMail->Enabled = false;
+			buttonSendCode->Enabled = false;
+			timer->Start();
 		}
 		else {
-			MessageDialogErrorSend->Show();
+			textBoxMail->BorderColor = Color::Red;
+			MessageErrorSend->Show();
 			textBoxMail->Clear();
+			labelSendStatus->Text = "Ошибка";
 		}
 	}
+
+	// Обработчик события кнопки проверки кода безопасности
 	private: System::Void buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (SecurityCode == Convert::ToInt32(textBoxSecurityCode->Text)){
-			labelAcceptStatus->Visible = true;
-			labelAcceptStatus->Text = "�������";
+		try {
+			if (SecurityCode == Convert::ToInt32(textBoxSecurityCode->Text)) {
+				labelValidateStatus->Visible = true;
+				labelValidateStatus->Text = "Успешно";
+				textBoxSecurityCode->Enabled = false;
+				buttonSendCode->Enabled = false;
+			}
+			else {
+				MessageErrorValidate->Show();
+			}
 		}
-		else {
-			
+		catch (Exception^ e) {
+			MessageErrorValidate->Text = e->ToString();
+			MessageErrorValidate->Show();
+			MessageErrorValidate->Text = "";
 		}
 	}
-	bool IsValidEmail(String^ email) {
-		// ��������� ������� �������� '@' � '.'
-		return email->Contains("@") && email->Contains(".");
-	}
+
 	private: System::Void CreateProfile_Load(System::Object^ sender, System::EventArgs^ e) {
 		ButtonMinimize->BringToFront();
 	}
-	private: System::Void ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->WindowState = Windows::Forms::FormWindowState::Minimized;
+	private: System::Void ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void ButtonExit_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBoxMail->BorderColor = Color::White;
 	}
-	private: System::Void bunifuLabel1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	// Обработчик события таймера на повторную отправку письма
+	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e) {
+			secondsLeft--;
+			if (secondsLeft <= 0)
+			{
+				timer->Stop();
+				secondsLeft = 30;
+				
+				//visible
+				labelTimer->Visible = false;
+				linkReMail->Visible = true;
+			}
+			else
+			{
+				// Обновляем отображение оставшихся секунд
+				labelTimer->Text = "Отправить повторно через " + secondsLeft.ToString() + " секунд";
+			}
 	}
-	private: System::Void ButtonExit_Click(System::Object^ sender, System::EventArgs^ e) {
-			
-		this->Close();
+
+	// Обработчик события гиперссылки
+	private: System::Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		textBoxMail->Enabled = true;
+		textBoxSecurityCode->Visible = false;
+
+		buttonSendCode->Enabled = true;
+		buttonValidateCode->Visible = false;
+
+		linkReMail->Visible = false;
+		labelSendStatus->Visible = false;
+		labelValidateStatus->Visible = false;	
 	}
 };
 }
