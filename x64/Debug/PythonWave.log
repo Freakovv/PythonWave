@@ -492,10 +492,13 @@ E:\.Coding\.PythonWave\x64\Debug\Siticone.Desktop.UI.dll : warning C4945: 'RSize
   E:\.Coding\.PythonWave\x64\Debug\Siticone.Desktop.UI.dll(0,1):
   This diagnostic occurred while importing type 'TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize' from assembly 'Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4'.
   
-E:\.Coding\.PythonWave\CreateProfile.h(364,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\CreateProfile.h(369,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'CreateProfile.cpp')
   
-E:\.Coding\.PythonWave\CreateProfile.h(929,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\.Coding\.PythonWave\CreateProfile.h(944,3): error C2065: 'fade_mode': undeclared identifier
+  (compiling source file 'CreateProfile.cpp')
+  
+E:\.Coding\.PythonWave\CreateProfile.h(945,3): error C2065: 'close_on_close': undeclared identifier
   (compiling source file 'CreateProfile.cpp')
   
   login.cpp
@@ -991,12 +994,16 @@ E:\.Coding\.PythonWave\login.h(478,45): warning C4566: character represented by 
 E:\.Coding\.PythonWave\login.h(705,42): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\CreateProfile.h(364,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\CreateProfile.h(369,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\CreateProfile.h(929,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\.Coding\.PythonWave\CreateProfile.h(944,3): error C2065: 'fade_mode': undeclared identifier
+  (compiling source file 'login.cpp')
+  
+E:\.Coding\.PythonWave\CreateProfile.h(945,3): error C2065: 'close_on_close': undeclared identifier
+  (compiling source file 'login.cpp')
+  
+E:\.Coding\.PythonWave\elements.h(168,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'login.cpp')
   
   Generating Code...
-  CreateProfile.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
-  PythonWave.vcxproj -> E:\.Coding\.PythonWave\x64\Debug\PythonWave.exe

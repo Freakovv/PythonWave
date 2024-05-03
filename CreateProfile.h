@@ -14,6 +14,7 @@ namespace PythonWave {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	
 
 	//Для отправки письма на почту
 	using namespace System;
@@ -34,6 +35,9 @@ namespace PythonWave {
 			//
 			//TODO: Add the constructor code here
 			//
+			fadetimer = gcnew System::Windows::Forms::Timer();
+			fadetimer->Interval = 10; // Set the interval (in milliseconds)
+			fadetimer->Tick += gcnew System::EventHandler(this, &CreateProfile::fadetimer_Tick);
 		}
 
 	protected:
@@ -47,6 +51,7 @@ namespace PythonWave {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Timer^ fadetimer;
 	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
 	private: Bunifu::UI::WinForms::BunifuLabel^ labelWelcome;
 	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
@@ -913,6 +918,7 @@ namespace PythonWave {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CreateProfile";
 			this->Text = L"CreateProfile";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &CreateProfile::login_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &CreateProfile::CreateProfile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->EndInit();
@@ -923,133 +929,40 @@ namespace PythonWave {
 #pragma endregion
 	// Установка таймера до следующей отправки письма
 	private: int secondsLeft = 20;
+		   ////////////////////////////////////////////////////////////////////////////////////////////
+		   //									elements.h                                           //
+		   ////////////////////////////////////////////////////////////////////////////////////////////
 
-	// Генерация кода безопасности для отправки
-	private: int generateSecurityCode() {		
-		srand(time(NULL));
-		int Code = rand() % 90000 + 10000;
-		return Code;
-	} 
-
-	// Проверка корректности введенного email
-	bool IsValidEmail(String^ email) {
-		// Проверяем наличие символов '@' и '.'
-		return email->Contains("@") && email->Contains(".");
-	}
-
-	// Присваивание кода безопасности
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	private: int generateSecurityCode();
+	bool IsValidEmail(String^ email);
 	private: int SecurityCode = generateSecurityCode(); 
-
-	// Функция для отправки письма
-	private: void SendEmail(String^ to, String^ subject, String^ body) {
-		try {
-			// Стандартная отправка письма
-			MailMessage^ mail = gcnew MailMessage("pythonwaveorg@mail.ru", to, subject, body);
-			SmtpClient^ client = gcnew SmtpClient("smtp.mail.ru");
-
-			client->Port = 587;
-			client->Credentials = gcnew NetworkCredential("pythonwaveorg@mail.ru", "UN73qgPCSqmSWg7qpUXT");
-			client->EnableSsl = true;
-			client->Send(mail);
-
-			//Отчет о отправке письма
-			labelSendStatus->Text = "Успешно";
-
-			//Показ кнопок для ввода кода безопасности 
-			textBoxSecurityCode->Visible = true;
-			buttonValidateCode->Visible = true;
-			labelValidateStatus->Visible = true;
-
-			// Отсчет до следующей отправки
-			labelTimer->Visible = true; 
-		}
-		catch (Exception^ e) {
-			labelSendStatus->Text = "Ошибка";
-			MessageBox::Show(e->Message);
-		}
-	}
-
-	// Обработчик события кнопки отправки письма
-	private: System::Void buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e) {
-		labelSendStatus->Text = "В процессе..";
-		labelSendStatus->Visible = true;
-		String^ userMail = Convert::ToString(textBoxMail->Text);
-		if (IsValidEmail(userMail)) {
-			String^ mail = "Здравствуйте, ваш код регистрации:" + Convert::ToString(SecurityCode);
-			SendEmail(userMail, "PythonWave: Код безопасности", mail);
-			//Выключение ввода и отсчет таймера
-			textBoxMail->Enabled = false;
-			buttonSendCode->Enabled = false;
-			timer->Start();
-		}
-		else {
-			textBoxMail->BorderColor = Color::Red;
-			MessageErrorSend->Show();
-			textBoxMail->Clear();
-			labelSendStatus->Text = "Ошибка";
-		}
-	}
-
-	// Обработчик события кнопки проверки кода безопасности
-	private: System::Void buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
-		try {
-			if (SecurityCode == Convert::ToInt32(textBoxSecurityCode->Text)) {
-				labelValidateStatus->Visible = true;
-				labelValidateStatus->Text = "Успешно";
-				textBoxSecurityCode->Enabled = false;
-				buttonSendCode->Enabled = false;
-			}
-			else {
-				MessageErrorValidate->Show();
-			}
-		}
-		catch (Exception^ e) {
-			MessageErrorValidate->Text = e->ToString();
-			MessageErrorValidate->Show();
-			MessageErrorValidate->Text = "";
-		}
-	}
-
-	private: System::Void CreateProfile_Load(System::Object^ sender, System::EventArgs^ e) {
-		ButtonMinimize->BringToFront();
-	}
+	private: void SendEmail(String^ to, String^ subject, String^ body);
+	private: System::Void buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void CreateProfile_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ButtonExit_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBoxMail->BorderColor = Color::White;
-	}
+	private: System::Void textBoxMail_Click(System::Object^ sender, System::EventArgs^);
+	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
 
-	// Обработчик события таймера на повторную отправку письма
-	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e) {
-			secondsLeft--;
-			if (secondsLeft <= 0)
-			{
-				timer->Stop();
-				secondsLeft = 30;
-				
-				//visible
-				labelTimer->Visible = false;
-				linkReMail->Visible = true;
-			}
-			else
-			{
-				// Обновляем отображение оставшихся секунд
-				labelTimer->Text = "Отправить повторно через " + secondsLeft.ToString() + " секунд";
-			}
-	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 
-	// Обработчик события гиперссылки
-	private: System::Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		textBoxMail->Enabled = true;
-		textBoxSecurityCode->Visible = false;
 
-		buttonSendCode->Enabled = true;
-		buttonValidateCode->Visible = false;
 
-		linkReMail->Visible = false;
-		labelSendStatus->Visible = false;
-		labelValidateStatus->Visible = false;	
-	}
+		   ////////////////////////////////////////////////////////////////////////////////////////////
+		   //									animations.h                                           //
+		   ////////////////////////////////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public: virtual void WndProc(System::Windows::Forms::Message% msg) override;
+	private: System::Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 };
 }
