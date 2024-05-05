@@ -5,7 +5,12 @@
 		   //									CreateProfile.h                                      //
 		   ////////////////////////////////////////////////////////////////////////////////////////////
 
+	//
+	// Проверки
+	// 
+	void validate() {
 
+	}
 	//
 	// Bar-кнопки, кнопки справочники
 	//
@@ -51,6 +56,36 @@
 			labelSendStatus->Text = "Ошибка";
 		}
 	}
+	// Функция для отправки письма
+	void CreateProfile::SendEmail(String^ to, String^ subject, String^ body) {
+		try {
+			// Стандартная отправка письма
+			MailMessage^ mail = gcnew MailMessage("pythonwaveorg@mail.ru", to, subject, body);
+			SmtpClient^ client = gcnew SmtpClient("smtp.mail.ru");
+
+			//Настройка клиента
+			client->Port = 587;
+			client->Credentials = gcnew NetworkCredential("pythonwaveorg@mail.ru", "UN73qgPCSqmSWg7qpUXT");
+			client->EnableSsl = true;
+			client->Send(mail);
+
+			// Отчет об отправке письма
+			labelSendStatus->Text = "Успешно";
+
+			//Показ кнопок для ввода кода безопасности 
+			textBoxSecurityCode->Enabled = true;
+			buttonValidateCode->Enabled = true;
+			labelValidateStatus->Visible = true;
+
+			// Отсчет до следующей отправки
+			labelTimer->Visible = true;
+		}
+		catch (Exception^ e) {
+			// Исключение, вывод ошибки (пользователь мог ввести текст, использую Exception)
+			labelSendStatus->Text = "Ошибка";
+			MessageBox::Show(e->Message);
+		}
+	}
 
 	// Обработчик события кнопки проверки кода безопасности
 	System::Void CreateProfile::buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -76,7 +111,7 @@
 	// Load
 	//
 	System::Void CreateProfile::CreateProfile_Load(System::Object^ sender, System::EventArgs^ e) {
-		ButtonMinimize->BringToFront();
+		//ButtonMinimize->BringToFront();
 	}
 	//
 	// Текст боксы, визуал
@@ -132,41 +167,12 @@
 		return email->Contains("@") && email->Contains(".");
 	}
 
-	// Функция для отправки письма
-	void CreateProfile::SendEmail(String^ to, String^ subject, String^ body) {
-		try {
-			// Стандартная отправка письма
-			MailMessage^ mail = gcnew MailMessage("pythonwaveorg@mail.ru", to, subject, body);
-			SmtpClient^ client = gcnew SmtpClient("smtp.mail.ru");
-
-			//Настройка клиента
-			client->Port = 587;
-			client->Credentials = gcnew NetworkCredential("pythonwaveorg@mail.ru", "UN73qgPCSqmSWg7qpUXT");
-			client->EnableSsl = true;
-			client->Send(mail);
-
-			//Отчет об отправке письма
-			labelSendStatus->Text = "Успешно";
-
-			//Показ кнопок для ввода кода безопасности 
-			textBoxSecurityCode->Visible = true;
-			buttonValidateCode->Visible = true;
-			labelValidateStatus->Visible = true;
-
-			// Отсчет до следующей отправки
-			labelTimer->Visible = true;
-		}
-		catch (Exception^ e) {
-			// Исключение, вывод ошибки (пользователь мог ввести текст, использую Exception)
-			labelSendStatus->Text = "Ошибка";
-			MessageBox::Show(e->Message);
-		}
-	}
+	
 
 	// Функция для генерации кода
 	int CreateProfile::generateSecurityCode() {
 		srand(time(NULL));
-		int Code = rand() % 90000 + 10000;
+		int Code = rand() % 900000 + 100000;
 		return Code;
 	}
 

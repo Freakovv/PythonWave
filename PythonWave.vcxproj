@@ -153,6 +153,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRating">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
     </Reference>
@@ -170,6 +173,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>packages\Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>

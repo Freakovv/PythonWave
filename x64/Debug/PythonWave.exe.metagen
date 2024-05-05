@@ -23,6 +23,8 @@ Assembly Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, Pu
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None
+Assembly Bunifu.UI.WinForms.BunifuRadioButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuSeparator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
@@ -34,6 +36,8 @@ Assembly Bunifu.UI.WinForms.BunifuShapes, Version=4.1.*, Culture=Invariant Langu
 Assembly Bunifu.UI.WinForms.BunifuTextBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=None, flags=None
+Assembly Bunifu.UI.WinForms.BunifuTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None
 Assembly Bunifu.UI.WinForms.BunifuUserControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
 	hash=None, flags=None

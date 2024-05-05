@@ -50,11 +50,11 @@ using namespace PythonWave;
 		case 0: // Появление
 			if (this->Opacity < 1) {
 				this->Opacity += 0.1;
+				this->Size = System::Drawing::Size(1280, 720);
 			}
 			else {
 				fade_mode = -1;
 				fadetimer->Stop();
-				this->Size = System::Drawing::Size(1280, 720);
 			}
 			break;
 		case 1: // Свернуть
@@ -132,12 +132,12 @@ using namespace PythonWave;
 		switch (fade_mode) {
 		case 0: // Появление
 			if (this->Opacity < 1) {
-				this->Opacity += 0.1;
+				this->Opacity += 0.05;
+				this->Size = System::Drawing::Size(940, 720);
 			}
 			else {
 				fade_mode = -1;
 				fadetimer->Stop();
-				this->Size = System::Drawing::Size(1280, 720);
 			}
 			break;
 		case 1: // Свернуть
@@ -159,6 +159,17 @@ using namespace PythonWave;
 				fade_mode = -1;
 				fadetimer->Stop();
 				this->Close();
+			}
+			break;
+		case 3: // Переход на след форму
+			if (this->Opacity > 0) {
+				this->Opacity -= 0.2;
+				borderlessForm->HasFormShadow = false;
+			}
+			else {
+				fade_mode = -1;
+				fadetimer->Stop();
+				this->Hide();
 			}
 			break;
 		}
