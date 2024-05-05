@@ -121,6 +121,20 @@ E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4
   E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
   This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
   
+E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'CreateProfile.cpp')
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'CreateProfile.cpp')
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
 E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
   (compiling source file 'CreateProfile.cpp')
   E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll(0,1):
@@ -520,7 +534,7 @@ E:\.Coding\.PythonWave\x64\Debug\Siticone.Desktop.UI.dll : warning C4945: 'RSize
   E:\.Coding\.PythonWave\x64\Debug\Siticone.Desktop.UI.dll(0,1):
   This diagnostic occurred while importing type 'TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize' from assembly 'Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4'.
   
-E:\.Coding\.PythonWave\CreateProfile.h(372,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\CreateProfile.h(410,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'CreateProfile.cpp')
   
   login.cpp
@@ -635,6 +649,20 @@ E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4
   first seen type is used; re-order imported assemblies to use the current type
   E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
   This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'login.cpp')
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
+  (compiling source file 'login.cpp')
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
   
 E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\.PythonWave\packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\.PythonWave\x64\Debug\Bunifu.Licensing.dll'
   (compiling source file 'login.cpp')
@@ -1044,7 +1072,7 @@ E:\.Coding\.PythonWave\login.h(478,45): warning C4566: character represented by 
 E:\.Coding\.PythonWave\login.h(705,42): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
-E:\.Coding\.PythonWave\CreateProfile.h(372,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\.PythonWave\CreateProfile.h(410,46): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'login.cpp')
   
 E:\.Coding\.PythonWave\elements.h(174,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data

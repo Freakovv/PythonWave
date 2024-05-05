@@ -1,5 +1,5 @@
-xSizeForm = 940
-ySizeForm = 720
+xSizeForm = 931
+ySizeForm = 691
 # xSizeForm = int(input("X заднего элемента:"))
 # ySizeForm = int(input("Y заднего элемента:"))
 

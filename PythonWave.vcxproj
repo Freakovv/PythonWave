@@ -153,6 +153,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>UI\Bunifu\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>packages\Bunifu\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
       <HintPath>packages\Bunifu\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>

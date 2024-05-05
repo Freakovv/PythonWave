@@ -32,3 +32,4 @@ E:\.Coding\.PythonWave\x64\Debug\PythonWave.exe
 E:\.Coding\.PythonWave\x64\Debug\PythonWave.CreateProfile.resources
 E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
 E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll
