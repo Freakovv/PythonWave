@@ -1,5 +1,6 @@
 #pragma once
 #include "libraries.h"
+using namespace PythonWave;
 
 		   ////////////////////////////////////////////////////////////////////////////////////////////
 		   //									CreateProfile.h                                      //
@@ -8,9 +9,7 @@
 	//
 	// Проверки
 	// 
-	void validate() {
-
-	}
+	// 
 	//
 	// Bar-кнопки, кнопки справочники
 	//

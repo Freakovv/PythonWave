@@ -188,8 +188,8 @@ namespace PythonWave {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CreateProfile::typeid));
+			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
 			this->labelWelcome = (gcnew Bunifu::UI::WinForms::BunifuLabel());
 			this->guna2Separator1 = (gcnew Guna::UI2::WinForms::Guna2Separator());
@@ -198,45 +198,45 @@ namespace PythonWave {
 			this->bunifuDropdownSex = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
 			this->textBoxSecurityCode = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->bunifuDragControl1 = (gcnew Bunifu::Framework::UI::BunifuDragControl(this->components));
-			this->buttonSendCode = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->buttonValidateCode = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->bunifuDropdownDay = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
-			this->bunifuDropdownMonth = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
-			this->bunifuDropdownYear = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBoxName = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->textBoxSurname = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
-			this->labelSendStatus = (gcnew System::Windows::Forms::Label());
-			this->labelValidateStatus = (gcnew System::Windows::Forms::Label());
-			this->MessageErrorSend = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->MessageErrorValidate = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
-			this->MessageDialogExit = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->MessageDialogQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
-			this->labelTimer = (gcnew System::Windows::Forms::Label());
-			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
-			this->linkReMail = (gcnew System::Windows::Forms::LinkLabel());
-			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->pictureBoxUploadImage = (gcnew System::Windows::Forms::PictureBox());
-			this->buttonUploadImage = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->MessageDialogUpload = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->page1 = (gcnew System::Windows::Forms::TabPage());
 			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
+			this->pictureBoxUploadImage = (gcnew System::Windows::Forms::PictureBox());
+			this->buttonUploadImage = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->linkReMail = (gcnew System::Windows::Forms::LinkLabel());
+			this->labelTimer = (gcnew System::Windows::Forms::Label());
+			this->buttonSendCode = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
+			this->buttonValidateCode = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->bunifuDropdownDay = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
+			this->labelValidateStatus = (gcnew System::Windows::Forms::Label());
+			this->bunifuDropdownMonth = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
+			this->labelSendStatus = (gcnew System::Windows::Forms::Label());
+			this->bunifuDropdownYear = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->textBoxSurname = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBoxName = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
+			this->MessageErrorSend = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageErrorValidate = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageDialogExit = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageDialogQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->MessageDialogUpload = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->page2 = (gcnew System::Windows::Forms::TabPage());
+			this->bunifuLabel1 = (gcnew Bunifu::UI::WinForms::BunifuLabel());
 			this->guna2CustomCheckBox1 = (gcnew Guna::UI2::WinForms::Guna2CustomCheckBox());
 			this->page3 = (gcnew System::Windows::Forms::TabPage());
 			this->timerTransition = (gcnew System::Windows::Forms::Timer(this->components));
-			this->bunifuLabel1 = (gcnew Bunifu::UI::WinForms::BunifuLabel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->BeginInit();
+			this->page1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxUploadImage))->BeginInit();
 			this->Pages->SuspendLayout();
-			this->page1->SuspendLayout();
 			this->page2->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -422,6 +422,178 @@ namespace PythonWave {
 			this->bunifuDragControl1->TargetControl = this->page1;
 			this->bunifuDragControl1->Vertical = true;
 			// 
+			// page1
+			// 
+			this->page1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->page1->Controls->Add(this->guna2Button1);
+			this->page1->Controls->Add(this->ButtonExit);
+			this->page1->Controls->Add(this->ButtonMinimize);
+			this->page1->Controls->Add(this->pictureBoxUploadImage);
+			this->page1->Controls->Add(this->buttonUploadImage);
+			this->page1->Controls->Add(this->guna2Separator1);
+			this->page1->Controls->Add(this->textBoxMail);
+			this->page1->Controls->Add(this->labelWelcome);
+			this->page1->Controls->Add(this->bunifuDropdownSex);
+			this->page1->Controls->Add(this->linkReMail);
+			this->page1->Controls->Add(this->textBoxSecurityCode);
+			this->page1->Controls->Add(this->labelTimer);
+			this->page1->Controls->Add(this->buttonSendCode);
+			this->page1->Controls->Add(this->buttonQuestion);
+			this->page1->Controls->Add(this->buttonValidateCode);
+			this->page1->Controls->Add(this->bunifuDropdownDay);
+			this->page1->Controls->Add(this->labelValidateStatus);
+			this->page1->Controls->Add(this->bunifuDropdownMonth);
+			this->page1->Controls->Add(this->labelSendStatus);
+			this->page1->Controls->Add(this->bunifuDropdownYear);
+			this->page1->Controls->Add(this->label3);
+			this->page1->Controls->Add(this->label1);
+			this->page1->Controls->Add(this->textBoxSurname);
+			this->page1->Controls->Add(this->label2);
+			this->page1->Controls->Add(this->textBoxName);
+			this->page1->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->page1->Location = System::Drawing::Point(4, 4);
+			this->page1->Name = L"page1";
+			this->page1->Padding = System::Windows::Forms::Padding(3);
+			this->page1->Size = System::Drawing::Size(931, 681);
+			this->page1->TabIndex = 0;
+			this->page1->Text = L"profile";
+			// 
+			// guna2Button1
+			// 
+			this->guna2Button1->Animated = true;
+			this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
+			this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->guna2Button1->BorderRadius = 20;
+			this->guna2Button1->BorderThickness = 1;
+			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
+			this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
+			this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->guna2Button1->ImageSize = System::Drawing::Size(25, 25);
+			this->guna2Button1->Location = System::Drawing::Point(352, 539);
+			this->guna2Button1->Name = L"guna2Button1";
+			this->guna2Button1->Size = System::Drawing::Size(181, 39);
+			this->guna2Button1->TabIndex = 39;
+			this->guna2Button1->Text = L"Продолжить";
+			this->guna2Button1->TextOffset = System::Drawing::Point(14, 0);
+			this->guna2Button1->UseTransparentBackground = true;
+			this->guna2Button1->Click += gcnew System::EventHandler(this, &CreateProfile::guna2Button1_Click);
+			// 
+			// ButtonExit
+			// 
+			this->ButtonExit->BackColor = System::Drawing::Color::Transparent;
+			this->ButtonExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonExit.Image")));
+			this->ButtonExit->ImageRotate = 0;
+			this->ButtonExit->Location = System::Drawing::Point(904, 6);
+			this->ButtonExit->Name = L"ButtonExit";
+			this->ButtonExit->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->ButtonExit->Size = System::Drawing::Size(20, 20);
+			this->ButtonExit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->ButtonExit->TabIndex = 31;
+			this->ButtonExit->TabStop = false;
+			this->ButtonExit->Click += gcnew System::EventHandler(this, &CreateProfile::ButtonExit_Click);
+			// 
+			// pictureBoxUploadImage
+			// 
+			this->pictureBoxUploadImage->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
+				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->pictureBoxUploadImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxUploadImage.Image")));
+			this->pictureBoxUploadImage->Location = System::Drawing::Point(18, 135);
+			this->pictureBoxUploadImage->Name = L"pictureBoxUploadImage";
+			this->pictureBoxUploadImage->Size = System::Drawing::Size(200, 200);
+			this->pictureBoxUploadImage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBoxUploadImage->TabIndex = 37;
+			this->pictureBoxUploadImage->TabStop = false;
+			// 
+			// buttonUploadImage
+			// 
+			this->buttonUploadImage->Animated = true;
+			this->buttonUploadImage->BackColor = System::Drawing::Color::Transparent;
+			this->buttonUploadImage->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonUploadImage->BorderRadius = 20;
+			this->buttonUploadImage->BorderThickness = 1;
+			this->buttonUploadImage->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->buttonUploadImage->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->buttonUploadImage->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->buttonUploadImage->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->buttonUploadImage->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonUploadImage->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonUploadImage->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->buttonUploadImage->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonUploadImage->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonUploadImage->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->buttonUploadImage->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->buttonUploadImage->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
+			this->buttonUploadImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonUploadImage.Image")));
+			this->buttonUploadImage->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->buttonUploadImage->ImageSize = System::Drawing::Size(25, 25);
+			this->buttonUploadImage->Location = System::Drawing::Point(18, 349);
+			this->buttonUploadImage->Name = L"buttonUploadImage";
+			this->buttonUploadImage->Size = System::Drawing::Size(200, 39);
+			this->buttonUploadImage->TabIndex = 38;
+			this->buttonUploadImage->Text = L"Загрузить";
+			this->buttonUploadImage->TextOffset = System::Drawing::Point(10, 0);
+			this->buttonUploadImage->UseTransparentBackground = true;
+			this->buttonUploadImage->Click += gcnew System::EventHandler(this, &CreateProfile::buttonUploadImage_Click);
+			// 
+			// linkReMail
+			// 
+			this->linkReMail->AutoSize = true;
+			this->linkReMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
+			this->linkReMail->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->linkReMail->Location = System::Drawing::Point(279, 369);
+			this->linkReMail->Name = L"linkReMail";
+			this->linkReMail->Size = System::Drawing::Size(179, 19);
+			this->linkReMail->TabIndex = 36;
+			this->linkReMail->TabStop = true;
+			this->linkReMail->Text = L"Отправить повторно";
+			this->linkReMail->Visible = false;
+			this->linkReMail->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &CreateProfile::linkReMail_LinkClicked);
+			// 
+			// labelTimer
+			// 
+			this->labelTimer->AutoSize = true;
+			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->labelTimer->Location = System::Drawing::Point(279, 369);
+			this->labelTimer->Name = L"labelTimer";
+			this->labelTimer->Size = System::Drawing::Size(308, 19);
+			this->labelTimer->TabIndex = 35;
+			this->labelTimer->Text = L"Отправить повторно через ... секунд";
+			this->labelTimer->Visible = false;
+			// 
 			// buttonSendCode
 			// 
 			this->buttonSendCode->Animated = true;
@@ -461,6 +633,31 @@ namespace PythonWave {
 			this->buttonSendCode->TextOffset = System::Drawing::Point(14, 0);
 			this->buttonSendCode->UseTransparentBackground = true;
 			this->buttonSendCode->Click += gcnew System::EventHandler(this, &CreateProfile::buttonSendCode_Click);
+			// 
+			// buttonQuestion
+			// 
+			this->buttonQuestion->Animated = true;
+			this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
+			this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonQuestion->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->buttonQuestion->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->buttonQuestion->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->buttonQuestion->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->buttonQuestion->FillColor = System::Drawing::Color::Transparent;
+			this->buttonQuestion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->buttonQuestion->ForeColor = System::Drawing::Color::White;
+			this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
+			this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
+			this->buttonQuestion->Location = System::Drawing::Point(574, 135);
+			this->buttonQuestion->Name = L"buttonQuestion";
+			this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonQuestion->Size = System::Drawing::Size(20, 20);
+			this->buttonQuestion->TabIndex = 33;
+			this->buttonQuestion->Text = L"guna2CircleButton1";
+			this->buttonQuestion->UseTransparentBackground = true;
+			this->buttonQuestion->Click += gcnew System::EventHandler(this, &CreateProfile::buttonQuestion_Click);
 			// 
 			// buttonValidateCode
 			// 
@@ -555,6 +752,20 @@ namespace PythonWave {
 			this->bunifuDropdownDay->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownDay->TextLeftMargin = 5;
 			// 
+			// labelValidateStatus
+			// 
+			this->labelValidateStatus->AutoSize = true;
+			this->labelValidateStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelValidateStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->labelValidateStatus->Location = System::Drawing::Point(455, 330);
+			this->labelValidateStatus->Name = L"labelValidateStatus";
+			this->labelValidateStatus->Size = System::Drawing::Size(67, 19);
+			this->labelValidateStatus->TabIndex = 30;
+			this->labelValidateStatus->Text = L"Статус";
+			this->labelValidateStatus->Visible = false;
+			// 
 			// bunifuDropdownMonth
 			// 
 			this->bunifuDropdownMonth->BackColor = System::Drawing::Color::Transparent;
@@ -605,6 +816,20 @@ namespace PythonWave {
 			this->bunifuDropdownMonth->Text = L"Месяц";
 			this->bunifuDropdownMonth->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownMonth->TextLeftMargin = 5;
+			// 
+			// labelSendStatus
+			// 
+			this->labelSendStatus->AutoSize = true;
+			this->labelSendStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelSendStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->labelSendStatus->Location = System::Drawing::Point(511, 227);
+			this->labelSendStatus->Name = L"labelSendStatus";
+			this->labelSendStatus->Size = System::Drawing::Size(67, 19);
+			this->labelSendStatus->TabIndex = 29;
+			this->labelSendStatus->Text = L"Статус";
+			this->labelSendStatus->Visible = false;
 			// 
 			// bunifuDropdownYear
 			// 
@@ -659,6 +884,18 @@ namespace PythonWave {
 			this->bunifuDropdownYear->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			this->bunifuDropdownYear->TextLeftMargin = 5;
 			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label3->Location = System::Drawing::Point(627, 311);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(242, 36);
+			this->label3->TabIndex = 28;
+			this->label3->Text = L"Дата рождения";
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -670,6 +907,45 @@ namespace PythonWave {
 			this->label1->Size = System::Drawing::Size(239, 36);
 			this->label1->TabIndex = 24;
 			this->label1->Text = L"Личные данные";
+			// 
+			// textBoxSurname
+			// 
+			this->textBoxSurname->Animated = true;
+			this->textBoxSurname->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->textBoxSurname->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxSurname->AutoRoundedCorners = true;
+			this->textBoxSurname->BorderColor = System::Drawing::Color::Silver;
+			this->textBoxSurname->BorderRadius = 22;
+			this->textBoxSurname->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxSurname->DefaultText = L"";
+			this->textBoxSurname->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
+				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
+			this->textBoxSurname->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
+				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
+			this->textBoxSurname->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxSurname->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxSurname->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxSurname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxSurname->ForeColor = System::Drawing::Color::Black;
+			this->textBoxSurname->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxSurname->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxSurname.IconLeft")));
+			this->textBoxSurname->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxSurname->IconLeftSize = System::Drawing::Size(25, 25);
+			this->textBoxSurname->IconRightSize = System::Drawing::Size(0, 0);
+			this->textBoxSurname->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->textBoxSurname->Location = System::Drawing::Point(630, 218);
+			this->textBoxSurname->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxSurname->Name = L"textBoxSurname";
+			this->textBoxSurname->PasswordChar = '\0';
+			this->textBoxSurname->PlaceholderForeColor = System::Drawing::Color::DarkGray;
+			this->textBoxSurname->PlaceholderText = L"Фамилия";
+			this->textBoxSurname->SelectedText = L"";
+			this->textBoxSurname->Size = System::Drawing::Size(264, 46);
+			this->textBoxSurname->TabIndex = 27;
 			// 
 			// label2
 			// 
@@ -723,91 +999,12 @@ namespace PythonWave {
 			this->textBoxName->Size = System::Drawing::Size(264, 46);
 			this->textBoxName->TabIndex = 26;
 			// 
-			// textBoxSurname
-			// 
-			this->textBoxSurname->Animated = true;
-			this->textBoxSurname->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
-			this->textBoxSurname->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
-			this->textBoxSurname->AutoRoundedCorners = true;
-			this->textBoxSurname->BorderColor = System::Drawing::Color::Silver;
-			this->textBoxSurname->BorderRadius = 22;
-			this->textBoxSurname->Cursor = System::Windows::Forms::Cursors::IBeam;
-			this->textBoxSurname->DefaultText = L"";
-			this->textBoxSurname->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
-				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
-			this->textBoxSurname->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
-				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
-			this->textBoxSurname->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
-				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
-			this->textBoxSurname->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
-				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
-			this->textBoxSurname->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxSurname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->textBoxSurname->ForeColor = System::Drawing::Color::Black;
-			this->textBoxSurname->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
-				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxSurname->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxSurname.IconLeft")));
-			this->textBoxSurname->IconLeftOffset = System::Drawing::Point(5, 0);
-			this->textBoxSurname->IconLeftSize = System::Drawing::Size(25, 25);
-			this->textBoxSurname->IconRightSize = System::Drawing::Size(0, 0);
-			this->textBoxSurname->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->textBoxSurname->Location = System::Drawing::Point(630, 218);
-			this->textBoxSurname->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
-			this->textBoxSurname->Name = L"textBoxSurname";
-			this->textBoxSurname->PasswordChar = '\0';
-			this->textBoxSurname->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxSurname->PlaceholderText = L"Фамилия";
-			this->textBoxSurname->SelectedText = L"";
-			this->textBoxSurname->Size = System::Drawing::Size(264, 46);
-			this->textBoxSurname->TabIndex = 27;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
-			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(627, 311);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(242, 36);
-			this->label3->TabIndex = 28;
-			this->label3->Text = L"Дата рождения";
-			// 
 			// guna2BorderlessForm1
 			// 
 			this->guna2BorderlessForm1->BorderRadius = 20;
 			this->guna2BorderlessForm1->ContainerControl = this;
 			this->guna2BorderlessForm1->DockIndicatorTransparencyValue = 0.6;
 			this->guna2BorderlessForm1->TransparentWhileDrag = true;
-			// 
-			// labelSendStatus
-			// 
-			this->labelSendStatus->AutoSize = true;
-			this->labelSendStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->labelSendStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelSendStatus->Location = System::Drawing::Point(511, 227);
-			this->labelSendStatus->Name = L"labelSendStatus";
-			this->labelSendStatus->Size = System::Drawing::Size(67, 19);
-			this->labelSendStatus->TabIndex = 29;
-			this->labelSendStatus->Text = L"Статус";
-			this->labelSendStatus->Visible = false;
-			// 
-			// labelValidateStatus
-			// 
-			this->labelValidateStatus->AutoSize = true;
-			this->labelValidateStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->labelValidateStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelValidateStatus->Location = System::Drawing::Point(455, 330);
-			this->labelValidateStatus->Name = L"labelValidateStatus";
-			this->labelValidateStatus->Size = System::Drawing::Size(67, 19);
-			this->labelValidateStatus->TabIndex = 30;
-			this->labelValidateStatus->Text = L"Статус";
-			this->labelValidateStatus->Visible = false;
 			// 
 			// MessageErrorSend
 			// 
@@ -827,20 +1024,6 @@ namespace PythonWave {
 			this->MessageErrorValidate->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			this->MessageErrorValidate->Text = L"";
 			// 
-			// ButtonExit
-			// 
-			this->ButtonExit->BackColor = System::Drawing::Color::Transparent;
-			this->ButtonExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonExit.Image")));
-			this->ButtonExit->ImageRotate = 0;
-			this->ButtonExit->Location = System::Drawing::Point(904, 6);
-			this->ButtonExit->Name = L"ButtonExit";
-			this->ButtonExit->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
-			this->ButtonExit->Size = System::Drawing::Size(20, 20);
-			this->ButtonExit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->ButtonExit->TabIndex = 31;
-			this->ButtonExit->TabStop = false;
-			this->ButtonExit->Click += gcnew System::EventHandler(this, &CreateProfile::ButtonExit_Click);
-			// 
 			// MessageDialogExit
 			// 
 			this->MessageDialogExit->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
@@ -859,120 +1042,14 @@ namespace PythonWave {
 			this->MessageDialogQuestion->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			this->MessageDialogQuestion->Text = L"Это может пригодится в будущем для восстановления вашего аккаунта.";
 			// 
-			// buttonQuestion
-			// 
-			this->buttonQuestion->Animated = true;
-			this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
-			this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonQuestion->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->buttonQuestion->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->buttonQuestion->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->buttonQuestion->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->buttonQuestion->FillColor = System::Drawing::Color::Transparent;
-			this->buttonQuestion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->buttonQuestion->ForeColor = System::Drawing::Color::White;
-			this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
-			this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
-			this->buttonQuestion->Location = System::Drawing::Point(574, 135);
-			this->buttonQuestion->Name = L"buttonQuestion";
-			this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
-			this->buttonQuestion->Size = System::Drawing::Size(20, 20);
-			this->buttonQuestion->TabIndex = 33;
-			this->buttonQuestion->Text = L"guna2CircleButton1";
-			this->buttonQuestion->UseTransparentBackground = true;
-			this->buttonQuestion->Click += gcnew System::EventHandler(this, &CreateProfile::buttonQuestion_Click);
-			// 
-			// labelTimer
-			// 
-			this->labelTimer->AutoSize = true;
-			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelTimer->Location = System::Drawing::Point(279, 369);
-			this->labelTimer->Name = L"labelTimer";
-			this->labelTimer->Size = System::Drawing::Size(308, 19);
-			this->labelTimer->TabIndex = 35;
-			this->labelTimer->Text = L"Отправить повторно через ... секунд";
-			this->labelTimer->Visible = false;
-			// 
 			// timer
 			// 
 			this->timer->Interval = 1000;
 			this->timer->Tick += gcnew System::EventHandler(this, &CreateProfile::timer_Tick);
 			// 
-			// linkReMail
-			// 
-			this->linkReMail->AutoSize = true;
-			this->linkReMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
-			this->linkReMail->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->linkReMail->Location = System::Drawing::Point(279, 369);
-			this->linkReMail->Name = L"linkReMail";
-			this->linkReMail->Size = System::Drawing::Size(179, 19);
-			this->linkReMail->TabIndex = 36;
-			this->linkReMail->TabStop = true;
-			this->linkReMail->Text = L"Отправить повторно";
-			this->linkReMail->Visible = false;
-			this->linkReMail->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &CreateProfile::linkReMail_LinkClicked);
-			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
-			// 
-			// pictureBoxUploadImage
-			// 
-			this->pictureBoxUploadImage->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
-				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->pictureBoxUploadImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxUploadImage.Image")));
-			this->pictureBoxUploadImage->Location = System::Drawing::Point(18, 135);
-			this->pictureBoxUploadImage->Name = L"pictureBoxUploadImage";
-			this->pictureBoxUploadImage->Size = System::Drawing::Size(200, 200);
-			this->pictureBoxUploadImage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBoxUploadImage->TabIndex = 37;
-			this->pictureBoxUploadImage->TabStop = false;
-			// 
-			// buttonUploadImage
-			// 
-			this->buttonUploadImage->Animated = true;
-			this->buttonUploadImage->BackColor = System::Drawing::Color::Transparent;
-			this->buttonUploadImage->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->BorderRadius = 20;
-			this->buttonUploadImage->BorderThickness = 1;
-			this->buttonUploadImage->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->buttonUploadImage->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->buttonUploadImage->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->buttonUploadImage->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->buttonUploadImage->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->buttonUploadImage->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->buttonUploadImage->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->buttonUploadImage->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
-			this->buttonUploadImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonUploadImage.Image")));
-			this->buttonUploadImage->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->buttonUploadImage->ImageSize = System::Drawing::Size(25, 25);
-			this->buttonUploadImage->Location = System::Drawing::Point(18, 349);
-			this->buttonUploadImage->Name = L"buttonUploadImage";
-			this->buttonUploadImage->Size = System::Drawing::Size(200, 39);
-			this->buttonUploadImage->TabIndex = 38;
-			this->buttonUploadImage->Text = L"Загрузить";
-			this->buttonUploadImage->TextOffset = System::Drawing::Point(10, 0);
-			this->buttonUploadImage->UseTransparentBackground = true;
-			this->buttonUploadImage->Click += gcnew System::EventHandler(this, &CreateProfile::buttonUploadImage_Click);
 			// 
 			// MessageDialogUpload
 			// 
@@ -991,7 +1068,7 @@ namespace PythonWave {
 			this->Pages->Controls->Add(this->page2);
 			this->Pages->Controls->Add(this->page3);
 			this->Pages->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->Pages->Location = System::Drawing::Point(0, 2);
+			this->Pages->Location = System::Drawing::Point(0, 0);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
 			this->Pages->Page = this->page1;
@@ -999,102 +1076,25 @@ namespace PythonWave {
 			this->Pages->PageName = L"page1";
 			this->Pages->PageTitle = L"profile";
 			this->Pages->SelectedIndex = 0;
-			this->Pages->Size = System::Drawing::Size(939, 716);
+			this->Pages->Size = System::Drawing::Size(939, 707);
 			this->Pages->TabIndex = 39;
-			animation2->AnimateOnlyDifferences = true;
-			animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
-			animation2->LeafCoeff = 0;
-			animation2->MaxTime = 1;
-			animation2->MinTime = 0;
-			animation2->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicCoeff")));
-			animation2->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicShift")));
-			animation2->MosaicSize = 0;
-			animation2->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
-			animation2->RotateCoeff = 0;
-			animation2->RotateLimit = 0;
-			animation2->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.ScaleCoeff")));
-			animation2->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.SlideCoeff")));
-			animation2->TimeCoeff = 0;
-			animation2->TransparencyCoeff = 1;
-			this->Pages->Transition = animation2;
+			animation1->AnimateOnlyDifferences = true;
+			animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
+			animation1->LeafCoeff = 0;
+			animation1->MaxTime = 1;
+			animation1->MinTime = 0;
+			animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
+			animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
+			animation1->MosaicSize = 0;
+			animation1->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+			animation1->RotateCoeff = 0;
+			animation1->RotateLimit = 0;
+			animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
+			animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
+			animation1->TimeCoeff = 0;
+			animation1->TransparencyCoeff = 1;
+			this->Pages->Transition = animation1;
 			this->Pages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
-			// 
-			// page1
-			// 
-			this->page1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->page1->Controls->Add(this->guna2Button1);
-			this->page1->Controls->Add(this->ButtonExit);
-			this->page1->Controls->Add(this->ButtonMinimize);
-			this->page1->Controls->Add(this->pictureBoxUploadImage);
-			this->page1->Controls->Add(this->buttonUploadImage);
-			this->page1->Controls->Add(this->guna2Separator1);
-			this->page1->Controls->Add(this->textBoxMail);
-			this->page1->Controls->Add(this->labelWelcome);
-			this->page1->Controls->Add(this->bunifuDropdownSex);
-			this->page1->Controls->Add(this->linkReMail);
-			this->page1->Controls->Add(this->textBoxSecurityCode);
-			this->page1->Controls->Add(this->labelTimer);
-			this->page1->Controls->Add(this->buttonSendCode);
-			this->page1->Controls->Add(this->buttonQuestion);
-			this->page1->Controls->Add(this->buttonValidateCode);
-			this->page1->Controls->Add(this->bunifuDropdownDay);
-			this->page1->Controls->Add(this->labelValidateStatus);
-			this->page1->Controls->Add(this->bunifuDropdownMonth);
-			this->page1->Controls->Add(this->labelSendStatus);
-			this->page1->Controls->Add(this->bunifuDropdownYear);
-			this->page1->Controls->Add(this->label3);
-			this->page1->Controls->Add(this->label1);
-			this->page1->Controls->Add(this->textBoxSurname);
-			this->page1->Controls->Add(this->label2);
-			this->page1->Controls->Add(this->textBoxName);
-			this->page1->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->page1->Location = System::Drawing::Point(4, 4);
-			this->page1->Name = L"page1";
-			this->page1->Padding = System::Windows::Forms::Padding(3);
-			this->page1->Size = System::Drawing::Size(931, 690);
-			this->page1->TabIndex = 0;
-			this->page1->Text = L"profile";
-			// 
-			// guna2Button1
-			// 
-			this->guna2Button1->Animated = true;
-			this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
-			this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->BorderRadius = 20;
-			this->guna2Button1->BorderThickness = 1;
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
-			this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
-			this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->guna2Button1->ImageSize = System::Drawing::Size(25, 25);
-			this->guna2Button1->Location = System::Drawing::Point(352, 539);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->Size = System::Drawing::Size(181, 39);
-			this->guna2Button1->TabIndex = 39;
-			this->guna2Button1->Text = L"Продолжить";
-			this->guna2Button1->TextOffset = System::Drawing::Point(14, 0);
-			this->guna2Button1->UseTransparentBackground = true;
-			this->guna2Button1->Click += gcnew System::EventHandler(this, &CreateProfile::guna2Button1_Click);
 			// 
 			// page2
 			// 
@@ -1105,9 +1105,27 @@ namespace PythonWave {
 			this->page2->Location = System::Drawing::Point(4, 4);
 			this->page2->Name = L"page2";
 			this->page2->Padding = System::Windows::Forms::Padding(3);
-			this->page2->Size = System::Drawing::Size(931, 690);
+			this->page2->Size = System::Drawing::Size(931, 681);
 			this->page2->TabIndex = 1;
 			this->page2->Text = L"successful";
+			// 
+			// bunifuLabel1
+			// 
+			this->bunifuLabel1->AllowParentOverrides = false;
+			this->bunifuLabel1->AutoEllipsis = true;
+			this->bunifuLabel1->Cursor = System::Windows::Forms::Cursors::Default;
+			this->bunifuLabel1->CursorType = System::Windows::Forms::Cursors::Default;
+			this->bunifuLabel1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->bunifuLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->bunifuLabel1->Location = System::Drawing::Point(259, 462);
+			this->bunifuLabel1->Name = L"bunifuLabel1";
+			this->bunifuLabel1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->bunifuLabel1->Size = System::Drawing::Size(410, 40);
+			this->bunifuLabel1->TabIndex = 2;
+			this->bunifuLabel1->Text = L"Регистрация завершена";
+			this->bunifuLabel1->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
+			this->bunifuLabel1->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
 			// 
 			// guna2CustomCheckBox1
 			// 
@@ -1139,7 +1157,7 @@ namespace PythonWave {
 			this->page3->Location = System::Drawing::Point(4, 4);
 			this->page3->Name = L"page3";
 			this->page3->Padding = System::Windows::Forms::Padding(3);
-			this->page3->Size = System::Drawing::Size(931, 691);
+			this->page3->Size = System::Drawing::Size(931, 681);
 			this->page3->TabIndex = 2;
 			this->page3->Text = L"end";
 			// 
@@ -1147,24 +1165,6 @@ namespace PythonWave {
 			// 
 			this->timerTransition->Interval = 1000;
 			this->timerTransition->Tick += gcnew System::EventHandler(this, &CreateProfile::timerTransition_Tick);
-			// 
-			// bunifuLabel1
-			// 
-			this->bunifuLabel1->AllowParentOverrides = false;
-			this->bunifuLabel1->AutoEllipsis = true;
-			this->bunifuLabel1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->bunifuLabel1->CursorType = System::Windows::Forms::Cursors::Default;
-			this->bunifuLabel1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->bunifuLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->bunifuLabel1->Location = System::Drawing::Point(259, 462);
-			this->bunifuLabel1->Name = L"bunifuLabel1";
-			this->bunifuLabel1->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->bunifuLabel1->Size = System::Drawing::Size(410, 40);
-			this->bunifuLabel1->TabIndex = 2;
-			this->bunifuLabel1->Text = L"Регистрация завершена";
-			this->bunifuLabel1->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
-			this->bunifuLabel1->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
 			// 
 			// CreateProfile
 			// 
@@ -1178,15 +1178,15 @@ namespace PythonWave {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"CreateProfile";
 			this->Opacity = 0;
-			this->Text = L"CreateProfile";
+			this->Text = L"PythonWave: Профиль";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &CreateProfile::login_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &CreateProfile::CreateProfile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->EndInit();
+			this->page1->ResumeLayout(false);
+			this->page1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxUploadImage))->EndInit();
 			this->Pages->ResumeLayout(false);
-			this->page1->ResumeLayout(false);
-			this->page1->PerformLayout();
 			this->page2->ResumeLayout(false);
 			this->page2->PerformLayout();
 			this->ResumeLayout(false);
