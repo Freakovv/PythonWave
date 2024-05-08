@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 namespace PythonWave {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -94,6 +93,20 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 	private: Bunifu::UI::WinForms::BunifuCheckBox^ CheckBoxTerms;
 	private: Guna::UI2::WinForms::Guna2ShadowForm^ guna2ShadowForm1;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWelcome;
+	private: Bunifu::UI::WinForms::BunifuPages^ bunifuPages;
+	private: System::Windows::Forms::TabPage^ tabPage1;
+	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::Label^ labelWelcome;
+
+	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: Guna::UI2::WinForms::Guna2DragControl^ guna2DragControl1;
+
+
+
+
+
 
 
 
@@ -118,6 +131,7 @@ namespace PythonWave {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(login::typeid));
+			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			this->dragControlForm = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
 			this->ButtonMinimize = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
@@ -147,12 +161,23 @@ namespace PythonWave {
 			this->MessageAcceptTerms = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->elipsePanelEntrance = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
 			this->guna2ShadowForm1 = (gcnew Guna::UI2::WinForms::Guna2ShadowForm(this->components));
+			this->MessageError = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageWelcome = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->bunifuPages = (gcnew Bunifu::UI::WinForms::BunifuPages());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->labelWelcome = (gcnew System::Windows::Forms::Label());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->guna2DragControl1 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonExit))->BeginInit();
 			this->panelEntrance->SuspendLayout();
 			this->panelRegister->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonCloseTerms))->BeginInit();
 			this->panelAuthorize->SuspendLayout();
+			this->bunifuPages->SuspendLayout();
+			this->tabPage1->SuspendLayout();
+			this->tabPage2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dragControlForm
@@ -199,7 +224,7 @@ namespace PythonWave {
 			this->panelEntrance->Controls->Add(this->buttonShowAuthorize);
 			this->panelEntrance->Controls->Add(this->panelAuthorize);
 			this->panelEntrance->Controls->Add(this->buttonShowRegister);
-			this->panelEntrance->Location = System::Drawing::Point(290, 140);
+			this->panelEntrance->Location = System::Drawing::Point(290, 81);
 			this->panelEntrance->Name = L"panelEntrance";
 			this->panelEntrance->Size = System::Drawing::Size(700, 550);
 			this->panelEntrance->TabIndex = 2;
@@ -820,6 +845,112 @@ namespace PythonWave {
 			this->elipsePanelEntrance->BorderRadius = 30;
 			this->elipsePanelEntrance->TargetControl = this->panelEntrance;
 			// 
+			// MessageError
+			// 
+			this->MessageError->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageError->Caption = L"Ошибка";
+			this->MessageError->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
+			this->MessageError->Parent = nullptr;
+			this->MessageError->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageError->Text = L"Пароли не совпадают";
+			// 
+			// MessageWelcome
+			// 
+			this->MessageWelcome->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageWelcome->Caption = L"Здравствуйте";
+			this->MessageWelcome->Icon = Guna::UI2::WinForms::MessageDialogIcon::None;
+			this->MessageWelcome->Parent = nullptr;
+			this->MessageWelcome->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageWelcome->Text = L"Добро пожаловать, USER";
+			// 
+			// bunifuPages
+			// 
+			this->bunifuPages->Alignment = System::Windows::Forms::TabAlignment::Bottom;
+			this->bunifuPages->AllowTransitions = true;
+			this->bunifuPages->Controls->Add(this->tabPage1);
+			this->bunifuPages->Controls->Add(this->tabPage2);
+			this->bunifuPages->Controls->Add(this->tabPage3);
+			this->bunifuPages->Location = System::Drawing::Point(0, 36);
+			this->bunifuPages->Multiline = true;
+			this->bunifuPages->Name = L"bunifuPages";
+			this->bunifuPages->Page = this->tabPage3;
+			this->bunifuPages->PageIndex = 2;
+			this->bunifuPages->PageName = L"tabPage3";
+			this->bunifuPages->PageTitle = L"tabPage3";
+			this->bunifuPages->SelectedIndex = 0;
+			this->bunifuPages->Size = System::Drawing::Size(1280, 685);
+			this->bunifuPages->TabIndex = 3;
+			animation1->AnimateOnlyDifferences = true;
+			animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
+			animation1->LeafCoeff = 0;
+			animation1->MaxTime = 1;
+			animation1->MinTime = 0;
+			animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
+			animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
+			animation1->MosaicSize = 0;
+			animation1->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+			animation1->RotateCoeff = 0;
+			animation1->RotateLimit = 0;
+			animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
+			animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
+			animation1->TimeCoeff = 0;
+			animation1->TransparencyCoeff = 1;
+			this->bunifuPages->Transition = animation1;
+			this->bunifuPages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
+			// 
+			// tabPage1
+			// 
+			this->tabPage1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage1->Controls->Add(this->panelEntrance);
+			this->tabPage1->Location = System::Drawing::Point(4, 4);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(1272, 659);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"tabPage1";
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage2->Controls->Add(this->labelWelcome);
+			this->tabPage2->Location = System::Drawing::Point(4, 4);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1272, 659);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"tabPage2";
+			// 
+			// labelWelcome
+			// 
+			this->labelWelcome->AutoSize = true;
+			this->labelWelcome->Font = (gcnew System::Drawing::Font(L"Century Gothic", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelWelcome->ForeColor = System::Drawing::Color::White;
+			this->labelWelcome->Location = System::Drawing::Point(216, 260);
+			this->labelWelcome->Name = L"labelWelcome";
+			this->labelWelcome->Size = System::Drawing::Size(683, 78);
+			this->labelWelcome->TabIndex = 0;
+			this->labelWelcome->Text = L"Добро пожаловать, ";
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage3->Location = System::Drawing::Point(4, 4);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(1272, 659);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"tabPage3";
+			// 
+			// guna2DragControl1
+			// 
+			this->guna2DragControl1->DockIndicatorTransparencyValue = 0.6;
+			this->guna2DragControl1->TargetControl = this->tabPage1;
+			this->guna2DragControl1->UseTransparentDrag = true;
+			// 
 			// login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -827,7 +958,7 @@ namespace PythonWave {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->ClientSize = System::Drawing::Size(1280, 719);
-			this->Controls->Add(this->panelEntrance);
+			this->Controls->Add(this->bunifuPages);
 			this->Controls->Add(this->ButtonExit);
 			this->Controls->Add(this->ButtonMinimize);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -846,11 +977,16 @@ namespace PythonWave {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonCloseTerms))->EndInit();
 			this->panelAuthorize->ResumeLayout(false);
 			this->panelAuthorize->PerformLayout();
+			this->bunifuPages->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage2->ResumeLayout(false);
+			this->tabPage2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-
+		System::String^ folderPath;
+		System::String^ User;
 		////////////////////////////////////////////////////////////////////////////////////////////
 		//									elements.h                                           //
 		// /////////////////////////////////////////////////////////////////////////////////////////
@@ -865,6 +1001,8 @@ namespace PythonWave {
 	private: System::Void buttonShowAuthorize_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Register();
+	private: System::Boolean ReadPassword();
 	private: System::Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void SetLocations();
 

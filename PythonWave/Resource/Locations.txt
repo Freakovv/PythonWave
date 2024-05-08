@@ -1,3 +1,0 @@
-panelRegister & panelAuthorize
-LOC 4; 47
-

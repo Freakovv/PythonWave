@@ -1,6 +1,8 @@
 #pragma once
 #include "libraries.h"
 using namespace PythonWave;
+using namespace System;
+using namespace System::IO;
 
 		   ////////////////////////////////////////////////////////////////////////////////////////////
 		   //									CreateProfile.h                                      //
@@ -13,13 +15,13 @@ using namespace PythonWave;
 	//
 	// Bar-кнопки, кнопки справочники
 	//
-	System::Void CreateProfile::ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::ButtonMinimize_Click(Object^ sender, EventArgs^ e) {
 		fade_mode = 1;
 		fadetimer->Start();
 	}
-	System::Void CreateProfile::ButtonExit_Click(System::Object^ sender, System::EventArgs^ e) {
-		System::Windows::Forms::DialogResult result = MessageDialogExit->Show();
-		if (result == System::Windows::Forms::DialogResult::Yes) {
+	Void CreateProfile::ButtonExit_Click(Object^ sender, EventArgs^ e) {
+		Windows::Forms::DialogResult result = MessageDialogExit->Show();
+		if (result == Windows::Forms::DialogResult::Yes) {
 			this->Close();
 			fade_mode = 2;
 			fadetimer->Start();
@@ -27,7 +29,7 @@ using namespace PythonWave;
 
 	}
 
-	System::Void CreateProfile::buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::buttonQuestion_Click(Object^ sender, EventArgs^ e) {
 		MessageDialogQuestion->Show();
 	}
 
@@ -36,7 +38,7 @@ using namespace PythonWave;
 	//
 
 	// Обработчик события кнопки отправки письма
-	System::Void CreateProfile::buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::buttonSendCode_Click(Object^ sender, EventArgs^ e) {
 		labelSendStatus->Text = "В процессе..";
 		labelSendStatus->Visible = true;
 		String^ userMail = Convert::ToString(textBoxMail->Text);
@@ -87,7 +89,7 @@ using namespace PythonWave;
 	}
 
 	// Обработчик события кнопки проверки кода безопасности
-	System::Void CreateProfile::buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::buttonValidateCode_Click(Object^ sender, EventArgs^ e) {
 		try {
 			if (SecurityCode == Convert::ToInt32(textBoxSecurityCode->Text)) {
 				labelValidateStatus->Visible = true;
@@ -109,13 +111,13 @@ using namespace PythonWave;
 	//
 	// Load
 	//
-	System::Void CreateProfile::CreateProfile_Load(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::CreateProfile_Load(Object^ sender, EventArgs^ e) {
 		//ButtonMinimize->BringToFront();
 	}
 	//
 	// Текст боксы, визуал
 	//
-	System::Void CreateProfile::textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::textBoxMail_Click(Object^ sender, EventArgs^ e) {
 		textBoxMail->BorderColor = Color::White;
 	}
 
@@ -124,7 +126,7 @@ using namespace PythonWave;
 	// Таймеры, визуал
 	//
 	// Обработчик события таймера на повторную отправку письма
-	System::Void CreateProfile::timer_Tick(System::Object^ sender, System::EventArgs^ e) {
+	Void CreateProfile::timer_Tick(Object^ sender, EventArgs^ e) {
 		secondsLeft--;
 		if (secondsLeft <= 0)
 		{
@@ -143,7 +145,7 @@ using namespace PythonWave;
 	}
 
 	// Обработчик события гиперссылки
-	System::Void CreateProfile::linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	Void CreateProfile::linkReMail_LinkClicked(Object^ sender, Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		textBoxMail->Enabled = true;
 		textBoxSecurityCode->Visible = false;
 
@@ -192,15 +194,15 @@ using namespace PythonWave;
 	//
 	// Bar-кнопки, кнопки справочники
 	//
-	System::Void login::ExitWindow_click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::ExitWindow_click(Object^ sender, EventArgs^ e) {
 		fade_mode = 2;
 		fadetimer->Start();
 	}
-	System::Void login::MinimizeWindow_click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::MinimizeWindow_click(Object^ sender, EventArgs^ e) {
 		fade_mode = 1;
 		fadetimer->Start();
 	}
-	System::Void login::buttonQuestion_click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::buttonQuestion_click(Object^ sender, EventArgs^ e) {
 		//Вывод информации об опции сохранения данных
 		MessageOption->Text = "Это опция позволяет сохранить ваши данные при последующем входе";
 		MessageOption->Show();
@@ -212,7 +214,7 @@ using namespace PythonWave;
 	//
 
 	// Открывает условия пользования
-	System::Void login::linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	Void login::linkLabel1_LinkClicked(Object^ sender, Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		//Открывает условия пользования
 		textBoxTerms->Visible = true;
 		ButtonCloseTerms->Visible = true;
@@ -223,22 +225,22 @@ using namespace PythonWave;
 	}
 
 	// Закрывает условия пользования, спрашивает о подтверджении
-	System::Void login::buttonCloseTerms(System::Object^ sender, System::EventArgs^ e) {
+	Void login::buttonCloseTerms(Object^ sender, EventArgs^ e) {
 		//Закрывает условия пользования
 		textBoxTerms->Visible = false;
 		ButtonCloseTerms->Visible = false;
 		//Спрашивает о согласии, после закрытия
-		System::Windows::Forms::DialogResult result = MessageAcceptTerms->Show();
-		if (result == System::Windows::Forms::DialogResult::Yes) {
+		Windows::Forms::DialogResult result = MessageAcceptTerms->Show();
+		if (result == Windows::Forms::DialogResult::Yes) {
 			CheckBoxTerms->Checked = true;
 		}
-		else if (result == System::Windows::Forms::DialogResult::No) {
+		else if (result == Windows::Forms::DialogResult::No) {
 			CheckBoxTerms->Checked = false;
 		}
 	}
 	
 	// Функция для показа элементов регистрации/авторизации
-	System::Void login::ShowRegister(bool show) {
+	Void login::ShowRegister(bool show) {
 		if (show) {
 			panelAuthorize->Visible = false;
 			panelRegister->Visible = true;
@@ -250,29 +252,158 @@ using namespace PythonWave;
 	}
 
 	// Обработчик события кнопки "Авторизация"
-	System::Void login::buttonShowAuthorize_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::buttonShowAuthorize_Click(Object^ sender, EventArgs^ e) {
 		ShowRegister(false);
 	}
 
 	// Обработчик события кнопки "Регистрация"
-	System::Void login::buttonShowRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::buttonShowRegister_Click(Object^ sender, EventArgs^ e) {
 		ShowRegister(true);
 	}
 
 	// Регистрация
-	System::Void login::buttonRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::buttonRegister_Click(Object^ sender, EventArgs^ e) {
+		
+		// Проверка на пустые поля
+		if (textBoxLoginReg->Text == "") {
+			
+			textBoxLoginReg->BorderColor = Color::Red;
+			
+			MessageError->Text = "Введите логин";
+			MessageError->Show();
+			return;
+		}
+
+		if (textBoxPasswordReg->Text == "" || textBoxPasswordReg2->Text == "") {
+			textBoxPasswordReg->BorderColor = Color::Red;
+			textBoxPasswordReg2->BorderColor = Color::Red;
+			
+			MessageError->Text = "Введите пароль";
+			MessageError->Show();
+			return;
+		}
+		
+		// Проверка на совпадение паролей
+		if (textBoxPasswordReg->Text != textBoxPasswordReg2->Text) {
+		
+			textBoxPasswordReg->BorderColor = Color::Red;
+			textBoxPasswordReg2->BorderColor = Color::Red;
+			
+			MessageError->Text = "Пароли не совпадают";
+			MessageError->Show();
+			return;
+		}
+		
+
+		Register();
 
 	}
 
-	//Вход
-	System::Void login::buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void login::Register() {
+		// Получаем логин и пароль пользователя 
+		String^ cliLogin = textBoxLoginReg->Text;
+		String^ cliPassword = textBoxPasswordReg->Text;
 
+		// Преобразуем их в std::string
+		std::string Login = msclr::interop::marshal_as<std::string>(cliLogin);
+		std::string Password = msclr::interop::marshal_as<std::string>(cliPassword);
+
+		// Создаем папку с полученным логином
+		String^ folderName = cliLogin;
+		String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
+		Directory::CreateDirectory(folderPath);
+
+		// Путь к файлу Password.bin
+		String^ filePath = Path::Combine(folderPath, "Password.bin");
+
+		// Хэшируем пароль
+		std::hash<std::string> hasher;
+		size_t hashPassword = hasher(Password);
+
+		// Открываем файл для записи в бинарном режиме
+		FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
+		BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
+
+		// Записываем хэш в файл
+		binaryWriter->Write(hashPassword);
+
+		// Закрываем бинарный писатель и файловый поток
+		binaryWriter->Close();
+		fileStream->Close();
+
+	}
+
+	Boolean login::ReadPassword() {
+		// Получаем логин и пароль пользователя 
+		String^ cliLogin = textBoxLoginReg->Text;
+		String^ cliPassword = textBoxPasswordReg->Text;
+
+		// Преобразуем их в std::string
+		std::string Login = msclr::interop::marshal_as<std::string>(cliLogin);
+		std::string Password = msclr::interop::marshal_as<std::string>(cliPassword);
+
+		// Создаем путь к файлу Password.bin
+		String^ folderName = cliLogin;
+		String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
+		String^ filePath = Path::Combine(folderPath, "Password.bin");
+
+		// Проверяем существует ли файл
+		if (!File::Exists(folderPath)) {
+			MessageError->Text = "Пользователя с указанным логином не существует";
+			MessageError->Show();
+			return false;
+		}
+
+		// Хэшируем введенный пароль
+		std::hash<std::string> hasher;
+		size_t hashPasswordInput = hasher(Password);
+
+		// Открываем файл для чтения в бинарном режиме
+		FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
+		BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
+
+		// Читаем данные из файла
+		size_t hashPasswordFile = binaryReader->ReadUInt64();
+
+		// Закрываем бинарный читатель и файловый поток
+		binaryReader->Close();
+		fileStream->Close();
+
+		// Сравниваем хэши паролей
+		if (hashPasswordInput == hashPasswordFile) {
+			return true; // Пароль совпадает
+		}
+		else {
+			MessageError->Text = "Введен неверный пароль";
+			MessageError->Show();
+			return false; // Пароль не совпадает
+		}
+	}
+
+	Void DeleteDirectory(String^ folderPath) {
+		DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
+		if (directory->Exists) {
+			// Удаляем папку и все ее содержимое
+			directory->Delete(true); 
+			MessageBox::Show("Папка удалена");
+		}
+		else {
+			MessageBox::Show("Не удалось удалить папку");
+		}
+	}
+	//Вход
+	Void login::buttonComeIn_Click(Object^ sender, EventArgs^ e) {
+		if (ReadPassword()) {
+			User = textBoxLogin->Text;
+			labelWelcome->Text += User + "!";
+			bunifuPages->SelectTab(tabPage2);
+		}
 	}
 
 	//Установка местоположения элементов
-	System::Void login::SetLocations() {
+	Void login::SetLocations() {
 		//Установка корректных координат элементов
-		textBoxTerms->Location = System::Drawing::Point(5, 5);
-		panelRegister->Location = System::Drawing::Point(4, 47);
-		panelAuthorize->Location = System::Drawing::Point(4, 47);
+		textBoxTerms->Location = Drawing::Point(5, 5);
+		panelRegister->Location = Drawing::Point(4, 47);
+		panelAuthorize->Location = Drawing::Point(4, 47);
 	}
