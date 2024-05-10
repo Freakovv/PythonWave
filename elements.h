@@ -16,18 +16,38 @@ using namespace System::IO;
 	// Bar-кнопки, кнопки справочники
 	//
 	Void CreateProfile::ButtonMinimize_Click(Object^ sender, EventArgs^ e) {
-		fade_mode = 1;
-		fadetimer->Start();
+		this->WindowState = FormWindowState::Minimized;
 	}
+
+	Void CreateProfile::DeleteDirectory(String^ folderPath) {
+		try	{
+			DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
+			if (directory->Exists) {
+				// Удаляем папку и все ее содержимое 
+				directory->Delete(true);
+			}
+			else {
+				MessageErrorSend->Text = "Аккаунта не существует";
+				MessageErrorSend->Show();
+			}
+	}
+	catch (Exception^ e) {
+		MessageErrorSend->Show(e->Message);
+		}
+	}
+
 	Void CreateProfile::ButtonExit_Click(Object^ sender, EventArgs^ e) {
 		Windows::Forms::DialogResult result = MessageDialogExit->Show();
 		if (result == Windows::Forms::DialogResult::Yes) {
+			DeleteDirectory(Login);
 			this->Close();
 			fade_mode = 2;
-			fadetimer->Start();
+			fadetimer1->Start();
 		}
 
 	}
+
+
 
 	Void CreateProfile::buttonQuestion_Click(Object^ sender, EventArgs^ e) {
 		MessageDialogQuestion->Show();
@@ -112,7 +132,8 @@ using namespace System::IO;
 	// Load
 	//
 	Void CreateProfile::CreateProfile_Load(Object^ sender, EventArgs^ e) {
-		//ButtonMinimize->BringToFront();
+		fade_mode = 0;
+		fadetimer1->Start();
 	}
 	//
 	// Текст боксы, визуал
@@ -217,18 +238,18 @@ using namespace System::IO;
 	Void login::linkLabel1_LinkClicked(Object^ sender, Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		//Открывает условия пользования
 		textBoxTerms->Visible = true;
-		ButtonCloseTerms->Visible = true;
+		buttonTerms->Visible = true;
 
 		//Корректное отображение элементов
 		textBoxTerms->BringToFront();
-		ButtonCloseTerms->BringToFront();
+		buttonTerms->BringToFront();
 	}
 
 	// Закрывает условия пользования, спрашивает о подтверджении
 	Void login::buttonCloseTerms(Object^ sender, EventArgs^ e) {
 		//Закрывает условия пользования
 		textBoxTerms->Visible = false;
-		ButtonCloseTerms->Visible = false;
+		buttonTerms->Visible = false;
 		//Спрашивает о согласии, после закрытия
 		Windows::Forms::DialogResult result = MessageAcceptTerms->Show();
 		if (result == Windows::Forms::DialogResult::Yes) {
@@ -239,26 +260,26 @@ using namespace System::IO;
 		}
 	}
 	
-	// Функция для показа элементов регистрации/авторизации
-	Void login::ShowRegister(bool show) {
-		if (show) {
-			panelAuthorize->Visible = false;
-			panelRegister->Visible = true;
-		}
-		else {
-			panelAuthorize->Visible = true;
-			panelRegister->Visible = false;
-		}
-	}
 
 	// Обработчик события кнопки "Авторизация"
 	Void login::buttonShowAuthorize_Click(Object^ sender, EventArgs^ e) {
-		ShowRegister(false);
+
+		buttonShowRegister1->Checked = false;
+		buttonShowRegister->Checked = false;
+		
+		buttonShowAuthorize->Checked = true;
+		buttonShowAuthorize1->Checked = true;
+		bunifuPages1->SelectTab(PageAuth);
 	}
 
 	// Обработчик события кнопки "Регистрация"
 	Void login::buttonShowRegister_Click(Object^ sender, EventArgs^ e) {
-		ShowRegister(true);
+		buttonShowRegister->Checked = true;
+		buttonShowRegister1->Checked = true;
+
+		buttonShowAuthorize->Checked = false;
+		buttonShowAuthorize1->Checked = false;
+		bunifuPages1->SelectTab(PageReg);
 	}
 
 	// Регистрация
@@ -303,6 +324,7 @@ using namespace System::IO;
 		// Получаем логин и пароль пользователя 
 		String^ cliLogin = textBoxLoginReg->Text;
 		String^ cliPassword = textBoxPasswordReg->Text;
+		User = cliLogin;
 
 		// Преобразуем их в std::string
 		std::string Login = msclr::interop::marshal_as<std::string>(cliLogin);
@@ -331,6 +353,8 @@ using namespace System::IO;
 		binaryWriter->Close();
 		fileStream->Close();
 
+		fade_mode = 3;
+		fadetimer->Start();
 	}
 
 	Boolean login::ReadPassword() {
@@ -380,17 +404,6 @@ using namespace System::IO;
 		}
 	}
 
-	Void DeleteDirectory(String^ folderPath) {
-		DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
-		if (directory->Exists) {
-			// Удаляем папку и все ее содержимое
-			directory->Delete(true); 
-			MessageBox::Show("Папка удалена");
-		}
-		else {
-			MessageBox::Show("Не удалось удалить папку");
-		}
-	}
 	//Вход
 	Void login::buttonComeIn_Click(Object^ sender, EventArgs^ e) {
 		if (ReadPassword()) {

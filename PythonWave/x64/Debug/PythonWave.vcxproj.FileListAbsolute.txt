@@ -1,0 +1,8 @@
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+E:\.Coding\.PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.AssemblyReference.cache
+E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWave.CreateProfile.resources
+E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWave.login.resources
+E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.GenerateResource.cache
+E:\.Coding\.PythonWave\PythonWave\x64\Debug\PythonWa.4059B652.Up2Date

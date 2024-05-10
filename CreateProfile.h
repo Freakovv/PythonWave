@@ -30,15 +30,17 @@ namespace PythonWave {
 	public ref class CreateProfile : public System::Windows::Forms::Form
 	{
 	public:
-		CreateProfile(void)
+		String^ Login;
+		CreateProfile(String^ log)
 		{
+			Login = log;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
-			fadetimer = gcnew System::Windows::Forms::Timer();
-			fadetimer->Interval = 10; // Set the interval (in milliseconds)
-			fadetimer->Tick += gcnew System::EventHandler(this, &CreateProfile::fadetimer_Tick);
+			fadetimer1 = gcnew System::Windows::Forms::Timer();
+			fadetimer1->Interval = 10; // Set the interval (in milliseconds)
+			fadetimer1->Tick += gcnew System::EventHandler(this, &CreateProfile::fadetimer_Tick);
 		}
 
 	protected:
@@ -52,7 +54,7 @@ namespace PythonWave {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Timer^ fadetimer;
+	private: System::Windows::Forms::Timer^ fadetimer1;
 	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
 	private: Bunifu::UI::WinForms::BunifuLabel^ labelWelcome;
 	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
@@ -128,6 +130,8 @@ namespace PythonWave {
 	private: System::Windows::Forms::Timer^ timerTransition;
 	private: Guna::UI2::WinForms::Guna2CustomCheckBox^ guna2CustomCheckBox1;
 	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel1;
+	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator3;
+	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator2;
 
 
 
@@ -199,6 +203,8 @@ namespace PythonWave {
 			this->textBoxSecurityCode = (gcnew Guna::UI2::WinForms::Guna2TextBox());
 			this->bunifuDragControl1 = (gcnew Bunifu::Framework::UI::BunifuDragControl(this->components));
 			this->page1 = (gcnew System::Windows::Forms::TabPage());
+			this->guna2Separator3 = (gcnew Guna::UI2::WinForms::Guna2Separator());
+			this->guna2Separator2 = (gcnew Guna::UI2::WinForms::Guna2Separator());
 			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->ButtonExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->pictureBoxUploadImage = (gcnew System::Windows::Forms::PictureBox());
@@ -253,13 +259,14 @@ namespace PythonWave {
 			this->labelWelcome->AutoEllipsis = true;
 			this->labelWelcome->Cursor = System::Windows::Forms::Cursors::Default;
 			this->labelWelcome->CursorType = System::Windows::Forms::Cursors::Default;
-			this->labelWelcome->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->labelWelcome->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->labelWelcome->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelWelcome->Location = System::Drawing::Point(375, 2);
+			this->labelWelcome->Location = System::Drawing::Point(395, 3);
 			this->labelWelcome->Name = L"labelWelcome";
 			this->labelWelcome->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->labelWelcome->Size = System::Drawing::Size(158, 40);
+			this->labelWelcome->Size = System::Drawing::Size(144, 45);
 			this->labelWelcome->TabIndex = 0;
 			this->labelWelcome->Text = L"Профиль";
 			this->labelWelcome->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
@@ -311,7 +318,8 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
 			this->textBoxMail->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxMail->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->textBoxMail->ForeColor = System::Drawing::Color::Black;
 			this->textBoxMail->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -354,7 +362,7 @@ namespace PythonWave {
 			this->bunifuDropdownSex->FillDropDown = true;
 			this->bunifuDropdownSex->FillIndicator = false;
 			this->bunifuDropdownSex->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bunifuDropdownSex->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->bunifuDropdownSex->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 11.25F));
 			this->bunifuDropdownSex->ForeColor = System::Drawing::Color::Black;
 			this->bunifuDropdownSex->FormattingEnabled = true;
 			this->bunifuDropdownSex->Icon = nullptr;
@@ -375,7 +383,7 @@ namespace PythonWave {
 			this->bunifuDropdownSex->TabIndex = 9;
 			this->bunifuDropdownSex->Text = L"Пол";
 			this->bunifuDropdownSex->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
-			this->bunifuDropdownSex->TextLeftMargin = 5;
+			this->bunifuDropdownSex->TextLeftMargin = 4;
 			// 
 			// textBoxSecurityCode
 			// 
@@ -397,7 +405,8 @@ namespace PythonWave {
 			this->textBoxSecurityCode->Enabled = false;
 			this->textBoxSecurityCode->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxSecurityCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxSecurityCode->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->textBoxSecurityCode->ForeColor = System::Drawing::Color::Black;
 			this->textBoxSecurityCode->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -426,6 +435,8 @@ namespace PythonWave {
 			// 
 			this->page1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->page1->Controls->Add(this->guna2Separator3);
+			this->page1->Controls->Add(this->guna2Separator2);
 			this->page1->Controls->Add(this->guna2Button1);
 			this->page1->Controls->Add(this->ButtonExit);
 			this->page1->Controls->Add(this->ButtonMinimize);
@@ -459,6 +470,24 @@ namespace PythonWave {
 			this->page1->TabIndex = 0;
 			this->page1->Text = L"profile";
 			// 
+			// guna2Separator3
+			// 
+			this->guna2Separator3->BackColor = System::Drawing::Color::Transparent;
+			this->guna2Separator3->Location = System::Drawing::Point(630, 139);
+			this->guna2Separator3->Name = L"guna2Separator3";
+			this->guna2Separator3->Size = System::Drawing::Size(264, 24);
+			this->guna2Separator3->TabIndex = 41;
+			this->guna2Separator3->UseTransparentBackground = true;
+			// 
+			// guna2Separator2
+			// 
+			this->guna2Separator2->BackColor = System::Drawing::Color::Transparent;
+			this->guna2Separator2->Location = System::Drawing::Point(279, 139);
+			this->guna2Separator2->Name = L"guna2Separator2";
+			this->guna2Separator2->Size = System::Drawing::Size(315, 24);
+			this->guna2Separator2->TabIndex = 40;
+			this->guna2Separator2->UseTransparentBackground = true;
+			// 
 			// guna2Button1
 			// 
 			this->guna2Button1->Animated = true;
@@ -475,7 +504,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
 			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 13.75F, System::Drawing::FontStyle::Bold));
 			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -495,7 +524,7 @@ namespace PythonWave {
 			this->guna2Button1->Size = System::Drawing::Size(181, 39);
 			this->guna2Button1->TabIndex = 39;
 			this->guna2Button1->Text = L"Продолжить";
-			this->guna2Button1->TextOffset = System::Drawing::Point(14, 0);
+			this->guna2Button1->TextOffset = System::Drawing::Point(11, -1);
 			this->guna2Button1->UseTransparentBackground = true;
 			this->guna2Button1->Click += gcnew System::EventHandler(this, &CreateProfile::guna2Button1_Click);
 			// 
@@ -541,7 +570,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
 			this->buttonUploadImage->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUploadImage->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonUploadImage->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.75F, System::Drawing::FontStyle::Bold));
 			this->buttonUploadImage->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonUploadImage->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -561,19 +590,21 @@ namespace PythonWave {
 			this->buttonUploadImage->Size = System::Drawing::Size(200, 39);
 			this->buttonUploadImage->TabIndex = 38;
 			this->buttonUploadImage->Text = L"Загрузить";
-			this->buttonUploadImage->TextOffset = System::Drawing::Point(10, 0);
+			this->buttonUploadImage->TextOffset = System::Drawing::Point(10, -2);
 			this->buttonUploadImage->UseTransparentBackground = true;
 			this->buttonUploadImage->Click += gcnew System::EventHandler(this, &CreateProfile::buttonUploadImage_Click);
 			// 
 			// linkReMail
 			// 
 			this->linkReMail->AutoSize = true;
-			this->linkReMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
+			this->linkReMail->BackColor = System::Drawing::Color::Transparent;
+			this->linkReMail->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->linkReMail->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->linkReMail->Location = System::Drawing::Point(279, 369);
+			this->linkReMail->Location = System::Drawing::Point(279, 363);
 			this->linkReMail->Name = L"linkReMail";
-			this->linkReMail->Size = System::Drawing::Size(179, 19);
+			this->linkReMail->Size = System::Drawing::Size(196, 25);
 			this->linkReMail->TabIndex = 36;
 			this->linkReMail->TabStop = true;
 			this->linkReMail->Text = L"Отправить повторно";
@@ -583,13 +614,13 @@ namespace PythonWave {
 			// labelTimer
 			// 
 			this->labelTimer->AutoSize = true;
-			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelTimer->Location = System::Drawing::Point(279, 369);
+			this->labelTimer->Location = System::Drawing::Point(280, 363);
 			this->labelTimer->Name = L"labelTimer";
-			this->labelTimer->Size = System::Drawing::Size(308, 19);
+			this->labelTimer->Size = System::Drawing::Size(338, 25);
 			this->labelTimer->TabIndex = 35;
 			this->labelTimer->Text = L"Отправить повторно через ... секунд";
 			this->labelTimer->Visible = false;
@@ -610,7 +641,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
 			this->buttonSendCode->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonSendCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonSendCode->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 13.75F, System::Drawing::FontStyle::Bold));
 			this->buttonSendCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonSendCode->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -650,7 +681,7 @@ namespace PythonWave {
 			this->buttonQuestion->ForeColor = System::Drawing::Color::White;
 			this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
 			this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
-			this->buttonQuestion->Location = System::Drawing::Point(574, 135);
+			this->buttonQuestion->Location = System::Drawing::Point(548, 122);
 			this->buttonQuestion->Name = L"buttonQuestion";
 			this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
 			this->buttonQuestion->Size = System::Drawing::Size(20, 20);
@@ -676,7 +707,7 @@ namespace PythonWave {
 			this->buttonValidateCode->Enabled = false;
 			this->buttonValidateCode->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonValidateCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->buttonValidateCode->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 13.75F, System::Drawing::FontStyle::Bold));
 			this->buttonValidateCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonValidateCode->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -696,7 +727,7 @@ namespace PythonWave {
 			this->buttonValidateCode->Size = System::Drawing::Size(170, 39);
 			this->buttonValidateCode->TabIndex = 17;
 			this->buttonValidateCode->Text = L"Подтвердить";
-			this->buttonValidateCode->TextOffset = System::Drawing::Point(14, 0);
+			this->buttonValidateCode->TextOffset = System::Drawing::Point(14, -1);
 			this->buttonValidateCode->UseTransparentBackground = true;
 			this->buttonValidateCode->Click += gcnew System::EventHandler(this, &CreateProfile::buttonValidateCode_Click);
 			// 
@@ -724,7 +755,7 @@ namespace PythonWave {
 			this->bunifuDropdownDay->FillDropDown = true;
 			this->bunifuDropdownDay->FillIndicator = false;
 			this->bunifuDropdownDay->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bunifuDropdownDay->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bunifuDropdownDay->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->bunifuDropdownDay->ForeColor = System::Drawing::Color::Black;
 			this->bunifuDropdownDay->FormattingEnabled = true;
@@ -755,13 +786,13 @@ namespace PythonWave {
 			// labelValidateStatus
 			// 
 			this->labelValidateStatus->AutoSize = true;
-			this->labelValidateStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelValidateStatus->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelValidateStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->labelValidateStatus->Location = System::Drawing::Point(455, 330);
 			this->labelValidateStatus->Name = L"labelValidateStatus";
-			this->labelValidateStatus->Size = System::Drawing::Size(67, 19);
+			this->labelValidateStatus->Size = System::Drawing::Size(69, 25);
 			this->labelValidateStatus->TabIndex = 30;
 			this->labelValidateStatus->Text = L"Статус";
 			this->labelValidateStatus->Visible = false;
@@ -790,7 +821,7 @@ namespace PythonWave {
 			this->bunifuDropdownMonth->FillDropDown = true;
 			this->bunifuDropdownMonth->FillIndicator = false;
 			this->bunifuDropdownMonth->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bunifuDropdownMonth->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bunifuDropdownMonth->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->bunifuDropdownMonth->ForeColor = System::Drawing::Color::Black;
 			this->bunifuDropdownMonth->FormattingEnabled = true;
@@ -820,13 +851,13 @@ namespace PythonWave {
 			// labelSendStatus
 			// 
 			this->labelSendStatus->AutoSize = true;
-			this->labelSendStatus->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->labelSendStatus->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelSendStatus->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->labelSendStatus->Location = System::Drawing::Point(511, 227);
 			this->labelSendStatus->Name = L"labelSendStatus";
-			this->labelSendStatus->Size = System::Drawing::Size(67, 19);
+			this->labelSendStatus->Size = System::Drawing::Size(69, 25);
 			this->labelSendStatus->TabIndex = 29;
 			this->labelSendStatus->Text = L"Статус";
 			this->labelSendStatus->Visible = false;
@@ -855,7 +886,7 @@ namespace PythonWave {
 			this->bunifuDropdownYear->FillDropDown = true;
 			this->bunifuDropdownYear->FillIndicator = false;
 			this->bunifuDropdownYear->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->bunifuDropdownYear->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->bunifuDropdownYear->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->bunifuDropdownYear->ForeColor = System::Drawing::Color::Black;
 			this->bunifuDropdownYear->FormattingEnabled = true;
@@ -887,24 +918,26 @@ namespace PythonWave {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
+			this->label3->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label3->Location = System::Drawing::Point(627, 311);
+			this->label3->Location = System::Drawing::Point(627, 317);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(242, 36);
+			this->label3->Size = System::Drawing::Size(184, 32);
 			this->label3->TabIndex = 28;
 			this->label3->Text = L"Дата рождения";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
+			this->label1->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label1->Location = System::Drawing::Point(630, 123);
+			this->label1->Location = System::Drawing::Point(623, 108);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(239, 36);
+			this->label1->Size = System::Drawing::Size(236, 40);
 			this->label1->TabIndex = 24;
 			this->label1->Text = L"Личные данные";
 			// 
@@ -928,7 +961,8 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
 			this->textBoxSurname->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxSurname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxSurname->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->textBoxSurname->ForeColor = System::Drawing::Color::Black;
 			this->textBoxSurname->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -950,13 +984,13 @@ namespace PythonWave {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 21.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label2->Location = System::Drawing::Point(277, 123);
+			this->label2->Location = System::Drawing::Point(272, 108);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(300, 36);
+			this->label2->Size = System::Drawing::Size(285, 40);
 			this->label2->TabIndex = 25;
 			this->label2->Text = L"Подтвердите e-mail";
 			// 
@@ -980,7 +1014,8 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
 			this->textBoxName->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->textBoxName->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxName->Font = (gcnew System::Drawing::Font(L"Yu Gothic UI Semibold", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->textBoxName->ForeColor = System::Drawing::Color::Black;
 			this->textBoxName->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
@@ -1115,13 +1150,13 @@ namespace PythonWave {
 			this->bunifuLabel1->AutoEllipsis = true;
 			this->bunifuLabel1->Cursor = System::Windows::Forms::Cursors::Default;
 			this->bunifuLabel1->CursorType = System::Windows::Forms::Cursors::Default;
-			this->bunifuLabel1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->bunifuLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->bunifuLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->bunifuLabel1->Location = System::Drawing::Point(259, 462);
 			this->bunifuLabel1->Name = L"bunifuLabel1";
 			this->bunifuLabel1->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->bunifuLabel1->Size = System::Drawing::Size(410, 40);
+			this->bunifuLabel1->Size = System::Drawing::Size(372, 38);
 			this->bunifuLabel1->TabIndex = 2;
 			this->bunifuLabel1->Text = L"Регистрация завершена";
 			this->bunifuLabel1->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
@@ -1179,7 +1214,7 @@ namespace PythonWave {
 			this->Name = L"CreateProfile";
 			this->Opacity = 0;
 			this->Text = L"PythonWave: Профиль";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &CreateProfile::login_FormClosing);
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &CreateProfile::Create_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &CreateProfile::CreateProfile_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->ButtonMinimize))->EndInit();
 			this->page1->ResumeLayout(false);
@@ -1204,15 +1239,16 @@ namespace PythonWave {
 	bool IsValidEmail(String^ email);
 	private: int SecurityCode = generateSecurityCode(); 
 	private: void SendEmail(String^ to, String^ subject, String^ body);
-	private: System::Void buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void CreateProfile_Load(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void ButtonExit_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void textBoxMail_Click(System::Object^ sender, System::EventArgs^);
-	private: System::Void timer_Tick(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+	private: Void buttonSendCode_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void CreateProfile_Load(System::Object^ sender, System::EventArgs^ e);
+	private: Void ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void ButtonExit_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void textBoxMail_Click(System::Object^ sender, System::EventArgs^);
+	private: Void timer_Tick(System::Object^ sender, System::EventArgs^ e);
+	private: Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+	private: Void DeleteDirectory(String^ folderPath);
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -1225,8 +1261,8 @@ namespace PythonWave {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public: virtual void WndProc(System::Windows::Forms::Message% msg) override;
-	private: System::Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void login_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
+	private: Void fadetimer_Tick(System::Object^ sender, System::EventArgs^ e);
+	private: Void Create_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1235,7 +1271,7 @@ namespace PythonWave {
 	//int x_Start_Location = 194;
 	//int x_Start_Size = 200;
 	////194; 560
-	//private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	//private: Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 	//	if (guna2TextBox1->Location != Point(169, 540)) {
 	//		y_Start_Location -= 1;
 	//		x_Start_Location -= 1;
@@ -1246,7 +1282,7 @@ namespace PythonWave {
 	//		guna2TextBox1->Size = Drawing::Size(x_Start_Size, 30);
 	//	}
 	//}
-private: System::Void buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {
+private: Void buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		// Настройка OpenFileDialog
 		openFileDialog1->Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";
@@ -1288,12 +1324,12 @@ private: System::Void buttonUploadImage_Click(System::Object^ sender, System::Ev
 		MessageDialogUpload->Show(ex->Message);
 	}
 }
-	private: System::Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(page2);
 		timerTransition->Start();
 	}
 		   int sec = 3;
-	private: System::Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
+	private: Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
 		sec -= 1;
 		guna2CustomCheckBox1->Checked = true;
 		if (sec == 0) {

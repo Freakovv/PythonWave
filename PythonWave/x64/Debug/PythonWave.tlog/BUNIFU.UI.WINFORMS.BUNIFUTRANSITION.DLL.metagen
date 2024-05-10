@@ -1,0 +1,424 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuTransition: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.ComponentModel.IExtenderProvider
+  Properties:
+    Int32 MaxAnimationTime 'get set' : 
+    Int32 Interval 'get set' : 
+    Single TimeStep 'get set' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation DefaultAnimation 'get set' : 
+    System.Windows.Forms.Cursor Cursor 'get set' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType AnimationType 'get set' : 
+    Boolean IsCompleted 'get ' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+AnimationCompletedEventArg] AnimationCompleted: 
+    System.EventHandler AllAnimationsCompleted: 
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+NonLinearTransfromNeededEventArg] NonLinearTransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.MouseEventArgs] MouseDown: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    get_MaxAnimationTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxAnimationTime(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Interval(): PrivateScope, Public, HideBySig, SpecialName
+    set_Interval(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeStep(): PrivateScope, Public, HideBySig, SpecialName
+    set_TimeStep(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_DefaultAnimation(): PrivateScope, Public, HideBySig, SpecialName
+    set_DefaultAnimation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Cursor(): PrivateScope, Public, HideBySig, SpecialName
+    set_Cursor(Cursor): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimationType(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimationType(AnimationType): PrivateScope, Public, HideBySig, SpecialName
+    get_IsCompleted(): PrivateScope, Public, HideBySig, SpecialName
+    AddToQueue(Control, AnimateMode, Boolean(Optional, HasDefault), Animation(Optional, HasDefault), Rectangle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    ClearQueue(): PrivateScope, Public, HideBySig
+    Show(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    ShowSync(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    Hide(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    HideSync(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    BeginUpdate(Control, Boolean(Optional, HasDefault), Animation(Optional, HasDefault), Rectangle(Optional, HasDefault)): PrivateScope, Public, HideBySig
+    EndUpdate(Control): PrivateScope, Public, HideBySig
+    EndUpdateSync(Control): PrivateScope, Public, HideBySig
+    WaitAllAnimations(): PrivateScope, Public, HideBySig
+    WaitAnimation(Control): PrivateScope, Public, HideBySig
+    add_AnimationCompleted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_AnimationCompleted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_AllAnimationsCompleted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    remove_AllAnimationsCompleted(EventHandler): PrivateScope, Public, HideBySig, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    GetDecoration(Control): PrivateScope, Public, HideBySig
+    SetDecoration(Control, DecorationType): PrivateScope, Public, HideBySig
+    CanExtend(Object): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.Animation: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 MosaicSize 'get set' : 
+    Single MinTime 'get set' : 
+    Single MaxTime 'get set' : 
+    Single LeafCoeff 'get set' : 
+    Single TimeCoeff 'get set' : 
+    Single RotateLimit 'get set' : 
+    Single RotateCoeff 'get set' : 
+    Single TransparencyCoeff 'get set' : 
+    Boolean AnimateOnlyDifferences 'get set' : 
+    System.Windows.Forms.Padding Padding 'get set' : 
+    System.Drawing.PointF SlideCoeff 'get set' : 
+    System.Drawing.PointF ScaleCoeff 'get set' : 
+    System.Drawing.PointF MosaicShift 'get set' : 
+    System.Drawing.PointF MosaicCoeff 'get set' : 
+    System.Drawing.PointF BlindCoeff 'get set' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Rotate 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation HorizSlide 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation VertSlide 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Scale 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation ScaleAndRotate 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation HorizSlideAndRotate 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation ScaleAndHorizSlide 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Transparent 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Leaf 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Mosaic 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Particles 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation VertBlind 'get ' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation HorizBlind 'get ' : 
+    Boolean IsNonLinearTransformNeeded 'get ' : 
+  Methods:
+    get_MosaicSize(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicSize(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_MinTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MinTime(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_MaxTime(): PrivateScope, Public, HideBySig, SpecialName
+    set_MaxTime(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_LeafCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_LeafCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_TimeCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_TimeCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_RotateLimit(): PrivateScope, Public, HideBySig, SpecialName
+    set_RotateLimit(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_RotateCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_RotateCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_TransparencyCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_TransparencyCoeff(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimateOnlyDifferences(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimateOnlyDifferences(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Padding(): PrivateScope, Public, HideBySig, SpecialName
+    set_Padding(Padding): PrivateScope, Public, HideBySig, SpecialName
+    get_SlideCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_SlideCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_ScaleCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_ScaleCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_MosaicShift(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicShift(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_MosaicCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_MosaicCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_BlindCoeff(): PrivateScope, Public, HideBySig, SpecialName
+    set_BlindCoeff(PointF): PrivateScope, Public, HideBySig, SpecialName
+    get_Rotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_VertSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Scale(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ScaleAndRotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizSlideAndRotate(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_ScaleAndHorizSlide(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Transparent(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Leaf(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Mosaic(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_Particles(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_VertBlind(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_HorizBlind(): PrivateScope, Public, Static, HideBySig, SpecialName
+    get_IsNonLinearTransformNeeded(): PrivateScope, Public, HideBySig, SpecialName
+    Add(Animation): PrivateScope, Public, HideBySig
+    Clone(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Custom = 0 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Rotate = 1 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType HorizSlide = 2 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType VertSlide = 3 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Scale = 4 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType ScaleAndRotate = 5 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType HorizSlideAndRotate = 6 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType ScaleAndHorizSlide = 7 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Transparent = 8 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Leaf = 9 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Mosaic = 10 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType Particles = 11 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType VertBlind = 12 : Public, Static, Literal, HasDefault
+    Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType HorizBlind = 13 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.Windows.Forms.Control, AnimateMode, Bunifu.UI.WinForms.BunifuAnimatorNS.Animation, Single, System.Drawing.Rectangle): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Bitmap Frame 'get set' : 
+    Single CurrentTime 'get set' : 
+    System.Windows.Forms.Control DoubleBitmap 'get set' : 
+    System.Windows.Forms.Control AnimatedControl 'get set' : 
+    Boolean IsCompleted 'get ' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+NonLinearTransfromNeededEventArg] NonLinearTransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+    System.EventHandler`1[System.Windows.Forms.MouseEventArgs] MouseDown: 
+  Methods:
+    get_Frame(): PrivateScope, Public, HideBySig, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_NonLinearTransfromNeeded(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    add_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    remove_MouseDown(EventHandler`1): PrivateScope, Public, HideBySig, SpecialName
+    get_DoubleBitmap(): PrivateScope, Public, HideBySig, SpecialName
+    get_AnimatedControl(): PrivateScope, Public, HideBySig, SpecialName
+    set_AnimatedControl(Control): PrivateScope, Public, HideBySig, SpecialName
+    Dispose(): PrivateScope, Public, HideBySig
+    Hide(): PrivateScope, Public, HideBySig
+    EndUpdate(): PrivateScope, Public, HideBySig
+    get_IsCompleted(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.DoubleBitmapControl: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Bunifu.UI.WinForms.BunifuAnimatorNS.IFakeControl
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+  Methods:
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Interface Bunifu.UI.WinForms.BunifuAnimatorNS.IFakeControl: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.Drawing.Bitmap BgBmp 'get set' : 
+    System.Drawing.Bitmap Frame 'get set' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    get_BgBmp(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_BgBmp(Bitmap): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_Frame(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.DoubleBitmapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Bunifu.UI.WinForms.BunifuAnimatorNS.IFakeControl
+  Properties:
+    System.Drawing.Bitmap BgBmp 'get set' : 
+    System.Drawing.Bitmap Frame 'get set' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg] TransfromNeeded: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainting: 
+    System.EventHandler`1[System.Windows.Forms.PaintEventArgs] FramePainted: 
+  Methods:
+    add_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_TransfromNeeded(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    InitParent(Control, Padding): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_BgBmp(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BgBmp(Bitmap): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Frame(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Frame(Bitmap): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainting(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_FramePainted(EventHandler`1): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.Flags: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+Class Bunifu.UI.WinForms.BunifuAnimatorNS.PointFConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+    ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type): PrivateScope, Public, Virtual, HideBySig
+Struct Bunifu.UI.WinForms.BunifuTransition+DecorationType: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    DecorationType None = 0 : Public, Static, Literal, HasDefault
+    DecorationType BottomMirror = 1 : Public, Static, Literal, HasDefault
+    DecorationType Custom = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuTransition+AnimateMode: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    AnimateMode Show = 0 : Public, Static, Literal, HasDefault
+    AnimateMode Hide = 1 : Public, Static, Literal, HasDefault
+    AnimateMode Update = 2 : Public, Static, Literal, HasDefault
+    AnimateMode BeginUpdate = 3 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuTransition+AnimationCompletedEventArg: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    AnimateMode Mode 'get set' : 
+  Methods:
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuTransition+TransfromNeededEventArg: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.Drawing.Drawing2D.Matrix Matrix 'get set' : 
+    Single CurrentTime 'get set' : 
+    System.Drawing.Rectangle ClientRectangle 'get set' : 
+    System.Drawing.Rectangle ClipRectangle 'get set' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    AnimateMode Mode 'get set' : 
+    Boolean UseDefaultMatrix 'get set' : 
+  Methods:
+    get_Matrix(): PrivateScope, Public, HideBySig, SpecialName
+    set_Matrix(Matrix): PrivateScope, Public, HideBySig, SpecialName
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClipRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    get_UseDefaultMatrix(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseDefaultMatrix(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuTransition+NonLinearTransfromNeededEventArg: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Single CurrentTime 'get set' : 
+    System.Drawing.Rectangle ClientRectangle 'get set' : 
+    Byte[] Pixels 'get set' : 
+    Int32 Stride 'get set' : 
+    System.Drawing.Rectangle SourceClientRectangle 'get set' : 
+    Byte[] SourcePixels 'get set' : 
+    Int32 SourceStride 'get set' : 
+    Bunifu.UI.WinForms.BunifuAnimatorNS.Animation Animation 'get set' : 
+    System.Windows.Forms.Control Control 'get set' : 
+    AnimateMode Mode 'get set' : 
+    Boolean UseDefaultTransform 'get set' : 
+  Methods:
+    get_CurrentTime(): PrivateScope, Public, HideBySig, SpecialName
+    get_ClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_Pixels(): PrivateScope, Public, HideBySig, SpecialName
+    get_Stride(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceClientRectangle(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourcePixels(): PrivateScope, Public, HideBySig, SpecialName
+    get_SourceStride(): PrivateScope, Public, HideBySig, SpecialName
+    set_SourceStride(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Control(): PrivateScope, Public, HideBySig, SpecialName
+    get_Mode(): PrivateScope, Public, HideBySig, SpecialName
+    get_UseDefaultTransform(): PrivateScope, Public, HideBySig, SpecialName
+    set_UseDefaultTransform(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Struct Bunifu.UI.WinForms.BunifuAnimatorNS.Flags+WindowStyles: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    UInt32 value__ : Public, SpecialName, RTSpecialName
+    WindowStyles WS_OVERLAPPED = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_POPUP = 2147483648 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CHILD = 1073741824 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MINIMIZE = 536870912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_VISIBLE = 268435456 : Public, Static, Literal, HasDefault
+    WindowStyles WS_DISABLED = 134217728 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CLIPSIBLINGS = 67108864 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CLIPCHILDREN = 33554432 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MAXIMIZE = 16777216 : Public, Static, Literal, HasDefault
+    WindowStyles WS_BORDER = 8388608 : Public, Static, Literal, HasDefault
+    WindowStyles WS_DLGFRAME = 4194304 : Public, Static, Literal, HasDefault
+    WindowStyles WS_VSCROLL = 2097152 : Public, Static, Literal, HasDefault
+    WindowStyles WS_HSCROLL = 1048576 : Public, Static, Literal, HasDefault
+    WindowStyles WS_SYSMENU = 524288 : Public, Static, Literal, HasDefault
+    WindowStyles WS_THICKFRAME = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_GROUP = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TABSTOP = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MINIMIZEBOX = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_MAXIMIZEBOX = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CAPTION = 12582912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TILED = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_ICONIC = 536870912 : Public, Static, Literal, HasDefault
+    WindowStyles WS_SIZEBOX = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_TILEDWINDOW = 13565952 : Public, Static, Literal, HasDefault
+    WindowStyles WS_OVERLAPPEDWINDOW = 13565952 : Public, Static, Literal, HasDefault
+    WindowStyles WS_POPUPWINDOW = 2156396544 : Public, Static, Literal, HasDefault
+    WindowStyles WS_CHILDWINDOW = 1073741824 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_DLGMODALFRAME = 1 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOPARENTNOTIFY = 4 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TOPMOST = 8 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_ACCEPTFILES = 16 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TRANSPARENT = 32 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_MDICHILD = 64 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_TOOLWINDOW = 128 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_WINDOWEDGE = 256 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CLIENTEDGE = 512 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CONTEXTHELP = 1024 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RIGHT = 4096 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LEFT = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RTLREADING = 8192 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LTRREADING = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LEFTSCROLLBAR = 16384 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_RIGHTSCROLLBAR = 0 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_CONTROLPARENT = 65536 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_STATICEDGE = 131072 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_APPWINDOW = 262144 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_OVERLAPPEDWINDOW = 768 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_PALETTEWINDOW = 392 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LAYERED = 524288 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOINHERITLAYOUT = 1048576 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_LAYOUTRTL = 4194304 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_COMPOSITED = 33554432 : Public, Static, Literal, HasDefault
+    WindowStyles WS_EX_NOACTIVATE = 134217728 : Public, Static, Literal, HasDefault
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig
