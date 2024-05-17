@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <settings>
+    <setting name="dragTransparent" value="true" />
+    <setting name="hasFormShadow" value="False" />
+    <setting name="greeting" value="true" />
+    <setting name="borderForm" value="10" />
+    <setting name="borderBtn" value="15" />
+    <setting name="volume" value="50" />
+  </settings>
+</configuration>

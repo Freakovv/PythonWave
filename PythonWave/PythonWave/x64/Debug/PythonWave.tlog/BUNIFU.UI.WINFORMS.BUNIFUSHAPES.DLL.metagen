@@ -1,0 +1,110 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuShapes, Version=4.1.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuShapes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Control
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean FillShape 'get set' : 
+    Int32 BorderThickness 'get set' : 
+    Int32 Sides 'get set' : 
+    Single Angle 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Shapes Shape 'get set' : 
+  Events:
+    System.EventHandler`1[Bunifu.UI.WinForms.BunifuShapes+ShapeChangedEventArgs] ShapeChanged: 
+  Methods:
+    get_FillShape(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FillShape(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderThickness(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderThickness(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Sides(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Sides(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Angle(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Angle(Single): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FillColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FillColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Shape(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Shape(Shapes): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    add_ShapeChanged(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_ShapeChanged(EventHandler`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Struct Bunifu.UI.WinForms.BunifuShapes+Shapes: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Shapes Circle = 0 : Public, Static, Literal, HasDefault
+    Shapes Oval = 1 : Public, Static, Literal, HasDefault
+    Shapes Square = 2 : Public, Static, Literal, HasDefault
+    Shapes Rectangle = 3 : Public, Static, Literal, HasDefault
+    Shapes Polygon = 4 : Public, Static, Literal, HasDefault
+    Shapes Line = 5 : Public, Static, Literal, HasDefault
+Class Bunifu.UI.WinForms.BunifuShapes+ShapeChangedEventArgs: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.EventArgs
+    Void .ctor(Shapes): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Shapes Shape 'get ' : 
+  Methods:
+    get_Shape(): PrivateScope, Public, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuShapes+BunifuDesigner: AutoLayout, AnsiClass, Class, NestedPublic, HasSecurity, BeforeFieldInit
+  :System.Windows.Forms.Design.ControlDesigner
+  Properties:
+    System.Windows.Forms.Design.SelectionRules SelectionRules 'get ' : 
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_SelectionRules(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Bunifu.UI.WinForms.BunifuShapes+BunifuShapesActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean FillShape 'get set' : 
+    Int32 BorderThickness 'get set' : 
+    Int32 Sides 'get set' : 
+    Single Angle 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    Shapes Shape 'get set' : 
+  Methods:
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+    get_FillShape(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillShape(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderThickness(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderThickness(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Sides(): PrivateScope, Public, HideBySig, SpecialName
+    set_Sides(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Angle(): PrivateScope, Public, HideBySig, SpecialName
+    set_Angle(Single): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_Shape(): PrivateScope, Public, HideBySig, SpecialName
+    set_Shape(Shapes): PrivateScope, Public, HideBySig, SpecialName
+    Refresh(): PrivateScope, Public, HideBySig
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

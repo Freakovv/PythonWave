@@ -1,0 +1,488 @@
+#pragma once
+#include "profile.h"
+#include "ClassFade.h"
+#include "ClassMail.h"
+#include "config.h"
+
+#include <Windows.h>
+#include <iostream>
+#include <msclr\marshal_cppstd.h>
+#include <string>
+#include <map> 
+#include <ctime>
+
+#using <System.dll>
+using namespace System;
+using namespace PythonWave;
+using namespace System::IO;
+using namespace System::Collections::Generic;
+using namespace System::Drawing;
+using namespace System::Diagnostics;
+// Для письма на почту
+using namespace System::Net;
+using namespace System::Net::Mail;
+using namespace System::Net::Security;
+using namespace System::Text;
+
+	// Переменные для работы
+	int mode = 1; // Режим перехода
+	int secondsToClose = 2; // Время до закрытия и для переходов
+	int secondsLeft = 30; 	// Повторная отправка письма
+	int checkBoxMode = 1; // Тип анимации чекбокса
+	int checkBoxSec = 2; // Время анимации чекбокса
+	bool email_confirmed = false; // Состояние подтвердженного email
+
+	// func
+	//-------------------------------------------------------------------------------------------------------------
+	//Restart
+	void RestartApplication()
+	{
+		// Получаем путь к текущему исполняемому файлу
+		String^ executablePath = Application::ExecutablePath;
+
+		// Запускаем новый процесс с тем же исполняемым файлом
+		Process::Start(executablePath);
+
+		// Закрываем текущее приложение
+		Application::Exit();
+	}
+	// Сохранение данных
+	String^ GetFullDate(String^ day, String^ month, String^ year) {
+		// Создаем словарь с соответствиями месяцев
+		Dictionary<String^, String^>^ months = gcnew Dictionary<String^, String^>();
+		months->Add("Январь", "Января");
+		months->Add("Февраль", "Февраля");
+		months->Add("Март", "Марта");
+		months->Add("Апрель", "Апреля");
+		months->Add("Май", "Мая");
+		months->Add("Июнь", "Июня");
+		months->Add("Июль", "Июля");
+		months->Add("Август", "Августа");
+		months->Add("Сентябрь", "Сентября");
+		months->Add("Октябрь", "Октября");
+		months->Add("Ноябрь", "Ноября");
+		months->Add("Декабрь", "Декабря");
+
+		// Получаем аббревиатуру месяца из словаря
+		String^ monthAbbreviation;
+		if (months->ContainsKey(month)) {
+			monthAbbreviation = months[month];
+		}
+		else {
+			// Если месяц не найден, оставляем его как есть
+			monthAbbreviation = month;
+		}
+
+		// Формируем полную дату
+		String^ fullDate = day + " " + monthAbbreviation + " " + year;
+
+		return fullDate;
+	}
+	Void profile::SaveData() {
+		try {
+			// Получаем Имя и Фамилию
+			String^ name = textBoxUserName->Text;
+			String^ surname = textBoxUserSurname->Text;
+
+			// Получаем строку с полным именем и фамилией
+			bool createFullname = false;
+			String^ fullname;
+			if (textBoxUserName->Text != "") {
+				fullname = name + " " + surname;
+				// Сообщаем что нужно создать файл с полным прозвищем
+				createFullname = true;
+			}
+
+			// Получаем пол
+			String^ sex = bunifuDropdownSex->Text;
+
+			// Получаем дату рождения
+			String^ day = bunifuDropdownDay->Text;
+			String^ month = bunifuDropdownMonth->Text;
+			String^ year = bunifuDropdownYear->Text;
+			String^ FullDate = GetFullDate(day, month, year);
+
+			// Получаем email
+			String^ email = textBoxEmail->Text;
+
+			// Записываем в файлы данные пользователя
+			String^ fileUserEmail = UserLogin + "//userData1.bin";
+			String^ fileUserName = UserLogin + "//userData2.bin";
+			String^ fileUserSex = UserLogin + "//userData3.bin";
+			String^ fileUserBirth = UserLogin + "//userData4.bin";
+
+			//1
+			FileStream^ fs1 = gcnew FileStream(fileUserEmail, FileMode::Create);
+			BinaryWriter^ writer1 = gcnew BinaryWriter(fs1);
+			writer1->Write(email);
+			writer1->Close();
+			fs1->Close();
+			//2
+			FileStream^ fs2 = gcnew FileStream(fileUserName, FileMode::Create);
+			BinaryWriter^ writer2 = gcnew BinaryWriter(fs2);
+			if (createFullname) {
+				writer2->Write(fullname);
+			}
+			else {
+				writer2->Write(name);
+			}
+			writer2->Close();
+			fs2->Close();
+			//3
+			FileStream^ fs3 = gcnew FileStream(fileUserSex, FileMode::Create);
+			BinaryWriter^ writer3 = gcnew BinaryWriter(fs3);
+			writer3->Write(sex);
+			writer3->Close();
+			fs3->Close();
+			//4
+			FileStream^ fs4 = gcnew FileStream(fileUserBirth, FileMode::Create);
+			BinaryWriter^ writer4 = gcnew BinaryWriter(fs4);
+			writer4->Write(FullDate);
+			writer4->Close();
+			fs4->Close();
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message, "Аккаунт будет удален");
+		}
+	}
+
+	
+	// Проверка корректности введенного email (наличие символов '@' и '.')
+	bool profile::IsValidEmail(String^ email) {
+		return email->Contains("@") && email->Contains(".");
+	}
+
+	
+
+	// Функция для генерации кода
+	int profile::generateSecurityCode() {
+		srand(time(NULL));
+		int Code = rand() % 900000 + 100000;
+		return Code;
+	}
+
+	Void profile::enableMail(bool enable) {
+		if (enable) {
+			textBoxCode->Clear();
+
+			textBoxEmail->Enabled = true;
+			textBoxCode->Enabled = false;
+
+			buttonSendMail->Enabled = true;
+			buttonCheckCode->Enabled = false;
+
+			pictureBoxCheckMail->Enabled = true;
+			pictureBoxCheckCode->Enabled = true;
+
+			pictureBoxCheckMail->Visible = false;
+			pictureBoxCheckCode->Visible = false;
+
+			linkReMail->Visible = false;
+		}
+		else {
+			textBoxEmail->Enabled = true;
+			textBoxCode->Enabled = true;
+
+			buttonSendMail->Enabled = true;
+			buttonCheckCode->Enabled = true;
+
+			pictureBoxCheckMail->Enabled = false;
+			pictureBoxCheckCode->Enabled = false;
+
+		}
+	}
+
+	Void profile::DeleteDirectory(String^ folderPath) {
+		try {
+			DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
+			if (directory->Exists) {
+				// Удаляем папку и все ее содержимое 
+				directory->Delete(true);
+			}
+			else {
+				MessageError->Show("Аккаунта не существует");
+			}
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
+	}
+
+
+	// Форма
+	//-------------------------------------------------------------------------------------------------------------
+	Void profile::profile_Load(System::Object^ sender, System::EventArgs^ e) {
+		SetCenter(pageSettings, labelSettings, 1);
+		SetCenter(pageSettings, labelClose, 1);
+		SetCenter(pageSettings, labelEnd, 3);
+		SetCenter(pageSettings, labelEnd, 3);
+		SetCenter(pageSettings, labelClose, 1);
+		SetCenter(panel1, labelMain, 1);
+		SetCenter(pageEnd, labelEnd, 3);
+		SetCenter(pageEnd, labelClose, 1);
+		
+		ClassFade^ Fade = gcnew ClassFade(this);
+		Fade->SetAnimation("in");
+		Fade = nullptr;
+	}
+	Void profile::ButtonMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
+		ClassFade^ Fade = gcnew ClassFade(this);
+		Fade->SetAnimation("minimize");
+		Fade = nullptr;
+	}
+	Void profile::ButtonExit_Click(System::Object^ sender, System::EventArgs^ e) {
+		Windows::Forms::DialogResult result = MessageDialogExit->Show();
+		if (result == Windows::Forms::DialogResult::Yes) {
+			DeleteDirectory(UserLogin);
+			ClassFade^ Fade = gcnew ClassFade(this);
+			Fade->SetAnimation("close");
+			Fade = nullptr;
+		}
+
+	}
+	Void profile::buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageDialogQuestion->Show();
+	}
+
+	// Таймеры
+	//-------------------------------------------------------------------------------------------------------------
+	
+	// Переходы между страницами
+	Void profile::timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
+		switch (mode)
+		{
+		case 1:
+			//page successfull
+			--secondsToClose;
+			guna2CustomCheckBox1->Checked = true;
+			if (secondsToClose == 0) {
+				timerTransition->Stop();
+				mode = 2;
+				secondsToClose = 5;
+				Pages->SelectTab(pageSettings);
+			}
+			break;
+		case 2:
+			//page close
+			if (secondsToClose == 0) {
+				ClassFade^ Fade = gcnew ClassFade(this);
+				Fade->SetAnimation("Hide");
+				Fade = nullptr;
+				RestartApplication();
+			}
+			else {
+				SetCenter(pageEnd, labelClose, 1);
+				--secondsToClose;
+				labelClose->Text = "Приложение перезапустится через " + secondsToClose + " секунд";
+			}
+			break;
+		default:
+			break;
+		} {
+		}
+	}
+
+	// Отсчтет повторной отправки
+	Void profile::timer_Tick(System::Object^ sender, System::EventArgs^ e) {
+		secondsLeft--;
+		if (secondsLeft <= 0)
+		{
+			secondsLeft = 30;
+			timerReMail->Stop();
+
+			labelTimer->Visible = false;
+
+			linkReMail->Visible = true;
+			linkReMail->Enabled = true;
+		}
+		else
+		{
+			labelTimer->Text = "Отправить повторно через " + secondsLeft.ToString() + " секунд";
+		}
+	}
+
+	// Текстбоксы
+	//-------------------------------------------------------------------------------------------------------------
+	Void profile::textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBoxEmail->BorderColor = Color::Blue;
+	}
+
+
+
+	// Кнопки
+	//-------------------------------------------------------------------------------------------------------------
+	Void profile::linkReMail_Click(System::Object^ sender, System::EventArgs^ e) {
+		enableMail(true);
+		email_confirmed = false;
+	}
+
+	// Переход на сообщении успешной регистрации
+	Void profile::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
+		bool confirmed = true;
+		if (textBoxUserName->Text == "") {
+			textBoxUserName->BorderColor = Color::Red;
+			confirmed = false;
+		}
+
+		if (bunifuDropdownSex->Text == "Пол") {
+			bunifuDropdownSex->BorderColor = Color::Red;
+			confirmed = false;
+		}
+
+		if (bunifuDropdownDay->Text == "День" || bunifuDropdownMonth->Text == "Месяц" || bunifuDropdownYear->Text == "Год") {
+			bunifuDropdownDay->BorderColor = Color::Red;
+			bunifuDropdownMonth->BorderColor = Color::Red;
+			bunifuDropdownYear->BorderColor = Color::Red;
+			confirmed = false;
+		}
+
+
+		if (!confirmed) {
+			MessageError->Show("Заполните все необходимые данные");
+			return;
+		}
+		else if (!email_confirmed) {
+			MessageError->Show("Подтвердите email");
+			return;
+		}
+
+		SaveData();
+		Pages->SelectTab(pageSuccessful);
+		timerTransition->Start();
+	}
+
+	// Кнопка отправки письма			 
+	Void profile::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
+		ClassMail^ EMAIL = gcnew ClassMail(this);
+
+		String^ userMail = Convert::ToString(textBoxEmail->Text);
+		String^ mail = "Здравствуйте, ваш код регистрации: " + Convert::ToString(SecurityCode);
+
+		// Если общий вид мейла правильный, то попробуем отправить письмо
+		if (IsValidEmail(userMail)) {
+			if (EMAIL->SendEmail(userMail, "PythonWave: Код безопасности", mail)) {
+				// Убираем возможность отправить код
+				textBoxEmail->Enabled = false;
+				buttonSendMail->Enabled = false;
+
+				// Даем возможность написать код
+				textBoxCode->Enabled = true;
+				buttonCheckCode->Enabled = true;
+
+				// Информируем об успешной отправке галочкой
+				pictureBoxCheckMail->Visible = true;
+				
+				// Запускаем отсчет на след отправку
+				labelTimer->Visible = true;
+				timerReMail->Start();
+			}
+		}
+		else {
+
+			MessageError->Caption = "Письмо не было отправлено";
+			MessageError->Text = "Введите корректный адрес эл. почты";
+			MessageError->Show();
+
+			textBoxEmail->BorderColor = Color::Red;
+			textBoxEmail->Clear();
+		}
+
+	}
+	void profile::SaveConfig() {
+		Config^ config = gcnew Config();
+
+		// Заполнение конфигурационного объекта текущими значениями из формы
+		config->borderForm = TrackBorderForm->Value;
+		config->borderBtn = TrackBorderBtn->Value;
+		config->volume = TrackVolume->Value;
+
+		config->dragTransparent = toggleTransparent->Checked;
+		config->greeting = toggleGreeting->Checked;
+		config->hasFormShadow = toggleShadows->Checked;
+
+		// Сохранение конфигурации в файл
+		config->SaveConfig("config.xml");
+	}
+
+	Void profile::buttonResume1_Click(System::Object^ sender, System::EventArgs^ e) {
+		SaveConfig();
+		Pages->SelectTab(pageEnd);
+		mode = 2;
+		timerTransition->Start();
+	}
+	// Проверка кода безопасности 
+	Void profile::buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			if (SecurityCode == Convert::ToInt32(textBoxCode->Text)) {
+				email_confirmed = true;
+
+				// Убираем возможность проверить код
+				textBoxCode->Enabled = false;
+				buttonCheckCode->Enabled = false;
+			
+				// Информируем об успешной валидации
+				pictureBoxCheckCode->Visible = true;
+
+				// Убираем возможность отправить емейл повторно
+				timerReMail->Stop();
+				labelTimer->Visible = false;
+				linkReMail->Visible = false;
+			}
+			else {
+				MessageError->Text = "Неверный код";
+				MessageError->Show();
+			}
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
+	}
+	// Повторная отправка - гиперссылка
+
+
+	
+	// Загрузка изображения в профиль
+	//-------------------------------------------------------------------------------------------------------------
+	Void profile::buttonUpload_Click(System::Object^ sender, System::EventArgs^ e) {
+			try {
+				// Настройка OpenFileDialog
+				openFileDialog1->Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";
+				openFileDialog1->FilterIndex = 1;
+				openFileDialog1->RestoreDirectory = true;
+
+				// Показываем диалог выбора файла
+				if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+					// Получаем путь к выбранному файлу
+					String^ filePath = openFileDialog1->FileName;
+
+					// Создаем объект Image из выбранного файла
+					Drawing::Image^ image = System::Drawing::Image::FromFile(filePath);
+
+					// Устанавливаем изображение в pictureBoxUploadImage
+					pictureBoxUploadImage->SizeMode = PictureBoxSizeMode::StretchImage;
+					pictureBoxUploadImage->Image = image;
+
+					// Определяем формат загруженного изображения
+					Drawing::Imaging::ImageFormat^ imageFormat = image->RawFormat;
+
+					// Путь, по которому сохранить изображение
+					String^ savePath = UserLogin + "\\avatar";
+
+					// Сохраняем изображение, указывая явно формат
+					if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Jpeg)) {
+						savePath += ".jpg";
+						image->Save(savePath, System::Drawing::Imaging::ImageFormat::Jpeg);
+					}
+					else if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Png)) {
+						savePath += ".png";
+						image->Save(savePath, System::Drawing::Imaging::ImageFormat::Png);
+					}
+					// Сохраняем изображение
+					pictureBoxUploadImage->Image->Save(savePath, imageFormat);
+				}
+			}
+			catch (Exception^ ex) {
+				MessageDialogUpload->Show(ex->Message);
+			}
+		}
+
