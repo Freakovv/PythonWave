@@ -311,6 +311,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             // 
             this->pageProfile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            this->pageProfile->Controls->Add(this->buttonQuestion);
             this->pageProfile->Controls->Add(this->label4);
             this->pageProfile->Controls->Add(this->bunifuDropdownSex);
             this->pageProfile->Controls->Add(this->bunifuDropdownDay);
@@ -327,7 +328,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageProfile->Controls->Add(this->linkReMail);
             this->pageProfile->Controls->Add(this->textBoxCode);
             this->pageProfile->Controls->Add(this->buttonSendMail);
-            this->pageProfile->Controls->Add(this->buttonQuestion);
             this->pageProfile->Controls->Add(this->buttonCheckCode);
             this->pageProfile->Controls->Add(this->label3);
             this->pageProfile->Controls->Add(this->label1);
@@ -350,7 +350,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
                 static_cast<System::Byte>(204)));
             this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label4->Location = System::Drawing::Point(6, 140);
+            this->label4->Location = System::Drawing::Point(23, 140);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(231, 36);
             this->label4->TabIndex = 53;
@@ -706,9 +706,9 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
                 static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
             this->pictureBoxUploadImage->Cursor = System::Windows::Forms::Cursors::Hand;
             this->pictureBoxUploadImage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxUploadImage.Image")));
-            this->pictureBoxUploadImage->Location = System::Drawing::Point(18, 188);
+            this->pictureBoxUploadImage->Location = System::Drawing::Point(35, 188);
             this->pictureBoxUploadImage->Name = L"pictureBoxUploadImage";
-            this->pictureBoxUploadImage->Size = System::Drawing::Size(200, 176);
+            this->pictureBoxUploadImage->Size = System::Drawing::Size(200, 200);
             this->pictureBoxUploadImage->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
             this->pictureBoxUploadImage->TabIndex = 37;
             this->pictureBoxUploadImage->TabStop = false;
@@ -745,7 +745,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->buttonUpload->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonUpload.Image")));
             this->buttonUpload->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->buttonUpload->ImageSize = System::Drawing::Size(25, 25);
-            this->buttonUpload->Location = System::Drawing::Point(18, 370);
+            this->buttonUpload->Location = System::Drawing::Point(35, 394);
             this->buttonUpload->Name = L"buttonUpload";
             this->buttonUpload->Size = System::Drawing::Size(200, 39);
             this->buttonUpload->TabIndex = 38;
@@ -762,7 +762,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->textBoxEmail->AutoRoundedCorners = true;
             this->textBoxEmail->BorderColor = System::Drawing::Color::Silver;
             this->textBoxEmail->BorderRadius = 22;
-            this->textBoxEmail->BorderThickness = 2;
             this->textBoxEmail->Cursor = System::Windows::Forms::Cursors::IBeam;
             this->textBoxEmail->DefaultText = L"";
             this->textBoxEmail->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
@@ -819,7 +818,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->textBoxCode->AutoRoundedCorners = true;
             this->textBoxCode->BorderColor = System::Drawing::Color::Silver;
             this->textBoxCode->BorderRadius = 22;
-            this->textBoxCode->BorderThickness = 2;
             this->textBoxCode->Cursor = System::Windows::Forms::Cursors::IBeam;
             this->textBoxCode->DefaultText = L"";
             this->textBoxCode->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
@@ -1031,10 +1029,16 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->label2->Size = System::Drawing::Size(312, 36);
             this->label2->TabIndex = 25;
             this->label2->Text = L"Подтвердите e-mail*";
+            this->label2->Click += gcnew System::EventHandler(this, &profile::buttonQuestion_Click);
             // 
             // textBoxUserName
             // 
             this->textBoxUserName->Animated = true;
+            this->textBoxUserName->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(21) {
+                L"Александр", L"Михаил",
+                    L"Максим", L"Лев", L"Марк", L"Артем", L"Иван", L"Матвей", L"Дмитрий", L"Даниил", L"София", L"Мария", L"Анна", L"Алиса", L"Виктория",
+                    L"Ева", L"Полина", L"Александра", L"Василиса", L"Варвара", L"Джени"
+            });
             this->textBoxUserName->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
             this->textBoxUserName->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
             this->textBoxUserName->AutoRoundedCorners = true;
@@ -1082,7 +1086,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageSuccessful->Location = System::Drawing::Point(4, 4);
             this->pageSuccessful->Name = L"pageSuccessful";
             this->pageSuccessful->Padding = System::Windows::Forms::Padding(3);
-            this->pageSuccessful->Size = System::Drawing::Size(940, 629);
+            this->pageSuccessful->Size = System::Drawing::Size(940, 711);
             this->pageSuccessful->TabIndex = 1;
             this->pageSuccessful->Text = L"pageSuccessful";
             // 
@@ -1155,7 +1159,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageSettings->Location = System::Drawing::Point(4, 4);
             this->pageSettings->Name = L"pageSettings";
             this->pageSettings->Padding = System::Windows::Forms::Padding(3);
-            this->pageSettings->Size = System::Drawing::Size(940, 629);
+            this->pageSettings->Size = System::Drawing::Size(940, 711);
             this->pageSettings->TabIndex = 2;
             this->pageSettings->Text = L"pageSettings";
             // 
@@ -1512,7 +1516,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageEnd->Location = System::Drawing::Point(4, 4);
             this->pageEnd->Name = L"pageEnd";
             this->pageEnd->Padding = System::Windows::Forms::Padding(3);
-            this->pageEnd->Size = System::Drawing::Size(940, 629);
+            this->pageEnd->Size = System::Drawing::Size(940, 711);
             this->pageEnd->TabIndex = 3;
             this->pageEnd->Text = L"pageEnd";
             // 

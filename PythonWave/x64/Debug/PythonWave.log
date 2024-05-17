@@ -78,7 +78,7 @@ E:\.Coding\PythonWave\PythonWave\auth.h(643,53): warning C4566: character repres
 E:\.Coding\PythonWave\PythonWave\auth.h(713,52): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\profile.h(844,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\profile.h(842,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
 E:\.Coding\PythonWave\PythonWave\profile-header.h(159,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
