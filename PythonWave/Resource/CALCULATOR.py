@@ -1,12 +1,10 @@
-xSize = int(input("X Size:"))
-ySize = int(input("Y Size:"))
+xSizeForm = 931
+ySizeForm = 691
+# xSizeForm = int(input("X заднего элемента:"))
+# ySizeForm = int(input("Y заднего элемента:"))
 
-select = int(input("1 - 1280x720\n2 - 1920x1080: "))
+xSize = int(input("X элемента:"))
+ySize = int(input("Y элемента:"))
 
-print("Location: ")
-if select == 1:
-    print((1280 - xSize) / 2, end=";")
-    print((720 - ySize) / 2)
-elif select == 2:
-    print((1920 - xSize) / 2, end=";")
-    print((1080 - ySize) / 2)
+print(int((xSizeForm - xSize) / 2), end=";")
+print(int((ySizeForm - ySize) / 2))
