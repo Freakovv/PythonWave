@@ -59,9 +59,12 @@ namespace PythonWave {
 
 	private: Guna::UI2::WinForms::Guna2Button^ btnHome;
 	private: Guna::UI2::WinForms::Guna2Button^ btnBook;
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+	private: Guna::UI2::WinForms::Guna2Button^ btnCourses;
+
 	private: Guna::UI2::WinForms::Guna2Button^ btnMenu;
 	private: System::Windows::Forms::Timer^ timerMenu;
+	private: Guna::UI2::WinForms::Guna2Button^ btnStats;
+
 
 
 
@@ -85,13 +88,14 @@ namespace PythonWave {
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->separatorMain = (gcnew Guna::UI2::WinForms::Guna2Separator());
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
-			this->btnMenu = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->btnBook = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->separatorMenu = (gcnew Guna::UI2::WinForms::Guna2VSeparator());
+			this->btnMenu = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnCourses = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnBook = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->btnHome = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
 			this->timerMenu = (gcnew System::Windows::Forms::Timer(this->components));
+			this->btnStats = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->panelMain->SuspendLayout();
 			this->panelMenu->SuspendLayout();
 			this->SuspendLayout();
@@ -108,6 +112,7 @@ namespace PythonWave {
 			// 
 			// separatorMain
 			// 
+			this->separatorMain->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->separatorMain->Location = System::Drawing::Point(0, 79);
 			this->separatorMain->Name = L"separatorMain";
 			this->separatorMain->Size = System::Drawing::Size(1600, 1);
@@ -117,15 +122,26 @@ namespace PythonWave {
 			// 
 			this->panelMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			this->panelMenu->Controls->Add(this->btnMenu);
-			this->panelMenu->Controls->Add(this->guna2Button1);
-			this->panelMenu->Controls->Add(this->btnBook);
 			this->panelMenu->Controls->Add(this->separatorMenu);
+			this->panelMenu->Controls->Add(this->btnMenu);
+			this->panelMenu->Controls->Add(this->btnCourses);
+			this->panelMenu->Controls->Add(this->btnBook);
 			this->panelMenu->Controls->Add(this->btnHome);
+			this->panelMenu->Controls->Add(this->btnStats);
 			this->panelMenu->Location = System::Drawing::Point(0, 80);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(80, 820);
+			this->panelMenu->Size = System::Drawing::Size(250, 820);
 			this->panelMenu->TabIndex = 1;
+			// 
+			// separatorMenu
+			// 
+			this->separatorMenu->BackColor = System::Drawing::Color::Transparent;
+			this->separatorMenu->Dock = System::Windows::Forms::DockStyle::Right;
+			this->separatorMenu->Location = System::Drawing::Point(249, 0);
+			this->separatorMenu->Name = L"separatorMenu";
+			this->separatorMenu->Size = System::Drawing::Size(1, 820);
+			this->separatorMenu->TabIndex = 0;
+			this->separatorMenu->UseTransparentBackground = true;
 			// 
 			// btnMenu
 			// 
@@ -161,53 +177,47 @@ namespace PythonWave {
 			this->btnMenu->Text = L"Меню";
 			this->btnMenu->Click += gcnew System::EventHandler(this, &mainForm::btnMenu_Click);
 			// 
-			// guna2Button1
+			// btnCourses
 			// 
-			this->guna2Button1->Animated = true;
-			this->guna2Button1->AnimatedGIF = true;
-			this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
-			this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->BorderThickness = 1;
-			this->guna2Button1->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->btnCourses->Animated = true;
+			this->btnCourses->AnimatedGIF = true;
+			this->btnCourses->BackColor = System::Drawing::Color::Transparent;
+			this->btnCourses->BorderColor = System::Drawing::Color::Empty;
+			this->btnCourses->BorderThickness = 1;
+			this->btnCourses->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->btnCourses->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnCourses->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnCourses->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->btnCourses->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnCourses->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(71)));
+			this->btnCourses->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnCourses->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnCourses->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			this->btnCourses->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
-			this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
-			this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->guna2Button1->ImageOffset = System::Drawing::Point(15, 0);
-			this->guna2Button1->ImageSize = System::Drawing::Size(30, 30);
-			this->guna2Button1->Location = System::Drawing::Point(0, 246);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->Size = System::Drawing::Size(250, 90);
-			this->guna2Button1->TabIndex = 22;
-			this->guna2Button1->Text = L"Курсы";
-			this->guna2Button1->UseTransparentBackground = true;
+			this->btnCourses->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
+			this->btnCourses->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCourses.Image")));
+			this->btnCourses->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnCourses->ImageOffset = System::Drawing::Point(15, 0);
+			this->btnCourses->ImageSize = System::Drawing::Size(30, 30);
+			this->btnCourses->Location = System::Drawing::Point(0, 250);
+			this->btnCourses->Name = L"btnCourses";
+			this->btnCourses->Size = System::Drawing::Size(250, 90);
+			this->btnCourses->TabIndex = 22;
+			this->btnCourses->Text = L"Курсы";
+			this->btnCourses->UseTransparentBackground = true;
 			// 
 			// btnBook
 			// 
 			this->btnBook->Animated = true;
 			this->btnBook->AnimatedGIF = true;
 			this->btnBook->BackColor = System::Drawing::Color::Transparent;
-			this->btnBook->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnBook->BorderColor = System::Drawing::Color::Empty;
 			this->btnBook->BorderThickness = 1;
 			this->btnBook->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
 			this->btnBook->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
@@ -216,69 +226,54 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
 			this->btnBook->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->btnBook->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnBook->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(71)));
 			this->btnBook->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->btnBook->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnBook->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnBook->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnBook->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnBook->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnBook->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			this->btnBook->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnBook->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->btnBook->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image2")));
 			this->btnBook->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnBook.Image")));
 			this->btnBook->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnBook->ImageOffset = System::Drawing::Point(15, 0);
 			this->btnBook->ImageSize = System::Drawing::Size(30, 30);
-			this->btnBook->Location = System::Drawing::Point(0, 156);
+			this->btnBook->Location = System::Drawing::Point(0, 160);
 			this->btnBook->Name = L"btnBook";
 			this->btnBook->Size = System::Drawing::Size(250, 90);
 			this->btnBook->TabIndex = 21;
 			this->btnBook->Text = L"Книга";
 			this->btnBook->UseTransparentBackground = true;
 			// 
-			// separatorMenu
-			// 
-			this->separatorMenu->Location = System::Drawing::Point(79, 0);
-			this->separatorMenu->Name = L"separatorMenu";
-			this->separatorMenu->Size = System::Drawing::Size(1, 820);
-			this->separatorMenu->TabIndex = 0;
-			// 
 			// btnHome
 			// 
 			this->btnHome->Animated = true;
 			this->btnHome->AnimatedGIF = true;
 			this->btnHome->BackColor = System::Drawing::Color::Transparent;
-			this->btnHome->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->BorderColor = System::Drawing::Color::Empty;
 			this->btnHome->BorderThickness = 1;
 			this->btnHome->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
-			this->btnHome->Checked = true;
-			this->btnHome->CheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnHome->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
 			this->btnHome->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
 			this->btnHome->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
 			this->btnHome->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->btnHome->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(71)));
 			this->btnHome->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->btnHome->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnHome->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnHome->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnHome->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnHome->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnHome->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnHome->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnHome->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image3")));
 			this->btnHome->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnHome.Image")));
 			this->btnHome->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
@@ -303,6 +298,41 @@ namespace PythonWave {
 			this->timerMenu->Interval = 7;
 			this->timerMenu->Tick += gcnew System::EventHandler(this, &mainForm::timerMenu_Tick);
 			// 
+			// btnStats
+			// 
+			this->btnStats->Animated = true;
+			this->btnStats->AnimatedGIF = true;
+			this->btnStats->BackColor = System::Drawing::Color::Transparent;
+			this->btnStats->BorderColor = System::Drawing::Color::Empty;
+			this->btnStats->BorderThickness = 1;
+			this->btnStats->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->btnStats->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnStats->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnStats->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->btnStats->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->btnStats->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(71)));
+			this->btnStats->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnStats->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnStats->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnStats->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnStats->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
+			this->btnStats->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnStats.Image")));
+			this->btnStats->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnStats->ImageOffset = System::Drawing::Point(15, 0);
+			this->btnStats->ImageSize = System::Drawing::Size(30, 30);
+			this->btnStats->Location = System::Drawing::Point(0, 346);
+			this->btnStats->Name = L"btnStats";
+			this->btnStats->Size = System::Drawing::Size(250, 90);
+			this->btnStats->TabIndex = 25;
+			this->btnStats->Text = L"Статистика";
+			this->btnStats->UseTransparentBackground = true;
+			// 
 			// mainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -324,6 +354,7 @@ namespace PythonWave {
 		}
 #pragma endregion
 		bool menu = false;
+		bool alwaysHideMenu = false;
 	private: Void cfgLoad() {
 		Config^ config = gcnew Config();
 		config->LoadConfig("config.xml");
@@ -332,6 +363,13 @@ namespace PythonWave {
 	}
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		cfgLoad();
+
+		if (panelMenu->Size == Drawing::Size(80, 820)) {
+			menu = false;
+		}
+		else if (panelMenu->Size == Drawing::Size(250, 820)) {
+			menu = true;
+		}
 
 		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("in");

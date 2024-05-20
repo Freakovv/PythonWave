@@ -12,6 +12,7 @@ public ref class Config
 public:
     bool dragTransparent;
     bool hasFormShadow;
+    bool alwaysHideMenu;
     bool greeting;
     int borderForm;
     int borderBtn;
@@ -22,6 +23,7 @@ public:
         dragTransparent = false;
         hasFormShadow = false;
         greeting = false;
+        alwaysHideMenu = false;
         borderForm = 0;
         borderBtn = 0;
         volume = 0;
@@ -46,6 +48,8 @@ public:
                 config->hasFormShadow = Boolean::Parse(value);
             else if (name == "greeting")
                 config->greeting = Boolean::Parse(value);
+			else if (name == "alwaysHideMenu")
+				config->alwaysHideMenu = Boolean::Parse(value);
             else if (name == "borderForm")
                 config->borderForm = Int32::Parse(value);
             else if (name == "borderBtn")
@@ -78,6 +82,7 @@ public:
         AddSetting(doc, settingsElement, "dragTransparent", dragTransparent.ToString());
         AddSetting(doc, settingsElement, "hasFormShadow", hasFormShadow.ToString());
         AddSetting(doc, settingsElement, "greeting", greeting.ToString());
+        AddSetting(doc, settingsElement, "alwaysHideMenu", greeting.ToString());
         AddSetting(doc, settingsElement, "borderForm", borderForm.ToString());
         AddSetting(doc, settingsElement, "borderBtn", borderBtn.ToString());
         AddSetting(doc, settingsElement, "volume", volume.ToString());

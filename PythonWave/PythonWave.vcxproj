@@ -149,6 +149,7 @@
     <ClCompile Include="auth.cpp" />
     <ClCompile Include="ClassFade.cpp" />
     <ClCompile Include="ClassMail.cpp" />
+    <ClCompile Include="ClassProgress.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="profile.cpp" />
@@ -160,6 +161,7 @@
     </ClInclude>
     <ClInclude Include="ClassFade.h" />
     <ClInclude Include="ClassMail.h" />
+    <ClInclude Include="ClassProgress.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="main-header.h" />
     <ClInclude Include="mainForm.h">
