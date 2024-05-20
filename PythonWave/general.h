@@ -49,6 +49,32 @@ void authToMain(String^ construct) {
     // Отображение формы профиля
     mainF->Show();
 }
+void mainToAuth() {
+    // Создание объекта формы профиля
+    if (Directory::Exists("logs")) {
+        Directory::Delete("logs");
+    }
+    else {
+        MessageBox::Show("Error");
+    }
+    auth^ authF = gcnew auth();
+    authF->StartPosition = FormStartPosition::Manual;
+    authF->Location = Point((Screen::PrimaryScreen->Bounds.Width - authF->Width) / 2,
+        (Screen::PrimaryScreen->Bounds.Height - authF->Height) / 2);
+
+    // Скрытие формы авторизации (если она ещё не скрыта)
+    for each (Form^ form in Application::OpenForms)
+    {
+        if (form->GetType() == auth::typeid)
+        {
+            form->Hide();
+            break;
+        }
+    }
+
+    // Отображение формы профиля
+    authF->Show();
+}
 
 void SetCenter(Control^ back, Control^ control, int mode = 0) {
 	int panelWidth = back->Width;
@@ -80,6 +106,3 @@ void SetCenter(Control^ back, Control^ control, int mode = 0) {
 	}
 }
 
-void ReadSettings() {
-    
-}

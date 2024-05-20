@@ -48,6 +48,7 @@ Class Config: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   Fields:
     Boolean dragTransparent : Public
     Boolean hasFormShadow : Public
+    Boolean alwaysHideMenu : Public
     Boolean greeting : Public
     Int32 borderForm : Public
     Int32 borderBtn : Public

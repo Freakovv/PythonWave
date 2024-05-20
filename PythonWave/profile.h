@@ -176,6 +176,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
             this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
             this->pageProfile = (gcnew System::Windows::Forms::TabPage());
+            this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
             this->label4 = (gcnew System::Windows::Forms::Label());
             this->bunifuDropdownSex = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
             this->bunifuDropdownDay = (gcnew Bunifu::UI::WinForms::BunifuDropdown());
@@ -195,7 +196,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->linkReMail = (gcnew System::Windows::Forms::LinkLabel());
             this->textBoxCode = (gcnew Guna::UI2::WinForms::Guna2TextBox());
             this->buttonSendMail = (gcnew Guna::UI2::WinForms::Guna2Button());
-            this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
             this->buttonCheckCode = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->label3 = (gcnew System::Windows::Forms::Label());
             this->label1 = (gcnew System::Windows::Forms::Label());
@@ -341,6 +341,32 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageProfile->Size = System::Drawing::Size(940, 711);
             this->pageProfile->TabIndex = 0;
             this->pageProfile->Text = L"pageProfile";
+            this->pageProfile->Click += gcnew System::EventHandler(this, &profile::pageProfile_Click);
+            // 
+            // buttonQuestion
+            // 
+            this->buttonQuestion->Animated = true;
+            this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
+            this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->buttonQuestion->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->buttonQuestion->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->buttonQuestion->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+                static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+            this->buttonQuestion->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+                static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+            this->buttonQuestion->FillColor = System::Drawing::Color::Transparent;
+            this->buttonQuestion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+            this->buttonQuestion->ForeColor = System::Drawing::Color::White;
+            this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
+            this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
+            this->buttonQuestion->Location = System::Drawing::Point(582, 152);
+            this->buttonQuestion->Name = L"buttonQuestion";
+            this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+            this->buttonQuestion->Size = System::Drawing::Size(20, 20);
+            this->buttonQuestion->TabIndex = 33;
+            this->buttonQuestion->Text = L"guna2CircleButton1";
+            this->buttonQuestion->UseTransparentBackground = true;
+            this->buttonQuestion->Click += gcnew System::EventHandler(this, &profile::buttonQuestion_Click);
             // 
             // label4
             // 
@@ -886,31 +912,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->buttonSendMail->TextOffset = System::Drawing::Point(15, 0);
             this->buttonSendMail->UseTransparentBackground = true;
             this->buttonSendMail->Click += gcnew System::EventHandler(this, &profile::buttonSendMail_Click);
-            // 
-            // buttonQuestion
-            // 
-            this->buttonQuestion->Animated = true;
-            this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
-            this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->buttonQuestion->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->buttonQuestion->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->buttonQuestion->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-                static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->buttonQuestion->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-                static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->buttonQuestion->FillColor = System::Drawing::Color::Transparent;
-            this->buttonQuestion->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-            this->buttonQuestion->ForeColor = System::Drawing::Color::White;
-            this->buttonQuestion->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonQuestion.Image")));
-            this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
-            this->buttonQuestion->Location = System::Drawing::Point(582, 152);
-            this->buttonQuestion->Name = L"buttonQuestion";
-            this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
-            this->buttonQuestion->Size = System::Drawing::Size(20, 20);
-            this->buttonQuestion->TabIndex = 33;
-            this->buttonQuestion->Text = L"guna2CircleButton1";
-            this->buttonQuestion->UseTransparentBackground = true;
-            this->buttonQuestion->Click += gcnew System::EventHandler(this, &profile::buttonQuestion_Click);
             // 
             // buttonCheckCode
             // 
@@ -1800,5 +1801,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
         buttonResume1->BorderRadius = TrackBorderBtn->Value;
         labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
     }
+private: System::Void pageProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
