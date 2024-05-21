@@ -65,20 +65,19 @@ public:
     {
         XmlDocument^ doc = gcnew XmlDocument();
 
-        // Создаем декларацию XML
         XmlDeclaration^ xmlDeclaration = doc->CreateXmlDeclaration("1.0", "utf-8", nullptr);
         XmlElement^ root = doc->DocumentElement;
         doc->InsertBefore(xmlDeclaration, root);
 
-        // Создаем корневой элемент
+        // Корневой элемент
         XmlElement^ configurationElement = doc->CreateElement("configuration");
         doc->AppendChild(configurationElement);
 
-        // Создаем элемент настроек
+        // Элемент настроек
         XmlElement^ settingsElement = doc->CreateElement("settings");
         configurationElement->AppendChild(settingsElement);
 
-        // Создаем элементы для каждой настройки
+        // Элементы для каждой настройки
         AddSetting(doc, settingsElement, "dragTransparent", dragTransparent.ToString());
         AddSetting(doc, settingsElement, "hasFormShadow", hasFormShadow.ToString());
         AddSetting(doc, settingsElement, "greeting", greeting.ToString());

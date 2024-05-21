@@ -88,7 +88,6 @@ using namespace System::IO;
 	void SetCenter(Control^ back, Control^ control, int mode);
 
 	Void auth::CheckLastEnter() {
-		USER = ReadLogFile();
 		if (USER != "") {
 			labelWelcome->Text += USER;
 			SetCenter(pageWelcome, labelWelcome, 1);
@@ -131,6 +130,9 @@ using namespace System::IO;
 	}
 
 	Void auth::auth_Load(System::Object^ sender, System::EventArgs^ e) {
+		if (Directory::Exists("logs")) {
+			USER = ReadLogFile();
+		}
 		if (File::Exists("config.xml")) {
 			loadConfig();
 		}
@@ -331,7 +333,7 @@ using namespace System::IO;
 		String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
 		String^ filePath = Path::Combine(folderPath, "data.bin");
 
-		// Проверяем существует ли файл
+		// Проверяем существует ли пользователь в бд
 		if (!Directory::Exists(folderPath)) {
 			MessageError->Caption = "Ошибка";
 			MessageError->Text = "Пользователя с указанным логином не существует";

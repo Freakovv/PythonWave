@@ -148,6 +148,7 @@ private: System::Windows::Forms::Label^ label12;
 private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
 
 private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
+private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 
 
 
@@ -247,6 +248,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->dragSuccessful = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
             this->dragControlPanel2 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
             this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+            this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
             this->Pages->SuspendLayout();
             this->pageProfile->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->BeginInit();
@@ -341,7 +343,6 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->pageProfile->Size = System::Drawing::Size(940, 711);
             this->pageProfile->TabIndex = 0;
             this->pageProfile->Text = L"pageProfile";
-            this->pageProfile->Click += gcnew System::EventHandler(this, &profile::pageProfile_Click);
             // 
             // buttonQuestion
             // 
@@ -1680,6 +1681,15 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
             this->MessageInfo->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
             this->MessageInfo->Text = nullptr;
             // 
+            // MessageWarning
+            // 
+            this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+            this->MessageWarning->Caption = L"Внимание";
+            this->MessageWarning->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
+            this->MessageWarning->Parent = this;
+            this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+            this->MessageWarning->Text = nullptr;
+            // 
             // profile
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1754,21 +1764,11 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
 
 
 
-    private: Void textBoxUserName_Click(System::Object^ sender, EventArgs^ e) {
-        textBoxUserName->BorderColor = Color::Gray;
-    }
-    private: Void bunifuDropdownSex_Click(System::Object^ sender, EventArgs^ e) {
-        bunifuDropdownSex->BorderColor = Color::Gray;
-    }
-    private: Void bunifuDropdownDay_Click(System::Object^ sender, EventArgs^ e) {
-        bunifuDropdownDay->BorderColor = Color::Gray;
-    }
-    private: Void bunifuDropdownMonth_Click(System::Object^ sender, EventArgs^ e) {
-        bunifuDropdownMonth->BorderColor = Color::Gray;
-    }
-    private: Void bunifuDropdownYear_Click(System::Object^ sender, EventArgs^ e) {
-        bunifuDropdownYear->BorderColor = Color::Gray;    
-    }
+    private: Void textBoxUserName_Click(System::Object^ sender, EventArgs^ e);
+    private: Void bunifuDropdownSex_Click(System::Object ^ sender, EventArgs ^ e);
+    private: Void bunifuDropdownDay_Click(System::Object ^ sender, EventArgs ^ e);
+    private: Void bunifuDropdownMonth_Click(System::Object ^ sender, EventArgs ^ e);
+    private: Void bunifuDropdownYear_Click(System::Object ^ sender, EventArgs ^ e);
     private: Void buttonCloseEnd_Click(System::Object^ sender, System::EventArgs^ e) {
         ClassFade^ Fade = gcnew ClassFade(this);
         Fade->SetAnimation("close");
@@ -1792,7 +1792,7 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
         }
     }
     private: System::Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-        MessageInfo->Show("Изменения вступят в силу после перезапуска");
+        MessageInfo->Show("Эта функция на стадии ранней разработки");
     }
     private: System::Void guna2TrackBar2_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
         labelVolume->Text = Convert::ToString(TrackVolume->Value);
@@ -1801,7 +1801,5 @@ private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
         buttonResume1->BorderRadius = TrackBorderBtn->Value;
         labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
     }
-private: System::Void pageProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }

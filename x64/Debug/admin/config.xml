@@ -9,14 +9,3 @@
     <setting name="volume" value="50" />
   </settings>
 </configuration>
-
-<courses>
-  <values>
-    <value name="dragTransparent" value="True" />
-    <value name="hasFormShadow" value="True" />
-    <value name="greeting" value="True" />
-    <value name="borderForm" value="0" />
-    <value name="borderBtn" value="20" />
-    <value name="volume" value="50" />
-  </courses>
-</values>

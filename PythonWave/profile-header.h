@@ -147,14 +147,10 @@ using namespace System::Text;
 	}
 
 	
-	// Ïğîâåğêà êîğğåêòíîñòè ââåäåííîãî email (íàëè÷èå ñèìâîëîâ '@' è '.')
-	bool profile::IsValidEmail(String^ email) {
-		return email->Contains("@") && email->Contains(".");
-	}
 
 	
 
-	// Ôóíêöèÿ äëÿ ãåíåğàöèè êîäà
+	// Ôóíêöèè
 	int profile::generateSecurityCode() {
 		srand(time(NULL));
 		int Code = rand() % 900000 + 100000;
@@ -206,6 +202,11 @@ using namespace System::Text;
 		catch (Exception^ e) {
 			MessageError->Show(e->Message);
 		}
+	}
+
+	bool profile::IsValidEmail(String^ email) {
+		// Ïğîâåğêà êîğğåêòíîñòè ââåäåííîãî email (íàëè÷èå ñèìâîëîâ '@' è '.')
+		return email->Contains("@") && email->Contains(".");
 	}
 
 
@@ -301,16 +302,32 @@ using namespace System::Text;
 		}
 	}
 
-	// Òåêñòáîêñû
+	// Êëèêè ïî êğàñíûì äàííûì
 	//-------------------------------------------------------------------------------------------------------------
 	Void profile::textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBoxEmail->BorderColor = Color::Blue;
+		textBoxEmail->BorderColor = Color::Blue;
 	}
-
+	Void profile::textBoxUserName_Click(System::Object^ sender, EventArgs^ e) {
+		textBoxUserName->BorderColor = Color::Gray;
+	}
+	Void profile::bunifuDropdownSex_Click(System::Object^ sender, EventArgs^ e) {
+		bunifuDropdownSex->BorderColor = Color::Gray;
+	}
+	Void profile::bunifuDropdownDay_Click(System::Object^ sender, EventArgs^ e) {
+		bunifuDropdownDay->BorderColor = Color::Gray;
+	}
+	Void profile::bunifuDropdownMonth_Click(System::Object^ sender, EventArgs^ e) {
+		bunifuDropdownMonth->BorderColor = Color::Gray;
+	}
+	Void profile::bunifuDropdownYear_Click(System::Object^ sender, EventArgs^ e) {
+		bunifuDropdownYear->BorderColor = Color::Gray;
+	}
 
 
 	// Êíîïêè
 	//-------------------------------------------------------------------------------------------------------------
+
+	// Ïîâòîğíàÿ îòïğàâêà - ãèïåğññûëêà
 	Void profile::linkReMail_Click(System::Object^ sender, System::EventArgs^ e) {
 		enableMail(true);
 		email_confirmed = false;
@@ -329,20 +346,28 @@ using namespace System::Text;
 			confirmed = false;
 		}
 
-		if (bunifuDropdownDay->Text == "Äåíü" || bunifuDropdownMonth->Text == "Ìåñÿö" || bunifuDropdownYear->Text == "Ãîä") {
+		if (bunifuDropdownDay->Text == "Äåíü") {
 			bunifuDropdownDay->BorderColor = Color::Red;
-			bunifuDropdownMonth->BorderColor = Color::Red;
-			bunifuDropdownYear->BorderColor = Color::Red;
 			confirmed = false;
 		}
 
+		if (bunifuDropdownMonth->Text == "Ìåñÿö") {
+			bunifuDropdownMonth->BorderColor = Color::Red;
+			confirmed = false;
+		}
+
+		if (bunifuDropdownYear->Text == "Ãîä") {
+			bunifuDropdownMonth->BorderColor = Color::Red;
+			confirmed = false;
+		}
 
 		if (!confirmed) {
 			MessageError->Show("Çàïîëíèòå âñå íåîáõîäèìûå äàííûå");
 			return;
 		}
 		else if (!email_confirmed) {
-			MessageError->Show("Ïîäòâåğäèòå email");
+			MessageWarning->Show("Ïîäòâåğäèòå email");
+			textBoxEmail->BorderColor = Color::Red;
 			return;
 		}
 
@@ -404,12 +429,14 @@ using namespace System::Text;
 		config->SaveConfig("config.xml");
 	}
 
+	// Ïåğåõîä, çàâåğøåíèå íàñòğîéêè
 	Void profile::buttonResume1_Click(System::Object^ sender, System::EventArgs^ e) {
 		SaveConfig();
 		Pages->SelectTab(pageEnd);
 		mode = 2;
 		timerTransition->Start();
 	}
+
 	// Ïğîâåğêà êîäà áåçîïàñíîñòè 
 	Void profile::buttonValidateCode_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
@@ -437,7 +464,6 @@ using namespace System::Text;
 			MessageError->Show(e->Message);
 		}
 	}
-	// Ïîâòîğíàÿ îòïğàâêà - ãèïåğññûëêà
 
 
 	
@@ -485,4 +511,3 @@ using namespace System::Text;
 				MessageDialogUpload->Show(ex->Message);
 			}
 		}
-
