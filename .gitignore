@@ -1,4 +1,4 @@
 # Precompiled Headers
 ipch
 *.ipch
-*.db
+Browse.VC.db
