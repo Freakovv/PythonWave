@@ -46,26 +46,26 @@ public:
         {
         case 1:
             if (form->Opacity < 1)
-                form->Opacity += step; // Увеличиваем прозрачность формы на шаг
+                form->Opacity += step; // Увеличиваем прозрачность
             else {
-                timerFade->Stop(); // Останавливаем таймер после завершения анимации
+                timerFade->Stop(); // Завершение анимации
             }
 
             break;
         case 2:
 
             if (form->Opacity > 0)
-                form->Opacity -= step1; // Уменьшаем прозрачность формы на шаг
+                form->Opacity -= step1; // Уменьшаем прозрачность
             else {
-                timerFade->Stop(); // Останавливаем таймер после завершения анимации
+                timerFade->Stop(); // Завершение анимации
 
                 form->WindowState = FormWindowState::Minimized; // Минимизируем форму
-                form->Opacity = 1; // Возвращаем непрозрачность формы
+                form->Opacity = 1; // Возвращаем прозрачность формы
             }
             break;
         case 3:
             if (form->Opacity > 0) {
-                form->Opacity -= step1; // Уменьшаем прозрачность формы на шаг
+                form->Opacity -= step1; // Уменьшаем прозрачность формы
             }
             else {
                 timerFade->Stop(); // Останавливаем таймер после завершения 
@@ -78,7 +78,7 @@ public:
                 form->Opacity -= step1; // Уменьшаем прозрачность формы на шаг
             }
             else {
-                timerFade->Stop(); // Останавливаем таймер после завершения анимации
+                timerFade->Stop(); // Завершение анимации
                 form->Hide(); // Прячем форму
             }
             break;

@@ -34,18 +34,6 @@ using namespace System::Text;
 
 	// func
 	//-------------------------------------------------------------------------------------------------------------
-	//Restart
-	void RestartApplication()
-	{
-		// Получаем путь к текущему исполняемому файлу
-		String^ executablePath = Application::ExecutablePath;
-
-		// Запускаем новый процесс с тем же исполняемым файлом
-		Process::Start(executablePath);
-
-		// Закрываем текущее приложение
-		Application::Exit();
-	}
 	// Сохранение данных
 	String^ GetFullDate(String^ day, String^ month, String^ year) {
 		// Создаем словарь с соответствиями месяцев
@@ -78,68 +66,43 @@ using namespace System::Text;
 
 		return fullDate;
 	}
+
+	Void SaveDataBinary(String^ FilePath, String^ StringToWrite) {
+		FileStream^ fileStream = gcnew FileStream(FilePath, FileMode::Create);
+		BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
+
+		binaryWriter->Write(StringToWrite);
+
+		binaryWriter->Close();
+		fileStream->Close();
+	}
+
 	Void profile::SaveData() {
 		try {
-			// Получаем Имя и Фамилию
+			// Получаем данные
+			String^ email = textBoxEmail->Text;
 			String^ name = textBoxUserName->Text;
 			String^ surname = textBoxUserSurname->Text;
-
-			// Получаем строку с полным именем и фамилией
-			bool createFullname = false;
-			String^ fullname;
-			if (textBoxUserName->Text != "") {
-				fullname = name + " " + surname;
-				// Сообщаем что нужно создать файл с полным прозвищем
-				createFullname = true;
-			}
-
-			// Получаем пол
 			String^ sex = bunifuDropdownSex->Text;
 
-			// Получаем дату рождения
 			String^ day = bunifuDropdownDay->Text;
 			String^ month = bunifuDropdownMonth->Text;
 			String^ year = bunifuDropdownYear->Text;
-			String^ FullDate = GetFullDate(day, month, year);
+			
+			String^ birth = day + " " + month + " " + year;
 
-			// Получаем email
-			String^ email = textBoxEmail->Text;
+			// Пути сохранения
+			String^ fileUserEmail = UserLogin + "//userData.bin";
+			String^ fileUserBirth = UserLogin + "//userBirth.bin";
+			String^ fileUserSex = UserLogin + "//userSex.bin";
+			String^ fileUserName = UserLogin + "//userName.bin";
+			String^ fileUserSurname = UserLogin + "//userSurname.bin";
 
-			// Записываем в файлы данные пользователя
-			String^ fileUserEmail = UserLogin + "//userData1.bin";
-			String^ fileUserName = UserLogin + "//userData2.bin";
-			String^ fileUserSex = UserLogin + "//userData3.bin";
-			String^ fileUserBirth = UserLogin + "//userData4.bin";
-
-			//1
-			FileStream^ fs1 = gcnew FileStream(fileUserEmail, FileMode::Create);
-			BinaryWriter^ writer1 = gcnew BinaryWriter(fs1);
-			writer1->Write(email);
-			writer1->Close();
-			fs1->Close();
-			//2
-			FileStream^ fs2 = gcnew FileStream(fileUserName, FileMode::Create);
-			BinaryWriter^ writer2 = gcnew BinaryWriter(fs2);
-			if (createFullname) {
-				writer2->Write(fullname);
-			}
-			else {
-				writer2->Write(name);
-			}
-			writer2->Close();
-			fs2->Close();
-			//3
-			FileStream^ fs3 = gcnew FileStream(fileUserSex, FileMode::Create);
-			BinaryWriter^ writer3 = gcnew BinaryWriter(fs3);
-			writer3->Write(sex);
-			writer3->Close();
-			fs3->Close();
-			//4
-			FileStream^ fs4 = gcnew FileStream(fileUserBirth, FileMode::Create);
-			BinaryWriter^ writer4 = gcnew BinaryWriter(fs4);
-			writer4->Write(FullDate);
-			writer4->Close();
-			fs4->Close();
+			SaveDataBinary(fileUserEmail, email);
+			SaveDataBinary(fileUserBirth, birth);
+			SaveDataBinary(fileUserSex, sex);
+			SaveDataBinary(fileUserName, name);
+			SaveDataBinary(fileUserSurname, surname);
 		}
 		catch (Exception^ e) {
 			MessageError->Show(e->Message, "Аккаунт будет удален");
@@ -151,6 +114,18 @@ using namespace System::Text;
 	
 
 	// Функции
+	void RestartApplication()
+	{
+		// Получаем путь к текущему исполняемому файлу
+		String^ executablePath = Application::ExecutablePath;
+
+		// Запускаем новый процесс с тем же исполняемым файлом
+		Process::Start(executablePath);
+
+		// Закрываем текущее приложение
+		Application::Exit();
+	}
+
 	int profile::generateSecurityCode() {
 		srand(time(NULL));
 		int Code = rand() % 900000 + 100000;
@@ -426,7 +401,7 @@ using namespace System::Text;
 		config->hasFormShadow = toggleShadows->Checked;
 
 		// Сохранение конфигурации в файл
-		config->SaveConfig("config.xml");
+		config->SaveConfig();
 	}
 
 	// Переход, завершение настройки

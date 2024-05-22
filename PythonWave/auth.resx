@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="borderlessForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>676, 11</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonCloseTerms.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAKDFJREFUeF7t
         3Q+0JFV94PHH/78iKoonKkZDgoKOQL+69R6D2F1V78GMjijwEPGIZ7PR438Sddc9ezbrJNFziKtGgtEl
@@ -296,6 +293,54 @@
         9B8O/tT8M3f/s71z0mDqdPPvZP7d5F8TAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAANCXiYn/D1y91FhflaRYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="buttonMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAaRJREFUSEvtlklOw0AQRS3RDskBWDCKczAcAAkQ12A+CzsQiAXLSEk7oAA3AcQp
+        IDgkDpH55RQScped9sCwyJO+2opdv9zV5e44E/4d3evqUqDVYd9z7zE+9rX7Roqu6beWOujq6iI/Xhz/
+        pjYfeO4ZzD8whmnCM0O8SP1dTy9zeD56urIDs46UJE2oxGvPq2yzTTYCTx1HMxCMbTSKVUdsZwfPNHfS
+        L5GH9cz9Rm0hT3mTRGX3vdoc2yeD5riUDIpJnbO9DH0ymO3Y7s0q8qRKchoTagYpsBypfU5jgvW4k4OK
+        C7NucxoTrO+zFFSKsMNxGhPqQCFghW9bEzTVWtyHvPm2iZi4pVb5tjV42fW4T2piNMBTPKA0afXAaUz+
+        rrlwtElBpaipdjmNCZ2nP7KBaHeQuoEQWOcLKbiIMJlTtk+GDn6xu3MKXi9hw5ll+3QGzamNMkoOjyGO
+        2C22tYP2bQqUDG0UxeI/Gttlgw7xPGWn8qJqm2yTj7DuzMDoBBpISb5rVCF1Zb2mNtDnQEcbzG9pF8LY
+        IfF1G+Pe2E9mwu/jOJ/hFKsZuuMCNwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="animation3.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation3.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation3.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation3.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation3.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
 </value>
   </data>
   <data name="guna2PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -21284,41 +21329,6 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="animation1.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation1.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation1.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation1.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation1.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
   <data name="guna2PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAD6AAAAtPCAYAAAD9Im5GAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -28832,118 +28842,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwH/j0KF/A+z35u1UrV67AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="animation2.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation2.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation2.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation2.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="animation2.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
-</value>
-  </data>
-  <data name="textBoxTerms.DefaultText" xml:space="preserve">
-    <value>© PythonWave: Погрузитесь в волну знаний языка программирования Python
-
-Контактная информация:
-
-Telegram: @sskkywwalker
-Предложения, идеи, баги - писать туда.
-
-Пожалуйста, внимательно прочитайте это соглашение, прежде чем использовать мое Приложение.
-
-1. Условия использования:
-1.1. Приложение предназначено исключительно для обучения программированию на языке Python и предоставляет информацию, уроки, упражнения и другие материалы с целью образования и совершенствования навыков в области программирования;
-
-1.2. Использование моего Приложения подразумевает ваше согласие с условиями использования.
-
-2. Личная информация:
-2.1. Для создания учетной записи в Приложении, а также для предоставления вам персонализированных услуг, мы можем запрашивать следующую личную информацию:
-
-Логин и пароль для входа в Приложение.
-Фамилию и имя.
-Адрес электронной почты.
-Пол;
-
-2.2. Мы используем ваш адрес электронной почты для восстановления пароля, отправки вам обновлений и уведомлений о важных изменениях в Приложении;
-
-2.3. Мы обязуемся обеспечивать конфиденциальность вашей личной информации в соответствии с нашими Правилами конфиденциальности.
-
-3. Интеллектуальная собственность
-
-3.1 Весь котнент с меткой "© PythonWave", предоставленный в нашем Приложении, включая текст, графику, видео, аудио и другие материалы, является нашей собственностью и защищен авторским правом;
-
-3.2. Пользователь соглашается использовать материалы с меткой "© PythonWave" из Приложения исключительно в образовательных целях и не имеет права воспроизводить, копировать, распространять или модифицировать эти материалы без нашего согласия;
-
-Попрошу заметить, для отметки авторского контента используется метка "© PythonWave", остальной контет не является моей собственностью.
-
-4. Ответственность
-
-4.1. Мы не несем ответственности за любые убытки, которые могут возникнуть в результате использования или невозможности использования нашего Приложения, в том числе за убытки из-за потери данных, прерывания бизнеса или любых прямых, косвенных, особых, случайных или последующих убытков;
-
-4.2. Мы не несем ответственности за любые проблемы, возникающие из-за ошибок программного обеспечения, технических сбоев, вирусов или иных аномалий, которые могут повредить ваше устройство или данные.
-
-5. Изменения в соглашении
-
-5.1. Мы оставляем за собой право вносить изменения в это Соглашение по своему усмотрению в любое время. Все изменения вступают в силу с момента их публикации в Приложении;
-
-5.2. Пользователь обязуется проверять наличие обновлений в настоящем Соглашении.
-
-6. Согласие пользователя
-
-6.1. Используя наше Приложение, вы подтверждаете, что ознакомлены с условиями настоящего Соглашения и согласны с ними.
-
-6.2. В случае несогласия с условиями Соглашения, пользователь обязан прекратить использование Приложения.
-
-
-
-Настоящее Соглашение вступает в силу с момента вашего использования нашего Приложения и действует до момента его расторжения. Мы оставляем за собой право расторгнуть это Соглашение в любое время по своему усмотрению без предварительного уведомления.
-
-Последнее обновление: 29.04.2024
-
-С уважением,
-PythonWave
-</value>
-  </data>
-  <data name="buttonMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAaRJREFUSEvtlklOw0AQRS3RDskBWDCKczAcAAkQ12A+CzsQiAXLSEk7oAA3AcQp
-        IDgkDpH55RQScped9sCwyJO+2opdv9zV5e44E/4d3evqUqDVYd9z7zE+9rX7Roqu6beWOujq6iI/Xhz/
-        pjYfeO4ZzD8whmnCM0O8SP1dTy9zeD56urIDs46UJE2oxGvPq2yzTTYCTx1HMxCMbTSKVUdsZwfPNHfS
-        L5GH9cz9Rm0hT3mTRGX3vdoc2yeD5riUDIpJnbO9DH0ymO3Y7s0q8qRKchoTagYpsBypfU5jgvW4k4OK
-        C7NucxoTrO+zFFSKsMNxGhPqQCFghW9bEzTVWtyHvPm2iZi4pVb5tjV42fW4T2piNMBTPKA0afXAaUz+
-        rrlwtElBpaipdjmNCZ2nP7KBaHeQuoEQWOcLKbiIMJlTtk+GDn6xu3MKXi9hw5ll+3QGzamNMkoOjyGO
-        2C22tYP2bQqUDG0UxeI/Gttlgw7xPGWn8qJqm2yTj7DuzMDoBBpISb5rVCF1Zb2mNtDnQEcbzG9pF8LY
-        IfF1G+Pe2E9mwu/jOJ/hFKsZuuMCNwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="buttonClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonCloseTerms.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAKDFJREFUeF7t
         3Q+0JFV94PHH/78iKoonKkZDgoKOQL+69R6D2F1V78GMjijwEPGIZ7PR438Sddc9ezbrJNFziKtGgtEl
@@ -29120,6 +29019,107 @@ PythonWave
         AAAAAAAAAAAAAAAAAAAAANCXiYn/D1y91FhflaRYAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="textBoxTerms.DefaultText" xml:space="preserve">
+    <value>© PythonWave: Погрузитесь в волну знаний языка программирования Python
+
+Контактная информация:
+
+Telegram: @sskkywwalker
+Предложения, идеи, баги - писать туда.
+
+Пожалуйста, внимательно прочитайте это соглашение, прежде чем использовать мое Приложение.
+
+1. Условия использования:
+1.1. Приложение предназначено исключительно для обучения программированию на языке Python и предоставляет информацию, уроки, упражнения и другие материалы с целью образования и совершенствования навыков в области программирования;
+
+1.2. Использование моего Приложения подразумевает ваше согласие с условиями использования.
+
+2. Личная информация:
+2.1. Для создания учетной записи в Приложении, а также для предоставления вам персонализированных услуг, мы можем запрашивать следующую личную информацию:
+
+Логин и пароль для входа в Приложение.
+Фамилию и имя.
+Адрес электронной почты.
+Пол;
+
+2.2. Мы используем ваш адрес электронной почты для восстановления пароля, отправки вам обновлений и уведомлений о важных изменениях в Приложении;
+
+2.3. Мы обязуемся обеспечивать конфиденциальность вашей личной информации в соответствии с нашими Правилами конфиденциальности.
+
+3. Интеллектуальная собственность
+
+3.1 Весь котнент с меткой "© PythonWave", предоставленный в нашем Приложении, включая текст, графику, видео, аудио и другие материалы, является нашей собственностью и защищен авторским правом;
+
+3.2. Пользователь соглашается использовать материалы с меткой "© PythonWave" из Приложения исключительно в образовательных целях и не имеет права воспроизводить, копировать, распространять или модифицировать эти материалы без нашего согласия;
+
+Попрошу заметить, для отметки авторского контента используется метка "© PythonWave", остальной контет не является моей собственностью.
+
+4. Ответственность
+
+4.1. Мы не несем ответственности за любые убытки, которые могут возникнуть в результате использования или невозможности использования нашего Приложения, в том числе за убытки из-за потери данных, прерывания бизнеса или любых прямых, косвенных, особых, случайных или последующих убытков;
+
+4.2. Мы не несем ответственности за любые проблемы, возникающие из-за ошибок программного обеспечения, технических сбоев, вирусов или иных аномалий, которые могут повредить ваше устройство или данные.
+
+5. Изменения в соглашении
+
+5.1. Мы оставляем за собой право вносить изменения в это Соглашение по своему усмотрению в любое время. Все изменения вступают в силу с момента их публикации в Приложении;
+
+5.2. Пользователь обязуется проверять наличие обновлений в настоящем Соглашении.
+
+6. Согласие пользователя
+
+6.1. Используя наше Приложение, вы подтверждаете, что ознакомлены с условиями настоящего Соглашения и согласны с ними.
+
+6.2. В случае несогласия с условиями Соглашения, пользователь обязан прекратить использование Приложения.
+
+
+
+Настоящее Соглашение вступает в силу с момента вашего использования нашего Приложения и действует до момента его расторжения. Мы оставляем за собой право расторгнуть это Соглашение в любое время по своему усмотрению без предварительного уведомления.
+
+Последнее обновление: 29.04.2024
+
+С уважением,
+PythonWave
+</value>
+  </data>
+  <data name="animation1.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation1.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation1.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation1.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="animation1.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
+</value>
+  </data>
+  <metadata name="MessageError.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1076, 14</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAANYAAAEAIADocgMAFgAAACgAAAAAAQAArAEAAAEAIAAAAAAAAFgDAAAAAAAAAAAAAAAAAAAA
@@ -32892,9 +32892,6 @@ PythonWave
         //////////////////////////////////8=
 </value>
   </data>
-  <metadata name="MessageError.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1076, 14</value>
-  </metadata>
   <metadata name="timerTransition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>217, 18</value>
   </metadata>
@@ -32916,10 +32913,10 @@ PythonWave
   <metadata name="dragControlMain2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>821, 6</value>
   </metadata>
-  <metadata name="animateWindow.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>148, 51</value>
-  </metadata>
   <metadata name="MessageWarning.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1013, 44</value>
+  </metadata>
+  <metadata name="borderlessForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 52</value>
   </metadata>
 </root>

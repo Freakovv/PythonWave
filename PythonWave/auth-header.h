@@ -21,10 +21,8 @@ using namespace System::IO;
 	String^ auth::ReadLogFile() {
 		String^ content = "";
 		try {
-			// Путь к файлу
 			String^ folderName = "logs";
-			String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
-			String^ filePath = Path::Combine(folderPath, "logs.bin");
+			String^ filePath = Path::Combine(folderName, "logs.bin");
 
 			// Проверяем, существует ли файл
 			if (File::Exists(filePath)) {
@@ -33,14 +31,9 @@ using namespace System::IO;
 				BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
 
 				// Читаем содержимое файла
-				//size_t hashLogin = binaryReader->ReadUInt32(); // Прочитаем хэш
 				content = binaryReader->ReadString();
-				// Закрываем бинарный читатель и файловый поток
 				binaryReader->Close();
 				fileStream->Close();
-
-				// Преобразуем хэш в строку и возвращаем его
-				//content = hashLogin.ToString();
 			}
 		}
 		catch (Exception^ e) {
@@ -52,32 +45,18 @@ using namespace System::IO;
 	// Функция для запоминания last usera
 	Void auth::CreateLogFile() {
 		try {
-			//String^ username = USER;
-			//std::string Login = msclr::interop::marshal_as<std::string>(USER);
-
 			// Создаем папку с полученным логином
 			String^ folderName = "logs";
-			String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
-			Directory::CreateDirectory(folderPath);
+			String^ filePath = Path::Combine(folderName, "logs.bin");
 
-			// Путь к файлу Password - logs.bin
-			String^ filePath = Path::Combine(folderPath, "logs.bin");
-
-			// Хэшируем 
-			//std::hash<std::string> hasher;
-			//size_t hashLogin = hasher(Login);
-
-			// Открываем файл для записи в бинарном режиме
+			Directory::CreateDirectory(folderName);
+			// Запись в бинарном режиме
 			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
 			BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
 
-			// Записываем хэш в файл
 			binaryWriter->Write(USER);
-
-			// Закрываем бинарный писатель и файловый поток
 			binaryWriter->Close();
 			fileStream->Close();
-
 		}
 		catch (Exception^ e) {
 			MessageError->Show(e->Message);
@@ -87,29 +66,27 @@ using namespace System::IO;
 
 	void SetCenter(Control^ back, Control^ control, int mode);
 
-	Void auth::CheckLastEnter() {
-		if (USER != "") {
+	Void auth::LastEnter() {
+		if (greeting) {
+
 			labelWelcome->Text += USER;
 			SetCenter(pageWelcome, labelWelcome, 1);
-			if (greeting) {
-				pagesTransition->SelectTab(pageWelcome);
-				animation_mode = 4;
-				sec = 2;
-			}
-			else {
-				animation_mode = 5;
-				sec = 0;
-			}
-			timerTransition->Start();
+			pagesTransition->SelectTab(pageWelcome);
 
+			animation_mode = 4;
+			sec = 2;
+			timerTransition->Start();
 		}
 		else {
-			pagesTransition->SelectTab(pageMain);
+			ClassFade^ fadeEffect = gcnew ClassFade(this);
+			fadeEffect->SetAnimation("hide");
+			fadeEffect = nullptr;
+			authToMain(USER);
 		}
 	}
 
 	Void auth::loadConfig() {
-		Config^ config = Config::LoadConfig("config.xml");
+		Config^ config = Config::LoadConfig();
 		// Настройки формы
 
 		// Закругленность, тень формы
@@ -130,13 +107,20 @@ using namespace System::IO;
 	}
 
 	Void auth::auth_Load(System::Object^ sender, System::EventArgs^ e) {
-		if (Directory::Exists("logs")) {
-			USER = ReadLogFile();
-		}
 		if (File::Exists("config.xml")) {
 			loadConfig();
 		}
-		CheckLastEnter();
+
+		if (Directory::Exists("logs")) {
+			USER = ReadLogFile();
+			LastEnter();
+		}
+		else {
+			ClassFade^ fadeEffect = gcnew ClassFade(this);
+			fadeEffect->SetAnimation("in");
+			fadeEffect = nullptr;
+		}
+
 
 		SetCenter(panelMain, labelMain, 1);
 		SetCenter(pageWelcome, labelWelcome, 1);
@@ -181,8 +165,8 @@ using namespace System::IO;
 	Void auth::buttonRegister_Click(Object^ sender, EventArgs^ e) {
 		// Проверка на пустые поля
 		if (textBoxLogin1->Text == "") {
-
 			textBoxLogin1->BorderColor = Color::Red;
+
 			MessageWarning->Show("Введите логин");
 			return;
 		}
@@ -240,8 +224,7 @@ using namespace System::IO;
 		std::string Password = msclr::interop::marshal_as<std::string>(cliPassword);
 
 		// Создаем папку с полученным логином
-		String^ folderName = cliLogin;
-		String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
+		String^ folderPath = cliLogin;
 		Directory::CreateDirectory(folderPath);
 
 		// Путь к файлу Password - data.bin
@@ -329,8 +312,7 @@ using namespace System::IO;
 		std::string Password = msclr::interop::marshal_as<std::string>(cliPassword);
 
 		// Создаем путь к файлу Password - data.bin
-		String^ folderName = cliLogin;
-		String^ folderPath = Path::Combine(Path::GetDirectoryName(Application::ExecutablePath), folderName);
+		String^ folderPath = cliLogin;
 		String^ filePath = Path::Combine(folderPath, "data.bin");
 
 		// Проверяем существует ли пользователь в бд

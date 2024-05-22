@@ -1,0 +1,168 @@
+  {FEA94A50-E5C8-4edd-BE62-F738BC8C043E} - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b: 
+	hash=None, flags=None
+Class Bunifu.UI.WinForms.BunifuDropdown: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.ComboBox
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean Enabled 'get set' : 
+    Boolean FillIndicator 'get set' : 
+    Int32 ItemHeight 'get set' : 
+    Int32 BorderRadius 'get set' : 
+    Int32 TextLeftMargin 'get set' : 
+    Int32 ItemTopMargin 'get set' : 
+    Int32 Height 'get set' : 
+    Int32 Width 'get set' : 
+    System.String Text 'get set' : 
+    System.Drawing.Color IndicatorColor 'get set' : 
+    System.Drawing.Color ItemForeColor 'get set' : 
+    System.Drawing.Color DisabledBackColor 'get set' : 
+    System.Drawing.Color DisabledBorderColor 'get set' : 
+    System.Drawing.Color DisabledIndicatorColor 'get set' : 
+    System.Drawing.Color DisabledForeColor 'get set' : 
+    System.Drawing.Color ItemHighLightColor 'get set' : 
+    System.Drawing.Color ItemHighLightForeColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    System.Drawing.Color BackgroundColor 'get set' : 
+    System.Drawing.Color ItemBorderColor 'get set' : 
+    System.Drawing.Color ItemBackColor 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    BorderThickness DropdownBorderThickness 'get set' : 
+    TextAlign TextAlignment 'get set' : 
+    Indicator IndicatorAlignment 'get set' : 
+    Boolean FillDropDown 'get set' : 
+    Int32 SelectedIndex 'get set' : 
+    System.Drawing.Color Color 'get set' : 
+    System.Drawing.Color DisabledColor 'get set' : 
+    System.Drawing.Image Icon 'get set' : 
+    Directions Direction 'get set' : 
+    TextAlign DropDownTextAlign 'get set' : 
+    Indicator IndicatorLocation 'get set' : 
+    System.Windows.Forms.ComboBoxStyle DropDownStyle 'get set' : 
+    System.Windows.Forms.FlatStyle FlatStyle 'get set' : 
+    System.Windows.Forms.DrawMode DrawMode 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+  Methods:
+    get_Enabled(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Enabled(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FillIndicator(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FillIndicator(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemHeight(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemHeight(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderRadius(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderRadius(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_TextLeftMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_TextLeftMargin(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemTopMargin(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemTopMargin(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Height(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Height(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Width(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Width(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Text(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_IndicatorColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IndicatorColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemForeColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemForeColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledBackColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledBackColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledBorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledBorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledIndicatorColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledIndicatorColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledForeColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledForeColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemHighLightColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemHighLightColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemHighLightForeColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemHighLightForeColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BackgroundColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_BackgroundColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemBorderColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemBorderColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ItemBackColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ItemBackColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ForeColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Font(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Font(Font): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DropdownBorderThickness(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DropdownBorderThickness(BorderThickness): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_TextAlignment(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_TextAlignment(TextAlign): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IndicatorAlignment(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IndicatorAlignment(Indicator): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FillDropDown(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FillDropDown(Boolean): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_SelectedIndex(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_SelectedIndex(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Color(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Color(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DisabledColor(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DisabledColor(Color): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Icon(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Icon(Image): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Direction(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Direction(Directions): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DropDownTextAlign(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DropDownTextAlign(TextAlign): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IndicatorLocation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_IndicatorLocation(Indicator): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DropDownStyle(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DropDownStyle(ComboBoxStyle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_FlatStyle(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_FlatStyle(FlatStyle): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_DrawMode(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DrawMode(DrawMode): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BackColor(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Struct Bunifu.UI.WinForms.BunifuDropdown+Directions: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Directions Up = 0 : Public, Static, Literal, HasDefault
+    Directions Down = 1 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuDropdown+Indicator: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Indicator Left = 0 : Public, Static, Literal, HasDefault
+    Indicator Right = 1 : Public, Static, Literal, HasDefault
+    Indicator None = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuDropdown+TextAlign: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    TextAlign Left = 0 : Public, Static, Literal, HasDefault
+    TextAlign Right = 1 : Public, Static, Literal, HasDefault
+    TextAlign Center = 2 : Public, Static, Literal, HasDefault
+Struct Bunifu.UI.WinForms.BunifuDropdown+BorderThickness: AutoLayout, AnsiClass, Class, NestedPublic, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    BorderThickness Thick = 0 : Public, Static, Literal, HasDefault
+    BorderThickness Thin = 1 : Public, Static, Literal, HasDefault
+Class SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute: AutoLayout, AnsiClass, Class, Public
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class {FE3C441D-DF9D-407b-917D-0B4471A8296C}: AutoLayout, AnsiClass, Class, Public
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String CBo= : Public, Static
+  Methods:
+    dau(Int32): PrivateScope, Public, Static, HideBySig

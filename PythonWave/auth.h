@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "config.h"
+
 namespace PythonWave {
 
 	using namespace System;
@@ -8,13 +10,14 @@ namespace PythonWave {
 	using namespace System::Data;
 	using namespace System::Drawing;
     using namespace System::IO;
-
+    using namespace System::Reflection;
 	public ref class auth : public System::Windows::Forms::Form
 	{
 	public:
 		auth(void)
 		{
 			InitializeComponent();
+            setShadows();
 		}
 
 	protected:
@@ -22,11 +25,12 @@ namespace PythonWave {
 		{
 			if (components)
 			{
+                Application::Exit();
 				delete components;
 			}
 		}
 
-    private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
+
 	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonClose;
 	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonMinimize;
 	private: Guna::UI2::WinForms::Guna2ShadowPanel^ panelAuth;
@@ -76,8 +80,9 @@ namespace PythonWave {
     private: System::Windows::Forms::Label^ labelMain;
     private: Guna::UI2::WinForms::Guna2DragControl^ dragControlMain;
     private: Guna::UI2::WinForms::Guna2DragControl^ dragControlMain2;
-    private: Guna::UI2::WinForms::Guna2AnimateWindow^ animateWindow;
+
     private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
+    private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
 
 
 
@@ -93,10 +98,9 @@ namespace PythonWave {
 		void InitializeComponent(void)
 		{
             this->components = (gcnew System::ComponentModel::Container());
-            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(auth::typeid));
-            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
-            this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
+            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             this->buttonClose = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
             this->buttonMinimize = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
             this->panelAuth = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
@@ -142,8 +146,8 @@ namespace PythonWave {
             this->labelMain = (gcnew System::Windows::Forms::Label());
             this->dragControlMain = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
             this->dragControlMain2 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-            this->animateWindow = (gcnew Guna::UI2::WinForms::Guna2AnimateWindow(this->components));
             this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+            this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
             this->panelAuth->SuspendLayout();
             this->pagesAuthReg->SuspendLayout();
             this->pageAuth->SuspendLayout();
@@ -158,14 +162,6 @@ namespace PythonWave {
             this->pageInfo->SuspendLayout();
             this->panelMain->SuspendLayout();
             this->SuspendLayout();
-            // 
-            // borderlessForm
-            // 
-            this->borderlessForm->BorderRadius = 25;
-            this->borderlessForm->ContainerControl = this;
-            this->borderlessForm->DockIndicatorTransparencyValue = 0.6;
-            this->borderlessForm->ResizeForm = false;
-            this->borderlessForm->TransparentWhileDrag = true;
             // 
             // buttonClose
             // 
@@ -246,22 +242,22 @@ namespace PythonWave {
             this->pagesAuthReg->SelectedIndex = 0;
             this->pagesAuthReg->Size = System::Drawing::Size(351, 440);
             this->pagesAuthReg->TabIndex = 3;
-            animation1->AnimateOnlyDifferences = true;
-            animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
-            animation1->LeafCoeff = 0;
-            animation1->MaxTime = 1;
-            animation1->MinTime = 0;
-            animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
-            animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
-            animation1->MosaicSize = 0;
-            animation1->Padding = System::Windows::Forms::Padding(0);
-            animation1->RotateCoeff = 0;
-            animation1->RotateLimit = 0;
-            animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
-            animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
-            animation1->TimeCoeff = 1;
-            animation1->TransparencyCoeff = 2;
-            this->pagesAuthReg->Transition = animation1;
+            animation3->AnimateOnlyDifferences = true;
+            animation3->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.BlindCoeff")));
+            animation3->LeafCoeff = 0;
+            animation3->MaxTime = 1;
+            animation3->MinTime = 0;
+            animation3->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicCoeff")));
+            animation3->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicShift")));
+            animation3->MosaicSize = 0;
+            animation3->Padding = System::Windows::Forms::Padding(0);
+            animation3->RotateCoeff = 0;
+            animation3->RotateLimit = 0;
+            animation3->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.ScaleCoeff")));
+            animation3->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.SlideCoeff")));
+            animation3->TimeCoeff = 1;
+            animation3->TransparencyCoeff = 2;
+            this->pagesAuthReg->Transition = animation3;
             this->pagesAuthReg->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Custom;
             // 
             // pageAuth
@@ -942,22 +938,22 @@ namespace PythonWave {
             this->pagesTransition->SelectedIndex = 0;
             this->pagesTransition->Size = System::Drawing::Size(1280, 609);
             this->pagesTransition->TabIndex = 3;
-            animation2->AnimateOnlyDifferences = true;
-            animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
-            animation2->LeafCoeff = 0;
-            animation2->MaxTime = 1;
-            animation2->MinTime = 0;
-            animation2->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicCoeff")));
-            animation2->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicShift")));
-            animation2->MosaicSize = 0;
-            animation2->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
-            animation2->RotateCoeff = 0;
-            animation2->RotateLimit = 0;
-            animation2->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.ScaleCoeff")));
-            animation2->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.SlideCoeff")));
-            animation2->TimeCoeff = 0;
-            animation2->TransparencyCoeff = 1;
-            this->pagesTransition->Transition = animation2;
+            animation1->AnimateOnlyDifferences = true;
+            animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
+            animation1->LeafCoeff = 0;
+            animation1->MaxTime = 1;
+            animation1->MinTime = 0;
+            animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
+            animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
+            animation1->MosaicSize = 0;
+            animation1->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+            animation1->RotateCoeff = 0;
+            animation1->RotateLimit = 0;
+            animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
+            animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
+            animation1->TimeCoeff = 0;
+            animation1->TransparencyCoeff = 1;
+            this->pagesTransition->Transition = animation1;
             this->pagesTransition->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
             // 
             // pageMain
@@ -1111,11 +1107,6 @@ namespace PythonWave {
             this->dragControlMain2->TargetControl = this->labelMain;
             this->dragControlMain2->UseTransparentDrag = true;
             // 
-            // animateWindow
-            // 
-            this->animateWindow->AnimationType = Guna::UI2::WinForms::Guna2AnimateWindow::AnimateWindowType::AW_BLEND;
-            this->animateWindow->TargetForm = this;
-            // 
             // MessageWarning
             // 
             this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
@@ -1124,6 +1115,14 @@ namespace PythonWave {
             this->MessageWarning->Parent = this;
             this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
             this->MessageWarning->Text = L"Введите пароль";
+            // 
+            // borderlessForm
+            // 
+            this->borderlessForm->BorderRadius = 25;
+            this->borderlessForm->ContainerControl = this;
+            this->borderlessForm->DockIndicatorTransparencyValue = 0.6;
+            this->borderlessForm->TransparentWhileDrag = true;
+            this->borderlessForm->HasFormShadow = true;
             // 
             // auth
             // 
@@ -1139,6 +1138,7 @@ namespace PythonWave {
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
             this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->Name = L"auth";
+            this->Opacity = 0;
             this->Text = L"PythonWave";
             this->Load += gcnew System::EventHandler(this, &auth::auth_Load);
             this->panelAuth->ResumeLayout(false);
@@ -1161,14 +1161,13 @@ namespace PythonWave {
             this->panelMain->ResumeLayout(false);
             this->panelMain->PerformLayout();
             this->ResumeLayout(false);
-
         }
 
 #pragma endregion
         String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
 
     // Форма - Анимации, кнопочки
-    private: Void CheckLastEnter();
+    private: Void LastEnter();
     private: Void auth::loadConfig();
 
 
@@ -1199,6 +1198,21 @@ namespace PythonWave {
     }
     private: System::Void textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e) {
         textBoxPassword->BorderColor = Color::White;
+    }
+
+
+
+    void setShadows() {
+        if (Directory::Exists("logs")) {
+            this->borderlessForm->HasFormShadow = false;
+        }
+        else if (File::Exists("config.xml")) {
+            Config^ cfg = gcnew Config();
+            cfg->LoadConfig();
+            this->borderlessForm->HasFormShadow = cfg->hasFormShadow;
+            cfg = nullptr;
+        }
+
     }
 };
 }

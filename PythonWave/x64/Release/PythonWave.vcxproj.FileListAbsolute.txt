@@ -1,0 +1,6 @@
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWave.vcxproj.AssemblyReference.cache
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWave.auth.resources
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWave.mainForm.resources
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWave.profile.resources
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWave.vcxproj.GenerateResource.cache
+E:\.Coding\PythonWave\PythonWave\x64\Release\PythonWa.4059B652.Up2Date

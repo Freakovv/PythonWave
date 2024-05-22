@@ -1,0 +1,477 @@
+﻿  auth.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'auth.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\auth.h(432,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\auth.h(637,53): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\auth.h(707,52): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\profile.h(869,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\profile-header.h(130,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1031,3): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
+  (compiling source file 'auth.cpp')
+  
+  ClassFade.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassFade.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  ClassMail.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassMail.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  ClassProgress.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'ClassProgress.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  config.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'config.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  main.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'main.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  profile.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'profile.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: 'ObfuscatedByAgileDotNetAttribute': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as 'SecureTeam::Attributes::ObfuscatedByAgileDotNetAttribute' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type 'SecureTeam.Attributes.ObfuscatedByAgileDotNetAttribute' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll : warning C4945: '{FE3C441D-DF9D-407b-917D-0B4471A8296C}': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll': as '{FE3C441D-DF9D-407b-917D-0B4471A8296C}' has already been imported from another assembly 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.1.5.3.dll'
+  (compiling source file 'x64/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cpp')
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  first seen type is used; re-order imported assemblies to use the current type
+  E:\.Coding\PythonWave\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll(0,1):
+  This diagnostic occurred while importing type '.{FE3C441D-DF9D-407b-917D-0B4471A8296C}' from assembly 'Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9'.
+  
+  Generating Code...
+  auth.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  PythonWave.vcxproj -> E:\.Coding\PythonWave\x64\Release\PythonWave.exe

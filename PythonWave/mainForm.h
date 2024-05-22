@@ -6,19 +6,36 @@
 namespace PythonWave {
 
 	using namespace System;
+	using namespace System::Diagnostics;
+	using namespace System::IO;
+	using namespace System::Drawing;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Summary for main
-	/// </summary>
-	public ref class mainForm : public System::Windows::Forms::Form
+	public ref class mainForm : public Form
 	{
 	public:
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
+	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
+	private: Bunifu::UI::WinForms::BunifuPages^ Book;
+	private: System::Windows::Forms::TabPage^ tabPage1;
+	private: System::Windows::Forms::Label^ label—ontent;
+	private: System::Windows::Forms::TabPage^ tabPage2;
+		
 		String^ User;
+		String^ UserEmail;
+		String^ UserBirth;
+		String^ UserSex;
+		String^ UserName;
+
+		String^ UserSurname;
+
+	public:
 		mainForm(String^ Login)
 		{
 			User = Login;
@@ -39,36 +56,26 @@ namespace PythonWave {
 		}
 
 	protected:
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
 		~mainForm()
 		{
 			if (components)
 			{
+				Application::Exit();
 				delete components;
 			}
 		}
 	private: System::Windows::Forms::Panel^ panelMain;
 	private: System::Windows::Forms::Panel^ panelMenu;
-	protected:
-
 	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
 	private: Guna::UI2::WinForms::Guna2Separator^ separatorMain;
 	private: Guna::UI2::WinForms::Guna2VSeparator^ separatorMenu;
-
-
 	private: Guna::UI2::WinForms::Guna2Button^ btnHome;
 	private: Guna::UI2::WinForms::Guna2Button^ btnBook;
 	private: Guna::UI2::WinForms::Guna2Button^ btnCourses;
-
 	private: Guna::UI2::WinForms::Guna2Button^ btnMenu;
 	private: System::Windows::Forms::Timer^ timerMenu;
 	private: Guna::UI2::WinForms::Guna2Button^ btnStats;
-
-
 	private: Guna::UI2::WinForms::Guna2Button^ btnLogOut;
-
 	private: Guna::UI2::WinForms::Guna2Button^ btnSettings;
 	private: Guna::UI2::WinForms::Guna2Button^ btnProfile;
 	private: Guna::UI2::WinForms::Guna2PictureBox^ guna2PictureBox1;
@@ -83,52 +90,21 @@ namespace PythonWave {
 	private: System::Windows::Forms::TabPage^ pageStats;
 	private: System::Windows::Forms::TabPage^ pageSettings;
 	private: System::Windows::Forms::TabPage^ pageGoodbye;
-	private: Guna::UI2::WinForms::Guna2Panel^ guna2Panel1;
 	private: Guna::UI2::WinForms::Guna2DragControl^ dragMain;
 	private: System::Windows::Forms::Panel^ panelUserBar;
 	private: System::Windows::Forms::PictureBox^ pictureUserBar;
-
-
 	private: System::Windows::Forms::Label^ labelRank;
 	private: System::Windows::Forms::Label^ labelNameBar;
 	private: Guna::UI2::WinForms::Guna2RatingStar^ ratingUser;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
-
 	private:
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-
-
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
+			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->separatorMain = (gcnew Guna::UI2::WinForms::Guna2Separator());
@@ -155,14 +131,21 @@ namespace PythonWave {
 			this->timerMenu = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->pageHome = (gcnew System::Windows::Forms::TabPage());
-			this->guna2Panel1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
 			this->pageBook = (gcnew System::Windows::Forms::TabPage());
+			this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label—ontent = (gcnew System::Windows::Forms::Label());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->pageCourses = (gcnew System::Windows::Forms::TabPage());
 			this->pageProfile = (gcnew System::Windows::Forms::TabPage());
 			this->pageStats = (gcnew System::Windows::Forms::TabPage());
 			this->pageSettings = (gcnew System::Windows::Forms::TabPage());
 			this->pageGoodbye = (gcnew System::Windows::Forms::TabPage());
 			this->dragMain = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
+			this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageError = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->panelMain->SuspendLayout();
 			this->panelUserBar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureUserBar))->BeginInit();
@@ -171,7 +154,9 @@ namespace PythonWave {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guna2PictureBox1))->BeginInit();
 			this->panelMenu->SuspendLayout();
 			this->Pages->SuspendLayout();
-			this->pageHome->SuspendLayout();
+			this->pageBook->SuspendLayout();
+			this->Book->SuspendLayout();
+			this->tabPage1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMain
@@ -659,36 +644,35 @@ namespace PythonWave {
 			this->Pages->Location = System::Drawing::Point(80, 79);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
-			this->Pages->Page = this->pageHome;
-			this->Pages->PageIndex = 0;
-			this->Pages->PageName = L"pageHome";
-			this->Pages->PageTitle = L"pageHome";
+			this->Pages->Page = this->pageBook;
+			this->Pages->PageIndex = 1;
+			this->Pages->PageName = L"pageBook";
+			this->Pages->PageTitle = L"pageBook";
 			this->Pages->SelectedIndex = 0;
 			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
-			animation1->AnimateOnlyDifferences = false;
-			animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
-			animation1->LeafCoeff = 0;
-			animation1->MaxTime = 1;
-			animation1->MinTime = 0;
-			animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
-			animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
-			animation1->MosaicSize = 0;
-			animation1->Padding = System::Windows::Forms::Padding(0);
-			animation1->RotateCoeff = 0;
-			animation1->RotateLimit = 0;
-			animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
-			animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
-			animation1->TimeCoeff = 1;
-			animation1->TransparencyCoeff = 2;
-			this->Pages->Transition = animation1;
+			animation2->AnimateOnlyDifferences = false;
+			animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
+			animation2->LeafCoeff = 0;
+			animation2->MaxTime = 1;
+			animation2->MinTime = 0;
+			animation2->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicCoeff")));
+			animation2->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicShift")));
+			animation2->MosaicSize = 0;
+			animation2->Padding = System::Windows::Forms::Padding(0);
+			animation2->RotateCoeff = 0;
+			animation2->RotateLimit = 0;
+			animation2->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.ScaleCoeff")));
+			animation2->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.SlideCoeff")));
+			animation2->TimeCoeff = 1;
+			animation2->TransparencyCoeff = 2;
+			this->Pages->Transition = animation2;
 			this->Pages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Custom;
 			// 
 			// pageHome
 			// 
 			this->pageHome->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->pageHome->Controls->Add(this->guna2Panel1);
 			this->pageHome->Location = System::Drawing::Point(4, 4);
 			this->pageHome->Name = L"pageHome";
 			this->pageHome->Padding = System::Windows::Forms::Padding(3);
@@ -696,24 +680,88 @@ namespace PythonWave {
 			this->pageHome->TabIndex = 0;
 			this->pageHome->Text = L"pageHome";
 			// 
-			// guna2Panel1
-			// 
-			this->guna2Panel1->BackColor = System::Drawing::Color::Cyan;
-			this->guna2Panel1->Location = System::Drawing::Point(6, 6);
-			this->guna2Panel1->Name = L"guna2Panel1";
-			this->guna2Panel1->Size = System::Drawing::Size(200, 100);
-			this->guna2Panel1->TabIndex = 0;
-			// 
 			// pageBook
 			// 
 			this->pageBook->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->pageBook->Controls->Add(this->Book);
 			this->pageBook->Location = System::Drawing::Point(4, 4);
 			this->pageBook->Name = L"pageBook";
 			this->pageBook->Padding = System::Windows::Forms::Padding(3);
-			this->pageBook->Size = System::Drawing::Size(1512, 819);
+			this->pageBook->Size = System::Drawing::Size(1512, 795);
 			this->pageBook->TabIndex = 1;
 			this->pageBook->Text = L"pageBook";
+			// 
+			// Book
+			// 
+			this->Book->Alignment = System::Windows::Forms::TabAlignment::Bottom;
+			this->Book->AllowTransitions = true;
+			this->Book->Controls->Add(this->tabPage1);
+			this->Book->Controls->Add(this->tabPage2);
+			this->Book->ImeMode = System::Windows::Forms::ImeMode::On;
+			this->Book->Location = System::Drawing::Point(3, 3);
+			this->Book->Multiline = true;
+			this->Book->Name = L"Book";
+			this->Book->Page = this->tabPage1;
+			this->Book->PageIndex = 0;
+			this->Book->PageName = L"tabPage1";
+			this->Book->PageTitle = L"tabPage1";
+			this->Book->SelectedIndex = 0;
+			this->Book->Size = System::Drawing::Size(1501, 792);
+			this->Book->TabIndex = 0;
+			animation1->AnimateOnlyDifferences = true;
+			animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
+			animation1->LeafCoeff = 0;
+			animation1->MaxTime = 1;
+			animation1->MinTime = 0;
+			animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
+			animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
+			animation1->MosaicSize = 0;
+			animation1->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+			animation1->RotateCoeff = 0;
+			animation1->RotateLimit = 0;
+			animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
+			animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
+			animation1->TimeCoeff = 0;
+			animation1->TransparencyCoeff = 1;
+			this->Book->Transition = animation1;
+			this->Book->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
+			// 
+			// tabPage1
+			// 
+			this->tabPage1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage1->Controls->Add(this->label—ontent);
+			this->tabPage1->Location = System::Drawing::Point(4, 4);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(1493, 766);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"tabPage1";
+			// 
+			// label—ontent
+			// 
+			this->label—ontent->AutoSize = true;
+			this->label—ontent->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label—ontent->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label—ontent->Location = System::Drawing::Point(708, 12);
+			this->label—ontent->Name = L"label—ontent";
+			this->label—ontent->Size = System::Drawing::Size(175, 30);
+			this->label—ontent->TabIndex = 7;
+			this->label—ontent->Text = L"—Ó‰ÂÊ‡ÌËÂ";
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage2->Location = System::Drawing::Point(4, 4);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1493, 766);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"tabPage2";
 			// 
 			// pageCourses
 			// 
@@ -721,7 +769,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageCourses->Location = System::Drawing::Point(4, 4);
 			this->pageCourses->Name = L"pageCourses";
-			this->pageCourses->Size = System::Drawing::Size(1512, 819);
+			this->pageCourses->Size = System::Drawing::Size(1512, 795);
 			this->pageCourses->TabIndex = 2;
 			this->pageCourses->Text = L"pageCourses";
 			// 
@@ -731,7 +779,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageProfile->Location = System::Drawing::Point(4, 4);
 			this->pageProfile->Name = L"pageProfile";
-			this->pageProfile->Size = System::Drawing::Size(1512, 819);
+			this->pageProfile->Size = System::Drawing::Size(1512, 795);
 			this->pageProfile->TabIndex = 3;
 			this->pageProfile->Text = L"pageProfile";
 			// 
@@ -741,7 +789,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageStats->Location = System::Drawing::Point(4, 4);
 			this->pageStats->Name = L"pageStats";
-			this->pageStats->Size = System::Drawing::Size(1512, 819);
+			this->pageStats->Size = System::Drawing::Size(1512, 795);
 			this->pageStats->TabIndex = 4;
 			this->pageStats->Text = L"pageStats";
 			// 
@@ -751,7 +799,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageSettings->Location = System::Drawing::Point(4, 4);
 			this->pageSettings->Name = L"pageSettings";
-			this->pageSettings->Size = System::Drawing::Size(1512, 819);
+			this->pageSettings->Size = System::Drawing::Size(1512, 795);
 			this->pageSettings->TabIndex = 5;
 			this->pageSettings->Text = L"pageSettings";
 			// 
@@ -761,7 +809,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageGoodbye->Location = System::Drawing::Point(4, 4);
 			this->pageGoodbye->Name = L"pageGoodbye";
-			this->pageGoodbye->Size = System::Drawing::Size(1512, 819);
+			this->pageGoodbye->Size = System::Drawing::Size(1512, 795);
 			this->pageGoodbye->TabIndex = 6;
 			this->pageGoodbye->Text = L"pageGoodbye";
 			// 
@@ -770,6 +818,42 @@ namespace PythonWave {
 			this->dragMain->DockIndicatorTransparencyValue = 0.6;
 			this->dragMain->TargetControl = this->panelMain;
 			this->dragMain->UseTransparentDrag = true;
+			// 
+			// MessageInfo
+			// 
+			this->MessageInfo->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageInfo->Caption = L"»ÌÙÓÏ‡ˆËˇ";
+			this->MessageInfo->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
+			this->MessageInfo->Parent = this;
+			this->MessageInfo->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageInfo->Text = nullptr;
+			// 
+			// MessageWarning
+			// 
+			this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageWarning->Caption = L"¬ÌËÏ‡ÌËÂ";
+			this->MessageWarning->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
+			this->MessageWarning->Parent = this;
+			this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageWarning->Text = nullptr;
+			// 
+			// MessageError
+			// 
+			this->MessageError->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageError->Caption = L"Œ¯Ë·Í‡";
+			this->MessageError->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
+			this->MessageError->Parent = this;
+			this->MessageError->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageError->Text = nullptr;
+			// 
+			// MessageQuestion
+			// 
+			this->MessageQuestion->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
+			this->MessageQuestion->Caption = nullptr;
+			this->MessageQuestion->Icon = Guna::UI2::WinForms::MessageDialogIcon::Question;
+			this->MessageQuestion->Parent = this;
+			this->MessageQuestion->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageQuestion->Text = nullptr;
 			// 
 			// mainForm
 			// 
@@ -796,44 +880,64 @@ namespace PythonWave {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guna2PictureBox1))->EndInit();
 			this->panelMenu->ResumeLayout(false);
 			this->Pages->ResumeLayout(false);
-			this->pageHome->ResumeLayout(false);
+			this->pageBook->ResumeLayout(false);
+			this->Book->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
+
 #pragma endregion
 	private: bool menu = true;
 	private: bool alwaysHideMenu = false;
+	private: int volume = 50;
+	private: int borderBtn = 20;
+
+	private: String^ readBinaryFile(String^ filePath) {
+			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
+			BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
+
+			String^ result = binaryReader->ReadString();
+			fileStream->Close();
+			binaryReader->Close();
+
+			return result;
+	}
+
+	private: Void LoadData() {
+		String^ fileUserEmail =		User + "//userData.bin";
+		String^ fileUserBirth =		User + "//userBirth.bin";
+		String^ fileUserSex =		User + "//userSex.bin";
+		String^ fileUserName =		User + "//userName.bin";
+		String^ fileUserSurname =	User + "//userSurname.bin";
+
+		UserEmail =		readBinaryFile(fileUserEmail);
+		UserBirth =		readBinaryFile(fileUserBirth);
+		UserSex =		readBinaryFile(fileUserSex);
+		UserName =		readBinaryFile(fileUserName);
+
+		if (File::Exists(fileUserSurname))
+		UserSurname =	readBinaryFile(fileUserSurname);
+
+	}
 	private: Void cfgLoad() {
 		Config^ config = gcnew Config();
-		config->LoadConfig("config.xml");
+		config->LoadConfig();
 
 		borderlessForm->BorderRadius = config->borderForm;
+		dragMain->TransparentWhileDrag = config->dragTransparent;
+		config->borderBtn;
+		borderlessForm->HasFormShadow = config->hasFormShadow;
+		volume = config->volume;
+		alwaysHideMenu = config->alwaysHideMenu;
 	}
-	private: Void main_Load(System::Object^ sender, System::EventArgs^ e) {
-		cfgLoad();
-		if (panelMenu->Size == Drawing::Size(80, 820)) {
-			menu = false;
-		}
-		else if (panelMenu->Size == Drawing::Size(250, 820)) {
-			menu = true;
-		}
 
-		ClassFade^ Fade = gcnew ClassFade(this);
-		Fade->SetAnimation("in");
-		Fade = nullptr;
-	}
-	private: Void btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
-		menu == false ? menu = true : menu = false;
-		timerMenu->Start();
-	}
-	private: Void btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
-		ClassFade^ fade = gcnew ClassFade(this);
-		fade->SetAnimation("close");
-	}
-	private: Void btnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
-		ClassFade^ fade = gcnew ClassFade(this);
-		fade->SetAnimation("minimize");
-	}
+	// Form, Menu
+	private: Void main_Load(System::Object^ sender, System::EventArgs^ e);
+	private: Void btnMenu_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void btnExit_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void btnMinimize_Click(System::Object^ sender, System::EventArgs^ e);
 	private: Void btnLogOut_Click(System::Object^ sender, System::EventArgs^ e);
 
 	// œÂÂıÓ‰˚ ÔÓ ÏÂÌ˛
@@ -884,7 +988,6 @@ namespace PythonWave {
 			break;
 		}
 	}
-
 	private: Void btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageHome);
 	}
@@ -903,8 +1006,12 @@ namespace PythonWave {
 	private: Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageSettings);
 	}
-	private: System::Void ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("");
+
+	// ¡‡ Ô‡ÌÂÎ¸ ÔÓÎ¸ÁÓ‚‡ÚÂÎˇ
+	private: Void ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageInfo->Show("ŒˆÂÌË‚‡ÂÚ ‚‡¯Ë ÛÒÔÂıË ‚ Û˜Â·Â :)");
 	}
+private: System::Void guna2TileButton2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -20,17 +20,18 @@ public:
 
     Config() {
         // Инициализация значений по умолчанию
-        dragTransparent = false;
-        hasFormShadow = false;
-        greeting = false;
+        dragTransparent = true;
+        hasFormShadow = true;
+        greeting = true;
         alwaysHideMenu = false;
-        borderForm = 0;
+        borderForm = 25;
         borderBtn = 0;
-        volume = 0;
+        volume = 50;
     }
 
-    static Config^ LoadConfig(String^ configFilePath)
+    static Config^ LoadConfig()
     {
+        String^ configFilePath = "config.xml";
         Config^ config = gcnew Config();
         XmlDocument^ doc = gcnew XmlDocument();
         doc->Load(configFilePath);
@@ -61,8 +62,10 @@ public:
         return config;
     }
 
-    void SaveConfig(String^ configFilePath)
+    void SaveConfig()
     {
+        String^ configFilePath = "config.xml";
+
         XmlDocument^ doc = gcnew XmlDocument();
 
         XmlDeclaration^ xmlDeclaration = doc->CreateXmlDeclaration("1.0", "utf-8", nullptr);
