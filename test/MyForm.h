@@ -35,12 +35,15 @@ namespace test {
 			}
 		}
 
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	private: System::Windows::Forms::TabPage^ tabPage1;
 
 	private: System::Windows::Forms::TabPage^ tabPage2;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 
 
 
@@ -59,32 +62,16 @@ namespace test {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// guna2Button1
-			// 
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->guna2Button1->ForeColor = System::Drawing::Color::White;
-			this->guna2Button1->Location = System::Drawing::Point(871, 737);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->Size = System::Drawing::Size(180, 35);
-			this->guna2Button1->TabIndex = 1;
-			this->guna2Button1->Text = L"guna2Button1";
-			this->guna2Button1->Click += gcnew System::EventHandler(this, &MyForm::guna2Button1_Click);
 			// 
 			// tabControl1
 			// 
@@ -98,6 +85,9 @@ namespace test {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button2);
+			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Controls->Add(this->richTextBox2);
 			this->tabPage1->Controls->Add(this->richTextBox1);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
@@ -107,25 +97,53 @@ namespace test {
 			this->tabPage1->Text = L"tabPage1";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
-			// 
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(192, 74);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
 			// richTextBox1
 			// 
 			this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->richTextBox1->Location = System::Drawing::Point(6, 6);
 			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(1187, 675);
+			this->richTextBox1->Size = System::Drawing::Size(1187, 358);
 			this->richTextBox1->TabIndex = 2;
-			this->richTextBox1->Text = resources->GetString(L"richTextBox1.Text");
+			this->richTextBox1->Text = L"";
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1199, 707);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"tabPage2";
+			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// richTextBox2
+			// 
+			this->richTextBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->richTextBox2->Location = System::Drawing::Point(6, 370);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->Size = System::Drawing::Size(1187, 232);
+			this->richTextBox2->TabIndex = 3;
+			this->richTextBox2->Text = L"";
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(6, 608);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 4;
+			this->button1->Text = L"Run";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(87, 608);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 5;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
 			// 
@@ -133,7 +151,6 @@ namespace test {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1231, 778);
 			this->Controls->Add(this->tabControl1);
-			this->Controls->Add(this->guna2Button1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->tabControl1->ResumeLayout(false);

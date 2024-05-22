@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PythonWave", "PythonWave\Py
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{BD097857-AFD6-42B3-AF29-FCBA92830F0F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PythonInterpretator", "PythonInterpretator\PythonInterpretator.vcxproj", "{81B78AB1-66AD-4C88-A057-BB8BA08F1884}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,6 +31,14 @@ Global
 		{BD097857-AFD6-42B3-AF29-FCBA92830F0F}.Release|x64.ActiveCfg = Release|x64
 		{BD097857-AFD6-42B3-AF29-FCBA92830F0F}.Release|x86.ActiveCfg = Release|Win32
 		{BD097857-AFD6-42B3-AF29-FCBA92830F0F}.Release|x86.Build.0 = Release|Win32
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Debug|x64.ActiveCfg = Debug|x64
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Debug|x64.Build.0 = Debug|x64
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Debug|x86.ActiveCfg = Debug|Win32
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Debug|x86.Build.0 = Debug|Win32
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Release|x64.ActiveCfg = Release|x64
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Release|x64.Build.0 = Release|x64
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Release|x86.ActiveCfg = Release|Win32
+		{81B78AB1-66AD-4C88-A057-BB8BA08F1884}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

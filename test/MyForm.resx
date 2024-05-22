@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Мы рады видеть вас на курсе «Программирование на Python». В этом вводном уроке мы расскажем вам о том, что вас ждёт, и дадим рекомендации по прохождению курса. Жмите кнопку «вправо», чтобы перейти к следующему шагу.</value>
-  </data>
 </root>
