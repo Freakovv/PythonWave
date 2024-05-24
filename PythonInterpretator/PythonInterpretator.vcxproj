@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PyInterpretator.cpp" />
     <ClCompile Include="PythonInterpretator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PyInterpretator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

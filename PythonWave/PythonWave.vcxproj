@@ -161,6 +161,7 @@
     <ClCompile Include="ClassProgress.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyPython.cpp" />
     <ClCompile Include="profile.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,7 @@
     <ClInclude Include="mainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyPython.h" />
     <ClInclude Include="profile-header.h" />
     <ClInclude Include="profile.h">
       <FileType>CppForm</FileType>

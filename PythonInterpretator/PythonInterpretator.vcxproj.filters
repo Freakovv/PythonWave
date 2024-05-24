@@ -18,5 +18,13 @@
     <ClCompile Include="PythonInterpretator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PyInterpretator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PyInterpretator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
