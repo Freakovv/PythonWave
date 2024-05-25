@@ -32,6 +32,9 @@ namespace PythonWave {
 		String^ UserBirth;
 		String^ UserSex;
 		String^ UserName;
+	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+	private: System::Windows::Forms::RichTextBox^ richTextBox2;
+	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 
 		String^ UserSurname;
 
@@ -146,6 +149,9 @@ namespace PythonWave {
 			this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->MessageError = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->MessageQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
+			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->panelMain->SuspendLayout();
 			this->panelUserBar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureUserBar))->BeginInit();
@@ -157,6 +163,7 @@ namespace PythonWave {
 			this->pageBook->SuspendLayout();
 			this->Book->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			this->pageCourses->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMain
@@ -644,10 +651,10 @@ namespace PythonWave {
 			this->Pages->Location = System::Drawing::Point(80, 79);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
-			this->Pages->Page = this->pageBook;
-			this->Pages->PageIndex = 1;
-			this->Pages->PageName = L"pageBook";
-			this->Pages->PageTitle = L"pageBook";
+			this->Pages->Page = this->pageCourses;
+			this->Pages->PageIndex = 2;
+			this->Pages->PageName = L"pageCourses";
+			this->Pages->PageTitle = L"pageCourses";
 			this->Pages->SelectedIndex = 0;
 			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
@@ -767,6 +774,9 @@ namespace PythonWave {
 			// 
 			this->pageCourses->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->pageCourses->Controls->Add(this->guna2Button1);
+			this->pageCourses->Controls->Add(this->richTextBox2);
+			this->pageCourses->Controls->Add(this->richTextBox1);
 			this->pageCourses->Location = System::Drawing::Point(4, 4);
 			this->pageCourses->Name = L"pageCourses";
 			this->pageCourses->Size = System::Drawing::Size(1512, 795);
@@ -855,6 +865,39 @@ namespace PythonWave {
 			this->MessageQuestion->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			this->MessageQuestion->Text = nullptr;
 			// 
+			// richTextBox1
+			// 
+			this->richTextBox1->Location = System::Drawing::Point(22, 24);
+			this->richTextBox1->Name = L"richTextBox1";
+			this->richTextBox1->Size = System::Drawing::Size(339, 333);
+			this->richTextBox1->TabIndex = 0;
+			this->richTextBox1->Text = L"";
+			// 
+			// richTextBox2
+			// 
+			this->richTextBox2->Location = System::Drawing::Point(452, 24);
+			this->richTextBox2->Name = L"richTextBox2";
+			this->richTextBox2->Size = System::Drawing::Size(276, 346);
+			this->richTextBox2->TabIndex = 1;
+			this->richTextBox2->Text = L"";
+			// 
+			// guna2Button1
+			// 
+			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->guna2Button1->ForeColor = System::Drawing::Color::White;
+			this->guna2Button1->Location = System::Drawing::Point(99, 399);
+			this->guna2Button1->Name = L"guna2Button1";
+			this->guna2Button1->Size = System::Drawing::Size(180, 45);
+			this->guna2Button1->TabIndex = 2;
+			this->guna2Button1->Text = L"guna2Button1";
+			this->guna2Button1->Click += gcnew System::EventHandler(this, &mainForm::guna2Button1_Click);
+			// 
 			// mainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -884,6 +927,7 @@ namespace PythonWave {
 			this->Book->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->pageCourses->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1013,5 +1057,6 @@ namespace PythonWave {
 	}
 private: System::Void guna2TileButton2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

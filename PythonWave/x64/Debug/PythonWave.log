@@ -370,13 +370,13 @@ E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll : warning C49
   E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll(0,1):
   This diagnostic occurred while importing type 'TheArtOfDev.HtmlRenderer.Adapters.Entities.RSize' from assembly 'Siticone.Desktop.UI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=9683591576b7f0b4'.
   
-E:\.Coding\PythonWave\PythonWave\auth.h(433,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(434,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\auth.h(638,53): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(639,53): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\auth.h(708,52): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(709,52): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
 E:\.Coding\PythonWave\PythonWave\profile.h(869,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
@@ -385,7 +385,7 @@ E:\.Coding\PythonWave\PythonWave\profile.h(869,47): warning C4566: character rep
 E:\.Coding\PythonWave\PythonWave\profile-header.h(130,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1047,3): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1033,3): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
   (compiling source file 'auth.cpp')
   
   auth.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link

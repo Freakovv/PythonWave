@@ -1,6 +1,7 @@
 e:\.coding\pythonwave\pythonwave\x64\debug\vc143.pdb
 e:\.coding\pythonwave\pythonwave\x64\debug\.netframework,version=v4.8.assemblyattributes.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\profile.obj
+e:\.coding\pythonwave\pythonwave\x64\debug\mypython.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\main.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\config.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\classprogress.obj
@@ -8,9 +9,11 @@ e:\.coding\pythonwave\pythonwave\x64\debug\classmail.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\classfade.obj
 e:\.coding\pythonwave\pythonwave\x64\debug\auth.obj
 e:\.coding\pythonwave\x64\debug\bunifu.ui.winforms.1.5.3.dll
+e:\.coding\pythonwave\x64\debug\bunifu.ui.winforms.bunifubutton.dll
 e:\.coding\pythonwave\x64\debug\bunifu.ui.winforms.bunifucheckbox.dll
 e:\.coding\pythonwave\x64\debug\bunifu.ui.winforms.bunifupages.dll
 e:\.coding\pythonwave\x64\debug\guna.ui2.dll
+e:\.coding\pythonwave\x64\debug\siticone.desktop.ui.dll
 e:\.coding\pythonwave\x64\debug\pythonwave.exe
 e:\.coding\pythonwave\x64\debug\pythonwave.pdb
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\metagen.write.1.tlog
@@ -30,8 +33,11 @@ e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\resgen.read.1.tlog
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\resgen.write.1.tlog
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.licensing.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.1.5.3.dll.metagen
+e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifubutton.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifucheckbox.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifudropdown.dll.metagen
+e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifuimagebutton.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifulabel.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\bunifu.ui.winforms.bunifupages.dll.metagen
 e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\guna.ui2.dll.metagen
+e:\.coding\pythonwave\pythonwave\x64\debug\pythonwave.tlog\siticone.desktop.ui.dll.metagen

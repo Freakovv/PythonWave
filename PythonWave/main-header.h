@@ -1,7 +1,7 @@
 #pragma once
 #include "mainForm.h"
 #include "ClassFade.h"
-
+#include "MyPython.h"
 
 
 	// Form, Menu
@@ -46,4 +46,12 @@
 		}
 
 		Application::Exit();
+	}
+
+	// Страница заданий
+	Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyPython python;
+		String^ code = richTextBox1->Text;
+		String^ result = python.Start(User, code);
+		richTextBox2->Text += result;
 	}

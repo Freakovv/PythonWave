@@ -72,9 +72,3 @@ Class PythonWave.mainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.String User : Public
-    System.String UserEmail : Public
-    System.String UserBirth : Public
-    System.String UserSex : Public
-    System.String UserName : Public
