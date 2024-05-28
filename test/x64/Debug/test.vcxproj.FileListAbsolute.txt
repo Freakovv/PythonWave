@@ -1,4 +1,0 @@
-E:\.Coding\PythonWave\test\x64\Debug\test.vcxproj.AssemblyReference.cache
-E:\.Coding\PythonWave\test\x64\Debug\test.MyForm.resources
-E:\.Coding\PythonWave\test\x64\Debug\test.vcxproj.GenerateResource.cache
-E:\.Coding\PythonWave\test\x64\Debug\test.vcxproj.Up2Date

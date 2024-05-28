@@ -4,19 +4,17 @@
 #include "main-header.h"
 #include <Windows.h>
 
-using namespace System; // Общее пространство имен .NET Framework
-using namespace System::Drawing; // Для работы с графическими объектами
-using namespace System::Windows; // Для работы с элементами управления и окнами
-using namespace System::Windows::Forms; //
+using namespace System;
+using namespace System::Drawing; 
+using namespace System::Windows; 
+using namespace System::Windows::Forms; 
 
 void authToProfile(String^ construct) {
-    // Создание объекта формы профиля
     profile^ profileForm = gcnew profile(construct);
     profileForm->StartPosition = FormStartPosition::Manual;
     profileForm->Location = Point((Screen::PrimaryScreen->Bounds.Width - profileForm->Width) / 2,
         (Screen::PrimaryScreen->Bounds.Height - profileForm->Height) / 2);
 
-    // Скрытие формы авторизации (если она ещё не скрыта)
     for each (Form ^ form in Application::OpenForms)
     {
         if (form->GetType() == auth::typeid)
@@ -26,17 +24,14 @@ void authToProfile(String^ construct) {
         }
     }
 
-    // Отображение формы профиля
     profileForm->Show();
 }
 void authToMain(String^ construct) {
-    // Создание объекта формы профиля
     mainForm^ mainF = gcnew mainForm(construct);
     mainF->StartPosition = FormStartPosition::Manual;
     mainF->Location = Point((Screen::PrimaryScreen->Bounds.Width - mainF->Width) / 2,
         (Screen::PrimaryScreen->Bounds.Height - mainF->Height) / 2);
 
-    // Скрытие формы авторизации (если она ещё не скрыта)
     for each (Form^ form in Application::OpenForms)
     {
         if (form->GetType() == auth::typeid)
@@ -46,11 +41,9 @@ void authToMain(String^ construct) {
         }
     }
 
-    // Отображение формы профиля
     mainF->Show();
 }
 void mainToAuth() {
-    // Создание объекта формы профиля
     if (Directory::Exists("logs")) {
         Directory::Delete("logs");
     }
@@ -62,7 +55,6 @@ void mainToAuth() {
     authF->Location = Point((Screen::PrimaryScreen->Bounds.Width - authF->Width) / 2,
         (Screen::PrimaryScreen->Bounds.Height - authF->Height) / 2);
 
-    // Скрытие формы авторизации (если она ещё не скрыта)
     for each (Form^ form in Application::OpenForms)
     {
         if (form->GetType() == auth::typeid)
@@ -72,7 +64,6 @@ void mainToAuth() {
         }
     }
 
-    // Отображение формы профиля
     authF->Show();
 }
 
@@ -106,3 +97,21 @@ void SetCenter(Control^ back, Control^ control, int mode = 0) {
 	}
 }
 
+String^ GetFolderCreationDate(String^ folderPath) {
+    pin_ptr<const wchar_t> wch = PtrToStringChars(folderPath);
+    const std::wstring& folderPathStr = wch;
+    WIN32_FILE_ATTRIBUTE_DATA fileInfo;
+    if (GetFileAttributesEx(folderPathStr.c_str(), GetFileExInfoStandard, &fileInfo)) {
+        FILETIME creationTime = fileInfo.ftCreationTime;
+        SYSTEMTIME systemTime;
+        FileTimeToSystemTime(&creationTime, &systemTime);
+
+        String^ creationDateString = String::Format("{0}/{1}/{2}",
+            systemTime.wDay, systemTime.wMonth, systemTime.wYear);
+
+        return creationDateString;
+    }
+    else {
+        return "Failed to get folder creation date.";
+    }
+}

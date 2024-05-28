@@ -385,7 +385,7 @@ E:\.Coding\PythonWave\PythonWave\profile.h(869,47): warning C4566: character rep
 E:\.Coding\PythonWave\PythonWave\profile-header.h(130,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1033,3): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1488,3): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
   (compiling source file 'auth.cpp')
   
   auth.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
