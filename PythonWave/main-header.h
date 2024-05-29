@@ -20,6 +20,8 @@
 		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("in");
 		Fade = nullptr;
+
+		SetCenter(panelProfileData, lblLogin, 1);
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -56,6 +58,7 @@
 		MyPython python;
 		String^ code = richTextBox1->Text;
 		String^ result = python.Start(User, code);
+		MessageBox::Show(User, code);
 		richTextBox2->Text += result;
 	}
 

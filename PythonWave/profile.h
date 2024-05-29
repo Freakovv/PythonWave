@@ -86,7 +86,7 @@ namespace PythonWave {
     private: Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
     private: Bunifu::UI::WinForms::BunifuLabel^ labelEnd;
     private: System::Windows::Forms::Panel^ panel2;
-    private: Guna::UI2::WinForms::Guna2CirclePictureBox^ buttonCloseEnd;
+
 
     private: Bunifu::UI::WinForms::BunifuLabel^ labelClose;
 
@@ -231,7 +231,6 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->pageEnd = (gcnew System::Windows::Forms::TabPage());
             this->labelClose = (gcnew Bunifu::UI::WinForms::BunifuLabel());
             this->panel2 = (gcnew System::Windows::Forms::Panel());
-            this->buttonCloseEnd = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
             this->labelEnd = (gcnew Bunifu::UI::WinForms::BunifuLabel());
             this->MessageDialogExit = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
             this->MessageDialogQuestion = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
@@ -260,8 +259,6 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->pageSuccessful->SuspendLayout();
             this->pageSettings->SuspendLayout();
             this->pageEnd->SuspendLayout();
-            this->panel2->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->buttonCloseEnd))->BeginInit();
             this->SuspendLayout();
             // 
             // borderlessForm
@@ -1544,25 +1541,10 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             // 
             this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(71)));
-            this->panel2->Controls->Add(this->buttonCloseEnd);
             this->panel2->Location = System::Drawing::Point(1, 6);
             this->panel2->Name = L"panel2";
             this->panel2->Size = System::Drawing::Size(940, 30);
             this->panel2->TabIndex = 47;
-            // 
-            // buttonCloseEnd
-            // 
-            this->buttonCloseEnd->BackColor = System::Drawing::Color::Transparent;
-            this->buttonCloseEnd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCloseEnd.Image")));
-            this->buttonCloseEnd->ImageRotate = 0;
-            this->buttonCloseEnd->Location = System::Drawing::Point(904, 6);
-            this->buttonCloseEnd->Name = L"buttonCloseEnd";
-            this->buttonCloseEnd->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
-            this->buttonCloseEnd->Size = System::Drawing::Size(20, 20);
-            this->buttonCloseEnd->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-            this->buttonCloseEnd->TabIndex = 31;
-            this->buttonCloseEnd->TabStop = false;
-            this->buttonCloseEnd->Click += gcnew System::EventHandler(this, &profile::buttonCloseEnd_Click);
             // 
             // labelEnd
             // 
@@ -1720,8 +1702,6 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->pageSettings->PerformLayout();
             this->pageEnd->ResumeLayout(false);
             this->pageEnd->PerformLayout();
-            this->panel2->ResumeLayout(false);
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->buttonCloseEnd))->EndInit();
             this->ResumeLayout(false);
 
         }
