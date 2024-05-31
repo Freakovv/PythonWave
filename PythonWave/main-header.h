@@ -56,9 +56,6 @@ std::wstring GetExecutablePath();
 		SetCenter(panelProfileData, lblLogin, 1);
 		RegisterMouseDownEvent(this, alwaysHideMenu);
 
-		std::wstring exePath = GetExecutablePath() + L"example.docx";
-		UnblockFile(exePath);
-		LoadDocxFile();
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -99,17 +96,6 @@ std::wstring GetExecutablePath();
 		richTextBox2->Text += result;
 	}
 
-	void UnblockFile(const std::wstring& filePath) {
-		std::wstring command = L"powershell.exe -Command \"Unblock-File -Path '" + filePath + L"'\"";
-		_wsystem(command.c_str());
-	}
-
-	std::wstring GetExecutablePath() {
-		wchar_t buffer[MAX_PATH];
-		GetModuleFileName(NULL, buffer, MAX_PATH);
-		std::wstring::size_type pos = std::wstring(buffer).find_last_of(L"\\/");
-		return std::wstring(buffer).substr(0, pos);
-	}
 
 	// Профиль
 	int secondsLeftt = 30;

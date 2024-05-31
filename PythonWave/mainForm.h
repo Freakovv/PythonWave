@@ -24,7 +24,7 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
 	private: Bunifu::UI::WinForms::BunifuPages^ Book;
 	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::Label^ labelСontent;
+
 	private: System::Windows::Forms::TabPage^ tabPage2;
 		
 	String^ User;
@@ -233,7 +233,6 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->webBrowser1 = (gcnew System::Windows::Forms::WebBrowser());
-			this->labelСontent = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->pageCourses = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -861,7 +860,7 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->Book->Controls->Add(this->tabPage1);
 			this->Book->Controls->Add(this->tabPage2);
 			this->Book->ImeMode = System::Windows::Forms::ImeMode::On;
-			this->Book->Location = System::Drawing::Point(3, 3);
+			this->Book->Location = System::Drawing::Point(-5, -4);
 			this->Book->Multiline = true;
 			this->Book->Name = L"Book";
 			this->Book->Page = this->tabPage1;
@@ -869,7 +868,7 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->Book->PageName = L"tabPage1";
 			this->Book->PageTitle = L"tabPage1";
 			this->Book->SelectedIndex = 0;
-			this->Book->Size = System::Drawing::Size(1501, 792);
+			this->Book->Size = System::Drawing::Size(1521, 809);
 			this->Book->TabIndex = 0;
 			animation1->AnimateOnlyDifferences = true;
 			animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
@@ -894,34 +893,20 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->tabPage1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->tabPage1->Controls->Add(this->webBrowser1);
-			this->tabPage1->Controls->Add(this->labelСontent);
 			this->tabPage1->Location = System::Drawing::Point(4, 4);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(1493, 766);
+			this->tabPage1->Size = System::Drawing::Size(1513, 783);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
 			// 
 			// webBrowser1
 			// 
-			this->webBrowser1->Location = System::Drawing::Point(6, 45);
+			this->webBrowser1->Location = System::Drawing::Point(0, 0);
 			this->webBrowser1->MinimumSize = System::Drawing::Size(20, 20);
 			this->webBrowser1->Name = L"webBrowser1";
-			this->webBrowser1->Size = System::Drawing::Size(1481, 714);
+			this->webBrowser1->Size = System::Drawing::Size(1513, 783);
 			this->webBrowser1->TabIndex = 9;
-			// 
-			// labelСontent
-			// 
-			this->labelСontent->AutoSize = true;
-			this->labelСontent->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->labelСontent->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelСontent->Location = System::Drawing::Point(708, 12);
-			this->labelСontent->Name = L"labelСontent";
-			this->labelСontent->Size = System::Drawing::Size(175, 30);
-			this->labelСontent->TabIndex = 7;
-			this->labelСontent->Text = L"Содержание";
 			// 
 			// tabPage2
 			// 
@@ -2121,7 +2106,6 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->pageBook->ResumeLayout(false);
 			this->Book->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
 			this->pageCourses->ResumeLayout(false);
 			this->pageCourses->PerformLayout();
 			this->pageProfile->ResumeLayout(false);
@@ -2138,6 +2122,7 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			this->ResumeLayout(false);
 
 		}
+
 #pragma endregion
 
 	//Настройки
@@ -2158,7 +2143,7 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 			binaryReader->Close();
 
 			return result;
-	}
+		}
 		private: size_t readPassword(String^ filePath) {
 		try {
 			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
@@ -2343,9 +2328,6 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 		}
 	// Страница содержания
 	private:
-		void LoadDocxFile() {
-			webBrowser1->Navigate("example.docx");
-		}
 
 
 	// Страница заданий
