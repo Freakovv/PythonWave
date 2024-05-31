@@ -2344,8 +2344,7 @@ private: System::Windows::Forms::WebBrowser^ webBrowser1;
 	// Страница содержания
 	private:
 		void LoadDocxFile() {
-			String^ filePath = Path::Combine(Application::StartupPath, "example.docx");
-			webBrowser1->Navigate(filePath);
+			webBrowser1->Navigate("example.docx");
 		}
 
 

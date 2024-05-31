@@ -80,6 +80,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="licenses.licx" />
-    <None Include="example.pdf" />
   </ItemGroup>
 </Project>
