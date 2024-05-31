@@ -32,8 +32,9 @@ namespace PythonWave {
 	String^ UserBirth;
 	String^ UserSex;
 	String^ UserName;
+	private: Guna::UI2::WinForms::Guna2Button^ btnPyRun;
 
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+
 	private: System::Windows::Forms::RichTextBox^ richTextBox2;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::Windows::Forms::Label^ label1;
@@ -116,6 +117,7 @@ namespace PythonWave {
 
 
 	private: Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
+private: System::Windows::Forms::WebBrowser^ webBrowser1;
 
 
 
@@ -230,11 +232,12 @@ namespace PythonWave {
 			this->pageBook = (gcnew System::Windows::Forms::TabPage());
 			this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->webBrowser1 = (gcnew System::Windows::Forms::WebBrowser());
 			this->labelСontent = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->pageCourses = (gcnew System::Windows::Forms::TabPage());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnPyRun = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->richTextBox2 = (gcnew System::Windows::Forms::RichTextBox());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->pageProfile = (gcnew System::Windows::Forms::TabPage());
@@ -803,10 +806,10 @@ namespace PythonWave {
 			this->Pages->Location = System::Drawing::Point(80, 79);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
-			this->Pages->Page = this->pageProfileEdit;
-			this->Pages->PageIndex = 7;
-			this->Pages->PageName = L"pageProfileEdit";
-			this->Pages->PageTitle = L"pageProfileEdit";
+			this->Pages->Page = this->pageBook;
+			this->Pages->PageIndex = 1;
+			this->Pages->PageName = L"pageBook";
+			this->Pages->PageTitle = L"pageBook";
 			this->Pages->SelectedIndex = 0;
 			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
@@ -890,6 +893,7 @@ namespace PythonWave {
 			// 
 			this->tabPage1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->tabPage1->Controls->Add(this->webBrowser1);
 			this->tabPage1->Controls->Add(this->labelСontent);
 			this->tabPage1->Location = System::Drawing::Point(4, 4);
 			this->tabPage1->Name = L"tabPage1";
@@ -897,6 +901,14 @@ namespace PythonWave {
 			this->tabPage1->Size = System::Drawing::Size(1493, 766);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
+			// 
+			// webBrowser1
+			// 
+			this->webBrowser1->Location = System::Drawing::Point(6, 45);
+			this->webBrowser1->MinimumSize = System::Drawing::Size(20, 20);
+			this->webBrowser1->Name = L"webBrowser1";
+			this->webBrowser1->Size = System::Drawing::Size(1481, 714);
+			this->webBrowser1->TabIndex = 9;
 			// 
 			// labelСontent
 			// 
@@ -927,7 +939,7 @@ namespace PythonWave {
 			this->pageCourses->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageCourses->Controls->Add(this->label1);
-			this->pageCourses->Controls->Add(this->guna2Button1);
+			this->pageCourses->Controls->Add(this->btnPyRun);
 			this->pageCourses->Controls->Add(this->richTextBox2);
 			this->pageCourses->Controls->Add(this->richTextBox1);
 			this->pageCourses->Location = System::Drawing::Point(4, 4);
@@ -949,23 +961,23 @@ namespace PythonWave {
 			this->label1->TabIndex = 3;
 			this->label1->Text = resources->GetString(L"label1.Text");
 			// 
-			// guna2Button1
+			// btnPyRun
 			// 
-			this->guna2Button1->Animated = true;
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->btnPyRun->Animated = true;
+			this->btnPyRun->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnPyRun->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnPyRun->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->btnPyRun->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->guna2Button1->ForeColor = System::Drawing::Color::White;
-			this->guna2Button1->Location = System::Drawing::Point(3, 590);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->Size = System::Drawing::Size(701, 45);
-			this->guna2Button1->TabIndex = 2;
-			this->guna2Button1->Text = L"Run";
-			this->guna2Button1->Click += gcnew System::EventHandler(this, &mainForm::guna2Button1_Click);
+			this->btnPyRun->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->btnPyRun->ForeColor = System::Drawing::Color::White;
+			this->btnPyRun->Location = System::Drawing::Point(3, 590);
+			this->btnPyRun->Name = L"btnPyRun";
+			this->btnPyRun->Size = System::Drawing::Size(701, 45);
+			this->btnPyRun->TabIndex = 2;
+			this->btnPyRun->Text = L"Run";
+			this->btnPyRun->Click += gcnew System::EventHandler(this, &mainForm::btnPyRun_click);
 			// 
 			// richTextBox2
 			// 
@@ -2164,22 +2176,22 @@ namespace PythonWave {
 			return 0;
 		}
 	}
-	void writeBinaryFile(String^ filePath, size_t content) {
-		try {
-			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
-			BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
+		void writeBinaryFile(String^ filePath, size_t content) {
+			try {
+				FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
+				BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
 
-			binaryWriter->Write(static_cast<UInt64>(content));
+				binaryWriter->Write(static_cast<UInt64>(content));
 
-			binaryWriter->Close();
-			fileStream->Close();
+				binaryWriter->Close();
+				fileStream->Close();
+			}
+			catch (Exception^ e) {
+				// Обработка исключений
+				MessageError->Show("Ошибка записи файла: " + e->Message);
+			}
 		}
-		catch (Exception^ e) {
-			// Обработка исключений
-			MessageError->Show("Ошибка записи файла: " + e->Message);
-		}
-	}
-	   Void DataLoad() {
+		Void DataLoad() {
 			String^ fileUserEmail =		User + "//userData.bin";
 			String^ fileUserBirth =		User + "//userBirth.bin";
 			String^ fileUserSex =		User + "//userSex.bin";
@@ -2328,11 +2340,18 @@ namespace PythonWave {
 	private: 
 		Void ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageInfo->Show("Оценка ваших успехов в учебе :)");
-	}
+		}
+	// Страница содержания
+	private:
+		void LoadDocxFile() {
+			String^ filePath = Path::Combine(Application::StartupPath, "example.docx");
+			webBrowser1->Navigate(filePath);
+		}
+
 
 	// Страница заданий
 	private:
-		Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
+		Void btnPyRun_click(System::Object^ sender, System::EventArgs^ e);
 
 
 
@@ -2390,62 +2409,7 @@ namespace PythonWave {
 
 		Void ChangeData();
 
-		Void linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		
-		}
-		Void btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e) {
-			try {
-				String^ filePath = User + "//data.bin";
-				size_t storedHashPassword = readPassword(filePath);
-
-				if (storedHashPassword == 0) {
-					MessageError->Show("Не удалось прочитать старый пароль из файла");
-					return;
-				}
-
-				// Преобразование введенного старого пароля
-				String^ enteredOldPass = textBoxPassOld->Text;
-				pin_ptr<const wchar_t> wchEntered = PtrToStringChars(enteredOldPass);
-				std::wstring wstrEntered(wchEntered);
-				std::string strEntered(wstrEntered.begin(), wstrEntered.end());
-
-				std::hash<std::string> hasher;
-				size_t enteredHashPassword = hasher(strEntered);
-
-				if (enteredHashPassword != storedHashPassword) {
-					MessageError->Caption = "Ошибка";
-					MessageError->Text = "Неверный старый пароль";
-					MessageError->Show();
-					return;
-				}
-
-				// Преобразование нового пароля
-				String^ newPass = textBoxPassNew->Text;
-				pin_ptr<const wchar_t> wchNewPass = PtrToStringChars(newPass);
-				std::wstring wstrNewPass(wchNewPass);
-				std::string strNewPass(wstrNewPass.begin(), wstrNewPass.end());
-
-				size_t newHashPassword = hasher(strNewPass);
-
-				// Запись нового хэша в файл
-				writeBinaryFile(filePath, newHashPassword);
-
-				MessageInfo->Show("Пароль изменен", "Успешно");
-
-				// Выключаем remember me
-				if (Directory::Exists("logs")) {
-					try {
-						Directory::Delete("logs", true);
-					}
-					catch (Exception^ e) {
-						MessageBox::Show(e->Message);
-					}
-				}
-
-			}
-			catch (Exception^ e) {
-				MessageError->Show(e->Message);
-			}
-		}
+		Void linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+		Void btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

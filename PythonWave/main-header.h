@@ -6,6 +6,17 @@
 #include "ClassFade.h"
 #include "MyPython.h"
 
+// Объявления
+void UnblockFile(const std::wstring& filePath);
+std::wstring GetExecutablePath();
+
+
+
+
+	// DATA
+	Void mainForm::ChangeData() {
+
+	}
 
 	// Form, Menu
 	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
@@ -44,6 +55,10 @@
 
 		SetCenter(panelProfileData, lblLogin, 1);
 		RegisterMouseDownEvent(this, alwaysHideMenu);
+
+		std::wstring exePath = GetExecutablePath() + L"example.docx";
+		UnblockFile(exePath);
+		LoadDocxFile();
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -76,7 +91,7 @@
 	}
 
 	// Страница заданий
-	Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void mainForm::btnPyRun_click(System::Object^ sender, System::EventArgs^ e) {
 		MyPython python;
 		String^ code = richTextBox1->Text;
 		String^ result = python.Start(User, code);
@@ -84,6 +99,17 @@
 		richTextBox2->Text += result;
 	}
 
+	void UnblockFile(const std::wstring& filePath) {
+		std::wstring command = L"powershell.exe -Command \"Unblock-File -Path '" + filePath + L"'\"";
+		_wsystem(command.c_str());
+	}
+
+	std::wstring GetExecutablePath() {
+		wchar_t buffer[MAX_PATH];
+		GetModuleFileName(NULL, buffer, MAX_PATH);
+		std::wstring::size_type pos = std::wstring(buffer).find_last_of(L"\\/");
+		return std::wstring(buffer).substr(0, pos);
+	}
 
 	// Профиль
 	int secondsLeftt = 30;
@@ -158,8 +184,6 @@
 
 	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageProfileEdit);
-	}
-	Void mainForm::ChangeData() {
 	}
 
 	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -255,4 +279,61 @@
 	Void mainForm::linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		enableMail(true);
 		email_confirmed = false;
+	}
+	Void mainForm::linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+
+	}
+
+	Void mainForm::btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			String^ filePath = User + "//data.bin";
+			size_t storedHashPassword = readPassword(filePath);
+
+			if (storedHashPassword == 0) {
+				MessageError->Show("Не удалось прочитать старый пароль из файла");
+				return;
+			}
+
+			// Преобразование введенного старого пароля
+			String^ enteredOldPass = textBoxPassOld->Text;
+			pin_ptr<const wchar_t> wchEntered = PtrToStringChars(enteredOldPass);
+			std::wstring wstrEntered(wchEntered);
+			std::string strEntered(wstrEntered.begin(), wstrEntered.end());
+
+			std::hash<std::string> hasher;
+			size_t enteredHashPassword = hasher(strEntered);
+
+			if (enteredHashPassword != storedHashPassword) {
+				MessageError->Caption = "Ошибка";
+				MessageError->Text = "Неверный старый пароль";
+				MessageError->Show();
+				return;
+			}
+
+			// Преобразование нового пароля
+			String^ newPass = textBoxPassNew->Text;
+			pin_ptr<const wchar_t> wchNewPass = PtrToStringChars(newPass);
+			std::wstring wstrNewPass(wchNewPass);
+			std::string strNewPass(wstrNewPass.begin(), wstrNewPass.end());
+
+			size_t newHashPassword = hasher(strNewPass);
+
+			// Запись нового хэша в файл
+			writeBinaryFile(filePath, newHashPassword);
+
+			MessageInfo->Show("Пароль изменен", "Успешно");
+
+			// Выключаем remember me
+			if (Directory::Exists("logs")) {
+				try {
+					Directory::Delete("logs", true);
+				}
+				catch (Exception^ e) {
+					MessageBox::Show(e->Message);
+				}
+			}
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
 	}
