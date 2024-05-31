@@ -90,15 +90,20 @@
 
 	String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 		pin_ptr<const wchar_t> wch = PtrToStringChars(folderPath);
-		const std::wstring& folderPathStr = wch;
+		const std::wstring folderPathStr(wch);
 		WIN32_FILE_ATTRIBUTE_DATA fileInfo;
 		if (GetFileAttributesEx(folderPathStr.c_str(), GetFileExInfoStandard, &fileInfo)) {
 			FILETIME creationTime = fileInfo.ftCreationTime;
 			SYSTEMTIME systemTime;
 			FileTimeToSystemTime(&creationTime, &systemTime);
 
-			String^ creationDateString = String::Format("{0}.{1}.{2}",
-				systemTime.wDay, systemTime.wMonth, systemTime.wYear);
+			array<String^>^ months = gcnew array<String^> {
+				"Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
+					"Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
+			};
+
+			String^ creationDateString = String::Format("{0} {1} {2}",
+				systemTime.wDay, months[systemTime.wMonth - 1], systemTime.wYear);
 
 			return creationDateString;
 		}
@@ -124,6 +129,7 @@
 				// Устанавливаем изображение в pictureBoxUploadImage
 				pictureProfile->SizeMode = PictureBoxSizeMode::StretchImage;
 				pictureProfile->Image = image;
+				pictureProfileEdit->Image = image;
 				pictureUserBar->Image = image;
 
 				// Определяем формат загруженного изображения
@@ -157,22 +163,28 @@
 	}
 
 	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
-		srand(time(NULL));
 		ClassMail^ EMAIL = gcnew ClassMail(this);
 
+		String^ userMail = UserEmail;
+		String^ userMailNew = Convert::ToString(textBoxEmail->Text);
+
+		// Генерация кода один раз
 		securityCode = generateSecurityCode();
-		String^ userMail = Convert::ToString(textBoxEmail->Text);
-		String^ mail = "Здравствуйте, ваш код регистрации: " + Convert::ToString(securityCode);
+		securityCodeNew = generateSecurityCode();
+
+		String^ mail = "Здравствуйте, ваш код для смены почты: " + Convert::ToString(securityCode);
+		String^ mailNew = "Здравствуйте, ваш код для подтверждения почты: " + Convert::ToString(securityCodeNew);
 
 		// Если общий вид мейла правильный, то попробуем отправить письмо
-		if (IsValidEmail(userMail)) {
-			if (EMAIL->SendEmail(userMail, "PythonWave: Код безопасности", mail)) {
+		if (IsValidEmail(userMailNew)) {
+			if (EMAIL->SendEmail(userMail, "PythonWave: Смена почты", mail) && EMAIL->SendEmail(userMailNew, "PythonWave: Подтверждение новой почты", mailNew)) {
 				// Убираем возможность отправить код
 				textBoxEmail->Enabled = false;
 				buttonSendMail->Enabled = false;
 
 				// Даем возможность написать код
 				textBoxCode->Enabled = true;
+				textBoxCodeNew->Enabled = true;
 				buttonCheckCode->Enabled = true;
 
 				// Информируем об успешной отправке галочкой
@@ -184,7 +196,6 @@
 			}
 		}
 		else {
-
 			MessageError->Caption = "Письмо не было отправлено";
 			MessageError->Text = "Введите корректный адрес эл. почты";
 			MessageError->Show();
@@ -192,15 +203,15 @@
 			textBoxEmail->BorderColor = Color::Red;
 			textBoxEmail->Clear();
 		}
-
 	}
 	Void mainForm::buttonCheckCode_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			if (securityCode == Convert::ToInt32(textBoxCode->Text)) {
+			if (securityCode == Convert::ToInt32(textBoxCode->Text) && securityCodeNew == Convert::ToInt32(textBoxCodeNew->Text)) {
 				email_confirmed = true;
 
 				// Убираем возможность проверить код
 				textBoxCode->Enabled = false;
+				textBoxCodeNew->Enabled = false;
 				buttonCheckCode->Enabled = false;
 
 				// Информируем об успешной валидации
@@ -210,6 +221,9 @@
 				timerReMail->Stop();
 				labelTimer->Visible = false;
 				linkReMail->Visible = false;
+
+				// Почта изменена
+				MessageInfo->Show("Почта изменена", "Успешно");
 			}
 			else {
 				MessageError->Text = "Неверный код";

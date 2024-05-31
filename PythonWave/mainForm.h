@@ -90,7 +90,8 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::PictureBox^ pictureProfile;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureProfileEdit;
+
 
 
 
@@ -103,6 +104,19 @@ namespace PythonWave {
 
 
 	private: System::Windows::Forms::Label^ lblSexEdit;
+	private: System::Windows::Forms::LinkLabel^ linkREMOVEACC;
+	private: Guna::UI2::WinForms::Guna2Button^ btnCancelChanges;
+	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCodeNew;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label2;
+	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew2;
+
+	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew;
+	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassOld;
+
+
+	private: Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
+
 
 
 
@@ -118,6 +132,7 @@ namespace PythonWave {
 			User = Login;
 			InitializeComponent();
 			this->Load += gcnew EventHandler(this, &mainForm::main_Load);
+			srand(static_cast<unsigned int>(time(NULL)));
 		}
 
 		mainForm(void)
@@ -127,7 +142,7 @@ namespace PythonWave {
 			//TODO: Add the constructor code here
 			//
 			MessageBox::Show("Ошибка загрузки пользователя");
-			//this->Close();
+			Application::Exit();
 		}
 
 	protected:
@@ -239,6 +254,14 @@ namespace PythonWave {
 			this->pageSettings = (gcnew System::Windows::Forms::TabPage());
 			this->pageGoodbye = (gcnew System::Windows::Forms::TabPage());
 			this->pageProfileEdit = (gcnew System::Windows::Forms::TabPage());
+			this->btnChangePassword = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->textBoxPassNew2 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->textBoxPassNew = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->textBoxPassOld = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->textBoxCodeNew = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->btnCancelChanges = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->linkREMOVEACC = (gcnew System::Windows::Forms::LinkLabel());
 			this->lblSexEdit = (gcnew System::Windows::Forms::Label());
 			this->lblLoginEdit = (gcnew System::Windows::Forms::Label());
 			this->lblBirthEdit = (gcnew System::Windows::Forms::Label());
@@ -256,8 +279,9 @@ namespace PythonWave {
 			this->lblNameEdit = (gcnew System::Windows::Forms::Label());
 			this->btnProfileSave = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->guna2Button2 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureProfileEdit = (gcnew System::Windows::Forms::PictureBox());
 			this->linkReMail = (gcnew System::Windows::Forms::LinkLabel());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->dragMain = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
 			this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
@@ -285,7 +309,7 @@ namespace PythonWave {
 			this->pageProfileEdit->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckMail))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfileEdit))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panelMain
@@ -1229,6 +1253,14 @@ namespace PythonWave {
 			// 
 			this->pageProfileEdit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->pageProfileEdit->Controls->Add(this->btnChangePassword);
+			this->pageProfileEdit->Controls->Add(this->textBoxPassNew2);
+			this->pageProfileEdit->Controls->Add(this->textBoxPassNew);
+			this->pageProfileEdit->Controls->Add(this->textBoxPassOld);
+			this->pageProfileEdit->Controls->Add(this->label3);
+			this->pageProfileEdit->Controls->Add(this->textBoxCodeNew);
+			this->pageProfileEdit->Controls->Add(this->btnCancelChanges);
+			this->pageProfileEdit->Controls->Add(this->linkREMOVEACC);
 			this->pageProfileEdit->Controls->Add(this->lblSexEdit);
 			this->pageProfileEdit->Controls->Add(this->lblLoginEdit);
 			this->pageProfileEdit->Controls->Add(this->lblBirthEdit);
@@ -1246,13 +1278,276 @@ namespace PythonWave {
 			this->pageProfileEdit->Controls->Add(this->lblNameEdit);
 			this->pageProfileEdit->Controls->Add(this->btnProfileSave);
 			this->pageProfileEdit->Controls->Add(this->guna2Button2);
-			this->pageProfileEdit->Controls->Add(this->pictureBox1);
+			this->pageProfileEdit->Controls->Add(this->pictureProfileEdit);
 			this->pageProfileEdit->Controls->Add(this->linkReMail);
+			this->pageProfileEdit->Controls->Add(this->label2);
 			this->pageProfileEdit->Location = System::Drawing::Point(4, 4);
 			this->pageProfileEdit->Name = L"pageProfileEdit";
 			this->pageProfileEdit->Size = System::Drawing::Size(1512, 795);
 			this->pageProfileEdit->TabIndex = 7;
 			this->pageProfileEdit->Text = L"pageProfileEdit";
+			// 
+			// btnChangePassword
+			// 
+			this->btnChangePassword->Animated = true;
+			this->btnChangePassword->BackColor = System::Drawing::Color::Transparent;
+			this->btnChangePassword->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnChangePassword->BorderRadius = 20;
+			this->btnChangePassword->BorderThickness = 1;
+			this->btnChangePassword->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnChangePassword->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnChangePassword->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->btnChangePassword->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->btnChangePassword->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnChangePassword->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnChangePassword->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnChangePassword->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnChangePassword->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnChangePassword->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnChangePassword->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnChangePassword->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image9")));
+			this->btnChangePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnChangePassword.Image")));
+			this->btnChangePassword->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnChangePassword->Location = System::Drawing::Point(842, 555);
+			this->btnChangePassword->Name = L"btnChangePassword";
+			this->btnChangePassword->Size = System::Drawing::Size(165, 39);
+			this->btnChangePassword->TabIndex = 77;
+			this->btnChangePassword->Text = L"Изменить";
+			this->btnChangePassword->TextOffset = System::Drawing::Point(10, 0);
+			this->btnChangePassword->UseTransparentBackground = true;
+			this->btnChangePassword->Click += gcnew System::EventHandler(this, &mainForm::btnChangePassword_Click);
+			// 
+			// textBoxPassNew2
+			// 
+			this->textBoxPassNew2->Animated = true;
+			this->textBoxPassNew2->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->textBoxPassNew2->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxPassNew2->AutoRoundedCorners = true;
+			this->textBoxPassNew2->BorderColor = System::Drawing::Color::Silver;
+			this->textBoxPassNew2->BorderRadius = 22;
+			this->textBoxPassNew2->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxPassNew2->DefaultText = L"";
+			this->textBoxPassNew2->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
+				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
+			this->textBoxPassNew2->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
+				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
+			this->textBoxPassNew2->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassNew2->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassNew2->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassNew2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxPassNew2->ForeColor = System::Drawing::Color::Black;
+			this->textBoxPassNew2->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassNew2->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxPassNew2.IconLeft")));
+			this->textBoxPassNew2->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxPassNew2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->textBoxPassNew2->Location = System::Drawing::Point(794, 498);
+			this->textBoxPassNew2->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxPassNew2->MaxLength = 32;
+			this->textBoxPassNew2->Name = L"textBoxPassNew2";
+			this->textBoxPassNew2->PasswordChar = '●';
+			this->textBoxPassNew2->PlaceholderForeColor = System::Drawing::Color::DarkGray;
+			this->textBoxPassNew2->PlaceholderText = L"Повтор пароля";
+			this->textBoxPassNew2->SelectedText = L"";
+			this->textBoxPassNew2->Size = System::Drawing::Size(262, 46);
+			this->textBoxPassNew2->TabIndex = 76;
+			this->textBoxPassNew2->TextOffset = System::Drawing::Point(-2, 0);
+			this->textBoxPassNew2->UseSystemPasswordChar = true;
+			// 
+			// textBoxPassNew
+			// 
+			this->textBoxPassNew->Animated = true;
+			this->textBoxPassNew->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->textBoxPassNew->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxPassNew->AutoRoundedCorners = true;
+			this->textBoxPassNew->BorderColor = System::Drawing::Color::Silver;
+			this->textBoxPassNew->BorderRadius = 22;
+			this->textBoxPassNew->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxPassNew->DefaultText = L"";
+			this->textBoxPassNew->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
+				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
+			this->textBoxPassNew->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
+				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
+			this->textBoxPassNew->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassNew->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassNew->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassNew->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxPassNew->ForeColor = System::Drawing::Color::Black;
+			this->textBoxPassNew->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassNew->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxPassNew.IconLeft")));
+			this->textBoxPassNew->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxPassNew->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->textBoxPassNew->Location = System::Drawing::Point(794, 444);
+			this->textBoxPassNew->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxPassNew->MaxLength = 32;
+			this->textBoxPassNew->Name = L"textBoxPassNew";
+			this->textBoxPassNew->PasswordChar = '●';
+			this->textBoxPassNew->PlaceholderForeColor = System::Drawing::Color::DarkGray;
+			this->textBoxPassNew->PlaceholderText = L"Новый пароль";
+			this->textBoxPassNew->SelectedText = L"";
+			this->textBoxPassNew->Size = System::Drawing::Size(262, 46);
+			this->textBoxPassNew->TabIndex = 75;
+			this->textBoxPassNew->TextOffset = System::Drawing::Point(-2, 0);
+			this->textBoxPassNew->UseSystemPasswordChar = true;
+			// 
+			// textBoxPassOld
+			// 
+			this->textBoxPassOld->Animated = true;
+			this->textBoxPassOld->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->textBoxPassOld->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxPassOld->AutoRoundedCorners = true;
+			this->textBoxPassOld->BorderColor = System::Drawing::Color::Silver;
+			this->textBoxPassOld->BorderRadius = 22;
+			this->textBoxPassOld->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxPassOld->DefaultText = L"";
+			this->textBoxPassOld->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
+				static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
+			this->textBoxPassOld->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(226)),
+				static_cast<System::Int32>(static_cast<System::Byte>(226)), static_cast<System::Int32>(static_cast<System::Byte>(226)));
+			this->textBoxPassOld->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassOld->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxPassOld->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassOld->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxPassOld->ForeColor = System::Drawing::Color::Black;
+			this->textBoxPassOld->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxPassOld->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxPassOld.IconLeft")));
+			this->textBoxPassOld->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxPassOld->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->textBoxPassOld->Location = System::Drawing::Point(794, 391);
+			this->textBoxPassOld->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxPassOld->MaxLength = 32;
+			this->textBoxPassOld->Name = L"textBoxPassOld";
+			this->textBoxPassOld->PasswordChar = '●';
+			this->textBoxPassOld->PlaceholderForeColor = System::Drawing::Color::DarkGray;
+			this->textBoxPassOld->PlaceholderText = L"Старый пароль";
+			this->textBoxPassOld->SelectedText = L"";
+			this->textBoxPassOld->Size = System::Drawing::Size(262, 46);
+			this->textBoxPassOld->TabIndex = 74;
+			this->textBoxPassOld->TextOffset = System::Drawing::Point(-2, 0);
+			this->textBoxPassOld->UseSystemPasswordChar = true;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label3->Location = System::Drawing::Point(788, 349);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(124, 36);
+			this->label3->TabIndex = 73;
+			this->label3->Text = L"Пароль";
+			// 
+			// textBoxCodeNew
+			// 
+			this->textBoxCodeNew->Animated = true;
+			this->textBoxCodeNew->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
+			this->textBoxCodeNew->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxCodeNew->AutoRoundedCorners = true;
+			this->textBoxCodeNew->BorderColor = System::Drawing::Color::Silver;
+			this->textBoxCodeNew->BorderRadius = 22;
+			this->textBoxCodeNew->Cursor = System::Windows::Forms::Cursors::IBeam;
+			this->textBoxCodeNew->DefaultText = L"";
+			this->textBoxCodeNew->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->textBoxCodeNew->DisabledState->FillColor = System::Drawing::Color::DarkGray;
+			this->textBoxCodeNew->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->textBoxCodeNew->DisabledState->PlaceholderForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(138)),
+				static_cast<System::Int32>(static_cast<System::Byte>(138)), static_cast<System::Int32>(static_cast<System::Byte>(138)));
+			this->textBoxCodeNew->Enabled = false;
+			this->textBoxCodeNew->FocusedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxCodeNew->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->textBoxCodeNew->ForeColor = System::Drawing::Color::Black;
+			this->textBoxCodeNew->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->textBoxCodeNew->IconLeft = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"textBoxCodeNew.IconLeft")));
+			this->textBoxCodeNew->IconLeftOffset = System::Drawing::Point(5, 0);
+			this->textBoxCodeNew->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->textBoxCodeNew->Location = System::Drawing::Point(422, 555);
+			this->textBoxCodeNew->Margin = System::Windows::Forms::Padding(5, 4, 5, 4);
+			this->textBoxCodeNew->MaxLength = 6;
+			this->textBoxCodeNew->Name = L"textBoxCodeNew";
+			this->textBoxCodeNew->PasswordChar = '●';
+			this->textBoxCodeNew->PlaceholderForeColor = System::Drawing::Color::DarkGray;
+			this->textBoxCodeNew->PlaceholderText = L"Код с новой почты";
+			this->textBoxCodeNew->SelectedText = L"";
+			this->textBoxCodeNew->Size = System::Drawing::Size(315, 46);
+			this->textBoxCodeNew->TabIndex = 71;
+			this->textBoxCodeNew->UseSystemPasswordChar = true;
+			// 
+			// btnCancelChanges
+			// 
+			this->btnCancelChanges->Animated = true;
+			this->btnCancelChanges->BackColor = System::Drawing::Color::Transparent;
+			this->btnCancelChanges->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnCancelChanges->BorderRadius = 20;
+			this->btnCancelChanges->BorderThickness = 1;
+			this->btnCancelChanges->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnCancelChanges->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnCancelChanges->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->btnCancelChanges->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->btnCancelChanges->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnCancelChanges->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnCancelChanges->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnCancelChanges->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnCancelChanges->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnCancelChanges->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnCancelChanges->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnCancelChanges->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
+			this->btnCancelChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelChanges.Image")));
+			this->btnCancelChanges->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnCancelChanges->ImageSize = System::Drawing::Size(25, 25);
+			this->btnCancelChanges->Location = System::Drawing::Point(1166, 753);
+			this->btnCancelChanges->Name = L"btnCancelChanges";
+			this->btnCancelChanges->Size = System::Drawing::Size(154, 39);
+			this->btnCancelChanges->TabIndex = 70;
+			this->btnCancelChanges->Text = L"Отмена";
+			this->btnCancelChanges->TextOffset = System::Drawing::Point(10, 0);
+			this->btnCancelChanges->UseTransparentBackground = true;
+			// 
+			// linkREMOVEACC
+			// 
+			this->linkREMOVEACC->AutoSize = true;
+			this->linkREMOVEACC->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
+			this->linkREMOVEACC->LinkColor = System::Drawing::Color::Yellow;
+			this->linkREMOVEACC->Location = System::Drawing::Point(625, 753);
+			this->linkREMOVEACC->Name = L"linkREMOVEACC";
+			this->linkREMOVEACC->Size = System::Drawing::Size(215, 19);
+			this->linkREMOVEACC->TabIndex = 69;
+			this->linkREMOVEACC->TabStop = true;
+			this->linkREMOVEACC->Text = L"Хотите удалить аккаунт\?";
+			this->linkREMOVEACC->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &mainForm::linkREMOVEACC_LinkClicked);
 			// 
 			// lblSexEdit
 			// 
@@ -1311,7 +1606,7 @@ namespace PythonWave {
 			this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
 			this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelTimer->Location = System::Drawing::Point(423, 605);
+			this->labelTimer->Location = System::Drawing::Point(423, 658);
 			this->labelTimer->Name = L"labelTimer";
 			this->labelTimer->Size = System::Drawing::Size(314, 19);
 			this->labelTimer->TabIndex = 59;
@@ -1322,7 +1617,7 @@ namespace PythonWave {
 			// 
 			this->pictureBoxCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckCode.Image")));
 			this->pictureBoxCheckCode->ImageRotate = 0;
-			this->pictureBoxCheckCode->Location = System::Drawing::Point(598, 564);
+			this->pictureBoxCheckCode->Location = System::Drawing::Point(598, 617);
 			this->pictureBoxCheckCode->Name = L"pictureBoxCheckCode";
 			this->pictureBoxCheckCode->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
 			this->pictureBoxCheckCode->Size = System::Drawing::Size(20, 20);
@@ -1335,7 +1630,7 @@ namespace PythonWave {
 			// 
 			this->pictureBoxCheckMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckMail.Image")));
 			this->pictureBoxCheckMail->ImageRotate = 0;
-			this->pictureBoxCheckMail->Location = System::Drawing::Point(654, 453);
+			this->pictureBoxCheckMail->Location = System::Drawing::Point(659, 453);
 			this->pictureBoxCheckMail->Name = L"pictureBoxCheckMail";
 			this->pictureBoxCheckMail->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
 			this->pictureBoxCheckMail->Size = System::Drawing::Size(20, 20);
@@ -1376,7 +1671,7 @@ namespace PythonWave {
 			this->textBoxEmail->Name = L"textBoxEmail";
 			this->textBoxEmail->PasswordChar = '\0';
 			this->textBoxEmail->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxEmail->PlaceholderText = L"example@gmail.com";
+			this->textBoxEmail->PlaceholderText = L"newEmail@gmail.com";
 			this->textBoxEmail->SelectedText = L"";
 			this->textBoxEmail->Size = System::Drawing::Size(315, 46);
 			this->textBoxEmail->TabIndex = 53;
@@ -1414,7 +1709,7 @@ namespace PythonWave {
 			this->textBoxCode->Name = L"textBoxCode";
 			this->textBoxCode->PasswordChar = '●';
 			this->textBoxCode->PlaceholderForeColor = System::Drawing::Color::DarkGray;
-			this->textBoxCode->PlaceholderText = L"Код";
+			this->textBoxCode->PlaceholderText = L"Код с старой почты";
 			this->textBoxCode->SelectedText = L"";
 			this->textBoxCode->Size = System::Drawing::Size(315, 46);
 			this->textBoxCode->TabIndex = 54;
@@ -1447,15 +1742,15 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonSendMail->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image9")));
+			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image11")));
 			this->buttonSendMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSendMail.Image")));
 			this->buttonSendMail->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonSendMail->ImageSize = System::Drawing::Size(25, 25);
 			this->buttonSendMail->Location = System::Drawing::Point(422, 444);
 			this->buttonSendMail->Name = L"buttonSendMail";
-			this->buttonSendMail->Size = System::Drawing::Size(226, 39);
+			this->buttonSendMail->Size = System::Drawing::Size(231, 39);
 			this->buttonSendMail->TabIndex = 55;
-			this->buttonSendMail->Text = L"Отправить письмо";
+			this->buttonSendMail->Text = L"Отправить письма";
 			this->buttonSendMail->TextOffset = System::Drawing::Point(15, 0);
 			this->buttonSendMail->UseTransparentBackground = true;
 			this->buttonSendMail->Click += gcnew System::EventHandler(this, &mainForm::buttonSendMail_Click);
@@ -1488,11 +1783,11 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonCheckCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
+			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image12")));
 			this->buttonCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCheckCode.Image")));
 			this->buttonCheckCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonCheckCode->ImageSize = System::Drawing::Size(25, 25);
-			this->buttonCheckCode->Location = System::Drawing::Point(422, 554);
+			this->buttonCheckCode->Location = System::Drawing::Point(422, 607);
 			this->buttonCheckCode->Name = L"buttonCheckCode";
 			this->buttonCheckCode->Size = System::Drawing::Size(170, 39);
 			this->buttonCheckCode->TabIndex = 56;
@@ -1639,7 +1934,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnProfileSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image11")));
+			this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image13")));
 			this->btnProfileSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileSave.Image")));
 			this->btnProfileSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnProfileSave->Location = System::Drawing::Point(1323, 753);
@@ -1677,11 +1972,11 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->guna2Button2->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image12")));
+			this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image14")));
 			this->guna2Button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button2.Image")));
 			this->guna2Button2->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->guna2Button2->ImageSize = System::Drawing::Size(25, 25);
-			this->guna2Button2->Location = System::Drawing::Point(643, 260);
+			this->guna2Button2->Location = System::Drawing::Point(640, 279);
 			this->guna2Button2->Name = L"guna2Button2";
 			this->guna2Button2->Size = System::Drawing::Size(175, 39);
 			this->guna2Button2->TabIndex = 39;
@@ -1690,19 +1985,19 @@ namespace PythonWave {
 			this->guna2Button2->UseTransparentBackground = true;
 			this->guna2Button2->Click += gcnew System::EventHandler(this, &mainForm::buttonUpload_Click);
 			// 
-			// pictureBox1
+			// pictureProfileEdit
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
-				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(629, 54);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(200, 200);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 61;
-			this->pictureBox1->TabStop = false;
-			this->pictureBox1->Click += gcnew System::EventHandler(this, &mainForm::buttonUpload_Click);
+			this->pictureProfileEdit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
+				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->pictureProfileEdit->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureProfileEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureProfileEdit.Image")));
+			this->pictureProfileEdit->Location = System::Drawing::Point(629, 54);
+			this->pictureProfileEdit->Name = L"pictureProfileEdit";
+			this->pictureProfileEdit->Size = System::Drawing::Size(200, 200);
+			this->pictureProfileEdit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureProfileEdit->TabIndex = 61;
+			this->pictureProfileEdit->TabStop = false;
+			this->pictureProfileEdit->Click += gcnew System::EventHandler(this, &mainForm::buttonUpload_Click);
 			// 
 			// linkReMail
 			// 
@@ -1713,7 +2008,7 @@ namespace PythonWave {
 			this->linkReMail->ForeColor = System::Drawing::Color::Gray;
 			this->linkReMail->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->linkReMail->Location = System::Drawing::Point(423, 605);
+			this->linkReMail->Location = System::Drawing::Point(423, 658);
 			this->linkReMail->Name = L"linkReMail";
 			this->linkReMail->Size = System::Drawing::Size(179, 19);
 			this->linkReMail->TabIndex = 66;
@@ -1721,6 +2016,19 @@ namespace PythonWave {
 			this->linkReMail->Text = L"Отправить повторно";
 			this->linkReMail->Visible = false;
 			this->linkReMail->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &mainForm::linkReMail_LinkClicked);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label2->Location = System::Drawing::Point(515, 257);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(444, 19);
+			this->label2->TabIndex = 72;
+			this->label2->Text = L"Рекомендуем загружать изображения в формате 4:3";
+			this->label2->Visible = false;
 			// 
 			// dragMain
 			// 
@@ -1814,20 +2122,22 @@ namespace PythonWave {
 			this->pageProfileEdit->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckMail))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfileEdit))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 
 	//Настройки
-	private: bool menu = true;
-	private: bool alwaysHideMenu;
-	private: int volume = 50;
-	private: int btnBorder = 20;
-	private: void RegisterMouseDownEvent(Control^ parent, bool enable);
+	private: 
+		bool menu = true;
+		bool alwaysHideMenu;
+		int volume = 50;
+		int btnBorder = 20;
+		void RegisterMouseDownEvent(Control^ parent, bool enable);
 
-	private: String^ readBinaryFile(String^ filePath) {
+	private: 
+		String^ readBinaryFile(String^ filePath) {
 			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
 			BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
 
@@ -1837,52 +2147,87 @@ namespace PythonWave {
 
 			return result;
 	}
-	private: Void DataLoad() {
-		String^ fileUserEmail =		User + "//userData.bin";
-		String^ fileUserBirth =		User + "//userBirth.bin";
-		String^ fileUserSex =		User + "//userSex.bin";
-		String^ fileUserName =		User + "//userName.bin";
-		String^ fileUserSurname =	User + "//userSurname.bin";
+		private: size_t readPassword(String^ filePath) {
+		try {
+			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
+			BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
 
-		UserEmail =		readBinaryFile(fileUserEmail);
-		UserBirth =		readBinaryFile(fileUserBirth);
-		UserSex =		readBinaryFile(fileUserSex);
-		UserName =		readBinaryFile(fileUserName);
-		
+			size_t result = binaryReader->ReadUInt64();
 
-		String^ pathToAvatarPng = User + "//avatar.png";
-		String^ pathToAvatarJpg = User + "//avatar.jpg";
+			binaryReader->Close();
+			fileStream->Close();
 
-		if (File::Exists(fileUserSurname)) {
-			UserSurname = readBinaryFile(fileUserSurname);
+			return result;
 		}
-
-		if (File::Exists(pathToAvatarJpg)) {
-			pictureProfile->ImageLocation = pathToAvatarJpg;
-			pictureUserBar->ImageLocation = pathToAvatarJpg;
+		catch (Exception^ e) {
+			MessageError->Show("0: " + e->Message);
+			return 0;
 		}
-		else if (File::Exists(pathToAvatarPng)) {
-			pictureProfile->ImageLocation = pathToAvatarPng;
-			pictureUserBar->ImageLocation = pathToAvatarPng;
-		}
-
-		lblLogin->Text =		User;
-		lblName->Text =			"Имя: " + UserName;
-		lblSurname->Text =		"Фамилия: " + UserSurname;
-		lblSex->Text =			"Пол:" + UserSex;
-		lblBirth->Text =		"Дата рождения: " + UserBirth;
-		lblEmail->Text =		"Email: " + UserEmail;
-		labelNameBar->Text =	UserName;
-		lblRegDate->Text =		"Дата регистрации: " + GetFolderCreationDate(User);
-		
-		textBoxUserName->Text = UserName;
-		textBoxUserSurname->Text = UserSurname;
-		textBoxEmail->Text = UserEmail;
-
-		lblSexEdit->Text =		"Пол:\n" + UserSex;
-		lblBirthEdit->Text =	"Дата рождения:\n" + UserBirth;
 	}
-	private: Void cfgLoad() {
+	void writeBinaryFile(String^ filePath, size_t content) {
+		try {
+			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
+			BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
+
+			binaryWriter->Write(static_cast<UInt64>(content));
+
+			binaryWriter->Close();
+			fileStream->Close();
+		}
+		catch (Exception^ e) {
+			// Обработка исключений
+			MessageError->Show("Ошибка записи файла: " + e->Message);
+		}
+	}
+	   Void DataLoad() {
+			String^ fileUserEmail =		User + "//userData.bin";
+			String^ fileUserBirth =		User + "//userBirth.bin";
+			String^ fileUserSex =		User + "//userSex.bin";
+			String^ fileUserName =		User + "//userName.bin";
+			String^ fileUserSurname =	User + "//userSurname.bin";
+
+			UserEmail =		readBinaryFile(fileUserEmail);
+			UserBirth =		readBinaryFile(fileUserBirth);
+			UserSex =		readBinaryFile(fileUserSex);
+			UserName =		readBinaryFile(fileUserName);
+		
+
+			String^ pathToAvatarPng = User + "//avatar.png";
+			String^ pathToAvatarJpg = User + "//avatar.jpg";
+
+			if (File::Exists(fileUserSurname)) {
+				UserSurname = readBinaryFile(fileUserSurname);
+			}
+
+			if (File::Exists(pathToAvatarJpg)) {
+				pictureProfile->ImageLocation = pathToAvatarJpg;
+				pictureUserBar->ImageLocation = pathToAvatarJpg;
+				pictureProfileEdit->ImageLocation = pathToAvatarJpg;
+			}
+			else if (File::Exists(pathToAvatarPng)) {
+				pictureProfile->ImageLocation = pathToAvatarPng;
+				pictureUserBar->ImageLocation = pathToAvatarPng;
+				pictureProfileEdit->ImageLocation = pathToAvatarPng;
+			}
+
+			lblLogin->Text =		User;
+			lblName->Text =			"Имя: " + UserName;
+			lblSurname->Text =		"Фамилия: " + UserSurname;
+			lblSex->Text =			"Пол: " + UserSex;
+			lblBirth->Text =		"Дата рождения: " + UserBirth;
+			lblEmail->Text =		"Email: " + UserEmail;
+			labelNameBar->Text =	UserName;
+			lblRegDate->Text =		"Дата регистрации: " + GetFolderCreationDate(User);
+		
+			textBoxUserName->Text = UserName;
+			textBoxUserSurname->Text = UserSurname;
+			textBoxEmail->Text = UserEmail;
+
+			lblSexEdit->Text =		"Пол:\n" + UserSex;
+			lblBirthEdit->Text =	"Дата рождения:\n" + UserBirth;
+		}
+
+		Void cfgLoad() {
 		Config^ config = config->LoadConfig();
 
 		borderlessForm->BorderRadius =		config->borderForm;
@@ -1895,8 +2240,7 @@ namespace PythonWave {
 
 		btnProfileEdit->BorderRadius = btnBorder;
 		btnProfileSave->BorderRadius = btnBorder;
-
-	}
+		}
 
 	// Кнопки формы, Loader
 	private: 
@@ -2007,8 +2351,8 @@ namespace PythonWave {
 				return email->Contains("@") && email->Contains(".");
 			}
 		int securityCode;
+		int securityCodeNew;
 		int generateSecurityCode() {
-			srand(time(NULL));
 			int Code = rand() % 900000 + 100000;
 			return Code;
 		}
@@ -2018,6 +2362,7 @@ namespace PythonWave {
 
 					   textBoxEmail->Enabled = true;
 					   textBoxCode->Enabled = false;
+					   textBoxCodeNew->Enabled = false;
 
 					   buttonSendMail->Enabled = true;
 					   buttonCheckCode->Enabled = false;
@@ -2045,5 +2390,62 @@ namespace PythonWave {
 
 		Void ChangeData();
 
+		Void linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		
+		}
+		Void btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e) {
+			try {
+				String^ filePath = User + "//data.bin";
+				size_t storedHashPassword = readPassword(filePath);
+
+				if (storedHashPassword == 0) {
+					MessageError->Show("Не удалось прочитать старый пароль из файла");
+					return;
+				}
+
+				// Преобразование введенного старого пароля
+				String^ enteredOldPass = textBoxPassOld->Text;
+				pin_ptr<const wchar_t> wchEntered = PtrToStringChars(enteredOldPass);
+				std::wstring wstrEntered(wchEntered);
+				std::string strEntered(wstrEntered.begin(), wstrEntered.end());
+
+				std::hash<std::string> hasher;
+				size_t enteredHashPassword = hasher(strEntered);
+
+				if (enteredHashPassword != storedHashPassword) {
+					MessageError->Caption = "Ошибка";
+					MessageError->Text = "Неверный старый пароль";
+					MessageError->Show();
+					return;
+				}
+
+				// Преобразование нового пароля
+				String^ newPass = textBoxPassNew->Text;
+				pin_ptr<const wchar_t> wchNewPass = PtrToStringChars(newPass);
+				std::wstring wstrNewPass(wchNewPass);
+				std::string strNewPass(wstrNewPass.begin(), wstrNewPass.end());
+
+				size_t newHashPassword = hasher(strNewPass);
+
+				// Запись нового хэша в файл
+				writeBinaryFile(filePath, newHashPassword);
+
+				MessageInfo->Show("Пароль изменен", "Успешно");
+
+				// Выключаем remember me
+				if (Directory::Exists("logs")) {
+					try {
+						Directory::Delete("logs", true);
+					}
+					catch (Exception^ e) {
+						MessageBox::Show(e->Message);
+					}
+				}
+
+			}
+			catch (Exception^ e) {
+				MessageError->Show(e->Message);
+			}
+		}
 };
 }

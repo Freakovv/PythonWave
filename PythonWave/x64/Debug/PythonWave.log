@@ -385,17 +385,56 @@ E:\.Coding\PythonWave\PythonWave\profile.h(866,47): warning C4566: character rep
 E:\.Coding\PythonWave\PythonWave\profile-header.h(130,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1414,38): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1360,42): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1960,4): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1400,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\mainForm.h(2010,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1440,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
   
-E:\.Coding\PythonWave\PythonWave\main-header.h(160,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1492,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
   (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1710,38): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+  (compiling source file 'auth.cpp')
+  
+E:\.Coding\PythonWave\PythonWave\mainForm.h(2305,4): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
+  (compiling source file 'auth.cpp')
+  
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4537,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  (compiling source file 'auth.cpp')
+  D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xutility(4537,18):
+  the template instantiation context (the oldest one first) is
+  	E:\.Coding\PythonWave\PythonWave\mainForm.h(2410,27):
+  	see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+  		E:\.Coding\PythonWave\PythonWave\mainForm.h(2410,27):
+  		see the first reference to 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string' in 'PythonWave::mainForm::btnChangePassword_Click'
+  	D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(2600,17):
+  	see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<wchar_t*,wchar_t*,_Size_type>(_Iter,const _Sent,_Size)' being compiled
+          with
+          [
+              _Size_type=unsigned __int64,
+              _Iter=wchar_t *,
+              _Sent=wchar_t *,
+              _Size=unsigned __int64
+          ]
+  	D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\xstring(2756,18):
+  	see reference to function template instantiation '_OutIt std::_Copy_n_unchecked4<wchar_t*,_Size,char*>(_InIt,_SizeTy,_OutIt)' being compiled
+          with
+          [
+              _OutIt=char *,
+              _Size=unsigned __int64,
+              _InIt=wchar_t *,
+              _SizeTy=unsigned __int64
+          ]
   
   auth.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PythonWave.vcxproj -> E:\.Coding\PythonWave\x64\Debug\PythonWave.exe
