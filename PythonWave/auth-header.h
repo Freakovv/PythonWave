@@ -86,7 +86,7 @@ using namespace System::IO;
 	}
 
 	Void auth::loadConfig() {
-		Config^ config = Config::LoadConfig();
+		Config^ config = config->LoadConfig();
 		// Настройки формы
 
 		// Закругленность, тень формы

@@ -49,7 +49,7 @@ public:
                 config->hasFormShadow = Boolean::Parse(value);
             else if (name == "greeting")
                 config->greeting = Boolean::Parse(value);
-			else if (name == "alwaysHideMenu")
+            else if (name == "alwaysHideMenu")
 				config->alwaysHideMenu = Boolean::Parse(value);
             else if (name == "borderForm")
                 config->borderForm = Int32::Parse(value);
@@ -58,6 +58,7 @@ public:
             else if (name == "volume")
                 config->volume = Int32::Parse(value);
         }
+        //MessageBox::Show("CFG:" + Convert::ToString(config->alwaysHideMenu));
 
         return config;
     }

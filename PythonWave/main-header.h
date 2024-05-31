@@ -6,10 +6,31 @@
 #include "ClassFade.h"
 #include "MyPython.h"
 
+
 	// Form, Menu
+	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
+	{
+
+		if (enable)
+		{
+			// Регистрируем обработчик для самого элемента
+			parent->MouseDown += gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
+		}
+		else
+		{
+			// Отменяем регистрацию обработчика
+			parent->MouseDown -= gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
+		}
+
+		// Рекурсивно регистрируем/отменяем обработчики для всех дочерних элементов
+		for each (Control ^ child in parent->Controls)
+		{
+			RegisterMouseDownEvent(child, enable);
+		}
+	}
 	Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
+		DataLoad();
 		cfgLoad();
-		LoadData();
 		if (panelMenu->Size == Drawing::Size(80, 820)) {
 			menu = false;
 		}
@@ -22,6 +43,7 @@
 		Fade = nullptr;
 
 		SetCenter(panelProfileData, lblLogin, 1);
+		RegisterMouseDownEvent(this, alwaysHideMenu);
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -64,6 +86,8 @@
 
 
 	// Профиль
+	int secondsLeftt = 30;
+
 	String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 		pin_ptr<const wchar_t> wch = PtrToStringChars(folderPath);
 		const std::wstring& folderPathStr = wch;
@@ -124,4 +148,97 @@
 		catch (Exception^ ex) {
 			MessageError->Show(ex->Message);
 		}
+	}
+
+	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
+		Pages->SelectTab(pageProfileEdit);
+	}
+	Void mainForm::ChangeData() {
+	}
+
+	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
+		srand(time(NULL));
+		ClassMail^ EMAIL = gcnew ClassMail(this);
+
+		securityCode = generateSecurityCode();
+		String^ userMail = Convert::ToString(textBoxEmail->Text);
+		String^ mail = "Здравствуйте, ваш код регистрации: " + Convert::ToString(securityCode);
+
+		// Если общий вид мейла правильный, то попробуем отправить письмо
+		if (IsValidEmail(userMail)) {
+			if (EMAIL->SendEmail(userMail, "PythonWave: Код безопасности", mail)) {
+				// Убираем возможность отправить код
+				textBoxEmail->Enabled = false;
+				buttonSendMail->Enabled = false;
+
+				// Даем возможность написать код
+				textBoxCode->Enabled = true;
+				buttonCheckCode->Enabled = true;
+
+				// Информируем об успешной отправке галочкой
+				pictureBoxCheckMail->Visible = true;
+
+				// Запускаем отсчет на след отправку
+				labelTimer->Visible = true;
+				timerReMail->Start();
+			}
+		}
+		else {
+
+			MessageError->Caption = "Письмо не было отправлено";
+			MessageError->Text = "Введите корректный адрес эл. почты";
+			MessageError->Show();
+
+			textBoxEmail->BorderColor = Color::Red;
+			textBoxEmail->Clear();
+		}
+
+	}
+	Void mainForm::buttonCheckCode_Click(System::Object^ sender, System::EventArgs^ e) {
+		try {
+			if (securityCode == Convert::ToInt32(textBoxCode->Text)) {
+				email_confirmed = true;
+
+				// Убираем возможность проверить код
+				textBoxCode->Enabled = false;
+				buttonCheckCode->Enabled = false;
+
+				// Информируем об успешной валидации
+				pictureBoxCheckCode->Visible = true;
+
+				// Убираем возможность отправить емейл повторно
+				timerReMail->Stop();
+				labelTimer->Visible = false;
+				linkReMail->Visible = false;
+			}
+			else {
+				MessageError->Text = "Неверный код";
+				MessageError->Show();
+			}
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
+
+	}
+	Void mainForm::timerEmail_Tick(System::Object^ sender, System::EventArgs^ e) {
+		secondsLeftt--;
+		if (secondsLeftt <= 0)
+		{
+			secondsLeftt = 30;
+			timerReMail->Stop();
+
+			labelTimer->Visible = false;
+
+			linkReMail->Visible = true;
+			linkReMail->Enabled = true;
+		}
+		else
+		{
+			labelTimer->Text = "Отправить повторно через " + secondsLeftt.ToString() + " секунд";
+		}
+	}
+	Void mainForm::linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		enableMail(true);
+		email_confirmed = false;
 	}
