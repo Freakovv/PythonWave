@@ -150,6 +150,9 @@ private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
 private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
 private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 
+private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
+
+
 
 
 
@@ -167,7 +170,7 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 
     protected:
 	private: System::ComponentModel::IContainer^ components;
-	private:
+
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
@@ -248,6 +251,7 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->dragControlPanel2 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
             this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
             this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+            this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
             this->Pages->SuspendLayout();
             this->pageProfile->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->BeginInit();
@@ -281,10 +285,10 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->Pages->Location = System::Drawing::Point(-4, -9);
             this->Pages->Multiline = true;
             this->Pages->Name = L"Pages";
-            this->Pages->Page = this->pageProfile;
-            this->Pages->PageIndex = 0;
-            this->Pages->PageName = L"pageProfile";
-            this->Pages->PageTitle = L"pageProfile";
+            this->Pages->Page = this->pageSettings;
+            this->Pages->PageIndex = 2;
+            this->Pages->PageName = L"pageSettings";
+            this->Pages->PageTitle = L"pageSettings";
             this->Pages->SelectedIndex = 0;
             this->Pages->Size = System::Drawing::Size(948, 737);
             this->Pages->TabIndex = 40;
@@ -1172,7 +1176,7 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
                 static_cast<System::Byte>(204)));
             this->bunifuLabel3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->bunifuLabel3->Location = System::Drawing::Point(513, 102);
+            this->bunifuLabel3->Location = System::Drawing::Point(609, 102);
             this->bunifuLabel3->Name = L"bunifuLabel3";
             this->bunifuLabel3->RightToLeft = System::Windows::Forms::RightToLeft::No;
             this->bunifuLabel3->Size = System::Drawing::Size(120, 40);
@@ -1227,7 +1231,7 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
                 static_cast<System::Byte>(204)));
             this->labelVolume->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->labelVolume->Location = System::Drawing::Point(700, 187);
+            this->labelVolume->Location = System::Drawing::Point(797, 187);
             this->labelVolume->Name = L"labelVolume";
             this->labelVolume->Size = System::Drawing::Size(28, 21);
             this->labelVolume->TabIndex = 64;
@@ -1240,16 +1244,16 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
                 static_cast<System::Byte>(204)));
             this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label10->Location = System::Drawing::Point(509, 160);
+            this->label10->Location = System::Drawing::Point(605, 163);
             this->label10->Name = L"label10";
-            this->label10->Size = System::Drawing::Size(220, 24);
+            this->label10->Size = System::Drawing::Size(123, 24);
             this->label10->TabIndex = 63;
-            this->label10->Text = L"Громкость плееров";
+            this->label10->Text = L"Громкость";
             // 
             // TrackVolume
             // 
             this->TrackVolume->LargeChange = 2;
-            this->TrackVolume->Location = System::Drawing::Point(513, 187);
+            this->TrackVolume->Location = System::Drawing::Point(609, 187);
             this->TrackVolume->Name = L"TrackVolume";
             this->TrackVolume->Size = System::Drawing::Size(180, 23);
             this->TrackVolume->TabIndex = 62;
@@ -1382,9 +1386,9 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->label5->Location = System::Drawing::Point(65, 159);
             this->label5->Name = L"label5";
-            this->label5->Size = System::Drawing::Size(388, 24);
+            this->label5->Size = System::Drawing::Size(446, 24);
             this->label5->TabIndex = 54;
-            this->label5->Text = L"Прозрачность при перетаскивании";
+            this->label5->Text = L"Прозрачность при перетаскивании окна";
             // 
             // guna2Separator1
             // 
@@ -1671,6 +1675,12 @@ private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
             this->MessageWarning->Parent = this;
             this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
             this->MessageWarning->Text = nullptr;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this->guna2BorderlessForm1->ContainerControl = this;
+            this->guna2BorderlessForm1->DockIndicatorTransparencyValue = 0.6;
+            this->guna2BorderlessForm1->TransparentWhileDrag = true;
             // 
             // profile
             // 

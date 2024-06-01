@@ -6,17 +6,8 @@
 #include "ClassFade.h"
 #include "MyPython.h"
 
-// Объявления
-void UnblockFile(const std::wstring& filePath);
-std::wstring GetExecutablePath();
 
 
-
-
-	// DATA
-	Void mainForm::ChangeData() {
-
-	}
 
 	// Form, Menu
 	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
@@ -55,7 +46,6 @@ std::wstring GetExecutablePath();
 
 		SetCenter(panelProfileData, lblLogin, 1);
 		RegisterMouseDownEvent(this, alwaysHideMenu);
-
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -88,7 +78,7 @@ std::wstring GetExecutablePath();
 	}
 
 	// Страница заданий
-	Void mainForm::btnPyRun_click(System::Object^ sender, System::EventArgs^ e) {
+	Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyPython python;
 		String^ code = richTextBox1->Text;
 		String^ result = python.Start(User, code);
@@ -170,6 +160,8 @@ std::wstring GetExecutablePath();
 
 	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageProfileEdit);
+	}
+	Void mainForm::ChangeData() {
 	}
 
 	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -266,9 +258,6 @@ std::wstring GetExecutablePath();
 		enableMail(true);
 		email_confirmed = false;
 	}
-	Void mainForm::linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-
-	}
 
 	Void mainForm::btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
@@ -290,9 +279,7 @@ std::wstring GetExecutablePath();
 			size_t enteredHashPassword = hasher(strEntered);
 
 			if (enteredHashPassword != storedHashPassword) {
-				MessageError->Caption = "Ошибка";
-				MessageError->Text = "Неверный старый пароль";
-				MessageError->Show();
+				MessageError->Show("Неверный старый пароль");
 				return;
 			}
 
@@ -305,7 +292,20 @@ std::wstring GetExecutablePath();
 			size_t newHashPassword = hasher(strNewPass);
 
 			// Запись нового хэша в файл
-			writeBinaryFile(filePath, newHashPassword);
+			try {
+				FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
+				BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
+
+				binaryWriter->Write(static_cast<UInt64>(newHashPassword));
+
+				binaryWriter->Close();
+				fileStream->Close();
+			}
+			catch (Exception^ e) {
+				// Обработка исключений
+				MessageError->Show("Ошибка записи файла: " + e->Message);
+			}
+
 
 			MessageInfo->Show("Пароль изменен", "Успешно");
 
@@ -318,8 +318,71 @@ std::wstring GetExecutablePath();
 					MessageBox::Show(e->Message);
 				}
 			}
+
 		}
 		catch (Exception^ e) {
 			MessageError->Show(e->Message);
 		}
 	}
+
+
+	void mainForm::DeleteDirectory(String^ folderPath) {
+		try {
+			DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
+			if (directory->Exists) {
+				// Удаляем папку и все ее содержимое 
+				directory->Delete(true);
+			}
+			else {
+				MessageError->Show("Аккаунта не найден");
+			}
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
+	}
+
+	Void mainForm::linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		if (textBoxPassOld->Text == "") {
+			MessageInfo->Show("Введите ваш пароль в поле 'Старый пароль'");
+			return;
+		}
+		
+		String^ enteredOldPass = textBoxPassOld->Text;
+		
+		pin_ptr<const wchar_t> wchEntered = PtrToStringChars(enteredOldPass);
+		std::wstring wstrEntered(wchEntered);
+		std::string strEntered(wstrEntered.begin(), wstrEntered.end());
+
+		String^ filePath = User + "//data.bin";
+		std::hash<std::string> hasher;
+		
+		size_t enteredHashPassword = hasher(strEntered);
+		size_t storedHashPassword = readPassword(filePath);
+
+		if (enteredHashPassword != storedHashPassword) {
+			MessageError->Show("Неверный пароль");
+			return;
+		}
+
+		Windows::Forms::DialogResult result = MessageQuestion->Show("Ваш аккаунт будет удален", "Вы уверены?");
+		if (result == Windows::Forms::DialogResult::Yes) {
+			DeleteDirectory(User);
+			MessageDefault->Show("До скорых встреч, " + UserName + "!", "Аккаунт удален");
+
+			// Выключает remember me
+			if (Directory::Exists("logs")) {
+				try {
+					Directory::Delete("logs", true);
+				}
+				catch (Exception^ e) {
+					MessageBox::Show(e->Message);
+				}
+			}
+
+			ClassFade^ Fade = gcnew ClassFade(this);
+			Fade->SetAnimation("close");
+		}
+
+	}
+	

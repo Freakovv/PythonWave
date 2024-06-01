@@ -3,10 +3,10 @@
   <settings>
     <setting name="dragTransparent" value="True" />
     <setting name="hasFormShadow" value="True" />
-    <setting name="greeting" value="False" />
+    <setting name="greeting" value="True" />
     <setting name="alwaysHideMenu" value="True" />
-    <setting name="borderForm" value="60" />
-    <setting name="borderBtn" value="0" />
+    <setting name="borderForm" value="25" />
+    <setting name="borderBtn" value="20" />
     <setting name="volume" value="50" />
   </settings>
 </configuration>
