@@ -6,6 +6,7 @@
 namespace PythonWave {
 
 	using namespace System;
+	using namespace System::Windows::Forms;
 	using namespace System::Diagnostics;
 	using namespace System::IO;
 	using namespace System::Drawing;
@@ -15,144 +16,16 @@ namespace PythonWave {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	using namespace Guna;
+
 	public ref class mainForm : public Form
 	{
 	public:
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
-	private: Bunifu::UI::WinForms::BunifuPages^ Book;
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::Label^ labelСontent;
-	private: System::Windows::Forms::TabPage^ tabPage2;
-		
-	String^ User;
-	String^ UserEmail;
-	String^ UserBirth;
-	String^ UserSex;
-	String^ UserName;
-
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
-	private: System::Windows::Forms::RichTextBox^ richTextBox2;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
-	private: System::Windows::Forms::Label^ label1;
-
-
-	private: System::Windows::Forms::Panel^ panelProfileData;
-	private: System::Windows::Forms::Label^ lblLogin;
-
-	private: System::Windows::Forms::Label^ lblProfileRank;
-	private: System::Windows::Forms::Label^ lblEmail;
-
-
-	private: System::Windows::Forms::Label^ lblRegDate;
-
-	private: System::Windows::Forms::Label^ lblBirth;
-
-	private: System::Windows::Forms::Label^ lblSex;
-
-	private: System::Windows::Forms::Label^ lblSurname;
-
-	private: System::Windows::Forms::Label^ lblName;
-	private: Guna::UI2::WinForms::Guna2Button^ btnProfileEdit;
-
-
-	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::TabPage^ pageProfileEdit;
-
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button2;
-	private: Guna::UI2::WinForms::Guna2Button^ btnProfileSave;
-
-
-
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chartProductivity;
-	private: System::Windows::Forms::Label^ lblNameEdit;
-
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
-	private: System::Windows::Forms::Label^ lblSurnameEdit;
-
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
-	private: System::Windows::Forms::Label^ labelTimer;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::PictureBox^ pictureProfile;
-	private: System::Windows::Forms::PictureBox^ pictureProfileEdit;
-
-
-
-
-	private: System::Windows::Forms::Label^ lblBirthEdit;
-
-	private: System::Windows::Forms::LinkLabel^ linkReMail;
-	private: System::Windows::Forms::Label^ lblLoginEdit;
-
-	private: System::Windows::Forms::Timer^ timerReMail;
-
-
-	private: System::Windows::Forms::Label^ lblSexEdit;
-	private: System::Windows::Forms::LinkLabel^ linkREMOVEACC;
-	private: Guna::UI2::WinForms::Guna2Button^ btnCancelChanges;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCodeNew;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew2;
-
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassOld;
-
-
-	private: Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDefault;
-private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
-private: System::Windows::Forms::Label^ labelBorderBtn;
-private: System::Windows::Forms::Label^ label12;
-private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
-private: System::Windows::Forms::Label^ labelVolume;
-private: System::Windows::Forms::Label^ label10;
-private: Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
-private: System::Windows::Forms::Label^ labelBorderForm;
-private: System::Windows::Forms::Label^ label8;
-private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
-private: Guna::UI2::WinForms::Guna2CircleButton^ btnMessageShadow;
-
-private: System::Windows::Forms::Label^ label7;
-private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
-private: System::Windows::Forms::Label^ label6;
-private: System::Windows::Forms::Label^ label5;
-private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
-private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
-private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
-private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
-private: Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button3;
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button4;
-private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
-private: System::Windows::Forms::Label^ label9;
-private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
-
-
-
-
-
-
-
-
-
-
+		String^ User;
+		String^ UserEmail;
+		String^ UserBirth;
+		String^ UserSex;
+		String^ UserName;
 		String^ UserSurname;
 
 	public:
@@ -188,42 +61,122 @@ private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
 			}
 		}
 
-	private: System::Windows::Forms::Panel^ panelMain;
-	private: System::Windows::Forms::Panel^ panelMenu;
-	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
-	private: Guna::UI2::WinForms::Guna2Separator^ separatorMain;
-	private: Guna::UI2::WinForms::Guna2VSeparator^ separatorMenu;
-	private: Guna::UI2::WinForms::Guna2Button^ btnHome;
-	private: Guna::UI2::WinForms::Guna2Button^ btnBook;
-	private: Guna::UI2::WinForms::Guna2Button^ btnCourses;
-	private: Guna::UI2::WinForms::Guna2Button^ btnMenu;
-	private: System::Windows::Forms::Timer^ timerMenu;
-	private: Guna::UI2::WinForms::Guna2Button^ btnStats;
-	private: Guna::UI2::WinForms::Guna2Button^ btnLogOut;
-	private: Guna::UI2::WinForms::Guna2Button^ btnSettings;
-	private: Guna::UI2::WinForms::Guna2Button^ btnProfile;
-private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
+	
+private:
 
-	private: System::Windows::Forms::Label^ labelPyWave;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnExit;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMinimize;
-	private: Bunifu::UI::WinForms::BunifuPages^ Pages;
-	private: System::Windows::Forms::TabPage^ pageHome;
-	private: System::Windows::Forms::TabPage^ pageBook;
-	private: System::Windows::Forms::TabPage^ pageCourses;
-	private: System::Windows::Forms::TabPage^ pageProfile;
-	private: System::Windows::Forms::TabPage^ pageStats;
-	private: System::Windows::Forms::TabPage^ pageSettings;
-	private: System::Windows::Forms::TabPage^ pageGoodbye;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragMain;
-	private: System::Windows::Forms::Panel^ panelUserBar;
-
-	private: System::Windows::Forms::Label^ labelRankBar;
-
-	private: System::Windows::Forms::Label^ labelNameBar;
-	private: Guna::UI2::WinForms::Guna2RatingStar^ StarsUser;
-
-	private: System::ComponentModel::IContainer^ components;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
+	Bunifu::UI::WinForms::BunifuPages^ Book;
+	System::Windows::Forms::TabPage^ tabPage1;
+	System::Windows::Forms::Label^ labelСontent;
+	System::Windows::Forms::TabPage^ tabPage2;
+	Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+	System::Windows::Forms::RichTextBox^ richTextBox2;
+	System::Windows::Forms::RichTextBox^ richTextBox1;
+	System::Windows::Forms::Label^ label1;
+	System::Windows::Forms::Panel^ panelProfileData;
+	System::Windows::Forms::Label^ lblLogin;
+	System::Windows::Forms::Label^ lblProfileRank;
+	System::Windows::Forms::Label^ lblEmail;
+	System::Windows::Forms::Label^ lblRegDate;
+	System::Windows::Forms::Label^ lblBirth;
+	System::Windows::Forms::Label^ lblSex;
+	System::Windows::Forms::Label^ lblSurname;
+	System::Windows::Forms::Label^ lblName;
+	Guna::UI2::WinForms::Guna2Button^ btnProfileEdit;
+	System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	System::Windows::Forms::TabPage^ pageProfileEdit;
+	Guna::UI2::WinForms::Guna2Button^ guna2Button2;
+	Guna::UI2::WinForms::Guna2Button^ btnProfileSave;
+	System::Windows::Forms::DataVisualization::Charting::Chart^ chartProductivity;
+	System::Windows::Forms::Label^ lblNameEdit;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
+	System::Windows::Forms::Label^ lblSurnameEdit;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
+	System::Windows::Forms::Label^ labelTimer;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
+	Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
+	Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
+	System::Windows::Forms::Label^ label4;
+	System::Windows::Forms::PictureBox^ pictureProfile;
+	System::Windows::Forms::PictureBox^ pictureProfileEdit;
+	System::Windows::Forms::Label^ lblBirthEdit;
+	System::Windows::Forms::LinkLabel^ linkReMail;
+	System::Windows::Forms::Label^ lblLoginEdit;
+	System::Windows::Forms::Timer^ timerReMail;
+	System::Windows::Forms::Label^ lblSexEdit;
+	System::Windows::Forms::LinkLabel^ linkREMOVEACC;
+	Guna::UI2::WinForms::Guna2Button^ btnCancelChanges;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxCodeNew;
+	System::Windows::Forms::Label^ label3;
+	System::Windows::Forms::Label^ label2;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew2;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxPassOld;
+	Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageDefault;
+	Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
+	System::Windows::Forms::Label^ labelBorderBtn;
+	System::Windows::Forms::Label^ label12;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
+	System::Windows::Forms::Label^ labelVolume;
+	System::Windows::Forms::Label^ label10;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
+	System::Windows::Forms::Label^ labelBorderForm;
+	System::Windows::Forms::Label^ label8;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
+	Guna::UI2::WinForms::Guna2CircleButton^ btnMessageShadow;
+	System::Windows::Forms::Label^ label7;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
+	System::Windows::Forms::Label^ label6;
+	System::Windows::Forms::Label^ label5;
+	Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
+	Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
+	Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
+	Guna::UI2::WinForms::Guna2Button^ guna2Button3;
+	Guna::UI2::WinForms::Guna2Button^ guna2Button4;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
+	System::Windows::Forms::Label^ label9;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
+	System::Windows::Forms::Panel^ panelMain;
+	System::Windows::Forms::Panel^ panelMenu;
+	Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
+	Guna::UI2::WinForms::Guna2Separator^ separatorMain;
+	Guna::UI2::WinForms::Guna2VSeparator^ separatorMenu;
+	Guna::UI2::WinForms::Guna2Button^ btnHome;
+	Guna::UI2::WinForms::Guna2Button^ btnBook;
+	Guna::UI2::WinForms::Guna2Button^ btnCourses;
+	Guna::UI2::WinForms::Guna2Button^ btnMenu;
+	System::Windows::Forms::Timer^ timerMenu;
+	Guna::UI2::WinForms::Guna2Button^ btnStats;
+	Guna::UI2::WinForms::Guna2Button^ btnLogOut;
+	Guna::UI2::WinForms::Guna2Button^ btnSettings;
+	Guna::UI2::WinForms::Guna2Button^ btnProfile;
+	Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
+	System::Windows::Forms::Label^ labelPyWave;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ btnExit;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMinimize;
+	Bunifu::UI::WinForms::BunifuPages^ Pages;
+	System::Windows::Forms::TabPage^ pageHome;
+	System::Windows::Forms::TabPage^ pageBook;
+	System::Windows::Forms::TabPage^ pageCourses;
+	System::Windows::Forms::TabPage^ pageProfile;
+	System::Windows::Forms::TabPage^ pageStats;
+	System::Windows::Forms::TabPage^ pageSettings;
+	System::Windows::Forms::TabPage^ pageGoodbye;
+	Guna::UI2::WinForms::Guna2DragControl^ dragMain;
+	System::Windows::Forms::Panel^ panelUserBar;
+	System::Windows::Forms::Label^ labelRankBar;
+	System::Windows::Forms::Label^ labelNameBar;
+	Guna::UI2::WinForms::Guna2RatingStar^ StarsUser;
+	System::ComponentModel::IContainer^ components;
 
 #pragma region Windows Form Designer generated code
 
@@ -865,10 +818,10 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->Pages->Location = System::Drawing::Point(80, 79);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
-			this->Pages->Page = this->pageSettings;
-			this->Pages->PageIndex = 5;
-			this->Pages->PageName = L"pageSettings";
-			this->Pages->PageTitle = L"pageSettings";
+			this->Pages->Page = this->pageProfileEdit;
+			this->Pages->PageIndex = 7;
+			this->Pages->PageName = L"pageProfileEdit";
+			this->Pages->PageTitle = L"pageProfileEdit";
 			this->Pages->SelectedIndex = 0;
 			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
@@ -1219,9 +1172,8 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			// 
 			// pictureProfile
 			// 
-			this->pictureProfile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(78)),
-				static_cast<System::Int32>(static_cast<System::Byte>(104)));
-			this->pictureProfile->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->pictureProfile->BackColor = System::Drawing::Color::Transparent;
+			this->pictureProfile->Cursor = System::Windows::Forms::Cursors::Default;
 			this->pictureProfile->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureProfile.Image")));
 			this->pictureProfile->Location = System::Drawing::Point(21, 26);
 			this->pictureProfile->Name = L"pictureProfile";
@@ -1359,6 +1311,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
 			this->toggleAlwaysHide->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			this->toggleAlwaysHide->UncheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleAlwaysHide->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleAlwaysHide_CheckedChanged);
 			// 
 			// guna2Button4
 			// 
@@ -2029,9 +1982,10 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->btnCancelChanges->Name = L"btnCancelChanges";
 			this->btnCancelChanges->Size = System::Drawing::Size(154, 39);
 			this->btnCancelChanges->TabIndex = 70;
-			this->btnCancelChanges->Text = L"Отмена";
+			this->btnCancelChanges->Text = L"Назад";
 			this->btnCancelChanges->TextOffset = System::Drawing::Point(10, 0);
 			this->btnCancelChanges->UseTransparentBackground = true;
+			this->btnCancelChanges->Click += gcnew System::EventHandler(this, &mainForm::btnCancelChanges_Click);
 			// 
 			// linkREMOVEACC
 			// 
@@ -2173,6 +2127,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->textBoxEmail->Size = System::Drawing::Size(315, 46);
 			this->textBoxEmail->TabIndex = 53;
 			this->textBoxEmail->TextOffset = System::Drawing::Point(2, 0);
+			this->textBoxEmail->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxEmail_TextChanged);
 			// 
 			// textBoxCode
 			// 
@@ -2345,6 +2300,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->textBoxUserSurname->SelectedText = L"";
 			this->textBoxUserSurname->Size = System::Drawing::Size(264, 46);
 			this->textBoxUserSurname->TabIndex = 51;
+			this->textBoxUserSurname->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxUserSurname_TextChanged);
 			// 
 			// textBoxUserName
 			// 
@@ -2390,6 +2346,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->textBoxUserName->SelectedText = L"";
 			this->textBoxUserName->Size = System::Drawing::Size(264, 46);
 			this->textBoxUserName->TabIndex = 50;
+			this->textBoxUserName->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxUserName_TextChanged);
 			// 
 			// lblNameEdit
 			// 
@@ -2485,8 +2442,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			// 
 			// pictureProfileEdit
 			// 
-			this->pictureProfileEdit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
-				static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
+			this->pictureProfileEdit->BackColor = System::Drawing::Color::Transparent;
 			this->pictureProfileEdit->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureProfileEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureProfileEdit.Image")));
 			this->pictureProfileEdit->Location = System::Drawing::Point(629, 54);
@@ -2545,7 +2501,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			// 
 			// MessageWarning
 			// 
-			this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
+			this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			this->MessageWarning->Caption = L"Внимание";
 			this->MessageWarning->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
 			this->MessageWarning->Parent = this;
@@ -2635,8 +2591,13 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			this->ResumeLayout(false);
 
 		}
-#pragma endregion
 
+#pragma endregion
+	private: 
+		String^ NEW_NAME;
+		String^ NEW_SURNAME;
+		String^ NEW_MAIL;
+		Boolean isProfileSaved = true;
 	//Настройки
 	private: 
 		bool menu = true;
@@ -2646,6 +2607,7 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 		void RegisterMouseDownEvent(Control^ parent, bool enable);
 
 	private: 
+
 		String^ readBinaryFile(String^ filePath) {
 			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
 			BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
@@ -2761,6 +2723,9 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 
 	// Боковое меню (кнопки, анимация)
 	private: 
+		Boolean CheckSave();
+		Void SetProfileDefaults();
+
 		Void timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 			// 80 Min 250 Max (menu) 
 		
@@ -2809,22 +2774,28 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 			}
 		}
 		Void btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageHome);
+			if (CheckSave())
+				Pages->SelectTab(pageHome);
 		}
 		Void btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageBook);
+			if (CheckSave())
+				Pages->SelectTab(pageBook);
 		}
 		Void btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageCourses);
+			if (CheckSave())
+				Pages->SelectTab(pageCourses);
 		}
 		Void btnProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageProfile);
+			if (CheckSave())
+				Pages->SelectTab(pageProfile);
 		}
 		Void btnStats_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageStats);
+			if (CheckSave())
+				Pages->SelectTab(pageStats);
 		}
 		Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
-			Pages->SelectTab(pageSettings);
+			if (CheckSave())
+				Pages->SelectTab(pageSettings);
 		}
 		Void btnLogOut_Click(System::Object^ sender, System::EventArgs^ e);
 
@@ -2842,8 +2813,6 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 
 	// Профиль
 	private:
-		String^ SavePathIMG;
-		Void SaveImage();
 		String^ GetFolderCreationDate(String^ folderPath);
 		Void buttonUpload_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonResume_Click(System::Object^ sender, System::EventArgs^ e);
@@ -2917,8 +2886,30 @@ private: Guna::UI2::WinForms::Guna2PictureBox^ pctrboxLogo;
 	}
 	private: Void TrackBorderForm_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	}
-	private: System::Void btnMessageShadow_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: Void btnMessageShadow_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageWarning->Show("Измения вступят в силу после перезапуска");
 	}
+	private: Void toggleAlwaysHide_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+
+
+	private: Void textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (textBoxUserName->Text != UserName) {
+			isProfileSaved = false;
+		}
+	}
+	private: Void textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (textBoxUserSurname->Text != UserSurname) {
+			isProfileSaved = false;
+		}
+	}
+	private: Void textBoxEmail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (textBoxEmail->Text != UserEmail) {
+			isProfileSaved = false;
+		}
+	}
+
+	private: Void btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

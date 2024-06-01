@@ -92,6 +92,11 @@ using namespace System;
 	// Профиль
 	int secondsLeftt = 30;
 
+	Void mainForm::btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CheckSave())
+			Pages->SelectTab(pageProfile);
+	}
+
 	String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 		pin_ptr<const wchar_t> wch = PtrToStringChars(folderPath);
 		const std::wstring folderPathStr(wch);
@@ -115,11 +120,10 @@ using namespace System;
 			return "Ошибка получения даты";
 		}
 	}
-
 	Void mainForm::buttonUpload_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			// Настройка OpenFileDialog
-			openFileDialog1->Filter = "Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
+			openFileDialog1->Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";
 			openFileDialog1->FilterIndex = 1;
 			openFileDialog1->RestoreDirectory = true;
 
@@ -129,55 +133,52 @@ using namespace System;
 				String^ filePath = openFileDialog1->FileName;
 
 				// Создаем объект Image из выбранного файла
-				Drawing::Image^ image = Image::FromFile(filePath);
+				Drawing::Image^ image = System::Drawing::Image::FromFile(filePath);
 
-				// Устанавливаем изображение в pictureBoxUploadImage
+				// Устанавливаем изображение
 				pictureProfile->SizeMode = PictureBoxSizeMode::StretchImage;
 				pictureProfile->Image = image;
 				pictureProfileEdit->Image = image;
 				pictureUserBar->Image = image;
 
-				// Путь, по которому сохранить изображение
-				SavePathIMG = User + "\\avatar";
 
-				SaveImage();
+				// Определяем формат загруженного изображения
+				Drawing::Imaging::ImageFormat^ imageFormat = image->RawFormat;
+
+				// Путь, по которому сохранить изображение
+				String^ savePath = User + "\\avatar";
+
+				// Сохраняем изображение, указывая явно формат
+				if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Jpeg)) {
+					savePath += ".jpg";
+					image->Save(savePath, System::Drawing::Imaging::ImageFormat::Jpeg);
+				}
+				else if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Png)) {
+					savePath += ".png";
+					image->Save(savePath, System::Drawing::Imaging::ImageFormat::Png);
+				}
+				// Сохраняем изображение
+				pictureProfileEdit->Image->Save(savePath, imageFormat);
+
 			}
 		}
 		catch (Exception^ ex) {
 			MessageError->Show(ex->Message);
 		}
 	}
-	Void mainForm::SaveImage() {
-		try
-		{
-			ImageFormat^ format;
-
-			// Определение формата изображения по расширению файла
-			if (SavePathIMG->EndsWith(".jpg"))
-				format = ImageFormat::Jpeg;
-			else if (SavePathIMG->EndsWith(".png"))
-				format = ImageFormat::Png;
-			else if (SavePathIMG->EndsWith(".bmp"))
-				format = ImageFormat::Bmp;
-			else
-				format = ImageFormat::Jpeg; // По умолчанию JPEG
-
-			// Сохранение изображения
-			pictureProfileEdit->Image->Save(SavePathIMG, format);
-			MessageBox::Show("Изображение сохранено!", "Успех", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		catch (Exception^ ex)
-		{
-			MessageBox::Show("Ошибка при сохранении изображения: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
-	}
 	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageProfileEdit);
 	}
 	Void mainForm::ChangeData() {
+
 	}
 
 	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBoxEmail->Text == UserEmail) {
+			MessageWarning->Show("Этот Email уже привязан к вашему акканту");
+			return;
+		}
+
 		ClassMail^ EMAIL = gcnew ClassMail(this);
 
 		String^ userMail = UserEmail;
@@ -320,7 +321,7 @@ using namespace System;
 			}
 
 
-			MessageInfo->Show("Пароль изменен", "Успешно");
+			MessageInfo->Show("Пароль успешно изменен", "Поздравляем");
 
 			// Выключаем remember me
 			if (Directory::Exists("logs")) {
@@ -400,8 +401,41 @@ using namespace System;
 	}
 	
 	Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ NEW_NAME;
-		String^ NEW_SURNAME;
-		String^ NEW_MAIL;
 		
+		if (textBoxEmail->Text != UserEmail && !email_confirmed) {
+			MessageWarning->Show("Вы ввели новый Email, подтвердите его");
+			return;
+		}
+
+		if (email_confirmed) {
+		}
+	}
+
+	Boolean mainForm::CheckSave() {
+		if (isProfileSaved) {
+			return true;
+		}
+		else {
+			MessageWarning->Buttons = UI2::WinForms::MessageDialogButtons::YesNo;
+			Forms::DialogResult result = MessageWarning->Show("У вас остались несохраненные изменения", "Действительно хотите перейти?");
+			if (result == Windows::Forms::DialogResult::Yes) {
+				isProfileSaved = true;
+				SetProfileDefaults();
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		MessageWarning->Buttons = UI2::WinForms::MessageDialogButtons::OK;
+	}
+	
+	Void mainForm::SetProfileDefaults() {
+		textBoxUserName->Text = UserName;
+		textBoxUserSurname->Text = UserSurname;
+		textBoxEmail->Text = UserEmail;
+
+		textBoxCode->Enabled = false;
+		textBoxCodeNew->Enabled = false;
+		buttonCheckCode->Enabled = false;
 	}
