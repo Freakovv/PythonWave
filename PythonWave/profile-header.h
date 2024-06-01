@@ -277,7 +277,7 @@ using namespace System::Text;
 		}
 	}
 
-	// Клики по красным данным
+	// Клики по красным полям
 	//-------------------------------------------------------------------------------------------------------------
 	Void profile::textBoxMail_Click(System::Object^ sender, System::EventArgs^ e) {
 		textBoxEmail->BorderColor = Color::Blue;
@@ -347,6 +347,7 @@ using namespace System::Text;
 		}
 
 		SaveData();
+		succesful = true;
 		Pages->SelectTab(pageSuccessful);
 		timerTransition->Start();
 	}

@@ -6,7 +6,9 @@
 #include "ClassFade.h"
 #include "MyPython.h"
 
-
+using namespace System::Drawing::Imaging;
+using namespace System::Drawing;
+using namespace System;
 
 
 	// Form, Menu
@@ -113,10 +115,11 @@
 			return "Ошибка получения даты";
 		}
 	}
+
 	Void mainForm::buttonUpload_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			// Настройка OpenFileDialog
-			openFileDialog1->Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";
+			openFileDialog1->Filter = "Image Files (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
 			openFileDialog1->FilterIndex = 1;
 			openFileDialog1->RestoreDirectory = true;
 
@@ -126,7 +129,7 @@
 				String^ filePath = openFileDialog1->FileName;
 
 				// Создаем объект Image из выбранного файла
-				Drawing::Image^ image = System::Drawing::Image::FromFile(filePath);
+				Drawing::Image^ image = Image::FromFile(filePath);
 
 				// Устанавливаем изображение в pictureBoxUploadImage
 				pictureProfile->SizeMode = PictureBoxSizeMode::StretchImage;
@@ -134,30 +137,40 @@
 				pictureProfileEdit->Image = image;
 				pictureUserBar->Image = image;
 
-				// Определяем формат загруженного изображения
-				Drawing::Imaging::ImageFormat^ imageFormat = image->RawFormat;
-
 				// Путь, по которому сохранить изображение
-				String^ savePath = User + "\\avatar";
+				SavePathIMG = User + "\\avatar";
 
-				// Сохраняем изображение, указывая явно формат
-				if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Jpeg)) {
-					savePath += ".jpg";
-					image->Save(savePath, System::Drawing::Imaging::ImageFormat::Jpeg);
-				}
-				else if (imageFormat->Equals(System::Drawing::Imaging::ImageFormat::Png)) {
-					savePath += ".png";
-					image->Save(savePath, System::Drawing::Imaging::ImageFormat::Png);
-				}
-				// Сохраняем изображение
-				pictureProfile->Image->Save(savePath, imageFormat);
+				SaveImage();
 			}
 		}
 		catch (Exception^ ex) {
 			MessageError->Show(ex->Message);
 		}
 	}
+	Void mainForm::SaveImage() {
+		try
+		{
+			ImageFormat^ format;
 
+			// Определение формата изображения по расширению файла
+			if (SavePathIMG->EndsWith(".jpg"))
+				format = ImageFormat::Jpeg;
+			else if (SavePathIMG->EndsWith(".png"))
+				format = ImageFormat::Png;
+			else if (SavePathIMG->EndsWith(".bmp"))
+				format = ImageFormat::Bmp;
+			else
+				format = ImageFormat::Jpeg; // По умолчанию JPEG
+
+			// Сохранение изображения
+			pictureProfileEdit->Image->Save(SavePathIMG, format);
+			MessageBox::Show("Изображение сохранено!", "Успех", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Ошибка при сохранении изображения: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
 	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageProfileEdit);
 	}
@@ -365,8 +378,8 @@
 			return;
 		}
 
-		Windows::Forms::DialogResult result = MessageQuestion->Show("Ваш аккаунт будет удален", "Вы уверены?");
-		if (result == Windows::Forms::DialogResult::Yes) {
+		Forms::DialogResult result = MessageQuestion->Show("Ваш аккаунт будет удален", "Вы уверены?");
+		if (result == Forms::DialogResult::Yes) {
 			DeleteDirectory(User);
 			MessageDefault->Show("До скорых встреч, " + UserName + "!", "Аккаунт удален");
 
@@ -386,3 +399,9 @@
 
 	}
 	
+	Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ NEW_NAME;
+		String^ NEW_SURNAME;
+		String^ NEW_MAIL;
+		
+	}

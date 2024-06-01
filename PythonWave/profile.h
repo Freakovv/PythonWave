@@ -17,18 +17,24 @@ namespace PythonWave {
 		{
 			InitializeComponent();
             UserLogin = l;
-		}
+            srand(static_cast<unsigned int>(time(NULL)));
+        }
 
 		profile(void)
 		{
 
 			InitializeComponent();
             MessageError->Show("Текущий пользователь не определен");
+            Application::Exit();
 		}
 
 	protected:
 		~profile()
 		{
+            if (!succesful) {
+                MessageError->Show("Ваш аккаунт будет удален", "Ошибка регистрации");
+                DeleteDirectory(UserLogin);
+            }
 			if (components)
 			{
 				delete components;
@@ -1717,7 +1723,8 @@ private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
         }
 
 #pragma endregion
-
+            
+    private: Boolean succesful = false;
     private: Void profile_Load(Object^ sender, EventArgs^ e);
 
 	// Custom functions
