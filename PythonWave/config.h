@@ -14,6 +14,7 @@ public:
     bool hasFormShadow;
     bool alwaysHideMenu;
     bool greeting;
+    bool PythonWaveStyle;
     int borderForm;
     int borderBtn;
     int volume;
@@ -24,6 +25,7 @@ public:
         hasFormShadow = true;
         greeting = true;
         alwaysHideMenu = false;
+        PythonWaveStyle = false;
         borderForm = 25;
         borderBtn = 0;
         volume = 50;

@@ -26,6 +26,9 @@ namespace PythonWave {
 		String^ UserBirth;
 		String^ UserSex;
 		String^ UserName;
+	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
+	private: System::Windows::Forms::Label^ label11;
+	public:
 		String^ UserSurname;
 
 	public:
@@ -140,9 +143,11 @@ private:
 	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
 	Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
 	Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
+private: Guna::UI2::WinForms::Guna2Button^ btnSettingsCancel;
+private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 
-	Guna::UI2::WinForms::Guna2Button^ guna2Button4;
+
+
 	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
 	System::Windows::Forms::Label^ label9;
 	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
@@ -240,10 +245,11 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageStats = (gcnew System::Windows::Forms::TabPage());
 			this->chartProductivity = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->pageSettings = (gcnew System::Windows::Forms::TabPage());
+			this->toggleStyle = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->toggleAlwaysHide = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
-			this->guna2Button4 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->btnProfileCancel = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnSettingsSave = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnSettingsCancel = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->guna2Separator1 = (gcnew Guna::UI2::WinForms::Guna2Separator());
 			this->labelSettings = (gcnew Bunifu::UI::WinForms::BunifuLabel());
 			this->bunifuLabel3 = (gcnew Bunifu::UI::WinForms::BunifuLabel());
@@ -302,6 +308,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->timerReMail = (gcnew System::Windows::Forms::Timer(this->components));
 			this->MessageDefault = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->panelMain->SuspendLayout();
 			this->panelUserBar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureUserBar))->BeginInit();
@@ -824,7 +831,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->Pages->PageName = L"pageSettings";
 			this->Pages->PageTitle = L"pageSettings";
 			this->Pages->SelectedIndex = 0;
-			this->Pages->Size = System::Drawing::Size(1520, 821);
+			this->Pages->Size = System::Drawing::Size(1520, 809);
 			this->Pages->TabIndex = 2;
 			animation2->AnimateOnlyDifferences = true;
 			animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
@@ -851,7 +858,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageHome->Location = System::Drawing::Point(4, 4);
 			this->pageHome->Name = L"pageHome";
 			this->pageHome->Padding = System::Windows::Forms::Padding(3);
-			this->pageHome->Size = System::Drawing::Size(1512, 795);
+			this->pageHome->Size = System::Drawing::Size(1512, 783);
 			this->pageHome->TabIndex = 0;
 			this->pageHome->Text = L"pageHome";
 			// 
@@ -863,7 +870,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageBook->Location = System::Drawing::Point(4, 4);
 			this->pageBook->Name = L"pageBook";
 			this->pageBook->Padding = System::Windows::Forms::Padding(3);
-			this->pageBook->Size = System::Drawing::Size(1512, 795);
+			this->pageBook->Size = System::Drawing::Size(1512, 783);
 			this->pageBook->TabIndex = 1;
 			this->pageBook->Text = L"pageBook";
 			// 
@@ -948,7 +955,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageCourses->Controls->Add(this->richTextBox1);
 			this->pageCourses->Location = System::Drawing::Point(4, 4);
 			this->pageCourses->Name = L"pageCourses";
-			this->pageCourses->Size = System::Drawing::Size(1512, 795);
+			this->pageCourses->Size = System::Drawing::Size(1512, 783);
 			this->pageCourses->TabIndex = 2;
 			this->pageCourses->Text = L"pageCourses";
 			// 
@@ -1007,7 +1014,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageProfile->Controls->Add(this->pictureProfile);
 			this->pageProfile->Location = System::Drawing::Point(4, 4);
 			this->pageProfile->Name = L"pageProfile";
-			this->pageProfile->Size = System::Drawing::Size(1512, 795);
+			this->pageProfile->Size = System::Drawing::Size(1512, 783);
 			this->pageProfile->TabIndex = 3;
 			this->pageProfile->Text = L"pageProfile";
 			// 
@@ -1190,7 +1197,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageStats->Controls->Add(this->chartProductivity);
 			this->pageStats->Location = System::Drawing::Point(4, 4);
 			this->pageStats->Name = L"pageStats";
-			this->pageStats->Size = System::Drawing::Size(1512, 795);
+			this->pageStats->Size = System::Drawing::Size(1512, 783);
 			this->pageStats->TabIndex = 4;
 			this->pageStats->Text = L"pageStats";
 			// 
@@ -1250,10 +1257,12 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			// 
 			this->pageSettings->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->pageSettings->Controls->Add(this->label11);
+			this->pageSettings->Controls->Add(this->toggleStyle);
 			this->pageSettings->Controls->Add(this->label9);
 			this->pageSettings->Controls->Add(this->toggleAlwaysHide);
-			this->pageSettings->Controls->Add(this->guna2Button4);
-			this->pageSettings->Controls->Add(this->btnProfileCancel);
+			this->pageSettings->Controls->Add(this->btnSettingsSave);
+			this->pageSettings->Controls->Add(this->btnSettingsCancel);
 			this->pageSettings->Controls->Add(this->guna2Separator1);
 			this->pageSettings->Controls->Add(this->labelSettings);
 			this->pageSettings->Controls->Add(this->bunifuLabel3);
@@ -1276,9 +1285,31 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageSettings->Controls->Add(this->TrackBorderForm);
 			this->pageSettings->Location = System::Drawing::Point(4, 4);
 			this->pageSettings->Name = L"pageSettings";
-			this->pageSettings->Size = System::Drawing::Size(1512, 795);
+			this->pageSettings->Size = System::Drawing::Size(1512, 783);
 			this->pageSettings->TabIndex = 5;
 			this->pageSettings->Text = L"pageSettings";
+			// 
+			// toggleStyle
+			// 
+			this->toggleStyle->Animated = true;
+			this->toggleStyle->Checked = true;
+			this->toggleStyle->CheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->toggleStyle->CheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
+				static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->toggleStyle->CheckedState->InnerBorderColor = System::Drawing::Color::White;
+			this->toggleStyle->CheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleStyle->Location = System::Drawing::Point(37, 285);
+			this->toggleStyle->Name = L"toggleStyle";
+			this->toggleStyle->Size = System::Drawing::Size(35, 20);
+			this->toggleStyle->TabIndex = 94;
+			this->toggleStyle->UncheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(125)),
+				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
+			this->toggleStyle->UncheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(125)),
+				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
+			this->toggleStyle->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
+			this->toggleStyle->UncheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleStyle->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleStyle_CheckedChanged);
 			// 
 			// label9
 			// 
@@ -1289,9 +1320,9 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->label9->Location = System::Drawing::Point(621, 174);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(255, 24);
+			this->label9->Size = System::Drawing::Size(291, 24);
 			this->label9->TabIndex = 93;
-			this->label9->Text = L"Всегда скрывать меню";
+			this->label9->Text = L"Всегда сворачивать меню";
 			// 
 			// toggleAlwaysHide
 			// 
@@ -1314,83 +1345,84 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->toggleAlwaysHide->UncheckedState->InnerColor = System::Drawing::Color::White;
 			this->toggleAlwaysHide->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleAlwaysHide_CheckedChanged);
 			// 
-			// guna2Button4
+			// btnSettingsSave
 			// 
-			this->guna2Button4->Animated = true;
-			this->guna2Button4->BackColor = System::Drawing::Color::Transparent;
-			this->guna2Button4->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button4->BorderRadius = 20;
-			this->guna2Button4->BorderThickness = 1;
-			this->guna2Button4->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button4->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button4->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->btnSettingsSave->Animated = true;
+			this->btnSettingsSave->BackColor = System::Drawing::Color::Transparent;
+			this->btnSettingsSave->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSettingsSave->BorderRadius = 20;
+			this->btnSettingsSave->BorderThickness = 1;
+			this->btnSettingsSave->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnSettingsSave->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnSettingsSave->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button4->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->btnSettingsSave->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button4->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsSave->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+			this->btnSettingsSave->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnSettingsSave->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button4->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsSave->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button4->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsSave->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button4->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			this->btnSettingsSave->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button4->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button4->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image9")));
-			this->guna2Button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button4.Image")));
-			this->guna2Button4->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->guna2Button4->Location = System::Drawing::Point(1328, 753);
-			this->guna2Button4->Name = L"guna2Button4";
-			this->guna2Button4->Size = System::Drawing::Size(181, 39);
-			this->guna2Button4->TabIndex = 91;
-			this->guna2Button4->Text = L"Сохранить";
-			this->guna2Button4->TextOffset = System::Drawing::Point(10, 0);
-			this->guna2Button4->UseTransparentBackground = true;
+			this->btnSettingsSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image9")));
+			this->btnSettingsSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsSave.Image")));
+			this->btnSettingsSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnSettingsSave->Location = System::Drawing::Point(1328, 753);
+			this->btnSettingsSave->Name = L"btnSettingsSave";
+			this->btnSettingsSave->Size = System::Drawing::Size(181, 39);
+			this->btnSettingsSave->TabIndex = 91;
+			this->btnSettingsSave->Text = L"Сохранить";
+			this->btnSettingsSave->TextOffset = System::Drawing::Point(10, 0);
+			this->btnSettingsSave->UseTransparentBackground = true;
+			this->btnSettingsSave->Click += gcnew System::EventHandler(this, &mainForm::btnSettingsSave_Click);
 			// 
-			// btnProfileCancel
+			// btnSettingsCancel
 			// 
-			this->btnProfileCancel->Animated = true;
-			this->btnProfileCancel->BackColor = System::Drawing::Color::Transparent;
-			this->btnProfileCancel->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsCancel->Animated = true;
+			this->btnSettingsCancel->BackColor = System::Drawing::Color::Transparent;
+			this->btnSettingsCancel->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileCancel->BorderRadius = 20;
-			this->btnProfileCancel->BorderThickness = 1;
-			this->btnProfileCancel->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->btnProfileCancel->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->btnProfileCancel->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->btnSettingsCancel->BorderRadius = 20;
+			this->btnSettingsCancel->BorderThickness = 1;
+			this->btnSettingsCancel->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnSettingsCancel->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnSettingsCancel->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->btnProfileCancel->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->btnSettingsCancel->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->btnProfileCancel->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsCancel->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileCancel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->btnProfileCancel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnProfileCancel->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileCancel->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileCancel->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			this->btnSettingsCancel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnSettingsCancel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->btnProfileCancel->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnSettingsCancel->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
-			this->btnProfileCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileCancel.Image")));
-			this->btnProfileCancel->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->btnProfileCancel->ImageSize = System::Drawing::Size(25, 25);
-			this->btnProfileCancel->Location = System::Drawing::Point(1166, 753);
-			this->btnProfileCancel->Name = L"btnProfileCancel";
-			this->btnProfileCancel->Size = System::Drawing::Size(154, 39);
-			this->btnProfileCancel->TabIndex = 90;
-			this->btnProfileCancel->Text = L"Отмена";
-			this->btnProfileCancel->TextOffset = System::Drawing::Point(10, 0);
-			this->btnProfileCancel->UseTransparentBackground = true;
-			this->btnProfileCancel->Click += gcnew System::EventHandler(this, &mainForm::btnProfileCancel_Click);
+			this->btnSettingsCancel->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSettingsCancel->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnSettingsCancel->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSettingsCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
+			this->btnSettingsCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsCancel.Image")));
+			this->btnSettingsCancel->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnSettingsCancel->ImageSize = System::Drawing::Size(25, 25);
+			this->btnSettingsCancel->Location = System::Drawing::Point(1166, 753);
+			this->btnSettingsCancel->Name = L"btnSettingsCancel";
+			this->btnSettingsCancel->Size = System::Drawing::Size(154, 39);
+			this->btnSettingsCancel->TabIndex = 90;
+			this->btnSettingsCancel->Text = L"Отмена";
+			this->btnSettingsCancel->TextOffset = System::Drawing::Point(10, 0);
+			this->btnSettingsCancel->UseTransparentBackground = true;
+			this->btnSettingsCancel->Click += gcnew System::EventHandler(this, &mainForm::btnCancelSettings_Click);
 			// 
 			// guna2Separator1
 			// 
@@ -1443,7 +1475,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Byte>(204)));
 			this->labelBorderBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelBorderBtn->Location = System::Drawing::Point(224, 365);
+			this->labelBorderBtn->Location = System::Drawing::Point(224, 417);
 			this->labelBorderBtn->Name = L"labelBorderBtn";
 			this->labelBorderBtn->Size = System::Drawing::Size(28, 21);
 			this->labelBorderBtn->TabIndex = 85;
@@ -1456,7 +1488,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Byte>(204)));
 			this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label12->Location = System::Drawing::Point(33, 338);
+			this->label12->Location = System::Drawing::Point(33, 390);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(260, 24);
 			this->label12->TabIndex = 84;
@@ -1465,7 +1497,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			// TrackBorderBtn
 			// 
 			this->TrackBorderBtn->LargeChange = 2;
-			this->TrackBorderBtn->Location = System::Drawing::Point(37, 365);
+			this->TrackBorderBtn->Location = System::Drawing::Point(37, 417);
 			this->TrackBorderBtn->Maximum = 20;
 			this->TrackBorderBtn->Name = L"TrackBorderBtn";
 			this->TrackBorderBtn->Size = System::Drawing::Size(180, 23);
@@ -1473,6 +1505,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->TrackBorderBtn->ThumbColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(113)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->TrackBorderBtn->Value = 20;
+			this->TrackBorderBtn->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &mainForm::TrackBorderBtn_Scroll);
 			// 
 			// labelVolume
 			// 
@@ -1509,6 +1542,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->TrackVolume->TabIndex = 80;
 			this->TrackVolume->ThumbColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(113)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->TrackVolume->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &mainForm::TrackVolume_Scroll);
 			// 
 			// labelBorderForm
 			// 
@@ -1517,7 +1551,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Byte>(204)));
 			this->labelBorderForm->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->labelBorderForm->Location = System::Drawing::Point(224, 312);
+			this->labelBorderForm->Location = System::Drawing::Point(224, 364);
 			this->labelBorderForm->Name = L"labelBorderForm";
 			this->labelBorderForm->Size = System::Drawing::Size(28, 21);
 			this->labelBorderForm->TabIndex = 79;
@@ -1556,6 +1590,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
 			this->toggleGreeting->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			this->toggleGreeting->UncheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleGreeting->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleGreeting_CheckedChanged);
 			// 
 			// btnMessageShadow
 			// 
@@ -1611,6 +1646,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
 			this->toggleShadows->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			this->toggleShadows->UncheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleShadows->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleShadows_CheckedChanged);
 			// 
 			// label6
 			// 
@@ -1619,7 +1655,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Byte>(204)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label6->Location = System::Drawing::Point(33, 285);
+			this->label6->Location = System::Drawing::Point(33, 337);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(247, 24);
 			this->label6->TabIndex = 73;
@@ -1677,11 +1713,12 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
 			this->toggleTransparent->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			this->toggleTransparent->UncheckedState->InnerColor = System::Drawing::Color::White;
+			this->toggleTransparent->CheckedChanged += gcnew System::EventHandler(this, &mainForm::toggleTransparent_CheckedChanged);
 			// 
 			// TrackBorderForm
 			// 
 			this->TrackBorderForm->LargeChange = 2;
-			this->TrackBorderForm->Location = System::Drawing::Point(37, 312);
+			this->TrackBorderForm->Location = System::Drawing::Point(37, 364);
 			this->TrackBorderForm->Maximum = 60;
 			this->TrackBorderForm->Name = L"TrackBorderForm";
 			this->TrackBorderForm->Size = System::Drawing::Size(180, 23);
@@ -1697,7 +1734,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageGoodbye->Location = System::Drawing::Point(4, 4);
 			this->pageGoodbye->Name = L"pageGoodbye";
-			this->pageGoodbye->Size = System::Drawing::Size(1512, 795);
+			this->pageGoodbye->Size = System::Drawing::Size(1512, 783);
 			this->pageGoodbye->TabIndex = 6;
 			this->pageGoodbye->Text = L"pageGoodbye";
 			// 
@@ -1735,7 +1772,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pageProfileEdit->Controls->Add(this->label2);
 			this->pageProfileEdit->Location = System::Drawing::Point(4, 4);
 			this->pageProfileEdit->Name = L"pageProfileEdit";
-			this->pageProfileEdit->Size = System::Drawing::Size(1512, 795);
+			this->pageProfileEdit->Size = System::Drawing::Size(1512, 783);
 			this->pageProfileEdit->TabIndex = 7;
 			this->pageProfileEdit->Text = L"pageProfileEdit";
 			// 
@@ -2440,7 +2477,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->guna2Button2->Text = L"Изменить";
 			this->guna2Button2->TextOffset = System::Drawing::Point(10, 0);
 			this->guna2Button2->UseTransparentBackground = true;
-			this->guna2Button2->Click += gcnew System::EventHandler(this, &mainForm::buttonUpload_Click);
+			this->guna2Button2->Click += gcnew System::EventHandler(this, &mainForm::buttonUploadImage_Click);
 			// 
 			// pictureProfileEdit
 			// 
@@ -2453,7 +2490,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->pictureProfileEdit->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureProfileEdit->TabIndex = 61;
 			this->pictureProfileEdit->TabStop = false;
-			this->pictureProfileEdit->Click += gcnew System::EventHandler(this, &mainForm::buttonUpload_Click);
+			this->pictureProfileEdit->Click += gcnew System::EventHandler(this, &mainForm::buttonUploadImage_Click);
 			// 
 			// linkReMail
 			// 
@@ -2546,6 +2583,19 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 			this->MessageDefault->Style = Guna::UI2::WinForms::MessageDialogStyle::Light;
 			this->MessageDefault->Text = nullptr;
 			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label11->Location = System::Drawing::Point(78, 281);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(206, 24);
+			this->label11->TabIndex = 95;
+			this->label11->Text = L"Стиль PythonWave";
+			// 
 			// mainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2600,13 +2650,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 		String^ NEW_SURNAME;
 		String^ NEW_MAIL;
 		Boolean isProfileSaved = true;
-	//Настройки
-	private: 
-		bool menu = true;
-		bool alwaysHideMenu;
-		int volume = 50;
-		int btnBorder = 20;
-		void RegisterMouseDownEvent(Control^ parent, bool enable);
 
 	private: 
 
@@ -2648,9 +2691,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 		}
 
 		void DataLoad();
-
-		void cfgLoad();
-
+	
 	// Кнопки формы, Loader
 	private:
 		void Form_MouseDown(Object^ sender, MouseEventArgs^ e)
@@ -2716,30 +2757,30 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 				break;
 			}
 		}
-		Void btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Void funcSelectTab(TabPage^ tabPage) {
 			if (CheckSave())
-				Pages->SelectTab(pageHome);
+				Pages->SelectTab(tabPage);
+		}
+		Void btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
+			funcSelectTab(pageHome);
 		}
 		Void btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (CheckSave())
-				Pages->SelectTab(pageBook);
+			funcSelectTab(pageBook);
 		}
 		Void btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (CheckSave())
-				Pages->SelectTab(pageCourses);
+			funcSelectTab(pageCourses);
 		}
 		Void btnProfile_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (CheckSave())
-				Pages->SelectTab(pageProfile);
+			funcSelectTab(pageProfile);
 		}
 		Void btnStats_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (CheckSave())
-				Pages->SelectTab(pageStats);
+			funcSelectTab(pageStats);
 		}
 		Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (CheckSave())
-				Pages->SelectTab(pageSettings);
+			funcSelectTab(pageSettings);
 		}
+
 		Void btnLogOut_Click(System::Object^ sender, System::EventArgs^ e);
 
 	// Бар панель пользователя
@@ -2757,13 +2798,13 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 	// Профиль
 	private:
 		String^ GetFolderCreationDate(String^ folderPath);
-		Void buttonUpload_Click(System::Object^ sender, System::EventArgs^ e);
+		Void buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonResume_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonCheckCode_Click(System::Object^ sender, System::EventArgs^ e);
 		Void timerEmail_Tick(System::Object^ sender, System::EventArgs^ e);
 		Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
-
+		
 		bool IsValidEmail(String^ email) {
 				// Проверка корректности введенного email (наличие символов '@' и '.')
 				return email->Contains("@") && email->Contains(".");
@@ -2805,58 +2846,109 @@ private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
 
 			}
 		}
-
 		void ChangeData();
-
 		void DeleteDirectory(String^ folderPath);
 
 		Void linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
-
 		Void btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e);
-		Void btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e);
+		Void btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e);	
 
-	private: Void guna2TrackBar3_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-	}
-	private: Void guna2TrackBar2_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-	}
-	private: Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: Void toggleShadows_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: Void guna2ToggleSwitch1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: Void guna2TrackBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-	}
-	private: Void TrackBorderForm_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-	}
-	private: Void btnMessageShadow_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageWarning->Show("Измения вступят в силу после перезапуска");
-	}
-	private: Void toggleAlwaysHide_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-
-	}
-
-
-	private: Void textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (textBoxUserName->Text != UserName) {
-			isProfileSaved = false;
+		Void textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (textBoxUserName->Text != UserName) {
+				isProfileSaved = false;
+			}
 		}
-	}
-	private: Void textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (textBoxUserSurname->Text != UserSurname) {
-			isProfileSaved = false;
+		Void textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (textBoxUserSurname->Text != UserSurname) {
+				isProfileSaved = false;
+			}
 		}
-	}
-	private: Void textBoxEmail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		if (textBoxEmail->Text != UserEmail) {
-			isProfileSaved = false;
+		Void textBoxEmail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (textBoxEmail->Text != UserEmail) {
+				isProfileSaved = false;
+			}
 		}
-	}
 
-	private: Void btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void btnProfileCancel_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (CheckSave())
-			Pages->SelectTab(pageProfile);
-	}
+		Void btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e);
+		Void btnCancelSettings_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+
+	// Локальные настройки
+	private:
+		bool menu = true;
+
+		bool alwaysHideMenu = false;
+		bool transparentWhileDrag = true;
+		bool greeting = true;
+		bool formShadow = true;
+		bool PythonWaveStyle = true;
+
+		int volume = 50;
+		int borderBtn = 20;
+		int borderForm = 25;
+		void RegisterMouseDownEvent(Control^ parent, bool enable);
+
+	// Настройки
+		void cfgLoad();
+		void cfgSave();
+
+	private:
+		Void TrackBorderForm_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
+			borderlessForm->BorderRadius = TrackBorderForm->Value;
+
+			labelBorderForm->Text = Convert::ToString(TrackBorderForm->Value);
+		}
+		Void TrackBorderBtn_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
+			borderBtn =							TrackBorderBtn->Value;
+			btnSettingsCancel->BorderRadius =	TrackBorderBtn->Value;
+			btnSettingsSave->BorderRadius =		TrackBorderBtn->Value;
+
+			labelBorderBtn->Text = Convert::ToString(TrackBorderForm->Value);
+		}
+		Void TrackVolume_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
+			volume = TrackVolume->Value;
+
+			labelVolume->Text = Convert::ToString(volume);
+		}
+		Void toggleTransparent_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			transparentWhileDrag = toggleTransparent->Checked;
+
+			dragMain->TransparentWhileDrag = transparentWhileDrag;
+		}
+		Void toggleGreeting_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			greeting = toggleGreeting->Checked;
+		}
+		Void toggleShadows_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			formShadow = toggleShadows->Checked;
+		}
+		Void toggleAlwaysHide_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			alwaysHideMenu = toggleAlwaysHide->Checked;
+			RegisterMouseDownEvent(this, alwaysHideMenu);
+		}
+		Void btnMessageShadow_Click(System::Object^ sender, System::EventArgs^ e) {
+			MessageWarning->Show("Эта функция на стадии ранней разработки");
+		}
+		Void btnSettingsSave_Click(System::Object^ sender, System::EventArgs^ e) {
+			Config^ cfg = gcnew Config();
+			
+			
+		}
+		Void toggleStyle_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+			if (!toggleStyle->Checked) {
+				this->FormBorderStyle = Forms::FormBorderStyle::FixedToolWindow;
+				borderForm = 0;
+			}
+			else {
+				this->FormBorderStyle = Forms::FormBorderStyle::None;
+				borderForm = 25;
+			}
+
+			PythonWaveStyle = toggleStyle->Checked;
+
+			TrackBorderForm->Enabled = PythonWaveStyle;
+			borderlessForm->BorderRadius = borderForm;
+			TrackBorderForm->Value = borderForm;
+			labelBorderForm->Text = Convert::ToString(borderForm);
+		}
 };
 }

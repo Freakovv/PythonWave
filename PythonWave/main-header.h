@@ -66,14 +66,24 @@ using namespace System;
 		borderlessForm->BorderRadius = config->borderForm;
 		borderlessForm->HasFormShadow = config->hasFormShadow;
 		dragMain->TransparentWhileDrag = config->dragTransparent;
-		btnBorder = config->borderBtn;
+		borderBtn = config->borderBtn;
 		volume = config->volume;
 		alwaysHideMenu = config->alwaysHideMenu;
 		RegisterMouseDownEvent(this, alwaysHideMenu);
 
-		btnProfileEdit->BorderRadius = btnBorder;
-		btnProfileSave->BorderRadius = btnBorder;
-		btnProfileCancel->BorderRadius = btnBorder;
+		btnProfileEdit->BorderRadius = borderBtn;
+		btnProfileSave->BorderRadius = borderBtn;
+
+
+	}
+
+	void mainForm::cfgSave() {
+		Config^ config = gcnew Config();
+
+		config->alwaysHideMenu = alwaysHideMenu;
+		config->borderBtn = borderBtn;
+		config->borderForm = borderForm;
+
 	}
 
 	// Form, Menu
@@ -185,7 +195,7 @@ using namespace System;
 			return "Ошибка получения даты";
 		}
 	}
-	Void mainForm::buttonUpload_Click(System::Object^ sender, System::EventArgs^ e) {
+	Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			// Настройка OpenFileDialog
 			openFileDialog1->Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png";

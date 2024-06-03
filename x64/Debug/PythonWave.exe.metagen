@@ -55,6 +55,7 @@ Class Config: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Boolean hasFormShadow : Public
     Boolean alwaysHideMenu : Public
     Boolean greeting : Public
+    Boolean PythonWaveStyle : Public
     Int32 borderForm : Public
     Int32 borderBtn : Public
     Int32 volume : Public
