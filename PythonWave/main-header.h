@@ -11,6 +11,71 @@ using namespace System::Drawing;
 using namespace System;
 
 
+	// Data
+	void mainForm::DataLoad() {
+		String^ fileUserEmail = User + "//userData.bin";
+		String^ fileUserBirth = User + "//userBirth.bin";
+		String^ fileUserSex = User + "//userSex.bin";
+		String^ fileUserName = User + "//userName.bin";
+		String^ fileUserSurname = User + "//userSurname.bin";
+
+		UserEmail = readBinaryFile(fileUserEmail);
+		UserBirth = readBinaryFile(fileUserBirth);
+		UserSex = readBinaryFile(fileUserSex);
+		UserName = readBinaryFile(fileUserName);
+
+
+		String^ pathToAvatarPng = User + "//avatar.png";
+		String^ pathToAvatarJpg = User + "//avatar.jpg";
+
+		if (File::Exists(fileUserSurname)) {
+			UserSurname = readBinaryFile(fileUserSurname);
+		}
+
+		if (File::Exists(pathToAvatarJpg)) {
+			pictureProfile->ImageLocation = pathToAvatarJpg;
+			pictureUserBar->ImageLocation = pathToAvatarJpg;
+			pictureProfileEdit->ImageLocation = pathToAvatarJpg;
+		}
+		else if (File::Exists(pathToAvatarPng)) {
+			pictureProfile->ImageLocation = pathToAvatarPng;
+			pictureUserBar->ImageLocation = pathToAvatarPng;
+			pictureProfileEdit->ImageLocation = pathToAvatarPng;
+		}
+
+		lblLogin->Text = User;
+		lblName->Text = "Имя: " + UserName;
+		lblSurname->Text = "Фамилия: " + UserSurname;
+		lblSex->Text = "Пол: " + UserSex;
+		lblBirth->Text = "Дата рождения: " + UserBirth;
+		lblEmail->Text = "Email: " + UserEmail;
+		labelNameBar->Text = UserName;
+		lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
+
+		textBoxUserName->Text = UserName;
+		textBoxUserSurname->Text = UserSurname;
+		textBoxEmail->Text = UserEmail;
+
+		lblSexEdit->Text = "Пол:\n" + UserSex;
+		lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
+	}
+
+	void mainForm::cfgLoad() {
+		Config^ config = config->LoadConfig();
+
+		borderlessForm->BorderRadius = config->borderForm;
+		borderlessForm->HasFormShadow = config->hasFormShadow;
+		dragMain->TransparentWhileDrag = config->dragTransparent;
+		btnBorder = config->borderBtn;
+		volume = config->volume;
+		alwaysHideMenu = config->alwaysHideMenu;
+		RegisterMouseDownEvent(this, alwaysHideMenu);
+
+		btnProfileEdit->BorderRadius = btnBorder;
+		btnProfileSave->BorderRadius = btnBorder;
+		btnProfileCancel->BorderRadius = btnBorder;
+	}
+
 	// Form, Menu
 	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
 	{

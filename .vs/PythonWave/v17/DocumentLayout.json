@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\.Coding\\PythonWave\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\main-header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\main-header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\main-header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\main-header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +22,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main-header.h",
               "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\main-header.h",
               "RelativeDocumentMoniker": "PythonWave\\main-header.h",
               "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\main-header.h",
               "RelativeToolTip": "PythonWave\\main-header.h",
-              "ViewState": "AQIAAGEAAAAAAAAAAAAqwLcBAAAjAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAkwPEBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-01T21:13:58.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T21:13:58.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "mainForm.h [Design]",
               "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
               "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
@@ -51,16 +50,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "mainForm.h",
               "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
               "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
               "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
               "RelativeToolTip": "PythonWave\\mainForm.h",
-              "ViewState": "AQIAAPoKAAAAAAAAAAAYwDELAAAUAAAA",
+              "ViewState": "AQIAAPsKAAAAAAAAAAAawCoLAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-28T19:41:31.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T19:41:31.911Z"
             }
           ]
         }

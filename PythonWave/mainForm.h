@@ -140,7 +140,8 @@ private:
 	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
 	Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
 	Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-	Guna::UI2::WinForms::Guna2Button^ guna2Button3;
+private: Guna::UI2::WinForms::Guna2Button^ btnProfileCancel;
+
 	Guna::UI2::WinForms::Guna2Button^ guna2Button4;
 	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
 	System::Windows::Forms::Label^ label9;
@@ -242,7 +243,7 @@ private:
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->toggleAlwaysHide = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
 			this->guna2Button4 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->guna2Button3 = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnProfileCancel = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->guna2Separator1 = (gcnew Guna::UI2::WinForms::Guna2Separator());
 			this->labelSettings = (gcnew Bunifu::UI::WinForms::BunifuLabel());
 			this->bunifuLabel3 = (gcnew Bunifu::UI::WinForms::BunifuLabel());
@@ -818,10 +819,10 @@ private:
 			this->Pages->Location = System::Drawing::Point(80, 79);
 			this->Pages->Multiline = true;
 			this->Pages->Name = L"Pages";
-			this->Pages->Page = this->pageProfileEdit;
-			this->Pages->PageIndex = 7;
-			this->Pages->PageName = L"pageProfileEdit";
-			this->Pages->PageTitle = L"pageProfileEdit";
+			this->Pages->Page = this->pageSettings;
+			this->Pages->PageIndex = 5;
+			this->Pages->PageName = L"pageSettings";
+			this->Pages->PageTitle = L"pageSettings";
 			this->Pages->SelectedIndex = 0;
 			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
@@ -1252,7 +1253,7 @@ private:
 			this->pageSettings->Controls->Add(this->label9);
 			this->pageSettings->Controls->Add(this->toggleAlwaysHide);
 			this->pageSettings->Controls->Add(this->guna2Button4);
-			this->pageSettings->Controls->Add(this->guna2Button3);
+			this->pageSettings->Controls->Add(this->btnProfileCancel);
 			this->pageSettings->Controls->Add(this->guna2Separator1);
 			this->pageSettings->Controls->Add(this->labelSettings);
 			this->pageSettings->Controls->Add(this->bunifuLabel3);
@@ -1351,44 +1352,45 @@ private:
 			this->guna2Button4->TextOffset = System::Drawing::Point(10, 0);
 			this->guna2Button4->UseTransparentBackground = true;
 			// 
-			// guna2Button3
+			// btnProfileCancel
 			// 
-			this->guna2Button3->Animated = true;
-			this->guna2Button3->BackColor = System::Drawing::Color::Transparent;
-			this->guna2Button3->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button3->BorderRadius = 20;
-			this->guna2Button3->BorderThickness = 1;
-			this->guna2Button3->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button3->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button3->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+			this->btnProfileCancel->Animated = true;
+			this->btnProfileCancel->BackColor = System::Drawing::Color::Transparent;
+			this->btnProfileCancel->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnProfileCancel->BorderRadius = 20;
+			this->btnProfileCancel->BorderThickness = 1;
+			this->btnProfileCancel->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnProfileCancel->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnProfileCancel->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button3->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+			this->btnProfileCancel->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button3->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+			this->btnProfileCancel->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnProfileCancel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnProfileCancel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button3->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnProfileCancel->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button3->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnProfileCancel->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button3->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+			this->btnProfileCancel->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button3->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+			this->btnProfileCancel->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button3->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
-			this->guna2Button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button3.Image")));
-			this->guna2Button3->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->guna2Button3->ImageSize = System::Drawing::Size(25, 25);
-			this->guna2Button3->Location = System::Drawing::Point(1166, 753);
-			this->guna2Button3->Name = L"guna2Button3";
-			this->guna2Button3->Size = System::Drawing::Size(154, 39);
-			this->guna2Button3->TabIndex = 90;
-			this->guna2Button3->Text = L"Отмена";
-			this->guna2Button3->TextOffset = System::Drawing::Point(10, 0);
-			this->guna2Button3->UseTransparentBackground = true;
+			this->btnProfileCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image10")));
+			this->btnProfileCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileCancel.Image")));
+			this->btnProfileCancel->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnProfileCancel->ImageSize = System::Drawing::Size(25, 25);
+			this->btnProfileCancel->Location = System::Drawing::Point(1166, 753);
+			this->btnProfileCancel->Name = L"btnProfileCancel";
+			this->btnProfileCancel->Size = System::Drawing::Size(154, 39);
+			this->btnProfileCancel->TabIndex = 90;
+			this->btnProfileCancel->Text = L"Отмена";
+			this->btnProfileCancel->TextOffset = System::Drawing::Point(10, 0);
+			this->btnProfileCancel->UseTransparentBackground = true;
+			this->btnProfileCancel->Click += gcnew System::EventHandler(this, &mainForm::btnProfileCancel_Click);
 			// 
 			// guna2Separator1
 			// 
@@ -2645,68 +2647,9 @@ private:
 				fileStream->Close();
 		}
 
-		void DataLoad() {
-			String^ fileUserEmail =		User + "//userData.bin";
-			String^ fileUserBirth =		User + "//userBirth.bin";
-			String^ fileUserSex =		User + "//userSex.bin";
-			String^ fileUserName =		User + "//userName.bin";
-			String^ fileUserSurname =	User + "//userSurname.bin";
+		void DataLoad();
 
-			UserEmail =		readBinaryFile(fileUserEmail);
-			UserBirth =		readBinaryFile(fileUserBirth);
-			UserSex =		readBinaryFile(fileUserSex);
-			UserName =		readBinaryFile(fileUserName);
-		
-
-			String^ pathToAvatarPng = User + "//avatar.png";
-			String^ pathToAvatarJpg = User + "//avatar.jpg";
-
-			if (File::Exists(fileUserSurname)) {
-				UserSurname = readBinaryFile(fileUserSurname);
-			}
-
-			if (File::Exists(pathToAvatarJpg)) {
-				pictureProfile->ImageLocation = pathToAvatarJpg;
-				pictureUserBar->ImageLocation = pathToAvatarJpg;
-				pictureProfileEdit->ImageLocation = pathToAvatarJpg;
-			}
-			else if (File::Exists(pathToAvatarPng)) {
-				pictureProfile->ImageLocation = pathToAvatarPng;
-				pictureUserBar->ImageLocation = pathToAvatarPng;
-				pictureProfileEdit->ImageLocation = pathToAvatarPng;
-			}
-
-			lblLogin->Text =		User;
-			lblName->Text =			"Имя: " + UserName;
-			lblSurname->Text =		"Фамилия: " + UserSurname;
-			lblSex->Text =			"Пол: " + UserSex;
-			lblBirth->Text =		"Дата рождения: " + UserBirth;
-			lblEmail->Text =		"Email: " + UserEmail;
-			labelNameBar->Text =	UserName;
-			lblRegDate->Text =		"Дата регистрации: " + GetFolderCreationDate(User);
-		
-			textBoxUserName->Text = UserName;
-			textBoxUserSurname->Text = UserSurname;
-			textBoxEmail->Text = UserEmail;
-
-			lblSexEdit->Text =		"Пол:\n" + UserSex;
-			lblBirthEdit->Text =	"Дата рождения:\n" + UserBirth;
-		}
-
-		void cfgLoad() {
-		Config^ config = config->LoadConfig();
-
-		borderlessForm->BorderRadius =		config->borderForm;
-		borderlessForm->HasFormShadow =		config->hasFormShadow;
-		dragMain->TransparentWhileDrag =	config->dragTransparent;
-		btnBorder =							config->borderBtn;
-		volume =							config->volume;
-		alwaysHideMenu =					config->alwaysHideMenu;
-		RegisterMouseDownEvent(this, alwaysHideMenu);
-
-		btnProfileEdit->BorderRadius = btnBorder;
-		btnProfileSave->BorderRadius = btnBorder;
-		}
+		void cfgLoad();
 
 	// Кнопки формы, Loader
 	private:
@@ -2721,7 +2664,7 @@ private:
 		Void btnExit_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnMinimize_Click(System::Object^ sender, System::EventArgs^ e);
 
-	// Боковое меню (кнопки, анимация)
+	// Боковое меню (кнопки, анимация, переходы)
 	private: 
 		Boolean CheckSave();
 		Void SetProfileDefaults();
@@ -2911,5 +2854,9 @@ private:
 	}
 
 	private: Void btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void btnProfileCancel_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CheckSave())
+			Pages->SelectTab(pageProfile);
+	}
 };
 }
