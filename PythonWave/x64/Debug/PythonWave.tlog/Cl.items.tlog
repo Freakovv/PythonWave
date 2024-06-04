@@ -1,9 +1,2 @@
-E:\.Coding\PythonWave\PythonWave\auth.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\auth.obj
-E:\.Coding\PythonWave\PythonWave\ClassFade.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\ClassFade.obj
-E:\.Coding\PythonWave\PythonWave\ClassMail.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\ClassMail.obj
-E:\.Coding\PythonWave\PythonWave\ClassProgress.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\ClassProgress.obj
-E:\.Coding\PythonWave\PythonWave\config.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\config.obj
-E:\.Coding\PythonWave\PythonWave\main.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\main.obj
-E:\.Coding\PythonWave\PythonWave\MyPython.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\MyPython.obj
-E:\.Coding\PythonWave\PythonWave\profile.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\profile.obj
-E:\.Coding\PythonWave\PythonWave\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cpp;E:\.Coding\PythonWave\PythonWave\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.obj
+D:\.Coding\PythonWave\PythonWave\main.cpp;D:\.Coding\PythonWave\PythonWave\x64\Debug\main.obj
+D:\.Coding\PythonWave\PythonWave\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cpp;D:\.Coding\PythonWave\PythonWave\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.obj

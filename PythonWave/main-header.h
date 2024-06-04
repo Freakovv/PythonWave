@@ -59,31 +59,76 @@ using namespace System;
 		lblSexEdit->Text = "Пол:\n" + UserSex;
 		lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
 	}
+	void mainForm::DataChange() {
+		// Local
+		UserName = textBoxUserName->Text;
+		UserSurname = textBoxUserSurname->Text;
+		UserEmail = textBoxEmail->Text;
 
+		lblName->Text = "Имя: " + UserName;
+		lblSurname->Text = "Фамилия: " + UserSurname;
+		lblEmail->Text = "Email: " + UserEmail;
+		
+		labelNameBar->Text = UserName;
+	}
+
+	void mainForm::DataSave() {
+		String^ fileUserEmail = User + "//userData.bin";
+		String^ fileUserName = User + "//userName.bin";
+		String^ fileUserSurname = User + "//userSurname.bin";
+
+		writeBinaryFile(fileUserEmail, UserEmail);
+		writeBinaryFile(fileUserName, UserName);
+		writeBinaryFile(fileUserSurname, UserSurname);
+	}
 	void mainForm::cfgLoad() {
 		Config^ config = config->LoadConfig();
 
+		// Переменные
 		borderlessForm->BorderRadius = config->borderForm;
 		borderlessForm->HasFormShadow = config->hasFormShadow;
 		dragMain->TransparentWhileDrag = config->dragTransparent;
+		
+		greeting = config->greeting;
 		borderBtn = config->borderBtn;
 		volume = config->volume;
 		alwaysHideMenu = config->alwaysHideMenu;
+		borderForm = config->borderForm;
+		formShadow = config->hasFormShadow;
+		transparentWhileDrag = config->dragTransparent;
+		PythonWaveStyle = config->PythonWaveStyle;
+
+		// Страница настроек
+		TrackBorderBtn->Value = borderBtn;
+		TrackBorderForm->Value = borderForm;
+		TrackVolume->Value = volume;
+		
+		labelBorderBtn->Text = Convert::ToString(borderBtn);
+		labelBorderForm->Text = Convert::ToString(borderForm);
+		labelVolume->Text = Convert::ToString(volume);
+
+		toggleAlwaysHide->Checked = alwaysHideMenu;
+		toggleGreeting->Checked = greeting;
+		toggleStyle->Checked = PythonWaveStyle;
+		toggleShadows->Checked = formShadow;
+		toggleTransparent->Checked = transparentWhileDrag;
+
 		RegisterMouseDownEvent(this, alwaysHideMenu);
-
-		btnProfileEdit->BorderRadius = borderBtn;
-		btnProfileSave->BorderRadius = borderBtn;
-
-
+		PythonWaveStyleState(PythonWaveStyle);
 	}
 
 	void mainForm::cfgSave() {
 		Config^ config = gcnew Config();
-
 		config->alwaysHideMenu = alwaysHideMenu;
 		config->borderBtn = borderBtn;
 		config->borderForm = borderForm;
+		config->hasFormShadow = formShadow;
+		config->dragTransparent = transparentWhileDrag;
+		config->PythonWaveStyle = PythonWaveStyle;
+		config->greeting = greeting;
+		config->volume = volume;
 
+		config->SaveConfig();
 	}
 
 	// Form, Menu
@@ -110,19 +155,12 @@ using namespace System;
 	Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 		DataLoad();
 		cfgLoad();
-		if (panelMenu->Size == Drawing::Size(80, 820)) {
-			menu = false;
-		}
-		else if (panelMenu->Size == Drawing::Size(250, 820)) {
-			menu = true;
-		}
+		menu = false;
 
 		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("in");
-		Fade = nullptr;
 
 		SetCenter(panelProfileData, lblLogin, 1);
-		RegisterMouseDownEvent(this, alwaysHideMenu);
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -243,9 +281,6 @@ using namespace System;
 	}
 	Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
 		Pages->SelectTab(pageProfileEdit);
-	}
-	Void mainForm::ChangeData() {
-
 	}
 
 	Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -476,14 +511,26 @@ using namespace System;
 	}
 	
 	Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-		if (textBoxEmail->Text != UserEmail && !email_confirmed) {
-			MessageWarning->Show("Вы ввели новый Email, подтвердите его");
+
+		if (textBoxUserName->TextLength < 3) {
+			textBoxUserName->BorderColor = Color::Red;
+			if (textBoxUserSurname->TextLength < 3) {
+				textBoxUserSurname->BorderColor = Color::Red;
+			}
+
+			MessageWarning->Show("Введите полное имя и фамилию");
 			return;
 		}
 
-		if (email_confirmed) {
+		if (!email_confirmed) {
+			MessageWarning->Show("Вы ввели новый Email, подтвердите его или введите старый");
+			textBoxEmail->BorderColor = Color::Red;
+			return;
 		}
+
+		DataChange();
+		DataSave();
+		MessageInfo->Show("Сохранено", "Успешно");
 	}
 
 	Boolean mainForm::CheckSave() {

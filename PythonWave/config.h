@@ -59,6 +59,8 @@ public:
                 config->borderBtn = Int32::Parse(value);
             else if (name == "volume")
                 config->volume = Int32::Parse(value);
+            else if (name == "PythonWaveStyle")
+                config->PythonWaveStyle = Boolean::Parse(value);
         }
         //MessageBox::Show("CFG:" + Convert::ToString(config->alwaysHideMenu));
 
@@ -91,6 +93,7 @@ public:
         AddSetting(doc, settingsElement, "borderForm", borderForm.ToString());
         AddSetting(doc, settingsElement, "borderBtn", borderBtn.ToString());
         AddSetting(doc, settingsElement, "volume", volume.ToString());
+        AddSetting(doc, settingsElement, "PythonWaveStyle", PythonWaveStyle.ToString());
 
         // Сохраняем документ в файл
         doc->Save(configFilePath);

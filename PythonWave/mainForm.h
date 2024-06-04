@@ -245,6 +245,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageStats = (gcnew System::Windows::Forms::TabPage());
 			this->chartProductivity = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->pageSettings = (gcnew System::Windows::Forms::TabPage());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->toggleStyle = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->toggleAlwaysHide = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
@@ -308,7 +309,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->timerReMail = (gcnew System::Windows::Forms::Timer(this->components));
 			this->MessageDefault = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->panelMain->SuspendLayout();
 			this->panelUserBar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureUserBar))->BeginInit();
@@ -386,7 +386,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			// StarsUser
 			// 
 			this->StarsUser->Cursor = System::Windows::Forms::Cursors::Help;
-			this->StarsUser->Location = System::Drawing::Point(193, 9);
+			this->StarsUser->Location = System::Drawing::Point(198, 42);
 			this->StarsUser->Name = L"StarsUser";
 			this->StarsUser->RatingColor = System::Drawing::Color::White;
 			this->StarsUser->ReadOnly = true;
@@ -831,7 +831,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->Pages->PageName = L"pageSettings";
 			this->Pages->PageTitle = L"pageSettings";
 			this->Pages->SelectedIndex = 0;
-			this->Pages->Size = System::Drawing::Size(1520, 809);
+			this->Pages->Size = System::Drawing::Size(1520, 821);
 			this->Pages->TabIndex = 2;
 			animation2->AnimateOnlyDifferences = true;
 			animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
@@ -858,7 +858,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageHome->Location = System::Drawing::Point(4, 4);
 			this->pageHome->Name = L"pageHome";
 			this->pageHome->Padding = System::Windows::Forms::Padding(3);
-			this->pageHome->Size = System::Drawing::Size(1512, 783);
+			this->pageHome->Size = System::Drawing::Size(1512, 795);
 			this->pageHome->TabIndex = 0;
 			this->pageHome->Text = L"pageHome";
 			// 
@@ -870,7 +870,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageBook->Location = System::Drawing::Point(4, 4);
 			this->pageBook->Name = L"pageBook";
 			this->pageBook->Padding = System::Windows::Forms::Padding(3);
-			this->pageBook->Size = System::Drawing::Size(1512, 783);
+			this->pageBook->Size = System::Drawing::Size(1512, 795);
 			this->pageBook->TabIndex = 1;
 			this->pageBook->Text = L"pageBook";
 			// 
@@ -955,7 +955,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageCourses->Controls->Add(this->richTextBox1);
 			this->pageCourses->Location = System::Drawing::Point(4, 4);
 			this->pageCourses->Name = L"pageCourses";
-			this->pageCourses->Size = System::Drawing::Size(1512, 783);
+			this->pageCourses->Size = System::Drawing::Size(1512, 795);
 			this->pageCourses->TabIndex = 2;
 			this->pageCourses->Text = L"pageCourses";
 			// 
@@ -1014,7 +1014,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageProfile->Controls->Add(this->pictureProfile);
 			this->pageProfile->Location = System::Drawing::Point(4, 4);
 			this->pageProfile->Name = L"pageProfile";
-			this->pageProfile->Size = System::Drawing::Size(1512, 783);
+			this->pageProfile->Size = System::Drawing::Size(1512, 795);
 			this->pageProfile->TabIndex = 3;
 			this->pageProfile->Text = L"pageProfile";
 			// 
@@ -1197,7 +1197,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageStats->Controls->Add(this->chartProductivity);
 			this->pageStats->Location = System::Drawing::Point(4, 4);
 			this->pageStats->Name = L"pageStats";
-			this->pageStats->Size = System::Drawing::Size(1512, 783);
+			this->pageStats->Size = System::Drawing::Size(1512, 795);
 			this->pageStats->TabIndex = 4;
 			this->pageStats->Text = L"pageStats";
 			// 
@@ -1285,9 +1285,22 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageSettings->Controls->Add(this->TrackBorderForm);
 			this->pageSettings->Location = System::Drawing::Point(4, 4);
 			this->pageSettings->Name = L"pageSettings";
-			this->pageSettings->Size = System::Drawing::Size(1512, 783);
+			this->pageSettings->Size = System::Drawing::Size(1512, 795);
 			this->pageSettings->TabIndex = 5;
 			this->pageSettings->Text = L"pageSettings";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->label11->Location = System::Drawing::Point(78, 281);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(206, 24);
+			this->label11->TabIndex = 95;
+			this->label11->Text = L"Стиль PythonWave";
 			// 
 			// toggleStyle
 			// 
@@ -1734,7 +1747,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->pageGoodbye->Location = System::Drawing::Point(4, 4);
 			this->pageGoodbye->Name = L"pageGoodbye";
-			this->pageGoodbye->Size = System::Drawing::Size(1512, 783);
+			this->pageGoodbye->Size = System::Drawing::Size(1512, 795);
 			this->pageGoodbye->TabIndex = 6;
 			this->pageGoodbye->Text = L"pageGoodbye";
 			// 
@@ -1772,7 +1785,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pageProfileEdit->Controls->Add(this->label2);
 			this->pageProfileEdit->Location = System::Drawing::Point(4, 4);
 			this->pageProfileEdit->Name = L"pageProfileEdit";
-			this->pageProfileEdit->Size = System::Drawing::Size(1512, 783);
+			this->pageProfileEdit->Size = System::Drawing::Size(1512, 795);
 			this->pageProfileEdit->TabIndex = 7;
 			this->pageProfileEdit->Text = L"pageProfileEdit";
 			// 
@@ -2167,6 +2180,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->textBoxEmail->TabIndex = 53;
 			this->textBoxEmail->TextOffset = System::Drawing::Point(2, 0);
 			this->textBoxEmail->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxEmail_TextChanged);
+			this->textBoxEmail->Click += gcnew System::EventHandler(this, &mainForm::textBoxEmail_Click);
 			// 
 			// textBoxCode
 			// 
@@ -2340,6 +2354,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->textBoxUserSurname->Size = System::Drawing::Size(264, 46);
 			this->textBoxUserSurname->TabIndex = 51;
 			this->textBoxUserSurname->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxUserSurname_TextChanged);
+			this->textBoxUserSurname->Click += gcnew System::EventHandler(this, &mainForm::textBoxUserSurname_Click);
 			// 
 			// textBoxUserName
 			// 
@@ -2386,6 +2401,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->textBoxUserName->Size = System::Drawing::Size(264, 46);
 			this->textBoxUserName->TabIndex = 50;
 			this->textBoxUserName->TextChanged += gcnew System::EventHandler(this, &mainForm::textBoxUserName_TextChanged);
+			this->textBoxUserName->Click += gcnew System::EventHandler(this, &mainForm::textBoxUserName_Click);
 			// 
 			// lblNameEdit
 			// 
@@ -2582,19 +2598,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->MessageDefault->Parent = this;
 			this->MessageDefault->Style = Guna::UI2::WinForms::MessageDialogStyle::Light;
 			this->MessageDefault->Text = nullptr;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->label11->Location = System::Drawing::Point(78, 281);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(206, 24);
-			this->label11->TabIndex = 95;
-			this->label11->Text = L"Стиль PythonWave";
 			// 
 			// mainForm
 			// 
@@ -2796,6 +2799,8 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 
 
 	// Профиль
+		void DataChange();
+		void DataSave();
 	private:
 		String^ GetFolderCreationDate(String^ folderPath);
 		Void buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e);
@@ -2804,13 +2809,13 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 		Void buttonCheckCode_Click(System::Object^ sender, System::EventArgs^ e);
 		Void timerEmail_Tick(System::Object^ sender, System::EventArgs^ e);
 		Void linkReMail_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
-		
-		bool IsValidEmail(String^ email) {
-				// Проверка корректности введенного email (наличие символов '@' и '.')
-				return email->Contains("@") && email->Contains(".");
-			}
+
+		// Email
 		int securityCode;
 		int securityCodeNew;
+		bool IsValidEmail(String^ email) {
+				return email->Contains("@") && email->Contains(".");
+		}
 		int generateSecurityCode() {
 			int Code = rand() % 900000 + 100000;
 			return Code;
@@ -2846,27 +2851,27 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 
 			}
 		}
-		void ChangeData();
 		void DeleteDirectory(String^ folderPath);
-
 		Void linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
 		Void btnChangePassword_Click(System::Object^ sender, System::EventArgs^ e);
-		Void btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e);	
+		Void btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e);
 
-		Void textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (textBoxUserName->Text != UserName) {
+		// Проверка на изменение данных
+		Boolean CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ field) {
+			if (TB->Text != field) {
 				isProfileSaved = false;
+				return false;
 			}
+			return true;
+		}
+		Void textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			CheckProfileSave(textBoxUserName, UserName);
 		}
 		Void textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (textBoxUserSurname->Text != UserSurname) {
-				isProfileSaved = false;
-			}
+			CheckProfileSave(textBoxUserSurname, UserSurname);
 		}
 		Void textBoxEmail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (textBoxEmail->Text != UserEmail) {
-				isProfileSaved = false;
-			}
+			email_confirmed = CheckProfileSave(textBoxEmail, UserEmail);
 		}
 
 		Void btnCancelChanges_Click(System::Object^ sender, System::EventArgs^ e);
@@ -2894,16 +2899,17 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 
 	private:
 		Void TrackBorderForm_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-			borderlessForm->BorderRadius = TrackBorderForm->Value;
-
-			labelBorderForm->Text = Convert::ToString(TrackBorderForm->Value);
+			borderlessForm->BorderRadius =	TrackBorderForm->Value;
+			borderForm =					TrackBorderForm->Value;
+			
+			labelBorderForm->Text = Convert::ToString(borderForm);
 		}
 		Void TrackBorderBtn_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 			borderBtn =							TrackBorderBtn->Value;
 			btnSettingsCancel->BorderRadius =	TrackBorderBtn->Value;
 			btnSettingsSave->BorderRadius =		TrackBorderBtn->Value;
 
-			labelBorderBtn->Text = Convert::ToString(TrackBorderForm->Value);
+			labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
 		}
 		Void TrackVolume_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 			volume = TrackVolume->Value;
@@ -2929,26 +2935,50 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			MessageWarning->Show("Эта функция на стадии ранней разработки");
 		}
 		Void btnSettingsSave_Click(System::Object^ sender, System::EventArgs^ e) {
-			Config^ cfg = gcnew Config();
-			
-			
+			cfgSave();
 		}
 		Void toggleStyle_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (!toggleStyle->Checked) {
+			PythonWaveStyle = toggleStyle->Checked;
+			PythonWaveStyleState(PythonWaveStyle);
+		}
+
+		Void PythonWaveStyleState(bool enable) {
+			if (enable) {
+				this->FormBorderStyle = Forms::FormBorderStyle::None;
+				Config^ tempCfg = tempCfg->LoadConfig();
+				borderForm = tempCfg->borderForm;
+				tempCfg = nullptr;
+			}
+			else {
 				this->FormBorderStyle = Forms::FormBorderStyle::FixedToolWindow;
 				borderForm = 0;
 			}
-			else {
-				this->FormBorderStyle = Forms::FormBorderStyle::None;
-				borderForm = 25;
-			}
 
-			PythonWaveStyle = toggleStyle->Checked;
+			btnExit->Visible = enable;
+			btnMinimize->Visible = enable;
+			TrackBorderForm->Enabled = enable;
 
-			TrackBorderForm->Enabled = PythonWaveStyle;
 			borderlessForm->BorderRadius = borderForm;
 			TrackBorderForm->Value = borderForm;
 			labelBorderForm->Text = Convert::ToString(borderForm);
+		}
+
+
+
+
+
+
+
+
+		//textbox Click
+		Void textBoxUserName_Click(System::Object^ sender, System::EventArgs^ e) {
+			textBoxUserName->BorderColor = Color::Silver;
+		}
+		Void textBoxUserSurname_Click(System::Object^ sender, System::EventArgs^ e) {
+			textBoxUserSurname->BorderColor = Color::Silver;
+		}
+		Void textBoxEmail_Click(System::Object^ sender, System::EventArgs^ e) {
+			textBoxEmail->BorderColor = Color::Silver;
 		}
 };
 }

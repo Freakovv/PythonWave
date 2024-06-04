@@ -156,14 +156,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="auth.cpp" />
-    <ClCompile Include="ClassFade.cpp" />
-    <ClCompile Include="ClassMail.cpp" />
-    <ClCompile Include="ClassProgress.cpp" />
-    <ClCompile Include="config.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyPython.cpp" />
-    <ClCompile Include="profile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="auth-header.h" />
