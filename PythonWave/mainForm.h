@@ -22,20 +22,33 @@ namespace PythonWave {
 	{
 	public:
 		String^ User;
+		String^ UserSurname;
 		String^ UserEmail;
 		String^ UserBirth;
 		String^ UserSex;
 		String^ UserName;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
-	private: System::Windows::Forms::Label^ label11;
-	public:
-		String^ UserSurname;
+		String^ UserRank;
+
+
 
 	public:
+		ClassFade^ Fade;
+		Dictionary<int, String^>^ ranks;
+
 		mainForm(String^ Login)
 		{
 			User = Login;
+
+			Fade = gcnew ClassFade(this);
+			ranks = gcnew Dictionary<int, String^>();
+			ranks->Add(1, "Новичок");
+			ranks->Add(2, "Исследователь");
+			ranks->Add(3, "Разработчик");
+			ranks->Add(4, "Инженер");
+			ranks->Add(5, "Мастер");
+
 			InitializeComponent();
+
 			if (User == "") {
 				MessageError->Show("Передан некорректный логин", "Ошибка загрузки пользователя");
 				Application::Exit();
@@ -50,7 +63,7 @@ namespace PythonWave {
 			//
 			//TODO: Add the constructor code here
 			//
-			MessageError->Show("Вход не был выполнен", "Ошибка загрузки пользователя");
+			MessageError->Show("Форма открыта без пользователя", "Критическая ошибка");
 			Application::Exit();
 		}
 
@@ -67,7 +80,9 @@ namespace PythonWave {
 	
 private:
 
-	Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
+	UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
+	System::Windows::Forms::Label^ label11;
+	UI2::WinForms::Guna2MessageDialog^ MessageInfo;
 	Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 	Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
 	Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
@@ -143,11 +158,8 @@ private:
 	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
 	Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
 	Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-private: Guna::UI2::WinForms::Guna2Button^ btnSettingsCancel;
-private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
-
-
-
+	UI2::WinForms::Guna2Button^ btnSettingsCancel;
+	UI2::WinForms::Guna2Button^ btnSettingsSave;
 	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
 	System::Windows::Forms::Label^ label9;
 	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
@@ -198,8 +210,8 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->separatorMain = (gcnew Guna::UI2::WinForms::Guna2Separator());
 			this->panelUserBar = (gcnew System::Windows::Forms::Panel());
-			this->pictureUserBar = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->StarsUser = (gcnew Guna::UI2::WinForms::Guna2RatingStar());
+			this->pictureUserBar = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
 			this->labelRankBar = (gcnew System::Windows::Forms::Label());
 			this->labelNameBar = (gcnew System::Windows::Forms::Label());
 			this->btnExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
@@ -337,10 +349,10 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			// 
 			this->panelMain->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			this->panelMain->Controls->Add(this->separatorMain);
-			this->panelMain->Controls->Add(this->panelUserBar);
 			this->panelMain->Controls->Add(this->btnExit);
 			this->panelMain->Controls->Add(this->btnMinimize);
+			this->panelMain->Controls->Add(this->separatorMain);
+			this->panelMain->Controls->Add(this->panelUserBar);
 			this->panelMain->Controls->Add(this->labelPyWave);
 			this->panelMain->Controls->Add(this->pctrboxLogo);
 			this->panelMain->Location = System::Drawing::Point(0, 0);
@@ -358,8 +370,8 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			// 
 			// panelUserBar
 			// 
-			this->panelUserBar->Controls->Add(this->pictureUserBar);
 			this->panelUserBar->Controls->Add(this->StarsUser);
+			this->panelUserBar->Controls->Add(this->pictureUserBar);
 			this->panelUserBar->Controls->Add(this->labelRankBar);
 			this->panelUserBar->Controls->Add(this->labelNameBar);
 			this->panelUserBar->Location = System::Drawing::Point(1129, 0);
@@ -367,6 +379,17 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->panelUserBar->Size = System::Drawing::Size(407, 80);
 			this->panelUserBar->TabIndex = 34;
 			this->panelUserBar->Click += gcnew System::EventHandler(this, &mainForm::btnProfile_Click);
+			// 
+			// StarsUser
+			// 
+			this->StarsUser->Cursor = System::Windows::Forms::Cursors::Help;
+			this->StarsUser->Location = System::Drawing::Point(195, 44);
+			this->StarsUser->Name = L"StarsUser";
+			this->StarsUser->RatingColor = System::Drawing::Color::White;
+			this->StarsUser->ReadOnly = true;
+			this->StarsUser->Size = System::Drawing::Size(96, 24);
+			this->StarsUser->TabIndex = 3;
+			this->StarsUser->Click += gcnew System::EventHandler(this, &mainForm::ratingUser_Click);
 			// 
 			// pictureUserBar
 			// 
@@ -382,17 +405,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 			this->pictureUserBar->TabIndex = 35;
 			this->pictureUserBar->TabStop = false;
 			this->pictureUserBar->UseTransparentBackground = true;
-			// 
-			// StarsUser
-			// 
-			this->StarsUser->Cursor = System::Windows::Forms::Cursors::Help;
-			this->StarsUser->Location = System::Drawing::Point(198, 42);
-			this->StarsUser->Name = L"StarsUser";
-			this->StarsUser->RatingColor = System::Drawing::Color::White;
-			this->StarsUser->ReadOnly = true;
-			this->StarsUser->Size = System::Drawing::Size(82, 24);
-			this->StarsUser->TabIndex = 3;
-			this->StarsUser->Click += gcnew System::EventHandler(this, &mainForm::ratingUser_Click);
 			// 
 			// labelRankBar
 			// 
@@ -2802,6 +2814,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 		void DataChange();
 		void DataSave();
 	private:
+		void levelUp();
 		String^ GetFolderCreationDate(String^ folderPath);
 		Void buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonResume_Click(System::Object^ sender, System::EventArgs^ e);
@@ -2936,6 +2949,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 		}
 		Void btnSettingsSave_Click(System::Object^ sender, System::EventArgs^ e) {
 			cfgSave();
+			MessageInfo->Show("Настройки успешно сохранены");
 		}
 		Void toggleStyle_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 			PythonWaveStyle = toggleStyle->Checked;
@@ -2953,6 +2967,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
 				this->FormBorderStyle = Forms::FormBorderStyle::FixedToolWindow;
 				borderForm = 0;
 			}
+			
 
 			btnExit->Visible = enable;
 			btnMinimize->Visible = enable;

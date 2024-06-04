@@ -1,10 +1,12 @@
 #pragma once
-#include <windows.h>
+
+#include "mainForm.h"
+#include "MyPython.h"
+
+#include <Windows.h>
 #include <iostream>
 #include <msclr/marshal_cppstd.h>
-#include "mainForm.h"
-#include "ClassFade.h"
-#include "MyPython.h"
+
 
 using namespace System::Drawing::Imaging;
 using namespace System::Drawing;
@@ -18,11 +20,13 @@ using namespace System;
 		String^ fileUserSex = User + "//userSex.bin";
 		String^ fileUserName = User + "//userName.bin";
 		String^ fileUserSurname = User + "//userSurname.bin";
+		String^ fileUserRank = User + "//lvl.bin";
 
 		UserEmail = readBinaryFile(fileUserEmail);
 		UserBirth = readBinaryFile(fileUserBirth);
 		UserSex = readBinaryFile(fileUserSex);
 		UserName = readBinaryFile(fileUserName);
+		UserRank = readBinaryFile(fileUserRank);
 
 
 		String^ pathToAvatarPng = User + "//avatar.png";
@@ -43,6 +47,21 @@ using namespace System;
 			pictureProfileEdit->ImageLocation = pathToAvatarPng;
 		}
 
+
+		int rankKey = -1;
+		for each (KeyValuePair<int, String^> kvp in ranks) {
+			if (kvp.Value == UserRank) {
+				rankKey = kvp.Key;
+				break;
+			}
+		}
+
+		if (rankKey != -1) {
+			StarsUser->Value = rankKey;
+		}
+		else {
+			StarsUser->Value = 0;
+		}
 		lblLogin->Text = User;
 		lblName->Text = "Имя: " + UserName;
 		lblSurname->Text = "Фамилия: " + UserSurname;
@@ -50,6 +69,7 @@ using namespace System;
 		lblBirth->Text = "Дата рождения: " + UserBirth;
 		lblEmail->Text = "Email: " + UserEmail;
 		labelNameBar->Text = UserName;
+		labelRankBar->Text = UserRank;
 		lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
 
 		textBoxUserName->Text = UserName;
@@ -131,22 +151,39 @@ using namespace System;
 		config->SaveConfig();
 	}
 
+	void mainForm::levelUp() {
+		if (UserRank == "Новичок") {
+			UserRank = "Исследователь";
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+		}
+		else if (UserRank == "Исследователь") {
+			UserRank = "Разработчик";
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+		}
+		else if (UserRank == "Разработчик") {
+			UserRank = "Инженер";
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+		}
+		else if (UserRank = "Инженер") {
+			UserRank = "Мастер";
+			MessageInfo->Show("Вы получили максимальный уровень", "Поздравляем!");
+		}
+
+		String^ fileRank = User + "//lvl.bin";
+		writeBinaryFile(fileRank, UserRank);
+	}
 	// Form, Menu
 	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
 	{
 
 		if (enable)
 		{
-			// Регистрируем обработчик для самого элемента
 			parent->MouseDown += gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
 		}
 		else
 		{
-			// Отменяем регистрацию обработчика
 			parent->MouseDown -= gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
 		}
-
-		// Рекурсивно регистрируем/отменяем обработчики для всех дочерних элементов
 		for each (Control ^ child in parent->Controls)
 		{
 			RegisterMouseDownEvent(child, enable);
@@ -167,12 +204,12 @@ using namespace System;
 		timerMenu->Start();
 	}
 	Void mainForm::btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
-		ClassFade^ fade = gcnew ClassFade(this);
-		fade->SetAnimation("close");
+		ClassFade^ Fade = gcnew ClassFade(this);
+		Fade->SetAnimation("close");
 	}
 	Void mainForm::btnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
-		ClassFade^ fade = gcnew ClassFade(this);
-		fade->SetAnimation("minimize");
+		ClassFade^ Fade = gcnew ClassFade(this);
+		Fade->SetAnimation("minimize");
 	}
 	Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ executablePath = Application::ExecutablePath;
@@ -504,7 +541,6 @@ using namespace System;
 				}
 			}
 
-			ClassFade^ Fade = gcnew ClassFade(this);
 			Fade->SetAnimation("close");
 		}
 

@@ -5,9 +5,9 @@
     <setting name="hasFormShadow" value="True" />
     <setting name="greeting" value="True" />
     <setting name="alwaysHideMenu" value="True" />
-    <setting name="borderForm" value="0" />
+    <setting name="borderForm" value="40" />
     <setting name="borderBtn" value="0" />
-    <setting name="volume" value="36" />
+    <setting name="volume" value="31" />
     <setting name="PythonWaveStyle" value="True" />
   </settings>
 </configuration>

@@ -91,18 +91,22 @@ using namespace System::Text;
 			
 			String^ birth = day + " " + month + " " + year;
 
+			String^ lvl = "Новичок";
+
 			// Пути сохранения
 			String^ fileUserEmail = UserLogin + "//userData.bin";
 			String^ fileUserBirth = UserLogin + "//userBirth.bin";
 			String^ fileUserSex = UserLogin + "//userSex.bin";
 			String^ fileUserName = UserLogin + "//userName.bin";
 			String^ fileUserSurname = UserLogin + "//userSurname.bin";
+			String^ Rank = UserLogin + "//lvl.bin";
 
 			SaveDataBinary(fileUserEmail, email);
 			SaveDataBinary(fileUserBirth, birth);
 			SaveDataBinary(fileUserSex, sex);
 			SaveDataBinary(fileUserName, name);
 			SaveDataBinary(fileUserSurname, surname);
+			SaveDataBinary(Rank, lvl);
 		}
 		catch (Exception^ e) {
 			MessageError->Show(e->Message, "Аккаунт будет удален");
