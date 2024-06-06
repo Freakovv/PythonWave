@@ -10,3 +10,4 @@ E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.mainForm.resources
 E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.profile.resources
 E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.GenerateResource.cache
 E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWa.4059B652.Up2Date
+E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.ResolveComReference.cache

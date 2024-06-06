@@ -25,7 +25,7 @@ public:
         hasFormShadow = true;
         greeting = true;
         alwaysHideMenu = false;
-        PythonWaveStyle = false;
+        PythonWaveStyle = true;
         borderForm = 25;
         borderBtn = 0;
         volume = 50;

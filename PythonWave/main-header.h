@@ -22,11 +22,16 @@ using namespace System;
 		String^ fileUserSurname = User + "//userSurname.bin";
 		String^ fileUserRank = User + "//lvl.bin";
 
-		UserEmail = readBinaryFile(fileUserEmail);
-		UserBirth = readBinaryFile(fileUserBirth);
-		UserSex = readBinaryFile(fileUserSex);
-		UserName = readBinaryFile(fileUserName);
-		UserRank = readBinaryFile(fileUserRank);
+		try {
+			UserEmail = readBinaryFile(fileUserEmail);
+			UserBirth = readBinaryFile(fileUserBirth);
+			UserSex = readBinaryFile(fileUserSex);
+			UserName = readBinaryFile(fileUserName);
+			UserRank = readBinaryFile(fileUserRank);
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message, "Ошибка загрузки данных пользователя");
+		}
 
 
 		String^ pathToAvatarPng = User + "//avatar.png";
@@ -68,16 +73,20 @@ using namespace System;
 		lblSex->Text = "Пол: " + UserSex;
 		lblBirth->Text = "Дата рождения: " + UserBirth;
 		lblEmail->Text = "Email: " + UserEmail;
+		lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
+		lblSexEdit->Text = "Пол:\n" + UserSex;
+		lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
+
 		labelNameBar->Text = UserName;
 		labelRankBar->Text = UserRank;
-		lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
+		StarsUser->Location = Point(labelRankBar->Right + 5, labelRankBar->Top);
 
 		textBoxUserName->Text = UserName;
 		textBoxUserSurname->Text = UserSurname;
 		textBoxEmail->Text = UserEmail;
 
-		lblSexEdit->Text = "Пол:\n" + UserSex;
-		lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
+	
+		LoadBook("r1", richStart);
 	}
 	void mainForm::DataChange() {
 		// Local
@@ -171,24 +180,9 @@ using namespace System;
 
 		String^ fileRank = User + "//lvl.bin";
 		writeBinaryFile(fileRank, UserRank);
+		DataLoad();
 	}
 	// Form, Menu
-	void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
-	{
-
-		if (enable)
-		{
-			parent->MouseDown += gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
-		}
-		else
-		{
-			parent->MouseDown -= gcnew MouseEventHandler(this, &mainForm::Form_MouseDown);
-		}
-		for each (Control ^ child in parent->Controls)
-		{
-			RegisterMouseDownEvent(child, enable);
-		}
-	}
 	Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 		DataLoad();
 		cfgLoad();
@@ -231,11 +225,11 @@ using namespace System;
 
 	// Страница заданий
 	Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyPython python;
-		String^ code = richTextBox1->Text;
-		String^ result = python.Start(User, code);
-		MessageBox::Show(User, code);
-		richTextBox2->Text += result;
+		//MyPython python;
+		//String^ code = richTextBox1->Text;
+		//String^ result = python.Start(User, code);
+		//MessageBox::Show(User, code);
+		//richTextBox2->Text += result;
 	}
 
 
