@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <settings>
-    <setting name="dragTransparent" value="True" />
+    <setting name="dragTransparent" value="False" />
     <setting name="hasFormShadow" value="True" />
-    <setting name="greeting" value="False" />
-    <setting name="alwaysHideMenu" value="False" />
-    <setting name="borderForm" value="25" />
+    <setting name="greeting" value="True" />
+    <setting name="alwaysHideMenu" value="True" />
+    <setting name="borderForm" value="60" />
     <setting name="borderBtn" value="20" />
     <setting name="volume" value="50" />
     <setting name="PythonWaveStyle" value="True" />

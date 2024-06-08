@@ -179,9 +179,13 @@
     <ClInclude Include="ClassProgress.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="main-header.h" />
+    <ClInclude Include="MainBook.h" />
     <ClInclude Include="mainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MainFunc.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MainProfile.h" />
     <ClInclude Include="MyPython.h" />
     <ClInclude Include="profile-header.h" />
     <ClInclude Include="profile.h">

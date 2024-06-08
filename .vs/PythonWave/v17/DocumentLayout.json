@@ -11,6 +11,22 @@
       "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\main-header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\MainFunc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\MainFunc.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\MainProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\MainProfile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\MainBook.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\MainBook.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     }
@@ -22,33 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "mainForm.h",
-              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
-              "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
-              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
-              "RelativeToolTip": "PythonWave\\mainForm.h",
-              "ViewState": "AQIAALsLAAAAAAAAAAAiwNoLAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-05T20:28:44.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mainForm.h [Design]",
-              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
-              "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
-              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h [Design]",
-              "RelativeToolTip": "PythonWave\\mainForm.h [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-05T20:28:04.473Z",
-              "EditorCaption": " [Design]"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -57,10 +48,87 @@
               "RelativeDocumentMoniker": "PythonWave\\main-header.h",
               "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\main-header.h",
               "RelativeToolTip": "PythonWave\\main-header.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAaAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAIAzwDkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-05T20:28:36.379Z",
+              "WhenOpened": "2024-06-08T12:34:17.862Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\main.cpp",
+              "RelativeDocumentMoniker": "PythonWave\\main.cpp",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\main.cpp",
+              "RelativeToolTip": "PythonWave\\main.cpp",
+              "ViewState": "AQIAABcAAAAAAAAAAAAjwCoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-07T23:21:53.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mainForm.h",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
+              "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
+              "RelativeToolTip": "PythonWave\\mainForm.h",
+              "ViewState": "AQIAAHUMAAAAAAAAAAAywIgMAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-05T20:28:44.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainProfile.h",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\MainProfile.h",
+              "RelativeDocumentMoniker": "PythonWave\\MainProfile.h",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\MainProfile.h",
+              "RelativeToolTip": "PythonWave\\MainProfile.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-07T22:14:39.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainFunc.h",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\MainFunc.h",
+              "RelativeDocumentMoniker": "PythonWave\\MainFunc.h",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\MainFunc.h",
+              "RelativeToolTip": "PythonWave\\MainFunc.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-08T11:58:38.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainBook.h",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\MainBook.h",
+              "RelativeDocumentMoniker": "PythonWave\\MainBook.h",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\MainBook.h",
+              "RelativeToolTip": "PythonWave\\MainBook.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-07T22:35:25.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "mainForm.h [Design]",
+              "DocumentMoniker": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
+              "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
+              "ToolTip": "E:\\.Coding\\PythonWave\\PythonWave\\mainForm.h [Design]",
+              "RelativeToolTip": "PythonWave\\mainForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-07T22:32:50.525Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
