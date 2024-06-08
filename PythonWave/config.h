@@ -89,7 +89,7 @@ public:
         AddSetting(doc, settingsElement, "dragTransparent", dragTransparent.ToString());
         AddSetting(doc, settingsElement, "hasFormShadow", hasFormShadow.ToString());
         AddSetting(doc, settingsElement, "greeting", greeting.ToString());
-        AddSetting(doc, settingsElement, "alwaysHideMenu", greeting.ToString());
+        AddSetting(doc, settingsElement, "alwaysHideMenu", alwaysHideMenu.ToString());
         AddSetting(doc, settingsElement, "borderForm", borderForm.ToString());
         AddSetting(doc, settingsElement, "borderBtn", borderBtn.ToString());
         AddSetting(doc, settingsElement, "volume", volume.ToString());

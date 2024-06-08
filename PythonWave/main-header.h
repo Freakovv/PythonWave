@@ -34,6 +34,7 @@ using namespace System::Drawing::Imaging;
 	Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 		DataLoad();
 		cfgLoad();
+		LoadBook();
 		menu = false;
 
 		ClassFade^ Fade = gcnew ClassFade(this);

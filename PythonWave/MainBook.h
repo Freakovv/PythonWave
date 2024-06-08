@@ -1,35 +1,42 @@
 #pragma once
 #include "mainForm.h"
 
+#include <msclr\marshal_cppstd.h>
+#include <iostream>
+#include <fstream>
+#include <Windows.h>
+
+
 using namespace PythonWave;
 using namespace System;
 using namespace System::Drawing;
 using namespace System::Drawing::Imaging;
 
+Boolean isBookExists = true;
+// TabPage^ CurrentBookPage;
+// int CurrentBookIndex;
+// RichTextBox CurrentRichBox;
+// String^ CurrentBookFile;
+
 
 void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
 {
-	String^ filePath = User + "//" + Point + ".rtf";
-
-	if (File::Exists(filePath))
-	{
-		File::Delete(filePath);
-	}
+	String^ filePath = User + "//book//" + Point + ".rtf";
 
 	FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
 	StreamWriter^ sw = gcnew StreamWriter(fileStream);
 	sw->Write(richTextBox->Rtf);
 	sw->Close();
 }
-void mainForm::LoadBook(String^ Point, RichTextBox^ richTextBox)
+void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
 {
-	String^ filePath = User + "//" + Point + ".rtf";
+	String^ filePath = User + "//book//" + Point + ".rtf";
 	if (!File::Exists(filePath)) {
-		filePath = "books//" + Point + ".rtf";
+		filePath = "book//" + Point + ".rtf";
 	}
 
 	if (!File::Exists(filePath)) {
-		MessageError->Show("Книга не найдена", "Целостность файлов нарушена");
+		isBookExists = false;
 		return;
 	}
 
@@ -46,9 +53,50 @@ void mainForm::LoadBook(String^ Point, RichTextBox^ richTextBox)
 		MessageError->Show(e->Message, "Ошибка загрузки книги");
 	}
 }
+void mainForm::LoadBook() {
+	LoadPage("start", richStart);
+
+	array<RichTextBox^>^ richTextBoxes = { richBook1, richBook2, richBook3, richBook4, richBook5, richBook6, richBook7, richBook8, richBook9, richBook10, richBook11, richBook12, richBook13 };
+
+	for (int i = 0; i < 13; ++i) {
+		String^ str = "r" + Convert::ToString(i + 1);
+		LoadPage(str, richTextBoxes[i]);
+	}
+
+	String^ filePath = User + "//book//lastpage.txt";
+	if (File::Exists(filePath)) {
+		String^ pageName = File::ReadAllText(filePath); // Читаем содержимое файла
+		int tabPageIndex = -1;
+
+		// Определяем соответствующий индекс вкладки для имени страницы
+		for (int i = 0; i < Book->TabCount; ++i) {
+			if (Book->TabPages[i]->Text == pageName) {
+				tabPageIndex = i;
+				break;
+			}
+		}
+
+		if (tabPageIndex != -1) {
+			Book->SelectTab(tabPageIndex);
+			dropdownPages->SelectedIndex = tabPageIndex;
+		}
+	}
+
+	if (!isBookExists)
+		MessageWarning->Show("Ошибка загрузки книги", "Целостность файлов повреждена");
+}
 void mainForm::UpdateLastBookPage() {
 	CurrentBookPage = Book->SelectedTab;
 	CurrentBookIndex = Book->SelectedIndex;
+	CurrentBookFile = CurrentBookPage->Text;
+	for each (Control ^ control in CurrentBookPage->Controls) {
+		RichTextBox^ richTextBox = dynamic_cast<RichTextBox^>(control);
+
+		if (richTextBox != nullptr) {
+			CurrentRichBox = richTextBox;
+			break;
+		}
+	}
 }
 
 bool mainForm::isCustomBookExists() {
@@ -57,15 +105,31 @@ bool mainForm::isCustomBookExists() {
 bool mainForm::isLastPageExists() {
 	return File::Exists(User + "//myBook//lastpage.txt");
 }
+void mainForm::CreateLastPage() {
+	if (!isLastPageExists()) {
+		try {
+			String^ filePath = User + "//book//lastpage.txt";
+			FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
+			StreamWriter^ writer = gcnew StreamWriter(fileStream);
+
+			writer->Write(CurrentBookPage->Text);
+			writer->Close();
+			fileStream->Close();
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message);
+		}
+	}
+
+}
 void mainForm::CreateCustomBook() {
 	if (!isCustomBookExists())
-		Directory::CreateDirectory(User + "//myBook");
-	if (!isLastPageExists())
-		File::Create(User + "//lastpage.txt");
+		Directory::CreateDirectory(User + "//book");
 }
 
 void mainForm::ChangeSelectionBackColor(Color color, RichTextBox^ richTB)
 {
+	UpdateLastBookPage();
 	CreateCustomBook();
 	if (richTB->SelectionLength <= 0) {
 		MessageInfo->Show("Выделите текст", "Выделение текста");
@@ -76,6 +140,7 @@ void mainForm::ChangeSelectionBackColor(Color color, RichTextBox^ richTB)
 }
 void mainForm::ChangeSelectionFontStyle(FontStyle style, RichTextBox^ richTB)
 {
+	UpdateLastBookPage();
 	CreateCustomBook();
 	if (richTB->SelectionLength <= 0) {
 		MessageInfo->Show("Выделите текст", "Изменение шрифта");
@@ -89,56 +154,80 @@ void mainForm::ChangeSelectionFontStyle(FontStyle style, RichTextBox^ richTB)
 }
 void mainForm::SetSelectionFontByDefault(RichTextBox^ richTB)
 {
+	UpdateLastBookPage();
 	CreateCustomBook();
 	if (richTB->SelectionLength <= 0) {
-		MessageInfo->Show("Выделите текст", "Очистка пометок");
+		if (MessageInfo != nullptr)
+			MessageInfo->Show("Выделите текст", "Очистка пометок");
 		return;
 	}
+	try {
+		int start = richTB->SelectionStart;
+		int end = start + richTB->SelectionLength;
 
-	Drawing::Font^ currentFont = richTB->SelectionFont;
+		for (int i = start; i < end; i++) {
+			Drawing::Font^ currentFont = richTB->SelectionFont;
+			if (currentFont == nullptr) {
+				currentFont = richTB->Font;
+			}
+			Color currentBackColor = richTB->SelectionBackColor;
+		}
 
-	bool isBold = currentFont->Bold;
-	bool isItalic = currentFont->Italic;
-	bool isStrikeout = currentFont->Strikeout;
-	bool isUnderline = (currentFont->Underline == true);
-
-	Color currentBackColor = richTB->SelectionBackColor;
-	Color defaultBackColor = Color::FromArgb(64, 66, 88);
-	bool isDefaultBackColor = (currentBackColor == defaultBackColor);
-
-	if (!isBold && !isItalic && !isStrikeout && !isUnderline && isDefaultBackColor) {
-		MessageInfo->Show("Никаких пометок для выделенного текста не замечено", "Очистка пометок");
-		return;
-	}
-
-	if (isBold || isItalic || isStrikeout || isUnderline || !isDefaultBackColor) {
-		Drawing::Font^ defaultFont = gcnew Drawing::Font("Century Gothic", currentFont->Size);
+		Drawing::Font^ defaultFont = gcnew Drawing::Font("Century Gothic", richTB->SelectionFont->Size);
 		richTB->SelectionFont = defaultFont;
-		richTB->SelectionBackColor = defaultBackColor;
+		richTB->SelectionBackColor = Color::FromArgb(64, 66, 88);
+	}
+	catch (Exception^ e) {
+		if (MessageError != nullptr)
+			MessageError->Show(e->Message, "Неизвестная ошибка");
 	}
 }
 
 Void mainForm::btnHighlight_Click(System::Object^ sender, System::EventArgs^ e) {
 	ChangeSelectionBackColor(Color::Gray, richStart);
-	SaveBook("r1", richStart);
+	SaveBook(CurrentBookFile, richStart);
 }
 Void mainForm::btnUnderline_Click(System::Object^ sender, System::EventArgs^ e) {
 	ChangeSelectionFontStyle(FontStyle::Underline, richStart);
-	SaveBook("r1", richStart);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnThick_Click(System::Object^ sender, System::EventArgs^ e) {
 	ChangeSelectionFontStyle(FontStyle::Bold, richStart);
-	SaveBook("r1", richStart);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnStrikeOut_Click(System::Object^ sender, System::EventArgs^ e) {
 	ChangeSelectionFontStyle(FontStyle::Strikeout, richStart);
-	SaveBook("r1", richStart);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnItalic_Click(System::Object^ sender, System::EventArgs^ e) {
 	ChangeSelectionFontStyle(FontStyle::Italic, richStart);
-	SaveBook("r1", richStart);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnClearFilters_Click(System::Object^ sender, System::EventArgs^ e) {
-	SetSelectionFontByDefault(richStart);
-	SaveBook("r1", richStart);
+	UpdateLastBookPage();
+	SetSelectionFontByDefault(CurrentRichBox);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
+
+
+
+Void mainForm::dropdownPages_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	int selectedIndex = dropdownPages->SelectedIndex;
+	Book->SetPage(selectedIndex);
+	UpdateLastBookPage();
+	CreateCustomBook();
+	CreateLastPage();
+}
+Void mainForm::btnPreviousBook_Click(System::Object^ sender, System::EventArgs^ e) {
+	int currentIndex = dropdownPages->SelectedIndex;
+	if (currentIndex > 0) {
+		dropdownPages->SelectedIndex = currentIndex - 1;
+	}
+}
+Void mainForm::btnBookNext_Click(System::Object^ sender, System::EventArgs^ e) {
+	int currentIndex = dropdownPages->SelectedIndex;
+	if (currentIndex < dropdownPages->Items->Count - 1) {
+		dropdownPages->SelectedIndex = currentIndex + 1;
+	}
+}
+

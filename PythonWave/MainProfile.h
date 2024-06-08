@@ -259,7 +259,7 @@ Void mainForm::linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows
 				MessageBox::Show(e->Message);
 			}
 		}
-
+		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("close");
 	}
 

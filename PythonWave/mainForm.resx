@@ -10615,208 +10615,6 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>60</value>
   </metadata>
-  <data name="richStart.Text" xml:space="preserve">
-    <value>Начальное руководство по Python для начинающих программистов: Обзор синтаксиса, базовые функции и операторы
-Python - это один из самых популярных и простых языков программирования. Он позволяет легко создавать как простые, так и сложные программы, имеет широкий набор инструментов и библиотек для различных задач. В этой статье мы рассмотрим основные концепции и синтаксис языка Python, чтобы помочь начинающим программистам начать свое путешествие в мир программирования.
-
-Основы синтаксиса Python
-
-Python - это язык программирования, который использует удобный и легкий для понимания синтаксис. Каждый фрагмент кода в Python содержит операторы, переменные и выражения, которые определяют поведение программы.
-
-Операторы - это символы, которые используются для выполнения операций над значениями. В Python есть различные типы операторов, такие как арифметические, логические, операторы сравнения и т.д. Рассмотрим некоторые из них:
-
-Арифметические операторы:
-
-x = 10
-y = 5
-print(x + y)  # Сложение
-print(x - y)  # Вычитание
-print(x * y)  # Умножение
-print(x / y)  # Деление
-print(x % y)  # Остаток от деления
-print(x ** y) # Возведение в степень
-Логические операторы:
-
-x = True
-y = False
-print(x and y) # И
-print(x or y)  # Или
-print(not x)   # Не
-Операторы сравнения:
-
-x = 10
-y = 5
-print(x == y)  # Равенство
-print(x != y)  # Неравенство
-print(x &gt; y)   # Больше
-print(x &lt; y)   # Меньше
-print(x &gt;= y)  # Больше или равно
-print(x &lt;= y)  # Меньше или равно
-Переменные и типы данных
-
-Переменные - это именованные области памяти, которые используются для хранения данных в программе. В Python переменные создаются, когда им присваивается значение. Тип данных переменной определяется автоматически в зависимости от значения, которое ей присваивается.
-
-В Python есть несколько типов данных, которые мы можем использовать в нашей программе. Некоторые из них:
-
-Числа (int, float, complex)
-x = 10         # int
-y = 3.14       # float
-z = 5 + 2j # complex
-Строки (str)
-a = "Hello World!" # str
-Списки (list)
-fruits = ["apple", "banana", "cherry"]
-print(fruits[1])    # banana
-Кортежи (tuple)
-fruits = ("apple", "banana", "cherry")
-print(fruits[2])    # cherry
-Словари (dict)
-person = {"name": "John", "age": 36}
-print(person["name"])    # John
-Множества (set)
-fruits = {"apple", "banana", "cherry"}
-print("banana" in fruits)    # True
-Базовые функции
-
-Python имеет множество встроенных функций, которые упрощают написание кода и решение задач. Рассмотрим некоторые из них:
-
-print() - выводит данные на экран
-print("Hello World!")    # Hello World!
-len() - возвращает длину объекта
-fruits = ["apple", "banana", "cherry"]
-print(len(fruits))    # 3
-type() - возвращает тип объекта
-x = 10
-print(type(x))    # &lt;class 'int'&gt;
-range() - генерирует последовательность чисел
-for i in range(5):
-    print(i)    # 0 1 2 3 4
-Операторы условия
-
-Операторы условия используются для принятия решений в программе на основе определенных условий. В Python есть несколько операторов условия, таких как if, else и elif. Рассмотрим пример:
-
-x = 10
-y = 5
-if x &gt; y:
-    print("x is greater than y")
-else:
-    print("y is greater than x")
-Этот код сравнивает два числа x и y и выводит сообщение, указывающее, какое из них больше.
-
-Циклы
-
-Циклы позволяют выполнять определенный блок кода несколько раз. В Python есть два основных типа циклов: цикл for и цикл while. Рассмотрим пример:
-
-fruits = ["apple", "banana", "cherry"]
-for fruit in fruits:
-    print(fruit)
-Этот код выводит на экран все элементы списка fruits.
-
-Заключение
-
-В этой статье мы рассмотрели основные концепции языка Python, такие как операторы, переменные, типы данных, базовые функции, операторы условия и циклы. Это лишь начало вашего пути в мир программирования на Python. Существует множество библиотек и инструментов, которые вы можете изучить, чтобы расширить свои знания и создавать все более сложные и полезные программы.</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Начальное руководство по Python для начинающих программистов: Обзор синтаксиса, базовые функции и операторы
-Python - это один из самых популярных и простых языков программирования. Он позволяет легко создавать как простые, так и сложные программы, имеет широкий набор инструментов и библиотек для различных задач. В этой статье мы рассмотрим основные концепции и синтаксис языка Python, чтобы помочь начинающим программистам начать свое путешествие в мир программирования.
-
-Основы синтаксиса Python
-
-Python - это язык программирования, который использует удобный и легкий для понимания синтаксис. Каждый фрагмент кода в Python содержит операторы, переменные и выражения, которые определяют поведение программы.
-
-Операторы - это символы, которые используются для выполнения операций над значениями. В Python есть различные типы операторов, такие как арифметические, логические, операторы сравнения и т.д. Рассмотрим некоторые из них:
-
-Арифметические операторы:
-
-x = 10
-y = 5
-print(x + y)  # Сложение
-print(x - y)  # Вычитание
-print(x * y)  # Умножение
-print(x / y)  # Деление
-print(x % y)  # Остаток от деления
-print(x ** y) # Возведение в степень
-Логические операторы:
-
-x = True
-y = False
-print(x and y) # И
-print(x or y)  # Или
-print(not x)   # Не
-Операторы сравнения:
-
-x = 10
-y = 5
-print(x == y)  # Равенство
-print(x != y)  # Неравенство
-print(x &gt; y)   # Больше
-print(x &lt; y)   # Меньше
-print(x &gt;= y)  # Больше или равно
-print(x &lt;= y)  # Меньше или равно
-Переменные и типы данных
-
-Переменные - это именованные области памяти, которые используются для хранения данных в программе. В Python переменные создаются, когда им присваивается значение. Тип данных переменной определяется автоматически в зависимости от значения, которое ей присваивается.
-
-В Python есть несколько типов данных, которые мы можем использовать в нашей программе. Некоторые из них:
-
-Числа (int, float, complex)
-x = 10         # int
-y = 3.14       # float
-z = 5 + 2j # complex
-Строки (str)
-a = "Hello World!" # str
-Списки (list)
-fruits = ["apple", "banana", "cherry"]
-print(fruits[1])    # banana
-Кортежи (tuple)
-fruits = ("apple", "banana", "cherry")
-print(fruits[2])    # cherry
-Словари (dict)
-person = {"name": "John", "age": 36}
-print(person["name"])    # John
-Множества (set)
-fruits = {"apple", "banana", "cherry"}
-print("banana" in fruits)    # True
-Базовые функции
-
-Python имеет множество встроенных функций, которые упрощают написание кода и решение задач. Рассмотрим некоторые из них:
-
-print() - выводит данные на экран
-print("Hello World!")    # Hello World!
-len() - возвращает длину объекта
-fruits = ["apple", "banana", "cherry"]
-print(len(fruits))    # 3
-type() - возвращает тип объекта
-x = 10
-print(type(x))    # &lt;class 'int'&gt;
-range() - генерирует последовательность чисел
-for i in range(5):
-    print(i)    # 0 1 2 3 4
-Операторы условия
-
-Операторы условия используются для принятия решений в программе на основе определенных условий. В Python есть несколько операторов условия, таких как if, else и elif. Рассмотрим пример:
-
-x = 10
-y = 5
-if x &gt; y:
-    print("x is greater than y")
-else:
-    print("y is greater than x")
-Этот код сравнивает два числа x и y и выводит сообщение, указывающее, какое из них больше.
-
-Циклы
-
-Циклы позволяют выполнять определенный блок кода несколько раз. В Python есть два основных типа циклов: цикл for и цикл while. Рассмотрим пример:
-
-fruits = ["apple", "banana", "cherry"]
-for fruit in fruits:
-    print(fruit)
-Этот код выводит на экран все элементы списка fruits.
-
-Заключение
-
-В этой статье мы рассмотрели основные концепции языка Python, такие как операторы, переменные, типы данных, базовые функции, операторы условия и циклы. Это лишь начало вашего пути в мир программирования на Python. Существует множество библиотек и инструментов, которые вы можете изучить, чтобы расширить свои знания и создавать все более сложные и полезные программы.</value>
-  </data>
   <data name="animation1.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
@@ -10855,7 +10653,7 @@ for fruit in fruits:
   <data name="resource.Image8" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAANKBJREFUeF7t3Qe4pWV57vEzQxl6lyaKBYwVo6IYLBDBgD0RURNrRDFiYj2GEzU2
+        DAAACwwBP0AiyAAANKBJREFUeF7t3Qe4pWV57vEzQxl6lyaKBYwVo6IYLBDBgD0RURNrRDFiYj2GEzU2
         chKiJmrsRqNi12NiQxOEgAooYjmKFPWoqFhB0Igg/dzPmmfIzJ5nz+yyyne/7/93Xf8L5pm91/7eb71r
         rT0za6/1P2644QYiIiLqrHJIREREbVcOiYiIqO3KIREREbVdOSQiIqK2K4dERETUduWQiIiI2q4cEhER
         UduVQyIiImq7ckhERERtVw6JiIio7cohERERtV05JCIiorYrh0RERNR25ZCIiIjarhwSERFR25VDIiIi
@@ -11086,7 +10884,7 @@ for fruit in fruits:
   <data name="btnPreviousBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAALQ1JREFUeF7t3XfcZlV57vEMHYbeQZAiEFTEqAgKKhPBDCpiIoqFIgFEwYLKMRxL
+        DAAACwwBP0AiyAAALQ1JREFUeF7t3XfcZlV57vEMHYbeQZAiEFTEqAgKKhPBDCpiIoqFIgFEwYLKMRxL
         FMVjUDFqVAQrIDY4KIJoQgkoTQQhSJeAoDQZGERgqMM51w0MGWaumbc8bd/3+v3x/Xz8XDIz79rrXmvv
         93nWXuuvtp42HQAANMaGAACgNhsCAIDabAgAAGqzIQAAqM2GAACgNhsCAIDabAgAAGqzIQAAqM2GAACg
         NhsCAIDabAgAAGqzIQAAqM2GAACgNhsCAIDabAgAAGqzIQAAqM2GAACgNhsCAIDabAgAAGqzIQAAqM2G
@@ -11469,7 +11267,7 @@ for fruit in fruits:
   <data name="btnBookNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAANmlJREFUeF7t3XfcpndZ5/0NHUJJQg8gnaUJS0dQyQJuaMIuSFHqAoKACsLj5lFZ
+        DAAACwwBP0AiyAAANmlJREFUeF7t3XfcpndZ5/0NHUJJQg8gnaUJS0dQyQJuaMIuSFHqAoKACsLj5lFZ
         RfBxUXDVVREUlaa0B0Wau5QldCnCQwn1AektEEAgISSB/R7DzHjPlc/M3Pc9VzmP3/n54/16+TokM3Ne
         3+P3O65yln/z/e9/X5IkzQwWJUnS2LAoSZLGhkVJkjQ2LEqSpLFhUZIkjQ2LkiRpbFiUJEljw6IkSRob
         FiVJ0tiwKEmSxoZFSZI0NixKkqSxYVGSJI0Ni5IkaWxYlCRJY8OiJEkaGxYlSdLYsChJksaGRUmSNDYs
@@ -11806,7 +11604,7 @@ for fruit in fruits:
   <data name="btnItalic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAJZRJREFUeF7t3Wm4ZnlVnnGrJ6AZZJBBCCIyhCCCDAYR0c0QNkFA0CBhEFA7CCgo
+        DAAACwwBP0AiyAAAJZRJREFUeF7t3Wm4ZnlVnnGrJ6AZZJBBCCIyhCCCDAYR0c0QNkFA0CBhEFA7CCgo
         EkBRZFCGEILKZIgREAUJM06oyIxEmQcJMiNRERSaqYGmuwuft/7VdZ06dVf1mc9a73t/+H15vp11rWs9
         V53aZ+9v+PrXvy5JkprDUJIk9YKhJEnqBUNJktQLhpIkqRcMJUlSLxhKkqReMJQkSb1gKEmSesFQkiT1
         gqEkSeoFQ0mS1AuGkiSpFwwlSVIvGEqSpF4wlCRJvWAoSZJ6wVCSJPWCoSRJ6gVDSZLUC4aSJKkXDCVJ
@@ -12746,268 +12544,6 @@ for fruit in fruits:
   </data>
   <data name="resource.Image14" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-</value>
-  </data>
-  <data name="btnSaveBook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="resource.Image15" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAHoRJREFUeF7t
         3Xmw7VlZHmDogWZMM8YGZLIFgQSSwqACwSoV4kDaMDQWBgIEECqJpQRULKwIEVAmwSYgILEkCSREaCCo
         oZIKYkUGkYCIQMSW2URmkEEIU+db+/e2XmB1953vPut7nqrvH+jhvmt/7zp9zt5n7ysAAAAAAAAAAAAA
@@ -13620,7 +13156,7 @@ for fruit in fruits:
         qtQZZ/w/QeYsp7fZsaQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image16" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image15" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAJLpJREFUeF7t
         3QvUbGdZH3DPSciBBCGBGsI9IJSASIVAFEUIVq1cvHRZE0UE5apJlcotYAMNChUxgEBby1oiGCqtSqiW
@@ -13998,7 +13534,7 @@ for fruit in fruits:
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="resource.Image17" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image16" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAGSBJREFUeF7t
         3QmsrXdVxmEKtIQiiLSQIKiEGhEDSgSLoAmCJEIQpRYkokDBAQUapxQMUSAaBYNGEEwEBA2DRETTQAwG
@@ -14369,7 +13905,7 @@ for fruit in fruits:
         JQXqYpK7TgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="resource.Image18" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image17" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAHvpJREFUeF7t
         3UvsbVta1mFIqKIAG3KRi1IYIAGVgiAYbIAdMcRoSymkxIYSTRREQCEa0XhLUFAKIxLt2UIwkQJt2DBq
@@ -14682,7 +14218,7 @@ for fruit in fruits:
         nRSjogAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="resource.Image19" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image18" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAK3VJREFUeF7t
         3Qu0XGV5/3GTEEhCQgIBA4SEcvmrVLEWKIji38tSMUFAkHsVtFqsgkCpchMQUWnkIqKrF/6gtFawKCAW
@@ -15352,7 +14888,7 @@ for fruit in fruits:
   <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 20,25pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(238, 238, 238); text-align: center; }</value>
   </data>
-  <data name="resource.Image20" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image19" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAAA25JREFUeF7t
         3LluFEEUheExZrEjAl6NhKfArBYyAoQtsS8hIfsWELDjgBjkAISQCIBXICVjOLf69CA0Pd23uqtVQZ1P
@@ -18321,7 +17857,7 @@ for fruit in fruits:
         y8JQkiQtC0NJkrQsDCVJ0rIwlCRJS3rv+/1/Ij054+fdNCwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image21" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image20" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAK3VJREFUeF7t
         3Qu0XGV5/3GTEEhCQgIBA4SEcvmrVLEWKIji38tSMUFAkHsVtFqsgkCpchMQUWnkIqKrF/6gtFawKCAW
@@ -19338,7 +18874,7 @@ for fruit in fruits:
         y8JQkiQtC0NJkrQsDCVJ0rIwlCRJS3rv+/1/Ij054+fdNCwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image22" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image21" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAPsVJREFUeF7t3QecHWW9//FJI0AaTSA06V16b1KkC4hUFbwgxQsKyNUrKIqRfv17
@@ -19892,7 +19428,7 @@ for fruit in fruits:
         kaQXAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="resource.Image23" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image22" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAIwlJREFUeF7t
         3QnQZWdZJ3A7nU5nI4EkEJJgIKwugBBEIKwiwljKCAWWqMOibCoijjqFDopoGSAIjpSODOgUZdxAagQF
@@ -20719,7 +20255,7 @@ for fruit in fruits:
         SZLGhkVJkjSy737f/wfUIsOonK04vwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="resource.Image24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image23" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAHvpJREFUeF7t
         3UvsbVta1mFIqKIAG3KRi1IYIAGVgiAYbIAdMcRoSymkxIYSTRREQCEa0XhLUFAKIxLt2UIwkQJt2DBq
@@ -21032,7 +20568,7 @@ for fruit in fruits:
         nRSjogAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="resource.Image25" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAANW1JREFUeF7t
         3Xm8JWV17vE0DTQNjcwg4BQEZIgoqIACiQioCA4YUCMJRGUQ8YpDEiJCBLzmekUjGEVwiAgEhAjiZQqD
@@ -21715,8 +21251,5 @@ for fruit in fruits:
   </metadata>
   <metadata name="MessageDefault.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1467, 10</value>
-  </metadata>
-  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 75</value>
   </metadata>
 </root>

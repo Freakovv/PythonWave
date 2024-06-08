@@ -193,7 +193,6 @@ using namespace System::Drawing::Imaging;
 		textBoxEmail->Text = UserEmail;
 
 
-		LoadBook("r1", richStart);
 	}
 	void mainForm::DataChange() {
 		// Local
