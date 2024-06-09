@@ -107,6 +107,10 @@ using namespace System::Text;
 			SaveDataBinary(fileUserName, name);
 			SaveDataBinary(fileUserSurname, surname);
 			SaveDataBinary(Rank, lvl);
+
+			String^ LogsPath = "script//logs.bin";
+			Boolean isTaskVisited = false;
+			SaveDataBinary(LogsPath, Convert::ToString(isTaskVisited));
 		}
 		catch (Exception^ e) {
 			MessageError->Show(e->Message, "Аккаунт будет удален");

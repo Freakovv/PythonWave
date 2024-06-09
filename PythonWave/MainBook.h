@@ -36,6 +36,7 @@ void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
 	}
 
 	if (!File::Exists(filePath)) {
+		MessageWarning->Show(filePath, "Файл книги не был загружен");
 		isBookExists = false;
 		return;
 	}
@@ -58,7 +59,8 @@ void mainForm::LoadBook() {
 
 	array<RichTextBox^>^ richTextBoxes = { richBook1, richBook2, richBook3, richBook4, richBook5, richBook6, richBook7, richBook8, richBook9, richBook10, richBook11, richBook12, richBook13 };
 
-	for (int i = 0; i < 13; ++i) {
+	int countOfPages = Book->TabCount-2;
+	for (int i = 0; i < countOfPages; ++i) {
 		String^ str = "r" + Convert::ToString(i + 1);
 		LoadPage(str, richTextBoxes[i]);
 	}

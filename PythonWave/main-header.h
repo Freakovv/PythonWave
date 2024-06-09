@@ -41,6 +41,7 @@ using namespace System::Drawing::Imaging;
 		Fade->SetAnimation("in");
 
 		SetCenter(panelProfileData, lblLogin, 1);
+		SetCenter(anim1, lblAnim1, 1);
 	}
 	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		menu == false ? menu = true : menu = false;
@@ -64,7 +65,7 @@ using namespace System::Drawing::Imaging;
 		//richTextBox2->Text += result;
 	}
 
-
+	
 
 
 
