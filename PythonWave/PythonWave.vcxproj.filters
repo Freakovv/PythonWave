@@ -68,6 +68,9 @@
     <ClInclude Include="MainBook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainTasks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="licenses.licx" />

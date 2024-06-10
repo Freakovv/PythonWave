@@ -4,6 +4,7 @@
 #include "MainBook.h"
 #include "MainFunc.h"
 #include "MainProfile.h"
+#include "MainTasks.h"
 
 // Classes
 #include "MyPython.h"
@@ -35,6 +36,7 @@ using namespace System::Drawing::Imaging;
 		DataLoad();
 		cfgLoad();
 		LoadBook();
+		logsLoad();
 		menu = false;
 
 		ClassFade^ Fade = gcnew ClassFade(this);
@@ -64,9 +66,3 @@ using namespace System::Drawing::Imaging;
 		//MessageBox::Show(User, code);
 		//richTextBox2->Text += result;
 	}
-
-	
-
-
-
-	

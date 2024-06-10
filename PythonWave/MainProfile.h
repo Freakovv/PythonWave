@@ -294,4 +294,3 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 	DataSave();
 	MessageInfo->Show("Сохранено", "Успешно");
 }
-

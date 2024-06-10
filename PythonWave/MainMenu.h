@@ -11,8 +11,6 @@ using namespace System::Drawing;
 using namespace System;
 using namespace PythonWave;
 
-int currentAnim = 1;
-double animSeconds = 2;
 
 // Для перехода с профиля
 Void mainForm::SetProfileDefaults() {
@@ -92,20 +90,17 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 }
 
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
-	if (CheckSave())
+	if (CheckSave() && !courseAnimationState)
 		Pages->SelectTab(tabPage);
+	else
+		btnCourses->Checked = true;
 }
+
 Void mainForm::btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageHome);
 }
 Void mainForm::btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
-}
-Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (isCoursesVisited)
-		funcSelectTab(pageCourses);
-	else
-		timerAnim->Start();
 }
 Void mainForm::btnProfile_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageProfile);
@@ -134,54 +129,4 @@ Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
 }
 
-Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
-	switch (currentAnim)
-	{
-	case 1:
-		Pages->SelectTab(anim1);
-		Pages->AllowTransitions = true;
-		--animSeconds;
-		if (animSeconds == 0) {
-			currentAnim = 2;
-			animSeconds = 4;
-		
-			Pages->SelectTab(anim2);
-		}
-		break;
-	case 2:
-		--animSeconds;
-		if (animSeconds == 0) {
-			currentAnim = 3;
-			animSeconds = 3;
 
-			Pages->SelectTab(anim3);
-		}
-		break;
-	case 3:
-		--animSeconds;
-		if (animSeconds == 0) {
-			currentAnim = 4;
-			animSeconds = 3;
-
-			Pages->SelectTab(anim4);
-		}
-	case 4:
-		--animSeconds;
-		if (animSeconds == 0) {
-			currentAnim = 5;
-			animSeconds = 3;
-
-			Pages->SelectTab(anim5);
-		}
-	case 5:
-		--animSeconds;
-		if (animSeconds == 0) {
-			currentAnim = 6;
-			animSeconds = 3;
-
-			Pages->SelectTab(anim6);
-		}
-	default:
-		break;
-	}
-}

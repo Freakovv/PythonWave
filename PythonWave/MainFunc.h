@@ -159,7 +159,6 @@ using namespace System::Drawing::Imaging;
 			pictureProfileEdit->ImageLocation = pathToAvatarPng;
 		}
 
-
 		int rankKey = -1;
 		for each (KeyValuePair<int, String^> kvp in ranks) {
 			if (kvp.Value == UserRank) {
@@ -174,6 +173,7 @@ using namespace System::Drawing::Imaging;
 		else {
 			StarsUser->Value = 0;
 		}
+
 		lblLogin->Text = User;
 		lblName->Text = "Имя: " + UserName;
 		lblSurname->Text = "Фамилия: " + UserSurname;
@@ -183,6 +183,9 @@ using namespace System::Drawing::Imaging;
 		lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
 		lblSexEdit->Text = "Пол:\n" + UserSex;
 		lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
+
+		lblAnim1->Text = "Приветствуем вас на странице заданий, " + UserName + "!";
+
 
 		labelNameBar->Text = UserName;
 		labelRankBar->Text = UserRank;

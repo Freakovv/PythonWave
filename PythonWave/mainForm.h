@@ -120,7 +120,7 @@ namespace PythonWave {
 
     private: System::Windows::Forms::Timer^ timerAnim;
 private: Bunifu::UI::WinForms::BunifuPages^ Pages;
-private: System::Windows::Forms::TabPage^ pageHome;
+
 private: System::Windows::Forms::TabPage^ pageBook;
 private: Bunifu::UI::WinForms::BunifuPages^ Book;
 private: System::Windows::Forms::TabPage^ pgBookStart;
@@ -240,57 +240,75 @@ private: System::Windows::Forms::Label^ label2;
 private: System::Windows::Forms::TabPage^ anim1;
 private: System::Windows::Forms::Label^ lblAnim1;
 private: System::Windows::Forms::TabPage^ anim2;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::TabPage^ anim3;
-private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::TabPage^ anim10;
+private: System::Windows::Forms::Label^ lblAnim2;
 
-
-private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::TabPage^ anim11;
-
-
-
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
-private: System::Windows::Forms::Label^ label20;
 private: System::Windows::Forms::TabPage^ anim4;
-private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::TabPage^ anim5;
+private: Guna::UI2::WinForms::Guna2Button^ btnSync1;
 
-private: System::Windows::Forms::Label^ label28;
-private: System::Windows::Forms::Label^ label31;
-private: System::Windows::Forms::Label^ label32;
-private: System::Windows::Forms::TabPage^ anim6;
 
-private: System::Windows::Forms::Label^ label34;
-private: System::Windows::Forms::Label^ label35;
-private: System::Windows::Forms::Label^ label37;
-private: System::Windows::Forms::Label^ label38;
-private: System::Windows::Forms::TabPage^ anim7;
 
-private: System::Windows::Forms::Label^ label40;
-private: System::Windows::Forms::Label^ label41;
-private: System::Windows::Forms::Label^ label42;
-private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::TabPage^ anim8;
 
-private: System::Windows::Forms::Label^ label15;
-private: System::Windows::Forms::Label^ label16;
-private: System::Windows::Forms::Label^ label17;
-private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::Label^ label19;
-private: System::Windows::Forms::Label^ label21;
-private: System::Windows::Forms::TabPage^ anim9;
 
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button4;
-private: System::Windows::Forms::Label^ label22;
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::Label^ label27;
-private: System::Windows::Forms::Label^ label29;
-private: System::Windows::Forms::Label^ label30;
+
+
+
+
+
+
+private: System::Windows::Forms::Label^ lblAnim4;
+
+private: System::Windows::Forms::TabPage^ anim3;
+private: Guna::UI2::WinForms::Guna2Button^ btnSync;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Label^ lblSync5;
+
+private: System::Windows::Forms::Label^ lblSync2;
+private: System::Windows::Forms::Label^ lblSync3;
+private: System::Windows::Forms::Label^ lblSync4;
+
+
+
+private: System::Windows::Forms::Label^ lblSync1;
+
+private: System::Windows::Forms::Label^ lblSync;
+
+
+
+
+private: Guna::UI2::WinForms::Guna2Transition^ gunaTransition;
+private: System::Windows::Forms::TabPage^ pageHome;
+
 
 
 
@@ -496,12 +514,13 @@ private:
 		void InitializeComponent(void)
 		{
             this->components = (gcnew System::ComponentModel::Container());
-            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
-            System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-            System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-            System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+            System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+            System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
+            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
             this->panelMain = (gcnew System::Windows::Forms::Panel());
             this->btnExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
             this->btnMinimize = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
@@ -535,17 +554,10 @@ private:
             this->MessageDefault = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
             this->timerAnim = (gcnew System::Windows::Forms::Timer(this->components));
             this->anim4 = (gcnew System::Windows::Forms::TabPage());
-            this->label25 = (gcnew System::Windows::Forms::Label());
-            this->label26 = (gcnew System::Windows::Forms::Label());
-            this->anim11 = (gcnew System::Windows::Forms::TabPage());
-            this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
-            this->label20 = (gcnew System::Windows::Forms::Label());
-            this->anim10 = (gcnew System::Windows::Forms::TabPage());
-            this->label14 = (gcnew System::Windows::Forms::Label());
-            this->anim3 = (gcnew System::Windows::Forms::TabPage());
-            this->label13 = (gcnew System::Windows::Forms::Label());
+            this->btnSync1 = (gcnew Guna::UI2::WinForms::Guna2Button());
+            this->lblAnim4 = (gcnew System::Windows::Forms::Label());
             this->anim2 = (gcnew System::Windows::Forms::TabPage());
-            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->lblAnim2 = (gcnew System::Windows::Forms::Label());
             this->anim1 = (gcnew System::Windows::Forms::TabPage());
             this->lblAnim1 = (gcnew System::Windows::Forms::Label());
             this->pageProfileEdit = (gcnew System::Windows::Forms::TabPage());
@@ -664,38 +676,17 @@ private:
             this->btnUnderline = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->btnQuestionBook = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
             this->btnHighlight = (gcnew Guna::UI2::WinForms::Guna2Button());
-            this->pageHome = (gcnew System::Windows::Forms::TabPage());
             this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
-            this->anim5 = (gcnew System::Windows::Forms::TabPage());
-            this->label28 = (gcnew System::Windows::Forms::Label());
-            this->label31 = (gcnew System::Windows::Forms::Label());
-            this->label32 = (gcnew System::Windows::Forms::Label());
-            this->anim6 = (gcnew System::Windows::Forms::TabPage());
-            this->label34 = (gcnew System::Windows::Forms::Label());
-            this->label35 = (gcnew System::Windows::Forms::Label());
-            this->label37 = (gcnew System::Windows::Forms::Label());
-            this->label38 = (gcnew System::Windows::Forms::Label());
-            this->anim7 = (gcnew System::Windows::Forms::TabPage());
-            this->label40 = (gcnew System::Windows::Forms::Label());
-            this->label41 = (gcnew System::Windows::Forms::Label());
-            this->label42 = (gcnew System::Windows::Forms::Label());
-            this->label43 = (gcnew System::Windows::Forms::Label());
-            this->label44 = (gcnew System::Windows::Forms::Label());
-            this->anim8 = (gcnew System::Windows::Forms::TabPage());
-            this->label15 = (gcnew System::Windows::Forms::Label());
-            this->label16 = (gcnew System::Windows::Forms::Label());
-            this->label17 = (gcnew System::Windows::Forms::Label());
-            this->label18 = (gcnew System::Windows::Forms::Label());
-            this->label19 = (gcnew System::Windows::Forms::Label());
-            this->label21 = (gcnew System::Windows::Forms::Label());
-            this->anim9 = (gcnew System::Windows::Forms::TabPage());
-            this->guna2Button4 = (gcnew Guna::UI2::WinForms::Guna2Button());
-            this->label22 = (gcnew System::Windows::Forms::Label());
-            this->label23 = (gcnew System::Windows::Forms::Label());
-            this->label24 = (gcnew System::Windows::Forms::Label());
-            this->label27 = (gcnew System::Windows::Forms::Label());
-            this->label29 = (gcnew System::Windows::Forms::Label());
-            this->label30 = (gcnew System::Windows::Forms::Label());
+            this->pageHome = (gcnew System::Windows::Forms::TabPage());
+            this->anim3 = (gcnew System::Windows::Forms::TabPage());
+            this->btnSync = (gcnew Guna::UI2::WinForms::Guna2Button());
+            this->lblSync5 = (gcnew System::Windows::Forms::Label());
+            this->lblSync2 = (gcnew System::Windows::Forms::Label());
+            this->lblSync3 = (gcnew System::Windows::Forms::Label());
+            this->lblSync4 = (gcnew System::Windows::Forms::Label());
+            this->lblSync1 = (gcnew System::Windows::Forms::Label());
+            this->lblSync = (gcnew System::Windows::Forms::Label());
+            this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMinimize))->BeginInit();
@@ -704,9 +695,6 @@ private:
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pctrboxLogo))->BeginInit();
             this->panelMenu->SuspendLayout();
             this->anim4->SuspendLayout();
-            this->anim11->SuspendLayout();
-            this->anim10->SuspendLayout();
-            this->anim3->SuspendLayout();
             this->anim2->SuspendLayout();
             this->anim1->SuspendLayout();
             this->pageProfileEdit->SuspendLayout();
@@ -740,11 +728,7 @@ private:
             this->Book14->SuspendLayout();
             this->myToolbox->SuspendLayout();
             this->Pages->SuspendLayout();
-            this->anim5->SuspendLayout();
-            this->anim6->SuspendLayout();
-            this->anim7->SuspendLayout();
-            this->anim8->SuspendLayout();
-            this->anim9->SuspendLayout();
+            this->anim3->SuspendLayout();
             this->SuspendLayout();
             // 
             // panelMain
@@ -757,6 +741,7 @@ private:
             this->panelMain->Controls->Add(this->panelUserBar);
             this->panelMain->Controls->Add(this->labelPyWave);
             this->panelMain->Controls->Add(this->pctrboxLogo);
+            this->gunaTransition->SetDecoration(this->panelMain, Guna::UI2::AnimatorNS::DecorationType::None);
             this->panelMain->Location = System::Drawing::Point(0, 0);
             this->panelMain->Name = L"panelMain";
             this->panelMain->Size = System::Drawing::Size(1600, 80);
@@ -765,6 +750,7 @@ private:
             // btnExit
             // 
             this->btnExit->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->btnExit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnExit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnExit.Image")));
             this->btnExit->ImageRotate = 0;
             this->btnExit->Location = System::Drawing::Point(1568, 12);
@@ -779,6 +765,7 @@ private:
             // btnMinimize
             // 
             this->btnMinimize->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->btnMinimize, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnMinimize->FillColor = System::Drawing::Color::Transparent;
             this->btnMinimize->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnMinimize.Image")));
             this->btnMinimize->ImageRotate = 0;
@@ -794,6 +781,7 @@ private:
             // 
             // separatorMain
             // 
+            this->gunaTransition->SetDecoration(this->separatorMain, Guna::UI2::AnimatorNS::DecorationType::None);
             this->separatorMain->Dock = System::Windows::Forms::DockStyle::Bottom;
             this->separatorMain->Location = System::Drawing::Point(0, 79);
             this->separatorMain->Name = L"separatorMain";
@@ -806,6 +794,7 @@ private:
             this->panelUserBar->Controls->Add(this->pictureUserBar);
             this->panelUserBar->Controls->Add(this->labelRankBar);
             this->panelUserBar->Controls->Add(this->labelNameBar);
+            this->gunaTransition->SetDecoration(this->panelUserBar, Guna::UI2::AnimatorNS::DecorationType::None);
             this->panelUserBar->Location = System::Drawing::Point(1129, 0);
             this->panelUserBar->Name = L"panelUserBar";
             this->panelUserBar->Size = System::Drawing::Size(407, 80);
@@ -815,6 +804,7 @@ private:
             // StarsUser
             // 
             this->StarsUser->Cursor = System::Windows::Forms::Cursors::Help;
+            this->gunaTransition->SetDecoration(this->StarsUser, Guna::UI2::AnimatorNS::DecorationType::None);
             this->StarsUser->Location = System::Drawing::Point(195, 44);
             this->StarsUser->Name = L"StarsUser";
             this->StarsUser->RatingColor = System::Drawing::Color::White;
@@ -827,6 +817,7 @@ private:
             // 
             this->pictureUserBar->BackColor = System::Drawing::Color::Transparent;
             this->pictureUserBar->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->pictureUserBar, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pictureUserBar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureUserBar.Image")));
             this->pictureUserBar->ImageRotate = 0;
             this->pictureUserBar->Location = System::Drawing::Point(25, 15);
@@ -841,6 +832,7 @@ private:
             // labelRankBar
             // 
             this->labelRankBar->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelRankBar, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelRankBar->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelRankBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -855,6 +847,7 @@ private:
             // labelNameBar
             // 
             this->labelNameBar->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelNameBar, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelNameBar->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelNameBar->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -869,6 +862,7 @@ private:
             // labelPyWave
             // 
             this->labelPyWave->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelPyWave, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelPyWave->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelPyWave->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -882,6 +876,7 @@ private:
             // pctrboxLogo
             // 
             this->pctrboxLogo->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->pctrboxLogo, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pctrboxLogo->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pctrboxLogo.Image")));
             this->pctrboxLogo->ImageRotate = 0;
             this->pctrboxLogo->Location = System::Drawing::Point(14, 2);
@@ -905,6 +900,7 @@ private:
             this->panelMenu->Controls->Add(this->btnBook);
             this->panelMenu->Controls->Add(this->btnHome);
             this->panelMenu->Controls->Add(this->btnStats);
+            this->gunaTransition->SetDecoration(this->panelMenu, Guna::UI2::AnimatorNS::DecorationType::None);
             this->panelMenu->Location = System::Drawing::Point(0, 80);
             this->panelMenu->Name = L"panelMenu";
             this->panelMenu->Size = System::Drawing::Size(80, 820);
@@ -913,6 +909,7 @@ private:
             // separatorMenu
             // 
             this->separatorMenu->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->separatorMenu, Guna::UI2::AnimatorNS::DecorationType::None);
             this->separatorMenu->Dock = System::Windows::Forms::DockStyle::Right;
             this->separatorMenu->Location = System::Drawing::Point(79, 0);
             this->separatorMenu->Name = L"separatorMenu";
@@ -928,6 +925,7 @@ private:
             this->btnProfile->BorderColor = System::Drawing::Color::Empty;
             this->btnProfile->BorderThickness = 1;
             this->btnProfile->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+            this->gunaTransition->SetDecoration(this->btnProfile, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnProfile->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnProfile->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnProfile->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -964,6 +962,7 @@ private:
             this->btnLogOut->BackColor = System::Drawing::Color::Transparent;
             this->btnLogOut->BorderColor = System::Drawing::Color::Empty;
             this->btnLogOut->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnLogOut, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnLogOut->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnLogOut->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnLogOut->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1001,6 +1000,7 @@ private:
             this->btnSettings->BorderColor = System::Drawing::Color::Empty;
             this->btnSettings->BorderThickness = 1;
             this->btnSettings->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+            this->gunaTransition->SetDecoration(this->btnSettings, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnSettings->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnSettings->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnSettings->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1039,6 +1039,7 @@ private:
             this->btnMenu->BorderThickness = 1;
             this->btnMenu->CheckedState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->gunaTransition->SetDecoration(this->btnMenu, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnMenu->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnMenu->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnMenu->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1072,6 +1073,7 @@ private:
             this->btnCourses->BorderColor = System::Drawing::Color::Empty;
             this->btnCourses->BorderThickness = 1;
             this->btnCourses->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+            this->gunaTransition->SetDecoration(this->btnCourses, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnCourses->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnCourses->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnCourses->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1108,6 +1110,7 @@ private:
             this->btnBook->BorderColor = System::Drawing::Color::Empty;
             this->btnBook->BorderThickness = 1;
             this->btnBook->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+            this->gunaTransition->SetDecoration(this->btnBook, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnBook->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnBook->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnBook->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1144,6 +1147,7 @@ private:
             this->btnHome->BorderThickness = 1;
             this->btnHome->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
             this->btnHome->Checked = true;
+            this->gunaTransition->SetDecoration(this->btnHome, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnHome->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnHome->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnHome->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1184,6 +1188,7 @@ private:
             this->btnStats->BorderColor = System::Drawing::Color::Empty;
             this->btnStats->BorderThickness = 1;
             this->btnStats->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+            this->gunaTransition->SetDecoration(this->btnStats, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnStats->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnStats->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnStats->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1294,157 +1299,76 @@ private:
             // 
             this->anim4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim4->Controls->Add(this->label25);
-            this->anim4->Controls->Add(this->label26);
+            this->anim4->Controls->Add(this->btnSync1);
+            this->anim4->Controls->Add(this->lblAnim4);
+            this->gunaTransition->SetDecoration(this->anim4, Guna::UI2::AnimatorNS::DecorationType::None);
             this->anim4->Location = System::Drawing::Point(4, 4);
             this->anim4->Name = L"anim4";
             this->anim4->Padding = System::Windows::Forms::Padding(3);
             this->anim4->Size = System::Drawing::Size(1512, 894);
-            this->anim4->TabIndex = 13;
+            this->anim4->TabIndex = 12;
             this->anim4->Text = L"anim4";
             // 
-            // label25
+            // btnSync1
             // 
-            this->label25->AutoSize = true;
-            this->label25->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label25->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label25->Location = System::Drawing::Point(33, 95);
-            this->label25->Name = L"label25";
-            this->label25->Size = System::Drawing::Size(261, 44);
-            this->label25->TabIndex = 4;
-            this->label25->Text = L"‣ D - Простой";
-            // 
-            // label26
-            // 
-            this->label26->AutoSize = true;
-            this->label26->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label26->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync1->Animated = true;
+            this->btnSync1->BackColor = System::Drawing::Color::Transparent;
+            this->btnSync1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label26->Location = System::Drawing::Point(172, 20);
-            this->label26->Name = L"label26";
-            this->label26->Size = System::Drawing::Size(1178, 58);
-            this->label26->TabIndex = 3;
-            this->label26->Text = L"Всего существует 3 уровня сложности заданий:";
-            // 
-            // anim11
-            // 
-            this->anim11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim11->Controls->Add(this->guna2Button1);
-            this->anim11->Controls->Add(this->label20);
-            this->anim11->Location = System::Drawing::Point(4, 4);
-            this->anim11->Name = L"anim11";
-            this->anim11->Padding = System::Windows::Forms::Padding(3);
-            this->anim11->Size = System::Drawing::Size(1512, 894);
-            this->anim11->TabIndex = 12;
-            this->anim11->Text = L"anim11";
-            // 
-            // guna2Button1
-            // 
-            this->guna2Button1->Animated = true;
-            this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
-            this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button1->BorderRadius = 20;
-            this->guna2Button1->BorderThickness = 1;
-            this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+            this->btnSync1->BorderRadius = 20;
+            this->btnSync1->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnSync1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnSync1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->btnSync1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->btnSync1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
                 static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+            this->btnSync1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
                 static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-            this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->btnSync1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+            this->btnSync1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+            this->btnSync1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
-            this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
-            this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-            this->guna2Button1->Location = System::Drawing::Point(1323, 753);
-            this->guna2Button1->Name = L"guna2Button1";
-            this->guna2Button1->Size = System::Drawing::Size(181, 39);
-            this->guna2Button1->TabIndex = 50;
-            this->guna2Button1->Text = L"Продолжить";
-            this->guna2Button1->TextOffset = System::Drawing::Point(10, 0);
-            this->guna2Button1->UseTransparentBackground = true;
+            this->btnSync1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
+            this->btnSync1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync1.Image")));
+            this->btnSync1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->btnSync1->Location = System::Drawing::Point(1323, 753);
+            this->btnSync1->Name = L"btnSync1";
+            this->btnSync1->Size = System::Drawing::Size(181, 39);
+            this->btnSync1->TabIndex = 50;
+            this->btnSync1->Text = L"Продолжить";
+            this->btnSync1->TextOffset = System::Drawing::Point(10, 0);
+            this->btnSync1->UseTransparentBackground = true;
+            this->btnSync1->Visible = false;
+            this->btnSync1->Click += gcnew System::EventHandler(this, &mainForm::btnSync1_Click);
             // 
-            // label20
+            // lblAnim4
             // 
-            this->label20->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->gunaTransition->SetDecoration(this->lblAnim4, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblAnim4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label20->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->lblAnim4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label20->Location = System::Drawing::Point(142, 249);
-            this->label20->Name = L"label20";
-            this->label20->Size = System::Drawing::Size(1310, 305);
-            this->label20->TabIndex = 11;
-            this->label20->Text = resources->GetString(L"label20.Text");
-            // 
-            // anim10
-            // 
-            this->anim10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim10->Controls->Add(this->label14);
-            this->anim10->Location = System::Drawing::Point(4, 4);
-            this->anim10->Name = L"anim10";
-            this->anim10->Padding = System::Windows::Forms::Padding(3);
-            this->anim10->Size = System::Drawing::Size(1512, 894);
-            this->anim10->TabIndex = 11;
-            this->anim10->Text = L"anim10";
-            // 
-            // label14
-            // 
-            this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label14->Location = System::Drawing::Point(142, 249);
-            this->label14->Name = L"label14";
-            this->label14->Size = System::Drawing::Size(1310, 305);
-            this->label14->TabIndex = 10;
-            this->label14->Text = resources->GetString(L"label14.Text");
-            // 
-            // anim3
-            // 
-            this->anim3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim3->Controls->Add(this->label13);
-            this->anim3->Location = System::Drawing::Point(4, 4);
-            this->anim3->Name = L"anim3";
-            this->anim3->Padding = System::Windows::Forms::Padding(3);
-            this->anim3->Size = System::Drawing::Size(1512, 894);
-            this->anim3->TabIndex = 10;
-            this->anim3->Text = L"anim3";
-            // 
-            // label13
-            // 
-            this->label13->AutoSize = true;
-            this->label13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label13->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label13->Location = System::Drawing::Point(172, 20);
-            this->label13->Name = L"label13";
-            this->label13->Size = System::Drawing::Size(1178, 58);
-            this->label13->TabIndex = 3;
-            this->label13->Text = L"Всего существует 3 уровня сложности заданий:";
+            this->lblAnim4->Location = System::Drawing::Point(142, 249);
+            this->lblAnim4->Name = L"lblAnim4";
+            this->lblAnim4->Size = System::Drawing::Size(1310, 305);
+            this->lblAnim4->TabIndex = 11;
+            this->lblAnim4->Text = resources->GetString(L"lblAnim4.Text");
             // 
             // anim2
             // 
             this->anim2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim2->Controls->Add(this->label1);
+            this->anim2->Controls->Add(this->lblAnim2);
+            this->gunaTransition->SetDecoration(this->anim2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->anim2->Location = System::Drawing::Point(4, 4);
             this->anim2->Name = L"anim2";
             this->anim2->Padding = System::Windows::Forms::Padding(3);
@@ -1452,24 +1376,26 @@ private:
             this->anim2->TabIndex = 9;
             this->anim2->Text = L"anim2";
             // 
-            // label1
+            // lblAnim2
             // 
-            this->label1->AutoSize = true;
-            this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblAnim2->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblAnim2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblAnim2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->lblAnim2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label1->Location = System::Drawing::Point(172, 370);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(1218, 58);
-            this->label1->TabIndex = 3;
-            this->label1->Text = L"Перед началом ознакомьтесь с политикой задач";
+            this->lblAnim2->Location = System::Drawing::Point(172, 370);
+            this->lblAnim2->Name = L"lblAnim2";
+            this->lblAnim2->Size = System::Drawing::Size(1218, 58);
+            this->lblAnim2->TabIndex = 3;
+            this->lblAnim2->Text = L"Перед началом ознакомьтесь с политикой задач";
             // 
             // anim1
             // 
             this->anim1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->anim1->Controls->Add(this->lblAnim1);
+            this->gunaTransition->SetDecoration(this->anim1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->anim1->Location = System::Drawing::Point(4, 4);
             this->anim1->Name = L"anim1";
             this->anim1->Padding = System::Windows::Forms::Padding(3);
@@ -1480,6 +1406,7 @@ private:
             // lblAnim1
             // 
             this->lblAnim1->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblAnim1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblAnim1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblAnim1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -1522,6 +1449,7 @@ private:
             this->pageProfileEdit->Controls->Add(this->pictureProfileEdit);
             this->pageProfileEdit->Controls->Add(this->linkReMail);
             this->pageProfileEdit->Controls->Add(this->label2);
+            this->gunaTransition->SetDecoration(this->pageProfileEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageProfileEdit->Location = System::Drawing::Point(4, 4);
             this->pageProfileEdit->Name = L"pageProfileEdit";
             this->pageProfileEdit->Size = System::Drawing::Size(1512, 894);
@@ -1536,6 +1464,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnChangePassword->BorderRadius = 20;
             this->btnChangePassword->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnChangePassword, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnChangePassword->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnChangePassword->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnChangePassword->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1576,6 +1505,7 @@ private:
             this->textBoxPassNew2->BorderColor = System::Drawing::Color::Silver;
             this->textBoxPassNew2->BorderRadius = 22;
             this->textBoxPassNew2->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxPassNew2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxPassNew2->DefaultText = L"";
             this->textBoxPassNew2->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -1616,6 +1546,7 @@ private:
             this->textBoxPassNew->BorderColor = System::Drawing::Color::Silver;
             this->textBoxPassNew->BorderRadius = 22;
             this->textBoxPassNew->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxPassNew, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxPassNew->DefaultText = L"";
             this->textBoxPassNew->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -1656,6 +1587,7 @@ private:
             this->textBoxPassOld->BorderColor = System::Drawing::Color::Silver;
             this->textBoxPassOld->BorderRadius = 22;
             this->textBoxPassOld->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxPassOld, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxPassOld->DefaultText = L"";
             this->textBoxPassOld->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -1690,6 +1622,7 @@ private:
             // label3
             // 
             this->label3->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label3, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -1709,6 +1642,7 @@ private:
             this->textBoxCodeNew->BorderColor = System::Drawing::Color::Silver;
             this->textBoxCodeNew->BorderRadius = 22;
             this->textBoxCodeNew->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxCodeNew, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxCodeNew->DefaultText = L"";
             this->textBoxCodeNew->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->textBoxCodeNew->DisabledState->FillColor = System::Drawing::Color::DarkGray;
@@ -1746,6 +1680,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnCancelChanges->BorderRadius = 20;
             this->btnCancelChanges->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnCancelChanges, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnCancelChanges->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnCancelChanges->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnCancelChanges->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -1781,6 +1716,7 @@ private:
             // linkREMOVEACC
             // 
             this->linkREMOVEACC->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->linkREMOVEACC, Guna::UI2::AnimatorNS::DecorationType::None);
             this->linkREMOVEACC->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
             this->linkREMOVEACC->LinkColor = System::Drawing::Color::Yellow;
             this->linkREMOVEACC->Location = System::Drawing::Point(625, 753);
@@ -1794,6 +1730,7 @@ private:
             // lblSexEdit
             // 
             this->lblSexEdit->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSexEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblSexEdit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
             this->lblSexEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -1807,11 +1744,12 @@ private:
             // 
             this->lblLoginEdit->Anchor = System::Windows::Forms::AnchorStyles::Top;
             this->lblLoginEdit->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblLoginEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblLoginEdit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblLoginEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->lblLoginEdit->Location = System::Drawing::Point(667, 9);
+            this->lblLoginEdit->Location = System::Drawing::Point(749, 9);
             this->lblLoginEdit->Name = L"lblLoginEdit";
             this->lblLoginEdit->Size = System::Drawing::Size(111, 42);
             this->lblLoginEdit->TabIndex = 67;
@@ -1820,6 +1758,7 @@ private:
             // lblBirthEdit
             // 
             this->lblBirthEdit->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblBirthEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblBirthEdit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
             this->lblBirthEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -1832,6 +1771,7 @@ private:
             // label4
             // 
             this->label4->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label4, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -1845,6 +1785,7 @@ private:
             // labelTimer
             // 
             this->labelTimer->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelTimer, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
             this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -1857,6 +1798,7 @@ private:
             // 
             // pictureBoxCheckCode
             // 
+            this->gunaTransition->SetDecoration(this->pictureBoxCheckCode, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pictureBoxCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckCode.Image")));
             this->pictureBoxCheckCode->ImageRotate = 0;
             this->pictureBoxCheckCode->Location = System::Drawing::Point(598, 617);
@@ -1870,6 +1812,7 @@ private:
             // 
             // pictureBoxCheckMail
             // 
+            this->gunaTransition->SetDecoration(this->pictureBoxCheckMail, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pictureBoxCheckMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckMail.Image")));
             this->pictureBoxCheckMail->ImageRotate = 0;
             this->pictureBoxCheckMail->Location = System::Drawing::Point(659, 453);
@@ -1890,6 +1833,7 @@ private:
             this->textBoxEmail->BorderColor = System::Drawing::Color::Silver;
             this->textBoxEmail->BorderRadius = 22;
             this->textBoxEmail->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxEmail, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxEmail->DefaultText = L"";
             this->textBoxEmail->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -1930,6 +1874,7 @@ private:
             this->textBoxCode->BorderColor = System::Drawing::Color::Silver;
             this->textBoxCode->BorderRadius = 22;
             this->textBoxCode->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxCode, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxCode->DefaultText = L"";
             this->textBoxCode->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->textBoxCode->DisabledState->FillColor = System::Drawing::Color::DarkGray;
@@ -1967,6 +1912,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->buttonSendMail->BorderRadius = 20;
             this->buttonSendMail->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->buttonSendMail, Guna::UI2::AnimatorNS::DecorationType::None);
             this->buttonSendMail->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->buttonSendMail->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->buttonSendMail->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2007,6 +1953,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->buttonCheckCode->BorderRadius = 20;
             this->buttonCheckCode->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->buttonCheckCode, Guna::UI2::AnimatorNS::DecorationType::None);
             this->buttonCheckCode->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->buttonCheckCode->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->buttonCheckCode->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2043,6 +1990,7 @@ private:
             // lblSurnameEdit
             // 
             this->lblSurnameEdit->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSurnameEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblSurnameEdit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblSurnameEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2062,6 +2010,7 @@ private:
             this->textBoxUserSurname->BorderColor = System::Drawing::Color::Silver;
             this->textBoxUserSurname->BorderRadius = 22;
             this->textBoxUserSurname->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxUserSurname, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxUserSurname->DefaultText = L"";
             this->textBoxUserSurname->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -2109,6 +2058,7 @@ private:
             this->textBoxUserName->BorderColor = System::Drawing::Color::Silver;
             this->textBoxUserName->BorderRadius = 22;
             this->textBoxUserName->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->gunaTransition->SetDecoration(this->textBoxUserName, Guna::UI2::AnimatorNS::DecorationType::None);
             this->textBoxUserName->DefaultText = L"";
             this->textBoxUserName->DisabledState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(208)),
                 static_cast<System::Int32>(static_cast<System::Byte>(208)), static_cast<System::Int32>(static_cast<System::Byte>(208)));
@@ -2145,6 +2095,7 @@ private:
             // lblNameEdit
             // 
             this->lblNameEdit->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblNameEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblNameEdit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblNameEdit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2163,6 +2114,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnProfileSave->BorderRadius = 20;
             this->btnProfileSave->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnProfileSave, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnProfileSave->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnProfileSave->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnProfileSave->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2202,6 +2154,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->guna2Button2->BorderRadius = 20;
             this->guna2Button2->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->guna2Button2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->guna2Button2->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->guna2Button2->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->guna2Button2->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2238,6 +2191,7 @@ private:
             // 
             this->pictureProfileEdit->BackColor = System::Drawing::Color::Transparent;
             this->pictureProfileEdit->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->pictureProfileEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pictureProfileEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureProfileEdit.Image")));
             this->pictureProfileEdit->Location = System::Drawing::Point(629, 54);
             this->pictureProfileEdit->Name = L"pictureProfileEdit";
@@ -2250,6 +2204,7 @@ private:
             // linkReMail
             // 
             this->linkReMail->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->linkReMail, Guna::UI2::AnimatorNS::DecorationType::None);
             this->linkReMail->DisabledLinkColor = System::Drawing::Color::Gray;
             this->linkReMail->Enabled = false;
             this->linkReMail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
@@ -2268,6 +2223,7 @@ private:
             // label2
             // 
             this->label2->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
             this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -2308,6 +2264,7 @@ private:
             this->pageSettings->Controls->Add(this->label5);
             this->pageSettings->Controls->Add(this->toggleTransparent);
             this->pageSettings->Controls->Add(this->TrackBorderForm);
+            this->gunaTransition->SetDecoration(this->pageSettings, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageSettings->Location = System::Drawing::Point(4, 4);
             this->pageSettings->Name = L"pageSettings";
             this->pageSettings->Size = System::Drawing::Size(1512, 894);
@@ -2317,6 +2274,7 @@ private:
             // label11
             // 
             this->label11->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label11, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2337,6 +2295,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->toggleStyle->CheckedState->InnerBorderColor = System::Drawing::Color::White;
             this->toggleStyle->CheckedState->InnerColor = System::Drawing::Color::White;
+            this->gunaTransition->SetDecoration(this->toggleStyle, Guna::UI2::AnimatorNS::DecorationType::None);
             this->toggleStyle->Location = System::Drawing::Point(37, 285);
             this->toggleStyle->Name = L"toggleStyle";
             this->toggleStyle->Size = System::Drawing::Size(35, 20);
@@ -2352,6 +2311,7 @@ private:
             // label9
             // 
             this->label9->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label9, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2371,6 +2331,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->toggleAlwaysHide->CheckedState->InnerBorderColor = System::Drawing::Color::White;
             this->toggleAlwaysHide->CheckedState->InnerColor = System::Drawing::Color::White;
+            this->gunaTransition->SetDecoration(this->toggleAlwaysHide, Guna::UI2::AnimatorNS::DecorationType::None);
             this->toggleAlwaysHide->Location = System::Drawing::Point(582, 178);
             this->toggleAlwaysHide->Name = L"toggleAlwaysHide";
             this->toggleAlwaysHide->Size = System::Drawing::Size(35, 20);
@@ -2391,6 +2352,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnSettingsSave->BorderRadius = 20;
             this->btnSettingsSave->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnSettingsSave, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnSettingsSave->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnSettingsSave->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnSettingsSave->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2430,6 +2392,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnSettingsCancel->BorderRadius = 20;
             this->btnSettingsCancel->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnSettingsCancel, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnSettingsCancel->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnSettingsCancel->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnSettingsCancel->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2464,6 +2427,7 @@ private:
             // 
             // guna2Separator1
             // 
+            this->gunaTransition->SetDecoration(this->guna2Separator1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->guna2Separator1->Location = System::Drawing::Point(-5, 46);
             this->guna2Separator1->Name = L"guna2Separator1";
             this->guna2Separator1->Size = System::Drawing::Size(1521, 10);
@@ -2475,6 +2439,7 @@ private:
             this->labelSettings->AutoEllipsis = true;
             this->labelSettings->Cursor = System::Windows::Forms::Cursors::Default;
             this->labelSettings->CursorType = System::Windows::Forms::Cursors::Default;
+            this->gunaTransition->SetDecoration(this->labelSettings, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelSettings->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
             this->labelSettings->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -2493,6 +2458,7 @@ private:
             this->bunifuLabel3->AutoEllipsis = true;
             this->bunifuLabel3->Cursor = System::Windows::Forms::Cursors::Default;
             this->bunifuLabel3->CursorType = System::Windows::Forms::Cursors::Default;
+            this->gunaTransition->SetDecoration(this->bunifuLabel3, Guna::UI2::AnimatorNS::DecorationType::None);
             this->bunifuLabel3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->bunifuLabel3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2512,6 +2478,7 @@ private:
             this->bunifuLabel2->AutoEllipsis = true;
             this->bunifuLabel2->Cursor = System::Windows::Forms::Cursors::Default;
             this->bunifuLabel2->CursorType = System::Windows::Forms::Cursors::Default;
+            this->gunaTransition->SetDecoration(this->bunifuLabel2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->bunifuLabel2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->bunifuLabel2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2528,6 +2495,7 @@ private:
             // labelBorderBtn
             // 
             this->labelBorderBtn->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelBorderBtn, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelBorderBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelBorderBtn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2541,6 +2509,7 @@ private:
             // label12
             // 
             this->label12->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label12, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2553,6 +2522,7 @@ private:
             // 
             // TrackBorderBtn
             // 
+            this->gunaTransition->SetDecoration(this->TrackBorderBtn, Guna::UI2::AnimatorNS::DecorationType::None);
             this->TrackBorderBtn->LargeChange = 2;
             this->TrackBorderBtn->Location = System::Drawing::Point(37, 417);
             this->TrackBorderBtn->Maximum = 20;
@@ -2567,6 +2537,7 @@ private:
             // labelVolume
             // 
             this->labelVolume->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelVolume, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelVolume->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelVolume->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2580,6 +2551,7 @@ private:
             // label10
             // 
             this->label10->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label10, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2592,6 +2564,7 @@ private:
             // 
             // TrackVolume
             // 
+            this->gunaTransition->SetDecoration(this->TrackVolume, Guna::UI2::AnimatorNS::DecorationType::None);
             this->TrackVolume->LargeChange = 2;
             this->TrackVolume->Location = System::Drawing::Point(585, 237);
             this->TrackVolume->Name = L"TrackVolume";
@@ -2604,6 +2577,7 @@ private:
             // labelBorderForm
             // 
             this->labelBorderForm->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelBorderForm, Guna::UI2::AnimatorNS::DecorationType::None);
             this->labelBorderForm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->labelBorderForm->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2617,6 +2591,7 @@ private:
             // label8
             // 
             this->label8->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label8, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2637,6 +2612,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->toggleGreeting->CheckedState->InnerBorderColor = System::Drawing::Color::White;
             this->toggleGreeting->CheckedState->InnerColor = System::Drawing::Color::White;
+            this->gunaTransition->SetDecoration(this->toggleGreeting, Guna::UI2::AnimatorNS::DecorationType::None);
             this->toggleGreeting->Location = System::Drawing::Point(37, 249);
             this->toggleGreeting->Name = L"toggleGreeting";
             this->toggleGreeting->Size = System::Drawing::Size(35, 20);
@@ -2654,6 +2630,7 @@ private:
             this->btnMessageShadow->BackColor = System::Drawing::Color::Transparent;
             this->btnMessageShadow->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnMessageShadow.BackgroundImage")));
             this->btnMessageShadow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+            this->gunaTransition->SetDecoration(this->btnMessageShadow, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnMessageShadow->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnMessageShadow->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnMessageShadow->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2673,6 +2650,7 @@ private:
             // label7
             // 
             this->label7->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label7, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2693,6 +2671,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->toggleShadows->CheckedState->InnerBorderColor = System::Drawing::Color::White;
             this->toggleShadows->CheckedState->InnerColor = System::Drawing::Color::White;
+            this->gunaTransition->SetDecoration(this->toggleShadows, Guna::UI2::AnimatorNS::DecorationType::None);
             this->toggleShadows->Location = System::Drawing::Point(37, 213);
             this->toggleShadows->Name = L"toggleShadows";
             this->toggleShadows->Size = System::Drawing::Size(35, 20);
@@ -2708,6 +2687,7 @@ private:
             // label6
             // 
             this->label6->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label6, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2721,6 +2701,7 @@ private:
             // label5
             // 
             this->label5->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label5, Guna::UI2::AnimatorNS::DecorationType::None);
             this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2741,6 +2722,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(148)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
             this->toggleTransparent->CheckedState->InnerBorderColor = System::Drawing::Color::White;
             this->toggleTransparent->CheckedState->InnerColor = System::Drawing::Color::White;
+            this->gunaTransition->SetDecoration(this->toggleTransparent, Guna::UI2::AnimatorNS::DecorationType::None);
             this->toggleTransparent->Location = System::Drawing::Point(37, 178);
             this->toggleTransparent->Name = L"toggleTransparent";
             this->toggleTransparent->Size = System::Drawing::Size(35, 20);
@@ -2755,6 +2737,7 @@ private:
             // 
             // TrackBorderForm
             // 
+            this->gunaTransition->SetDecoration(this->TrackBorderForm, Guna::UI2::AnimatorNS::DecorationType::None);
             this->TrackBorderForm->LargeChange = 2;
             this->TrackBorderForm->Location = System::Drawing::Point(37, 364);
             this->TrackBorderForm->Maximum = 60;
@@ -2771,6 +2754,7 @@ private:
             this->pageStats->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->pageStats->Controls->Add(this->chartProductivity);
+            this->gunaTransition->SetDecoration(this->pageStats, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageStats->Location = System::Drawing::Point(4, 4);
             this->pageStats->Name = L"pageStats";
             this->pageStats->Size = System::Drawing::Size(1512, 894);
@@ -2790,41 +2774,42 @@ private:
             this->chartProductivity->BorderSkin->PageColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->chartProductivity->BorderSkin->SkinStyle = System::Windows::Forms::DataVisualization::Charting::BorderSkinStyle::FrameTitle8;
-            chartArea3->AxisY->MajorGrid->Enabled = false;
-            chartArea3->BackColor = System::Drawing::Color::Transparent;
-            chartArea3->BorderColor = System::Drawing::Color::Empty;
-            chartArea3->Name = L"ChartArea1";
-            this->chartProductivity->ChartAreas->Add(chartArea3);
-            legend3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            chartArea1->AxisY->MajorGrid->Enabled = false;
+            chartArea1->BackColor = System::Drawing::Color::Transparent;
+            chartArea1->BorderColor = System::Drawing::Color::Empty;
+            chartArea1->Name = L"ChartArea1";
+            this->chartProductivity->ChartAreas->Add(chartArea1);
+            this->gunaTransition->SetDecoration(this->chartProductivity, Guna::UI2::AnimatorNS::DecorationType::None);
+            legend1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            legend3->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Bottom;
-            legend3->ForeColor = System::Drawing::Color::White;
-            legend3->HeaderSeparatorColor = System::Drawing::Color::White;
-            legend3->InterlacedRowsColor = System::Drawing::Color::White;
-            legend3->ItemColumnSeparatorColor = System::Drawing::Color::White;
-            legend3->Name = L"Legend1";
-            legend3->ShadowOffset = 5;
-            legend3->TextWrapThreshold = 15;
-            legend3->TitleBackColor = System::Drawing::Color::White;
-            legend3->TitleForeColor = System::Drawing::Color::White;
-            legend3->TitleSeparatorColor = System::Drawing::Color::White;
-            this->chartProductivity->Legends->Add(legend3);
+            legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Bottom;
+            legend1->ForeColor = System::Drawing::Color::White;
+            legend1->HeaderSeparatorColor = System::Drawing::Color::White;
+            legend1->InterlacedRowsColor = System::Drawing::Color::White;
+            legend1->ItemColumnSeparatorColor = System::Drawing::Color::White;
+            legend1->Name = L"Legend1";
+            legend1->ShadowOffset = 5;
+            legend1->TextWrapThreshold = 15;
+            legend1->TitleBackColor = System::Drawing::Color::White;
+            legend1->TitleForeColor = System::Drawing::Color::White;
+            legend1->TitleSeparatorColor = System::Drawing::Color::White;
+            this->chartProductivity->Legends->Add(legend1);
             this->chartProductivity->Location = System::Drawing::Point(12, 12);
             this->chartProductivity->Name = L"chartProductivity";
             this->chartProductivity->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::None;
-            series3->BackGradientStyle = System::Windows::Forms::DataVisualization::Charting::GradientStyle::LeftRight;
-            series3->BackHatchStyle = System::Windows::Forms::DataVisualization::Charting::ChartHatchStyle::Cross;
-            series3->BorderWidth = 10;
-            series3->ChartArea = L"ChartArea1";
-            series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-            series3->IsXValueIndexed = true;
-            series3->Legend = L"Legend1";
-            series3->Name = L"Series1";
-            series3->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SeaGreen;
-            series3->ShadowColor = System::Drawing::Color::Gray;
-            series3->ShadowOffset = 5;
-            series3->YValuesPerPoint = 2;
-            this->chartProductivity->Series->Add(series3);
+            series1->BackGradientStyle = System::Windows::Forms::DataVisualization::Charting::GradientStyle::LeftRight;
+            series1->BackHatchStyle = System::Windows::Forms::DataVisualization::Charting::ChartHatchStyle::Cross;
+            series1->BorderWidth = 10;
+            series1->ChartArea = L"ChartArea1";
+            series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+            series1->IsXValueIndexed = true;
+            series1->Legend = L"Legend1";
+            series1->Name = L"Series1";
+            series1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SeaGreen;
+            series1->ShadowColor = System::Drawing::Color::Gray;
+            series1->ShadowOffset = 5;
+            series1->YValuesPerPoint = 2;
+            this->chartProductivity->Series->Add(series1);
             this->chartProductivity->Size = System::Drawing::Size(660, 541);
             this->chartProductivity->TabIndex = 0;
             this->chartProductivity->Text = L"chartProductivity";
@@ -2835,6 +2820,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->pageProfile->Controls->Add(this->panelProfileData);
             this->pageProfile->Controls->Add(this->pictureProfile);
+            this->gunaTransition->SetDecoration(this->pageProfile, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageProfile->Location = System::Drawing::Point(4, 4);
             this->pageProfile->Name = L"pageProfile";
             this->pageProfile->Size = System::Drawing::Size(1512, 894);
@@ -2852,6 +2838,7 @@ private:
             this->panelProfileData->Controls->Add(this->lblSurname);
             this->panelProfileData->Controls->Add(this->lblName);
             this->panelProfileData->Controls->Add(this->lblLogin);
+            this->gunaTransition->SetDecoration(this->panelProfileData, Guna::UI2::AnimatorNS::DecorationType::None);
             this->panelProfileData->Location = System::Drawing::Point(343, 3);
             this->panelProfileData->Name = L"panelProfileData";
             this->panelProfileData->Size = System::Drawing::Size(1166, 813);
@@ -2865,6 +2852,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnProfileEdit->BorderRadius = 20;
             this->btnProfileEdit->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnProfileEdit, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnProfileEdit->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnProfileEdit->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnProfileEdit->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -2899,6 +2887,7 @@ private:
             // lblProfileRank
             // 
             this->lblProfileRank->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblProfileRank, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblProfileRank->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblProfileRank->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2912,6 +2901,7 @@ private:
             // lblEmail
             // 
             this->lblEmail->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblEmail, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblEmail->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblEmail->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2925,6 +2915,7 @@ private:
             // lblRegDate
             // 
             this->lblRegDate->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblRegDate, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblRegDate->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblRegDate->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2938,6 +2929,7 @@ private:
             // lblBirth
             // 
             this->lblBirth->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblBirth, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblBirth->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblBirth->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2951,6 +2943,7 @@ private:
             // lblSex
             // 
             this->lblSex->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSex, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblSex->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblSex->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2964,6 +2957,7 @@ private:
             // lblSurname
             // 
             this->lblSurname->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSurname, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblSurname->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblSurname->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2977,6 +2971,7 @@ private:
             // lblName
             // 
             this->lblName->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblName, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblName->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblName->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -2991,6 +2986,7 @@ private:
             // 
             this->lblLogin->Anchor = System::Windows::Forms::AnchorStyles::Top;
             this->lblLogin->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblLogin, Guna::UI2::AnimatorNS::DecorationType::None);
             this->lblLogin->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->lblLogin->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -3005,6 +3001,7 @@ private:
             // 
             this->pictureProfile->BackColor = System::Drawing::Color::Transparent;
             this->pictureProfile->Cursor = System::Windows::Forms::Cursors::Default;
+            this->gunaTransition->SetDecoration(this->pictureProfile, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pictureProfile->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureProfile.Image")));
             this->pictureProfile->Location = System::Drawing::Point(21, 26);
             this->pictureProfile->Name = L"pictureProfile";
@@ -3018,6 +3015,7 @@ private:
             this->pageCourses->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->pageCourses->Controls->Add(this->guna2Panel1);
+            this->gunaTransition->SetDecoration(this->pageCourses, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageCourses->Location = System::Drawing::Point(4, 4);
             this->pageCourses->Name = L"pageCourses";
             this->pageCourses->Size = System::Drawing::Size(1512, 894);
@@ -3027,6 +3025,7 @@ private:
             // guna2Panel1
             // 
             this->guna2Panel1->Controls->Add(this->guna2TileButton1);
+            this->gunaTransition->SetDecoration(this->guna2Panel1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->guna2Panel1->Location = System::Drawing::Point(0, 0);
             this->guna2Panel1->Name = L"guna2Panel1";
             this->guna2Panel1->Size = System::Drawing::Size(1512, 816);
@@ -3034,6 +3033,7 @@ private:
             // 
             // guna2TileButton1
             // 
+            this->gunaTransition->SetDecoration(this->guna2TileButton1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->guna2TileButton1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->guna2TileButton1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->guna2TileButton1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3054,6 +3054,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->pageBook->Controls->Add(this->Book);
             this->pageBook->Controls->Add(this->myToolbox);
+            this->gunaTransition->SetDecoration(this->pageBook, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageBook->Location = System::Drawing::Point(4, 4);
             this->pageBook->Name = L"pageBook";
             this->pageBook->Padding = System::Windows::Forms::Padding(3);
@@ -3080,6 +3081,7 @@ private:
             this->Book->Controls->Add(this->Book12);
             this->Book->Controls->Add(this->Book13);
             this->Book->Controls->Add(this->Book14);
+            this->gunaTransition->SetDecoration(this->Book, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book->ImeMode = System::Windows::Forms::ImeMode::On;
             this->Book->Location = System::Drawing::Point(-4, 42);
             this->Book->Multiline = true;
@@ -3091,22 +3093,22 @@ private:
             this->Book->SelectedIndex = 0;
             this->Book->Size = System::Drawing::Size(1520, 803);
             this->Book->TabIndex = 0;
-            animation1->AnimateOnlyDifferences = true;
-            animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
-            animation1->LeafCoeff = 0;
-            animation1->MaxTime = 1;
-            animation1->MinTime = 0;
-            animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
-            animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
-            animation1->MosaicSize = 0;
-            animation1->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
-            animation1->RotateCoeff = 0;
-            animation1->RotateLimit = 0;
-            animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
-            animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
-            animation1->TimeCoeff = 0;
-            animation1->TransparencyCoeff = 1;
-            this->Book->Transition = animation1;
+            animation2->AnimateOnlyDifferences = true;
+            animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
+            animation2->LeafCoeff = 0;
+            animation2->MaxTime = 1;
+            animation2->MinTime = 0;
+            animation2->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicCoeff")));
+            animation2->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicShift")));
+            animation2->MosaicSize = 0;
+            animation2->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+            animation2->RotateCoeff = 0;
+            animation2->RotateLimit = 0;
+            animation2->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.ScaleCoeff")));
+            animation2->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.SlideCoeff")));
+            animation2->TimeCoeff = 0;
+            animation2->TransparencyCoeff = 1;
+            this->Book->Transition = animation2;
             this->Book->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
             // 
             // pgBookStart
@@ -3114,6 +3116,7 @@ private:
             this->pgBookStart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->pgBookStart->Controls->Add(this->richStart);
+            this->gunaTransition->SetDecoration(this->pgBookStart, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pgBookStart->Location = System::Drawing::Point(4, 4);
             this->pgBookStart->Name = L"pgBookStart";
             this->pgBookStart->Padding = System::Windows::Forms::Padding(3);
@@ -3127,6 +3130,7 @@ private:
             this->richStart->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richStart->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richStart, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richStart->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richStart->ForeColor = System::Drawing::Color::White;
@@ -3144,6 +3148,7 @@ private:
             this->Book1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book1->Controls->Add(this->richBook1);
+            this->gunaTransition->SetDecoration(this->Book1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book1->Location = System::Drawing::Point(4, 4);
             this->Book1->Name = L"Book1";
             this->Book1->Size = System::Drawing::Size(1512, 777);
@@ -3156,6 +3161,7 @@ private:
             this->richBook1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook1->ForeColor = System::Drawing::Color::White;
@@ -3173,6 +3179,7 @@ private:
             this->Book2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book2->Controls->Add(this->richBook2);
+            this->gunaTransition->SetDecoration(this->Book2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book2->Location = System::Drawing::Point(4, 4);
             this->Book2->Name = L"Book2";
             this->Book2->Size = System::Drawing::Size(1512, 777);
@@ -3185,6 +3192,7 @@ private:
             this->richBook2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook2, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook2->ForeColor = System::Drawing::Color::White;
@@ -3202,6 +3210,7 @@ private:
             this->Book3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book3->Controls->Add(this->richBook3);
+            this->gunaTransition->SetDecoration(this->Book3, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book3->Location = System::Drawing::Point(4, 4);
             this->Book3->Name = L"Book3";
             this->Book3->Size = System::Drawing::Size(1512, 777);
@@ -3214,6 +3223,7 @@ private:
             this->richBook3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook3->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook3, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook3->ForeColor = System::Drawing::Color::White;
@@ -3231,6 +3241,7 @@ private:
             this->Book4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book4->Controls->Add(this->richBook4);
+            this->gunaTransition->SetDecoration(this->Book4, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book4->Location = System::Drawing::Point(4, 4);
             this->Book4->Name = L"Book4";
             this->Book4->Size = System::Drawing::Size(1512, 777);
@@ -3243,6 +3254,7 @@ private:
             this->richBook4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook4->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook4, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook4->ForeColor = System::Drawing::Color::White;
@@ -3260,6 +3272,7 @@ private:
             this->Book5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book5->Controls->Add(this->richBook5);
+            this->gunaTransition->SetDecoration(this->Book5, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book5->Location = System::Drawing::Point(4, 4);
             this->Book5->Name = L"Book5";
             this->Book5->Size = System::Drawing::Size(1512, 777);
@@ -3272,6 +3285,7 @@ private:
             this->richBook5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook5->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook5, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook5->ForeColor = System::Drawing::Color::White;
@@ -3289,6 +3303,7 @@ private:
             this->Book6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book6->Controls->Add(this->richBook6);
+            this->gunaTransition->SetDecoration(this->Book6, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book6->Location = System::Drawing::Point(4, 4);
             this->Book6->Name = L"Book6";
             this->Book6->Size = System::Drawing::Size(1512, 777);
@@ -3301,6 +3316,7 @@ private:
             this->richBook6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook6->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook6, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook6->ForeColor = System::Drawing::Color::White;
@@ -3318,6 +3334,7 @@ private:
             this->Book7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book7->Controls->Add(this->richBook7);
+            this->gunaTransition->SetDecoration(this->Book7, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book7->Location = System::Drawing::Point(4, 4);
             this->Book7->Name = L"Book7";
             this->Book7->Padding = System::Windows::Forms::Padding(3);
@@ -3331,6 +3348,7 @@ private:
             this->richBook7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook7->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook7, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook7->ForeColor = System::Drawing::Color::White;
@@ -3348,6 +3366,7 @@ private:
             this->Book8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book8->Controls->Add(this->richBook8);
+            this->gunaTransition->SetDecoration(this->Book8, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book8->Location = System::Drawing::Point(4, 4);
             this->Book8->Name = L"Book8";
             this->Book8->Padding = System::Windows::Forms::Padding(3);
@@ -3361,6 +3380,7 @@ private:
             this->richBook8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook8->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook8, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook8->ForeColor = System::Drawing::Color::White;
@@ -3378,6 +3398,7 @@ private:
             this->Book9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book9->Controls->Add(this->richBook9);
+            this->gunaTransition->SetDecoration(this->Book9, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book9->Location = System::Drawing::Point(4, 4);
             this->Book9->Name = L"Book9";
             this->Book9->Padding = System::Windows::Forms::Padding(3);
@@ -3391,6 +3412,7 @@ private:
             this->richBook9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook9->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook9, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook9->ForeColor = System::Drawing::Color::White;
@@ -3408,6 +3430,7 @@ private:
             this->Book10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book10->Controls->Add(this->richBook10);
+            this->gunaTransition->SetDecoration(this->Book10, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book10->Location = System::Drawing::Point(4, 4);
             this->Book10->Name = L"Book10";
             this->Book10->Padding = System::Windows::Forms::Padding(3);
@@ -3421,6 +3444,7 @@ private:
             this->richBook10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook10->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook10, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook10->ForeColor = System::Drawing::Color::White;
@@ -3438,6 +3462,7 @@ private:
             this->Book11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book11->Controls->Add(this->richBook11);
+            this->gunaTransition->SetDecoration(this->Book11, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book11->Location = System::Drawing::Point(4, 4);
             this->Book11->Name = L"Book11";
             this->Book11->Padding = System::Windows::Forms::Padding(3);
@@ -3451,6 +3476,7 @@ private:
             this->richBook11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook11->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook11, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook11->ForeColor = System::Drawing::Color::White;
@@ -3468,6 +3494,7 @@ private:
             this->Book12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book12->Controls->Add(this->richBook12);
+            this->gunaTransition->SetDecoration(this->Book12, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book12->Location = System::Drawing::Point(4, 4);
             this->Book12->Name = L"Book12";
             this->Book12->Padding = System::Windows::Forms::Padding(3);
@@ -3481,6 +3508,7 @@ private:
             this->richBook12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook12->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook12, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook12->ForeColor = System::Drawing::Color::White;
@@ -3498,6 +3526,7 @@ private:
             this->Book13->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book13->Controls->Add(this->richBook13);
+            this->gunaTransition->SetDecoration(this->Book13, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book13->Location = System::Drawing::Point(4, 4);
             this->Book13->Name = L"Book13";
             this->Book13->Padding = System::Windows::Forms::Padding(3);
@@ -3511,6 +3540,7 @@ private:
             this->richBook13->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richBook13->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richBook13, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richBook13->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richBook13->ForeColor = System::Drawing::Color::White;
@@ -3528,6 +3558,7 @@ private:
             this->Book14->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->Book14->Controls->Add(this->richTextBox1);
+            this->gunaTransition->SetDecoration(this->Book14, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Book14->Location = System::Drawing::Point(4, 4);
             this->Book14->Name = L"Book14";
             this->Book14->Padding = System::Windows::Forms::Padding(3);
@@ -3541,6 +3572,7 @@ private:
             this->richTextBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->richTextBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->gunaTransition->SetDecoration(this->richTextBox1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->richTextBox1->ForeColor = System::Drawing::Color::White;
@@ -3567,6 +3599,7 @@ private:
             this->myToolbox->Controls->Add(this->btnUnderline);
             this->myToolbox->Controls->Add(this->btnQuestionBook);
             this->myToolbox->Controls->Add(this->btnHighlight);
+            this->gunaTransition->SetDecoration(this->myToolbox, Guna::UI2::AnimatorNS::DecorationType::None);
             this->myToolbox->Location = System::Drawing::Point(0, 0);
             this->myToolbox->Name = L"myToolbox";
             this->myToolbox->Size = System::Drawing::Size(1520, 41);
@@ -3577,6 +3610,7 @@ private:
             this->dropdownPages->BackColor = System::Drawing::Color::Transparent;
             this->dropdownPages->BorderColor = System::Drawing::Color::Silver;
             this->dropdownPages->BorderRadius = 10;
+            this->gunaTransition->SetDecoration(this->dropdownPages, Guna::UI2::AnimatorNS::DecorationType::None);
             this->dropdownPages->DrawMode = System::Windows::Forms::DrawMode::OwnerDrawFixed;
             this->dropdownPages->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
             this->dropdownPages->FocusedColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
@@ -3619,6 +3653,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnPreviousBook->BorderRadius = 15;
             this->btnPreviousBook->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnPreviousBook, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnPreviousBook->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnPreviousBook->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnPreviousBook->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3658,6 +3693,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnBookNext->BorderRadius = 15;
             this->btnBookNext->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnBookNext, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnBookNext->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnBookNext->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnBookNext->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3696,6 +3732,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnItalic->BorderRadius = 15;
             this->btnItalic->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnItalic, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnItalic->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnItalic->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnItalic->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3734,6 +3771,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnStrikeOut->BorderRadius = 15;
             this->btnStrikeOut->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnStrikeOut, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnStrikeOut->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnStrikeOut->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnStrikeOut->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3772,6 +3810,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnClearFilters->BorderRadius = 15;
             this->btnClearFilters->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnClearFilters, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnClearFilters->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnClearFilters->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnClearFilters->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3810,6 +3849,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnThick->BorderRadius = 15;
             this->btnThick->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnThick, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnThick->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnThick->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnThick->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3848,6 +3888,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnUnderline->BorderRadius = 15;
             this->btnUnderline->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnUnderline, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnUnderline->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnUnderline->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnUnderline->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3883,6 +3924,7 @@ private:
             this->btnQuestionBook->Animated = true;
             this->btnQuestionBook->BackColor = System::Drawing::Color::Transparent;
             this->btnQuestionBook->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->btnQuestionBook, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnQuestionBook->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnQuestionBook->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnQuestionBook->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3911,6 +3953,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
             this->btnHighlight->BorderRadius = 15;
             this->btnHighlight->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnHighlight, Guna::UI2::AnimatorNS::DecorationType::None);
             this->btnHighlight->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
             this->btnHighlight->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
             this->btnHighlight->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
@@ -3941,17 +3984,6 @@ private:
             this->btnHighlight->UseTransparentBackground = true;
             this->btnHighlight->Click += gcnew System::EventHandler(this, &mainForm::btnHighlight_Click);
             // 
-            // pageHome
-            // 
-            this->pageHome->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->pageHome->Location = System::Drawing::Point(4, 4);
-            this->pageHome->Name = L"pageHome";
-            this->pageHome->Padding = System::Windows::Forms::Padding(3);
-            this->pageHome->Size = System::Drawing::Size(1512, 894);
-            this->pageHome->TabIndex = 0;
-            this->pageHome->Text = L"pageHome";
-            // 
             // Pages
             // 
             this->Pages->Alignment = System::Windows::Forms::TabAlignment::Bottom;
@@ -3965,453 +3997,213 @@ private:
             this->Pages->Controls->Add(this->pageProfileEdit);
             this->Pages->Controls->Add(this->anim1);
             this->Pages->Controls->Add(this->anim2);
-            this->Pages->Controls->Add(this->anim3);
-            this->Pages->Controls->Add(this->anim10);
-            this->Pages->Controls->Add(this->anim11);
             this->Pages->Controls->Add(this->anim4);
-            this->Pages->Controls->Add(this->anim5);
-            this->Pages->Controls->Add(this->anim6);
-            this->Pages->Controls->Add(this->anim7);
-            this->Pages->Controls->Add(this->anim8);
-            this->Pages->Controls->Add(this->anim9);
+            this->Pages->Controls->Add(this->anim3);
+            this->gunaTransition->SetDecoration(this->Pages, Guna::UI2::AnimatorNS::DecorationType::None);
             this->Pages->Location = System::Drawing::Point(80, 80);
             this->Pages->Multiline = true;
             this->Pages->Name = L"Pages";
-            this->Pages->Page = this->anim6;
-            this->Pages->PageIndex = 14;
-            this->Pages->PageName = L"anim6";
-            this->Pages->PageTitle = L"anim6";
+            this->Pages->Page = this->anim4;
+            this->Pages->PageIndex = 9;
+            this->Pages->PageName = L"anim4";
+            this->Pages->PageTitle = L"anim4";
             this->Pages->SelectedIndex = 0;
             this->Pages->Size = System::Drawing::Size(1520, 920);
             this->Pages->TabIndex = 2;
-            animation2->AnimateOnlyDifferences = true;
-            animation2->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.BlindCoeff")));
-            animation2->LeafCoeff = 0;
-            animation2->MaxTime = 1;
-            animation2->MinTime = 0;
-            animation2->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicCoeff")));
-            animation2->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.MosaicShift")));
-            animation2->MosaicSize = 0;
-            animation2->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
-            animation2->RotateCoeff = 0;
-            animation2->RotateLimit = 0;
-            animation2->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.ScaleCoeff")));
-            animation2->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation2.SlideCoeff")));
-            animation2->TimeCoeff = 0;
-            animation2->TransparencyCoeff = 1;
-            this->Pages->Transition = animation2;
+            animation3->AnimateOnlyDifferences = true;
+            animation3->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.BlindCoeff")));
+            animation3->LeafCoeff = 0;
+            animation3->MaxTime = 1;
+            animation3->MinTime = 0;
+            animation3->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicCoeff")));
+            animation3->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicShift")));
+            animation3->MosaicSize = 0;
+            animation3->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+            animation3->RotateCoeff = 0;
+            animation3->RotateLimit = 0;
+            animation3->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.ScaleCoeff")));
+            animation3->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.SlideCoeff")));
+            animation3->TimeCoeff = 0;
+            animation3->TransparencyCoeff = 1;
+            this->Pages->Transition = animation3;
             this->Pages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
             // 
-            // anim5
+            // pageHome
             // 
-            this->anim5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->pageHome->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim5->Controls->Add(this->label28);
-            this->anim5->Controls->Add(this->label31);
-            this->anim5->Controls->Add(this->label32);
-            this->anim5->Location = System::Drawing::Point(4, 4);
-            this->anim5->Name = L"anim5";
-            this->anim5->Padding = System::Windows::Forms::Padding(3);
-            this->anim5->Size = System::Drawing::Size(1512, 894);
-            this->anim5->TabIndex = 15;
-            this->anim5->Text = L"anim5";
+            this->gunaTransition->SetDecoration(this->pageHome, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pageHome->Location = System::Drawing::Point(4, 4);
+            this->pageHome->Name = L"pageHome";
+            this->pageHome->Padding = System::Windows::Forms::Padding(3);
+            this->pageHome->Size = System::Drawing::Size(1512, 894);
+            this->pageHome->TabIndex = 0;
+            this->pageHome->Text = L"pageHome";
             // 
-            // label28
+            // anim3
             // 
-            this->label28->AutoSize = true;
-            this->label28->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label28->ForeColor = System::Drawing::Color::SlateBlue;
-            this->label28->Location = System::Drawing::Point(33, 156);
-            this->label28->Name = L"label28";
-            this->label28->Size = System::Drawing::Size(273, 44);
-            this->label28->TabIndex = 8;
-            this->label28->Text = L"‣ С - Средний";
-            // 
-            // label31
-            // 
-            this->label31->AutoSize = true;
-            this->label31->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label31->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label31->Location = System::Drawing::Point(33, 95);
-            this->label31->Name = L"label31";
-            this->label31->Size = System::Drawing::Size(261, 44);
-            this->label31->TabIndex = 4;
-            this->label31->Text = L"‣ D - Простой";
-            // 
-            // label32
-            // 
-            this->label32->AutoSize = true;
-            this->label32->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label32->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label32->Location = System::Drawing::Point(172, 20);
-            this->label32->Name = L"label32";
-            this->label32->Size = System::Drawing::Size(1178, 58);
-            this->label32->TabIndex = 3;
-            this->label32->Text = L"Всего существует 3 уровня сложности заданий:";
-            // 
-            // anim6
-            // 
-            this->anim6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->anim3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim6->Controls->Add(this->label34);
-            this->anim6->Controls->Add(this->label35);
-            this->anim6->Controls->Add(this->label37);
-            this->anim6->Controls->Add(this->label38);
-            this->anim6->Location = System::Drawing::Point(4, 4);
-            this->anim6->Name = L"anim6";
-            this->anim6->Padding = System::Windows::Forms::Padding(3);
-            this->anim6->Size = System::Drawing::Size(1512, 894);
-            this->anim6->TabIndex = 16;
-            this->anim6->Text = L"anim6";
+            this->anim3->Controls->Add(this->btnSync);
+            this->anim3->Controls->Add(this->lblSync5);
+            this->anim3->Controls->Add(this->lblSync2);
+            this->anim3->Controls->Add(this->lblSync3);
+            this->anim3->Controls->Add(this->lblSync4);
+            this->anim3->Controls->Add(this->lblSync1);
+            this->anim3->Controls->Add(this->lblSync);
+            this->gunaTransition->SetDecoration(this->anim3, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->anim3->Location = System::Drawing::Point(4, 4);
+            this->anim3->Name = L"anim3";
+            this->anim3->Padding = System::Windows::Forms::Padding(3);
+            this->anim3->Size = System::Drawing::Size(1512, 894);
+            this->anim3->TabIndex = 19;
+            this->anim3->Text = L"anim3";
             // 
-            // label34
+            // btnSync
             // 
-            this->label34->AutoSize = true;
-            this->label34->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label34->ForeColor = System::Drawing::Color::SlateBlue;
-            this->label34->Location = System::Drawing::Point(33, 156);
-            this->label34->Name = L"label34";
-            this->label34->Size = System::Drawing::Size(273, 44);
-            this->label34->TabIndex = 8;
-            this->label34->Text = L"‣ С - Средний";
-            // 
-            // label35
-            // 
-            this->label35->AutoSize = true;
-            this->label35->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label35->ForeColor = System::Drawing::Color::Orange;
-            this->label35->Location = System::Drawing::Point(38, 221);
-            this->label35->Name = L"label35";
-            this->label35->Size = System::Drawing::Size(268, 44);
-            this->label35->TabIndex = 7;
-            this->label35->Text = L"‣ B - Сложный";
-            // 
-            // label37
-            // 
-            this->label37->AutoSize = true;
-            this->label37->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label37->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label37->Location = System::Drawing::Point(33, 95);
-            this->label37->Name = L"label37";
-            this->label37->Size = System::Drawing::Size(261, 44);
-            this->label37->TabIndex = 4;
-            this->label37->Text = L"‣ D - Простой";
-            // 
-            // label38
-            // 
-            this->label38->AutoSize = true;
-            this->label38->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label38->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync->Animated = true;
+            this->btnSync->BackColor = System::Drawing::Color::Transparent;
+            this->btnSync->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label38->Location = System::Drawing::Point(172, 20);
-            this->label38->Name = L"label38";
-            this->label38->Size = System::Drawing::Size(1178, 58);
-            this->label38->TabIndex = 3;
-            this->label38->Text = L"Всего существует 3 уровня сложности заданий:";
-            // 
-            // anim7
-            // 
-            this->anim7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim7->Controls->Add(this->label40);
-            this->anim7->Controls->Add(this->label41);
-            this->anim7->Controls->Add(this->label42);
-            this->anim7->Controls->Add(this->label43);
-            this->anim7->Controls->Add(this->label44);
-            this->anim7->Location = System::Drawing::Point(4, 4);
-            this->anim7->Name = L"anim7";
-            this->anim7->Padding = System::Windows::Forms::Padding(3);
-            this->anim7->Size = System::Drawing::Size(1512, 894);
-            this->anim7->TabIndex = 17;
-            this->anim7->Text = L"anim7";
-            // 
-            // label40
-            // 
-            this->label40->AutoSize = true;
-            this->label40->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label40->ForeColor = System::Drawing::Color::SlateBlue;
-            this->label40->Location = System::Drawing::Point(33, 156);
-            this->label40->Name = L"label40";
-            this->label40->Size = System::Drawing::Size(273, 44);
-            this->label40->TabIndex = 8;
-            this->label40->Text = L"‣ С - Средний";
-            // 
-            // label41
-            // 
-            this->label41->AutoSize = true;
-            this->label41->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label41->ForeColor = System::Drawing::Color::Orange;
-            this->label41->Location = System::Drawing::Point(38, 221);
-            this->label41->Name = L"label41";
-            this->label41->Size = System::Drawing::Size(268, 44);
-            this->label41->TabIndex = 7;
-            this->label41->Text = L"‣ B - Сложный";
-            // 
-            // label42
-            // 
-            this->label42->AutoSize = true;
-            this->label42->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label42->ForeColor = System::Drawing::Color::Chocolate;
-            this->label42->Location = System::Drawing::Point(24, 289);
-            this->label42->Name = L"label42";
-            this->label42->Size = System::Drawing::Size(403, 44);
-            this->label42->TabIndex = 6;
-            this->label42->Text = L"✱ A - Очень сложный";
-            // 
-            // label43
-            // 
-            this->label43->AutoSize = true;
-            this->label43->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label43->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label43->Location = System::Drawing::Point(33, 95);
-            this->label43->Name = L"label43";
-            this->label43->Size = System::Drawing::Size(261, 44);
-            this->label43->TabIndex = 4;
-            this->label43->Text = L"‣ D - Простой";
-            // 
-            // label44
-            // 
-            this->label44->AutoSize = true;
-            this->label44->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label44->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label44->Location = System::Drawing::Point(172, 20);
-            this->label44->Name = L"label44";
-            this->label44->Size = System::Drawing::Size(1178, 58);
-            this->label44->TabIndex = 3;
-            this->label44->Text = L"Всего существует 3 уровня сложности заданий:";
-            // 
-            // anim8
-            // 
-            this->anim8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim8->Controls->Add(this->label15);
-            this->anim8->Controls->Add(this->label16);
-            this->anim8->Controls->Add(this->label17);
-            this->anim8->Controls->Add(this->label18);
-            this->anim8->Controls->Add(this->label19);
-            this->anim8->Controls->Add(this->label21);
-            this->anim8->Location = System::Drawing::Point(4, 4);
-            this->anim8->Name = L"anim8";
-            this->anim8->Padding = System::Windows::Forms::Padding(3);
-            this->anim8->Size = System::Drawing::Size(1512, 894);
-            this->anim8->TabIndex = 18;
-            this->anim8->Text = L"anim8";
-            // 
-            // label15
-            // 
-            this->label15->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label15->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label15->Location = System::Drawing::Point(12, 385);
-            this->label15->Name = L"label15";
-            this->label15->Size = System::Drawing::Size(1440, 308);
-            this->label15->TabIndex = 9;
-            this->label15->Text = resources->GetString(L"label15.Text");
-            // 
-            // label16
-            // 
-            this->label16->AutoSize = true;
-            this->label16->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label16->ForeColor = System::Drawing::Color::SlateBlue;
-            this->label16->Location = System::Drawing::Point(33, 156);
-            this->label16->Name = L"label16";
-            this->label16->Size = System::Drawing::Size(273, 44);
-            this->label16->TabIndex = 8;
-            this->label16->Text = L"‣ С - Средний";
-            // 
-            // label17
-            // 
-            this->label17->AutoSize = true;
-            this->label17->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label17->ForeColor = System::Drawing::Color::Orange;
-            this->label17->Location = System::Drawing::Point(38, 221);
-            this->label17->Name = L"label17";
-            this->label17->Size = System::Drawing::Size(268, 44);
-            this->label17->TabIndex = 7;
-            this->label17->Text = L"‣ B - Сложный";
-            // 
-            // label18
-            // 
-            this->label18->AutoSize = true;
-            this->label18->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label18->ForeColor = System::Drawing::Color::Chocolate;
-            this->label18->Location = System::Drawing::Point(24, 289);
-            this->label18->Name = L"label18";
-            this->label18->Size = System::Drawing::Size(403, 44);
-            this->label18->TabIndex = 6;
-            this->label18->Text = L"✱ A - Очень сложный";
-            // 
-            // label19
-            // 
-            this->label19->AutoSize = true;
-            this->label19->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label19->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label19->Location = System::Drawing::Point(33, 95);
-            this->label19->Name = L"label19";
-            this->label19->Size = System::Drawing::Size(261, 44);
-            this->label19->TabIndex = 4;
-            this->label19->Text = L"‣ D - Простой";
-            // 
-            // label21
-            // 
-            this->label21->AutoSize = true;
-            this->label21->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->label21->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label21->Location = System::Drawing::Point(172, 20);
-            this->label21->Name = L"label21";
-            this->label21->Size = System::Drawing::Size(1178, 58);
-            this->label21->TabIndex = 3;
-            this->label21->Text = L"Всего существует 3 уровня сложности заданий:";
-            // 
-            // anim9
-            // 
-            this->anim9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->anim9->Controls->Add(this->guna2Button4);
-            this->anim9->Controls->Add(this->label22);
-            this->anim9->Controls->Add(this->label23);
-            this->anim9->Controls->Add(this->label24);
-            this->anim9->Controls->Add(this->label27);
-            this->anim9->Controls->Add(this->label29);
-            this->anim9->Controls->Add(this->label30);
-            this->anim9->Location = System::Drawing::Point(4, 4);
-            this->anim9->Name = L"anim9";
-            this->anim9->Padding = System::Windows::Forms::Padding(3);
-            this->anim9->Size = System::Drawing::Size(1512, 894);
-            this->anim9->TabIndex = 19;
-            this->anim9->Text = L"anim9";
-            // 
-            // guna2Button4
-            // 
-            this->guna2Button4->Animated = true;
-            this->guna2Button4->BackColor = System::Drawing::Color::Transparent;
-            this->guna2Button4->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->BorderRadius = 20;
-            this->guna2Button4->BorderThickness = 1;
-            this->guna2Button4->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button4->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button4->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+            this->btnSync->BorderRadius = 20;
+            this->btnSync->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnSync, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnSync->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->btnSync->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->btnSync->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
                 static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->guna2Button4->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+            this->btnSync->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
                 static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->guna2Button4->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-            this->guna2Button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->btnSync->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+            this->btnSync->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button4->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+            this->btnSync->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button4->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnSync->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
-            this->guna2Button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button4.Image")));
-            this->guna2Button4->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-            this->guna2Button4->Location = System::Drawing::Point(1323, 753);
-            this->guna2Button4->Name = L"guna2Button4";
-            this->guna2Button4->Size = System::Drawing::Size(181, 39);
-            this->guna2Button4->TabIndex = 49;
-            this->guna2Button4->Text = L"Продолжить";
-            this->guna2Button4->TextOffset = System::Drawing::Point(10, 0);
-            this->guna2Button4->UseTransparentBackground = true;
+            this->btnSync->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
+            this->btnSync->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync.Image")));
+            this->btnSync->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->btnSync->Location = System::Drawing::Point(1323, 753);
+            this->btnSync->Name = L"btnSync";
+            this->btnSync->Size = System::Drawing::Size(181, 39);
+            this->btnSync->TabIndex = 49;
+            this->btnSync->Text = L"Продолжить";
+            this->btnSync->TextOffset = System::Drawing::Point(10, 0);
+            this->btnSync->UseTransparentBackground = true;
+            this->btnSync->Visible = false;
+            this->btnSync->Click += gcnew System::EventHandler(this, &mainForm::btnSync_Click);
             // 
-            // label22
+            // lblSync5
             // 
-            this->label22->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->gunaTransition->SetDecoration(this->lblSync5, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label22->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->lblSync5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label22->Location = System::Drawing::Point(12, 385);
-            this->label22->Name = L"label22";
-            this->label22->Size = System::Drawing::Size(1440, 308);
-            this->label22->TabIndex = 9;
-            this->label22->Text = resources->GetString(L"label22.Text");
+            this->lblSync5->Location = System::Drawing::Point(5, 373);
+            this->lblSync5->Name = L"lblSync5";
+            this->lblSync5->Size = System::Drawing::Size(1338, 350);
+            this->lblSync5->TabIndex = 9;
+            this->lblSync5->Text = resources->GetString(L"lblSync5.Text");
+            this->lblSync5->Visible = false;
             // 
-            // label23
+            // lblSync2
             // 
-            this->label23->AutoSize = true;
-            this->label23->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblSync2->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSync2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label23->ForeColor = System::Drawing::Color::SlateBlue;
-            this->label23->Location = System::Drawing::Point(33, 156);
-            this->label23->Name = L"label23";
-            this->label23->Size = System::Drawing::Size(273, 44);
-            this->label23->TabIndex = 8;
-            this->label23->Text = L"‣ С - Средний";
+            this->lblSync2->ForeColor = System::Drawing::Color::SlateBlue;
+            this->lblSync2->Location = System::Drawing::Point(33, 156);
+            this->lblSync2->Name = L"lblSync2";
+            this->lblSync2->Size = System::Drawing::Size(273, 44);
+            this->lblSync2->TabIndex = 8;
+            this->lblSync2->Text = L"‣ С - Средний";
+            this->lblSync2->Visible = false;
             // 
-            // label24
+            // lblSync3
             // 
-            this->label24->AutoSize = true;
-            this->label24->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblSync3->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSync3, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label24->ForeColor = System::Drawing::Color::Orange;
-            this->label24->Location = System::Drawing::Point(38, 221);
-            this->label24->Name = L"label24";
-            this->label24->Size = System::Drawing::Size(268, 44);
-            this->label24->TabIndex = 7;
-            this->label24->Text = L"‣ B - Сложный";
+            this->lblSync3->ForeColor = System::Drawing::Color::Orange;
+            this->lblSync3->Location = System::Drawing::Point(38, 221);
+            this->lblSync3->Name = L"lblSync3";
+            this->lblSync3->Size = System::Drawing::Size(268, 44);
+            this->lblSync3->TabIndex = 7;
+            this->lblSync3->Text = L"‣ B - Сложный";
+            this->lblSync3->Visible = false;
             // 
-            // label27
+            // lblSync4
             // 
-            this->label27->AutoSize = true;
-            this->label27->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblSync4->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSync4, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label27->ForeColor = System::Drawing::Color::Chocolate;
-            this->label27->Location = System::Drawing::Point(24, 289);
-            this->label27->Name = L"label27";
-            this->label27->Size = System::Drawing::Size(403, 44);
-            this->label27->TabIndex = 6;
-            this->label27->Text = L"✱ A - Очень сложный";
+            this->lblSync4->ForeColor = System::Drawing::Color::Chocolate;
+            this->lblSync4->Location = System::Drawing::Point(24, 289);
+            this->lblSync4->Name = L"lblSync4";
+            this->lblSync4->Size = System::Drawing::Size(403, 44);
+            this->lblSync4->TabIndex = 6;
+            this->lblSync4->Text = L"✱ A - Очень сложный";
+            this->lblSync4->Visible = false;
             // 
-            // label29
+            // lblSync1
             // 
-            this->label29->AutoSize = true;
-            this->label29->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblSync1->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSync1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label29->ForeColor = System::Drawing::Color::SeaGreen;
-            this->label29->Location = System::Drawing::Point(33, 95);
-            this->label29->Name = L"label29";
-            this->label29->Size = System::Drawing::Size(261, 44);
-            this->label29->TabIndex = 4;
-            this->label29->Text = L"‣ D - Простой";
+            this->lblSync1->ForeColor = System::Drawing::Color::SeaGreen;
+            this->lblSync1->Location = System::Drawing::Point(33, 95);
+            this->lblSync1->Name = L"lblSync1";
+            this->lblSync1->Size = System::Drawing::Size(261, 44);
+            this->lblSync1->TabIndex = 4;
+            this->lblSync1->Text = L"‣ D - Простой";
+            this->lblSync1->Visible = false;
             // 
-            // label30
+            // lblSync
             // 
-            this->label30->AutoSize = true;
-            this->label30->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblSync->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblSync, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSync->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->label30->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->lblSync->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->label30->Location = System::Drawing::Point(172, 20);
-            this->label30->Name = L"label30";
-            this->label30->Size = System::Drawing::Size(1178, 58);
-            this->label30->TabIndex = 3;
-            this->label30->Text = L"Всего существует 3 уровня сложности заданий:";
+            this->lblSync->Location = System::Drawing::Point(172, 20);
+            this->lblSync->Name = L"lblSync";
+            this->lblSync->Size = System::Drawing::Size(1178, 58);
+            this->lblSync->TabIndex = 3;
+            this->lblSync->Text = L"Всего существует 3 уровня сложности заданий:";
+            // 
+            // gunaTransition
+            // 
+            this->gunaTransition->AnimationType = Guna::UI2::AnimatorNS::AnimationType::Custom;
+            this->gunaTransition->Cursor = nullptr;
+            animation1->AnimateOnlyDifferences = true;
+            animation1->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.BlindCoeff")));
+            animation1->LeafCoeff = 0;
+            animation1->MaxTime = 1;
+            animation1->MinTime = 0;
+            animation1->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicCoeff")));
+            animation1->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.MosaicShift")));
+            animation1->MosaicSize = 0;
+            animation1->Padding = System::Windows::Forms::Padding(0);
+            animation1->RotateCoeff = 0;
+            animation1->RotateLimit = 0;
+            animation1->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.ScaleCoeff")));
+            animation1->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation1.SlideCoeff")));
+            animation1->TimeCoeff = 0;
+            animation1->TransparencyCoeff = 0;
+            this->gunaTransition->DefaultAnimation = animation1;
             // 
             // mainForm
             // 
@@ -4423,6 +4215,7 @@ private:
             this->Controls->Add(this->panelMain);
             this->Controls->Add(this->panelMenu);
             this->Controls->Add(this->Pages);
+            this->gunaTransition->SetDecoration(this, Guna::UI2::AnimatorNS::DecorationType::None);
             this->DoubleBuffered = true;
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
             this->Name = L"mainForm";
@@ -4439,11 +4232,6 @@ private:
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pctrboxLogo))->EndInit();
             this->panelMenu->ResumeLayout(false);
             this->anim4->ResumeLayout(false);
-            this->anim4->PerformLayout();
-            this->anim11->ResumeLayout(false);
-            this->anim10->ResumeLayout(false);
-            this->anim3->ResumeLayout(false);
-            this->anim3->PerformLayout();
             this->anim2->ResumeLayout(false);
             this->anim2->PerformLayout();
             this->anim1->ResumeLayout(false);
@@ -4482,16 +4270,8 @@ private:
             this->Book14->ResumeLayout(false);
             this->myToolbox->ResumeLayout(false);
             this->Pages->ResumeLayout(false);
-            this->anim5->ResumeLayout(false);
-            this->anim5->PerformLayout();
-            this->anim6->ResumeLayout(false);
-            this->anim6->PerformLayout();
-            this->anim7->ResumeLayout(false);
-            this->anim7->PerformLayout();
-            this->anim8->ResumeLayout(false);
-            this->anim8->PerformLayout();
-            this->anim9->ResumeLayout(false);
-            this->anim9->PerformLayout();
+            this->anim3->ResumeLayout(false);
+            this->anim3->PerformLayout();
             this->ResumeLayout(false);
 
         }
@@ -4505,11 +4285,24 @@ private:
 		int securityCode;
 		int securityCodeNew;
 		bool email_confirmed = false;
-        Boolean isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
-	private: 
+        Boolean isCoursesVisited;
+        
+        void logsLoad() {
+            isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
+        }
+    private: 
 		// MainFunc.h
 
-		String^ readBinaryFile(String^ filePath);
+        Void HideWAnimation(Forms::Control^ CONTROL) {
+            UI2::AnimatorNS::Animation^ MYANIM = gcnew UI2::AnimatorNS::Animation();
+            gunaTransition->HideSync(dynamic_cast<Forms::Control^>(CONTROL), true, MYANIM->Transparent);
+        }
+        Void ShowWAnimation(Forms::Control^ CONTROL) {
+            UI2::AnimatorNS::Animation^ MYANIM = gcnew UI2::AnimatorNS::Animation();
+            gunaTransition->ShowSync(dynamic_cast<Forms::Control^>(CONTROL), true, MYANIM->Transparent);
+        }
+
+        String^ readBinaryFile(String^ filePath);
 		size_t readPassword(String^ filePath);
 		Void writeBinaryFile(String^ filePath, String^ content);
 		bool IsValidEmail(String^ email);
@@ -4548,7 +4341,9 @@ private:
 
 	// MainMenu.h
 	private: 
-		Void SetProfileDefaults();
+        bool courseAnimationState = false;
+
+        Void SetProfileDefaults();
 		Boolean CheckSave();
 		Void timerMenu_Tick(System::Object^ sender, System::EventArgs^ e);
 
@@ -4562,8 +4357,8 @@ private:
 		Void btnSettings_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnLogOut_Click(System::Object^ sender, System::EventArgs^ e);
 
-	
-
+        Void btnSync_Click(System::Object^ sender, System::EventArgs^ e);
+        Void btnSync1_Click(System::Object^ sender, System::EventArgs^ e);
 
 
 	// Профиль
@@ -4749,6 +4544,7 @@ private:
 		Void btnStrikeOut_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnItalic_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnClearFilters_Click(System::Object^ sender, System::EventArgs^ e);
+        //Переходы по страницам
         Void dropdownPages_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
         Void btnPreviousBook_Click(System::Object^ sender, System::EventArgs^ e);
         Void btnBookNext_Click(System::Object^ sender, System::EventArgs^ e);
