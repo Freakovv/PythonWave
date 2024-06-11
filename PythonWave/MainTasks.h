@@ -6,24 +6,20 @@
 #include <msclr/marshal_cppstd.h>
 #include <iostream>
 
-#include <thread>
-#include <chrono>
-#include <functional>
-
 using namespace System;
 using namespace PythonWave;
-using namespace System::Windows;
 using namespace System::Drawing;
-using namespace System::Threading;
 using namespace System::Windows::Forms;
-using namespace System::Drawing::Imaging;
 
 int currentAnim = 1;
 double animSeconds = 2;
 int secondsToStartAnim = 4;
 
 Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (isCoursesVisited && !courseAnimationState)
+	if (!courseAnimationState)
+		return;
+
+	if (isCoursesVisited)
 		funcSelectTab(pageTasks);
 	else {
 		currentAnim = 1;
@@ -38,7 +34,6 @@ Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 			menu = false;
 			timerMenu->Start();
 		}
-
 	}
 }
 

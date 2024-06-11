@@ -92,8 +92,16 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
 	if (CheckSave() && !courseAnimationState)
 		Pages->SelectTab(tabPage);
-	else
+	else if (courseAnimationState)
 		btnCourses->Checked = true;
+}
+
+Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (courseAnimationState)
+		return;
+
+	menu == false ? menu = true : menu = false;
+	timerMenu->Start();
 }
 
 Void mainForm::btnHome_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -44,10 +44,6 @@ using namespace System::Drawing::Imaging;
 		SetCenter(panelProfileData, lblLogin, 1);
 		SetCenter(anim1, lblAnim1, 1);
 	}
-	Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
-		menu == false ? menu = true : menu = false;
-		timerMenu->Start();
-	}
 	Void mainForm::btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
 		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("close");

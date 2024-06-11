@@ -1,0 +1,155 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.40.33811.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "a0317ac06fdfabfedff523a1994a042fd934f75b911ef31ec27f328e099197f7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/auth-header.h"
+          },
+          "hashes": {
+            "sha-256": "df6a39f2cf9ede0c4c5c9d71e8ca0e307fdde0f3fabeb1f48b72f326a446966f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/auth.h"
+          },
+          "hashes": {
+            "sha-256": "d87ad75fa7f6efaefa8e9f0c74f349af07dcb6b00dcd8f6e240158d7f91eb3a3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/config.h"
+          },
+          "hashes": {
+            "sha-256": "09ab4de5f0ec6025a2955f3f16f99d9174e3b7fdfae8227b14ea36c9dfd6263a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/classfade.h"
+          },
+          "hashes": {
+            "sha-256": "6872e80cd767d680b5762d2e2dd9e8a3a00ab5e035c88b5f7976c32a0e02e07f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/profile-header.h"
+          },
+          "hashes": {
+            "sha-256": "69d137c749a77fc1d7c10025b86f4eb942c7c8e44ee86f94b1ad5a5ddebd2a9e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/profile.h"
+          },
+          "hashes": {
+            "sha-256": "d9733857be4fce380c2954c83b15a69e14a511cd6c850d8121baa3be2e2ff599"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/classmail.h"
+          },
+          "hashes": {
+            "sha-256": "7478b05a430ed53a2884195cbe96b3b9d5bb062fe169fe3f6e0b0d99c8372c98"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/main-header.h"
+          },
+          "hashes": {
+            "sha-256": "5617e27f4b5f8f5adf304c16e20bba6f2e3e922f8e894c2ea702f47794347ac0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mainmenu.h"
+          },
+          "hashes": {
+            "sha-256": "9192b6ad2f1edb8ec742fd0d600bd1dff7955ceb8764fdf99ed404b27aa2ee05"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mainform.h"
+          },
+          "hashes": {
+            "sha-256": "d51f07ced3d603c37d3c1781eed01c7c123e22e08c0cf73976c2a7d8a864c112"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mainbook.h"
+          },
+          "hashes": {
+            "sha-256": "66e1570a73a760e2798044dc8df21c8c77a5088c41dc9ccdf3d8295d0a1772e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mainfunc.h"
+          },
+          "hashes": {
+            "sha-256": "4ff8b5106caade304bfb35bc9b854bc5dc9abef7988de4f3bc08219eb9a6d282"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mainprofile.h"
+          },
+          "hashes": {
+            "sha-256": "512b7b781f1205805f927c280a2c16854a6a24156d84ec500c2bcaeaa5c5306e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/maintasks.h"
+          },
+          "hashes": {
+            "sha-256": "02ab498199661fb093d1ad77e9e013951564faf1b23f9f696a22b041d97aed44"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/.coding/pythonwave/pythonwave/mypython.h"
+          },
+          "hashes": {
+            "sha-256": "b276c6deb550655d9e1ea234030f1ea31a51ae0d36565075c752c303f50f5e60"
+          }
+        }
+      ]
+    }
+  ]
+}
