@@ -36,7 +36,6 @@ using namespace System::Drawing::Imaging;
 		DataLoad();
 		cfgLoad();
 		LoadBook();
-		logsLoad();
 		menu = false;
 
 		ClassFade^ Fade = gcnew ClassFade(this);

@@ -103,6 +103,7 @@ Void mainForm::btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
 }
 Void mainForm::btnProfile_Click(System::Object^ sender, System::EventArgs^ e) {
+	logsLoad();
 	funcSelectTab(pageProfile);
 }
 Void mainForm::btnStats_Click(System::Object^ sender, System::EventArgs^ e) {

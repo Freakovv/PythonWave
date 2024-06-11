@@ -3,24 +3,28 @@
 #include "mainForm.h"
 
 #include <Windows.h>
-#include <iostream>
 #include <msclr/marshal_cppstd.h>
+#include <iostream>
 
+#include <thread>
+#include <chrono>
+#include <functional>
 
-
-using namespace System::Drawing::Imaging;
-using namespace System::Drawing;
 using namespace System;
 using namespace PythonWave;
+using namespace System::Windows;
+using namespace System::Drawing;
+using namespace System::Threading;
+using namespace System::Windows::Forms;
+using namespace System::Drawing::Imaging;
 
 int currentAnim = 1;
 double animSeconds = 2;
+int secondsToStartAnim = 4;
 
-
-// Переход на страницу и анимация
 Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (isCoursesVisited && !courseAnimationState)
-		funcSelectTab(pageCourses);
+		funcSelectTab(pageTasks);
 	else {
 		currentAnim = 1;
 		animSeconds = 3;
@@ -29,8 +33,15 @@ Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 		funcSelectTab(anim1);
 		timerAnim->Start();
 		courseAnimationState = true;
+
+		if (menu) {
+			menu = false;
+			timerMenu->Start();
+		}
+
 	}
 }
+
 Void mainForm::btnSync_Click(System::Object^ sender, System::EventArgs^ e) {
 	Pages->SelectTab(anim4);
 
@@ -39,7 +50,7 @@ Void mainForm::btnSync_Click(System::Object^ sender, System::EventArgs^ e) {
 	timerAnim->Start();
 }
 Void mainForm::btnSync1_Click(System::Object^ sender, System::EventArgs^ e) {
-	funcSelectTab(pageCourses);
+	funcSelectTab(pageTasks);
 	animSeconds = 3;
 }
 Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
@@ -106,6 +117,8 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 	case 5:
 		Pages->AllowTransitions = false;
 		isCoursesVisited = true;
+		courseAnimationState = false;
+
 		writeBinaryFile("script//logs.bin", Convert::ToString(isCoursesVisited));
 		timerAnim->Stop();
 		break;

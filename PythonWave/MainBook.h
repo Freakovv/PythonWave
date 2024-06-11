@@ -12,12 +12,9 @@ using namespace System;
 using namespace System::Drawing;
 using namespace System::Drawing::Imaging;
 
-Boolean isBookExists = true;
-// TabPage^ CurrentBookPage;
-// int CurrentBookIndex;
 // RichTextBox CurrentRichBox;
 // String^ CurrentBookFile;
-
+Boolean isBookExists;
 
 void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
 {
@@ -36,7 +33,6 @@ void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
 	}
 
 	if (!File::Exists(filePath)) {
-		MessageWarning->Show(filePath, "Файл книги не был загружен");
 		isBookExists = false;
 		return;
 	}

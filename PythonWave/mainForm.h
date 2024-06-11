@@ -164,9 +164,10 @@ private: Guna::UI2::WinForms::Guna2Button^ btnThick;
 private: Guna::UI2::WinForms::Guna2Button^ btnUnderline;
 private: Guna::UI2::WinForms::Guna2CircleButton^ btnQuestionBook;
 private: Guna::UI2::WinForms::Guna2Button^ btnHighlight;
-private: System::Windows::Forms::TabPage^ pageCourses;
+private: System::Windows::Forms::TabPage^ pageTasks;
+
 private: Guna::UI2::WinForms::Guna2Panel^ guna2Panel1;
-private: Guna::UI2::WinForms::Guna2TileButton^ guna2TileButton1;
+
 private: System::Windows::Forms::TabPage^ pageProfile;
 private: System::Windows::Forms::Panel^ panelProfileData;
 private: Guna::UI2::WinForms::Guna2Button^ btnProfileEdit;
@@ -308,6 +309,15 @@ private: System::Windows::Forms::Label^ lblSync;
 
 private: Guna::UI2::WinForms::Guna2Transition^ gunaTransition;
 private: System::Windows::Forms::TabPage^ pageHome;
+private: System::Windows::Forms::Timer^ ANIMFIX;
+private: Bunifu::UI::WinForms::BunifuPages^ PagesTasks;
+private: System::Windows::Forms::TabPage^ TasksMain;
+
+
+private: System::Windows::Forms::TabPage^ tabPage2;
+private: Guna::UI2::WinForms::Guna2GradientButton^ btnTask1;
+
+
 
 
 
@@ -517,8 +527,9 @@ private:
             System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
             System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
             System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation4 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
             System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
             this->panelMain = (gcnew System::Windows::Forms::Panel());
@@ -630,9 +641,12 @@ private:
             this->lblName = (gcnew System::Windows::Forms::Label());
             this->lblLogin = (gcnew System::Windows::Forms::Label());
             this->pictureProfile = (gcnew System::Windows::Forms::PictureBox());
-            this->pageCourses = (gcnew System::Windows::Forms::TabPage());
+            this->pageTasks = (gcnew System::Windows::Forms::TabPage());
+            this->PagesTasks = (gcnew Bunifu::UI::WinForms::BunifuPages());
+            this->TasksMain = (gcnew System::Windows::Forms::TabPage());
             this->guna2Panel1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->guna2TileButton1 = (gcnew Guna::UI2::WinForms::Guna2TileButton());
+            this->btnTask1 = (gcnew Guna::UI2::WinForms::Guna2GradientButton());
+            this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
             this->pageBook = (gcnew System::Windows::Forms::TabPage());
             this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
             this->pgBookStart = (gcnew System::Windows::Forms::TabPage());
@@ -687,6 +701,7 @@ private:
             this->lblSync1 = (gcnew System::Windows::Forms::Label());
             this->lblSync = (gcnew System::Windows::Forms::Label());
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
+            this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMinimize))->BeginInit();
@@ -707,7 +722,9 @@ private:
             this->pageProfile->SuspendLayout();
             this->panelProfileData->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfile))->BeginInit();
-            this->pageCourses->SuspendLayout();
+            this->pageTasks->SuspendLayout();
+            this->PagesTasks->SuspendLayout();
+            this->TasksMain->SuspendLayout();
             this->guna2Panel1->SuspendLayout();
             this->pageBook->SuspendLayout();
             this->Book->SuspendLayout();
@@ -1098,7 +1115,7 @@ private:
             this->btnCourses->Name = L"btnCourses";
             this->btnCourses->Size = System::Drawing::Size(250, 90);
             this->btnCourses->TabIndex = 22;
-            this->btnCourses->Text = L"Курсы";
+            this->btnCourses->Text = L"Задания";
             this->btnCourses->UseTransparentBackground = true;
             this->btnCourses->Click += gcnew System::EventHandler(this, &mainForm::btnCourses_Click);
             // 
@@ -1337,7 +1354,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnSync1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnSync1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
+            this->btnSync1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
             this->btnSync1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync1.Image")));
             this->btnSync1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnSync1->Location = System::Drawing::Point(1323, 753);
@@ -1484,7 +1501,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnChangePassword->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnChangePassword->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image19")));
+            this->btnChangePassword->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image20")));
             this->btnChangePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnChangePassword.Image")));
             this->btnChangePassword->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnChangePassword->Location = System::Drawing::Point(842, 555);
@@ -1700,7 +1717,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnCancelChanges->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnCancelChanges->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image20")));
+            this->btnCancelChanges->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image21")));
             this->btnCancelChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelChanges.Image")));
             this->btnCancelChanges->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnCancelChanges->ImageSize = System::Drawing::Size(25, 25);
@@ -1932,7 +1949,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->buttonSendMail->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image21")));
+            this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image22")));
             this->buttonSendMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSendMail.Image")));
             this->buttonSendMail->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->buttonSendMail->ImageSize = System::Drawing::Size(25, 25);
@@ -1974,7 +1991,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->buttonCheckCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image22")));
+            this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image23")));
             this->buttonCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCheckCode.Image")));
             this->buttonCheckCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->buttonCheckCode->ImageSize = System::Drawing::Size(25, 25);
@@ -2134,7 +2151,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnProfileSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image23")));
+            this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image24")));
             this->btnProfileSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileSave.Image")));
             this->btnProfileSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnProfileSave->Location = System::Drawing::Point(1323, 753);
@@ -2174,7 +2191,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->guna2Button2->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image24")));
+            this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
             this->guna2Button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button2.Image")));
             this->guna2Button2->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->guna2Button2->ImageSize = System::Drawing::Size(25, 25);
@@ -2372,7 +2389,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnSettingsSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnSettingsSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
+            this->btnSettingsSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image18")));
             this->btnSettingsSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsSave.Image")));
             this->btnSettingsSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnSettingsSave->Location = System::Drawing::Point(1328, 753);
@@ -2412,7 +2429,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnSettingsCancel->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnSettingsCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image18")));
+            this->btnSettingsCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image19")));
             this->btnSettingsCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsCancel.Image")));
             this->btnSettingsCancel->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnSettingsCancel->ImageSize = System::Drawing::Size(25, 25);
@@ -2872,7 +2889,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnProfileEdit->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnProfileEdit->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image16")));
+            this->btnProfileEdit->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
             this->btnProfileEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileEdit.Image")));
             this->btnProfileEdit->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnProfileEdit->Location = System::Drawing::Point(966, 747);
@@ -3010,43 +3027,120 @@ private:
             this->pictureProfile->TabIndex = 43;
             this->pictureProfile->TabStop = false;
             // 
-            // pageCourses
+            // pageTasks
             // 
-            this->pageCourses->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->pageTasks->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->pageCourses->Controls->Add(this->guna2Panel1);
-            this->gunaTransition->SetDecoration(this->pageCourses, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->pageCourses->Location = System::Drawing::Point(4, 4);
-            this->pageCourses->Name = L"pageCourses";
-            this->pageCourses->Size = System::Drawing::Size(1512, 894);
-            this->pageCourses->TabIndex = 2;
-            this->pageCourses->Text = L"pageCourses";
+            this->pageTasks->Controls->Add(this->PagesTasks);
+            this->gunaTransition->SetDecoration(this->pageTasks, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pageTasks->Location = System::Drawing::Point(4, 4);
+            this->pageTasks->Name = L"pageTasks";
+            this->pageTasks->Size = System::Drawing::Size(1512, 894);
+            this->pageTasks->TabIndex = 2;
+            this->pageTasks->Text = L"pageTasks";
+            // 
+            // PagesTasks
+            // 
+            this->PagesTasks->Alignment = System::Windows::Forms::TabAlignment::Bottom;
+            this->PagesTasks->AllowTransitions = true;
+            this->PagesTasks->Controls->Add(this->TasksMain);
+            this->PagesTasks->Controls->Add(this->tabPage2);
+            this->gunaTransition->SetDecoration(this->PagesTasks, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->PagesTasks->Location = System::Drawing::Point(0, 0);
+            this->PagesTasks->Multiline = true;
+            this->PagesTasks->Name = L"PagesTasks";
+            this->PagesTasks->Page = this->TasksMain;
+            this->PagesTasks->PageIndex = 0;
+            this->PagesTasks->PageName = L"TasksMain";
+            this->PagesTasks->PageTitle = L"TasksMain";
+            this->PagesTasks->SelectedIndex = 0;
+            this->PagesTasks->Size = System::Drawing::Size(1512, 868);
+            this->PagesTasks->TabIndex = 1;
+            animation3->AnimateOnlyDifferences = false;
+            animation3->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.BlindCoeff")));
+            animation3->LeafCoeff = 0;
+            animation3->MaxTime = 1;
+            animation3->MinTime = 0;
+            animation3->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicCoeff")));
+            animation3->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicShift")));
+            animation3->MosaicSize = 0;
+            animation3->Padding = System::Windows::Forms::Padding(0);
+            animation3->RotateCoeff = 0;
+            animation3->RotateLimit = 0;
+            animation3->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.ScaleCoeff")));
+            animation3->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.SlideCoeff")));
+            animation3->TimeCoeff = 0;
+            animation3->TransparencyCoeff = 0;
+            this->PagesTasks->Transition = animation3;
+            this->PagesTasks->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Custom;
+            // 
+            // TasksMain
+            // 
+            this->TasksMain->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+                static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            this->TasksMain->Controls->Add(this->guna2Panel1);
+            this->gunaTransition->SetDecoration(this->TasksMain, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->TasksMain->Location = System::Drawing::Point(4, 4);
+            this->TasksMain->Name = L"TasksMain";
+            this->TasksMain->Padding = System::Windows::Forms::Padding(3);
+            this->TasksMain->Size = System::Drawing::Size(1504, 842);
+            this->TasksMain->TabIndex = 0;
+            this->TasksMain->Text = L"TasksMain";
             // 
             // guna2Panel1
             // 
-            this->guna2Panel1->Controls->Add(this->guna2TileButton1);
+            this->guna2Panel1->Controls->Add(this->btnTask1);
             this->gunaTransition->SetDecoration(this->guna2Panel1, Guna::UI2::AnimatorNS::DecorationType::None);
             this->guna2Panel1->Location = System::Drawing::Point(0, 0);
             this->guna2Panel1->Name = L"guna2Panel1";
             this->guna2Panel1->Size = System::Drawing::Size(1512, 816);
             this->guna2Panel1->TabIndex = 0;
             // 
-            // guna2TileButton1
+            // btnTask1
             // 
-            this->gunaTransition->SetDecoration(this->guna2TileButton1, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->guna2TileButton1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->guna2TileButton1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->guna2TileButton1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+            this->btnTask1->BackColor = System::Drawing::Color::Transparent;
+            this->btnTask1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTask1.BackgroundImage")));
+            this->btnTask1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+            this->btnTask1->CustomImages->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image16")));
+            this->btnTask1->CustomImages->ImageAlign = System::Windows::Forms::HorizontalAlignment::Center;
+            this->gunaTransition->SetDecoration(this->btnTask1, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
+            this->btnTask1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->btnTask1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->btnTask1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
                 static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->guna2TileButton1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+            this->btnTask1->DisabledState->FillColor2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+                static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+            this->btnTask1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
                 static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->guna2TileButton1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-            this->guna2TileButton1->ForeColor = System::Drawing::Color::White;
-            this->guna2TileButton1->Location = System::Drawing::Point(12, 13);
-            this->guna2TileButton1->Name = L"guna2TileButton1";
-            this->guna2TileButton1->Size = System::Drawing::Size(248, 180);
-            this->guna2TileButton1->TabIndex = 0;
-            this->guna2TileButton1->Text = L"guna2TileButton1";
+            this->btnTask1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->btnTask1->FillColor2 = System::Drawing::Color::DarkSlateGray;
+            this->btnTask1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
+            this->btnTask1->ForeColor = System::Drawing::Color::White;
+            this->btnTask1->GradientMode = System::Drawing::Drawing2D::LinearGradientMode::Vertical;
+            this->btnTask1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTask1.Image")));
+            this->btnTask1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->btnTask1->ImageOffset = System::Drawing::Point(-600, 250);
+            this->btnTask1->ImageSize = System::Drawing::Size(1500, 500);
+            this->btnTask1->Location = System::Drawing::Point(15, 15);
+            this->btnTask1->Name = L"btnTask1";
+            this->btnTask1->Size = System::Drawing::Size(300, 250);
+            this->btnTask1->TabIndex = 1;
+            this->btnTask1->Text = L"Простое сложение чисел";
+            this->btnTask1->TextOffset = System::Drawing::Point(0, -70);
+            this->btnTask1->Tile = true;
+            // 
+            // tabPage2
+            // 
+            this->tabPage2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+                static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            this->gunaTransition->SetDecoration(this->tabPage2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->tabPage2->Location = System::Drawing::Point(4, 4);
+            this->tabPage2->Name = L"tabPage2";
+            this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+            this->tabPage2->Size = System::Drawing::Size(1504, 842);
+            this->tabPage2->TabIndex = 1;
+            this->tabPage2->Text = L"Task1";
             // 
             // pageBook
             // 
@@ -3990,7 +4084,7 @@ private:
             this->Pages->AllowTransitions = false;
             this->Pages->Controls->Add(this->pageHome);
             this->Pages->Controls->Add(this->pageBook);
-            this->Pages->Controls->Add(this->pageCourses);
+            this->Pages->Controls->Add(this->pageTasks);
             this->Pages->Controls->Add(this->pageProfile);
             this->Pages->Controls->Add(this->pageStats);
             this->Pages->Controls->Add(this->pageSettings);
@@ -4003,29 +4097,29 @@ private:
             this->Pages->Location = System::Drawing::Point(80, 80);
             this->Pages->Multiline = true;
             this->Pages->Name = L"Pages";
-            this->Pages->Page = this->anim4;
-            this->Pages->PageIndex = 9;
-            this->Pages->PageName = L"anim4";
-            this->Pages->PageTitle = L"anim4";
+            this->Pages->Page = this->pageTasks;
+            this->Pages->PageIndex = 2;
+            this->Pages->PageName = L"pageTasks";
+            this->Pages->PageTitle = L"pageTasks";
             this->Pages->SelectedIndex = 0;
             this->Pages->Size = System::Drawing::Size(1520, 920);
             this->Pages->TabIndex = 2;
-            animation3->AnimateOnlyDifferences = true;
-            animation3->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.BlindCoeff")));
-            animation3->LeafCoeff = 0;
-            animation3->MaxTime = 1;
-            animation3->MinTime = 0;
-            animation3->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicCoeff")));
-            animation3->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicShift")));
-            animation3->MosaicSize = 0;
-            animation3->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
-            animation3->RotateCoeff = 0;
-            animation3->RotateLimit = 0;
-            animation3->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.ScaleCoeff")));
-            animation3->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.SlideCoeff")));
-            animation3->TimeCoeff = 0;
-            animation3->TransparencyCoeff = 1;
-            this->Pages->Transition = animation3;
+            animation4->AnimateOnlyDifferences = true;
+            animation4->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation4.BlindCoeff")));
+            animation4->LeafCoeff = 0;
+            animation4->MaxTime = 1;
+            animation4->MinTime = 0;
+            animation4->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation4.MosaicCoeff")));
+            animation4->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation4.MosaicShift")));
+            animation4->MosaicSize = 0;
+            animation4->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
+            animation4->RotateCoeff = 0;
+            animation4->RotateLimit = 0;
+            animation4->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation4.ScaleCoeff")));
+            animation4->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation4.SlideCoeff")));
+            animation4->TimeCoeff = 0;
+            animation4->TransparencyCoeff = 1;
+            this->Pages->Transition = animation4;
             this->Pages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
             // 
             // pageHome
@@ -4087,7 +4181,7 @@ private:
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
             this->btnSync->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->btnSync->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
+            this->btnSync->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image27")));
             this->btnSync->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync.Image")));
             this->btnSync->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
             this->btnSync->Location = System::Drawing::Point(1323, 753);
@@ -4123,9 +4217,9 @@ private:
             this->lblSync2->ForeColor = System::Drawing::Color::SlateBlue;
             this->lblSync2->Location = System::Drawing::Point(33, 156);
             this->lblSync2->Name = L"lblSync2";
-            this->lblSync2->Size = System::Drawing::Size(273, 44);
+            this->lblSync2->Size = System::Drawing::Size(268, 44);
             this->lblSync2->TabIndex = 8;
-            this->lblSync2->Text = L"‣ С - Средний";
+            this->lblSync2->Text = L"‣ A - Средний";
             this->lblSync2->Visible = false;
             // 
             // lblSync3
@@ -4137,9 +4231,9 @@ private:
             this->lblSync3->ForeColor = System::Drawing::Color::Orange;
             this->lblSync3->Location = System::Drawing::Point(38, 221);
             this->lblSync3->Name = L"lblSync3";
-            this->lblSync3->Size = System::Drawing::Size(268, 44);
+            this->lblSync3->Size = System::Drawing::Size(265, 44);
             this->lblSync3->TabIndex = 7;
-            this->lblSync3->Text = L"‣ B - Сложный";
+            this->lblSync3->Text = L"‣ S - Сложный";
             this->lblSync3->Visible = false;
             // 
             // lblSync4
@@ -4151,9 +4245,9 @@ private:
             this->lblSync4->ForeColor = System::Drawing::Color::Chocolate;
             this->lblSync4->Location = System::Drawing::Point(24, 289);
             this->lblSync4->Name = L"lblSync4";
-            this->lblSync4->Size = System::Drawing::Size(403, 44);
+            this->lblSync4->Size = System::Drawing::Size(418, 44);
             this->lblSync4->TabIndex = 6;
-            this->lblSync4->Text = L"✱ A - Очень сложный";
+            this->lblSync4->Text = L"✱ S+ - Очень сложный";
             this->lblSync4->Visible = false;
             // 
             // lblSync1
@@ -4165,9 +4259,9 @@ private:
             this->lblSync1->ForeColor = System::Drawing::Color::SeaGreen;
             this->lblSync1->Location = System::Drawing::Point(33, 95);
             this->lblSync1->Name = L"lblSync1";
-            this->lblSync1->Size = System::Drawing::Size(261, 44);
+            this->lblSync1->Size = System::Drawing::Size(254, 44);
             this->lblSync1->TabIndex = 4;
-            this->lblSync1->Text = L"‣ D - Простой";
+            this->lblSync1->Text = L"‣ B - Простой";
             this->lblSync1->Visible = false;
             // 
             // lblSync
@@ -4249,7 +4343,9 @@ private:
             this->panelProfileData->ResumeLayout(false);
             this->panelProfileData->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfile))->EndInit();
-            this->pageCourses->ResumeLayout(false);
+            this->pageTasks->ResumeLayout(false);
+            this->PagesTasks->ResumeLayout(false);
+            this->TasksMain->ResumeLayout(false);
             this->guna2Panel1->ResumeLayout(false);
             this->pageBook->ResumeLayout(false);
             this->Book->ResumeLayout(false);
@@ -4288,7 +4384,10 @@ private:
         Boolean isCoursesVisited;
         
         void logsLoad() {
-            isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
+            if(File::Exists("script//logs.bin"))
+                isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
+            else
+				isCoursesVisited = false;
         }
     private: 
 		// MainFunc.h
@@ -4336,7 +4435,8 @@ private:
             MessageInfo->Show("Примените желаемые пометки, выделив текст", "Панель инструментов");
         }
 
-		// PyRunner
+		// mainTasks.h
+
 		Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
 
 	// MainMenu.h
