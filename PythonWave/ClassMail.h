@@ -13,16 +13,13 @@ using namespace System::Net::Mail;
 using namespace System::Net::Security;
 using namespace System::Text;
 
-
 ref class ClassMail
 {
 private:
 	// Ссылка формы
-	Form^ form; 
+	Form^ form;
 	//Для показа ошибки
 	Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
-
-
 
 public:
 	ClassMail(Form^ f) : form(f) {
@@ -35,8 +32,7 @@ public:
 		MessageError->Text = nullptr;
 	}
 
-
-	// Функция для отправки письма							
+	// Функция для отправки письма
 	bool SendEmail(String^ to, String^ subject, String^ body) {
 		try {
 			// Настройка почты
@@ -57,6 +53,4 @@ public:
 			return false;
 		}
 	}
-
 };
-

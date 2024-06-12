@@ -5,12 +5,10 @@
 #include <iostream>
 #include <msclr/marshal_cppstd.h>
 
-
 using namespace System::Drawing::Imaging;
 using namespace System::Drawing;
 using namespace System;
 using namespace PythonWave;
-
 
 // Для перехода с профиля
 Void mainForm::SetProfileDefaults() {
@@ -42,7 +40,7 @@ Boolean mainForm::CheckSave() {
 }
 
 Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
-	// 80 Min 250 Max (menu) 
+	// 80 Min 250 Max (menu)
 
 	int newPanelWidth;
 	int newPagesWidth;
@@ -137,5 +135,3 @@ Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	Application::Exit();
 }
-
-

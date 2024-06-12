@@ -6,7 +6,6 @@
 #include <fstream>
 #include <Windows.h>
 
-
 using namespace PythonWave;
 using namespace System;
 using namespace System::Drawing;
@@ -56,7 +55,7 @@ void mainForm::LoadBook() {
 
 	array<RichTextBox^>^ richTextBoxes = { richBook1, richBook2, richBook3, richBook4, richBook5, richBook6, richBook7, richBook8, richBook9, richBook10, richBook11, richBook12, richBook13 };
 
-	int countOfPages = Book->TabCount-2;
+	int countOfPages = Book->TabCount - 2;
 	for (int i = 0; i < countOfPages; ++i) {
 		String^ str = "r" + Convert::ToString(i + 1);
 		LoadPage(str, richTextBoxes[i]);
@@ -119,7 +118,6 @@ void mainForm::CreateLastPage() {
 			MessageError->Show(e->Message);
 		}
 	}
-
 }
 void mainForm::CreateCustomBook() {
 	if (!isCustomBookExists())
@@ -208,8 +206,6 @@ Void mainForm::btnClearFilters_Click(System::Object^ sender, System::EventArgs^ 
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 
-
-
 Void mainForm::dropdownPages_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	int selectedIndex = dropdownPages->SelectedIndex;
 	Book->SetPage(selectedIndex);
@@ -229,4 +225,3 @@ Void mainForm::btnBookNext_Click(System::Object^ sender, System::EventArgs^ e) {
 		dropdownPages->SelectedIndex = currentIndex + 1;
 	}
 }
-

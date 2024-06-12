@@ -8,8 +8,6 @@ using namespace System::Drawing::Imaging;
 
 int secondsLeftt = 30;
 
-
-
 Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		// Настройка OpenFileDialog
@@ -31,7 +29,6 @@ Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs
 			pictureProfileEdit->Image = image;
 			pictureUserBar->Image = image;
 
-
 			// Определяем формат загруженного изображения
 			Drawing::Imaging::ImageFormat^ imageFormat = image->RawFormat;
 
@@ -49,7 +46,6 @@ Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs
 			}
 			// Сохраняем изображение
 			pictureProfileEdit->Image->Save(savePath, imageFormat);
-
 		}
 	}
 	catch (Exception^ ex) {
@@ -133,7 +129,6 @@ Void mainForm::buttonCheckCode_Click(System::Object^ sender, System::EventArgs^ 
 	catch (Exception^ e) {
 		MessageError->Show(e->Message);
 	}
-
 }
 Void mainForm::timerEmail_Tick(System::Object^ sender, System::EventArgs^ e) {
 	secondsLeftt--;
@@ -204,7 +199,6 @@ Void mainForm::btnChangePassword_Click(System::Object^ sender, System::EventArgs
 			MessageError->Show("Ошибка записи файла: " + e->Message);
 		}
 
-
 		MessageInfo->Show("Пароль успешно изменен", "Поздравляем");
 
 		// Выключаем remember me
@@ -216,7 +210,6 @@ Void mainForm::btnChangePassword_Click(System::Object^ sender, System::EventArgs
 				MessageBox::Show(e->Message);
 			}
 		}
-
 	}
 	catch (Exception^ e) {
 		MessageError->Show(e->Message);
@@ -262,7 +255,6 @@ Void mainForm::linkREMOVEACC_LinkClicked(System::Object^ sender, System::Windows
 		ClassFade^ Fade = gcnew ClassFade(this);
 		Fade->SetAnimation("close");
 	}
-
 }
 
 Void mainForm::buttonResume_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -273,7 +265,6 @@ Void mainForm::btnCancelChanges_Click(System::Object^ sender, System::EventArgs^
 		Pages->SelectTab(pageProfile);
 }
 Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	if (textBoxUserName->TextLength < 3) {
 		textBoxUserName->BorderColor = Color::Red;
 		if (textBoxUserSurname->TextLength < 3) {
