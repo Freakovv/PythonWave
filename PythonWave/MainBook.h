@@ -14,7 +14,7 @@ using namespace System::Drawing::Imaging;
 
 // RichTextBox CurrentRichBox;
 // String^ CurrentBookFile;
-Boolean isBookExists;
+Boolean isBookExists = true;
 
 void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
 {
@@ -33,6 +33,7 @@ void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
 	}
 
 	if (!File::Exists(filePath)) {
+		MessageBox::Show("Файл:" + filePath + "Не найден", "Ошибка");
 		isBookExists = false;
 		return;
 	}

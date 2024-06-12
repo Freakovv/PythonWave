@@ -12,6 +12,3 @@ E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.profile.resources
 E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.GenerateResource.cache
 E:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWa.4059B652.Up2Date
 D:\.Coding\PythonWave\PythonWave\x64\Debug\PythonWave.vcxproj.ResolveComReference.cache
-D:\.Coding\PythonWave\x64\Debug\PythonWave.exe.lastcodeanalysissucceeded
-D:\.Coding\PythonWave\x64\Debug\PythonWave.exe.CodeAnalysisLog.xml
-D:\.Coding\PythonWave\PythonWave\x64\Debug\NativeCodeAnalysis.read.1.tlog
