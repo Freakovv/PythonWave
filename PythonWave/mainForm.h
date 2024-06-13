@@ -3092,7 +3092,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->richTask1->Name = L"richTask1";
 			this->richTask1->Size = System::Drawing::Size(842, 263);
 			this->richTask1->TabIndex = 1;
-			this->richTask1->Text = L"def add_numbers(a, b):\n    # верните из функции сумму a и b";
+			this->richTask1->Text = L"def add(a, b):\n    # верните из функции сумму a и b";
 			this->richTask1->TextChanged += gcnew System::EventHandler(this, &mainForm::richTask1_TextChanged);
 			// 
 			// pageBook
@@ -4257,7 +4257,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->dragTask->DockForm = true;
 			this->dragTask->DockIndicatorTransparencyValue = 0.6;
 			this->dragTask->DragMode = Guna::UI2::WinForms::Enums::DragMode::Control;
-			this->dragTask->TargetControl = this->richTask1;
+			this->dragTask->TargetControl = this->panelTask;
 			this->dragTask->UseTransparentDrag = true;
 			// 
 			// mainForm
