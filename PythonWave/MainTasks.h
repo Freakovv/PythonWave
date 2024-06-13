@@ -16,12 +16,11 @@ double animSeconds = 2;
 int secondsToStartAnim = 4;
 
 Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!courseAnimationState)
-		return;
 
 	if (isCoursesVisited)
 		funcSelectTab(pageTasks);
-	else {
+	else if (!courseAnimationState)
+	{
 		currentAnim = 1;
 		animSeconds = 3;
 

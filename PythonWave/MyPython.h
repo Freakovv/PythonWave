@@ -16,7 +16,7 @@ public:
 	MyPython() {
 	}
 
-	String^ Start(String^ user = "", String^ code = "") {
+	String^ StartOld(String^ user = "", String^ code = "") {
 		String^ path = "myscript.py";
 		if (user != "") {
 			path = user + "//myscript.py";
@@ -29,6 +29,10 @@ public:
 		fileStream->Close();
 
 		return gcnew String(PyRun(path).c_str());
+	}
+
+	Void Start(String^ testPath){
+		
 	}
 private:
 	std::string PyRun(String^ path) {
