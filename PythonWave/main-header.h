@@ -33,9 +33,11 @@ void mainForm::Form_MouseDown(Object^ sender, MouseEventArgs^ e)
 Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 	DataLoad();
 	cfgLoad();
+	logsLoad();
 	LoadBook();
 	menu = false;
-
+	
+	
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("in");
 
@@ -49,13 +51,4 @@ Void mainForm::btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("minimize");
-}
-
-// Страница заданий
-Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	//MyPython python;
-	//String^ code = richTextBox1->Text;
-	//String^ result = python.Start(User, code);
-	//MessageBox::Show(User, code);
-	//richTextBox2->Text += result;
 }

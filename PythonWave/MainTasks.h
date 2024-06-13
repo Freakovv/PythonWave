@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mainForm.h"
+#include "MyPython.h"
 
 #include <Windows.h>
 #include <msclr/marshal_cppstd.h>
@@ -16,7 +17,6 @@ double animSeconds = 2;
 int secondsToStartAnim = 4;
 
 Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	if (isCoursesVisited)
 		funcSelectTab(pageTasks);
 	else if (!courseAnimationState)
@@ -118,5 +118,22 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 		break;
 	default:
 		break;
+	}
+}
+
+void mainForm::PyRun(String^ code) {
+	if (String::IsNullOrEmpty(CurrentTask)) {
+		MessageError->Show("CurrentTask is Null or Empty", "String^ CurrentTask");
+		return;
+	}
+
+	MyPython PyRunner;
+	String^ result = PyRunner.Start(code);
+	MessageBox::Show(result);
+}
+Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e){
+	if (CurrentTask == "Task1") {
+		String^ code = richTask1->Text;
+		PyRun(code);
 	}
 }

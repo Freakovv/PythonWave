@@ -2,6 +2,9 @@
 
 #include "config.h"
 #include "ClassFade.h"
+#include <regex>
+#include <string>
+#include <msclr\marshal_cppstd.h>
 
 namespace PythonWave {
 	using namespace Guna;
@@ -179,12 +182,34 @@ namespace PythonWave {
 	private: System::Windows::Forms::Timer^ ANIMFIX;
 	private: Bunifu::UI::WinForms::BunifuPages^ PagesTasks;
 	private: System::Windows::Forms::TabPage^ TasksMain;
+private: System::Windows::Forms::TabPage^ Task1;
 
-	private: System::Windows::Forms::TabPage^ tabPage2;
+
 	private: Guna::UI2::WinForms::Guna2GradientButton^ btnTask1;
+
+
+private: Guna::UI2::WinForms::Guna2DragControl^ dragTask;
+private: System::Windows::Forms::Label^ TaskTitle;
+
+
+
+
+
+
+
 private: System::Windows::Forms::RichTextBox^ richTask1;
-private: Guna::UI2::WinForms::Guna2Button^ btnRunTest1;
-private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
+private: Guna::UI2::WinForms::Guna2Panel^ panelTask;
+private: Guna::UI2::WinForms::Guna2Button^ btnSaveCode;
+
+private: System::Windows::Forms::Panel^ solutionPanel;
+private: System::Windows::Forms::Label^ TaskText;
+private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
+
+
+
+
+
+
 
 	public:
 
@@ -219,8 +244,6 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			}
 			this->Load += gcnew EventHandler(this, &mainForm::main_Load);
 			srand(static_cast<unsigned int>(time(NULL)));
-
-			String^ absolutePath = System::IO::Path::Combine(System::Environment::CurrentDirectory, "example.doc");
 		}
 
 		mainForm(void)
@@ -411,7 +434,14 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->TasksMain = (gcnew System::Windows::Forms::TabPage());
 			this->guna2Panel1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
 			this->btnTask1 = (gcnew Guna::UI2::WinForms::Guna2GradientButton());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->Task1 = (gcnew System::Windows::Forms::TabPage());
+			this->TaskTitle = (gcnew System::Windows::Forms::Label());
+			this->solutionPanel = (gcnew System::Windows::Forms::Panel());
+			this->TaskText = (gcnew System::Windows::Forms::Label());
+			this->panelTask = (gcnew Guna::UI2::WinForms::Guna2Panel());
+			this->btnTestCode = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->btnSaveCode = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->richTask1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->pageBook = (gcnew System::Windows::Forms::TabPage());
 			this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
 			this->pgBookStart = (gcnew System::Windows::Forms::TabPage());
@@ -467,9 +497,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->lblSync = (gcnew System::Windows::Forms::Label());
 			this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
 			this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
-			this->btnRunTest1 = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->richTask1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->bunifuCards1 = (gcnew Bunifu::Framework::UI::BunifuCards());
+			this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
 			this->panelMain->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMinimize))->BeginInit();
@@ -494,7 +522,9 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->PagesTasks->SuspendLayout();
 			this->TasksMain->SuspendLayout();
 			this->guna2Panel1->SuspendLayout();
-			this->tabPage2->SuspendLayout();
+			this->Task1->SuspendLayout();
+			this->solutionPanel->SuspendLayout();
+			this->panelTask->SuspendLayout();
 			this->pageBook->SuspendLayout();
 			this->Book->SuspendLayout();
 			this->pgBookStart->SuspendLayout();
@@ -515,7 +545,6 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->myToolbox->SuspendLayout();
 			this->Pages->SuspendLayout();
 			this->anim3->SuspendLayout();
-			this->bunifuCards1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMain
@@ -1124,7 +1153,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnSync1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnSync1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
+			this->btnSync1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image28")));
 			this->btnSync1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync1.Image")));
 			this->btnSync1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnSync1->Location = System::Drawing::Point(1323, 753);
@@ -1271,7 +1300,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnChangePassword->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnChangePassword->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image20")));
+			this->btnChangePassword->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image22")));
 			this->btnChangePassword->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnChangePassword.Image")));
 			this->btnChangePassword->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnChangePassword->Location = System::Drawing::Point(842, 555);
@@ -1487,7 +1516,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnCancelChanges->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnCancelChanges->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image21")));
+			this->btnCancelChanges->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image23")));
 			this->btnCancelChanges->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancelChanges.Image")));
 			this->btnCancelChanges->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnCancelChanges->ImageSize = System::Drawing::Size(25, 25);
@@ -1719,7 +1748,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonSendMail->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image22")));
+			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image24")));
 			this->buttonSendMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSendMail.Image")));
 			this->buttonSendMail->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonSendMail->ImageSize = System::Drawing::Size(25, 25);
@@ -1761,7 +1790,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonCheckCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image23")));
+			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
 			this->buttonCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCheckCode.Image")));
 			this->buttonCheckCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonCheckCode->ImageSize = System::Drawing::Size(25, 25);
@@ -1921,7 +1950,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnProfileSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image24")));
+			this->btnProfileSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image26")));
 			this->btnProfileSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileSave.Image")));
 			this->btnProfileSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnProfileSave->Location = System::Drawing::Point(1323, 753);
@@ -1961,7 +1990,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->guna2Button2->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image25")));
+			this->guna2Button2->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image27")));
 			this->guna2Button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button2.Image")));
 			this->guna2Button2->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->guna2Button2->ImageSize = System::Drawing::Size(25, 25);
@@ -2159,7 +2188,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnSettingsSave->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnSettingsSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image18")));
+			this->btnSettingsSave->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image20")));
 			this->btnSettingsSave->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsSave.Image")));
 			this->btnSettingsSave->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnSettingsSave->Location = System::Drawing::Point(1328, 753);
@@ -2199,7 +2228,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnSettingsCancel->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnSettingsCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image19")));
+			this->btnSettingsCancel->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image21")));
 			this->btnSettingsCancel->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSettingsCancel.Image")));
 			this->btnSettingsCancel->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnSettingsCancel->ImageSize = System::Drawing::Size(25, 25);
@@ -2659,7 +2688,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnProfileEdit->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnProfileEdit->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
+			this->btnProfileEdit->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image19")));
 			this->btnProfileEdit->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnProfileEdit.Image")));
 			this->btnProfileEdit->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnProfileEdit->Location = System::Drawing::Point(966, 747);
@@ -2814,14 +2843,14 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->PagesTasks->Alignment = System::Windows::Forms::TabAlignment::Bottom;
 			this->PagesTasks->AllowTransitions = true;
 			this->PagesTasks->Controls->Add(this->TasksMain);
-			this->PagesTasks->Controls->Add(this->tabPage2);
+			this->PagesTasks->Controls->Add(this->Task1);
 			this->gunaTransition->SetDecoration(this->PagesTasks, Guna::UI2::AnimatorNS::DecorationType::None);
 			this->PagesTasks->Location = System::Drawing::Point(0, 0);
 			this->PagesTasks->Multiline = true;
 			this->PagesTasks->Name = L"PagesTasks";
-			this->PagesTasks->Page = this->tabPage2;
+			this->PagesTasks->Page = this->Task1;
 			this->PagesTasks->PageIndex = 1;
-			this->PagesTasks->PageName = L"tabPage2";
+			this->PagesTasks->PageName = L"Task1";
 			this->PagesTasks->PageTitle = L"Task1";
 			this->PagesTasks->SelectedIndex = 0;
 			this->PagesTasks->Size = System::Drawing::Size(1512, 868);
@@ -2899,20 +2928,172 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->btnTask1->Text = L"Простое сложение чисел";
 			this->btnTask1->TextOffset = System::Drawing::Point(0, -70);
 			this->btnTask1->Tile = true;
+			this->btnTask1->Click += gcnew System::EventHandler(this, &mainForm::btnTask1_Click);
 			// 
-			// tabPage2
+			// Task1
 			// 
-			this->tabPage2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+			this->Task1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->tabPage2->Controls->Add(this->bunifuCards1);
-			this->tabPage2->Controls->Add(this->btnRunTest1);
-			this->gunaTransition->SetDecoration(this->tabPage2, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->tabPage2->Location = System::Drawing::Point(4, 4);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1504, 842);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Task1";
+			this->Task1->Controls->Add(this->TaskTitle);
+			this->Task1->Controls->Add(this->solutionPanel);
+			this->gunaTransition->SetDecoration(this->Task1, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->Task1->Location = System::Drawing::Point(4, 4);
+			this->Task1->Name = L"Task1";
+			this->Task1->Padding = System::Windows::Forms::Padding(3);
+			this->Task1->Size = System::Drawing::Size(1504, 842);
+			this->Task1->TabIndex = 1;
+			this->Task1->Text = L"Task1";
+			// 
+			// TaskTitle
+			// 
+			this->TaskTitle->AutoSize = true;
+			this->TaskTitle->BackColor = System::Drawing::Color::Transparent;
+			this->gunaTransition->SetDecoration(this->TaskTitle, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->TaskTitle->Font = (gcnew System::Drawing::Font(L"Century Gothic", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->TaskTitle->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->TaskTitle->Location = System::Drawing::Point(6, 16);
+			this->TaskTitle->Name = L"TaskTitle";
+			this->TaskTitle->Size = System::Drawing::Size(1170, 58);
+			this->TaskTitle->TabIndex = 4;
+			this->TaskTitle->Text = L"Задача B сложности. Простое сложение чисел";
+			// 
+			// solutionPanel
+			// 
+			this->solutionPanel->AutoScroll = true;
+			this->solutionPanel->Controls->Add(this->TaskText);
+			this->solutionPanel->Controls->Add(this->panelTask);
+			this->gunaTransition->SetDecoration(this->solutionPanel, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->solutionPanel->Location = System::Drawing::Point(0, 0);
+			this->solutionPanel->Name = L"solutionPanel";
+			this->solutionPanel->Size = System::Drawing::Size(1504, 812);
+			this->solutionPanel->TabIndex = 5;
+			// 
+			// TaskText
+			// 
+			this->TaskText->AutoSize = true;
+			this->TaskText->BackColor = System::Drawing::Color::Transparent;
+			this->gunaTransition->SetDecoration(this->TaskText, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->TaskText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->TaskText->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->TaskText->Location = System::Drawing::Point(6, 91);
+			this->TaskText->Name = L"TaskText";
+			this->TaskText->Size = System::Drawing::Size(955, 78);
+			this->TaskText->TabIndex = 5;
+			this->TaskText->Text = L"Вам дана функция, в которую входят две переменные. \r\nВаша задача вернуть из них с"
+				L"умму этих двух переменных";
+			this->TaskText->TextChanged += gcnew System::EventHandler(this, &mainForm::TaskText_TextChanged);
+			// 
+			// panelTask
+			// 
+			this->panelTask->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(71)));
+			this->panelTask->Controls->Add(this->btnTestCode);
+			this->panelTask->Controls->Add(this->btnSaveCode);
+			this->panelTask->Controls->Add(this->richTask1);
+			this->gunaTransition->SetDecoration(this->panelTask, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->panelTask->Location = System::Drawing::Point(13, 242);
+			this->panelTask->Name = L"panelTask";
+			this->panelTask->Size = System::Drawing::Size(852, 330);
+			this->panelTask->TabIndex = 3;
+			// 
+			// btnTestCode
+			// 
+			this->btnTestCode->Animated = true;
+			this->btnTestCode->BackColor = System::Drawing::Color::Transparent;
+			this->btnTestCode->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->BorderRadius = 20;
+			this->btnTestCode->BorderThickness = 1;
+			this->gunaTransition->SetDecoration(this->btnTestCode, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->btnTestCode->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnTestCode->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnTestCode->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->btnTestCode->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->btnTestCode->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnTestCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnTestCode->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnTestCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
+			this->btnTestCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTestCode.Image")));
+			this->btnTestCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnTestCode->Location = System::Drawing::Point(513, 284);
+			this->btnTestCode->Name = L"btnTestCode";
+			this->btnTestCode->Size = System::Drawing::Size(165, 39);
+			this->btnTestCode->TabIndex = 50;
+			this->btnTestCode->Text = L"Проверить";
+			this->btnTestCode->TextOffset = System::Drawing::Point(10, 0);
+			this->btnTestCode->UseTransparentBackground = true;
+			this->btnTestCode->Click += gcnew System::EventHandler(this, &mainForm::btnTestCode_Click);
+			// 
+			// btnSaveCode
+			// 
+			this->btnSaveCode->Animated = true;
+			this->btnSaveCode->BackColor = System::Drawing::Color::Transparent;
+			this->btnSaveCode->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSaveCode->BorderRadius = 20;
+			this->btnSaveCode->BorderThickness = 1;
+			this->gunaTransition->SetDecoration(this->btnSaveCode, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->btnSaveCode->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			this->btnSaveCode->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			this->btnSaveCode->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			this->btnSaveCode->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			this->btnSaveCode->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSaveCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			this->btnSaveCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnSaveCode->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSaveCode->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSaveCode->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			this->btnSaveCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnSaveCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image18")));
+			this->btnSaveCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveCode.Image")));
+			this->btnSaveCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->btnSaveCode->Location = System::Drawing::Point(684, 284);
+			this->btnSaveCode->Name = L"btnSaveCode";
+			this->btnSaveCode->Size = System::Drawing::Size(163, 39);
+			this->btnSaveCode->TabIndex = 49;
+			this->btnSaveCode->Text = L"Сохранить";
+			this->btnSaveCode->TextOffset = System::Drawing::Point(10, 0);
+			this->btnSaveCode->UseTransparentBackground = true;
+			// 
+			// richTask1
+			// 
+			this->richTask1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
+				static_cast<System::Int32>(static_cast<System::Byte>(31)));
+			this->gunaTransition->SetDecoration(this->richTask1, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->richTask1->Font = (gcnew System::Drawing::Font(L"Cascadia Code", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->richTask1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->richTask1->Location = System::Drawing::Point(5, 15);
+			this->richTask1->Name = L"richTask1";
+			this->richTask1->Size = System::Drawing::Size(842, 263);
+			this->richTask1->TabIndex = 1;
+			this->richTask1->Text = L"def add_numbers(a, b):\n    # верните из функции сумму a и b";
+			this->richTask1->TextChanged += gcnew System::EventHandler(this, &mainForm::richTask1_TextChanged);
 			// 
 			// pageBook
 			// 
@@ -3953,7 +4134,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->btnSync->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->btnSync->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image27")));
+			this->btnSync->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image29")));
 			this->btnSync->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSync.Image")));
 			this->btnSync->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->btnSync->Location = System::Drawing::Point(1323, 753);
@@ -4071,48 +4252,13 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			animation1->TransparencyCoeff = 0;
 			this->gunaTransition->DefaultAnimation = animation1;
 			// 
-			// btnRunTest1
+			// dragTask
 			// 
-			this->gunaTransition->SetDecoration(this->btnRunTest1, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->btnRunTest1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->btnRunTest1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->btnRunTest1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->btnRunTest1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->btnRunTest1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->btnRunTest1->ForeColor = System::Drawing::Color::White;
-			this->btnRunTest1->Location = System::Drawing::Point(929, 556);
-			this->btnRunTest1->Name = L"btnRunTest1";
-			this->btnRunTest1->Size = System::Drawing::Size(180, 45);
-			this->btnRunTest1->TabIndex = 0;
-			this->btnRunTest1->Text = L"RUNTEST1";
-			this->btnRunTest1->Click += gcnew System::EventHandler(this, &mainForm::btnRunTest1_Click);
-			// 
-			// richTask1
-			// 
-			this->gunaTransition->SetDecoration(this->richTask1, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->richTask1->Location = System::Drawing::Point(0, 13);
-			this->richTask1->Name = L"richTask1";
-			this->richTask1->Size = System::Drawing::Size(667, 479);
-			this->richTask1->TabIndex = 1;
-			this->richTask1->Text = L"def add_numbers(a, b):\n    # верните из функции сумму a и b";
-			// 
-			// bunifuCards1
-			// 
-			this->bunifuCards1->BackColor = System::Drawing::Color::White;
-			this->bunifuCards1->BorderRadius = 5;
-			this->bunifuCards1->BottomSahddow = true;
-			this->bunifuCards1->color = System::Drawing::Color::Tomato;
-			this->bunifuCards1->Controls->Add(this->richTask1);
-			this->gunaTransition->SetDecoration(this->bunifuCards1, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->bunifuCards1->LeftSahddow = false;
-			this->bunifuCards1->Location = System::Drawing::Point(6, 6);
-			this->bunifuCards1->Name = L"bunifuCards1";
-			this->bunifuCards1->RightSahddow = true;
-			this->bunifuCards1->ShadowDepth = 20;
-			this->bunifuCards1->Size = System::Drawing::Size(670, 492);
-			this->bunifuCards1->TabIndex = 2;
+			this->dragTask->DockForm = true;
+			this->dragTask->DockIndicatorTransparencyValue = 0.6;
+			this->dragTask->DragMode = Guna::UI2::WinForms::Enums::DragMode::Control;
+			this->dragTask->TargetControl = this->richTask1;
+			this->dragTask->UseTransparentDrag = true;
 			// 
 			// mainForm
 			// 
@@ -4162,7 +4308,11 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->PagesTasks->ResumeLayout(false);
 			this->TasksMain->ResumeLayout(false);
 			this->guna2Panel1->ResumeLayout(false);
-			this->tabPage2->ResumeLayout(false);
+			this->Task1->ResumeLayout(false);
+			this->Task1->PerformLayout();
+			this->solutionPanel->ResumeLayout(false);
+			this->solutionPanel->PerformLayout();
+			this->panelTask->ResumeLayout(false);
 			this->pageBook->ResumeLayout(false);
 			this->Book->ResumeLayout(false);
 			this->pgBookStart->ResumeLayout(false);
@@ -4184,7 +4334,6 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			this->Pages->ResumeLayout(false);
 			this->anim3->ResumeLayout(false);
 			this->anim3->PerformLayout();
-			this->bunifuCards1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -4252,7 +4401,7 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 			MessageInfo->Show("Примените желаемые пометки, выделив текст", "Панель инструментов");
 		}
 
-		// MainMenu.h
+	// MainMenu.h
 	private:
 		bool courseAnimationState = false;
 
@@ -4453,37 +4602,55 @@ private: Bunifu::Framework::UI::BunifuCards^ bunifuCards1;
 
 
 		// mainTasks.h
-		void PyRun() {
+		String^ CurrentTask;
 
-		}
-		Void btnRunTest1_Click(System::Object^ sender, System::EventArgs^ e) {
-			String^ Code = richTask1->Text;
-			String^ path = "script//temp.py";
-			Boolean isCodeWriteen = true;
-			FileStream^ fs = gcnew FileStream(path, FileMode::Create, FileAccess::Write);
+		void SyntaxHighlight(RichTextBox^ richTB) {
+			int selectionStart = richTB->SelectionStart;
+			int selectionLength = richTB->SelectionLength;
 
-			try {
-				StreamWriter^ sw = gcnew StreamWriter(fs);
-				try {
-					// Записываем текст в файл
-					sw->Write(Code);
+			array<String^>^ keywords = { "def", "return", "if", "else", "for", "while" };
+
+			Color defaultTextColor = Color::FromArgb(238, 238, 238);
+
+			richTB->SelectAll();
+			richTB->SelectionColor = defaultTextColor;
+			richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Regular);
+
+			for each (String ^ keyword in keywords) {
+				std::string text = msclr::interop::marshal_as<std::string>(richTB->Text);
+				std::regex word_regex("\\b" + msclr::interop::marshal_as<std::string>(keyword) + "\\b");
+				std::sregex_iterator words_begin = std::sregex_iterator(text.begin(), text.end(), word_regex);
+				std::sregex_iterator words_end = std::sregex_iterator();
+
+				for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+					std::smatch match = *i;
+					int start = match.position();
+					int length = match.length();
+
+					richTB->Select(start, length);
+					richTB->SelectionColor = Color::RoyalBlue;
+					richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Bold);
 				}
-				finally {
-					sw->Close();
-					isCodeWriteen = false;
-				}
-			}
-			finally {
-				fs->Close();
-				isCodeWriteen = false;
 			}
 
-			if (isCodeWriteen) {
-				MyPython PyRunner;
-				PyRunner.Start
-			}
+			richTB->Select(selectionStart, selectionLength);
+			richTB->SelectionColor = defaultTextColor;  
 		}
-		Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
+		void PyRun(String^ code);
 
+
+
+		Void richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			SyntaxHighlight(richTask1);
+		}
+		Void btnTask1_Click(System::Object^ sender, System::EventArgs^ e) {
+			SyntaxHighlight(richTask1);
+			PagesTasks->SelectTab(Task1);
+			CurrentTask = "Task1";
+		}
+		Void TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			panelTask->Location = System::Drawing::Point(0, this->ClientSize.Height - panelTask->Height);
+		}
+		Void btnTestCode_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
