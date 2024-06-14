@@ -1,2 +1,3 @@
-def add(a, b):
-	return a + b
+# Верните из функции резльутат разности двух переменных
+def subtract(a, b):
+    return a * b

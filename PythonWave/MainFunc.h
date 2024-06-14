@@ -1,5 +1,6 @@
 #pragma once
 #include "mainForm.h"
+#include "ClassProgress.h"
 
 using namespace PythonWave;
 using namespace System;
@@ -120,6 +121,10 @@ void mainForm::DeleteDirectory(String^ folderPath) {
 
 // Data
 void mainForm::DataLoad() {
+	ClassProgress data(User);
+	PROGRESS = data.GetCurrentProgress();
+
+
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserBirth = User + "//userBirth.bin";
 	String^ fileUserSex = User + "//userSex.bin";
@@ -156,20 +161,6 @@ void mainForm::DataLoad() {
 		pictureProfileEdit->ImageLocation = pathToAvatarPng;
 	}
 
-	int rankKey = -1;
-	for each (KeyValuePair<int, String^> kvp in ranks) {
-		if (kvp.Value == UserRank) {
-			rankKey = kvp.Key;
-			break;
-		}
-	}
-
-	if (rankKey != -1) {
-		StarsUser->Value = rankKey;
-	}
-	else {
-		StarsUser->Value = 0;
-	}
 
 	lblLogin->Text = User;
 	lblName->Text = "Имя: " + UserName;

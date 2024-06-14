@@ -102,5 +102,4 @@ Class PythonWave.mainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String UserName : Public
     System.String UserRank : Public
     ClassFade Fade : Public
-    System.Collections.Generic.Dictionary`2[System.Int32,System.String] ranks : Public
     System.Windows.Forms.MouseEventHandler mouseDownHandler : Public

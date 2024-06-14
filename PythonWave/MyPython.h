@@ -32,7 +32,7 @@ public:
 
 	String^ Start(String^ Code){
 		String^ tempPath = "script//temp.py";
-		String^ testPath = "script//unitTests.py";
+		String^ testPath = "script//script.py";
 		String^ resultPath = "script//result.txt";
 
 		if (File::Exists(tempPath))
