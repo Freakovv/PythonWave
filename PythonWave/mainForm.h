@@ -435,8 +435,8 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->guna2Panel1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
 			this->btnTask1 = (gcnew Guna::UI2::WinForms::Guna2GradientButton());
 			this->Task1 = (gcnew System::Windows::Forms::TabPage());
-			this->TaskTitle = (gcnew System::Windows::Forms::Label());
 			this->solutionPanel = (gcnew System::Windows::Forms::Panel());
+			this->TaskTitle = (gcnew System::Windows::Forms::Label());
 			this->TaskText = (gcnew System::Windows::Forms::Label());
 			this->panelTask = (gcnew Guna::UI2::WinForms::Guna2Panel());
 			this->btnTestCode = (gcnew Guna::UI2::WinForms::Guna2Button());
@@ -2934,7 +2934,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			// 
 			this->Task1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->Task1->Controls->Add(this->TaskTitle);
 			this->Task1->Controls->Add(this->solutionPanel);
 			this->gunaTransition->SetDecoration(this->Task1, Guna::UI2::AnimatorNS::DecorationType::None);
 			this->Task1->Location = System::Drawing::Point(4, 4);
@@ -2943,6 +2942,18 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->Task1->Size = System::Drawing::Size(1504, 842);
 			this->Task1->TabIndex = 1;
 			this->Task1->Text = L"Task1";
+			// 
+			// solutionPanel
+			// 
+			this->solutionPanel->AutoScroll = true;
+			this->solutionPanel->Controls->Add(this->TaskTitle);
+			this->solutionPanel->Controls->Add(this->TaskText);
+			this->solutionPanel->Controls->Add(this->panelTask);
+			this->gunaTransition->SetDecoration(this->solutionPanel, Guna::UI2::AnimatorNS::DecorationType::None);
+			this->solutionPanel->Location = System::Drawing::Point(0, 0);
+			this->solutionPanel->Name = L"solutionPanel";
+			this->solutionPanel->Size = System::Drawing::Size(1504, 812);
+			this->solutionPanel->TabIndex = 5;
 			// 
 			// TaskTitle
 			// 
@@ -2953,22 +2964,11 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 				static_cast<System::Byte>(204)));
 			this->TaskTitle->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->TaskTitle->Location = System::Drawing::Point(6, 16);
+			this->TaskTitle->Location = System::Drawing::Point(-2, 17);
 			this->TaskTitle->Name = L"TaskTitle";
 			this->TaskTitle->Size = System::Drawing::Size(1170, 58);
 			this->TaskTitle->TabIndex = 4;
 			this->TaskTitle->Text = L"Задача B сложности. Простое сложение чисел";
-			// 
-			// solutionPanel
-			// 
-			this->solutionPanel->AutoScroll = true;
-			this->solutionPanel->Controls->Add(this->TaskText);
-			this->solutionPanel->Controls->Add(this->panelTask);
-			this->gunaTransition->SetDecoration(this->solutionPanel, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->solutionPanel->Location = System::Drawing::Point(0, 0);
-			this->solutionPanel->Name = L"solutionPanel";
-			this->solutionPanel->Size = System::Drawing::Size(1504, 812);
-			this->solutionPanel->TabIndex = 5;
 			// 
 			// TaskText
 			// 
@@ -2995,9 +2995,9 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->panelTask->Controls->Add(this->btnSaveCode);
 			this->panelTask->Controls->Add(this->richTask1);
 			this->gunaTransition->SetDecoration(this->panelTask, Guna::UI2::AnimatorNS::DecorationType::None);
-			this->panelTask->Location = System::Drawing::Point(13, 242);
+			this->panelTask->Location = System::Drawing::Point(10, 248);
 			this->panelTask->Name = L"panelTask";
-			this->panelTask->Size = System::Drawing::Size(852, 330);
+			this->panelTask->Size = System::Drawing::Size(1488, 354);
 			this->panelTask->TabIndex = 3;
 			// 
 			// btnTestCode
@@ -3015,8 +3015,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
 			this->btnTestCode->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
 				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->btnTestCode->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			this->btnTestCode->FillColor = System::Drawing::Color::LimeGreen;
 			this->btnTestCode->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
 			this->btnTestCode->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
@@ -3031,7 +3030,7 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->btnTestCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
 			this->btnTestCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTestCode.Image")));
 			this->btnTestCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->btnTestCode->Location = System::Drawing::Point(513, 284);
+			this->btnTestCode->Location = System::Drawing::Point(1149, 308);
 			this->btnTestCode->Name = L"btnTestCode";
 			this->btnTestCode->Size = System::Drawing::Size(165, 39);
 			this->btnTestCode->TabIndex = 50;
@@ -3071,16 +3070,18 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->btnSaveCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image18")));
 			this->btnSaveCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSaveCode.Image")));
 			this->btnSaveCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->btnSaveCode->Location = System::Drawing::Point(684, 284);
+			this->btnSaveCode->Location = System::Drawing::Point(1320, 308);
 			this->btnSaveCode->Name = L"btnSaveCode";
 			this->btnSaveCode->Size = System::Drawing::Size(163, 39);
 			this->btnSaveCode->TabIndex = 49;
 			this->btnSaveCode->Text = L"Сохранить";
 			this->btnSaveCode->TextOffset = System::Drawing::Point(10, 0);
 			this->btnSaveCode->UseTransparentBackground = true;
+			this->btnSaveCode->Click += gcnew System::EventHandler(this, &mainForm::btnSaveCode_Click);
 			// 
 			// richTask1
 			// 
+			this->richTask1->AcceptsTab = true;
 			this->richTask1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(31)), static_cast<System::Int32>(static_cast<System::Byte>(31)),
 				static_cast<System::Int32>(static_cast<System::Byte>(31)));
 			this->gunaTransition->SetDecoration(this->richTask1, Guna::UI2::AnimatorNS::DecorationType::None);
@@ -3090,9 +3091,9 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 				static_cast<System::Int32>(static_cast<System::Byte>(238)));
 			this->richTask1->Location = System::Drawing::Point(5, 15);
 			this->richTask1->Name = L"richTask1";
-			this->richTask1->Size = System::Drawing::Size(842, 263);
+			this->richTask1->Size = System::Drawing::Size(1478, 287);
 			this->richTask1->TabIndex = 1;
-			this->richTask1->Text = L"def add(a, b):\n    # верните из функции сумму a и b";
+			this->richTask1->Text = L"# Верните из функции сумму двух переменных\ndef add(a, b):";
 			this->richTask1->TextChanged += gcnew System::EventHandler(this, &mainForm::richTask1_TextChanged);
 			// 
 			// pageBook
@@ -4309,7 +4310,6 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			this->TasksMain->ResumeLayout(false);
 			this->guna2Panel1->ResumeLayout(false);
 			this->Task1->ResumeLayout(false);
-			this->Task1->PerformLayout();
 			this->solutionPanel->ResumeLayout(false);
 			this->solutionPanel->PerformLayout();
 			this->panelTask->ResumeLayout(false);
@@ -4608,33 +4608,48 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			int selectionStart = richTB->SelectionStart;
 			int selectionLength = richTB->SelectionLength;
 
-			array<String^>^ keywords = { "def", "return", "if", "else", "for", "while" };
+			array<String^>^ keywords = { "False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", "continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", "try", "while", "with", "yield" };
 
 			Color defaultTextColor = Color::FromArgb(238, 238, 238);
+			Color keywordColor = Color::RoyalBlue;
 
 			richTB->SelectAll();
 			richTB->SelectionColor = defaultTextColor;
 			richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Regular);
 
-			for each (String ^ keyword in keywords) {
-				std::string text = msclr::interop::marshal_as<std::string>(richTB->Text);
-				std::regex word_regex("\\b" + msclr::interop::marshal_as<std::string>(keyword) + "\\b");
-				std::sregex_iterator words_begin = std::sregex_iterator(text.begin(), text.end(), word_regex);
-				std::sregex_iterator words_end = std::sregex_iterator();
+			// Преобразование текста RichTextBox в строку std::string
+			std::string text = msclr::interop::marshal_as<std::string>(richTB->Text);
 
-				for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
-					std::smatch match = *i;
+			// Подготовка регулярного выражения для поиска ключевых слов
+			for each (String ^ keyword in keywords) {
+				// Преобразование ключевого слова в std::string
+				std::string keyword_pattern = msclr::interop::marshal_as<std::string>(keyword);
+
+				// Подготовка регулярного выражения для поиска ключевого слова
+				std::regex word_regex("\\b" + keyword_pattern + "\\b");
+
+				// Поиск всех вхождений ключевого слова в тексте
+				std::sregex_iterator words_begin(text.begin(), text.end(), word_regex);
+				std::sregex_iterator words_end;
+
+				// Обработка каждого найденного вхождения ключевого слова
+				while (words_begin != words_end) {
+					std::smatch match = *words_begin;
 					int start = match.position();
 					int length = match.length();
 
 					richTB->Select(start, length);
-					richTB->SelectionColor = Color::RoyalBlue;
+					richTB->SelectionColor = keywordColor;
 					richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Bold);
+
+					// Переход к следующему вхождению
+					++words_begin;
 				}
 			}
 
+			// Восстановление исходного выделения
 			richTB->Select(selectionStart, selectionLength);
-			richTB->SelectionColor = defaultTextColor;  
+			richTB->SelectionColor = defaultTextColor;
 		}
 		void PyRun(String^ code);
 
@@ -4649,8 +4664,18 @@ private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
 			CurrentTask = "Task1";
 		}
 		Void TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			panelTask->Location = System::Drawing::Point(0, this->ClientSize.Height - panelTask->Height);
+			// Получаем высоту solutionPanel
+			int solutionPanelHeight = solutionPanel->Height;
+
+			// Получаем высоту panelTask
+			int panelTaskHeight = panelTask->Height;
+
+			// Рассчитываем положение panelTask относительно solutionPanel
+			panelTask->Location = System::Drawing::Point(0, solutionPanelHeight - panelTaskHeight);
 		}
 		Void btnTestCode_Click(System::Object^ sender, System::EventArgs^ e);
+		private: System::Void btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
+			TaskText->Text = "Простое умножение чисел.\nВерните из функции произведение двух чисел.\n5 баллов за задачу";
+		}
 };
 }
