@@ -52,3 +52,11 @@ Void mainForm::btnMinimize_Click(System::Object^ sender, System::EventArgs^ e) {
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("minimize");
 }
+Void mainForm::btnMaximize_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->WindowState == FormWindowState::Normal) {
+		this->WindowState = FormWindowState::Maximized;
+	}
+	else {
+		this->WindowState = FormWindowState::Normal;
+	}
+}

@@ -3,6 +3,7 @@ import importlib.util
 import os
 import temp  # Импорт модуля temp, в котором определены функции add, multiply, divide, subtract
 
+
 functions_available = []
 
 # Попытка импорта функций из модуля temp
