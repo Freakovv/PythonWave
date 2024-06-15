@@ -1,0 +1,3 @@
+https://www.codewars.com/kata/5601409514fc93442500010b/train/python
+https://www.codewars.com/kata/5a00e05cc374cb34d100000d/train/python
+https://www.codewars.com/kata/5715eaedb436cf5606000381/train/python

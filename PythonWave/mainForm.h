@@ -213,9 +213,22 @@ private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskSubtract;
 
 private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskDivide;
 private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskMultiply;
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button4;
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button5;
+private: Guna::UI2::WinForms::Guna2Button^ btnPerviousTask;
+
+private: Guna::UI2::WinForms::Guna2Button^ btnNextTask;
+
 private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+private: System::Windows::Forms::Panel^ panelA;
+private: System::Windows::Forms::Label^ label1;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton1;
+private: System::Windows::Forms::Panel^ panelS;
+private: System::Windows::Forms::Label^ labelA;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton3;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton5;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton6;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton2;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton4;
+private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton7;
 
 
 
@@ -449,8 +462,8 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->panelB = (gcnew System::Windows::Forms::Panel());
             this->lblLVLB = (gcnew System::Windows::Forms::Label());
             this->TaskPage = (gcnew System::Windows::Forms::TabPage());
-            this->guna2Button4 = (gcnew Guna::UI2::WinForms::Guna2Button());
-            this->guna2Button5 = (gcnew Guna::UI2::WinForms::Guna2Button());
+            this->btnPerviousTask = (gcnew Guna::UI2::WinForms::Guna2Button());
+            this->btnNextTask = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->solutionPanel = (gcnew System::Windows::Forms::Panel());
             this->panelTask = (gcnew Guna::UI2::WinForms::Guna2Panel());
@@ -514,6 +527,17 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
+            this->bunifuTileButton1 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->panelA = (gcnew System::Windows::Forms::Panel());
+            this->label1 = (gcnew System::Windows::Forms::Label());
+            this->bunifuTileButton3 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->bunifuTileButton5 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->bunifuTileButton6 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->panelS = (gcnew System::Windows::Forms::Panel());
+            this->labelA = (gcnew System::Windows::Forms::Label());
+            this->bunifuTileButton2 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->bunifuTileButton4 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->bunifuTileButton7 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMinimize))->BeginInit();
@@ -562,6 +586,8 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->myToolbox->SuspendLayout();
             this->Pages->SuspendLayout();
             this->anim3->SuspendLayout();
+            this->panelA->SuspendLayout();
+            this->panelS->SuspendLayout();
             this->SuspendLayout();
             // 
             // panelMain
@@ -2865,14 +2891,14 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->PagesTasks->Location = System::Drawing::Point(0, 0);
             this->PagesTasks->Multiline = true;
             this->PagesTasks->Name = L"PagesTasks";
-            this->PagesTasks->Page = this->TaskPage;
-            this->PagesTasks->PageIndex = 1;
-            this->PagesTasks->PageName = L"TaskPage";
-            this->PagesTasks->PageTitle = L"TaskPage";
+            this->PagesTasks->Page = this->TasksMain;
+            this->PagesTasks->PageIndex = 0;
+            this->PagesTasks->PageName = L"TasksMain";
+            this->PagesTasks->PageTitle = L"TasksMain";
             this->PagesTasks->SelectedIndex = 0;
             this->PagesTasks->Size = System::Drawing::Size(1512, 868);
             this->PagesTasks->TabIndex = 1;
-            animation3->AnimateOnlyDifferences = false;
+            animation3->AnimateOnlyDifferences = true;
             animation3->BlindCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.BlindCoeff")));
             animation3->LeafCoeff = 0;
             animation3->MaxTime = 1;
@@ -2880,15 +2906,15 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             animation3->MosaicCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicCoeff")));
             animation3->MosaicShift = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.MosaicShift")));
             animation3->MosaicSize = 0;
-            animation3->Padding = System::Windows::Forms::Padding(0);
+            animation3->Padding = System::Windows::Forms::Padding(0, 0, 0, 0);
             animation3->RotateCoeff = 0;
             animation3->RotateLimit = 0;
             animation3->ScaleCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.ScaleCoeff")));
             animation3->SlideCoeff = (cli::safe_cast<System::Drawing::PointF>(resources->GetObject(L"animation3.SlideCoeff")));
             animation3->TimeCoeff = 0;
-            animation3->TransparencyCoeff = 0;
+            animation3->TransparencyCoeff = 1;
             this->PagesTasks->Transition = animation3;
-            this->PagesTasks->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Custom;
+            this->PagesTasks->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
             // 
             // TasksMain
             // 
@@ -2905,6 +2931,15 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             // 
             // guna2Panel1
             // 
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton2);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton4);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton7);
+            this->guna2Panel1->Controls->Add(this->panelS);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton3);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton5);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton6);
+            this->guna2Panel1->Controls->Add(this->panelA);
+            this->guna2Panel1->Controls->Add(this->bunifuTileButton1);
             this->guna2Panel1->Controls->Add(this->btnTaskSubtract);
             this->guna2Panel1->Controls->Add(this->btnTaskDivide);
             this->guna2Panel1->Controls->Add(this->btnTaskMultiply);
@@ -2931,10 +2966,10 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->btnTaskSubtract->ImageZoom = 50;
             this->btnTaskSubtract->LabelPosition = 34;
             this->btnTaskSubtract->LabelText = L"Вычитание чисел";
-            this->btnTaskSubtract->Location = System::Drawing::Point(8, 206);
+            this->btnTaskSubtract->Location = System::Drawing::Point(224, 62);
             this->btnTaskSubtract->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
             this->btnTaskSubtract->Name = L"btnTaskSubtract";
-            this->btnTaskSubtract->Size = System::Drawing::Size(146, 132);
+            this->btnTaskSubtract->Size = System::Drawing::Size(208, 169);
             this->btnTaskSubtract->TabIndex = 7;
             this->btnTaskSubtract->Click += gcnew System::EventHandler(this, &mainForm::btnTaskSubtract_Click);
             // 
@@ -2953,10 +2988,10 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->btnTaskDivide->ImageZoom = 50;
             this->btnTaskDivide->LabelPosition = 30;
             this->btnTaskDivide->LabelText = L"Частное чисел";
-            this->btnTaskDivide->Location = System::Drawing::Point(162, 206);
+            this->btnTaskDivide->Location = System::Drawing::Point(679, 62);
             this->btnTaskDivide->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
             this->btnTaskDivide->Name = L"btnTaskDivide";
-            this->btnTaskDivide->Size = System::Drawing::Size(169, 132);
+            this->btnTaskDivide->Size = System::Drawing::Size(231, 169);
             this->btnTaskDivide->TabIndex = 6;
             this->btnTaskDivide->Click += gcnew System::EventHandler(this, &mainForm::btnTaskDivide_Click);
             // 
@@ -2975,10 +3010,10 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->btnTaskMultiply->ImageZoom = 50;
             this->btnTaskMultiply->LabelPosition = 30;
             this->btnTaskMultiply->LabelText = L"Произведение чисел";
-            this->btnTaskMultiply->Location = System::Drawing::Point(162, 64);
+            this->btnTaskMultiply->Location = System::Drawing::Point(440, 62);
             this->btnTaskMultiply->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
             this->btnTaskMultiply->Name = L"btnTaskMultiply";
-            this->btnTaskMultiply->Size = System::Drawing::Size(169, 132);
+            this->btnTaskMultiply->Size = System::Drawing::Size(231, 169);
             this->btnTaskMultiply->TabIndex = 5;
             this->btnTaskMultiply->Click += gcnew System::EventHandler(this, &mainForm::btnTaskMultiply_Click);
             // 
@@ -3000,7 +3035,7 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->btnTaskAdd->Location = System::Drawing::Point(8, 64);
             this->btnTaskAdd->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
             this->btnTaskAdd->Name = L"btnTaskAdd";
-            this->btnTaskAdd->Size = System::Drawing::Size(146, 132);
+            this->btnTaskAdd->Size = System::Drawing::Size(208, 169);
             this->btnTaskAdd->TabIndex = 4;
             this->btnTaskAdd->Click += gcnew System::EventHandler(this, &mainForm::btnTaskAdd_Click);
             // 
@@ -3024,16 +3059,16 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->lblLVLB->ForeColor = System::Drawing::Color::SeaGreen;
             this->lblLVLB->Location = System::Drawing::Point(618, 14);
             this->lblLVLB->Name = L"lblLVLB";
-            this->lblLVLB->Size = System::Drawing::Size(283, 24);
+            this->lblLVLB->Size = System::Drawing::Size(250, 24);
             this->lblLVLB->TabIndex = 2;
-            this->lblLVLB->Text = L"Задачи легкого уровня (B)";
+            this->lblLVLB->Text = L"Задачи легкого уровня";
             // 
             // TaskPage
             // 
             this->TaskPage->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->TaskPage->Controls->Add(this->guna2Button4);
-            this->TaskPage->Controls->Add(this->guna2Button5);
+            this->TaskPage->Controls->Add(this->btnPerviousTask);
+            this->TaskPage->Controls->Add(this->btnNextTask);
             this->TaskPage->Controls->Add(this->guna2Button1);
             this->TaskPage->Controls->Add(this->solutionPanel);
             this->gunaTransition->SetDecoration(this->TaskPage, Guna::UI2::AnimatorNS::DecorationType::None);
@@ -3044,82 +3079,83 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->TaskPage->TabIndex = 1;
             this->TaskPage->Text = L"TaskPage";
             // 
-            // guna2Button4
+            // btnPerviousTask
             // 
-            this->guna2Button4->Animated = true;
-            this->guna2Button4->BackColor = System::Drawing::Color::Transparent;
-            this->guna2Button4->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->BorderRadius = 15;
-            this->guna2Button4->BorderThickness = 1;
-            this->gunaTransition->SetDecoration(this->guna2Button4, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->guna2Button4->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button4->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button4->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+            this->btnPerviousTask->Animated = true;
+            this->btnPerviousTask->BackColor = System::Drawing::Color::Transparent;
+            this->btnPerviousTask->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->btnPerviousTask->BorderRadius = 15;
+            this->btnPerviousTask->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnPerviousTask, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnPerviousTask->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->btnPerviousTask->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->btnPerviousTask->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
                 static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->guna2Button4->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+            this->btnPerviousTask->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
                 static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->guna2Button4->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnPerviousTask->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-            this->guna2Button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->btnPerviousTask->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+            this->btnPerviousTask->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button4->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnPerviousTask->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnPerviousTask->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+            this->btnPerviousTask->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button4->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnPerviousTask->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button4->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image16")));
-            this->guna2Button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button4.Image")));
-            this->guna2Button4->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-            this->guna2Button4->ImageOffset = System::Drawing::Point(-2, 0);
-            this->guna2Button4->Location = System::Drawing::Point(1422, 770);
-            this->guna2Button4->Name = L"guna2Button4";
-            this->guna2Button4->Size = System::Drawing::Size(35, 31);
-            this->guna2Button4->TabIndex = 102;
-            this->guna2Button4->TextOffset = System::Drawing::Point(10, 0);
-            this->guna2Button4->UseTransparentBackground = true;
+            this->btnPerviousTask->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image16")));
+            this->btnPerviousTask->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPerviousTask.Image")));
+            this->btnPerviousTask->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->btnPerviousTask->ImageOffset = System::Drawing::Point(-2, 0);
+            this->btnPerviousTask->Location = System::Drawing::Point(1422, 770);
+            this->btnPerviousTask->Name = L"btnPerviousTask";
+            this->btnPerviousTask->Size = System::Drawing::Size(35, 31);
+            this->btnPerviousTask->TabIndex = 102;
+            this->btnPerviousTask->TextOffset = System::Drawing::Point(10, 0);
+            this->btnPerviousTask->UseTransparentBackground = true;
             // 
-            // guna2Button5
+            // btnNextTask
             // 
-            this->guna2Button5->Animated = true;
-            this->guna2Button5->BackColor = System::Drawing::Color::Transparent;
-            this->guna2Button5->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnNextTask->Animated = true;
+            this->btnNextTask->BackColor = System::Drawing::Color::Transparent;
+            this->btnNextTask->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button5->BorderRadius = 15;
-            this->guna2Button5->BorderThickness = 1;
-            this->gunaTransition->SetDecoration(this->guna2Button5, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->guna2Button5->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button5->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-            this->guna2Button5->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+            this->btnNextTask->BorderRadius = 15;
+            this->btnNextTask->BorderThickness = 1;
+            this->gunaTransition->SetDecoration(this->btnNextTask, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnNextTask->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+            this->btnNextTask->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+            this->btnNextTask->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
                 static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-            this->guna2Button5->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+            this->btnNextTask->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
                 static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-            this->guna2Button5->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnNextTask->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-            this->guna2Button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+            this->btnNextTask->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+            this->btnNextTask->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button5->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnNextTask->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button5->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnNextTask->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button5->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+            this->btnNextTask->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
                 static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->guna2Button5->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+            this->btnNextTask->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->guna2Button5->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
-            this->guna2Button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button5.Image")));
-            this->guna2Button5->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-            this->guna2Button5->ImageOffset = System::Drawing::Point(-2, 0);
-            this->guna2Button5->Location = System::Drawing::Point(1463, 770);
-            this->guna2Button5->Name = L"guna2Button5";
-            this->guna2Button5->Size = System::Drawing::Size(35, 31);
-            this->guna2Button5->TabIndex = 101;
-            this->guna2Button5->UseTransparentBackground = true;
+            this->btnNextTask->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image17")));
+            this->btnNextTask->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnNextTask.Image")));
+            this->btnNextTask->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+            this->btnNextTask->ImageOffset = System::Drawing::Point(-2, 0);
+            this->btnNextTask->Location = System::Drawing::Point(1463, 770);
+            this->btnNextTask->Name = L"btnNextTask";
+            this->btnNextTask->Size = System::Drawing::Size(35, 31);
+            this->btnNextTask->TabIndex = 101;
+            this->btnNextTask->UseTransparentBackground = true;
+            this->btnNextTask->Click += gcnew System::EventHandler(this, &mainForm::btnNextTask_Click);
             // 
             // guna2Button1
             // 
@@ -4423,7 +4459,7 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->lblSync->Name = L"lblSync";
             this->lblSync->Size = System::Drawing::Size(1178, 58);
             this->lblSync->TabIndex = 3;
-            this->lblSync->Text = L"Всего существует 3 уровня сложности заданий:";
+            this->lblSync->Text = L"Всего существует 4 уровня сложности заданий:";
             // 
             // gunaTransition
             // 
@@ -4453,6 +4489,201 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->dragTask->DragMode = Guna::UI2::WinForms::Enums::DragMode::Control;
             this->dragTask->TargetControl = this->panelTask;
             this->dragTask->UseTransparentDrag = true;
+            // 
+            // bunifuTileButton1
+            // 
+            this->bunifuTileButton1->BackColor = System::Drawing::Color::SeaGreen;
+            this->bunifuTileButton1->color = System::Drawing::Color::SeaGreen;
+            this->bunifuTileButton1->colorActive = System::Drawing::Color::MediumSeaGreen;
+            this->bunifuTileButton1->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton1->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton1.Image")));
+            this->bunifuTileButton1->ImagePosition = 17;
+            this->bunifuTileButton1->ImageZoom = 50;
+            this->bunifuTileButton1->LabelPosition = 30;
+            this->bunifuTileButton1->LabelText = L"Частное чисел";
+            this->bunifuTileButton1->Location = System::Drawing::Point(918, 62);
+            this->bunifuTileButton1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton1->Name = L"bunifuTileButton1";
+            this->bunifuTileButton1->Size = System::Drawing::Size(231, 169);
+            this->bunifuTileButton1->TabIndex = 8;
+            // 
+            // panelA
+            // 
+            this->panelA->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->panelA->Controls->Add(this->label1);
+            this->gunaTransition->SetDecoration(this->panelA, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->panelA->Location = System::Drawing::Point(0, 280);
+            this->panelA->Name = L"panelA";
+            this->panelA->Size = System::Drawing::Size(1512, 56);
+            this->panelA->TabIndex = 9;
+            // 
+            // label1
+            // 
+            this->label1->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->label1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->label1->ForeColor = System::Drawing::Color::SlateBlue;
+            this->label1->Location = System::Drawing::Point(618, 14);
+            this->label1->Name = L"label1";
+            this->label1->Size = System::Drawing::Size(273, 24);
+            this->label1->TabIndex = 2;
+            this->label1->Text = L"Задачи срденего уровня";
+            // 
+            // bunifuTileButton3
+            // 
+            this->bunifuTileButton3->BackColor = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton3->color = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton3->colorActive = System::Drawing::Color::DarkSlateBlue;
+            this->bunifuTileButton3->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton3, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton3->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton3.Image")));
+            this->bunifuTileButton3->ImagePosition = 17;
+            this->bunifuTileButton3->ImageZoom = 50;
+            this->bunifuTileButton3->LabelPosition = 34;
+            this->bunifuTileButton3->LabelText = L"Вычитание чисел";
+            this->bunifuTileButton3->Location = System::Drawing::Point(224, 342);
+            this->bunifuTileButton3->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton3->Name = L"bunifuTileButton3";
+            this->bunifuTileButton3->Size = System::Drawing::Size(208, 169);
+            this->bunifuTileButton3->TabIndex = 13;
+            // 
+            // bunifuTileButton5
+            // 
+            this->bunifuTileButton5->BackColor = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton5->color = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton5->colorActive = System::Drawing::Color::DarkSlateBlue;
+            this->bunifuTileButton5->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton5, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton5->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton5.Image")));
+            this->bunifuTileButton5->ImagePosition = 17;
+            this->bunifuTileButton5->ImageZoom = 50;
+            this->bunifuTileButton5->LabelPosition = 30;
+            this->bunifuTileButton5->LabelText = L"Произведение чисел";
+            this->bunifuTileButton5->Location = System::Drawing::Point(440, 342);
+            this->bunifuTileButton5->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton5->Name = L"bunifuTileButton5";
+            this->bunifuTileButton5->Size = System::Drawing::Size(231, 169);
+            this->bunifuTileButton5->TabIndex = 11;
+            // 
+            // bunifuTileButton6
+            // 
+            this->bunifuTileButton6->BackColor = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton6->color = System::Drawing::Color::SlateBlue;
+            this->bunifuTileButton6->colorActive = System::Drawing::Color::DarkSlateBlue;
+            this->bunifuTileButton6->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton6, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton6->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton6.Image")));
+            this->bunifuTileButton6->ImagePosition = 17;
+            this->bunifuTileButton6->ImageZoom = 50;
+            this->bunifuTileButton6->LabelPosition = 34;
+            this->bunifuTileButton6->LabelText = L"Сложение чисел";
+            this->bunifuTileButton6->Location = System::Drawing::Point(8, 342);
+            this->bunifuTileButton6->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton6->Name = L"bunifuTileButton6";
+            this->bunifuTileButton6->Size = System::Drawing::Size(208, 169);
+            this->bunifuTileButton6->TabIndex = 10;
+            // 
+            // panelS
+            // 
+            this->panelS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->panelS->Controls->Add(this->labelA);
+            this->gunaTransition->SetDecoration(this->panelS, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->panelS->Location = System::Drawing::Point(0, 560);
+            this->panelS->Name = L"panelS";
+            this->panelS->Size = System::Drawing::Size(1512, 56);
+            this->panelS->TabIndex = 14;
+            // 
+            // labelA
+            // 
+            this->labelA->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->labelA, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->labelA->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->labelA->ForeColor = System::Drawing::Color::Chocolate;
+            this->labelA->Location = System::Drawing::Point(618, 14);
+            this->labelA->Name = L"labelA";
+            this->labelA->Size = System::Drawing::Size(274, 24);
+            this->labelA->TabIndex = 2;
+            this->labelA->Text = L"Задачи сложного уровня";
+            // 
+            // bunifuTileButton2
+            // 
+            this->bunifuTileButton2->BackColor = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton2->color = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton2->colorActive = System::Drawing::Color::Sienna;
+            this->bunifuTileButton2->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton2->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton2.Image")));
+            this->bunifuTileButton2->ImagePosition = 17;
+            this->bunifuTileButton2->ImageZoom = 50;
+            this->bunifuTileButton2->LabelPosition = 34;
+            this->bunifuTileButton2->LabelText = L"Вычитание чисел";
+            this->bunifuTileButton2->Location = System::Drawing::Point(224, 624);
+            this->bunifuTileButton2->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton2->Name = L"bunifuTileButton2";
+            this->bunifuTileButton2->Size = System::Drawing::Size(208, 169);
+            this->bunifuTileButton2->TabIndex = 17;
+            // 
+            // bunifuTileButton4
+            // 
+            this->bunifuTileButton4->BackColor = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton4->color = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton4->colorActive = System::Drawing::Color::Sienna;
+            this->bunifuTileButton4->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton4, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton4->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton4.Image")));
+            this->bunifuTileButton4->ImagePosition = 17;
+            this->bunifuTileButton4->ImageZoom = 50;
+            this->bunifuTileButton4->LabelPosition = 30;
+            this->bunifuTileButton4->LabelText = L"Произведение чисел";
+            this->bunifuTileButton4->Location = System::Drawing::Point(440, 624);
+            this->bunifuTileButton4->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton4->Name = L"bunifuTileButton4";
+            this->bunifuTileButton4->Size = System::Drawing::Size(231, 169);
+            this->bunifuTileButton4->TabIndex = 16;
+            // 
+            // bunifuTileButton7
+            // 
+            this->bunifuTileButton7->BackColor = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton7->color = System::Drawing::Color::Chocolate;
+            this->bunifuTileButton7->colorActive = System::Drawing::Color::Sienna;
+            this->bunifuTileButton7->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->bunifuTileButton7, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->bunifuTileButton7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->bunifuTileButton7->ForeColor = System::Drawing::Color::White;
+            this->bunifuTileButton7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton7.Image")));
+            this->bunifuTileButton7->ImagePosition = 17;
+            this->bunifuTileButton7->ImageZoom = 50;
+            this->bunifuTileButton7->LabelPosition = 34;
+            this->bunifuTileButton7->LabelText = L"Сложение чисел";
+            this->bunifuTileButton7->Location = System::Drawing::Point(8, 624);
+            this->bunifuTileButton7->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->bunifuTileButton7->Name = L"bunifuTileButton7";
+            this->bunifuTileButton7->Size = System::Drawing::Size(208, 169);
+            this->bunifuTileButton7->TabIndex = 15;
             // 
             // mainForm
             // 
@@ -4528,6 +4759,10 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
             this->Pages->ResumeLayout(false);
             this->anim3->ResumeLayout(false);
             this->anim3->PerformLayout();
+            this->panelA->ResumeLayout(false);
+            this->panelA->PerformLayout();
+            this->panelS->ResumeLayout(false);
+            this->panelS->PerformLayout();
             this->ResumeLayout(false);
 
         }
@@ -4839,6 +5074,26 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 		Void TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e);
 		Void btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e);
 
+		array<String^>^ easyTasks;
+        int currentIndex = 0;
+
+        Void NextTask() {
+			easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide"};
+			
+            currentIndex = Array::IndexOf(easyTasks, CurrentTask);
+			if (currentIndex == -1) {
+                MessageError->Show("Index error", "Error");
+                return;
+			}
+
+
+			currentIndex = (currentIndex + 1) % easyTasks->Length;  
+			CurrentTask = easyTasks[currentIndex];
+            CurrentDifficulty = "easy";
+            MessageInfo->Show("task: " + CurrentTask,"Diffuclty:" + CurrentDifficulty);
+
+            LoadTask();
+        }
     Void btnTaskAdd_Click(System::Object^ sender, System::EventArgs^ e) {
         CurrentTask = "add";
         CurrentDifficulty = "easy";
@@ -4861,6 +5116,9 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
     }
     Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
         PagesTasks->SelectTab(TasksMain);
+    }
+	Void btnNextTask_Click(System::Object^ sender, System::EventArgs^ e) {
+        NextTask();
     }
 };
 }
