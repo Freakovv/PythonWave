@@ -2,11 +2,6 @@
 #include "mainForm.h"
 #include "ClassProgress.h"
 
-using namespace PythonWave;
-using namespace System;
-using namespace System::Drawing;
-using namespace System::Drawing::Imaging;
-
 Void mainForm::enableMail(bool enable) {
 	if (enable) {
 		textBoxCode->Clear();

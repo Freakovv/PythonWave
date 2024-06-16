@@ -1,15 +1,6 @@
 #pragma once
 #include "mainForm.h"
 
-#include <Windows.h>
-#include <iostream>
-#include <msclr/marshal_cppstd.h>
-
-using namespace System::Drawing::Imaging;
-using namespace System::Drawing;
-using namespace System;
-using namespace PythonWave;
-
 // Для перехода с профиля
 Void mainForm::SetProfileDefaults() {
 	textBoxUserName->Text = UserName;
@@ -20,6 +11,7 @@ Void mainForm::SetProfileDefaults() {
 	textBoxCodeNew->Enabled = false;
 	buttonCheckCode->Enabled = false;
 }
+
 Boolean mainForm::CheckSave() {
 	if (isProfileSaved) {
 		return true;

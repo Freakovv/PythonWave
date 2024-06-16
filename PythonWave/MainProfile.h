@@ -1,10 +1,6 @@
 #pragma once
 #include "mainForm.h"
 
-using namespace PythonWave;
-using namespace System;
-using namespace System::Drawing;
-using namespace System::Drawing::Imaging;
 
 int secondsLeftt = 30;
 

@@ -33,256 +33,179 @@ namespace PythonWave {
 	public:
 		ClassFade^ Fade;
 
-	private: System::Windows::Forms::Timer^ timerAnim;
-	private: Bunifu::UI::WinForms::BunifuPages^ Pages;
-
-	private: System::Windows::Forms::TabPage^ pageBook;
-	private: Bunifu::UI::WinForms::BunifuPages^ Book;
-	private: System::Windows::Forms::TabPage^ pgBookStart;
-	private: System::Windows::Forms::RichTextBox^ richStart;
-	private: System::Windows::Forms::TabPage^ Book1;
-	private: System::Windows::Forms::RichTextBox^ richBook1;
-	private: System::Windows::Forms::TabPage^ Book2;
-	private: System::Windows::Forms::RichTextBox^ richBook2;
-	private: System::Windows::Forms::TabPage^ Book3;
-	private: System::Windows::Forms::RichTextBox^ richBook3;
-	private: System::Windows::Forms::TabPage^ Book4;
-	private: System::Windows::Forms::RichTextBox^ richBook4;
-	private: System::Windows::Forms::TabPage^ Book5;
-	private: System::Windows::Forms::RichTextBox^ richBook5;
-	private: System::Windows::Forms::TabPage^ Book6;
-	private: System::Windows::Forms::RichTextBox^ richBook6;
-	private: System::Windows::Forms::TabPage^ Book7;
-	private: System::Windows::Forms::RichTextBox^ richBook7;
-	private: System::Windows::Forms::TabPage^ Book8;
-	private: System::Windows::Forms::RichTextBox^ richBook8;
-	private: System::Windows::Forms::TabPage^ Book9;
-	private: System::Windows::Forms::RichTextBox^ richBook9;
-	private: System::Windows::Forms::TabPage^ Book10;
-	private: System::Windows::Forms::RichTextBox^ richBook10;
-	private: System::Windows::Forms::TabPage^ Book11;
-	private: System::Windows::Forms::RichTextBox^ richBook11;
-	private: System::Windows::Forms::TabPage^ Book12;
-	private: System::Windows::Forms::RichTextBox^ richBook12;
-	private: System::Windows::Forms::TabPage^ Book13;
-	private: System::Windows::Forms::RichTextBox^ richBook13;
-	private: System::Windows::Forms::TabPage^ Book14;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
-	private: System::Windows::Forms::Panel^ myToolbox;
-	private: Guna::UI2::WinForms::Guna2ComboBox^ dropdownPages;
-	private: Guna::UI2::WinForms::Guna2Button^ btnPreviousBook;
-	private: Guna::UI2::WinForms::Guna2Button^ btnBookNext;
-	private: Guna::UI2::WinForms::Guna2Button^ btnItalic;
-	private: Guna::UI2::WinForms::Guna2Button^ btnStrikeOut;
-	private: Guna::UI2::WinForms::Guna2Button^ btnClearFilters;
-	private: Guna::UI2::WinForms::Guna2Button^ btnThick;
-	private: Guna::UI2::WinForms::Guna2Button^ btnUnderline;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ btnQuestionBook;
-	private: Guna::UI2::WinForms::Guna2Button^ btnHighlight;
-	private: System::Windows::Forms::TabPage^ pageTasks;
-    private: Guna::UI2::WinForms::Guna2Panel^ panelTasks;
-
-
-
-	private: System::Windows::Forms::TabPage^ pageProfile;
-	private: System::Windows::Forms::Panel^ panelProfileData;
-	private: Guna::UI2::WinForms::Guna2Button^ btnProfileEdit;
-	private: System::Windows::Forms::Label^ lblProfileRank;
-	private: System::Windows::Forms::Label^ lblEmail;
-	private: System::Windows::Forms::Label^ lblRegDate;
-	private: System::Windows::Forms::Label^ lblBirth;
-	private: System::Windows::Forms::Label^ lblSex;
-	private: System::Windows::Forms::Label^ lblSurname;
-	private: System::Windows::Forms::Label^ lblName;
-	private: System::Windows::Forms::Label^ lblLogin;
-	private: System::Windows::Forms::PictureBox^ pictureProfile;
-	private: System::Windows::Forms::TabPage^ pageStats;
-	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chartProductivity;
-	private: System::Windows::Forms::TabPage^ pageSettings;
-	private: System::Windows::Forms::Label^ label11;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
-	private: System::Windows::Forms::Label^ label9;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
-	private: Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
-	private: Guna::UI2::WinForms::Guna2Button^ btnSettingsCancel;
-	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
-	private: Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
-	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
-	private: System::Windows::Forms::Label^ labelBorderBtn;
-	private: System::Windows::Forms::Label^ label12;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
-	private: System::Windows::Forms::Label^ labelVolume;
-	private: System::Windows::Forms::Label^ label10;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
-	private: System::Windows::Forms::Label^ labelBorderForm;
-	private: System::Windows::Forms::Label^ label8;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ btnMessageShadow;
-	private: System::Windows::Forms::Label^ label7;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label5;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
-	private: System::Windows::Forms::TabPage^ pageProfileEdit;
-	private: Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew2;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassOld;
-	private: System::Windows::Forms::Label^ label3;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCodeNew;
-	private: Guna::UI2::WinForms::Guna2Button^ btnCancelChanges;
-	private: System::Windows::Forms::LinkLabel^ linkREMOVEACC;
-	private: System::Windows::Forms::Label^ lblSexEdit;
-	private: System::Windows::Forms::Label^ lblLoginEdit;
-	private: System::Windows::Forms::Label^ lblBirthEdit;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ labelTimer;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
-	private: System::Windows::Forms::Label^ lblSurnameEdit;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
-	private: System::Windows::Forms::Label^ lblNameEdit;
-	private: Guna::UI2::WinForms::Guna2Button^ btnProfileSave;
-	private: Guna::UI2::WinForms::Guna2Button^ guna2Button2;
-	private: System::Windows::Forms::PictureBox^ pictureProfileEdit;
-	private: System::Windows::Forms::LinkLabel^ linkReMail;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TabPage^ anim1;
-	private: System::Windows::Forms::Label^ lblAnim1;
-	private: System::Windows::Forms::TabPage^ anim2;
-	private: System::Windows::Forms::Label^ lblAnim2;
-
-	private: System::Windows::Forms::TabPage^ anim4;
-	private: Guna::UI2::WinForms::Guna2Button^ btnSync1;
-
-	private: System::Windows::Forms::Label^ lblAnim4;
-
-	private: System::Windows::Forms::TabPage^ anim3;
-	private: Guna::UI2::WinForms::Guna2Button^ btnSync;
-
-	private: System::Windows::Forms::Label^ lblSync5;
-
-	private: System::Windows::Forms::Label^ lblSync2;
-	private: System::Windows::Forms::Label^ lblSync3;
-	private: System::Windows::Forms::Label^ lblSync4;
-
-	private: System::Windows::Forms::Label^ lblSync1;
-
-	private: System::Windows::Forms::Label^ lblSync;
-
-	private: Guna::UI2::WinForms::Guna2Transition^ gunaTransition;
-	private: System::Windows::Forms::TabPage^ pageHome;
-	private: System::Windows::Forms::Timer^ ANIMFIX;
-	private: Bunifu::UI::WinForms::BunifuPages^ PagesTasks;
-	private: System::Windows::Forms::TabPage^ TasksMain;
-private: System::Windows::Forms::TabPage^ TaskPage;
-
-
-
-
-
-
-private: Guna::UI2::WinForms::Guna2DragControl^ dragTask;
-private: System::Windows::Forms::RichTextBox^ richTask;
-
-
-
-
-
-
-
-
-
-private: Guna::UI2::WinForms::Guna2Panel^ panelTask;
-private: Guna::UI2::WinForms::Guna2Button^ btnSaveCode;
-
-private: System::Windows::Forms::Panel^ solutionPanel;
-private: System::Windows::Forms::Label^ TaskText;
-private: Guna::UI2::WinForms::Guna2Button^ btnTestCode;
-private: System::Windows::Forms::Panel^ panelB;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskAdd;
-
-private: System::Windows::Forms::Label^ lblLVLB;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskSubtract;
-
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskDivide;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskMultiply;
-private: Guna::UI2::WinForms::Guna2Button^ btnPerviousTask;
-
-private: Guna::UI2::WinForms::Guna2Button^ btnNextTask;
-private: Guna::UI2::WinForms::Guna2Button^ btnBack;
-
-
-private: System::Windows::Forms::Panel^ panelA;
-private: System::Windows::Forms::Label^ label1;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskEvenOrOdd;
-
-
-private: System::Windows::Forms::Panel^ panelS;
-private: System::Windows::Forms::Label^ labelA;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskBetterThanAverage;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskReverseSeq;
-
-
-
-
-
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskPositiveSum;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskHighAndLow;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskSquareDigits;
-
-
-
-
-
-
-
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetCount;
-private: System::Windows::Forms::Label^ lblPanelTaskInfo;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetMiddle;
-
-private: Bunifu::Framework::UI::BunifuTileButton^ btnSymmetricPoint;
-
-
-private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetChar;
-
-
-private: System::Windows::Forms::Panel^ panel1;
-private: System::Windows::Forms::Label^ label13;
-private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public:
-
-	public:
-
-	public:
-
-	public:
+    private:
+	    System::Windows::Forms::Timer^ timerAnim;
+	    Bunifu::UI::WinForms::BunifuPages^ Pages;
+	    System::Windows::Forms::TabPage^ pageBook;
+	    Bunifu::UI::WinForms::BunifuPages^ Book;
+	    System::Windows::Forms::TabPage^ pgBookStart;
+	    System::Windows::Forms::RichTextBox^ richStart;
+	    System::Windows::Forms::TabPage^ Book1;
+	    System::Windows::Forms::RichTextBox^ richBook1;
+	    System::Windows::Forms::TabPage^ Book2;
+	    System::Windows::Forms::RichTextBox^ richBook2;
+	    System::Windows::Forms::TabPage^ Book3;
+	    System::Windows::Forms::RichTextBox^ richBook3;
+	    System::Windows::Forms::TabPage^ Book4;
+	    System::Windows::Forms::RichTextBox^ richBook4;
+	    System::Windows::Forms::TabPage^ Book5;
+	    System::Windows::Forms::RichTextBox^ richBook5;
+	    System::Windows::Forms::TabPage^ Book6;
+	    System::Windows::Forms::RichTextBox^ richBook6;
+	    System::Windows::Forms::TabPage^ Book7;
+	    System::Windows::Forms::RichTextBox^ richBook7;
+	    System::Windows::Forms::TabPage^ Book8;
+	    System::Windows::Forms::RichTextBox^ richBook8;
+	    System::Windows::Forms::TabPage^ Book9;
+	    System::Windows::Forms::RichTextBox^ richBook9;
+	    System::Windows::Forms::TabPage^ Book10;
+	    System::Windows::Forms::RichTextBox^ richBook10;
+	    System::Windows::Forms::TabPage^ Book11;
+	    System::Windows::Forms::RichTextBox^ richBook11;
+	    System::Windows::Forms::TabPage^ Book12;
+	    System::Windows::Forms::RichTextBox^ richBook12;
+	    System::Windows::Forms::TabPage^ Book13;
+	    System::Windows::Forms::RichTextBox^ richBook13;
+	    System::Windows::Forms::TabPage^ Book14;
+	    System::Windows::Forms::RichTextBox^ richTextBox1;
+	    System::Windows::Forms::Panel^ myToolbox;
+	    Guna::UI2::WinForms::Guna2ComboBox^ dropdownPages;
+	    Guna::UI2::WinForms::Guna2Button^ btnPreviousBook;
+	    Guna::UI2::WinForms::Guna2Button^ btnBookNext;
+	    Guna::UI2::WinForms::Guna2Button^ btnItalic;
+	    Guna::UI2::WinForms::Guna2Button^ btnStrikeOut;
+	    Guna::UI2::WinForms::Guna2Button^ btnClearFilters;
+	    Guna::UI2::WinForms::Guna2Button^ btnThick;
+	    Guna::UI2::WinForms::Guna2Button^ btnUnderline;
+	    Guna::UI2::WinForms::Guna2CircleButton^ btnQuestionBook;
+	    Guna::UI2::WinForms::Guna2Button^ btnHighlight;
+	    System::Windows::Forms::TabPage^ pageTasks;
+        Guna::UI2::WinForms::Guna2Panel^ panelTasks;
+	    System::Windows::Forms::TabPage^ pageProfile;
+	    System::Windows::Forms::Panel^ panelProfileData;
+	    Guna::UI2::WinForms::Guna2Button^ btnProfileEdit;
+	    System::Windows::Forms::Label^ lblProfileRank;
+	    System::Windows::Forms::Label^ lblEmail;
+	    System::Windows::Forms::Label^ lblRegDate;
+	    System::Windows::Forms::Label^ lblBirth;
+	    System::Windows::Forms::Label^ lblSex;
+	    System::Windows::Forms::Label^ lblSurname;
+	    System::Windows::Forms::Label^ lblName;
+	    System::Windows::Forms::Label^ lblLogin;
+	    System::Windows::Forms::PictureBox^ pictureProfile;
+	    System::Windows::Forms::TabPage^ pageStats;
+	    System::Windows::Forms::DataVisualization::Charting::Chart^ chartProductivity;
+	    System::Windows::Forms::TabPage^ pageSettings;
+	    System::Windows::Forms::Label^ label11;
+	    Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
+	    System::Windows::Forms::Label^ label9;
+	    Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleAlwaysHide;
+	    Guna::UI2::WinForms::Guna2Button^ btnSettingsSave;
+	    Guna::UI2::WinForms::Guna2Button^ btnSettingsCancel;
+	    Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
+	    Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
+	    Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
+	    Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
+	    System::Windows::Forms::Label^ labelBorderBtn;
+	    System::Windows::Forms::Label^ label12;
+	    Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
+	    System::Windows::Forms::Label^ labelVolume;
+	    System::Windows::Forms::Label^ label10;
+	    Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
+	    System::Windows::Forms::Label^ labelBorderForm;
+	    System::Windows::Forms::Label^ label8;
+	    Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
+	    Guna::UI2::WinForms::Guna2CircleButton^ btnMessageShadow;
+	    System::Windows::Forms::Label^ label7;
+	    Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
+	    System::Windows::Forms::Label^ label6;
+	    System::Windows::Forms::Label^ label5;
+	    Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
+	    Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
+	    System::Windows::Forms::TabPage^ pageProfileEdit;
+	    Guna::UI2::WinForms::Guna2Button^ btnChangePassword;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew2;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxPassNew;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxPassOld;
+	    System::Windows::Forms::Label^ label3;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxCodeNew;
+	    Guna::UI2::WinForms::Guna2Button^ btnCancelChanges;
+	    System::Windows::Forms::LinkLabel^ linkREMOVEACC;
+	    System::Windows::Forms::Label^ lblSexEdit;
+	    System::Windows::Forms::Label^ lblLoginEdit;
+	    System::Windows::Forms::Label^ lblBirthEdit;
+	    System::Windows::Forms::Label^ label4;
+	    System::Windows::Forms::Label^ labelTimer;
+	    Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
+	    Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
+	    Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
+	    Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
+	    System::Windows::Forms::Label^ lblSurnameEdit;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
+	    Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
+	    System::Windows::Forms::Label^ lblNameEdit;
+	    Guna::UI2::WinForms::Guna2Button^ btnProfileSave;
+	    Guna::UI2::WinForms::Guna2Button^ guna2Button2;
+	    System::Windows::Forms::PictureBox^ pictureProfileEdit;
+	    System::Windows::Forms::LinkLabel^ linkReMail;
+	    System::Windows::Forms::Label^ label2;
+	    System::Windows::Forms::TabPage^ anim1;
+	    System::Windows::Forms::Label^ lblAnim1;
+	    System::Windows::Forms::TabPage^ anim2;
+	    System::Windows::Forms::Label^ lblAnim2;
+	    System::Windows::Forms::TabPage^ anim4;
+	    Guna::UI2::WinForms::Guna2Button^ btnSync1;
+	    System::Windows::Forms::Label^ lblAnim4;
+	    System::Windows::Forms::TabPage^ anim3;
+	    Guna::UI2::WinForms::Guna2Button^ btnSync;
+	    System::Windows::Forms::Label^ lblSync5;
+	    System::Windows::Forms::Label^ lblSync2;
+	    System::Windows::Forms::Label^ lblSync3;
+	    System::Windows::Forms::Label^ lblSync4;
+	    System::Windows::Forms::Label^ lblSync1;
+        System::Windows::Forms::Label^ lblSync;
+        Guna::UI2::WinForms::Guna2Transition^ gunaTransition;
+        System::Windows::Forms::TabPage^ pageHome;
+        System::Windows::Forms::Timer^ ANIMFIX;
+        Bunifu::UI::WinForms::BunifuPages^ PagesTasks;
+        System::Windows::Forms::TabPage^ TasksMain;
+        System::Windows::Forms::TabPage^ TaskPage;
+        Guna::UI2::WinForms::Guna2DragControl^ dragTask;
+        System::Windows::Forms::RichTextBox^ richTask;
+        Guna::UI2::WinForms::Guna2Panel^ panelTask;
+        Guna::UI2::WinForms::Guna2Button^ btnSaveCode;
+        System::Windows::Forms::Panel^ solutionPanel;
+        Guna::UI2::WinForms::Guna2Button^ btnTestCode;
+        System::Windows::Forms::Panel^ panelB;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskAdd;
+        System::Windows::Forms::Label^ lblLVLB;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskSubtract;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskDivide;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskMultiply;
+        Guna::UI2::WinForms::Guna2Button^ btnPerviousTask;
+        Guna::UI2::WinForms::Guna2Button^ btnNextTask;
+        Guna::UI2::WinForms::Guna2Button^ btnBack;
+        System::Windows::Forms::Panel^ panelA;
+        System::Windows::Forms::Label^ label1;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskEvenOrOdd;
+        System::Windows::Forms::Panel^ panelS;
+        System::Windows::Forms::Label^ labelA;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskBetterThanAverage;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskReverseSeq;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskPositiveSum;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskHighAndLow;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskSquareDigits;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetCount;
+        System::Windows::Forms::Label^ lblPanelTaskInfo;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetMiddle;
+        Bunifu::Framework::UI::BunifuTileButton^ btnSymmetricPoint;
+        Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetChar;
+        System::Windows::Forms::Panel^ panel1;
+        System::Windows::Forms::Label^ label13;
+        Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
+        System::Windows::Forms::TextBox^ TaskText;
 
 	public:
 		MouseEventHandler^ mouseDownHandler;
@@ -325,20 +248,14 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
 		}
 
 	private:
-
 		UI2::WinForms::Guna2MessageDialog^ MessageInfo;
 		Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 		Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
 		Guna::UI2::WinForms::Guna2MessageDialog^ MessageQuestion;
-
 		System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-
 		System::Windows::Forms::Timer^ timerReMail;
-
 		Guna::UI2::WinForms::Guna2MessageDialog^ MessageDefault;
-
 		Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureUserBar;
-
 		System::Windows::Forms::Panel^ panelMain;
 		System::Windows::Forms::Panel^ panelMenu;
 		Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
@@ -524,7 +441,6 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->btnTestCode = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->btnSaveCode = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->richTask = (gcnew System::Windows::Forms::RichTextBox());
-            this->TaskText = (gcnew System::Windows::Forms::Label());
             this->pageBook = (gcnew System::Windows::Forms::TabPage());
             this->Book = (gcnew Bunifu::UI::WinForms::BunifuPages());
             this->pgBookStart = (gcnew System::Windows::Forms::TabPage());
@@ -581,6 +497,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
+            this->TaskText = (gcnew System::Windows::Forms::TextBox());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMaximize))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
@@ -3559,8 +3476,8 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             // solutionPanel
             // 
             this->solutionPanel->AutoScroll = true;
-            this->solutionPanel->Controls->Add(this->panelTask);
             this->solutionPanel->Controls->Add(this->TaskText);
+            this->solutionPanel->Controls->Add(this->panelTask);
             this->gunaTransition->SetDecoration(this->solutionPanel, Guna::UI2::AnimatorNS::DecorationType::None);
             this->solutionPanel->Location = System::Drawing::Point(0, 0);
             this->solutionPanel->Name = L"solutionPanel";
@@ -3576,7 +3493,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->panelTask->Controls->Add(this->btnSaveCode);
             this->panelTask->Controls->Add(this->richTask);
             this->gunaTransition->SetDecoration(this->panelTask, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelTask->Location = System::Drawing::Point(10, 189);
+            this->panelTask->Location = System::Drawing::Point(10, 398);
             this->panelTask->Name = L"panelTask";
             this->panelTask->Size = System::Drawing::Size(1488, 354);
             this->panelTask->TabIndex = 3;
@@ -3686,21 +3603,6 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->richTask->TabIndex = 1;
             this->richTask->Text = L"# Функция какой-то задачи";
             this->richTask->TextChanged += gcnew System::EventHandler(this, &mainForm::richTask1_TextChanged);
-            // 
-            // TaskText
-            // 
-            this->TaskText->BackColor = System::Drawing::Color::Transparent;
-            this->gunaTransition->SetDecoration(this->TaskText, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->TaskText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(204)));
-            this->TaskText->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->TaskText->Location = System::Drawing::Point(0, 0);
-            this->TaskText->Name = L"TaskText";
-            this->TaskText->Size = System::Drawing::Size(1504, 329);
-            this->TaskText->TabIndex = 5;
-            this->TaskText->Text = L"Текст какой-то задачи...";
-            this->TaskText->TextChanged += gcnew System::EventHandler(this, &mainForm::TaskText_TextChanged);
             // 
             // pageBook
             // 
@@ -4867,6 +4769,22 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->dragTask->TargetControl = this->panelTask;
             this->dragTask->UseTransparentDrag = true;
             // 
+            // TaskText
+            // 
+            this->TaskText->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+                static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            this->gunaTransition->SetDecoration(this->TaskText, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->TaskText->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->TaskText->ForeColor = System::Drawing::Color::White;
+            this->TaskText->Location = System::Drawing::Point(10, 5);
+            this->TaskText->Multiline = true;
+            this->TaskText->Name = L"TaskText";
+            this->TaskText->ReadOnly = true;
+            this->TaskText->Size = System::Drawing::Size(1488, 387);
+            this->TaskText->TabIndex = 7;
+            this->TaskText->Text = L"# Текст какой-то задачи";
+            // 
             // mainForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -4927,6 +4845,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->panelB->PerformLayout();
             this->TaskPage->ResumeLayout(false);
             this->solutionPanel->ResumeLayout(false);
+            this->solutionPanel->PerformLayout();
             this->panelTask->ResumeLayout(false);
             this->panelTask->PerformLayout();
             this->pageBook->ResumeLayout(false);
@@ -5221,34 +5140,6 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
 
 
 		// mainTasks.h
-        Void LoadTask() {
-            try {
-                String^ pathToText = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".txt";
-                String^ pathToFunc = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".py";
-
-                FileStream^ fsText = gcnew FileStream(pathToText, FileMode::Open, FileAccess::Read);
-                StreamReader^ srText = gcnew StreamReader(fsText);
-                
-                String^ text = srText->ReadToEnd();
-                srText->Close();
-                fsText->Close();
-
-                FileStream^ fsFunc = gcnew FileStream(pathToFunc, FileMode::Open, FileAccess::Read);
-                StreamReader^ srFunc = gcnew StreamReader(fsFunc);
-
-                String^ func = srFunc->ReadToEnd();
-                srFunc->Close();
-                fsFunc->Close();
-
-                TaskText->Text = text;
-                richTask->Text = func;
-                SyntaxHighlight(richTask);
-                PagesTasks->SelectTab(TaskPage);
-            }
-            catch (Exception^ e) {
-                MessageBox::Show(e->Message);
-            }
-        }
 
 		String^ CurrentTask;
 		String^ CurrentDifficulty;
@@ -5270,133 +5161,35 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
         
         int currentIndex = 0;
 
-    void InitializeTaskArrays() {
-        easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide", "even_or_odd"};
-        middleTasks = gcnew array<String^> {"positive_sum", "better_than_average", "reverse_seq"};
-        hardTasks = gcnew array<String^> {"get_count", "high_and_low", "square_digits"};
-        veryHardTasks = gcnew array<String^> {"get_char", "get_middle", "symmetric_point"};
-    }
+    Void LoadTask();
+    void InitializeTaskArrays();
 
-    array<String^>^ GetTaskArray() {
-        if (CurrentDifficulty == "easy") {
-            return easyTasks;
-        }
-        else if (CurrentDifficulty == "middle") {
-            return middleTasks;
-        }
-        else if (CurrentDifficulty == "hard") {
-            return hardTasks;
-        }
-        else if (CurrentDifficulty == "very_hard") {
-            return veryHardTasks;
-        }
-        return nullptr;
-    }
+    array<String^>^ GetTaskArray();
 
-    Void NextTask() {
-        InitializeTaskArrays();
-        array<String^>^ tasks = GetTaskArray();
-        if (tasks == nullptr) {
-            MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
-            return;
-        }
+    Void NextTask();
+    Void PreviousTask();
+    Void btnPerviousTask_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnNextTask_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnBack_Click(System::Object^ sender, System::EventArgs^ e);
 
-        currentIndex = Array::IndexOf(tasks, CurrentTask);
-        if (currentIndex == -1) {
-            MessageError->Show("Error: Invalid Index", "Transition is not possible");
-            return;
-        }
+    Void lblPanelTaskInfo_Click(System::Object^ sender, System::EventArgs^ e);
+    Void panelTask_Click(System::Object^ sender, System::EventArgs^ e);
 
-        currentIndex = (currentIndex + 1) % tasks->Length;
-        CurrentTask = tasks[currentIndex];
+    void SetTaskAndLoad(String^ task, String^ difficulty);
 
-        LoadTask();
-    }
-
-    Void PreviousTask() {
-        InitializeTaskArrays();
-        array<String^>^ tasks = GetTaskArray();
-        if (tasks == nullptr) {
-            MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
-            return;
-        }
-
-        currentIndex = Array::IndexOf(tasks, CurrentTask);
-        if (currentIndex == -1) {
-            MessageError->Show("Error: Invalid Index", "Transition is not possible");
-            return;
-        }
-
-        currentIndex = (currentIndex - 1 + tasks->Length) % tasks->Length;
-        CurrentTask = tasks[currentIndex];
-
-        LoadTask();
-    }
-    Void btnPerviousTask_Click(System::Object^ sender, System::EventArgs^ e) {
-        PreviousTask();
-    }
-    Void btnNextTask_Click(System::Object^ sender, System::EventArgs^ e) {
-    NextTask();
-    }
-    Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
-        PagesTasks->SelectTab(TasksMain);
-    }
-
-    Void lblPanelTaskInfo_Click(System::Object^ sender, System::EventArgs^ e) {
-        lblPanelTaskInfo->Visible = false;
-    }
-    Void panelTask_Click(System::Object^ sender, System::EventArgs^ e) {
-        lblPanelTaskInfo->Visible = false;
-    }
-
-    void SetTaskAndLoad(String^ task, String^ difficulty) {
-        CurrentTask = task;
-        CurrentDifficulty = difficulty;
-        LoadTask();
-    }
-
-    Void btnTaskAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("add", "easy");
-    }
-    Void btnTaskDivide_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("divide", "easy");
-    }
-    Void btnTaskMultiply_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("multiply", "easy");
-    }
-    Void btnTaskSubtract_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("subtract", "easy");
-    }
-    Void btnTaskEvenOrOdd_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("even_or_odd", "easy");
-    }
-    Void btnTaskPositiveSum_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("positive_sum", "middle");
-    }
-    Void btnTaskBetterThanAverage_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("better_than_average", "middle");
-    }
-    Void btnReverseSeq_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("reverse_seq", "middle");
-    }
-    Void btnTaskGetCount_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("get_count", "hard");
-    }
-    Void btnTaskHighAndLow_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("high_and_low", "hard");
-    }
-    Void btnTaskSquareDigits_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("square_digits", "hard");
-    }
-    
-    Void btnTaskGetChar_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("get_char", "very_hard");
-    }
-    Void btnHero_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("get_middle", "very_hard");
-    }
-    Void btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("symmetric_point", "very_hard");
-    }
+    Void btnTaskAdd_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskDivide_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskMultiply_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskSubtract_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskEvenOrOdd_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskPositiveSum_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskBetterThanAverage_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnReverseSeq_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskGetCount_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskHighAndLow_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskSquareDigits_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnTaskGetChar_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnHero_Click(System::Object^ sender, System::EventArgs^ e);
+    Void btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -3,18 +3,11 @@
 #include "mainForm.h"
 #include "MyPython.h"
 
-#include <Windows.h>
-#include <msclr/marshal_cppstd.h>
-#include <iostream>
-
-using namespace System;
-using namespace PythonWave;
-using namespace System::Drawing;
-using namespace System::Windows::Forms;
-
 int currentAnim = 1;
 double animSeconds = 2;
 int secondsToStartAnim = 4;
+
+// Анимации, хайлайты
 
 void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	int selectionStart = richTB->SelectionStart;
@@ -63,7 +56,6 @@ void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	richTB->Select(selectionStart, selectionLength);
 	richTB->SelectionColor = defaultTextColor;
 }
-
 Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (isCoursesVisited)
 		funcSelectTab(pageTasks);
@@ -83,7 +75,6 @@ Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
 	}
 }
-
 Void mainForm::btnSync_Click(System::Object^ sender, System::EventArgs^ e) {
 	Pages->SelectTab(anim4);
 
@@ -169,6 +160,25 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 
+
+Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	SyntaxHighlight(richTask);
+}
+Void mainForm::TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	// Получаем размер текста в текстовом поле
+	System::Drawing::Size textSize = TextRenderer::MeasureText(TaskText->Text, TaskText->Font);
+
+	TaskText->Multiline = true;
+	TaskText->WordWrap = true;
+	TaskText->ScrollBars = ScrollBars::Vertical;
+	// Рассчитываем новую позицию панели, учитывая размер текста, отступы и дополнительные 100 пикселей
+	int Y = TaskText->Location.Y + textSize.Height + TaskText->Margin.Bottom + 30;
+
+	// Устанавливаем новую позицию панели
+	panelTask->Location = Point(panelTask->Location.X, Y);
+}
+
+// Задачи
 void mainForm::PyRun(String^ code) {
 	if (String::IsNullOrEmpty(CurrentTask)) {
 		MessageError->Show("CurrentTask is Null or Empty", "String^ CurrentTask");
@@ -179,24 +189,167 @@ void mainForm::PyRun(String^ code) {
 	String^ result = PyRunner.Start(code);
 	MessageBox::Show(result);
 }
-Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e){
+Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ code = richTask->Text;
 	PyRun(code);
 }
 
-Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	SyntaxHighlight(richTask);
-}
-Void mainForm::TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	// Получаем размер текста в текстовом поле
-	System::Drawing::Size textSize = TextRenderer::MeasureText(TaskText->Text, TaskText->Font);
+Void mainForm::LoadTask() {
+	try {
+		String^ pathToText = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".txt";
+		String^ pathToFunc = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".py";
 
-	// Рассчитываем новую позицию панели, учитывая размер текста, отступы и дополнительные 100 пикселей
-	int Y = TaskText->Location.Y + textSize.Height + TaskText->Margin.Bottom + 30;
+		FileStream^ fsText = gcnew FileStream(pathToText, FileMode::Open, FileAccess::Read);
+		StreamReader^ srText = gcnew StreamReader(fsText);
 
-	// Устанавливаем новую позицию панели
-	panelTask->Location = Point(panelTask->Location.X, Y);
+		String^ text = srText->ReadToEnd();
+		srText->Close();
+		fsText->Close();
+
+		FileStream^ fsFunc = gcnew FileStream(pathToFunc, FileMode::Open, FileAccess::Read);
+		StreamReader^ srFunc = gcnew StreamReader(fsFunc);
+
+		String^ func = srFunc->ReadToEnd();
+		srFunc->Close();
+		fsFunc->Close();
+
+		TaskText->Text = text;
+		richTask->Text = func;
+		SyntaxHighlight(richTask);
+		PagesTasks->SelectTab(TaskPage);
+	}
+	catch (Exception^ e) {
+		MessageBox::Show(e->Message);
+	}
 }
+
+void mainForm::InitializeTaskArrays() {
+	easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide", "even_or_odd"};
+	middleTasks = gcnew array<String^> {"positive_sum", "better_than_average", "reverse_seq"};
+	hardTasks = gcnew array<String^> {"get_count", "high_and_low", "square_digits"};
+	veryHardTasks = gcnew array<String^> {"get_char", "get_middle", "symmetric_point"};
+}
+array<String^>^ mainForm::GetTaskArray() {
+	if (CurrentDifficulty == "easy") {
+		return easyTasks;
+	}
+	else if (CurrentDifficulty == "middle") {
+		return middleTasks;
+	}
+	else if (CurrentDifficulty == "hard") {
+		return hardTasks;
+	}
+	else if (CurrentDifficulty == "very_hard") {
+		return veryHardTasks;
+	}
+	return nullptr;
+}
+
+Void mainForm::NextTask() {
+	InitializeTaskArrays();
+	array<String^>^ tasks = GetTaskArray();
+	if (tasks == nullptr) {
+		MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
+		return;
+	}
+
+	currentIndex = Array::IndexOf(tasks, CurrentTask);
+	if (currentIndex == -1) {
+		MessageError->Show("Error: Invalid Index", "Transition is not possible");
+		return;
+	}
+
+	currentIndex = (currentIndex + 1) % tasks->Length;
+	CurrentTask = tasks[currentIndex];
+
+	LoadTask();
+}
+Void mainForm::PreviousTask() {
+	InitializeTaskArrays();
+	array<String^>^ tasks = GetTaskArray();
+	if (tasks == nullptr) {
+		MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
+		return;
+	}
+
+	currentIndex = Array::IndexOf(tasks, CurrentTask);
+	if (currentIndex == -1) {
+		MessageError->Show("Error: Invalid Index", "Transition is not possible");
+		return;
+	}
+
+	currentIndex = (currentIndex - 1 + tasks->Length) % tasks->Length;
+	CurrentTask = tasks[currentIndex];
+
+	LoadTask();
+}
+
+Void mainForm::btnPerviousTask_Click(System::Object^ sender, System::EventArgs^ e) {
+	PreviousTask();
+}
+Void mainForm::btnNextTask_Click(System::Object^ sender, System::EventArgs^ e) {
+	NextTask();
+}
+Void mainForm::btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
+	PagesTasks->SelectTab(TasksMain);
+}
+
+Void mainForm::lblPanelTaskInfo_Click(System::Object^ sender, System::EventArgs^ e) {
+	lblPanelTaskInfo->Visible = false;
+}
+Void mainForm::panelTask_Click(System::Object^ sender, System::EventArgs^ e) {
+	lblPanelTaskInfo->Visible = false;
+}
+
+void mainForm::SetTaskAndLoad(String^ task, String^ difficulty) {
+	CurrentTask = task;
+	CurrentDifficulty = difficulty;
+	LoadTask();
+}
+
+Void mainForm::btnTaskAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("add", "easy");
+}
+Void mainForm::btnTaskDivide_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("divide", "easy");
+}
+Void mainForm::btnTaskMultiply_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("multiply", "easy");
+}
+Void mainForm::btnTaskSubtract_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("subtract", "easy");
+}
+Void mainForm::btnTaskEvenOrOdd_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("even_or_odd", "easy");
+}
+Void mainForm::btnTaskPositiveSum_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("positive_sum", "middle");
+}
+Void mainForm::btnTaskBetterThanAverage_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("better_than_average", "middle");
+}
+Void mainForm::btnReverseSeq_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("reverse_seq", "middle");
+}
+Void mainForm::btnTaskGetCount_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("get_count", "hard");
+}
+Void mainForm::btnTaskHighAndLow_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("high_and_low", "hard");
+}
+Void mainForm::btnTaskSquareDigits_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("square_digits", "hard");
+}
+
+Void mainForm::btnTaskGetChar_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("get_char", "very_hard");
+}
+Void mainForm::btnHero_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("get_middle", "very_hard");
+}
+Void mainForm::btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e) {
+	SetTaskAndLoad("symmetric_point", "very_hard");
+}
+
 Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
-	TaskText->Text = "Простое умножение чисел.\nВерните из функции произведение двцвшоатцуфагртфкпгшрт\n3123i129ijf9e2\n2eoikfjwqeo9ifmewokfm\n";
 }

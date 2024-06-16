@@ -6,20 +6,6 @@
 #include "MainProfile.h"
 #include "MainTasks.h"
 
-// Classes
-#include "MyPython.h"
-#include "ClassFade.h"
-#include "ClassMail.h"
-
-#include <Windows.h>
-#include <iostream>
-#include <msclr/marshal_cppstd.h>
-
-using namespace PythonWave;
-using namespace System;
-using namespace System::Drawing;
-using namespace System::Drawing::Imaging;
-
 void SetCenter(Control^ background, Control^ control, int mode);
 
 // Form

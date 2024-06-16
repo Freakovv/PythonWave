@@ -1,18 +1,6 @@
 #pragma once
 #include "mainForm.h"
 
-#include <msclr\marshal_cppstd.h>
-#include <iostream>
-#include <fstream>
-#include <Windows.h>
-
-using namespace PythonWave;
-using namespace System;
-using namespace System::Drawing;
-using namespace System::Drawing::Imaging;
-
-// RichTextBox CurrentRichBox;
-// String^ CurrentBookFile;
 Boolean isBookExists = true;
 
 void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
