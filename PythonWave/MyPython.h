@@ -30,24 +30,23 @@ public:
 		return gcnew String(PyRun(path).c_str());
 	}
 
-	String^ Start(String^ Code){
+	String^ Start(String^ Code) {
 		String^ tempPath = "script//temp.py";
 		String^ testPath = "script//script.py";
 		String^ resultPath = "script//result.txt";
 
 		if (File::Exists(tempPath))
 			File::Delete(tempPath);
-		
+
 		if (File::Exists(resultPath))
 			File::Delete(resultPath);
-
 
 		FileStream^ fs = gcnew FileStream(tempPath, FileMode::Create, FileAccess::Write);
 		StreamWriter^ sw = gcnew StreamWriter(fs);
 		sw->Write(Code);
 		sw->Close();
 		fs->Close();
-		
+
 		return gcnew String(PyRun(testPath).c_str());
 	}
 private:

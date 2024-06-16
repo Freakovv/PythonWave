@@ -1,7 +1,6 @@
 #pragma once
 #include "mainForm.h"
 
-
 int secondsLeftt = 30;
 
 Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {

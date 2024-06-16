@@ -22,8 +22,7 @@ Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 	logsLoad();
 	LoadBook();
 	menu = false;
-	
-	
+
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("in");
 

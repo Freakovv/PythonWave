@@ -119,7 +119,6 @@ void mainForm::DataLoad() {
 	ClassProgress data(User);
 	PROGRESS = data.GetCurrentProgress();
 
-
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserBirth = User + "//userBirth.bin";
 	String^ fileUserSex = User + "//userSex.bin";
@@ -155,7 +154,6 @@ void mainForm::DataLoad() {
 		pictureUserBar->ImageLocation = pathToAvatarPng;
 		pictureProfileEdit->ImageLocation = pathToAvatarPng;
 	}
-
 
 	lblLogin->Text = User;
 	lblName->Text = "Имя: " + UserName;
