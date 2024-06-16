@@ -222,7 +222,9 @@ private: Guna::UI2::WinForms::Guna2Button^ btnBack;
 
 private: System::Windows::Forms::Panel^ panelA;
 private: System::Windows::Forms::Label^ label1;
-private: Bunifu::Framework::UI::BunifuTileButton^ bunifuTileButton1;
+private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskEvenOrOdd;
+
+
 private: System::Windows::Forms::Panel^ panelS;
 private: System::Windows::Forms::Label^ labelA;
 private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskBetterThanAverage;
@@ -244,7 +246,8 @@ private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskSquareDigits;
 
 private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetCount;
 private: System::Windows::Forms::Label^ lblPanelTaskInfo;
-private: Bunifu::Framework::UI::BunifuTileButton^ btnHero;
+private: Bunifu::Framework::UI::BunifuTileButton^ btnTaskGetMiddle;
+
 private: Bunifu::Framework::UI::BunifuTileButton^ btnSymmetricPoint;
 
 
@@ -489,7 +492,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->PagesTasks = (gcnew Bunifu::UI::WinForms::BunifuPages());
             this->TasksMain = (gcnew System::Windows::Forms::TabPage());
             this->panelTasks = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->btnHero = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->btnTaskGetMiddle = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->btnSymmetricPoint = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->btnTaskGetChar = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -504,7 +507,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->btnTaskPositiveSum = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->panelA = (gcnew System::Windows::Forms::Panel());
             this->label1 = (gcnew System::Windows::Forms::Label());
-            this->bunifuTileButton1 = (gcnew Bunifu::Framework::UI::BunifuTileButton());
+            this->btnTaskEvenOrOdd = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->btnTaskSubtract = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->btnTaskDivide = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->btnTaskMultiply = (gcnew Bunifu::Framework::UI::BunifuTileButton());
@@ -2951,10 +2954,10 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->PagesTasks->Location = System::Drawing::Point(0, 0);
             this->PagesTasks->Multiline = true;
             this->PagesTasks->Name = L"PagesTasks";
-            this->PagesTasks->Page = this->TaskPage;
-            this->PagesTasks->PageIndex = 1;
-            this->PagesTasks->PageName = L"TaskPage";
-            this->PagesTasks->PageTitle = L"TaskPage";
+            this->PagesTasks->Page = this->TasksMain;
+            this->PagesTasks->PageIndex = 0;
+            this->PagesTasks->PageName = L"TasksMain";
+            this->PagesTasks->PageTitle = L"TasksMain";
             this->PagesTasks->SelectedIndex = 0;
             this->PagesTasks->Size = System::Drawing::Size(1512, 868);
             this->PagesTasks->TabIndex = 1;
@@ -2992,7 +2995,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             // panelTasks
             // 
             this->panelTasks->AutoScroll = true;
-            this->panelTasks->Controls->Add(this->btnHero);
+            this->panelTasks->Controls->Add(this->btnTaskGetMiddle);
             this->panelTasks->Controls->Add(this->btnSymmetricPoint);
             this->panelTasks->Controls->Add(this->btnTaskGetChar);
             this->panelTasks->Controls->Add(this->panel1);
@@ -3004,7 +3007,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->panelTasks->Controls->Add(this->btnTaskReverseSeq);
             this->panelTasks->Controls->Add(this->btnTaskPositiveSum);
             this->panelTasks->Controls->Add(this->panelA);
-            this->panelTasks->Controls->Add(this->bunifuTileButton1);
+            this->panelTasks->Controls->Add(this->btnTaskEvenOrOdd);
             this->panelTasks->Controls->Add(this->btnTaskSubtract);
             this->panelTasks->Controls->Add(this->btnTaskDivide);
             this->panelTasks->Controls->Add(this->btnTaskMultiply);
@@ -3016,27 +3019,27 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->panelTasks->Size = System::Drawing::Size(1512, 816);
             this->panelTasks->TabIndex = 0;
             // 
-            // btnHero
+            // btnTaskGetMiddle
             // 
-            this->btnHero->BackColor = System::Drawing::Color::Chocolate;
-            this->btnHero->color = System::Drawing::Color::Chocolate;
-            this->btnHero->colorActive = System::Drawing::Color::OrangeRed;
-            this->btnHero->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnHero, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->btnHero->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnTaskGetMiddle->BackColor = System::Drawing::Color::Chocolate;
+            this->btnTaskGetMiddle->color = System::Drawing::Color::Chocolate;
+            this->btnTaskGetMiddle->colorActive = System::Drawing::Color::OrangeRed;
+            this->btnTaskGetMiddle->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->btnTaskGetMiddle, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnTaskGetMiddle->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->btnHero->ForeColor = System::Drawing::Color::White;
-            this->btnHero->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnHero.Image")));
-            this->btnHero->ImagePosition = 17;
-            this->btnHero->ImageZoom = 50;
-            this->btnHero->LabelPosition = 34;
-            this->btnHero->LabelText = L"Герой";
-            this->btnHero->Location = System::Drawing::Point(224, 917);
-            this->btnHero->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-            this->btnHero->Name = L"btnHero";
-            this->btnHero->Size = System::Drawing::Size(208, 169);
-            this->btnHero->TabIndex = 21;
-            this->btnHero->Click += gcnew System::EventHandler(this, &mainForm::btnHero_Click);
+            this->btnTaskGetMiddle->ForeColor = System::Drawing::Color::White;
+            this->btnTaskGetMiddle->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTaskGetMiddle.Image")));
+            this->btnTaskGetMiddle->ImagePosition = 17;
+            this->btnTaskGetMiddle->ImageZoom = 50;
+            this->btnTaskGetMiddle->LabelPosition = 34;
+            this->btnTaskGetMiddle->LabelText = L"Средний символ слова";
+            this->btnTaskGetMiddle->Location = System::Drawing::Point(224, 917);
+            this->btnTaskGetMiddle->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->btnTaskGetMiddle->Name = L"btnTaskGetMiddle";
+            this->btnTaskGetMiddle->Size = System::Drawing::Size(208, 169);
+            this->btnTaskGetMiddle->TabIndex = 21;
+            this->btnTaskGetMiddle->Click += gcnew System::EventHandler(this, &mainForm::btnHero_Click);
             // 
             // btnSymmetricPoint
             // 
@@ -3286,26 +3289,27 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
             this->label1->TabIndex = 2;
             this->label1->Text = L"Задачи среднего уровня";
             // 
-            // bunifuTileButton1
+            // btnTaskEvenOrOdd
             // 
-            this->bunifuTileButton1->BackColor = System::Drawing::Color::SeaGreen;
-            this->bunifuTileButton1->color = System::Drawing::Color::SeaGreen;
-            this->bunifuTileButton1->colorActive = System::Drawing::Color::MediumSeaGreen;
-            this->bunifuTileButton1->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->bunifuTileButton1, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->bunifuTileButton1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnTaskEvenOrOdd->BackColor = System::Drawing::Color::SeaGreen;
+            this->btnTaskEvenOrOdd->color = System::Drawing::Color::SeaGreen;
+            this->btnTaskEvenOrOdd->colorActive = System::Drawing::Color::MediumSeaGreen;
+            this->btnTaskEvenOrOdd->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->btnTaskEvenOrOdd, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->btnTaskEvenOrOdd->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
-            this->bunifuTileButton1->ForeColor = System::Drawing::Color::White;
-            this->bunifuTileButton1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bunifuTileButton1.Image")));
-            this->bunifuTileButton1->ImagePosition = 17;
-            this->bunifuTileButton1->ImageZoom = 50;
-            this->bunifuTileButton1->LabelPosition = 30;
-            this->bunifuTileButton1->LabelText = L"Частное чисел";
-            this->bunifuTileButton1->Location = System::Drawing::Point(918, 76);
-            this->bunifuTileButton1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
-            this->bunifuTileButton1->Name = L"bunifuTileButton1";
-            this->bunifuTileButton1->Size = System::Drawing::Size(231, 169);
-            this->bunifuTileButton1->TabIndex = 8;
+            this->btnTaskEvenOrOdd->ForeColor = System::Drawing::Color::White;
+            this->btnTaskEvenOrOdd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnTaskEvenOrOdd.Image")));
+            this->btnTaskEvenOrOdd->ImagePosition = 17;
+            this->btnTaskEvenOrOdd->ImageZoom = 50;
+            this->btnTaskEvenOrOdd->LabelPosition = 30;
+            this->btnTaskEvenOrOdd->LabelText = L"Четные и нечетные числа";
+            this->btnTaskEvenOrOdd->Location = System::Drawing::Point(918, 76);
+            this->btnTaskEvenOrOdd->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->btnTaskEvenOrOdd->Name = L"btnTaskEvenOrOdd";
+            this->btnTaskEvenOrOdd->Size = System::Drawing::Size(231, 169);
+            this->btnTaskEvenOrOdd->TabIndex = 8;
+            this->btnTaskEvenOrOdd->Click += gcnew System::EventHandler(this, &mainForm::btnTaskEvenOrOdd_Click);
             // 
             // btnTaskSubtract
             // 
@@ -5267,10 +5271,10 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
         int currentIndex = 0;
 
     void InitializeTaskArrays() {
-        easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide"};
+        easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide", "even_or_odd"};
         middleTasks = gcnew array<String^> {"positive_sum", "better_than_average", "reverse_seq"};
         hardTasks = gcnew array<String^> {"get_count", "high_and_low", "square_digits"};
-        veryHardTasks = gcnew array<String^> {"get_count", "high_and_low", "square_digits"};
+        veryHardTasks = gcnew array<String^> {"get_char", "get_middle", "symmetric_point"};
     }
 
     array<String^>^ GetTaskArray() {
@@ -5363,6 +5367,9 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
     Void btnTaskSubtract_Click(System::Object^ sender, System::EventArgs^ e) {
         SetTaskAndLoad("subtract", "easy");
     }
+    Void btnTaskEvenOrOdd_Click(System::Object^ sender, System::EventArgs^ e) {
+        SetTaskAndLoad("even_or_odd", "easy");
+    }
     Void btnTaskPositiveSum_Click(System::Object^ sender, System::EventArgs^ e) {
         SetTaskAndLoad("positive_sum", "middle");
     }
@@ -5386,7 +5393,7 @@ private: Guna::UI2::WinForms::Guna2CirclePictureBox^ btnMaximize;
         SetTaskAndLoad("get_char", "very_hard");
     }
     Void btnHero_Click(System::Object^ sender, System::EventArgs^ e) {
-        SetTaskAndLoad("hero", "very_hard");
+        SetTaskAndLoad("get_middle", "very_hard");
     }
     Void btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e) {
         SetTaskAndLoad("symmetric_point", "very_hard");

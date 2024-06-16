@@ -58,11 +58,11 @@ E:\.Coding\PythonWave\PythonWave\auth.h(701,43): warning C4566: character repres
 E:\.Coding\PythonWave\PythonWave\profile.h(836,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
 E:\.Coding\PythonWave\PythonWave\profile-header.h(134,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 E:\.Coding\PythonWave\PythonWave\mainForm.h(34,18): warning C4677: 'Fade': signature of non-private member contains assembly private type 'ClassFade'
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1450,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1491,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1532,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1586,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1818,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1453,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1494,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1535,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1589,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1821,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
 E:\.Coding\PythonWave\PythonWave\MainMenu.h(87,2): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
 E:\.Coding\PythonWave\PythonWave\ClassProgress.h(46,16): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 E:\.Coding\PythonWave\PythonWave\MainTasks.h(50,14): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data

@@ -20,10 +20,10 @@ void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	int selectionStart = richTB->SelectionStart;
 	int selectionLength = richTB->SelectionLength;
 
-	array<String^>^ keywords = { "False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", "continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", "try", "while", "with", "yield" };
+	array<String^>^ keywords = { "False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", "continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", "try", "while", "with", "yield", "len", "sum"};
 
 	Color defaultTextColor = Color::FromArgb(238, 238, 238);
-	Color keywordColor = Color::RoyalBlue;
+	Color keywordColor = Color::Violet;
 
 	richTB->SelectAll();
 	richTB->SelectionColor = defaultTextColor;
