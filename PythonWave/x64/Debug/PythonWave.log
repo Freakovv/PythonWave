@@ -68,5 +68,5 @@ D:\.Coding\PythonWave\PythonWave\ClassProgress.h(46,10): warning C4244: 'return'
 D:\.Coding\PythonWave\PythonWave\MainTasks.h(43,14): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
 D:\.Coding\PythonWave\PythonWave\MainTasks.h(44,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
 D:\Microsoft Visual Studio\2022\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  main.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  ClassTasks.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PythonWave.vcxproj -> D:\.Coding\PythonWave\x64\Debug\PythonWave.exe

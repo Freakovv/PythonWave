@@ -168,6 +168,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ClassTasks.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +179,7 @@
     <ClInclude Include="ClassFade.h" />
     <ClInclude Include="ClassMail.h" />
     <ClInclude Include="ClassProgress.h" />
+    <ClInclude Include="ClassTasks.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="main-header.h" />
     <ClInclude Include="MainBook.h" />

@@ -14,10 +14,10 @@ private:
 	double currentProgress;
 	String^ pathToProgress;
 
-	static double StepB = 2.5;
-	static double StepA = 5;
+	static double StepB = 3;
+	static double StepA = 10;
 	static double StepS = 10;
-	static double StepSplus = 15;
+	static double StepSplus = 20;
 
 public:
 	Dictionary<int, String^>^ ranks;

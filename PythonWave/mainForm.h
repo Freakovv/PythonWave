@@ -2866,10 +2866,10 @@ namespace PythonWave {
             this->PagesTasks->Location = System::Drawing::Point(0, 0);
             this->PagesTasks->Multiline = true;
             this->PagesTasks->Name = L"PagesTasks";
-            this->PagesTasks->Page = this->TaskPage;
-            this->PagesTasks->PageIndex = 1;
-            this->PagesTasks->PageName = L"TaskPage";
-            this->PagesTasks->PageTitle = L"TaskPage";
+            this->PagesTasks->Page = this->TasksMain;
+            this->PagesTasks->PageIndex = 0;
+            this->PagesTasks->PageName = L"TasksMain";
+            this->PagesTasks->PageTitle = L"TasksMain";
             this->PagesTasks->SelectedIndex = 0;
             this->PagesTasks->Size = System::Drawing::Size(1512, 868);
             this->PagesTasks->TabIndex = 1;
@@ -2937,7 +2937,7 @@ namespace PythonWave {
             this->btnTaskGetMiddle->color = System::Drawing::Color::Chocolate;
             this->btnTaskGetMiddle->colorActive = System::Drawing::Color::OrangeRed;
             this->btnTaskGetMiddle->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskGetMiddle, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskGetMiddle, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskGetMiddle->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskGetMiddle->ForeColor = System::Drawing::Color::White;
@@ -2959,7 +2959,7 @@ namespace PythonWave {
             this->btnSymmetricPoint->color = System::Drawing::Color::Chocolate;
             this->btnSymmetricPoint->colorActive = System::Drawing::Color::OrangeRed;
             this->btnSymmetricPoint->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnSymmetricPoint, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnSymmetricPoint, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnSymmetricPoint->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnSymmetricPoint->ForeColor = System::Drawing::Color::White;
@@ -2981,7 +2981,7 @@ namespace PythonWave {
             this->btnTaskGetChar->color = System::Drawing::Color::Chocolate;
             this->btnTaskGetChar->colorActive = System::Drawing::Color::OrangeRed;
             this->btnTaskGetChar->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskGetChar, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskGetChar, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskGetChar->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskGetChar->ForeColor = System::Drawing::Color::White;
@@ -3027,7 +3027,7 @@ namespace PythonWave {
             this->btnTaskHighAndLow->color = System::Drawing::Color::Orange;
             this->btnTaskHighAndLow->colorActive = System::Drawing::Color::Wheat;
             this->btnTaskHighAndLow->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskHighAndLow, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskHighAndLow, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskHighAndLow->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskHighAndLow->ForeColor = System::Drawing::Color::White;
@@ -3049,7 +3049,7 @@ namespace PythonWave {
             this->btnTaskSquareDigits->color = System::Drawing::Color::Orange;
             this->btnTaskSquareDigits->colorActive = System::Drawing::Color::Wheat;
             this->btnTaskSquareDigits->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskSquareDigits, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskSquareDigits, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskSquareDigits->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskSquareDigits->ForeColor = System::Drawing::Color::White;
@@ -3071,7 +3071,7 @@ namespace PythonWave {
             this->btnTaskGetCount->color = System::Drawing::Color::Orange;
             this->btnTaskGetCount->colorActive = System::Drawing::Color::Wheat;
             this->btnTaskGetCount->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskGetCount, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskGetCount, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskGetCount->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskGetCount->ForeColor = System::Drawing::Color::White;
@@ -3117,7 +3117,7 @@ namespace PythonWave {
             this->btnTaskBetterThanAverage->color = System::Drawing::Color::SlateBlue;
             this->btnTaskBetterThanAverage->colorActive = System::Drawing::Color::DarkSlateBlue;
             this->btnTaskBetterThanAverage->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskBetterThanAverage, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskBetterThanAverage, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskBetterThanAverage->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
             this->btnTaskBetterThanAverage->ForeColor = System::Drawing::Color::White;
@@ -3139,7 +3139,7 @@ namespace PythonWave {
             this->btnTaskReverseSeq->color = System::Drawing::Color::SlateBlue;
             this->btnTaskReverseSeq->colorActive = System::Drawing::Color::DarkSlateBlue;
             this->btnTaskReverseSeq->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskReverseSeq, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskReverseSeq, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskReverseSeq->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskReverseSeq->ForeColor = System::Drawing::Color::White;
@@ -3161,7 +3161,7 @@ namespace PythonWave {
             this->btnTaskPositiveSum->color = System::Drawing::Color::SlateBlue;
             this->btnTaskPositiveSum->colorActive = System::Drawing::Color::DarkSlateBlue;
             this->btnTaskPositiveSum->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskPositiveSum, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskPositiveSum, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskPositiveSum->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskPositiveSum->ForeColor = System::Drawing::Color::White;
@@ -3207,7 +3207,7 @@ namespace PythonWave {
             this->btnTaskEvenOrOdd->color = System::Drawing::Color::SeaGreen;
             this->btnTaskEvenOrOdd->colorActive = System::Drawing::Color::MediumSeaGreen;
             this->btnTaskEvenOrOdd->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskEvenOrOdd, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskEvenOrOdd, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskEvenOrOdd->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskEvenOrOdd->ForeColor = System::Drawing::Color::White;
@@ -3229,7 +3229,7 @@ namespace PythonWave {
             this->btnTaskSubtract->color = System::Drawing::Color::SeaGreen;
             this->btnTaskSubtract->colorActive = System::Drawing::Color::MediumSeaGreen;
             this->btnTaskSubtract->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskSubtract, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskSubtract, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskSubtract->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskSubtract->ForeColor = System::Drawing::Color::White;
@@ -3251,7 +3251,7 @@ namespace PythonWave {
             this->btnTaskDivide->color = System::Drawing::Color::SeaGreen;
             this->btnTaskDivide->colorActive = System::Drawing::Color::MediumSeaGreen;
             this->btnTaskDivide->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskDivide, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskDivide, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskDivide->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskDivide->ForeColor = System::Drawing::Color::White;
@@ -3273,7 +3273,7 @@ namespace PythonWave {
             this->btnTaskMultiply->color = System::Drawing::Color::SeaGreen;
             this->btnTaskMultiply->colorActive = System::Drawing::Color::MediumSeaGreen;
             this->btnTaskMultiply->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskMultiply, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskMultiply, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskMultiply->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskMultiply->ForeColor = System::Drawing::Color::White;
@@ -3295,7 +3295,7 @@ namespace PythonWave {
             this->btnTaskAdd->color = System::Drawing::Color::SeaGreen;
             this->btnTaskAdd->colorActive = System::Drawing::Color::MediumSeaGreen;
             this->btnTaskAdd->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->gunaTransition->SetDecoration(this->btnTaskAdd, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaTransition->SetDecoration(this->btnTaskAdd, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
             this->btnTaskAdd->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(204)));
             this->btnTaskAdd->ForeColor = System::Drawing::Color::White;
@@ -4787,7 +4787,7 @@ namespace PythonWave {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->ClientSize = System::Drawing::Size(1600, 900);
+            this->ClientSize = System::Drawing::Size(1600, 1000);
             this->Controls->Add(this->panelMain);
             this->Controls->Add(this->panelMenu);
             this->Controls->Add(this->Pages);

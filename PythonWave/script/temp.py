@@ -1,5 +1,3 @@
-def even_or_odd(number):
-	if number % 2:
-		return "Odd"
-	else:
-		return "Even"
+# Верните из функции резльутат произведения двух переменных
+def multiply(a, b):
+    return a * b

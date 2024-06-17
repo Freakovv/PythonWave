@@ -1,6 +1,8 @@
 #pragma once
 #include "mainForm.h"
 
+using namespace System;
+
 Boolean isBookExists = true;
 
 void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
