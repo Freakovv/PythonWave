@@ -1,0 +1,2 @@
+PagesTasks->Size 1512;868 default 1829;948 maximize
+Pages->Size 1520;920 default 1837;100 maximize

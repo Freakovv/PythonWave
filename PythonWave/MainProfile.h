@@ -1,6 +1,8 @@
 #pragma once
 #include "mainForm.h"
 
+using namespace PythonWave;
+
 int secondsLeftt = 30;
 
 Void mainForm::buttonUploadImage_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -279,4 +281,24 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 	DataChange();
 	DataSave();
 	MessageInfo->Show("Сохранено", "Успешно");
+}
+
+
+Boolean mainForm::CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ field) {
+	if (TB->Text != field) {
+		isProfileSaved = false;
+		return false;
+	}
+	return true;
+}
+Void mainForm::textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	CheckProfileSave(textBoxUserName, UserName);
+}
+Void mainForm::textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	CheckProfileSave(textBoxUserSurname, UserSurname);
+}
+Void mainForm::textBoxEmail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	email_confirmed = CheckProfileSave(textBoxEmail, UserEmail);
+}
+Void mainForm::btnCancelSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 }

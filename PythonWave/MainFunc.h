@@ -2,6 +2,13 @@
 #include "mainForm.h"
 #include "ClassProgress.h"
 
+void mainForm::logsLoad() {
+	if (File::Exists("script//logs.bin"))
+		isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
+	else
+		isCoursesVisited = false;
+}
+
 Void mainForm::enableMail(bool enable) {
 	if (enable) {
 		textBoxCode->Clear();
@@ -55,7 +62,6 @@ String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 		return "Ошибка получения даты";
 	}
 }
-
 String^ mainForm::readBinaryFile(String^ filePath) {
 	FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
 	BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
@@ -267,4 +273,13 @@ void mainForm::levelUp() {
 	String^ fileRank = User + "//lvl.bin";
 	writeBinaryFile(fileRank, UserRank);
 	DataLoad();
+}
+
+Void mainForm::HideWAnimation(Forms::Control^ CONTROL) {
+	UI2::AnimatorNS::Animation^ MYANIM = gcnew UI2::AnimatorNS::Animation();
+	gunaTransition->HideSync(dynamic_cast<Forms::Control^>(CONTROL), true, MYANIM->Transparent);
+}
+Void mainForm::ShowWAnimation(Forms::Control^ CONTROL) {
+	UI2::AnimatorNS::Animation^ MYANIM = gcnew UI2::AnimatorNS::Animation();
+	gunaTransition->ShowSync(dynamic_cast<Forms::Control^>(CONTROL), true, MYANIM->Transparent);
 }

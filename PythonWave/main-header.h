@@ -5,6 +5,7 @@
 #include "MainFunc.h"
 #include "MainProfile.h"
 #include "MainTasks.h"
+#include "MainSettings.h"
 
 void SetCenter(Control^ background, Control^ control, int mode);
 
@@ -44,4 +45,11 @@ Void mainForm::btnMaximize_Click(System::Object^ sender, System::EventArgs^ e) {
 	else {
 		this->WindowState = FormWindowState::Normal;
 	}
+}
+
+Void mainForm::ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageInfo->Show("Оценка ваших успехов в учебе :)");
+}
+Void mainForm::btnQuestionBook_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageInfo->Show("Примените желаемые пометки, выделив текст", "Панель инструментов");
 }

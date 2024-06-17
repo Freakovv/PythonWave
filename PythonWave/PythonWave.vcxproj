@@ -187,6 +187,7 @@
     <ClInclude Include="MainFunc.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MainProfile.h" />
+    <ClInclude Include="MainSettings.h" />
     <ClInclude Include="MainTasks.h" />
     <ClInclude Include="MyPython.h" />
     <ClInclude Include="profile-header.h" />

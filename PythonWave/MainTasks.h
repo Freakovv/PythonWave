@@ -163,18 +163,13 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	SyntaxHighlight(richTask);
 }
-Void mainForm::TaskText_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	// ѕолучаем размер текста в текстовом поле
-	System::Drawing::Size textSize = TextRenderer::MeasureText(TaskText->Text, TaskText->Font);
 
+
+
+Void mainForm::TaskText_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 	TaskText->Multiline = true;
 	TaskText->WordWrap = true;
 	TaskText->ScrollBars = ScrollBars::Vertical;
-	// –ассчитываем новую позицию панели, учитыва€ размер текста, отступы и дополнительные 100 пикселей
-	int Y = TaskText->Location.Y + textSize.Height + TaskText->Margin.Bottom + 30;
-
-	// ”станавливаем новую позицию панели
-	panelTask->Location = Point(panelTask->Location.X, Y);
 }
 
 // «адачи
@@ -252,14 +247,14 @@ Void mainForm::NextTask() {
 		return;
 	}
 
-	currentIndex = Array::IndexOf(tasks, CurrentTask);
-	if (currentIndex == -1) {
+	TaskIndex = Array::IndexOf(tasks, CurrentTask);
+	if (TaskIndex == -1) {
 		MessageError->Show("Error: Invalid Index", "Transition is not possible");
 		return;
 	}
 
-	currentIndex = (currentIndex + 1) % tasks->Length;
-	CurrentTask = tasks[currentIndex];
+	TaskIndex = (TaskIndex + 1) % tasks->Length;
+	CurrentTask = tasks[TaskIndex];
 
 	LoadTask();
 }
@@ -271,14 +266,14 @@ Void mainForm::PreviousTask() {
 		return;
 	}
 
-	currentIndex = Array::IndexOf(tasks, CurrentTask);
-	if (currentIndex == -1) {
+	TaskIndex = Array::IndexOf(tasks, CurrentTask);
+	if (TaskIndex == -1) {
 		MessageError->Show("Error: Invalid Index", "Transition is not possible");
 		return;
 	}
 
-	currentIndex = (currentIndex - 1 + tasks->Length) % tasks->Length;
-	CurrentTask = tasks[currentIndex];
+	TaskIndex = (TaskIndex - 1 + tasks->Length) % tasks->Length;
+	CurrentTask = tasks[TaskIndex];
 
 	LoadTask();
 }
