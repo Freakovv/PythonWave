@@ -2,10 +2,12 @@
 
 #include "mainForm.h"
 #include "MyPython.h"
+#include "ClassTasks.h"
 
 int currentAnim = 1;
 double animSeconds = 2;
 int secondsToStartAnim = 4;
+bool canSaveFunc = false;
 
 // Анимации, хайлайты
 
@@ -162,6 +164,7 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 
 Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	SyntaxHighlight(richTask);
+	canSaveFunc = false;
 }
 
 
@@ -173,20 +176,6 @@ Void mainForm::TaskText_TextChanged_1(System::Object^ sender, System::EventArgs^
 }
 
 // Задачи
-void mainForm::PyRun(String^ code) {
-	if (String::IsNullOrEmpty(CurrentTask)) {
-		MessageError->Show("CurrentTask is Null or Empty", "String^ CurrentTask");
-		return;
-	}
-
-	MyPython PyRunner;
-	String^ result = PyRunner.Start(code);
-	MessageBox::Show(result);
-}
-Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ code = richTask->Text;
-	PyRun(code);
-}
 
 Void mainForm::LoadTask() {
 	try {
@@ -334,7 +323,6 @@ Void mainForm::btnTaskHighAndLow_Click(System::Object^ sender, System::EventArgs
 Void mainForm::btnTaskSquareDigits_Click(System::Object^ sender, System::EventArgs^ e) {
 	SetTaskAndLoad("square_digits", "hard");
 }
-
 Void mainForm::btnTaskGetChar_Click(System::Object^ sender, System::EventArgs^ e) {
 	SetTaskAndLoad("get_char", "very_hard");
 }
@@ -345,5 +333,99 @@ Void mainForm::btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs
 	SetTaskAndLoad("symmetric_point", "very_hard");
 }
 
+// Проверка кода и его сохранение
+void mainForm::PyRun(String^ code) {
+	if (String::IsNullOrEmpty(CurrentTask)) {
+		MessageError->Show("CurrentTask is Null or Empty", "String^ CurrentTask");
+		return;
+	}
+
+	MyPython PyRunner;
+	String^ PythonOutput = PyRunner.Start(code);
+	MessageBox::Show(PythonOutput);
+
+	String^ pathToResult = "script//result.txt";
+
+	FileStream^ fs = gcnew FileStream(pathToResult, FileMode::Open, FileAccess::Read);
+	StreamReader^ sr = gcnew StreamReader(fs);
+	String^ result = sr->ReadToEnd()->Trim();
+	sr->Close();
+	fs->Close();
+
+	if (result == "OK") {
+		canSaveFunc = true;
+		ClassTasks^ validate = gcnew ClassTasks(User);
+		ClassProgress^ progress = gcnew ClassProgress(User);
+
+		bool isTaskCompleted = validate->GetTaskValue(CurrentTask);
+		if (isTaskCompleted) {
+			MessageInfo->Show("Задача решена верно.", "Поздравляем!");
+			MessageWarning->Show("Вы не получите баллов за это решение, так как вы уже решили эту задачу ранее.");
+			return;
+		}
+
+		validate->SolveTask(CurrentTask);
+		double points;
+		if (CurrentDifficulty == "easy") {
+			progress->SolveTaskB();
+			points = progress->getTaskPoint(1);
+		}
+		else if (CurrentDifficulty == "middle") {
+			progress->SolveTaskA();
+			points = progress->getTaskPoint(2);
+		}
+		else if (CurrentDifficulty == "hard") {
+			progress->SolveTaskS();
+			points = progress->getTaskPoint(3);
+		}
+		else if (CurrentDifficulty == "very_hard") {
+			progress->SolveTaskSplus();
+			points = progress->getTaskPoint(4);
+		}
+		else {
+			MessageError->Show("CurrentDifficulty не определена", "PyRun()");
+			return;
+		}
+
+		MessageInfo->Show("Задача решена верно. +" + points + " баллов", "Поздравляем!");
+		validate->ShowTaskStates();
+	}
+	else if (result == "ERROR") {
+		MessageBox::Show(PythonOutput, "Ошибка в коде", MessageBoxButtons::OK, MessageBoxIcon::Error);
+	}
+	else if (result == "FAILED") {
+		MessageWarning->Show("Задача решена неверно", "PythonWave");
+	}
+	else {
+		MessageBox::Show("Неопределенный результат");
+		MessageBox::Show(result);
+	}
+	File::Delete(pathToResult);
+}
+
+Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ code = richTask->Text;
+	PyRun(code);
+}
+
 Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ pathToFunc = "script/text/" + CurrentDifficulty + "/" + CurrentTask + ".py";
+	String^ code = richTask->Text;
+
+	if (canSaveFunc) {
+		try {
+			FileStream^ fs = gcnew FileStream(pathToFunc, FileMode::Create, FileAccess::Write);
+			StreamWriter^ sw = gcnew StreamWriter(fs);
+			sw->Write(code);
+			sw->Close();
+			fs->Close();
+			MessageInfo->Show("Ваше решение сохранено", "Успешно");
+		}
+		catch (Exception^ e) {
+			MessageError->Show(e->Message, "Ошибка сохранения");
+		}
+	}
+	else {
+		MessageWarning->Show("Для сохранения вам нужно успешно протестировать код, затем сразу сохранить его.", "Примечание");
+	}
 }
