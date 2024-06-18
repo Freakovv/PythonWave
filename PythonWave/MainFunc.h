@@ -123,7 +123,6 @@ void mainForm::DeleteDirectory(String^ folderPath) {
 // Data
 void mainForm::DataLoad() {
 	ClassProgress data(User);
-	UserProgress = data.GetCurrentProgress();
 
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserBirth = User + "//userBirth.bin";
@@ -137,6 +136,7 @@ void mainForm::DataLoad() {
 		UserSex = readBinaryFile(fileUserSex);
 		UserName = readBinaryFile(fileUserName);
 		UserRank = SetUserLvl();
+		UserProgress = data.GetCurrentProgress();
 	}
 	catch (Exception^ e) {
 		MessageError->Show(e->Message, "Ошибка загрузки данных пользователя");
@@ -279,6 +279,11 @@ String^ mainForm::SetUserLvl() {
 		newRank = "Мастер";
 		if (UserRank != newRank)
 			MessageInfo->Show("Вы получили максимальный уровень", "Поздравляем," + newRank + "!");
+	}
+	else {
+		newRank = "Новичок";
+		writeBinaryFile(fileRankPath, newRank);
+		return newRank;
 	}
 
 	String^ fileRank = User + "//lvl.bin";
