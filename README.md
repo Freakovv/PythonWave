@@ -6,7 +6,7 @@ Topic: “Creation of a software tool in the educational subject “Instrumental
 
 The project plans to deploy the following functionality:
 
-- Authorize and register users using databases
+- Authorize and register users 
 - Implement the ability to view and edit the user’s personal information
 - Development of theoretical material for courses with the ability to create notes in the provided material
 - Implement the ability to complete practical tasks in the form of solving problems using the Python language interpreter and providing results on completed tasks
