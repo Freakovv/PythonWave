@@ -4871,8 +4871,6 @@ namespace PythonWave {
 
 #pragma endregion
 	private:
-		int PROGRESS;
-
 		String^ NEW_NAME;
 		String^ NEW_SURNAME;
 		String^ NEW_MAIL;
@@ -4904,7 +4902,8 @@ namespace PythonWave {
 		Void cfgLoad();
 		Void cfgSave();
 
-		Void levelUp();
+        String^ SetUserLvl();
+        Void RankUp();
 
 	private:
 		// main-header.h
@@ -5032,6 +5031,7 @@ namespace PythonWave {
 		Void btnBookNext_Click(System::Object^ sender, System::EventArgs^ e);
 
 		// mainTasks.h
+        int UserProgress;
 
 		String^ CurrentTask;
 		String^ CurrentDifficulty;

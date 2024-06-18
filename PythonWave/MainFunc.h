@@ -123,21 +123,20 @@ void mainForm::DeleteDirectory(String^ folderPath) {
 // Data
 void mainForm::DataLoad() {
 	ClassProgress data(User);
-	PROGRESS = data.GetCurrentProgress();
+	UserProgress = data.GetCurrentProgress();
 
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserBirth = User + "//userBirth.bin";
 	String^ fileUserSex = User + "//userSex.bin";
 	String^ fileUserName = User + "//userName.bin";
 	String^ fileUserSurname = User + "//userSurname.bin";
-	String^ fileUserRank = User + "//lvl.bin";
 
 	try {
 		UserEmail = readBinaryFile(fileUserEmail);
 		UserBirth = readBinaryFile(fileUserBirth);
 		UserSex = readBinaryFile(fileUserSex);
 		UserName = readBinaryFile(fileUserName);
-		UserRank = readBinaryFile(fileUserRank);
+		UserRank = SetUserLvl();
 	}
 	catch (Exception^ e) {
 		MessageError->Show(e->Message, "Ошибка загрузки данных пользователя");
@@ -252,27 +251,44 @@ void mainForm::cfgSave() {
 	config->SaveConfig();
 }
 
-void mainForm::levelUp() {
-	if (UserRank == "Новичок") {
-		UserRank = "Исследователь";
-		MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+String^ mainForm::SetUserLvl() {
+	String^ newRank;
+	String^ fileRankPath = User + "//lvl.bin";
+	if (!File::Exists(fileRankPath)) {
+		newRank = "Новичок";
+		writeBinaryFile(fileRankPath, newRank);
+		return newRank;
 	}
-	else if (UserRank == "Исследователь") {
-		UserRank = "Разработчик";
-		MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+
+	if (UserProgress >= 20 && UserProgress <= 39) {
+		newRank = "Исследователь";
+		if(UserRank != newRank)
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
 	}
-	else if (UserRank == "Разработчик") {
-		UserRank = "Инженер";
-		MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + UserRank + "!");
+	else if (UserProgress >= 40 && UserProgress <= 59) {
+		newRank = "Разработчик";
+		if (UserRank != newRank)
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
 	}
-	else if (UserRank = "Инженер") {
-		UserRank = "Мастер";
-		MessageInfo->Show("Вы получили максимальный уровень", "Поздравляем!");
+	else if (UserProgress >= 60 && UserProgress <= 79) {
+		newRank = "Инженер";
+		if (UserRank != newRank)
+			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
+	}
+	else if (UserProgress >= 80 && UserProgress <= 100) {
+		newRank = "Мастер";
+		if (UserRank != newRank)
+			MessageInfo->Show("Вы получили максимальный уровень", "Поздравляем," + newRank + "!");
 	}
 
 	String^ fileRank = User + "//lvl.bin";
 	writeBinaryFile(fileRank, UserRank);
+	return newRank;
 	DataLoad();
+}
+
+Void mainForm::RankUp() {
+
 }
 
 Void mainForm::HideWAnimation(Forms::Control^ CONTROL) {
