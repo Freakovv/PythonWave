@@ -171,23 +171,28 @@ void mainForm::SetSelectionFontByDefault(RichTextBox^ richTB)
 }
 
 Void mainForm::btnHighlight_Click(System::Object^ sender, System::EventArgs^ e) {
-	ChangeSelectionBackColor(Color::Gray, richStart);
-	SaveBook(CurrentBookFile, richStart);
+	UpdateLastBookPage();
+	ChangeSelectionBackColor(Color::Gray, CurrentRichBox);
+	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnUnderline_Click(System::Object^ sender, System::EventArgs^ e) {
-	ChangeSelectionFontStyle(FontStyle::Underline, richStart);
+	UpdateLastBookPage();
+	ChangeSelectionFontStyle(FontStyle::Underline, CurrentRichBox);
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnThick_Click(System::Object^ sender, System::EventArgs^ e) {
-	ChangeSelectionFontStyle(FontStyle::Bold, richStart);
+	UpdateLastBookPage();
+	ChangeSelectionFontStyle(FontStyle::Bold, CurrentRichBox);
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnStrikeOut_Click(System::Object^ sender, System::EventArgs^ e) {
-	ChangeSelectionFontStyle(FontStyle::Strikeout, richStart);
+	UpdateLastBookPage();
+	ChangeSelectionFontStyle(FontStyle::Strikeout, CurrentRichBox);
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnItalic_Click(System::Object^ sender, System::EventArgs^ e) {
-	ChangeSelectionFontStyle(FontStyle::Italic, richStart);
+	UpdateLastBookPage();
+	ChangeSelectionFontStyle(FontStyle::Italic, CurrentRichBox);
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
 Void mainForm::btnClearFilters_Click(System::Object^ sender, System::EventArgs^ e) {

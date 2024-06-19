@@ -92,9 +92,9 @@ private:
         LoadTaskState();
     }
 
-    void LoadTaskState() {
-        if (!File::Exists(pathToTasksState))
-            return;
+	void LoadTaskState() {
+		if (!File::Exists(pathToTasksState))
+			return;
 
         array<Byte>^ key = { 0x10, 0x20, 0x30, 0x40, 0x50 };
 

@@ -390,8 +390,16 @@ void mainForm::PyRun(String^ code) {
 			MessageError->Show("CurrentDifficulty не определена", "PyRun()");
 			return;
 		}
+		String^ text = "баллов";
+		if (points == 1)
+			text = "балл";
+		else if (points > 1 && points < 5)
+			text = "балла";
+		else if (points > 4)
+			text = "баллов";
+	
 
-		MessageInfo->Show("Задача решена верно. +" + points + " баллов", "Поздравляем!");
+		MessageInfo->Show("Задача решена верно. Вы получите " + points + " " + text, "Поздравляем!");
 
 		validate->ShowTaskStates();
 	}
