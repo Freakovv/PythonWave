@@ -7,12 +7,14 @@ using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
 using namespace System::Windows::Forms;
+using namespace System::Text;
 
 ref class ClassTasks
 {
 private:
     String^ pathToTasksState;
     Dictionary<String^, bool>^ taskDict;
+    Dictionary<String^, DateTime>^ taskCompletionDates;
 
 public:
     ClassTasks(String^ User) {
@@ -36,6 +38,7 @@ public:
 
     void SolveTask(String^ TaskName) {
         SetTaskValue(TaskName, true);
+        SetTaskCompletionDate(TaskName, DateTime::Now);
     }
 
     bool GetTaskValue(String^ taskName) {
@@ -43,6 +46,19 @@ public:
             return taskDict[taskName];
         }
         return false;
+    }
+
+    void SetTaskCompletionDate(String^ taskName, DateTime completionDate) {
+        if (taskDict->ContainsKey(taskName)) {
+            taskCompletionDates[taskName] = completionDate;
+            SaveTaskState();
+        }
+    }
+
+    int GetTasksCompletedLastWeek() {
+        DateTime endDate = DateTime::Now;
+        DateTime startDate = endDate.AddDays(-7);
+        return GetCompletedTasksCount(startDate, endDate);
     }
 
 private:
@@ -55,6 +71,8 @@ private:
 
     void InitializeTaskDictionary() {
         taskDict = gcnew Dictionary<String^, bool>();
+        taskCompletionDates = gcnew Dictionary<String^, DateTime>();
+
         taskDict["add"] = false;
         taskDict["multiply"] = false;
         taskDict["divide"] = false;
@@ -104,6 +122,20 @@ private:
                 }
             }
 
+            // Загрузка дат выполнения задач
+            while (index < decryptedData->Length) {
+                int taskNameLength = BitConverter::ToInt32(decryptedData, index);
+                index += sizeof(int);
+
+                String^ taskName = Encoding::UTF8->GetString(decryptedData, index, taskNameLength);
+                index += taskNameLength;
+
+                DateTime completionDate = DateTime::FromBinary(BitConverter::ToInt64(decryptedData, index));
+                index += sizeof(Int64);
+
+                taskCompletionDates[taskName] = completionDate;
+            }
+
             br->Close();
             fs->Close();
         }
@@ -113,17 +145,27 @@ private:
     }
 
     void SaveTaskState() {
-
         array<Byte>^ key = { 0x10, 0x20, 0x30, 0x40, 0x50 };
 
         try {
-
             List<Byte>^ dataBytes = gcnew List<Byte>();
             for each (bool value in taskDict->Values) {
                 array<Byte>^ boolBytes = BitConverter::GetBytes(value);
                 for each (Byte b in boolBytes) {
                     dataBytes->Add(b);
                 }
+            }
+
+            // Сохранение дат выполнения задач
+            for each (KeyValuePair<String^, DateTime> kvp in taskCompletionDates) {
+                array<Byte>^ taskNameBytes = Encoding::UTF8->GetBytes(kvp.Key);
+                array<Byte>^ taskNameLengthBytes = BitConverter::GetBytes(taskNameBytes->Length);
+
+                dataBytes->AddRange(taskNameLengthBytes);
+                dataBytes->AddRange(taskNameBytes);
+
+                array<Byte>^ dateBytes = BitConverter::GetBytes(kvp.Value.ToBinary());
+                dataBytes->AddRange(dateBytes);
             }
 
             array<Byte>^ encryptedData = gcnew array<Byte>(dataBytes->Count);
@@ -142,8 +184,19 @@ private:
             MessageBox::Show("Error saving task state: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
         }
     }
-    public:
-        void ShowTaskStates() {
+
+    int GetCompletedTasksCount(DateTime startDate, DateTime endDate) {
+        int count = 0;
+        for each (KeyValuePair<String^, DateTime> kvp in taskCompletionDates) {
+            if (kvp.Value >= startDate && kvp.Value <= endDate) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+public:
+    void ShowTaskStates() {
         String^ message = "Task States:\n";
         for each (KeyValuePair<String^, bool> kvp in taskDict) {
             message += kvp.Key + ": " + kvp.Value.ToString() + "\n";

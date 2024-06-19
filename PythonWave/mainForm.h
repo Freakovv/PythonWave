@@ -5083,6 +5083,9 @@ namespace PythonWave {
 		Void btnHero_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e);
 
+        //data
+        int GetTasksCompletedLastWeek();
+
 
 };
 }

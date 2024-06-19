@@ -358,6 +358,7 @@ void mainForm::PyRun(String^ code) {
 		ClassProgress^ progress = gcnew ClassProgress(User);
 
 		bool isTaskCompleted = validate->GetTaskValue(CurrentTask);
+		MessageInfo->Show("Кол-во решенных задач за неделю: " + Convert::ToString(GetTasksCompletedLastWeek()), "Поздравляем!");
 		if (isTaskCompleted) {
 			MessageInfo->Show("Задача решена верно.", "Поздравляем!");
 			MessageWarning->Show("Вы не получите баллов за это решение, так как вы уже решили эту задачу ранее.");
@@ -365,6 +366,9 @@ void mainForm::PyRun(String^ code) {
 		}
 
 		validate->SolveTask(CurrentTask);
+
+		validate->SetTaskCompletionDate(CurrentTask, DateTime::Now);
+
 		double points;
 		if (CurrentDifficulty == "easy") {
 			progress->SolveTaskB();
@@ -388,6 +392,7 @@ void mainForm::PyRun(String^ code) {
 		}
 
 		MessageInfo->Show("Задача решена верно. +" + points + " баллов", "Поздравляем!");
+
 		validate->ShowTaskStates();
 	}
 	else if (result == "ERROR") {
@@ -401,6 +406,11 @@ void mainForm::PyRun(String^ code) {
 		MessageBox::Show(result);
 	}
 	File::Delete(pathToResult);
+}
+
+int mainForm::GetTasksCompletedLastWeek() {
+	ClassTasks date(User);
+	return date.GetTasksCompletedLastWeek();
 }
 
 Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {
