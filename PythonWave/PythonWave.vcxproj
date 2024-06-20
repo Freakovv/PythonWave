@@ -138,6 +138,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
       <HintPath>x64\Debug\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.Charts.WinForms">
+      <HintPath>..\UI\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>x64\Debug\Guna.UI2.dll</HintPath>
     </Reference>
@@ -160,6 +163,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
@@ -202,6 +206,7 @@
   <ItemGroup>
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.h</DependentUpon>

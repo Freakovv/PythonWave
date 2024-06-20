@@ -1,0 +1,1557 @@
+  G290502091B37000C0234063908.resources - Embedded, ContainedInManifestFile, 
+  G290502091B37000C02340639082F141704.resources - Embedded, ContainedInManifestFile, 
+  G2809121F14230C260C13052402.resources - Embedded, ContainedInManifestFile, 
+  G222F0909162F2B0D1D.resources - Embedded, ContainedInManifestFile, 
+  G223804140106061A.resources - Embedded, ContainedInManifestFile, 
+  Guna.Charts.Properties.Resources.resources - Embedded, ContainedInManifestFile, 
+  Guna.Charts.WinForms.DatasetBase.resources - Embedded, ContainedInManifestFile, 
+  Guna.Charts.WinForms.GunaChart.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261: 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Guna.Charts.WinForms.Animation: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Guna.Charts.WinForms.Easing, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Guna.Charts.WinForms.Easing Easing 'get set' : 
+    Int32 Duration 'get set' : 
+  Methods:
+    get_Easing(): PrivateScope, Public, HideBySig, SpecialName
+    set_Easing(Easing): PrivateScope, Public, HideBySig, SpecialName
+    get_Duration(): PrivateScope, Public, HideBySig, SpecialName
+    set_Duration(Int32): PrivateScope, Public, HideBySig, SpecialName
+    TryParse(String, CultureInfo(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Axes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Guna.Charts.WinForms.Grid GridLines 'get set' : 
+    Boolean Display 'get set' : 
+    Guna.Charts.WinForms.Tick Ticks 'get set' : 
+  Methods:
+    get_GridLines(): PrivateScope, Public, HideBySig, SpecialName
+    set_GridLines(Grid): PrivateScope, Public, HideBySig, SpecialName
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Ticks(): PrivateScope, Public, HideBySig, SpecialName
+    set_Ticks(Tick): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.BoundaryFillingMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.BoundaryFillingMode Origin = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.BoundaryFillingMode Start = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.BoundaryFillingMode End = 2 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.BubblePoint: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Double, Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double X   'get set' : 
+    Double Y   'get set' : 
+    Double Radius 'get set' : 
+  Methods:
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    set_X(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Radius(): PrivateScope, Public, HideBySig, SpecialName
+    set_Radius(Double): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.BubblePointCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElementCollectionBase`1[Guna.Charts.WinForms.BubblePoint]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Add(Double, Double, Double): PrivateScope, Public, HideBySig
+    Update(Int32, Double, Double, Double): PrivateScope, Public, HideBySig
+    AddRange(BubblePointCollection): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.ChartConfig: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Guna.Charts.WinForms.Animation Animation 'get set' : 
+    Guna.Charts.WinForms.Legend Legend 'get set' : 
+    Guna.Charts.WinForms.Title Title 'get set' : 
+    Guna.Charts.WinForms.Tooltip Tooltips 'get set' : 
+    Guna.Charts.WinForms.Misc Misc 'get set' : 
+    Guna.Charts.WinForms.Axes XAxes 'get set' : 
+    Guna.Charts.WinForms.Axes YAxes 'get set' : 
+    Guna.Charts.WinForms.RadialAxes ZAxes 'get set' : 
+    Guna.Charts.WinForms.Palettes PaletteCustomColors 'get set' : 
+    Guna.Charts.WinForms.ZoomMode Zoom 'get set' : 
+  Methods:
+    get_Animation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Animation(Animation): PrivateScope, Public, HideBySig, SpecialName
+    get_Legend(): PrivateScope, Public, HideBySig, SpecialName
+    set_Legend(Legend): PrivateScope, Public, HideBySig, SpecialName
+    get_Title(): PrivateScope, Public, HideBySig, SpecialName
+    set_Title(Title): PrivateScope, Public, HideBySig, SpecialName
+    get_Tooltips(): PrivateScope, Public, HideBySig, SpecialName
+    set_Tooltips(Tooltip): PrivateScope, Public, HideBySig, SpecialName
+    get_Misc(): PrivateScope, Public, HideBySig, SpecialName
+    set_Misc(Misc): PrivateScope, Public, HideBySig, SpecialName
+    get_XAxes(): PrivateScope, Public, HideBySig, SpecialName
+    set_XAxes(Axes): PrivateScope, Public, HideBySig, SpecialName
+    get_YAxes(): PrivateScope, Public, HideBySig, SpecialName
+    set_YAxes(Axes): PrivateScope, Public, HideBySig, SpecialName
+    get_ZAxes(): PrivateScope, Public, HideBySig, SpecialName
+    set_ZAxes(RadialAxes): PrivateScope, Public, HideBySig, SpecialName
+    get_PaletteCustomColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PaletteCustomColors(Palettes): PrivateScope, Public, HideBySig, SpecialName
+    get_Zoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zoom(ZoomMode): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.ChartElement: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Interfaces:
+    Guna.Charts.Interfaces.IChartElement
+  Events:
+    System.EventHandler Invalidated: 
+  Methods:
+    add_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Invalidate(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+Class Guna.Charts.WinForms.ChartElementCollectionBase`1[T]: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  Type parameter: T
+  :System.Collections.CollectionBase
+  Interfaces:
+    Guna.Charts.Interfaces.IChartElement
+  Properties:
+    T Item [Int32] 'get set' : 
+  Events:
+    System.EventHandler Invalidated: 
+  Methods:
+    add_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Invalidate(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_Item(Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Item(Int32, T): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    IndexOf(T): PrivateScope, Public, HideBySig
+    Add(T): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Update(Int32, T): PrivateScope, Public, HideBySig
+    Remove(T): PrivateScope, Public, HideBySig
+    Insert(Int32, T): PrivateScope, Public, HideBySig
+    Contains(T): PrivateScope, Public, HideBySig
+    AddRange(T[]): PrivateScope, Public, HideBySig
+    AddRange(List`1): PrivateScope, Public, HideBySig
+    SetFrom(List`1): PrivateScope, Public, HideBySig
+    SetFrom(T[]): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.ChartFont: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(System.String, Int32, Guna.Charts.WinForms.ChartFontStyle): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Int32 Size 'get set' : 
+    Guna.Charts.WinForms.ChartFontStyle Style 'get set' : 
+    System.String Name 'get set' : 
+    System.String FontName 'get set' : 
+  Methods:
+    get_Size(): PrivateScope, Public, HideBySig, SpecialName
+    set_Size(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Style(): PrivateScope, Public, HideBySig, SpecialName
+    set_Style(ChartFontStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_Name(): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FontName(): PrivateScope, Public, HideBySig, SpecialName
+    set_FontName(String): PrivateScope, Public, HideBySig, SpecialName
+    TryParse(String, CultureInfo(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Struct Guna.Charts.WinForms.ChartFontStyle: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.ChartFontStyle Normal = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartFontStyle Bold = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartFontStyle Italic = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartFontStyle Oblique = 3 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartFontStyle Initial = 4 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartFontStyle Inherit = 5 : Public, Static, Literal, HasDefault
+Struct Guna.Charts.WinForms.ChartTextAlignment: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.ChartTextAlignment Start = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartTextAlignment Center = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ChartTextAlignment End = 2 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.ChartUtils: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Colors(Int32, ColorCollection): PrivateScope, Public, Static, HideBySig
+    Colors(Int32, Color[]): PrivateScope, Public, Static, HideBySig
+    Colors(Int32, Color): PrivateScope, Public, Static, HideBySig
+    RandomColors(Int32, Int32(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+    RandomColor(Int32(Optional, HasDefault)): PrivateScope, Public, Static, HideBySig
+Class Guna.Charts.WinForms.ColorCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElementCollectionBase`1[System.Drawing.Color]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Drawing.Color[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.List`1[System.Drawing.Color]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddRange(ColorCollection): PrivateScope, Public, HideBySig
+Struct Guna.Charts.WinForms.CubicInterpolationMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.CubicInterpolationMode Default = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.CubicInterpolationMode Monotone = 1 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.DatasetBase: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IChartElement
+    Guna.Charts.Interfaces.IGunaChartObject
+    Guna.Charts.Interfaces.IGunaDataset
+  Properties:
+    Int32 DataPointCount 'get ' : 
+    System.String ChartType 'get ' : 
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    System.ComponentModel.ISite Site 'get set' : 
+    System.String Label 'get set' : 
+    System.Drawing.Color LegendBoxFillColor 'get set' : 
+    System.Drawing.Color LegendBoxBorderColor 'get set' : 
+  Events:
+    System.EventHandler Invalidated: 
+  Methods:
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_TargetChart(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Site(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Site(ISite): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Label(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Label(String): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_LegendBoxFillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LegendBoxFillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_LegendBoxBorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LegendBoxBorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    add_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    remove_Invalidated(EventHandler): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    Invalidate(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.DatasetCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElementCollectionBase`1[Guna.Charts.Interfaces.IGunaDataset]
+    Void .ctor(Guna.Charts.WinForms.GunaChart): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    AddRange(DatasetCollection): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.DatasetCollection+DatasetCollectionEditor: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.CollectionEditor
+    Void .ctor(System.Type): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Guna.Charts.WinForms.GunaAreaDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.BoundaryFillingMode Fill 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+    Boolean ShowLine 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Fill(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fill(BoundaryFillingMode): PrivateScope, Public, HideBySig, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaBarDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    Boolean AutoRoundedCorners 'get set' : 
+    Int32 CornerRadius 'get set' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Double BarPercentage 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_AutoRoundedCorners(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoRoundedCorners(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_CornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_BarPercentage(): PrivateScope, Public, HideBySig, SpecialName
+    set_BarPercentage(Double): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaBubbleDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsBubblePoint
+  Properties:
+    Int32 DataPointCount 'get ' : 
+    System.String ChartType 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String XFormat 'get set' : 
+    System.String RadiusFormat 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.BubblePointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+    Int32 Rotation 'get set' : 
+  Methods:
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_XFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_XFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_RadiusFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_RadiusFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(BubblePointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_Rotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_Rotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaDoughnutDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaHorizontalBarDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    Boolean AutoRoundedCorners 'get set' : 
+    Int32 CornerRadius 'get set' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_AutoRoundedCorners(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoRoundedCorners(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_CornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaLineDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Boolean ShowLine 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaPieDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaPolarAreaDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaRadarDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Boolean Fill 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+    Boolean ShowLine 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Fill(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fill(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaScatterDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsScatterPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String XFormat 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Guna.Charts.WinForms.ScatterPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_XFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_XFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(ScatterPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaSplineAreaDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Boolean ShowLine 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.BoundaryFillingMode Fill 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Fill(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fill(BoundaryFillingMode): PrivateScope, Public, HideBySig, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaSplineDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Boolean ShowLine 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaStackedBarDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    Boolean AutoRoundedCorners 'get set' : 
+    Int32 CornerRadius 'get set' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_AutoRoundedCorners(): PrivateScope, Public, HideBySig, SpecialName
+    set_AutoRoundedCorners(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_CornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaStackedHorizontalBarDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+Class Guna.Charts.WinForms.GunaSteppedAreaDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Boolean ShowLine 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.BoundaryFillingMode Fill 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+    Guna.Charts.WinForms.StepMode Step 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Fill(): PrivateScope, Public, HideBySig, SpecialName
+    set_Fill(BoundaryFillingMode): PrivateScope, Public, HideBySig, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_Step(): PrivateScope, Public, HideBySig, SpecialName
+    set_Step(StepMode): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaSteppedLineDataset: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.DatasetBase
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IDataPointTypeIsLPoint
+  Properties:
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+    System.String YFormat 'get set' : 
+    System.String IndexLabel 'get set' : 
+    System.Drawing.Color IndexLabelForeColor 'get set' : 
+    Boolean ShowLine 'get set' : 
+    System.Drawing.Color FillColor 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+    Int32 PointBorderWidth 'get set' : 
+    Int32 PointRadius 'get set' : 
+    Int32 PointRotation 'get set' : 
+    Guna.Charts.WinForms.PointStyle PointStyle 'get set' : 
+    Guna.Charts.WinForms.StepMode Step 'get set' : 
+  Methods:
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_YFormat(): PrivateScope, Public, HideBySig, SpecialName
+    set_YFormat(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabel(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabel(String): PrivateScope, Public, HideBySig, SpecialName
+    get_IndexLabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_IndexLabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_ShowLine(): PrivateScope, Public, HideBySig, SpecialName
+    set_ShowLine(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FillColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointRotation(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointRotation(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_PointStyle(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointStyle(PointStyle): PrivateScope, Public, HideBySig, SpecialName
+    get_Step(): PrivateScope, Public, HideBySig, SpecialName
+    set_Step(StepMode): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.Easing: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.Easing Linear = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInQuad = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutQuad = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutQuad = 3 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInCubic = 4 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutCubic = 5 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutCubic = 6 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInQuart = 7 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutQuart = 8 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutQuart = 9 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInQuint = 10 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutQuint = 11 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutQuint = 12 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInSine = 13 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutSine = 14 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutSine = 15 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInExpo = 16 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutExpo = 17 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutExpo = 18 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInCirc = 19 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutCirc = 20 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutCirc = 21 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInElastic = 22 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutElastic = 23 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutElastic = 24 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInBack = 25 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutBack = 26 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutBack = 27 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInBounce = 28 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseOutBounce = 29 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.Easing EaseInOutBounce = 30 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.Grid: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Display 'get set' : 
+    System.Drawing.Color Color 'get set' : 
+    Int32 LineWidth 'get set' : 
+    Boolean DrawTicks 'get set' : 
+    Int32 TickMarkLength 'get set' : 
+    Int32 ZeroLineWidth 'get set' : 
+    System.Drawing.Color ZeroLineColor 'get set' : 
+  Methods:
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Color(): PrivateScope, Public, HideBySig, SpecialName
+    set_Color(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_LineWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_LineWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_DrawTicks(): PrivateScope, Public, HideBySig, SpecialName
+    set_DrawTicks(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_TickMarkLength(): PrivateScope, Public, HideBySig, SpecialName
+    set_TickMarkLength(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ZeroLineWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_ZeroLineWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_ZeroLineColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ZeroLineColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.GunaChart: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChart
+  Properties:
+    Guna.Charts.WinForms.Palettes PaletteCustomColors 'get set' : 
+    System.Drawing.Font Font 'get set' : 
+    System.Drawing.Color BackColor 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    Guna.Charts.WinForms.Legend Legend 'get set' : 
+    Guna.Charts.WinForms.Misc Misc 'get set' : 
+    Guna.Charts.WinForms.Title Title 'get set' : 
+    Guna.Charts.WinForms.Axes XAxes 'get set' : 
+    Guna.Charts.WinForms.Axes YAxes 'get set' : 
+    Guna.Charts.WinForms.RadialAxes ZAxes 'get set' : 
+    Guna.Charts.WinForms.Tooltip Tooltips 'get set' : 
+    Guna.Charts.WinForms.Animation Animation 'get set' : 
+    Guna.Charts.WinForms.DatasetCollection Datasets 'get ' : 
+    Guna.Charts.WinForms.ZoomMode Zoom 'get set' : 
+    Int32 DatasetCount 'get ' : 
+  Methods:
+    get_PaletteCustomColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PaletteCustomColors(Palettes): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_Font(Font): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_BackColor(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_BackColor(Color): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, Virtual, HideBySig, SpecialName
+    get_Legend(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Legend(Legend): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Misc(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Misc(Misc): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Title(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Title(Title): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_XAxes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_XAxes(Axes): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_YAxes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_YAxes(Axes): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_ZAxes(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_ZAxes(RadialAxes): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Tooltips(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Tooltips(Tooltip): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Animation(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    set_Animation(Animation): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Datasets(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_Zoom(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zoom(ZoomMode): PrivateScope, Public, HideBySig, SpecialName
+    get_DatasetCount(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    ApplyConfig(ChartConfig, Color): PrivateScope, Public, HideBySig
+    ApplyConfig(ChartConfig): PrivateScope, Public, HideBySig
+    ToImage(): PrivateScope, Public, HideBySig
+    Invalidate(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    Update(): PrivateScope, Public, HideBySig
+    Update(IGunaDataset): PrivateScope, Public, HideBySig
+    Refresh(): PrivateScope, Public, HideBySig
+    Render(): PrivateScope, Public, HideBySig
+    ResetZoom(): PrivateScope, Public, HideBySig
+    ZoomIn(): PrivateScope, Public, HideBySig
+    ZoomOut(): PrivateScope, Public, HideBySig
+    Export(String, ImageFormat): PrivateScope, Public, HideBySig
+    Export(): PrivateScope, Public, HideBySig
+    Export(String): PrivateScope, Public, HideBySig
+    Reset(Boolean(Optional, HasDefault)): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.GunaCharts_LicenseMgr: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Component
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ComponentModel.IContainer): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Guna.Charts.WinForms.Legend: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Display 'get set' : 
+    Guna.Charts.WinForms.LegendPosition Position 'get set' : 
+    Guna.Charts.WinForms.ChartTextAlignment Align 'get set' : 
+    Boolean RightToLeft 'get set' : 
+    Boolean FullWidth 'get set' : 
+    Int32 BoxWidth 'get set' : 
+    Guna.Charts.WinForms.ChartFont LabelFont 'get set' : 
+    System.Drawing.Color LabelForeColor 'get set' : 
+  Methods:
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    set_Position(LegendPosition): PrivateScope, Public, HideBySig, SpecialName
+    get_Align(): PrivateScope, Public, HideBySig, SpecialName
+    set_Align(ChartTextAlignment): PrivateScope, Public, HideBySig, SpecialName
+    get_RightToLeft(): PrivateScope, Public, HideBySig, SpecialName
+    set_RightToLeft(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_FullWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_FullWidth(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BoxWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BoxWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_LabelFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_LabelFont(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_LabelForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_LabelForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.LegendPosition: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.LegendPosition Top = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.LegendPosition Left = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.LegendPosition Bottom = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.LegendPosition Right = 3 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.LegendPosition ChartArea = 4 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.LPoint: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Label 'get set' : 
+    Double Y   'get set' : 
+  Methods:
+    get_Label(): PrivateScope, Public, HideBySig, SpecialName
+    set_Label(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.LPointCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElementCollectionBase`1[Guna.Charts.WinForms.LPoint]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Add(String, Double): PrivateScope, Public, HideBySig
+    Update(Int32, String, Double): PrivateScope, Public, HideBySig
+    AddRange(LPointCollection): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.Misc: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Int32 BarCornerRadius 'get set' : 
+  Methods:
+    get_BarCornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_BarCornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.Palettes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Guna.Charts.WinForms.ColorCollection FillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection BorderColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointFillColors 'get set' : 
+    Guna.Charts.WinForms.ColorCollection PointBorderColors 'get set' : 
+  Methods:
+    get_FillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_FillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointFillColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointFillColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    get_PointBorderColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointBorderColors(ColorCollection): PrivateScope, Public, HideBySig, SpecialName
+    Reset(): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.PointLabel: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Display 'get set' : 
+    Guna.Charts.WinForms.ChartFont Font 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+  Methods:
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.PointStyle: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.PointStyle Circle = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Cross = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle CrossRot = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Dash = 3 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Line = 4 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Rect = 5 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle RectRounded = 6 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle RectRot = 7 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Star = 8 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.PointStyle Triangle = 9 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.RadialAxes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Guna.Charts.WinForms.PointLabel PointLabels 'get set' : 
+    Guna.Charts.WinForms.Grid GridLines 'get set' : 
+    Boolean Display 'get set' : 
+    Guna.Charts.WinForms.Tick Ticks 'get set' : 
+  Methods:
+    get_PointLabels(): PrivateScope, Public, HideBySig, SpecialName
+    set_PointLabels(PointLabel): PrivateScope, Public, HideBySig, SpecialName
+    get_GridLines(): PrivateScope, Public, HideBySig, SpecialName
+    set_GridLines(Grid): PrivateScope, Public, HideBySig, SpecialName
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Ticks(): PrivateScope, Public, HideBySig, SpecialName
+    set_Ticks(Tick): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.ScatterPoint: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double X   'get set' : 
+    Double Y   'get set' : 
+  Methods:
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    set_X(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+    ToString(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.ScatterPointCollection: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElementCollectionBase`1[Guna.Charts.WinForms.ScatterPoint]
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Add(Double, Double): PrivateScope, Public, HideBySig
+    Update(Int32, Double, Double): PrivateScope, Public, HideBySig
+    AddRange(ScatterPointCollection): PrivateScope, Public, HideBySig
+Struct Guna.Charts.WinForms.StepMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.StepMode Before = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.StepMode Middle = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.StepMode After = 2 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.Tick: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Display 'get set' : 
+    Guna.Charts.WinForms.ChartFont Font 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+    Boolean HasMaximum 'get set' : 
+    Boolean HasMinimum 'get set' : 
+    Double Minimum 'get set' : 
+    Double Maximum 'get set' : 
+    Boolean BeginAtZero 'get set' : 
+  Methods:
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_HasMaximum(): PrivateScope, Public, HideBySig, SpecialName
+    set_HasMaximum(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_HasMinimum(): PrivateScope, Public, HideBySig, SpecialName
+    set_HasMinimum(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Minimum(): PrivateScope, Public, HideBySig, SpecialName
+    set_Minimum(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Maximum(): PrivateScope, Public, HideBySig, SpecialName
+    set_Maximum(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_BeginAtZero(): PrivateScope, Public, HideBySig, SpecialName
+    set_BeginAtZero(Boolean): PrivateScope, Public, HideBySig, SpecialName
+Class Guna.Charts.WinForms.Title: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Display 'get set' : 
+    System.String Text 'get set' : 
+    Boolean FullWidth 'get set' : 
+    Guna.Charts.WinForms.TitlePosition Position 'get set' : 
+    Guna.Charts.WinForms.ChartFont Font 'get set' : 
+    System.Drawing.Color ForeColor 'get set' : 
+  Methods:
+    get_Display(): PrivateScope, Public, HideBySig, SpecialName
+    set_Display(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Text(): PrivateScope, Public, HideBySig, SpecialName
+    set_Text(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FullWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_FullWidth(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_Position(): PrivateScope, Public, HideBySig, SpecialName
+    set_Position(TitlePosition): PrivateScope, Public, HideBySig, SpecialName
+    get_Font(): PrivateScope, Public, HideBySig, SpecialName
+    set_Font(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_ForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_ForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.TitlePosition: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.TitlePosition Top = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.TitlePosition Left = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.TitlePosition Bottom = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.TitlePosition Right = 3 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.Tooltip: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Guna.Charts.WinForms.ChartElement
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IGunaChartObject
+  Properties:
+    Boolean Enabled 'get set' : 
+    Int32 CornerRadius 'get set' : 
+    System.Drawing.Color BackgroundColor 'get set' : 
+    Boolean DisplayColors 'get set' : 
+    System.Drawing.Color BorderColor 'get set' : 
+    Int32 BorderWidth 'get set' : 
+    Guna.Charts.WinForms.ChartFont TitleFont 'get set' : 
+    System.Drawing.Color TitleForeColor 'get set' : 
+    Guna.Charts.WinForms.ChartFont BodyFont 'get set' : 
+    System.Drawing.Color BodyForeColor 'get set' : 
+  Methods:
+    get_Enabled(): PrivateScope, Public, HideBySig, SpecialName
+    set_Enabled(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_CornerRadius(): PrivateScope, Public, HideBySig, SpecialName
+    set_CornerRadius(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_BackgroundColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BackgroundColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_DisplayColors(): PrivateScope, Public, HideBySig, SpecialName
+    set_DisplayColors(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BorderWidth(): PrivateScope, Public, HideBySig, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_TitleFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_TitleFont(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_TitleForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_TitleForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+    get_BodyFont(): PrivateScope, Public, HideBySig, SpecialName
+    set_BodyFont(ChartFont): PrivateScope, Public, HideBySig, SpecialName
+    get_BodyForeColor(): PrivateScope, Public, HideBySig, SpecialName
+    set_BodyForeColor(Color): PrivateScope, Public, HideBySig, SpecialName
+Struct Guna.Charts.WinForms.ZoomMode: AutoLayout, AnsiClass, Class, Public, Sealed
+  :System.Enum
+  Fields:
+    Int32 value__ : Public, SpecialName, RTSpecialName
+    Guna.Charts.WinForms.ZoomMode None = 0 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ZoomMode X = 1 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ZoomMode Y = 2 : Public, Static, Literal, HasDefault
+    Guna.Charts.WinForms.ZoomMode XY = 3 : Public, Static, Literal, HasDefault
+Class Guna.Charts.WinForms.Design.AnimationConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.BubblePointConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.ChartController: AutoLayout, AnsiClass, Class, Public, HasSecurity, BeforeFieldInit
+    Void .ctor(Guna.Charts.WinForms.GunaChart): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    Guna.Charts.Interfaces.IChartController
+  Methods:
+    SetBackColor(Color): PrivateScope, Public, HideBySig
+    UpdateAsync(): PrivateScope, Public, HideBySig
+    Reset(): PrivateScope, Public, HideBySig
+    ZoomIn(): PrivateScope, Public, HideBySig
+    ZoomOut(): PrivateScope, Public, HideBySig
+    ResetZoom(): PrivateScope, Public, HideBySig
+    Export(String, ImageFormat): PrivateScope, Public, HideBySig
+    Export(): PrivateScope, Public, HideBySig
+    Export(String): PrivateScope, Public, HideBySig
+    ToImage(): PrivateScope, Public, HideBySig
+Class Guna.Charts.WinForms.Design.ChartFontConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.ChartPropertyEditor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Drawing.Design.UITypeEditor
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    EditValue(ITypeDescriptorContext, IServiceProvider, Object): PrivateScope, Public, Virtual, HideBySig
+    GetEditStyle(ITypeDescriptorContext): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.DatasetConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertTo(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.DatasetDesigner: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.Design.ComponentDesigner
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Guna.Charts.WinForms.Design.DatasetDesigner+IDataTypeIsDoubleCollectionActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, HideBySig, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, HideBySig, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, HideBySig, SpecialName
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.DatasetDesigner+IDataTypeIsBubblePointCollectionActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.BubblePointCollection DataPoints 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, HideBySig, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, HideBySig, SpecialName
+    get_DataPoints(): PrivateScope, Public, HideBySig, SpecialName
+    set_DataPoints(BubblePointCollection): PrivateScope, Public, HideBySig, SpecialName
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.DatasetDesigner+IDataTypeIsScatterPointCollectionActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.ScatterPointCollection Data 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, HideBySig, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, HideBySig, SpecialName
+    get_Data(): PrivateScope, Public, HideBySig, SpecialName
+    set_Data(ScatterPointCollection): PrivateScope, Public, HideBySig, SpecialName
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.GunaChartDesigner: AutoLayout, AnsiClass, Class, Public, HasSecurity, BeforeFieldInit
+  :System.Windows.Forms.Design.ControlDesigner
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.ComponentModel.Design.DesignerActionListCollection ActionLists 'get ' : 
+  Methods:
+    get_ActionLists(): PrivateScope, Public, Virtual, HideBySig, SpecialName
+Class Guna.Charts.WinForms.Design.GunaChartDesigner+ChartActionList: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+  :System.ComponentModel.Design.DesignerActionList
+    Void .ctor(System.ComponentModel.IComponent): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Guna.Charts.WinForms.DatasetCollection Datasets 'get set' : 
+  Methods:
+    get_Datasets(): PrivateScope, Public, HideBySig, SpecialName
+    set_Datasets(DatasetCollection): PrivateScope, Public, HideBySig, SpecialName
+    Legend(): PrivateScope, Public, HideBySig
+    XAxes(): PrivateScope, Public, HideBySig
+    YAxes(): PrivateScope, Public, HideBySig
+    ZAxes(): PrivateScope, Public, HideBySig
+    Title(): PrivateScope, Public, HideBySig
+    Tooltips(): PrivateScope, Public, HideBySig
+    Animation(): PrivateScope, Public, HideBySig
+    Misc(): PrivateScope, Public, HideBySig
+    PaletteCustomColors(): PrivateScope, Public, HideBySig
+    Select(String, Object): PrivateScope, Public, HideBySig
+    GetSortedActionItems(): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.LPointConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+Class Guna.Charts.WinForms.Design.ScatterPointConverter: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.ComponentModel.ExpandableObjectConverter
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CanConvertFrom(ITypeDescriptorContext, Type): PrivateScope, Public, Virtual, HideBySig
+    ConvertFrom(ITypeDescriptorContext, CultureInfo, Object): PrivateScope, Public, Virtual, HideBySig
+Interface Guna.Charts.Interfaces.IChartController: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    TooltipFormatXYZValue(String, String, String, String, String, String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TooltipFormatYValue(String, String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TooltipFormatXYValue(String, String, String, String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    FormatXYZValue(String, String, String, String, String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    FormatYValue(String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    FormatXYValue(String, String, String, String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnLoad(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    OnUpdated(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Guna.Charts.Interfaces.IChartElement: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Events:
+    System.EventHandler Invalidated: 
+  Methods:
+    add_Invalidated(EventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    remove_Invalidated(EventHandler): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    Invalidate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Guna.Charts.Interfaces.IDataPointTypeIsBubblePoint: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.BubblePointCollection DataPoints 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DataPoints(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_DataPoints(BubblePointCollection): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface Guna.Charts.Interfaces.IDataPointTypeIsLPoint: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.LPointCollection DataPoints 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DataPoints(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_DataPoints(LPointCollection): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface Guna.Charts.Interfaces.IDataPointTypeIsScatterPoint: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    Guna.Charts.WinForms.ScatterPointCollection DataPoints 'get set' : 
+  Methods:
+    get_TargetChart(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DataPoints(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_DataPoints(ScatterPointCollection): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface Guna.Charts.Interfaces.IGunaChart: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    Int32 DatasetCount 'get ' : 
+  Methods:
+    Invalidate(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    get_DatasetCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+Interface Guna.Charts.Interfaces.IGunaChartObject: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Methods:
+    ToString(StringBuilder): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Interface Guna.Charts.Interfaces.IGunaDataset: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Properties:
+    System.String Label 'get set' : 
+    Guna.Charts.WinForms.GunaChart TargetChart 'get set' : 
+    System.String ChartType 'get ' : 
+    Int32 DataPointCount 'get ' : 
+  Methods:
+    get_Label(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_Label(String): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_TargetChart(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    set_TargetChart(GunaChart): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_ChartType(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
+    get_DataPointCount(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract, SpecialName
