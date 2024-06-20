@@ -1682,11 +1682,9 @@ namespace PythonWave {
 		   }
 
 #pragma endregion
-
 	private: Boolean succesful = false;
 	private: Void profile_Load(Object^ sender, EventArgs^ e);
-
-		   // Custom functions
+	// Custom functions
 	private: Void SaveData();
 	private: Void SaveConfig();
 
@@ -1695,8 +1693,7 @@ namespace PythonWave {
 	private: int SecurityCode = generateSecurityCode();
 	private: Void enableMail(bool enable);
 	private: Void DeleteDirectory(String^ folderPath);
-
-		   // Buttons
+	// Buttons
 	private: Void buttonSendMail_Click(Object^ sender, EventArgs^ e);
 	private: Void buttonValidateCode_Click(Object^ sender, EventArgs^ e);
 	private: Void ButtonMinimize_Click(Object^ sender, EventArgs^ e);

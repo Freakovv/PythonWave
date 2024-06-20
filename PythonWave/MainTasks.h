@@ -9,7 +9,10 @@ double animSeconds = 2;
 int secondsToStartAnim = 4;
 bool canSaveFunc = false;
 
+
+
 // Анимации, хайлайты
+
 
 void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	int selectionStart = richTB->SelectionStart;
@@ -166,8 +169,6 @@ Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ 
 	SyntaxHighlight(richTask);
 	canSaveFunc = false;
 }
-
-
 
 Void mainForm::TaskText_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 	TaskText->Multiline = true;
@@ -358,7 +359,7 @@ void mainForm::PyRun(String^ code) {
 		ClassProgress^ progress = gcnew ClassProgress(User);
 
 		bool isTaskCompleted = validate->GetTaskValue(CurrentTask);
-		MessageInfo->Show("Кол-во решенных задач за неделю: " + Convert::ToString(GetTasksCompletedLastWeek()), "Поздравляем!");
+		MessageInfo->Show("Кол-во решенных задач за неделю: " + Convert::ToString(GetTasksCompletedCount(-7)), "Поздравляем!");
 		if (isTaskCompleted) {
 			MessageInfo->Show("Задача решена верно.", "Поздравляем!");
 			MessageWarning->Show("Вы не получите баллов за это решение, так как вы уже решили эту задачу ранее.");
@@ -416,9 +417,11 @@ void mainForm::PyRun(String^ code) {
 	File::Delete(pathToResult);
 }
 
-int mainForm::GetTasksCompletedLastWeek() {
+int mainForm::GetTasksCompletedCount(int substract) {
 	ClassTasks date(User);
-	return date.GetTasksCompletedLastWeek();
+	DateTime end = DateTime::Now;
+	DateTime start = end.AddDays(substract);
+	return date.getCompletedCount(start, end);
 }
 
 Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {

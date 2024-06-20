@@ -187,6 +187,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainFunc.h" />
+    <ClInclude Include="MainHome.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MainProfile.h" />
     <ClInclude Include="MainSettings.h" />

@@ -238,7 +238,9 @@ namespace PythonWave {
 		String^ UserBirth;
 		String^ UserSex;
 		String^ UserName;
-		String^ UserRank;
+private: System::Windows::Forms::Label^ lblHello;
+public:
+    String^ UserRank;
 
 		mainForm(String^ Login)
 		{
@@ -493,6 +495,7 @@ namespace PythonWave {
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
+            this->lblHello = (gcnew System::Windows::Forms::Label());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMaximize))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
@@ -544,6 +547,7 @@ namespace PythonWave {
             this->Book14->SuspendLayout();
             this->myToolbox->SuspendLayout();
             this->Pages->SuspendLayout();
+            this->pageHome->SuspendLayout();
             this->anim3->SuspendLayout();
             this->SuspendLayout();
             // 
@@ -4571,10 +4575,10 @@ namespace PythonWave {
             this->Pages->Location = System::Drawing::Point(80, 80);
             this->Pages->Multiline = true;
             this->Pages->Name = L"Pages";
-            this->Pages->Page = this->pageTasks;
-            this->Pages->PageIndex = 2;
-            this->Pages->PageName = L"pageTasks";
-            this->Pages->PageTitle = L"pageTasks";
+            this->Pages->Page = this->pageHome;
+            this->Pages->PageIndex = 0;
+            this->Pages->PageName = L"pageHome";
+            this->Pages->PageTitle = L"pageHome";
             this->Pages->SelectedIndex = 0;
             this->Pages->Size = System::Drawing::Size(1520, 920);
             this->Pages->TabIndex = 2;
@@ -4600,6 +4604,7 @@ namespace PythonWave {
             // 
             this->pageHome->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            this->pageHome->Controls->Add(this->lblHello);
             this->gunaTransition->SetDecoration(this->pageHome, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageHome->Location = System::Drawing::Point(4, 4);
             this->pageHome->Name = L"pageHome";
@@ -4781,6 +4786,20 @@ namespace PythonWave {
             this->dragTask->TargetControl = this->panelTask;
             this->dragTask->UseTransparentDrag = true;
             // 
+            // lblHello
+            // 
+            this->lblHello->AutoSize = true;
+            this->gunaTransition->SetDecoration(this->lblHello, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblHello->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblHello->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblHello->Location = System::Drawing::Point(600, 42);
+            this->lblHello->Name = L"lblHello";
+            this->lblHello->Size = System::Drawing::Size(308, 24);
+            this->lblHello->TabIndex = 3;
+            this->lblHello->Text = L"Добрый день, Пользователь.";
+            // 
             // mainForm
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -4863,6 +4882,8 @@ namespace PythonWave {
             this->Book14->ResumeLayout(false);
             this->myToolbox->ResumeLayout(false);
             this->Pages->ResumeLayout(false);
+            this->pageHome->ResumeLayout(false);
+            this->pageHome->PerformLayout();
             this->anim3->ResumeLayout(false);
             this->anim3->PerformLayout();
             this->ResumeLayout(false);
@@ -5084,8 +5105,11 @@ namespace PythonWave {
 		Void btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e);
 
         //data
-        int GetTasksCompletedLastWeek();
+        int GetTasksCompletedCount(int substract);
 
+
+        // MainHome.h
+        String^ GetGreetingBasedOnTime();
 
 };
 }

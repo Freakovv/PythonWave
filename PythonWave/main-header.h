@@ -6,6 +6,7 @@
 #include "MainProfile.h"
 #include "MainTasks.h"
 #include "MainSettings.h"
+#include "MainHome.h"
 
 void SetCenter(Control^ background, Control^ control, int mode);
 

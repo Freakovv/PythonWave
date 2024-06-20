@@ -417,14 +417,11 @@ Void profile::buttonValidateCode_Click(System::Object^ sender, System::EventArgs
 		if (SecurityCode == Convert::ToInt32(textBoxCode->Text)) {
 			email_confirmed = true;
 
-			// Убираем возможность проверить код
 			textBoxCode->Enabled = false;
 			buttonCheckCode->Enabled = false;
 
-			// Информируем об успешной валидации
 			pictureBoxCheckCode->Visible = true;
 
-			// Убираем возможность отправить емейл повторно
 			timerReMail->Stop();
 			labelTimer->Visible = false;
 			linkReMail->Visible = false;
