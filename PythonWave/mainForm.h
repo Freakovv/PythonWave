@@ -245,11 +245,17 @@ private: Guna::UI2::WinForms::Guna2Panel^ panelHome5;
 private: Guna::UI2::WinForms::Guna2Panel^ panelHome4;
 private: Guna::UI2::WinForms::Guna2Panel^ panelHome3;
 private: Guna::UI2::WinForms::Guna2Panel^ panelHome2;
-private: Guna::Charts::WinForms::GunaChart^ chartWeekly;
-private: Guna::Charts::WinForms::GunaAreaDataset^ gunaAreaDataset1;
-private: Guna::Charts::WinForms::GunaSteppedLineDataset^ gunaSteppedLineDataset1;
-private: Guna::Charts::WinForms::GunaHorizontalBarDataset^ gunaHorizontalBarDataset1;
-private: Guna::Charts::WinForms::GunaSteppedAreaDataset^ gunaSteppedAreaDataset1;
+private: Guna::Charts::WinForms::GunaChart^ chartTasks;
+
+private: Guna::Charts::WinForms::GunaSplineDataset^ datasetTasks;
+
+private: Guna::Charts::WinForms::GunaSplineAreaDataset^ gunaSplineAreaDataset1;
+private: Guna::Charts::WinForms::GunaStackedBarDataset^ gunaStackedBarDataset1;
+
+
+
+
+
 
 
 
@@ -328,9 +334,6 @@ public:
             Guna::Charts::WinForms::LPoint^ lPoint8 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint9 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint10 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint11 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint12 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint13 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint1 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint2 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint3 = (gcnew Guna::Charts::WinForms::LPoint());
@@ -338,8 +341,9 @@ public:
             Guna::Charts::WinForms::LPoint^ lPoint5 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint6 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint7 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint14 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint15 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint11 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint12 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint13 = (gcnew Guna::Charts::WinForms::LPoint());
             this->panelMain = (gcnew System::Windows::Forms::Panel());
             this->btnMaximize = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
             this->btnExit = (gcnew Guna::UI2::WinForms::Guna2CirclePictureBox());
@@ -549,11 +553,10 @@ public:
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-            this->chartWeekly = (gcnew Guna::Charts::WinForms::GunaChart());
-            this->gunaAreaDataset1 = (gcnew Guna::Charts::WinForms::GunaAreaDataset());
-            this->gunaHorizontalBarDataset1 = (gcnew Guna::Charts::WinForms::GunaHorizontalBarDataset());
-            this->gunaSteppedLineDataset1 = (gcnew Guna::Charts::WinForms::GunaSteppedLineDataset());
-            this->gunaSteppedAreaDataset1 = (gcnew Guna::Charts::WinForms::GunaSteppedAreaDataset());
+            this->chartTasks = (gcnew Guna::Charts::WinForms::GunaChart());
+            this->gunaSplineAreaDataset1 = (gcnew Guna::Charts::WinForms::GunaSplineAreaDataset());
+            this->datasetTasks = (gcnew Guna::Charts::WinForms::GunaSplineDataset());
+            this->gunaStackedBarDataset1 = (gcnew Guna::Charts::WinForms::GunaStackedBarDataset());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMaximize))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
@@ -4691,7 +4694,7 @@ public:
             // 
             this->panelHome4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
                 static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->panelHome4->Controls->Add(this->chartWeekly);
+            this->panelHome4->Controls->Add(this->chartTasks);
             this->gunaTransition->SetDecoration(this->panelHome4, Guna::UI2::AnimatorNS::DecorationType::None);
             this->panelHome4->Location = System::Drawing::Point(54, 497);
             this->panelHome4->Name = L"panelHome4";
@@ -4915,121 +4918,123 @@ public:
             this->dragTask->TargetControl = this->panelTask;
             this->dragTask->UseTransparentDrag = true;
             // 
-            // chartWeekly
+            // chartTasks
             // 
-            this->chartWeekly->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-                static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->chartWeekly->Cursor = System::Windows::Forms::Cursors::Hand;
-            this->chartWeekly->Datasets->AddRange(gcnew cli::array< Guna::Charts::Interfaces::IGunaDataset^  >(1) { this->gunaSteppedLineDataset1 });
-            this->gunaTransition->SetDecoration(this->chartWeekly, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->chartWeekly->Dock = System::Windows::Forms::DockStyle::Bottom;
-            chartFont1->FontName = L"Arial";
-            this->chartWeekly->Legend->LabelFont = chartFont1;
-            this->chartWeekly->Location = System::Drawing::Point(0, 40);
-            this->chartWeekly->Name = L"chartWeekly";
-            this->chartWeekly->Size = System::Drawing::Size(1060, 260);
-            this->chartWeekly->TabIndex = 0;
+            this->chartTasks->Animation->Duration = 1500;
+            this->chartTasks->Animation->Easing = Guna::Charts::WinForms::Easing::EaseInOutExpo;
+            this->chartTasks->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
+                static_cast<System::Int32>(static_cast<System::Byte>(85)));
+            this->chartTasks->Datasets->AddRange(gcnew cli::array< Guna::Charts::Interfaces::IGunaDataset^  >(1) { this->datasetTasks });
+            this->gunaTransition->SetDecoration(this->chartTasks, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
+            this->chartTasks->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->chartTasks->Legend->BoxWidth = 0;
+            chartFont1->FontName = L"Century Gothic";
+            chartFont1->Size = 15;
+            this->chartTasks->Legend->LabelFont = chartFont1;
+            this->chartTasks->Legend->LabelForeColor = System::Drawing::Color::White;
+            this->chartTasks->Location = System::Drawing::Point(0, 0);
+            this->chartTasks->Name = L"chartTasks";
+            this->chartTasks->PaletteCustomColors->BorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(1) { System::Drawing::Color::White });
+            this->chartTasks->Size = System::Drawing::Size(1060, 300);
+            this->chartTasks->TabIndex = 0;
             chartFont2->FontName = L"Arial";
             chartFont2->Size = 12;
             chartFont2->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
-            this->chartWeekly->Title->Font = chartFont2;
+            this->chartTasks->Title->Font = chartFont2;
+            this->chartTasks->Title->ForeColor = System::Drawing::Color::White;
+            this->chartTasks->Tooltips->BackgroundColor = System::Drawing::Color::White;
             chartFont3->FontName = L"Arial";
-            this->chartWeekly->Tooltips->BodyFont = chartFont3;
+            this->chartTasks->Tooltips->BodyFont = chartFont3;
+            this->chartTasks->Tooltips->BorderColor = System::Drawing::Color::White;
             chartFont4->FontName = L"Arial";
             chartFont4->Size = 9;
             chartFont4->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
-            this->chartWeekly->Tooltips->TitleFont = chartFont4;
-            this->chartWeekly->XAxes->GridLines = grid1;
+            this->chartTasks->Tooltips->TitleFont = chartFont4;
+            this->chartTasks->Tooltips->TitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            grid1->Color = System::Drawing::Color::White;
+            grid1->TickMarkLength = 5;
+            grid1->ZeroLineColor = System::Drawing::Color::White;
+            this->chartTasks->XAxes->GridLines = grid1;
             chartFont5->FontName = L"Arial";
             tick1->Font = chartFont5;
-            this->chartWeekly->XAxes->Ticks = tick1;
-            this->chartWeekly->YAxes->GridLines = grid2;
+            tick1->ForeColor = System::Drawing::Color::White;
+            tick1->Maximum = 7;
+            this->chartTasks->XAxes->Ticks = tick1;
+            grid2->Color = System::Drawing::Color::White;
+            grid2->TickMarkLength = 10;
+            grid2->ZeroLineColor = System::Drawing::Color::White;
+            this->chartTasks->YAxes->GridLines = grid2;
             chartFont6->FontName = L"Arial";
             tick2->Font = chartFont6;
-            this->chartWeekly->YAxes->Ticks = tick2;
-            this->chartWeekly->ZAxes->GridLines = grid3;
+            tick2->ForeColor = System::Drawing::Color::White;
+            tick2->HasMaximum = true;
+            tick2->HasMinimum = true;
+            tick2->Maximum = 19;
+            this->chartTasks->YAxes->Ticks = tick2;
+            this->chartTasks->ZAxes->GridLines = grid3;
             chartFont7->FontName = L"Arial";
             pointLabel1->Font = chartFont7;
-            this->chartWeekly->ZAxes->PointLabels = pointLabel1;
+            this->chartTasks->ZAxes->PointLabels = pointLabel1;
             chartFont8->FontName = L"Arial";
             tick3->Font = chartFont8;
-            this->chartWeekly->ZAxes->Ticks = tick3;
+            this->chartTasks->ZAxes->Ticks = tick3;
             // 
-            // gunaAreaDataset1
+            // gunaSplineAreaDataset1
             // 
-            this->gunaAreaDataset1->BorderColor = System::Drawing::Color::Empty;
-            lPoint8->Label = L"123";
-            lPoint8->Y = 13;
-            lPoint9->Label = L"321";
-            lPoint9->Y = 23;
-            lPoint10->Label = L"32131";
-            lPoint10->Y = 13;
-            this->gunaAreaDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) { lPoint8, lPoint9, lPoint10 });
-            this->gunaAreaDataset1->FillColor = System::Drawing::Color::Empty;
-            this->gunaAreaDataset1->Label = L"Area1";
-            // 
-            // gunaHorizontalBarDataset1
-            // 
-            lPoint11->Y = 23;
-            lPoint12->Y = 21;
-            lPoint13->Y = 345;
-            this->gunaHorizontalBarDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) {
-                lPoint11,
-                    lPoint12, lPoint13
+            this->gunaSplineAreaDataset1->BorderColor = System::Drawing::Color::Empty;
+            lPoint8->Y = 234;
+            lPoint9->Y = 2133;
+            lPoint10->Y = 324;
+            this->gunaSplineAreaDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) {
+                lPoint8, lPoint9,
+                    lPoint10
             });
-            this->gunaHorizontalBarDataset1->Label = L"HorizontalBar1";
+            this->gunaSplineAreaDataset1->FillColor = System::Drawing::Color::Empty;
+            this->gunaSplineAreaDataset1->Label = L"SplineArea1";
             // 
-            // gunaSteppedLineDataset1
+            // datasetTasks
             // 
-            this->gunaSteppedLineDataset1->BorderColor = System::Drawing::Color::Empty;
+            this->datasetTasks->BorderColor = System::Drawing::Color::White;
+            this->datasetTasks->BorderWidth = 5;
             lPoint1->Label = L"Пн";
-            lPoint1->Y = 1;
+            lPoint1->Y = 2;
             lPoint2->Label = L"Вт";
-            lPoint2->Y = 4;
+            lPoint2->Y = 2;
             lPoint3->Label = L"Ср";
-            lPoint3->Y = 0;
+            lPoint3->Y = 3;
             lPoint4->Label = L"Чт";
-            lPoint4->Y = 3;
+            lPoint4->Y = 1;
             lPoint5->Label = L"Пт";
-            lPoint5->Y = 8;
+            lPoint5->Y = 4;
             lPoint6->Label = L"Сб";
-            lPoint6->Y = 0;
+            lPoint6->Y = 6;
             lPoint7->Label = L"Вс";
-            lPoint7->Y = 2;
-            this->gunaSteppedLineDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
-                lPoint1, lPoint2,
-                    lPoint3, lPoint4, lPoint5, lPoint6, lPoint7
+            lPoint7->Y = 7;
+            this->datasetTasks->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
+                lPoint1, lPoint2, lPoint3,
+                    lPoint4, lPoint5, lPoint6, lPoint7
             });
-            this->gunaSteppedLineDataset1->FillColor = System::Drawing::Color::Empty;
-            this->gunaSteppedLineDataset1->Label = L"SteppedLine1";
-            this->gunaSteppedLineDataset1->PointBorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(7) {
-                System::Drawing::Color::RosyBrown,
-                    System::Drawing::Color::Lime, System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                        static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(64))), System::Drawing::SystemColors::AppWorkspace,
-                    System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
-                        static_cast<System::Int32>(static_cast<System::Byte>(128))), System::Drawing::Color::Red, System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-                            static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)))
-            });
-            this->gunaSteppedLineDataset1->PointRotation = 10;
-            this->gunaSteppedLineDataset1->PointStyle = Guna::Charts::WinForms::PointStyle::Rect;
-            this->gunaSteppedLineDataset1->TargetChart = this->chartWeekly;
+            this->datasetTasks->FillColor = System::Drawing::Color::White;
+            this->datasetTasks->IndexLabelForeColor = System::Drawing::Color::White;
+            this->datasetTasks->Label = L"Количество решенных задач";
+            this->datasetTasks->LegendBoxBorderColor = System::Drawing::Color::White;
+            this->datasetTasks->LegendBoxFillColor = System::Drawing::Color::White;
+            this->datasetTasks->PointBorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(1) { System::Drawing::Color::Red });
+            this->datasetTasks->PointBorderWidth = 2;
+            this->datasetTasks->PointRadius = 5;
+            this->datasetTasks->TargetChart = this->chartTasks;
             // 
-            // gunaSteppedAreaDataset1
+            // gunaStackedBarDataset1
             // 
-            this->gunaSteppedAreaDataset1->BorderColor = System::Drawing::Color::Empty;
-            lPoint14->Y = 321;
-            lPoint15->Y = 123123;
-            this->gunaSteppedAreaDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(2) { lPoint14, lPoint15 });
-            this->gunaSteppedAreaDataset1->FillColor = System::Drawing::Color::Empty;
-            this->gunaSteppedAreaDataset1->Label = L"SteppedArea1";
-            this->gunaSteppedAreaDataset1->PointFillColors->AddRange(gcnew cli::array< System::Drawing::Color >(2) {
-                System::Drawing::Color::Blue,
-                    System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-                        static_cast<System::Int32>(static_cast<System::Byte>(192)))
+            lPoint11->Y = 32;
+            lPoint12->Y = 123;
+            lPoint13->Y = 234;
+            this->gunaStackedBarDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) {
+                lPoint11, lPoint12,
+                    lPoint13
             });
-            this->gunaSteppedAreaDataset1->PointRadius = 10;
-            this->gunaSteppedAreaDataset1->PointRotation = 100;
-            this->gunaSteppedAreaDataset1->PointStyle = Guna::Charts::WinForms::PointStyle::Triangle;
+            this->gunaStackedBarDataset1->Label = L"Задачи";
             // 
             // mainForm
             // 
