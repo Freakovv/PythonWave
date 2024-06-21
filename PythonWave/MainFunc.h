@@ -180,7 +180,6 @@ void mainForm::DataLoad() {
 	textBoxUserSurname->Text = UserSurname;
 	textBoxEmail->Text = UserEmail;
 
-	lblHello->Text = GetGreetingBasedOnTime();
 }
 void mainForm::DataChange() {
 	// Local

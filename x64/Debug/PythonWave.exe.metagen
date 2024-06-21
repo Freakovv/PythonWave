@@ -106,4 +106,5 @@ Class PythonWave.mainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String UserBirth : Public
     System.String UserSex : Public
     System.String UserName : Public
+    System.String[] phrases : Public
     System.String UserRank : Public

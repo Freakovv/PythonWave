@@ -1,6 +1,7 @@
 #pragma once
 #include "mainForm.h"
 #include "ClassTasks.h"
+
 using namespace PythonWave;
 using namespace System;
 
@@ -9,15 +10,104 @@ String^ mainForm::GetGreetingBasedOnTime() {
 	int hour = now.Hour;
 
 	if (hour >= 5 && hour < 12) {
-		return "Доброе утро, " + User;
+		return "Доброе утро, " + UserName + "!";
 	}
 	else if (hour >= 12 && hour < 17) {
-		return "Добрый день, " + User;
+		return "Добрый день, " + UserName;
 	}
 	else if (hour >= 17 && hour < 22) {
-		return "Добрый вечер, " + User;
+		return "Добрый вечер, " + UserName;
 	}
 	else {
-		return "Доброй ночи, " + User;
+		return "Доброй ночи, " + UserName;
 	}
+}
+
+String^ GetDayOfWeek() {
+	DateTime now = DateTime::Now;
+	DayOfWeek dayOfWeek = now.DayOfWeek;
+
+	String^ dayName;
+	switch (dayOfWeek)
+	{
+	case DayOfWeek::Monday:
+		dayName = "Пн";
+		break;
+	case DayOfWeek::Tuesday:
+		dayName = "Вт";
+		break;
+	case DayOfWeek::Wednesday:
+		dayName = "Ср";
+		break;
+	case DayOfWeek::Thursday:
+		dayName = "Чт";
+		break;
+	case DayOfWeek::Friday:
+		dayName = "Пт";
+		break;
+	case DayOfWeek::Saturday:
+		dayName = "Сб";
+		break;
+	case DayOfWeek::Sunday:
+		dayName = "Вс";
+		break;
+	}
+
+	return dayName;
+}
+
+void mainForm::InitializePhrazes() {
+	phrases = gcnew array<String^> {
+		"Каждая строка кода приближает тебя к успеху.",
+			"Сегодня ты можешь создать будущее.",
+			"Кодь так, будто мир зависит от твоей программы.",
+			"Ни один баг не устоит перед твоим упорством.",
+			"Код — это искусство, а ты — художник.",
+			"Не бойся ошибок, они — твои лучшие учителя.",
+			"Каждый день — новая возможность стать лучше.",
+			"Сегодня ты можешь написать лучший код в своей жизни.",
+			"Не останавливайся на достигнутом, всегда стремись к большему.",
+			"Кодирование — это путешествие, наслаждайся каждым шагом.",
+			"Всё невозможное возможно для того, кто пытается.",
+			"Твои идеи могут изменить мир, просто начни кодить.",
+			"Каждый байт твоего кода имеет значение.",
+			"Сегодня ты решишь проблему, которая казалась невозможной.",
+			"Пиши код, который будет вдохновлять других.",
+			"Каждая задача — это шанс проявить себя.",
+			"Твои навыки растут с каждым написанным символом.",
+			"Код — это магия, а ты — волшебник.",
+			"Не сдавайся, великое всегда требует времени.",
+			"Сегодня — идеальный день для создания чего-то нового.",
+			"Каждая ошибка — это шаг к совершенству.",
+			"Кодинг — это твоя суперсила.",
+			"Твоя решимость сильнее любых препятствий.",
+			"Кодирование — это твоя возможность создать что-то уникальное.",
+			"Смелость и настойчивость — твои лучшие инструменты.",
+			"Пусть сегодня будет день великих достижений.",
+			"Каждая строка кода приближает тебя к цели.",
+			"Твоя работа важна, твои усилия ценны.",
+			"Сегодня ты сделаешь то, что не удавалось вчера.",
+			"Ты способен на всё, просто начни кодить.",
+			"Код — это твоя возможность выразить свои мысли.",
+			"Создавай код, который будет работать на тебя.",
+			"Каждый новый день — это шанс начать заново.",
+			"Твои усилия сегодня приведут к результатам завтра.",
+			"Пиши код, который будет вдохновлять будущие поколения."
+	};
+}
+String^ mainForm::GetPhraseForToday() {
+	int day = DateTime::Now.Day;
+	int index = (day - 1) % phrases->Length;
+	return phrases[index];
+}
+void mainForm::LoadHomePage() {
+	InitializePhrazes();
+	lblHello->Text = GetGreetingBasedOnTime();
+	lblSovet->Text = GetPhraseForToday();
+
+	SetCenter(pageHome, lblHello, 1);
+	SetCenter(pnlHome1, lblPnlHome1, 1);
+	SetCenter(pnlHome2, lblPnlHome2, 1);
+
+	currentDayOfWeek = GetDayOfWeek();
 }

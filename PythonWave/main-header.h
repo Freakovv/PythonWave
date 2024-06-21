@@ -23,6 +23,7 @@ Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 	cfgLoad();
 	logsLoad();
 	LoadBook();
+	LoadHomePage();
 	menu = false;
 
 	ClassFade^ Fade = gcnew ClassFade(this);

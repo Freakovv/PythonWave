@@ -238,19 +238,80 @@ namespace PythonWave {
 		String^ UserBirth;
 		String^ UserSex;
 		String^ UserName;
+        array<String^>^ phrases;
 private: System::Windows::Forms::Label^ lblHello;
-private: Guna::UI2::WinForms::Guna2Panel^ panelHome1;
-private: Guna::UI2::WinForms::Guna2Panel^ panelHome5;
 
-private: Guna::UI2::WinForms::Guna2Panel^ panelHome4;
-private: Guna::UI2::WinForms::Guna2Panel^ panelHome3;
-private: Guna::UI2::WinForms::Guna2Panel^ panelHome2;
-private: Guna::Charts::WinForms::GunaChart^ chartTasks;
 
-private: Guna::Charts::WinForms::GunaSplineDataset^ datasetTasks;
 
-private: Guna::Charts::WinForms::GunaSplineAreaDataset^ gunaSplineAreaDataset1;
+
+
+
+
+
+
+
+
+
+
+
+
 private: Guna::Charts::WinForms::GunaStackedBarDataset^ gunaStackedBarDataset1;
+
+
+
+
+private: Guna::Charts::WinForms::GunaDoughnutDataset^ gunaDoughnutDataset1;
+private: Guna::UI2::WinForms::Guna2CircleProgressBar^ circleProgress;
+
+private: System::Windows::Forms::Label^ lblPnlHome3;
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::Label^ lblPnlHome2;
+private: System::Windows::Forms::Label^ lblSovet;
+private: System::Windows::Forms::Label^ lblPnlHome1;
+private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome4;
+
+
+
+
+
+
+
+
+private: Guna::Charts::WinForms::GunaChart^ gunaChart1;
+private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse1;
+private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse2;
+private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse3;
+private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse4;
+private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse5;
+
+private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome2;
+
+private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome1;
+private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome3;
+private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome5;
+private: System::Windows::Forms::Label^ label14;
+private: System::Windows::Forms::Label^ lblPnlHome5;
+private: Bunifu::Framework::UI::BunifuTileButton^ btnLastPage;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -314,8 +375,6 @@ public:
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation4 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
-            Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
-            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
             Guna::Charts::WinForms::ChartFont^ chartFont1 = (gcnew Guna::Charts::WinForms::ChartFont());
             Guna::Charts::WinForms::ChartFont^ chartFont2 = (gcnew Guna::Charts::WinForms::ChartFont());
             Guna::Charts::WinForms::ChartFont^ chartFont3 = (gcnew Guna::Charts::WinForms::ChartFont());
@@ -331,9 +390,6 @@ public:
             Guna::Charts::WinForms::ChartFont^ chartFont7 = (gcnew Guna::Charts::WinForms::ChartFont());
             Guna::Charts::WinForms::Tick^ tick3 = (gcnew Guna::Charts::WinForms::Tick());
             Guna::Charts::WinForms::ChartFont^ chartFont8 = (gcnew Guna::Charts::WinForms::ChartFont());
-            Guna::Charts::WinForms::LPoint^ lPoint8 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint9 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::Charts::WinForms::LPoint^ lPoint10 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint1 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint2 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint3 = (gcnew Guna::Charts::WinForms::LPoint());
@@ -341,6 +397,11 @@ public:
             Guna::Charts::WinForms::LPoint^ lPoint5 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint6 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint7 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
+            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
+            Guna::Charts::WinForms::LPoint^ lPoint8 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint9 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint10 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint11 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint12 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint13 = (gcnew Guna::Charts::WinForms::LPoint());
@@ -536,12 +597,21 @@ public:
             this->btnHighlight = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->Pages = (gcnew Bunifu::UI::WinForms::BunifuPages());
             this->pageHome = (gcnew System::Windows::Forms::TabPage());
-            this->panelHome5 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->panelHome4 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->panelHome3 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->panelHome2 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-            this->panelHome1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
+            this->pnlHome5 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+            this->lblPnlHome5 = (gcnew System::Windows::Forms::Label());
+            this->label14 = (gcnew System::Windows::Forms::Label());
+            this->pnlHome3 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+            this->lblPnlHome3 = (gcnew System::Windows::Forms::Label());
+            this->circleProgress = (gcnew Guna::UI2::WinForms::Guna2CircleProgressBar());
+            this->pnlHome2 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+            this->lblPnlHome2 = (gcnew System::Windows::Forms::Label());
+            this->lblSovet = (gcnew System::Windows::Forms::Label());
+            this->pnlHome1 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+            this->lblPnlHome1 = (gcnew System::Windows::Forms::Label());
             this->lblHello = (gcnew System::Windows::Forms::Label());
+            this->pnlHome4 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
+            this->gunaChart1 = (gcnew Guna::Charts::WinForms::GunaChart());
+            this->gunaStackedBarDataset1 = (gcnew Guna::Charts::WinForms::GunaStackedBarDataset());
             this->anim3 = (gcnew System::Windows::Forms::TabPage());
             this->btnSync = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->lblSync5 = (gcnew System::Windows::Forms::Label());
@@ -553,10 +623,13 @@ public:
             this->gunaTransition = (gcnew Guna::UI2::WinForms::Guna2Transition());
             this->ANIMFIX = (gcnew System::Windows::Forms::Timer(this->components));
             this->dragTask = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-            this->chartTasks = (gcnew Guna::Charts::WinForms::GunaChart());
-            this->gunaSplineAreaDataset1 = (gcnew Guna::Charts::WinForms::GunaSplineAreaDataset());
-            this->datasetTasks = (gcnew Guna::Charts::WinForms::GunaSplineDataset());
-            this->gunaStackedBarDataset1 = (gcnew Guna::Charts::WinForms::GunaStackedBarDataset());
+            this->gunaDoughnutDataset1 = (gcnew Guna::Charts::WinForms::GunaDoughnutDataset());
+            this->guna2Elipse1 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+            this->guna2Elipse2 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+            this->guna2Elipse3 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+            this->guna2Elipse4 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+            this->guna2Elipse5 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
+            this->btnLastPage = (gcnew Bunifu::Framework::UI::BunifuTileButton());
             this->panelMain->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMaximize))->BeginInit();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnExit))->BeginInit();
@@ -609,7 +682,11 @@ public:
             this->myToolbox->SuspendLayout();
             this->Pages->SuspendLayout();
             this->pageHome->SuspendLayout();
-            this->panelHome4->SuspendLayout();
+            this->pnlHome5->SuspendLayout();
+            this->pnlHome3->SuspendLayout();
+            this->pnlHome2->SuspendLayout();
+            this->pnlHome1->SuspendLayout();
+            this->pnlHome4->SuspendLayout();
             this->anim3->SuspendLayout();
             this->SuspendLayout();
             // 
@@ -4666,12 +4743,12 @@ public:
             // 
             this->pageHome->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->pageHome->Controls->Add(this->panelHome5);
-            this->pageHome->Controls->Add(this->panelHome4);
-            this->pageHome->Controls->Add(this->panelHome3);
-            this->pageHome->Controls->Add(this->panelHome2);
-            this->pageHome->Controls->Add(this->panelHome1);
+            this->pageHome->Controls->Add(this->pnlHome5);
+            this->pageHome->Controls->Add(this->pnlHome3);
+            this->pageHome->Controls->Add(this->pnlHome2);
+            this->pageHome->Controls->Add(this->pnlHome1);
             this->pageHome->Controls->Add(this->lblHello);
+            this->pageHome->Controls->Add(this->pnlHome4);
             this->gunaTransition->SetDecoration(this->pageHome, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageHome->Location = System::Drawing::Point(4, 4);
             this->pageHome->Name = L"pageHome";
@@ -4680,56 +4757,186 @@ public:
             this->pageHome->TabIndex = 0;
             this->pageHome->Text = L"pageHome";
             // 
-            // panelHome5
+            // pnlHome5
             // 
-            this->panelHome5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->gunaTransition->SetDecoration(this->panelHome5, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelHome5->Location = System::Drawing::Point(1162, 497);
-            this->panelHome5->Name = L"panelHome5";
-            this->panelHome5->Size = System::Drawing::Size(300, 300);
-            this->panelHome5->TabIndex = 8;
+            this->pnlHome5->BackColor = System::Drawing::Color::Transparent;
+            this->pnlHome5->Controls->Add(this->lblPnlHome5);
+            this->pnlHome5->Controls->Add(this->label14);
+            this->gunaTransition->SetDecoration(this->pnlHome5, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pnlHome5->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->pnlHome5->Location = System::Drawing::Point(1157, 449);
+            this->pnlHome5->Name = L"pnlHome5";
+            this->pnlHome5->ShadowColor = System::Drawing::Color::Black;
+            this->pnlHome5->Size = System::Drawing::Size(301, 300);
+            this->pnlHome5->TabIndex = 15;
             // 
-            // panelHome4
+            // lblPnlHome5
             // 
-            this->panelHome4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->panelHome4->Controls->Add(this->chartTasks);
-            this->gunaTransition->SetDecoration(this->panelHome4, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelHome4->Location = System::Drawing::Point(54, 497);
-            this->panelHome4->Name = L"panelHome4";
-            this->panelHome4->Size = System::Drawing::Size(1060, 300);
-            this->panelHome4->TabIndex = 7;
+            this->lblPnlHome5->AutoSize = true;
+            this->lblPnlHome5->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->lblPnlHome5, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblPnlHome5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblPnlHome5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblPnlHome5->Location = System::Drawing::Point(17, 18);
+            this->lblPnlHome5->Name = L"lblPnlHome5";
+            this->lblPnlHome5->Size = System::Drawing::Size(262, 22);
+            this->lblPnlHome5->TabIndex = 9;
+            this->lblPnlHome5->Text = L"Вы провели в PythonWave:";
             // 
-            // panelHome3
+            // label14
             // 
-            this->panelHome3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->gunaTransition->SetDecoration(this->panelHome3, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelHome3->Location = System::Drawing::Point(1162, 156);
-            this->panelHome3->Name = L"panelHome3";
-            this->panelHome3->Size = System::Drawing::Size(300, 300);
-            this->panelHome3->TabIndex = 6;
+            this->label14->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->label14, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->label14->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->label14->Font = (gcnew System::Drawing::Font(L"Century Gothic", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->label14->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->label14->Location = System::Drawing::Point(0, 0);
+            this->label14->Name = L"label14";
+            this->label14->Size = System::Drawing::Size(301, 300);
+            this->label14->TabIndex = 10;
+            this->label14->Text = L"1.1ч";
+            this->label14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
-            // panelHome2
+            // pnlHome3
             // 
-            this->panelHome2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->gunaTransition->SetDecoration(this->panelHome2, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelHome2->Location = System::Drawing::Point(614, 156);
-            this->panelHome2->Name = L"panelHome2";
-            this->panelHome2->Size = System::Drawing::Size(500, 300);
-            this->panelHome2->TabIndex = 5;
+            this->pnlHome3->BackColor = System::Drawing::Color::Transparent;
+            this->pnlHome3->Controls->Add(this->lblPnlHome3);
+            this->pnlHome3->Controls->Add(this->circleProgress);
+            this->gunaTransition->SetDecoration(this->pnlHome3, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pnlHome3->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->pnlHome3->Location = System::Drawing::Point(1157, 108);
+            this->pnlHome3->Name = L"pnlHome3";
+            this->pnlHome3->ShadowColor = System::Drawing::Color::Black;
+            this->pnlHome3->Size = System::Drawing::Size(301, 300);
+            this->pnlHome3->TabIndex = 14;
             // 
-            // panelHome1
+            // lblPnlHome3
             // 
-            this->panelHome1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->gunaTransition->SetDecoration(this->panelHome1, Guna::UI2::AnimatorNS::DecorationType::None);
-            this->panelHome1->Location = System::Drawing::Point(54, 156);
-            this->panelHome1->Name = L"panelHome1";
-            this->panelHome1->Size = System::Drawing::Size(500, 300);
-            this->panelHome1->TabIndex = 4;
+            this->lblPnlHome3->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->lblPnlHome3, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblPnlHome3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblPnlHome3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblPnlHome3->Location = System::Drawing::Point(84, 6);
+            this->lblPnlHome3->Name = L"lblPnlHome3";
+            this->lblPnlHome3->Size = System::Drawing::Size(134, 30);
+            this->lblPnlHome3->TabIndex = 9;
+            this->lblPnlHome3->Text = L"Прогресс";
+            this->lblPnlHome3->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+            // 
+            // circleProgress
+            // 
+            this->circleProgress->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+            this->circleProgress->Animated = true;
+            this->circleProgress->AnimationSpeed = 0.1F;
+            this->circleProgress->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->gunaTransition->SetDecoration(this->circleProgress, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->circleProgress->EnsureVisible = true;
+            this->circleProgress->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(200)), static_cast<System::Int32>(static_cast<System::Byte>(213)),
+                static_cast<System::Int32>(static_cast<System::Byte>(218)), static_cast<System::Int32>(static_cast<System::Byte>(223)));
+            this->circleProgress->FillThickness = 30;
+            this->circleProgress->Font = (gcnew System::Drawing::Font(L"Century Gothic", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->circleProgress->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->circleProgress->GradientMode = System::Drawing::Drawing2D::LinearGradientMode::ForwardDiagonal;
+            this->circleProgress->InnerColor = System::Drawing::Color::Transparent;
+            this->circleProgress->Location = System::Drawing::Point(26, 43);
+            this->circleProgress->Minimum = 0;
+            this->circleProgress->Name = L"circleProgress";
+            this->circleProgress->ProgressColor2 = System::Drawing::Color::Turquoise;
+            this->circleProgress->ProgressEndCap = System::Drawing::Drawing2D::LineCap::Round;
+            this->circleProgress->ProgressStartCap = System::Drawing::Drawing2D::LineCap::Round;
+            this->circleProgress->ProgressThickness = 30;
+            this->circleProgress->RightToLeft = System::Windows::Forms::RightToLeft::No;
+            this->circleProgress->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+            this->circleProgress->ShowText = true;
+            this->circleProgress->Size = System::Drawing::Size(250, 250);
+            this->circleProgress->TabIndex = 0;
+            this->circleProgress->Value = 25;
+            // 
+            // pnlHome2
+            // 
+            this->pnlHome2->BackColor = System::Drawing::Color::Transparent;
+            this->pnlHome2->Controls->Add(this->lblPnlHome2);
+            this->pnlHome2->Controls->Add(this->lblSovet);
+            this->gunaTransition->SetDecoration(this->pnlHome2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pnlHome2->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->pnlHome2->Location = System::Drawing::Point(610, 108);
+            this->pnlHome2->Name = L"pnlHome2";
+            this->pnlHome2->ShadowColor = System::Drawing::Color::Black;
+            this->pnlHome2->Size = System::Drawing::Size(497, 300);
+            this->pnlHome2->TabIndex = 13;
+            // 
+            // lblPnlHome2
+            // 
+            this->lblPnlHome2->AutoSize = true;
+            this->lblPnlHome2->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->lblPnlHome2, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblPnlHome2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblPnlHome2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblPnlHome2->Location = System::Drawing::Point(183, 8);
+            this->lblPnlHome2->Name = L"lblPnlHome2";
+            this->lblPnlHome2->Size = System::Drawing::Size(146, 30);
+            this->lblPnlHome2->TabIndex = 10;
+            this->lblPnlHome2->Text = L"Фраза дня:";
+            // 
+            // lblSovet
+            // 
+            this->lblSovet->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->lblSovet, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblSovet->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->lblSovet->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblSovet->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblSovet->Location = System::Drawing::Point(0, 0);
+            this->lblSovet->Name = L"lblSovet";
+            this->lblSovet->Size = System::Drawing::Size(497, 300);
+            this->lblSovet->TabIndex = 11;
+            this->lblSovet->Text = L"Кодирование — это твоя возможность создать что-то уникальное.";
+            this->lblSovet->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            // 
+            // pnlHome1
+            // 
+            this->pnlHome1->BackColor = System::Drawing::Color::Transparent;
+            this->pnlHome1->Controls->Add(this->btnLastPage);
+            this->pnlHome1->Controls->Add(this->lblPnlHome1);
+            this->gunaTransition->SetDecoration(this->pnlHome1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pnlHome1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->pnlHome1->Location = System::Drawing::Point(58, 108);
+            this->pnlHome1->Name = L"pnlHome1";
+            this->pnlHome1->ShadowColor = System::Drawing::Color::Black;
+            this->pnlHome1->Size = System::Drawing::Size(497, 300);
+            this->pnlHome1->TabIndex = 12;
+            // 
+            // lblPnlHome1
+            // 
+            this->lblPnlHome1->BackColor = System::Drawing::Color::Transparent;
+            this->gunaTransition->SetDecoration(this->lblPnlHome1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblPnlHome1->Dock = System::Windows::Forms::DockStyle::Top;
+            this->lblPnlHome1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblPnlHome1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblPnlHome1->Location = System::Drawing::Point(0, 0);
+            this->lblPnlHome1->Name = L"lblPnlHome1";
+            this->lblPnlHome1->Size = System::Drawing::Size(497, 30);
+            this->lblPnlHome1->TabIndex = 11;
+            this->lblPnlHome1->Text = L"Вы посещали:";
+            this->lblPnlHome1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
             // lblHello
             // 
@@ -4739,11 +4946,107 @@ public:
                 static_cast<System::Byte>(204)));
             this->lblHello->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
                 static_cast<System::Int32>(static_cast<System::Byte>(238)));
-            this->lblHello->Location = System::Drawing::Point(545, 49);
+            this->lblHello->Location = System::Drawing::Point(545, 37);
             this->lblHello->Name = L"lblHello";
             this->lblHello->Size = System::Drawing::Size(470, 39);
             this->lblHello->TabIndex = 3;
             this->lblHello->Text = L"Добрый день, Пользователь.";
+            // 
+            // pnlHome4
+            // 
+            this->pnlHome4->BackColor = System::Drawing::Color::Transparent;
+            this->pnlHome4->Controls->Add(this->gunaChart1);
+            this->gunaTransition->SetDecoration(this->pnlHome4, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->pnlHome4->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->pnlHome4->Location = System::Drawing::Point(50, 449);
+            this->pnlHome4->Name = L"pnlHome4";
+            this->pnlHome4->ShadowColor = System::Drawing::Color::Black;
+            this->pnlHome4->Size = System::Drawing::Size(1060, 300);
+            this->pnlHome4->TabIndex = 11;
+            // 
+            // gunaChart1
+            // 
+            this->gunaChart1->Animation->Duration = 2000;
+            this->gunaChart1->Animation->Easing = Guna::Charts::WinForms::Easing::EaseInOutExpo;
+            this->gunaChart1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(71)));
+            this->gunaChart1->Datasets->AddRange(gcnew cli::array< Guna::Charts::Interfaces::IGunaDataset^  >(1) { this->gunaStackedBarDataset1 });
+            this->gunaTransition->SetDecoration(this->gunaChart1, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->gunaChart1->Legend->BoxWidth = 0;
+            chartFont1->FontName = L"Century Gothic";
+            chartFont1->Size = 15;
+            this->gunaChart1->Legend->LabelFont = chartFont1;
+            this->gunaChart1->Legend->LabelForeColor = System::Drawing::Color::White;
+            this->gunaChart1->Location = System::Drawing::Point(8, 8);
+            this->gunaChart1->Name = L"gunaChart1";
+            this->gunaChart1->PaletteCustomColors->BorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(1) { System::Drawing::Color::White });
+            this->gunaChart1->Size = System::Drawing::Size(1049, 277);
+            this->gunaChart1->TabIndex = 13;
+            chartFont2->FontName = L"Arial";
+            chartFont2->Size = 12;
+            chartFont2->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
+            this->gunaChart1->Title->Font = chartFont2;
+            this->gunaChart1->Title->ForeColor = System::Drawing::Color::White;
+            this->gunaChart1->Tooltips->BackgroundColor = System::Drawing::Color::White;
+            chartFont3->FontName = L"Arial";
+            this->gunaChart1->Tooltips->BodyFont = chartFont3;
+            this->gunaChart1->Tooltips->BorderColor = System::Drawing::Color::White;
+            chartFont4->FontName = L"Arial";
+            chartFont4->Size = 9;
+            chartFont4->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
+            this->gunaChart1->Tooltips->TitleFont = chartFont4;
+            this->gunaChart1->Tooltips->TitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+            grid1->Color = System::Drawing::Color::White;
+            grid1->TickMarkLength = 5;
+            grid1->ZeroLineColor = System::Drawing::Color::White;
+            this->gunaChart1->XAxes->GridLines = grid1;
+            chartFont5->FontName = L"Arial";
+            tick1->Font = chartFont5;
+            tick1->ForeColor = System::Drawing::Color::White;
+            tick1->Maximum = 7;
+            this->gunaChart1->XAxes->Ticks = tick1;
+            grid2->Color = System::Drawing::Color::White;
+            grid2->TickMarkLength = 10;
+            grid2->ZeroLineColor = System::Drawing::Color::White;
+            this->gunaChart1->YAxes->GridLines = grid2;
+            chartFont6->FontName = L"Arial";
+            tick2->Font = chartFont6;
+            tick2->ForeColor = System::Drawing::Color::White;
+            tick2->HasMaximum = true;
+            tick2->HasMinimum = true;
+            tick2->Maximum = 14;
+            this->gunaChart1->YAxes->Ticks = tick2;
+            this->gunaChart1->ZAxes->GridLines = grid3;
+            chartFont7->FontName = L"Arial";
+            pointLabel1->Font = chartFont7;
+            this->gunaChart1->ZAxes->PointLabels = pointLabel1;
+            chartFont8->FontName = L"Arial";
+            tick3->Font = chartFont8;
+            this->gunaChart1->ZAxes->Ticks = tick3;
+            // 
+            // gunaStackedBarDataset1
+            // 
+            lPoint1->Label = L"Пн";
+            lPoint1->Y = 5;
+            lPoint2->Label = L"Вт";
+            lPoint2->Y = 7;
+            lPoint3->Label = L"Ср";
+            lPoint3->Y = 3;
+            lPoint4->Label = L"Чт";
+            lPoint4->Y = 8;
+            lPoint5->Label = L"Пт";
+            lPoint5->Y = 2;
+            lPoint6->Label = L"Сб";
+            lPoint6->Y = 6;
+            lPoint7->Label = L"Вс";
+            lPoint7->Y = 5;
+            this->gunaStackedBarDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
+                lPoint1, lPoint2,
+                    lPoint3, lPoint4, lPoint5, lPoint6, lPoint7
+            });
+            this->gunaStackedBarDataset1->Label = L"Решение задач";
             // 
             // anim3
             // 
@@ -4918,123 +5221,70 @@ public:
             this->dragTask->TargetControl = this->panelTask;
             this->dragTask->UseTransparentDrag = true;
             // 
-            // chartTasks
+            // gunaDoughnutDataset1
             // 
-            this->chartTasks->Animation->Duration = 1500;
-            this->chartTasks->Animation->Easing = Guna::Charts::WinForms::Easing::EaseInOutExpo;
-            this->chartTasks->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(61)), static_cast<System::Int32>(static_cast<System::Byte>(69)),
-                static_cast<System::Int32>(static_cast<System::Byte>(85)));
-            this->chartTasks->Datasets->AddRange(gcnew cli::array< Guna::Charts::Interfaces::IGunaDataset^  >(1) { this->datasetTasks });
-            this->gunaTransition->SetDecoration(this->chartTasks, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
-            this->chartTasks->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->chartTasks->Legend->BoxWidth = 0;
-            chartFont1->FontName = L"Century Gothic";
-            chartFont1->Size = 15;
-            this->chartTasks->Legend->LabelFont = chartFont1;
-            this->chartTasks->Legend->LabelForeColor = System::Drawing::Color::White;
-            this->chartTasks->Location = System::Drawing::Point(0, 0);
-            this->chartTasks->Name = L"chartTasks";
-            this->chartTasks->PaletteCustomColors->BorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(1) { System::Drawing::Color::White });
-            this->chartTasks->Size = System::Drawing::Size(1060, 300);
-            this->chartTasks->TabIndex = 0;
-            chartFont2->FontName = L"Arial";
-            chartFont2->Size = 12;
-            chartFont2->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
-            this->chartTasks->Title->Font = chartFont2;
-            this->chartTasks->Title->ForeColor = System::Drawing::Color::White;
-            this->chartTasks->Tooltips->BackgroundColor = System::Drawing::Color::White;
-            chartFont3->FontName = L"Arial";
-            this->chartTasks->Tooltips->BodyFont = chartFont3;
-            this->chartTasks->Tooltips->BorderColor = System::Drawing::Color::White;
-            chartFont4->FontName = L"Arial";
-            chartFont4->Size = 9;
-            chartFont4->Style = Guna::Charts::WinForms::ChartFontStyle::Bold;
-            this->chartTasks->Tooltips->TitleFont = chartFont4;
-            this->chartTasks->Tooltips->TitleForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            grid1->Color = System::Drawing::Color::White;
-            grid1->TickMarkLength = 5;
-            grid1->ZeroLineColor = System::Drawing::Color::White;
-            this->chartTasks->XAxes->GridLines = grid1;
-            chartFont5->FontName = L"Arial";
-            tick1->Font = chartFont5;
-            tick1->ForeColor = System::Drawing::Color::White;
-            tick1->Maximum = 7;
-            this->chartTasks->XAxes->Ticks = tick1;
-            grid2->Color = System::Drawing::Color::White;
-            grid2->TickMarkLength = 10;
-            grid2->ZeroLineColor = System::Drawing::Color::White;
-            this->chartTasks->YAxes->GridLines = grid2;
-            chartFont6->FontName = L"Arial";
-            tick2->Font = chartFont6;
-            tick2->ForeColor = System::Drawing::Color::White;
-            tick2->HasMaximum = true;
-            tick2->HasMinimum = true;
-            tick2->Maximum = 19;
-            this->chartTasks->YAxes->Ticks = tick2;
-            this->chartTasks->ZAxes->GridLines = grid3;
-            chartFont7->FontName = L"Arial";
-            pointLabel1->Font = chartFont7;
-            this->chartTasks->ZAxes->PointLabels = pointLabel1;
-            chartFont8->FontName = L"Arial";
-            tick3->Font = chartFont8;
-            this->chartTasks->ZAxes->Ticks = tick3;
-            // 
-            // gunaSplineAreaDataset1
-            // 
-            this->gunaSplineAreaDataset1->BorderColor = System::Drawing::Color::Empty;
-            lPoint8->Y = 234;
-            lPoint9->Y = 2133;
-            lPoint10->Y = 324;
-            this->gunaSplineAreaDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) {
+            lPoint8->Label = L"Главная";
+            lPoint8->Y = 5;
+            lPoint9->Label = L"Книга";
+            lPoint9->Y = 45;
+            lPoint10->Label = L"Задачи";
+            lPoint10->Y = 35;
+            lPoint11->Label = L"Профиль";
+            lPoint11->Y = 10;
+            lPoint12->Label = L"Статистика";
+            lPoint12->Y = 15;
+            lPoint13->Label = L"Настройки";
+            lPoint13->Y = 5;
+            this->gunaDoughnutDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(6) {
                 lPoint8, lPoint9,
-                    lPoint10
+                    lPoint10, lPoint11, lPoint12, lPoint13
             });
-            this->gunaSplineAreaDataset1->FillColor = System::Drawing::Color::Empty;
-            this->gunaSplineAreaDataset1->Label = L"SplineArea1";
+            this->gunaDoughnutDataset1->Label = L"Наиболее посещаемые";
             // 
-            // datasetTasks
+            // guna2Elipse1
             // 
-            this->datasetTasks->BorderColor = System::Drawing::Color::White;
-            this->datasetTasks->BorderWidth = 5;
-            lPoint1->Label = L"Пн";
-            lPoint1->Y = 2;
-            lPoint2->Label = L"Вт";
-            lPoint2->Y = 2;
-            lPoint3->Label = L"Ср";
-            lPoint3->Y = 3;
-            lPoint4->Label = L"Чт";
-            lPoint4->Y = 1;
-            lPoint5->Label = L"Пт";
-            lPoint5->Y = 4;
-            lPoint6->Label = L"Сб";
-            lPoint6->Y = 6;
-            lPoint7->Label = L"Вс";
-            lPoint7->Y = 7;
-            this->datasetTasks->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
-                lPoint1, lPoint2, lPoint3,
-                    lPoint4, lPoint5, lPoint6, lPoint7
-            });
-            this->datasetTasks->FillColor = System::Drawing::Color::White;
-            this->datasetTasks->IndexLabelForeColor = System::Drawing::Color::White;
-            this->datasetTasks->Label = L"Количество решенных задач";
-            this->datasetTasks->LegendBoxBorderColor = System::Drawing::Color::White;
-            this->datasetTasks->LegendBoxFillColor = System::Drawing::Color::White;
-            this->datasetTasks->PointBorderColors->AddRange(gcnew cli::array< System::Drawing::Color >(1) { System::Drawing::Color::Red });
-            this->datasetTasks->PointBorderWidth = 2;
-            this->datasetTasks->PointRadius = 5;
-            this->datasetTasks->TargetChart = this->chartTasks;
+            this->guna2Elipse1->BorderRadius = 35;
+            this->guna2Elipse1->TargetControl = this->pnlHome1;
             // 
-            // gunaStackedBarDataset1
+            // guna2Elipse2
             // 
-            lPoint11->Y = 32;
-            lPoint12->Y = 123;
-            lPoint13->Y = 234;
-            this->gunaStackedBarDataset1->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(3) {
-                lPoint11, lPoint12,
-                    lPoint13
-            });
-            this->gunaStackedBarDataset1->Label = L"Задачи";
+            this->guna2Elipse2->BorderRadius = 35;
+            this->guna2Elipse2->TargetControl = this->pnlHome2;
+            // 
+            // guna2Elipse3
+            // 
+            this->guna2Elipse3->BorderRadius = 35;
+            this->guna2Elipse3->TargetControl = this->pnlHome3;
+            // 
+            // guna2Elipse4
+            // 
+            this->guna2Elipse4->BorderRadius = 35;
+            this->guna2Elipse4->TargetControl = this->pnlHome4;
+            // 
+            // guna2Elipse5
+            // 
+            this->guna2Elipse5->BorderRadius = 35;
+            this->guna2Elipse5->TargetControl = this->pnlHome5;
+            // 
+            // btnLastPage
+            // 
+            this->btnLastPage->color = System::Drawing::Color::SlateBlue;
+            this->btnLastPage->colorActive = System::Drawing::Color::DarkSlateBlue;
+            this->btnLastPage->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->btnLastPage, Guna::UI2::AnimatorNS::DecorationType::BottomMirror);
+            this->btnLastPage->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->btnLastPage->ForeColor = System::Drawing::Color::White;
+            this->btnLastPage->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnLastPage.Image")));
+            this->btnLastPage->ImagePosition = 17;
+            this->btnLastPage->ImageZoom = 50;
+            this->btnLastPage->LabelPosition = 34;
+            this->btnLastPage->LabelText = L"Книга";
+            this->btnLastPage->Location = System::Drawing::Point(142, 48);
+            this->btnLastPage->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+            this->btnLastPage->Name = L"btnLastPage";
+            this->btnLastPage->Size = System::Drawing::Size(200, 160);
+            this->btnLastPage->TabIndex = 13;
             // 
             // mainForm
             // 
@@ -5120,7 +5370,13 @@ public:
             this->Pages->ResumeLayout(false);
             this->pageHome->ResumeLayout(false);
             this->pageHome->PerformLayout();
-            this->panelHome4->ResumeLayout(false);
+            this->pnlHome5->ResumeLayout(false);
+            this->pnlHome5->PerformLayout();
+            this->pnlHome3->ResumeLayout(false);
+            this->pnlHome2->ResumeLayout(false);
+            this->pnlHome2->PerformLayout();
+            this->pnlHome1->ResumeLayout(false);
+            this->pnlHome4->ResumeLayout(false);
             this->anim3->ResumeLayout(false);
             this->anim3->PerformLayout();
             this->ResumeLayout(false);
@@ -5185,7 +5441,8 @@ public:
 		Boolean CheckSave();
 		Void timerMenu_Tick(System::Object^ sender, System::EventArgs^ e);
 
-		Void funcSelectTab(TabPage^ tabPage);
+        Void SaveLastPage();
+		Void funcSelectTab(TabPage ^ tabPage);
 		Void timerAnim_Tick(System::Object^ sender, System::EventArgs^ e);
 		Void btnHome_Click(System::Object^ sender, System::EventArgs^ e);
 		Void btnBook_Click(System::Object^ sender, System::EventArgs^ e);
@@ -5346,7 +5603,11 @@ public:
 
 
         // MainHome.h
+        String^ currentDayOfWeek;
         String^ GetGreetingBasedOnTime();
+        Void LoadHomePage();
+        void InitializePhrazes();
+        String^ GetPhraseForToday();
 
 };
 }

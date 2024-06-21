@@ -11,7 +11,6 @@ Void mainForm::SetProfileDefaults() {
 	textBoxCodeNew->Enabled = false;
 	buttonCheckCode->Enabled = false;
 }
-
 Boolean mainForm::CheckSave() {
 	if (isProfileSaved) {
 		return true;
@@ -30,7 +29,6 @@ Boolean mainForm::CheckSave() {
 	}
 	MessageWarning->Buttons = UI2::WinForms::MessageDialogButtons::OK;
 }
-
 Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 	// 80 Min 250 Max (menu)
 
@@ -79,6 +77,17 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 
+Void mainForm::SaveLastPage() {
+	int pageIndex = Pages->SelectedIndex;
+	
+	switch (pageIndex)
+	{
+		case 
+	}
+
+
+	String^ pathToFile = User + "//last-page.txt";
+}
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
 	if (CheckSave() && !courseAnimationState)
 		Pages->SelectTab(tabPage);
