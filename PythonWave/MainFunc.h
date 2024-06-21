@@ -169,7 +169,7 @@ void mainForm::DataLoad() {
 	lblRegDate->Text = "Дата регистрации: " + GetFolderCreationDate(User);
 	lblSexEdit->Text = "Пол:\n" + UserSex;
 	lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
-
+	lblProfileRank->Text = "Уровень: " + UserRank;
 	lblAnim1->Text = "Приветствуем вас на странице заданий, " + UserName + "!";
 
 	labelNameBar->Text = UserName;
@@ -263,38 +263,49 @@ String^ mainForm::SetUserLvl() {
 
 	if (UserProgress >= 20 && UserProgress <= 39) {
 		newRank = "Исследователь";
-		if(UserRank != newRank)
-			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
+		StarsUser->Value = 1.5;
 	}
 	else if (UserProgress >= 40 && UserProgress <= 59) {
 		newRank = "Разработчик";
-		if (UserRank != newRank)
-			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
+		StarsUser->Value = 2.5;
 	}
 	else if (UserProgress >= 60 && UserProgress <= 79) {
 		newRank = "Инженер";
-		if (UserRank != newRank)
-			MessageInfo->Show("Вы повысили свой уровень!", "Поздравляем, " + newRank + "!");
+		StarsUser->Value = 3.5;
 	}
 	else if (UserProgress >= 80 && UserProgress <= 100) {
 		newRank = "Мастер";
-		if (UserRank != newRank)
-			MessageInfo->Show("Вы получили максимальный уровень", "Поздравляем," + newRank + "!");
+		StarsUser->Value = 4.5;
+	}
+	else if (UserProgress >= 100) {
+		newRank = "Абсолют";
+		StarsUser->Value = 5;
+		StarsUser->RatingColor = Color::Red;
 	}
 	else {
 		newRank = "Новичок";
+		StarsUser->Value = 0;
 		writeBinaryFile(fileRankPath, newRank);
 		return newRank;
+	}
+
+	if (UserProgress == 100) {
+		StarsUser->Value = 5;
 	}
 
 	String^ fileRank = User + "//lvl.bin";
 	writeBinaryFile(fileRank, UserRank);
 	return newRank;
-	DataLoad();
 }
 
-Void mainForm::RankUp() {
+Void mainForm::labelRankBar_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (isDataLoaded) {
+		MessageInfo->Show("Вы получили новый уровень", "Поздравляем, " + UserRank);
+	}
+}
 
+
+Void mainForm::RankUp() {
 }
 
 Void mainForm::HideWAnimation(Forms::Control^ CONTROL) {

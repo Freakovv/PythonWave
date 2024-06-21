@@ -14,10 +14,10 @@ private:
     double currentProgress;
     String^ pathToProgress;
 
-    static double StepB = 3;
-    static double StepA = 10;
-    static double StepS = 10;
-    static double StepSplus = 20;
+    static int StepB = 3;
+    static int StepA = 10;
+    static int StepS = 10;
+    static int StepSplus = 20;
 
 public:
     Dictionary<int, String^>^ ranks;
@@ -42,7 +42,7 @@ public:
         }
     }
 
-    static double getTaskPoint(int difficulty) {
+    static int getTaskPoint(int difficulty) {
         switch (difficulty)
         {
         case 1:

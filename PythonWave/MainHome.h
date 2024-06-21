@@ -106,8 +106,70 @@ void mainForm::LoadHomePage() {
 	lblSovet->Text = GetPhraseForToday();
 
 	SetCenter(pageHome, lblHello, 1);
-	SetCenter(pnlHome1, lblPnlHome1, 1);
 	SetCenter(pnlHome2, lblPnlHome2, 1);
+	SetCenter(pageHome, lblHello, 1);
+	SetCenter(pnlHome1n1, btnRead, 1);
+	SetCenter(pnlHome1, btnReadBook, 1);
 
 	currentDayOfWeek = GetDayOfWeek();
+	InitializePanelBook();
+	circleProgress->Value = UserProgress;
+}
+
+void mainForm::InitializePanelBook() {
+
+	String^ filePath = User + "//book//lastpage.txt";
+	String^ pageName = "none";
+
+	if (File::Exists(filePath)) {
+		pageName = File::ReadAllText(filePath);
+		int tabPageIndex = -1;
+
+		for (int i = 0; i < Book->TabCount; ++i) {
+			if (Book->TabPages[i]->Text == pageName) {
+				tabPageIndex = i;
+				break;
+			}
+		}
+
+		if (tabPageIndex != -1) {
+			Book->SelectTab(tabPageIndex);
+			dropdownPages->SelectedIndex = tabPageIndex;
+
+
+
+			String^ selectedPageText = dropdownPages->Items[tabPageIndex]->ToString();
+
+			StringBuilder^ newText = gcnew StringBuilder();
+			for each (Char c in selectedPageText)
+			{
+				if (!Char::IsDigit(c) && c != '.')
+				{
+					newText->Append(c);
+				}
+			}
+			String^ resultText = newText->ToString();
+
+			lblLastPage->Text = resultText;
+			pnlHome1n1->Visible = true;
+		}
+		else {
+			MessageWarning->Show("tabPageIndex: " + tabPageIndex.ToString(), "Ошибка индекса");
+			pageName = "none";
+		}
+	}
+
+	if (pageName == "none") {
+		pnlHome1->Visible = true;
+		return;
+	}
+}
+
+Void mainForm::btnReadBook_Click(System::Object^ sender, System::EventArgs^ e) {
+	funcSelectTab(pageBook);
+	btnBook->Checked = true;
+}
+Void mainForm::btnRead_Click(System::Object^ sender, System::EventArgs^ e) {
+	funcSelectTab(pageBook);
+	btnBook->Checked = true;
 }

@@ -77,17 +77,6 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 
-Void mainForm::SaveLastPage() {
-	int pageIndex = Pages->SelectedIndex;
-	
-	switch (pageIndex)
-	{
-		case 
-	}
-
-
-	String^ pathToFile = User + "//last-page.txt";
-}
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
 	if (CheckSave() && !courseAnimationState)
 		Pages->SelectTab(tabPage);
@@ -105,6 +94,7 @@ Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 
 Void mainForm::btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageHome);
+	LoadHomePage();
 }
 Void mainForm::btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
@@ -112,6 +102,7 @@ Void mainForm::btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnProfile_Click(System::Object^ sender, System::EventArgs^ e) {
 	logsLoad();
 	funcSelectTab(pageProfile);
+	btnProfile->Checked = true;
 }
 Void mainForm::btnStats_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageStats);
@@ -130,7 +121,7 @@ Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 			Directory::Delete("logs", true);
 		}
 		catch (Exception^ e) {
-			MessageBox::Show(e->Message);
+			MessageError->Show(e->Message);
 		}
 	}
 

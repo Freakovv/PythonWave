@@ -15,7 +15,7 @@ private:
 	Timer^ timerFade; // Таймер для управления анимацией
 
 	int animation = 1; // 1 - fade in, 2 - fade out (close), 3 - fade out (minimize), 4 - transition
-	const double step = 0.1; // step 0.1
+	const double step = 0.05; // step 0.1
 	const double step1 = 0.2; // step 0.2
 public:
 	ClassFade(Form^ f) : form(f) {

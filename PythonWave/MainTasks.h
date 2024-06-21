@@ -370,7 +370,7 @@ void mainForm::PyRun(String^ code) {
 
 		validate->SetTaskCompletionDate(CurrentTask, DateTime::Now);
 
-		double points;
+		int points;
 		if (CurrentDifficulty == "easy") {
 			progress->SolveTaskB();
 			points = progress->getTaskPoint(1);

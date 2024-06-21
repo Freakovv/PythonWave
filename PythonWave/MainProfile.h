@@ -262,11 +262,13 @@ Void mainForm::btnCancelChanges_Click(System::Object^ sender, System::EventArgs^
 		Pages->SelectTab(pageProfile);
 }
 Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (textBoxUserName->TextLength < 3) {
-		textBoxUserName->BorderColor = Color::Red;
-		if (textBoxUserSurname->TextLength < 3) {
+	if (textBoxUserName->TextLength < 3 || textBoxUserSurname->TextLength < 3) {
+
+		if(textBoxUserName->TextLength < 3)
+			textBoxUserName->BorderColor = Color::Red;
+
+		if (textBoxUserSurname->TextLength < 3)
 			textBoxUserSurname->BorderColor = Color::Red;
-		}
 
 		MessageWarning->Show("Введите полное имя и фамилию");
 		return;
@@ -278,6 +280,7 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 		return;
 	}
 
+	isProfileSaved = true;
 	DataChange();
 	DataSave();
 	MessageInfo->Show("Сохранено", "Успешно");
@@ -287,12 +290,16 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 Boolean mainForm::CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ field) {
 	if (TB->Text != field) {
 		isProfileSaved = false;
+		MessageInfo->Show(isProfileSaved.ToString(), "isProfileSaved");
 		return false;
 	}
 	return true;
 }
 Void mainForm::textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	CheckProfileSave(textBoxUserName, UserName);
+	if (textBoxUserName->Text != UserName) {
+		isProfileSaved = false;
+		MessageInfo->Show(isProfileSaved.ToString(), "isProfileSaved");
+	}
 }
 Void mainForm::textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	CheckProfileSave(textBoxUserSurname, UserSurname);

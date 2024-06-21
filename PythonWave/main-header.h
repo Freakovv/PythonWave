@@ -19,18 +19,26 @@ void mainForm::Form_MouseDown(Object^ sender, MouseEventArgs^ e)
 	}
 }
 Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
+	isDataLoaded = false;
+	menu = false;
 	DataLoad();
 	cfgLoad();
 	logsLoad();
 	LoadBook();
 	LoadHomePage();
-	menu = false;
 
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("in");
 
 	SetCenter(panelProfileData, lblLogin, 1);
 	SetCenter(anim1, lblAnim1, 1);
+	SetCenter(pageProfile, pictureProfile, 1);
+	SetCenter(pageProfile, panelProfileData, 1);
+	ShowWAnimation(lblLastPage);
+	ShowWAnimation(lblSovet);
+	ShowWAnimation(circleProgress);
+	ShowWAnimation(lblTimerInApp);
+	isDataLoaded = true;
 }
 Void mainForm::btnExit_Click(System::Object^ sender, System::EventArgs^ e) {
 	ClassFade^ Fade = gcnew ClassFade(this);
@@ -50,7 +58,8 @@ Void mainForm::btnMaximize_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
 Void mainForm::ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
-	MessageInfo->Show("Оценка ваших успехов в учебе :)");
+	MessageInfo->Caption = "Информация";
+	MessageInfo->Show("Оценка ваших успехов в учебе :)", "Звездочки");
 }
 Void mainForm::btnQuestionBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageInfo->Show("Примените желаемые пометки, выделив текст", "Панель инструментов");

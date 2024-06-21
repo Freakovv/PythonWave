@@ -53,7 +53,7 @@ void mainForm::LoadBook() {
 
 	String^ filePath = User + "//book//lastpage.txt";
 	if (File::Exists(filePath)) {
-		String^ pageName = File::ReadAllText(filePath); // Читаем содержимое файла
+		String^ pageName = File::ReadAllText(filePath);
 		int tabPageIndex = -1;
 
 		// Определяем соответствующий индекс вкладки для имени страницы
@@ -71,7 +71,7 @@ void mainForm::LoadBook() {
 	}
 
 	if (!isBookExists)
-		MessageWarning->Show("Ошибка загрузки книги", "Целостность файлов повреждена");
+		MessageWarning->Show("Ошибка загрузки книги", "Файлы повреждены");
 }
 void mainForm::UpdateLastBookPage() {
 	CurrentBookPage = Book->SelectedTab;
