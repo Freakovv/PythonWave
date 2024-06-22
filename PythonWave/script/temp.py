@@ -1,2 +1,3 @@
-def reverse_seq(n):
-    return list(range(n, 0, -1))
+# Верните из функции резльутат разности двух переменных
+def subtract(a, b):
+    return a - b

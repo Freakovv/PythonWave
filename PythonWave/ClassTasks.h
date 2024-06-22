@@ -16,6 +16,10 @@ private:
 	Dictionary<String^, bool>^ taskDict;
 	Dictionary<String^, DateTime>^ taskCompletionDates;
 
+	int completedA_count = 0;
+	int completedB_count = 0;
+	int completedS_count = 0;
+	int completedSplus_count = 0;
 public:
 	ClassTasks(String^ User) {
 		if (!String::IsNullOrEmpty(User))
@@ -38,7 +42,7 @@ public:
 
 	void SolveTask(String^ TaskName) {
 		SetTaskValue(TaskName, true);
-		SetTaskCompletionDate(TaskName, DateTime::Now);
+		SetTaskCompletionDate(TaskName);
 	}
 
 	bool GetTaskValue(String^ taskName) {
@@ -48,10 +52,60 @@ public:
 		return false;
 	}
 
-	void SetTaskCompletionDate(String^ taskName, DateTime completionDate) {
+	void SetTaskCompletionDate(String^ taskName) {
+		array<String^>^ EzTasks = gcnew array<String^>(5);
+		array<String^>^ MidTasks = gcnew array<String^>(3);
+		array<String^>^ HardTasks = gcnew array<String^>(3);
+		array<String^>^ VeryHardTasks = gcnew array<String^>(3);
+		EzTasks[0] = "add";
+		EzTasks[1] = "multiply";
+		EzTasks[2] = "divide";
+		EzTasks[3] = "subtract";
+		EzTasks[4] = "even_or_odd";
+
+		MidTasks[0] = "better_than_average";
+		MidTasks[1] = "positive_sum";
+		MidTasks[2] = "reverse_seq";
+
+		HardTasks[0] = "get_count";
+		HardTasks[1] = "high_and_low";
+		HardTasks[2] = "square_digits";
+
+		VeryHardTasks[0] = "get_char";
+		VeryHardTasks[1] = "symmetric_point";
+		VeryHardTasks[2] = "get_middle";
+
 		if (taskDict->ContainsKey(taskName)) {
-			taskCompletionDates[taskName] = completionDate;
+			taskCompletionDates[taskName] = DateTime::Now;
 			SaveTaskState();
+
+			for (int i = 0; i < EzTasks->Length; i++) {
+				if (EzTasks[i] == taskName) {
+					++completedB_count;
+					return;
+				}
+			}
+
+			for (int i = 0; i < MidTasks->Length; i++) {
+				if (MidTasks[i] == taskName) {
+					++completedA_count;
+					return;
+				}
+			}
+
+			for (int i = 0; i < HardTasks->Length; i++) {
+				if (HardTasks[i] == taskName) {
+					++completedS_count;
+					return;
+				}
+			}
+
+			for (int i = 0; i < VeryHardTasks->Length; i++) {
+				if (VeryHardTasks[i] == taskName) {
+					++completedSplus_count;
+					return;
+				}
+			}
 		}
 	}
 

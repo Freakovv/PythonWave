@@ -89,9 +89,7 @@ Void mainForm::buttonSendMail_Click(System::Object^ sender, System::EventArgs^ e
 		}
 	}
 	else {
-		MessageError->Caption = "ѕисьмо не было отправлено";
-		MessageError->Text = "¬ведите корректный адрес эл. почты";
-		MessageError->Show();
+		MessageError->Show("¬ведите корректный адрес эл. почты", "ѕисьмо не было отправлено");
 
 		textBoxEmail->BorderColor = Color::Red;
 		textBoxEmail->Clear();

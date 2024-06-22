@@ -34,10 +34,6 @@ Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 	SetCenter(anim1, lblAnim1, 1);
 	SetCenter(pageProfile, pictureProfile, 1);
 	SetCenter(pageProfile, panelProfileData, 1);
-	ShowWAnimation(lblLastPage);
-	ShowWAnimation(lblSovet);
-	ShowWAnimation(circleProgress);
-	ShowWAnimation(lblTimerInApp);
 	isDataLoaded = true;
 }
 Void mainForm::btnExit_Click(System::Object^ sender, System::EventArgs^ e) {

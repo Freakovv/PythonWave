@@ -19,6 +19,7 @@ private:
     static int StepS = 10;
     static int StepSplus = 20;
 
+
 public:
     Dictionary<int, String^>^ ranks;
 

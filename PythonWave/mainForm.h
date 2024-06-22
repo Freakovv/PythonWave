@@ -3,6 +3,7 @@
 #include "config.h"
 #include "ClassFade.h"
 #include "ClassProgress.h"
+#include "ClassTasks.h"
 #include <regex>
 #include <string>
 #include <msclr\marshal_cppstd.h>
@@ -4867,7 +4868,6 @@ public:
             this->lblLastPage->TabIndex = 53;
             this->lblLastPage->Text = L"Циклы";
             this->lblLastPage->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            this->lblLastPage->Visible = false;
             // 
             // label14
             // 
@@ -4971,7 +4971,6 @@ public:
             this->lblTimerInApp->TabIndex = 10;
             this->lblTimerInApp->Text = L"1.1ч";
             this->lblTimerInApp->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            this->lblTimerInApp->Visible = false;
             // 
             // pnlHome3
             // 
@@ -5035,7 +5034,6 @@ public:
             this->circleProgress->Size = System::Drawing::Size(250, 250);
             this->circleProgress->TabIndex = 0;
             this->circleProgress->Value = 25;
-            this->circleProgress->Visible = false;
             // 
             // pnlHome2
             // 
@@ -5082,7 +5080,6 @@ public:
             this->lblSovet->TabIndex = 11;
             this->lblSovet->Text = L"Кодирование — это твоя возможность создать что-то уникальное.";
             this->lblSovet->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-            this->lblSovet->Visible = false;
             // 
             // pnlHome1
             // 
@@ -5816,12 +5813,15 @@ public:
         Void btnReadBook_Click(System::Object^ sender, System::EventArgs^ e);
         Void btnRead_Click(System::Object^ sender, System::EventArgs^ e);
         
+        // Temp button (LvlUp)
         Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-            ClassProgress data(User);
-            data.SolveTaskA();
-            MessageBox::Show(data.GetCurrentProgress().ToString());
-            DataLoad();
-            LoadHomePage();
+            //ClassProgress data(User);
+            //data.SolveTaskA();
+            //MessageInfo->Show(data.GetCurrentProgress().ToString(), "Прогресс: " + User);
+            //DataLoad();
+            //LoadHomePage();
+            int a = GetTasksCompletedCount(-7);
+            MessageInfo->Show(a.ToString(), "countOfWEkk");
         }
 };
 }
