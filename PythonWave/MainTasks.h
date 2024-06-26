@@ -367,30 +367,35 @@ void mainForm::PyRun(String^ code) {
 		}
 
 		ClassProgress^ progress = gcnew ClassProgress(User);
-		validate->SolveTask(CurrentTask);
-		validate->SetTaskCompletionDate(CurrentTask);
 
 		int points;
 		if (CurrentDifficulty == "easy") {
 			progress->SolveTaskB();
 			points = progress->getTaskPoint(1);
+			validate->completedB_count++;
 		}
 		else if (CurrentDifficulty == "middle") {
 			progress->SolveTaskA();
 			points = progress->getTaskPoint(2);
+			validate->completedA_count++;
 		}
 		else if (CurrentDifficulty == "hard") {
 			progress->SolveTaskS();
 			points = progress->getTaskPoint(3);
+			validate->completedS_count++;
 		}
 		else if (CurrentDifficulty == "very_hard") {
 			progress->SolveTaskSplus();
 			points = progress->getTaskPoint(4);
+			validate->completedSplus_count++;
 		}
 		else {
 			MessageError->Show("CurrentDifficulty не определена", "Ошибка PyRun()");
 			return;
 		}
+
+		validate->SolveTask(CurrentTask);
+		validate->SetTaskCompletionDate(CurrentTask);
 
 		String^ text = "баллов";
 		if (points == 1)
@@ -455,5 +460,128 @@ Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	else {
 		MessageWarning->Show("Для сохранения вам нужно успешно протестировать код, затем сразу сохранить его.", "Внимание");
+	}
+}
+
+
+Void mainForm::btnReport_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ period = dropdownReport->Text;
+	ClassTasks^ data = gcnew ClassTasks(User);
+	String^ taskStates = data->GetTaskStates();
+	int completed = 0;
+
+	if (period == "Период") {
+		MessageWarning->Show("Для получения отчета выберите период", "Внимание");
+		return;
+	}
+
+	DateTime endDate = DateTime::Now;
+	DateTime startDate;
+
+	if (period == "1 Неделя") {
+		startDate = endDate.AddDays(-7);
+	}
+	else if (period == "2 Недели") {
+		startDate = endDate.AddDays(-14);
+	}
+	else if (period == "3 Недели") {
+		startDate = endDate.AddDays(-21);
+	}
+	else if (period == "4 Недели") {
+		startDate = endDate.AddDays(-28);
+	}
+	else if (period == "Месяц") {
+		startDate = endDate.AddMonths(-1);
+	}
+	else {
+		period = "1 Неделя";
+		startDate = endDate.AddDays(-7);
+	}
+
+	completed = data->getCompletedCount(startDate, endDate);
+	String^ MaxDiff = data->getMaxDifficulty();
+
+	array<String^>^ EzTasks = { "add", "multiply", "divide", "subtract", "even_or_odd" };
+	array<String^>^ MidTasks = { "better_than_average", "positive_sum", "reverse_seq" };
+	array<String^>^ HardTasks = { "get_count", "high_and_low", "square_digits" };
+	array<String^>^ VeryHardTasks = { "get_char", "symmetric_point", "get_middle" };
+
+	int ezCount = 0, midCount = 0, hardCount = 0, veryHardCount = 0;
+	String^ ezTasksCompleted = "";
+	String^ midTasksCompleted = "";
+	String^ hardTasksCompleted = "";
+	String^ veryHardTasksCompleted = "";
+
+	for each (KeyValuePair<String^, bool> kvp in data->taskDict) {
+		if (kvp.Value) {
+			if (Array::IndexOf(EzTasks, kvp.Key) != -1) {
+				ezCount++;
+				ezTasksCompleted += kvp.Key + ", ";
+			}
+			else if (Array::IndexOf(MidTasks, kvp.Key) != -1) {
+				midCount++;
+				midTasksCompleted += kvp.Key + ", ";
+			}
+			else if (Array::IndexOf(HardTasks, kvp.Key) != -1) {
+				hardCount++;
+				hardTasksCompleted += kvp.Key + ", ";
+			}
+			else if (Array::IndexOf(VeryHardTasks, kvp.Key) != -1) {
+				veryHardCount++;
+				veryHardTasksCompleted += kvp.Key + ", ";
+			}
+		}
+	}
+
+	// Удаляем последние запятые и пробелы, если есть
+	if (ezTasksCompleted->Length > 0) ezTasksCompleted = ezTasksCompleted->Substring(0, ezTasksCompleted->Length - 2);
+	if (midTasksCompleted->Length > 0) midTasksCompleted = midTasksCompleted->Substring(0, midTasksCompleted->Length - 2);
+	if (hardTasksCompleted->Length > 0) hardTasksCompleted = hardTasksCompleted->Substring(0, hardTasksCompleted->Length - 2);
+	if (veryHardTasksCompleted->Length > 0) veryHardTasksCompleted = veryHardTasksCompleted->Substring(0, veryHardTasksCompleted->Length - 2);
+
+	String^ FullMessage = "Количество решенных задач: " + completed.ToString() + "\n\n";
+	FullMessage += "Легкие задачи:\nКол-во: " + ezCount + "\nРешенные задачи: " + ezTasksCompleted + "\n\n";
+	FullMessage += "Средние задачи:\nКол-во: " + midCount + "\nРешенные задачи: " + midTasksCompleted + "\n\n";
+	FullMessage += "Сложные задачи:\nКол-во: " + hardCount + "\nРешенные задачи: " + hardTasksCompleted + "\n\n";
+	FullMessage += "Очень сложные задачи:\nКол-во: " + veryHardCount + "\nРешенные задачи: " + veryHardTasksCompleted + "\n\n";
+	FullMessage += "Желаете экспортировать отчет?";
+
+	String^ caption = "Отчет за период: " + period;
+
+	if (MessageQuestion->Show(FullMessage, caption) == ::DialogResult::Yes) {
+		SaveReportToFile(FullMessage);
+	}
+}
+
+Void mainForm::SaveReportToFile(String^ reportContent) {
+	SaveFileDialog^ saveFileDialog = gcnew SaveFileDialog();
+	saveFileDialog->Filter = "Text File|*.txt";
+	saveFileDialog->Title = "Сохранить отчет";
+
+	// Генерируем имя файла с текущей датой в формате "ДД.ММ"
+	String^ defaultFileName = "Отчет " + DateTime::Now.ToString("dd.MM") + ".txt";
+	saveFileDialog->FileName = defaultFileName;
+
+	if (saveFileDialog->ShowDialog() == ::DialogResult::OK && saveFileDialog->FileName != "") {
+		try {
+			StreamWriter^ sw = gcnew StreamWriter(saveFileDialog->FileName);
+			// Убираем строку "Желаете экспортировать отчет?"
+			int exportQuestionIndex = reportContent->LastIndexOf("Желаете экспортировать отчет?");
+			if (exportQuestionIndex != -1) {
+				reportContent = reportContent->Substring(0, exportQuestionIndex);
+			}
+			sw->Write(reportContent);
+
+			// Добавляем информацию о дате отчета
+			sw->WriteLine();
+			sw->WriteLine("Отчет создан: " + DateTime::Now.ToString("dd.MM.yyyy HH:mm:ss"));
+			sw->WriteLine("Делитесь своими успехами с окружающими! С уважением PythonWave.");
+
+			sw->Close();
+			MessageBox::Show("Отчет успешно сохранен!", "Успех", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Ошибка при сохранении отчета: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
 	}
 }

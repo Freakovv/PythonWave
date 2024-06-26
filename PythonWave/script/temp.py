@@ -1,3 +1,5 @@
-# Верните из функции резльутат суммы двух переменных
-def add(a, b):
-    a + b
+def even_or_odd(number):
+	if number % 2 == 0:
+		return "Even"
+	else:
+		return "Odd"

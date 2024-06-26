@@ -11,20 +11,22 @@ using namespace System::Text;
 
 ref class ClassTasks
 {
-private:
-	String^ pathToTasksState;
+private: 
+	String^ pathToTasksState; 
+	String^ pathToCounters;
+
+public:
 	Dictionary<String^, bool>^ taskDict;
 	Dictionary<String^, DateTime>^ taskCompletionDates;
-
 	int completedA_count = 0;
 	int completedB_count = 0;
 	int completedS_count = 0;
 	int completedSplus_count = 0;
-
-public:
+	
 	ClassTasks(String^ User) {
 		if (!String::IsNullOrEmpty(User)) {
 			pathToTasksState = User + "//tasks_state.bin";
+			pathToCounters = User + "//counters.bin";
 		}
 		else {
 			MessageBox::Show("Code: 404\nUser not found", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -40,14 +42,20 @@ public:
 		else {
 			SaveTaskState();
 		}
+		if (File::Exists(pathToCounters)) {
+			LoadCounters();
+		}
+		else {
+			SaveCounters();
+		}
 	}
 
-	void ShowTaskStates() {
-		String^ message = "Task States:\n";
+	String^ GetTaskStates() {
+		String^ message;
 		for each (KeyValuePair<String^, bool> kvp in taskDict) {
 			message += kvp.Key + ": " + kvp.Value.ToString() + "\n";
 		}
-		MessageBox::Show(message, "Task States", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		return message;
 	}
 	void SolveTask(String^ TaskName) {
 		SetTaskValue(TaskName, true);
@@ -69,21 +77,7 @@ public:
 
 		if (taskDict->ContainsKey(taskName)) {
 			taskCompletionDates[taskName] = DateTime::Now;
-			SaveTaskState();
-
-			if (Array::IndexOf(EzTasks, taskName) >= 0) {
-				++completedB_count;
-			}
-			else if (Array::IndexOf(MidTasks, taskName) >= 0) {
-				++completedA_count;
-			}
-			else if (Array::IndexOf(HardTasks, taskName) >= 0) {
-				++completedS_count;
-			}
-			else if (Array::IndexOf(VeryHardTasks, taskName) >= 0) {
-				++completedSplus_count;
-			}
-
+			SaveCounters();
 			SaveTaskState();
 		}
 	}
@@ -93,11 +87,12 @@ public:
 			return "Очень сложная";
 		else if (completedS_count > 0)
 			return "Сложная";
-		else if (completedB_count > 0)
-			return "Средняя";
 		else if (completedA_count > 0)
+			return "Средняя";
+		else if (completedB_count > 0)
 			return "Легкая";
-		return "Нет выполненных задач";
+		else
+			return "Нет выполненных задач";
 	}
 
 	int getCompletedCount(DateTime start, DateTime end) {
@@ -180,17 +175,6 @@ private:
 				}
 			}
 
-			if (index + sizeof(int) * 4 <= decryptedData->Length) {
-				completedB_count = BitConverter::ToInt32(decryptedData, index);
-				index += sizeof(int);
-				completedA_count = BitConverter::ToInt32(decryptedData, index);
-				index += sizeof(int);
-				completedS_count = BitConverter::ToInt32(decryptedData, index);
-				index += sizeof(int);
-				completedSplus_count = BitConverter::ToInt32(decryptedData, index);
-				index += sizeof(int);
-			}
-
 			br->Close();
 			fs->Close();
 		}
@@ -198,7 +182,6 @@ private:
 			MessageBox::Show("Error loading task state: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
-
 	void SaveTaskState() {
 		array<Byte>^ key = { 0x10, 0x20, 0x30, 0x40, 0x50 };
 
@@ -222,6 +205,26 @@ private:
 				dataBytes->AddRange(dateBytes);
 			}
 
+			array<Byte>^ encryptedData = gcnew array<Byte>(dataBytes->Count);
+			for (int i = 0; i < dataBytes->Count; i++) {
+				encryptedData[i] = dataBytes[i] ^ key[i % key->Length];
+			}
+
+			FileStream^ fs = gcnew FileStream(pathToTasksState, FileMode::Create, FileAccess::Write);
+			BinaryWriter^ bw = gcnew BinaryWriter(fs);
+			bw->Write(encryptedData);
+			bw->Close();
+			fs->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Error saving task state: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+	void SaveCounters() {
+		array<Byte>^ key = { 0x10, 0x20, 0x30, 0x40, 0x50 };
+
+		try {
+			List<Byte>^ dataBytes = gcnew List<Byte>();
 			array<Byte>^ bCountBytes = BitConverter::GetBytes(completedB_count);
 			array<Byte>^ aCountBytes = BitConverter::GetBytes(completedA_count);
 			array<Byte>^ sCountBytes = BitConverter::GetBytes(completedS_count);
@@ -237,14 +240,48 @@ private:
 				encryptedData[i] = dataBytes[i] ^ key[i % key->Length];
 			}
 
-			FileStream^ fs = gcnew FileStream(pathToTasksState, FileMode::Create, FileAccess::Write);
+			FileStream^ fs = gcnew FileStream(pathToCounters, FileMode::Create, FileAccess::Write);
 			BinaryWriter^ bw = gcnew BinaryWriter(fs);
 			bw->Write(encryptedData);
 			bw->Close();
 			fs->Close();
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show("Error saving task state: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Error saving counters: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+	}
+	void LoadCounters() {
+		array<Byte>^ key = { 0x10, 0x20, 0x30, 0x40, 0x50 };
+
+		if (!File::Exists(pathToCounters))
+			return;
+
+		try {
+			FileStream^ fs = gcnew FileStream(pathToCounters, FileMode::Open, FileAccess::Read);
+			BinaryReader^ br = gcnew BinaryReader(fs);
+
+			array<Byte>^ encryptedData = br->ReadBytes((int)fs->Length);
+			array<Byte>^ decryptedData = gcnew array<Byte>(encryptedData->Length);
+
+			for (int i = 0; i < encryptedData->Length; i++) {
+				decryptedData[i] = encryptedData[i] ^ key[i % key->Length];
+			}
+
+			int index = 0;
+			completedB_count = BitConverter::ToInt32(decryptedData, index);
+			index += sizeof(int);
+			completedA_count = BitConverter::ToInt32(decryptedData, index);
+			index += sizeof(int);
+			completedS_count = BitConverter::ToInt32(decryptedData, index);
+			index += sizeof(int);
+			completedSplus_count = BitConverter::ToInt32(decryptedData, index);
+			index += sizeof(int);
+
+			br->Close();
+			fs->Close();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("Error loading counters: " + ex->Message, "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
 	}
 
