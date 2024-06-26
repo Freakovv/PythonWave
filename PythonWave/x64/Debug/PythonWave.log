@@ -52,20 +52,20 @@ E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll(1,1): warning
 E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll(1,1): warning C4945: 'RPoint': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll': as 'TheArtOfDev::HtmlRenderer::Adapters::Entities::RPoint' has already been imported from another assembly 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll'
 E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll(1,1): warning C4945: 'RRect': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll': as 'TheArtOfDev::HtmlRenderer::Adapters::Entities::RRect' has already been imported from another assembly 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll'
 E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll(1,1): warning C4945: 'RSize': cannot import symbol from 'E:\.Coding\PythonWave\PythonWave\x64\Debug\Siticone.Desktop.UI.dll': as 'TheArtOfDev::HtmlRenderer::Adapters::Entities::RSize' has already been imported from another assembly 'E:\.Coding\PythonWave\x64\Debug\Bunifu.UI.WinForms.BunifuLabel.dll'
-E:\.Coding\PythonWave\PythonWave\auth.h(426,42): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\auth.h(631,44): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\auth.h(701,43): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\profile.h(839,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\profile-header.h(134,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-E:\.Coding\PythonWave\PythonWave\mainForm.h(235,18): warning C4677: 'Fade': signature of non-private member contains assembly private type 'ClassFade'
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1564,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1605,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1646,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1700,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
-E:\.Coding\PythonWave\PythonWave\mainForm.h(1932,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(425,42): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(630,44): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\auth.h(700,43): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\profile.h(821,41): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\profile-header.h(134,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\.Coding\PythonWave\PythonWave\mainForm.h(271,20): warning C4677: 'Fade': signature of non-private member contains assembly private type 'ClassFade'
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1460,51): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1501,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1542,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1596,50): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
+E:\.Coding\PythonWave\PythonWave\mainForm.h(1828,47): warning C4566: character represented by universal-character-name '\u25CF' cannot be represented in the current code page (1251)
 E:\.Coding\PythonWave\PythonWave\MainMenu.h(80,2): warning C4809: switch statement has redundant 'default' label; all possible 'case' labels are given
 E:\.Coding\PythonWave\PythonWave\MainTasks.h(51,14): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
 E:\.Coding\PythonWave\PythonWave\MainTasks.h(52,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+E:\.Coding\PythonWave\PythonWave\MainTasks.h(423,21): warning C4101: 'e': unreferenced local variable
 D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
-  main.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PythonWave.vcxproj -> E:\.Coding\PythonWave\x64\Debug\PythonWave.exe

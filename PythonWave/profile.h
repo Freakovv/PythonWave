@@ -2,6 +2,7 @@
 
 namespace PythonWave {
 	using namespace System;
+	using namespace System::Windows;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -10,19 +11,98 @@ namespace PythonWave {
 
 	public ref class profile : public System::Windows::Forms::Form
 	{
+private: 
+	Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
+	Bunifu::UI::WinForms::BunifuPages^ Pages;
+	System::Windows::Forms::TabPage^ pageProfile;
+	Guna::UI2::WinForms::Guna2Button^ buttonResume;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ buttonClose;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ buttonMin;
+	System::Windows::Forms::PictureBox^ pictureBoxUploadImage;
+	Guna::UI2::WinForms::Guna2Button^ buttonUpload;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
+	System::Windows::Forms::LinkLabel^ linkReMail;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
+	Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
+	Guna::UI2::WinForms::Guna2CircleButton^ buttonQuestion;
+	Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
+	System::Windows::Forms::Label^ label3;
+	System::Windows::Forms::Label^ label1;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
+	System::Windows::Forms::Label^ label2;
+	Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
+	System::Windows::Forms::TabPage^ pageSuccessful;
+	Guna::UI2::WinForms::Guna2CustomCheckBox^ guna2CustomCheckBox1;
+	System::Windows::Forms::TabPage^ pageSettings;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogExit;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogQuestion;
+	System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogUpload;
+	System::Windows::Forms::Timer^ timerTransition;
+	System::Windows::Forms::Panel^ panel1;
+	System::Windows::Forms::Label^ labelMain;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
+	System::Windows::Forms::TabPage^ pageEnd;
+	Guna::UI2::WinForms::Guna2Button^ buttonResume1;
+	Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel1;
+	Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
+	Bunifu::UI::WinForms::BunifuLabel^ labelEnd;
+	System::Windows::Forms::Panel^ panel2;
+	Bunifu::UI::WinForms::BunifuLabel^ labelClose;
+	System::Windows::Forms::Timer^ timerCheckBox;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
+	Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
+	Guna::UI2::WinForms::Guna2DragControl^ dragControlPanel;
+	Guna::UI2::WinForms::Guna2DragControl^ dragControlProfile;
+	System::Windows::Forms::Label^ labelTimer;
+	System::Windows::Forms::Timer^ timerReMail;
+	Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownSex;
+	Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownDay;
+	Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownMonth;
+	Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownYear;
+	System::Windows::Forms::Label^ label4;
+	Guna::UI2::WinForms::Guna2DragControl^ dragSettings;
+	Guna::UI2::WinForms::Guna2DragControl^ dragEnd;
+	Guna::UI2::WinForms::Guna2DragControl^ dragSuccessful;
+	Guna::UI2::WinForms::Guna2DragControl^ dragControlPanel2;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
+	Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
+	Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
+	System::Windows::Forms::Label^ label6;
+	System::Windows::Forms::Label^ label5;
+	System::Windows::Forms::Label^ label7;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
+	Guna::UI2::WinForms::Guna2CircleButton^ guna2CircleButton1;
+	System::Windows::Forms::Label^ label8;
+	Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
+	System::Windows::Forms::Label^ labelBorderForm;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
+	System::Windows::Forms::Label^ labelVolume;
+	System::Windows::Forms::Label^ label10;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
+	System::Windows::Forms::Label^ labelBorderBtn;
+	System::Windows::Forms::Label^ label12;
+	Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
+	Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
+	Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
+	Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
+	Guna::UI2::WinForms::Guna2Button^ guna2Button1;
+	System::ComponentModel::IContainer^ components;
+
 	public:
 		String^ UserLogin;
-		profile(String^ l)
+		profile(String^ login)
 		{
 			InitializeComponent();
-			UserLogin = l;
+			UserLogin = login;
 			srand(static_cast<unsigned int>(time(NULL)));
 		}
 
 		profile(void)
 		{
 			InitializeComponent();
-			MessageError->Show("Текущий пользователь не определен");
+			MessageError->Show("Пользователь не был передан в форму");
 			Application::Exit();
 		}
 
@@ -37,106 +117,8 @@ namespace PythonWave {
 			{
 				delete components;
 			}
+			Application::Exit();
 		}
-
-	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
-	private: Bunifu::UI::WinForms::BunifuPages^ Pages;
-	private: System::Windows::Forms::TabPage^ pageProfile;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonResume;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ buttonClose;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ buttonMin;
-	private: System::Windows::Forms::PictureBox^ pictureBoxUploadImage;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonUpload;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxEmail;
-	private: System::Windows::Forms::LinkLabel^ linkReMail;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxCode;
-
-	private: Guna::UI2::WinForms::Guna2Button^ buttonSendMail;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonQuestion;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonCheckCode;
-
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label1;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserSurname;
-	private: System::Windows::Forms::Label^ label2;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxUserName;
-	private: System::Windows::Forms::TabPage^ pageSuccessful;
-	private: Guna::UI2::WinForms::Guna2CustomCheckBox^ guna2CustomCheckBox1;
-	private: System::Windows::Forms::TabPage^ pageSettings;
-
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogExit;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogQuestion;
-	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageDialogUpload;
-	private: System::Windows::Forms::Timer^ timerTransition;
-
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Label^ labelMain;
-
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
-	private: System::Windows::Forms::TabPage^ pageEnd;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonResume1;
-	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel1;
-	private: Bunifu::UI::WinForms::BunifuLabel^ labelSettings;
-	private: Bunifu::UI::WinForms::BunifuLabel^ labelEnd;
-	private: System::Windows::Forms::Panel^ panel2;
-
-	private: Bunifu::UI::WinForms::BunifuLabel^ labelClose;
-
-	private: System::Windows::Forms::Timer^ timerCheckBox;
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckCode;
-
-	private: Guna::UI2::WinForms::Guna2CirclePictureBox^ pictureBoxCheckMail;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlPanel;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlProfile;
-	private: System::Windows::Forms::Label^ labelTimer;
-	private: System::Windows::Forms::Timer^ timerReMail;
-	private: Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownSex;
-	private: Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownDay;
-	private: Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownMonth;
-	private: Bunifu::UI::WinForms::BunifuDropdown^ bunifuDropdownYear;
-	private: System::Windows::Forms::Label^ label4;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragSettings;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragEnd;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragSuccessful;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlPanel2;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderForm;
-
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleTransparent;
-
-	private: Guna::UI2::WinForms::Guna2Separator^ guna2Separator1;
-
-	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel2;
-
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label7;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleShadows;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ guna2CircleButton1;
-	private: System::Windows::Forms::Label^ label8;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleGreeting;
-
-	private: System::Windows::Forms::Label^ labelBorderForm;
-
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageInfo;
-	private: System::Windows::Forms::Label^ labelVolume;
-
-	private: System::Windows::Forms::Label^ label10;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackVolume;
-
-	private: System::Windows::Forms::Label^ labelBorderBtn;
-
-	private: System::Windows::Forms::Label^ label12;
-	private: Guna::UI2::WinForms::Guna2TrackBar^ TrackBorderBtn;
-
-	private: Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
-
-	private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
-private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
-
-	protected:
-	private: System::ComponentModel::IContainer^ components;
 
 #pragma region Windows Form Designer generated code
 		   void InitializeComponent(void)
@@ -1724,76 +1706,53 @@ private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 			   this->ResumeLayout(false);
 
 		   }
-
 #pragma endregion
-	private: Boolean succesful = false;
-	private: Void profile_Load(Object^ sender, EventArgs^ e);
 	// Custom functions
-	private: Void SaveData();
-	private: Void SaveConfig();
+private:
+	Boolean succesful = false;
+	Void profile_Load(Object^ sender, EventArgs^ e);
+	Void SaveData();
+	Void SaveConfig();
 
-	private: int generateSecurityCode();
-	private: bool IsValidEmail(String^ email);
-	private: int SecurityCode = generateSecurityCode();
-	private: Void enableMail(bool enable);
-	private: Void DeleteDirectory(String^ folderPath);
+	int generateSecurityCode();
+	bool IsValidEmail(String^ email);
+	int SecurityCode = generateSecurityCode();
+	Void enableMail(bool enable);
+	Void DeleteDirectory(String^ folderPath);
 	// Buttons
-	private: Void buttonSendMail_Click(Object^ sender, EventArgs^ e);
-	private: Void buttonValidateCode_Click(Object^ sender, EventArgs^ e);
-	private: Void ButtonMinimize_Click(Object^ sender, EventArgs^ e);
-	private: Void ButtonExit_Click(Object^ sender, EventArgs^ e);
-	private: Void buttonQuestion_Click(Object^ sender, EventArgs^ e);
-	private: Void buttonUpload_Click(Object^ sender, EventArgs^ e);
-	private: Void buttonResume_Click(Object^ sender, EventArgs^ e);
-
-	private: Void buttonResume1_Click(Object^ sender, EventArgs^ e);
-
+private:
+	Void buttonSendMail_Click(Object^ sender, EventArgs^ e);
+	Void buttonValidateCode_Click(Object^ sender, EventArgs^ e);
+	Void ButtonMinimize_Click(Object^ sender, EventArgs^ e);
+	Void ButtonExit_Click(Object^ sender, EventArgs^ e);
+	Void buttonQuestion_Click(Object^ sender, EventArgs^ e);
+	Void buttonUpload_Click(Object^ sender, EventArgs^ e);
+	Void buttonResume_Click(Object^ sender, EventArgs^ e);
+	Void buttonResume1_Click(Object^ sender, EventArgs^ e);
 		   // TextBoxes
-	private: Void textBoxMail_Click(Object^ sender, EventArgs^);
+	Void textBoxMail_Click(Object^ sender, EventArgs^);
 
 		   // Timers
-	private: Void timer_Tick(Object^ sender, EventArgs^ e);
-	private: Void timerTransition_Tick(Object^ sender, EventArgs^ e);
-	private: Void linkReMail_Click(System::Object^ sender, EventArgs^ e);
+private:
+	Void timer_Tick(Object^ sender, EventArgs^ e);
+	Void timerTransition_Tick(Object^ sender, EventArgs^ e);
+	Void linkReMail_Click(System::Object^ sender, EventArgs^ e);
 
-	private: Void textBoxUserName_Click(System::Object^ sender, EventArgs^ e);
-	private: Void bunifuDropdownSex_Click(System::Object^ sender, EventArgs^ e);
-	private: Void bunifuDropdownDay_Click(System::Object^ sender, EventArgs^ e);
-	private: Void bunifuDropdownMonth_Click(System::Object^ sender, EventArgs^ e);
-	private: Void bunifuDropdownYear_Click(System::Object^ sender, EventArgs^ e);
-	private: Void buttonCloseEnd_Click(System::Object^ sender, System::EventArgs^ e) {
-		ClassFade^ Fade = gcnew ClassFade(this);
-		Fade->SetAnimation("close");
-		Fade = nullptr;
-	}
+	Void textBoxUserName_Click(System::Object^ sender, EventArgs^ e);
+	Void bunifuDropdownSex_Click(System::Object^ sender, EventArgs^ e);
+	Void bunifuDropdownDay_Click(System::Object^ sender, EventArgs^ e);
+	Void bunifuDropdownMonth_Click(System::Object^ sender, EventArgs^ e);
+	Void bunifuDropdownYear_Click(System::Object^ sender, EventArgs^ e);
+	Void buttonCloseEnd_Click(System::Object^ sender, System::EventArgs^ e);
 
-		   //Settings
-
-	private: System::Void guna2TrackBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-		borderlessForm->BorderRadius = TrackBorderForm->Value;
-		labelBorderForm->Text = Convert::ToString(TrackBorderForm->Value);
-	}
-	private: System::Void guna2ToggleSwitch1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		dragSettings->TransparentWhileDrag = toggleTransparent->Checked;
-	}
-	private: System::Void toggleShadows_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-		borderlessForm->HasFormShadow = toggleShadows->Checked;
-		if (borderlessForm->HasFormShadow == false) {
-			MessageInfo->Show("Изменения вступят в силу после перезапуска");
-		}
-	}
-	private: System::Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageInfo->Show("Эта функция на стадии ранней разработки");
-	}
-	private: System::Void guna2TrackBar2_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-		labelVolume->Text = Convert::ToString(TrackVolume->Value);
-	}
-	private: System::Void guna2TrackBar3_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
-		buttonResume1->BorderRadius = TrackBorderBtn->Value;
-		labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
-	}
-	private: System::Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Pages->SelectTab(pageSettings);
-	}
+	//Settings
+private:
+	Void guna2TrackBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
+	Void guna2ToggleSwitch1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	Void toggleShadows_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
+	Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e);
+	Void guna2TrackBar2_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
+	Void guna2TrackBar3_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
+	Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

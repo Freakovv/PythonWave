@@ -10,8 +10,64 @@ namespace PythonWave {
 	using namespace System::Drawing;
 	using namespace System::IO;
 	using namespace System::Reflection;
+	using namespace Guna;
+	using namespace Guna::UI2;
+	using namespace Bunifu;
+	using namespace Bunifu;
+
 	public ref class auth : public System::Windows::Forms::Form
 	{
+	// Элементы Windows Forms
+	TabPage^ pageAuth;
+	TabPage^ pageReg;
+	LinkLabel^ Ы;
+	Label^ label1;
+	Label^ labelRemember;
+	TabPage^ pageMain;
+	TabPage^ pageInfo;
+	Timer^ timerTransition;
+	TabPage^ pageWelcome;
+	TabPage^ PageEnd;
+	Panel^ panelMain;
+	Label^ labelMain;
+	IContainer^ components;
+	// Элементы с сторонних фреймворков
+	WinForms::Guna2CircleButton^ buttonClose;
+	WinForms::Guna2CircleButton^ buttonMinimize;
+	WinForms::Guna2ShadowPanel^ panelAuth;
+	UI::WinForms::BunifuPages^ pagesAuthReg;
+	WinForms::Guna2Button^ buttonShowAuth;
+	WinForms::Guna2Button^ buttonShowReg;
+	WinForms::Guna2Button^ buttonComeIn;
+	WinForms::Guna2CircleButton^ buttonQuestion;
+	WinForms::Guna2ToggleSwitch^ SwitchRemember;
+	WinForms::Guna2TextBox^ textBoxPassword;
+	WinForms::Guna2TextBox^ textBoxLogin;
+	WinForms::Guna2Button^ buttonRegister;
+	WinForms::Guna2TextBox^ textBoxPassword_1;
+	WinForms::Guna2TextBox^ textBoxPassword1;
+	WinForms::Guna2TextBox^ textBoxLogin1;
+	UI::WinForms::BunifuCheckBox^ checkBoxTerms;
+	WinForms::Guna2TextBox^ textBoxTerms;
+	UI::WinForms::BunifuPages^ pagesTransition;
+	WinForms::Guna2MessageDialog^ MessageError;
+	WinForms::Guna2CircleButton^ buttonCloseTerms;
+	WinForms::Guna2PictureBox^ guna2PictureBox1;
+	WinForms::Guna2Panel^ guna2Panel1;
+	WinForms::Guna2HtmlLabel^ labelLogo1;
+	WinForms::Guna2HtmlLabel^ labelWelcome;
+	WinForms::Guna2PictureBox^ guna2PictureBox3;
+	WinForms::Guna2PictureBox^ guna2PictureBox4;
+	WinForms::Guna2MessageDialog^ MessageOption;
+	WinForms::Guna2DragControl^ dragControl1;
+	WinForms::Guna2DragControl^ dragControl2;
+	WinForms::Guna2DragControl^ dragControl3;
+	WinForms::Guna2HtmlLabel^ guna2HtmlLabel1;
+	WinForms::Guna2DragControl^ dragControlMain;
+	WinForms::Guna2DragControl^ dragControlMain2;
+	WinForms::Guna2MessageDialog^ MessageWarning;
+	WinForms::Guna2BorderlessForm^ borderlessForm;
+
 	public:
 		auth(void)
 		{
@@ -29,117 +85,60 @@ namespace PythonWave {
 			}
 		}
 
-	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonClose;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonMinimize;
-	private: Guna::UI2::WinForms::Guna2ShadowPanel^ panelAuth;
-	private: Bunifu::UI::WinForms::BunifuPages^ pagesAuthReg;
-	private: System::Windows::Forms::TabPage^ pageAuth;
-	private: System::Windows::Forms::TabPage^ pageReg;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonShowAuth;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonShowReg;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonComeIn;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonQuestion;
-	private: System::Windows::Forms::Label^ labelRemember;
-	private: Guna::UI2::WinForms::Guna2ToggleSwitch^ SwitchRemember;
-
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassword;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxLogin;
-	private: Guna::UI2::WinForms::Guna2Button^ buttonRegister;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassword_1;
-	private: System::Windows::Forms::LinkLabel^ Ы;
-	private: System::Windows::Forms::Label^ label1;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxPassword1;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxLogin1;
-	private: Bunifu::UI::WinForms::BunifuCheckBox^ checkBoxTerms;
-	private: Guna::UI2::WinForms::Guna2TextBox^ textBoxTerms;
-	private: Bunifu::UI::WinForms::BunifuPages^ pagesTransition;
-	private: System::Windows::Forms::TabPage^ pageMain;
-	private: System::Windows::Forms::TabPage^ pageInfo;
-
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageError;
-	private: Guna::UI2::WinForms::Guna2CircleButton^ buttonCloseTerms;
-	private: System::Windows::Forms::Timer^ timerTransition;
-	private: Guna::UI2::WinForms::Guna2PictureBox^ guna2PictureBox1;
-	private: Guna::UI2::WinForms::Guna2Panel^ guna2Panel1;
-	private: Guna::UI2::WinForms::Guna2HtmlLabel^ labelLogo1;
-	private: System::Windows::Forms::TabPage^ pageWelcome;
-	private: Guna::UI2::WinForms::Guna2HtmlLabel^ labelWelcome;
-	private: Guna::UI2::WinForms::Guna2PictureBox^ guna2PictureBox3;
-	private: Guna::UI2::WinForms::Guna2PictureBox^ guna2PictureBox4;
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageOption;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControl1;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControl2;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControl3;
-	private: System::Windows::Forms::TabPage^ PageEnd;
-	private: Guna::UI2::WinForms::Guna2HtmlLabel^ guna2HtmlLabel1;
-	private: System::Windows::Forms::Panel^ panelMain;
-	private: System::Windows::Forms::Label^ labelMain;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlMain;
-	private: Guna::UI2::WinForms::Guna2DragControl^ dragControlMain2;
-
-	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
-	private: Guna::UI2::WinForms::Guna2BorderlessForm^ borderlessForm;
-
-	protected:
-	private: System::ComponentModel::IContainer^ components;
-	protected:
-	private:
-
 #pragma region Windows Form Designer generated code
-
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(auth::typeid));
 			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
 			Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation1 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
-			this->buttonClose = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
-			this->buttonMinimize = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
-			this->panelAuth = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
-			this->pagesAuthReg = (gcnew Bunifu::UI::WinForms::BunifuPages());
+			this->buttonClose = (gcnew WinForms::Guna2CircleButton());
+			this->buttonMinimize = (gcnew WinForms::Guna2CircleButton());
+			this->panelAuth = (gcnew WinForms::Guna2ShadowPanel());
+			this->pagesAuthReg = (gcnew UI::WinForms::BunifuPages());
 			this->pageAuth = (gcnew System::Windows::Forms::TabPage());
-			this->guna2PictureBox3 = (gcnew Guna::UI2::WinForms::Guna2PictureBox());
-			this->buttonComeIn = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->buttonQuestion = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
-			this->textBoxLogin = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->textBoxPassword = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->SwitchRemember = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
+			this->guna2PictureBox3 = (gcnew WinForms::Guna2PictureBox());
+			this->buttonComeIn = (gcnew WinForms::Guna2Button());
+			this->buttonQuestion = (gcnew WinForms::Guna2CircleButton());
+			this->textBoxLogin = (gcnew WinForms::Guna2TextBox());
+			this->textBoxPassword = (gcnew WinForms::Guna2TextBox());
+			this->SwitchRemember = (gcnew WinForms::Guna2ToggleSwitch());
 			this->labelRemember = (gcnew System::Windows::Forms::Label());
 			this->pageReg = (gcnew System::Windows::Forms::TabPage());
-			this->guna2PictureBox4 = (gcnew Guna::UI2::WinForms::Guna2PictureBox());
-			this->checkBoxTerms = (gcnew Bunifu::UI::WinForms::BunifuCheckBox());
-			this->buttonRegister = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->textBoxPassword_1 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
+			this->guna2PictureBox4 = (gcnew WinForms::Guna2PictureBox());
+			this->checkBoxTerms = (gcnew UI::WinForms::BunifuCheckBox());
+			this->buttonRegister = (gcnew WinForms::Guna2Button());
+			this->textBoxPassword_1 = (gcnew WinForms::Guna2TextBox());
 			this->Ы = (gcnew System::Windows::Forms::LinkLabel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBoxPassword1 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->textBoxLogin1 = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->guna2Panel1 = (gcnew Guna::UI2::WinForms::Guna2Panel());
-			this->labelLogo1 = (gcnew Guna::UI2::WinForms::Guna2HtmlLabel());
-			this->guna2PictureBox1 = (gcnew Guna::UI2::WinForms::Guna2PictureBox());
-			this->buttonShowReg = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->buttonShowAuth = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->buttonCloseTerms = (gcnew Guna::UI2::WinForms::Guna2CircleButton());
-			this->textBoxTerms = (gcnew Guna::UI2::WinForms::Guna2TextBox());
-			this->pagesTransition = (gcnew Bunifu::UI::WinForms::BunifuPages());
+			this->textBoxPassword1 = (gcnew WinForms::Guna2TextBox());
+			this->textBoxLogin1 = (gcnew WinForms::Guna2TextBox());
+			this->guna2Panel1 = (gcnew WinForms::Guna2Panel());
+			this->labelLogo1 = (gcnew WinForms::Guna2HtmlLabel());
+			this->guna2PictureBox1 = (gcnew WinForms::Guna2PictureBox());
+			this->buttonShowReg = (gcnew WinForms::Guna2Button());
+			this->buttonShowAuth = (gcnew WinForms::Guna2Button());
+			this->buttonCloseTerms = (gcnew WinForms::Guna2CircleButton());
+			this->textBoxTerms = (gcnew WinForms::Guna2TextBox());
+			this->pagesTransition = (gcnew UI::WinForms::BunifuPages());
 			this->pageMain = (gcnew System::Windows::Forms::TabPage());
 			this->pageWelcome = (gcnew System::Windows::Forms::TabPage());
-			this->labelWelcome = (gcnew Guna::UI2::WinForms::Guna2HtmlLabel());
+			this->labelWelcome = (gcnew WinForms::Guna2HtmlLabel());
 			this->pageInfo = (gcnew System::Windows::Forms::TabPage());
-			this->guna2HtmlLabel1 = (gcnew Guna::UI2::WinForms::Guna2HtmlLabel());
+			this->guna2HtmlLabel1 = (gcnew WinForms::Guna2HtmlLabel());
 			this->PageEnd = (gcnew System::Windows::Forms::TabPage());
-			this->MessageError = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
+			this->MessageError = (gcnew WinForms::Guna2MessageDialog());
 			this->timerTransition = (gcnew System::Windows::Forms::Timer(this->components));
-			this->MessageOption = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->dragControl1 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-			this->dragControl2 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-			this->dragControl3 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
+			this->MessageOption = (gcnew WinForms::Guna2MessageDialog());
+			this->dragControl1 = (gcnew WinForms::Guna2DragControl(this->components));
+			this->dragControl2 = (gcnew WinForms::Guna2DragControl(this->components));
+			this->dragControl3 = (gcnew WinForms::Guna2DragControl(this->components));
 			this->panelMain = (gcnew System::Windows::Forms::Panel());
 			this->labelMain = (gcnew System::Windows::Forms::Label());
-			this->dragControlMain = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-			this->dragControlMain2 = (gcnew Guna::UI2::WinForms::Guna2DragControl(this->components));
-			this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
-			this->borderlessForm = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
+			this->dragControlMain = (gcnew WinForms::Guna2DragControl(this->components));
+			this->dragControlMain2 = (gcnew WinForms::Guna2DragControl(this->components));
+			this->MessageWarning = (gcnew WinForms::Guna2MessageDialog());
+			this->borderlessForm = (gcnew WinForms::Guna2BorderlessForm(this->components));
 			this->panelAuth->SuspendLayout();
 			this->pagesAuthReg->SuspendLayout();
 			this->pageAuth->SuspendLayout();
@@ -172,7 +171,7 @@ namespace PythonWave {
 			this->buttonClose->ImageOffset = System::Drawing::Point(0, 12);
 			this->buttonClose->Location = System::Drawing::Point(1251, 5);
 			this->buttonClose->Name = L"buttonClose";
-			this->buttonClose->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonClose->ShadowDecoration->Mode = WinForms::Enums::ShadowMode::Circle;
 			this->buttonClose->Size = System::Drawing::Size(20, 21);
 			this->buttonClose->TabIndex = 0;
 			this->buttonClose->Text = L"guna2CircleButton1";
@@ -196,7 +195,7 @@ namespace PythonWave {
 			this->buttonMinimize->ImageOffset = System::Drawing::Point(0, 12);
 			this->buttonMinimize->Location = System::Drawing::Point(1225, 5);
 			this->buttonMinimize->Name = L"buttonMinimize";
-			this->buttonMinimize->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonMinimize->ShadowDecoration->Mode = WinForms::Enums::ShadowMode::Circle;
 			this->buttonMinimize->Size = System::Drawing::Size(20, 21);
 			this->buttonMinimize->TabIndex = 1;
 			this->buttonMinimize->Text = L"guna2CircleButton2";
@@ -341,7 +340,7 @@ namespace PythonWave {
 			this->buttonQuestion->ImageOffset = System::Drawing::Point(0, 12);
 			this->buttonQuestion->Location = System::Drawing::Point(226, 284);
 			this->buttonQuestion->Name = L"buttonQuestion";
-			this->buttonQuestion->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonQuestion->ShadowDecoration->Mode = WinForms::Enums::ShadowMode::Circle;
 			this->buttonQuestion->Size = System::Drawing::Size(20, 20);
 			this->buttonQuestion->TabIndex = 8;
 			this->buttonQuestion->Text = L"guna2CircleButton1";
@@ -512,10 +511,10 @@ namespace PythonWave {
 			this->checkBoxTerms->BackColor = System::Drawing::Color::Transparent;
 			this->checkBoxTerms->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"checkBoxTerms.BackgroundImage")));
 			this->checkBoxTerms->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->checkBoxTerms->BindingControlPosition = Bunifu::UI::WinForms::BunifuCheckBox::BindingControlPositions::Right;
+			this->checkBoxTerms->BindingControlPosition = UI::WinForms::BunifuCheckBox::BindingControlPositions::Right;
 			this->checkBoxTerms->BorderRadius = 12;
 			this->checkBoxTerms->Checked = false;
-			this->checkBoxTerms->CheckState = Bunifu::UI::WinForms::BunifuCheckBox::CheckStates::Unchecked;
+			this->checkBoxTerms->CheckState = UI::WinForms::BunifuCheckBox::CheckStates::Unchecked;
 			this->checkBoxTerms->Cursor = System::Windows::Forms::Cursors::Default;
 			this->checkBoxTerms->CustomCheckmarkImage = nullptr;
 			this->checkBoxTerms->Location = System::Drawing::Point(33, 320);
@@ -551,7 +550,7 @@ namespace PythonWave {
 			this->checkBoxTerms->OnUncheck->BorderThickness = 1;
 			this->checkBoxTerms->OnUncheck->CheckBoxColor = System::Drawing::Color::Transparent;
 			this->checkBoxTerms->Size = System::Drawing::Size(21, 21);
-			this->checkBoxTerms->Style = Bunifu::UI::WinForms::BunifuCheckBox::CheckBoxStyles::Bunifu;
+			this->checkBoxTerms->Style = UI::WinForms::BunifuCheckBox::CheckBoxStyles::Bunifu;
 			this->checkBoxTerms->TabIndex = 20;
 			this->checkBoxTerms->ThreeState = false;
 			this->checkBoxTerms->ToolTipText = nullptr;
@@ -787,7 +786,7 @@ namespace PythonWave {
 			//
 			this->buttonShowReg->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->buttonShowReg->Animated = true;
-			this->buttonShowReg->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->buttonShowReg->ButtonMode = WinForms::Enums::ButtonMode::RadioButton;
 			this->buttonShowReg->CheckedState->BorderColor = System::Drawing::Color::Black;
 			this->buttonShowReg->CheckedState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
@@ -824,7 +823,7 @@ namespace PythonWave {
 			//
 			this->buttonShowAuth->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom));
 			this->buttonShowAuth->Animated = true;
-			this->buttonShowAuth->ButtonMode = Guna::UI2::WinForms::Enums::ButtonMode::RadioButton;
+			this->buttonShowAuth->ButtonMode = WinForms::Enums::ButtonMode::RadioButton;
 			this->buttonShowAuth->Checked = true;
 			this->buttonShowAuth->CheckedState->CustomBorderColor = System::Drawing::Color::White;
 			this->buttonShowAuth->CheckedState->FillColor = System::Drawing::Color::Transparent;
@@ -869,7 +868,7 @@ namespace PythonWave {
 			this->buttonCloseTerms->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCloseTerms.Image")));
 			this->buttonCloseTerms->Location = System::Drawing::Point(1084, 57);
 			this->buttonCloseTerms->Name = L"buttonCloseTerms";
-			this->buttonCloseTerms->ShadowDecoration->Mode = Guna::UI2::WinForms::Enums::ShadowMode::Circle;
+			this->buttonCloseTerms->ShadowDecoration->Mode = WinForms::Enums::ShadowMode::Circle;
 			this->buttonCloseTerms->Size = System::Drawing::Size(20, 21);
 			this->buttonCloseTerms->TabIndex = 4;
 			this->buttonCloseTerms->UseTransparentBackground = true;
@@ -1021,11 +1020,11 @@ namespace PythonWave {
 			//
 			// MessageError
 			//
-			this->MessageError->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageError->Buttons = WinForms::MessageDialogButtons::OK;
 			this->MessageError->Caption = L"Ошибка";
-			this->MessageError->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
+			this->MessageError->Icon = WinForms::MessageDialogIcon::Error;
 			this->MessageError->Parent = this;
-			this->MessageError->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageError->Style = WinForms::MessageDialogStyle::Dark;
 			this->MessageError->Text = L"";
 			//
 			// timerTransition
@@ -1035,11 +1034,11 @@ namespace PythonWave {
 			//
 			// MessageOption
 			//
-			this->MessageOption->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageOption->Buttons = WinForms::MessageDialogButtons::OK;
 			this->MessageOption->Caption = L"Запомнить меня";
-			this->MessageOption->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
+			this->MessageOption->Icon = WinForms::MessageDialogIcon::Information;
 			this->MessageOption->Parent = this;
-			this->MessageOption->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageOption->Style = WinForms::MessageDialogStyle::Dark;
 			this->MessageOption->Text = L"Это опция позволяет сохранить ваши данные при последующем входе";
 			//
 			// dragControl1
@@ -1101,11 +1100,11 @@ namespace PythonWave {
 			//
 			// MessageWarning
 			//
-			this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
+			this->MessageWarning->Buttons = WinForms::MessageDialogButtons::OK;
 			this->MessageWarning->Caption = L"Внимание";
-			this->MessageWarning->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
+			this->MessageWarning->Icon = WinForms::MessageDialogIcon::Warning;
 			this->MessageWarning->Parent = this;
-			this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
+			this->MessageWarning->Style = WinForms::MessageDialogStyle::Dark;
 			this->MessageWarning->Text = L"Введите пароль";
 			//
 			// borderlessForm
@@ -1154,52 +1153,37 @@ namespace PythonWave {
 			this->panelMain->PerformLayout();
 			this->ResumeLayout(false);
 		}
-
 #pragma endregion
-		String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
+	String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
 
-		// Форма - Анимации, кнопочки
-	private: Void LastEnter();
-	private: Void auth::loadConfig();
+	// Форма
+private:
+	Void LastEnter();
+	Void auth::loadConfig();
 
-	private: Void buttonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e);
-	private: Void buttonShowReg_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void buttonShowAuth_Click(System::Object^ sender, System::EventArgs^ e);
+	Void buttonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
+	Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e);
+	Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e);
+	Void buttonShowReg_Click(System::Object^ sender, System::EventArgs^ e);
+	Void buttonShowAuth_Click(System::Object^ sender, System::EventArgs^ e);
 
-		   //Регистрация
-	private: Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void Register();
-	private: Void buttonCloseTerms_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void linkLabelTerms_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+	//Регистрация
+private:
+	Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
+	Void Register();
+	Void buttonCloseTerms_Click(System::Object^ sender, System::EventArgs^ e);
+	Void linkLabelTerms_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
 
-		   //Вход
-	private: Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Boolean ComeIn();
-
-	private: String^ ReadLogFile();
-	private: Void CreateLogFile();
-	private: Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void auth_Load(System::Object^ sender, System::EventArgs^ e);
-
-	private: System::Void textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBoxLogin->BorderColor = Color::White;
-	}
-	private: System::Void textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBoxPassword->BorderColor = Color::White;
-	}
-
-		   void setShadows() {
-			   if (Directory::Exists("logs")) {
-				   this->borderlessForm->HasFormShadow = false;
-			   }
-			   else if (File::Exists("config.xml")) {
-				   Config^ cfg = gcnew Config();
-				   cfg->LoadConfig();
-				   this->borderlessForm->HasFormShadow = cfg->hasFormShadow;
-				   cfg = nullptr;
-			   }
-		   }
+	//Вход
+private: 
+	Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
+	Boolean ComeIn();
+	String^ ReadLogFile();
+	Void CreateLogFile();
+	Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
+	Void auth_Load(System::Object^ sender, System::EventArgs^ e);
+	Void textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e);
+	Void textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e);
+	void setShadows();
 	};
 }

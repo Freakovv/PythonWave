@@ -14,10 +14,11 @@ using namespace System::IO;
 int sec = 4;
 int animation_mode = 1; // 1,2,3 - Цепочка анимации регистрации, 4 - Переход на main с приветствием
 bool greeting = true;
-void authToProfile(String^ construct); // Функция для перехода
-void authToMain(String^ construct); // Функция для перехода
+void authToProfile(String^ construct); // Функция для перехода определена в general.h
+void authToMain(String^ construct); // Функция для перехода определена в general.h
+void SetCenter(Control^ back, Control^ control, int mode); // Функция чтобы установил элемент по середине 
 
-// Функция для чтения last usera
+// Функция для чтения (Запомнить меня)
 String^ auth::ReadLogFile() {
 	String^ content = "";
 	try {
@@ -42,7 +43,7 @@ String^ auth::ReadLogFile() {
 	return content;
 }
 
-// Функция для запоминания last usera
+// Функция для записи (Запомнить меня)
 Void auth::CreateLogFile() {
 	try {
 		// Создаем папку с полученным логином
@@ -63,7 +64,6 @@ Void auth::CreateLogFile() {
 	}
 }
 
-void SetCenter(Control^ back, Control^ control, int mode);
 
 Void auth::LastEnter() {
 	if (greeting) {
@@ -84,24 +84,26 @@ Void auth::LastEnter() {
 }
 
 Void auth::loadConfig() {
-	Config^ config = config->LoadConfig();
-	// Настройки формы
+	if (File::Exists("config.xml")) {
+		Config^ config = config->LoadConfig();
+		// Настройки формы
 
-	// Закругленность, тень формы
-	borderlessForm->BorderRadius = config->borderForm;
-	borderlessForm->HasFormShadow = config->hasFormShadow;
+		// Закругленность, тень формы
+		borderlessForm->BorderRadius = config->borderForm;
+		borderlessForm->HasFormShadow = config->hasFormShadow;
 
-	// Закругленность кнопок
-	buttonComeIn->BorderRadius = config->borderBtn;
-	buttonRegister->BorderRadius = config->borderBtn;
-	// Приветствие
-	greeting = config->greeting;
-	// Прозрачность при перетаскивании
-	dragControl1->TransparentWhileDrag = config->dragTransparent;
-	dragControl2->TransparentWhileDrag = config->dragTransparent;
-	dragControl3->TransparentWhileDrag = config->dragTransparent;
-	dragControlMain->TransparentWhileDrag = config->dragTransparent;
-	dragControlMain2->TransparentWhileDrag = config->dragTransparent;
+		// Закругленность кнопок
+		buttonComeIn->BorderRadius = config->borderBtn;
+		buttonRegister->BorderRadius = config->borderBtn;
+		// Приветствие
+		greeting = config->greeting;
+		// Прозрачность при перетаскивании
+		dragControl1->TransparentWhileDrag = config->dragTransparent;
+		dragControl2->TransparentWhileDrag = config->dragTransparent;
+		dragControl3->TransparentWhileDrag = config->dragTransparent;
+		dragControlMain->TransparentWhileDrag = config->dragTransparent;
+		dragControlMain2->TransparentWhileDrag = config->dragTransparent;
+	}
 }
 
 Void auth::auth_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -400,3 +402,21 @@ Void auth::timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
 		break;
 	}
 }
+
+	Void auth::textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBoxLogin->BorderColor = Color::White;
+	}
+	Void auth::textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBoxPassword->BorderColor = Color::White;
+	}
+	void auth::setShadows() {
+		if (Directory::Exists("logs")) {
+			this->borderlessForm->HasFormShadow = false;
+		}
+		else if (File::Exists("config.xml")) {
+			Config^ cfg = gcnew Config();
+			cfg->LoadConfig();
+			this->borderlessForm->HasFormShadow = cfg->hasFormShadow;
+			cfg = nullptr;
+		}
+	}
