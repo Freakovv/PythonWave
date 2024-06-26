@@ -7,7 +7,7 @@
 #include "MainTasks.h"
 #include "MainSettings.h"
 #include "MainHome.h"
-
+#include <random>
 void SetCenter(Control^ background, Control^ control, int mode);
 
 // Form
@@ -63,19 +63,70 @@ Void mainForm::ratingUser_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnQuestionBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	MessageInfo->Show("Примените желаемые пометки, выделив текст", "Панель инструментов");
 }
+
+String^ GetRandomTask(array<String^>^ tasksArray) {
+	Random^ rand = gcnew Random();
+	int index = rand->Next(tasksArray->Length);
+	return tasksArray[index];
+}
+bool test = true;
+bool messageNeed = false;
 Void mainForm::AppTimer_Tick(System::Object^ sender, System::EventArgs^ e) {
-	if (hacks)
+	array<String^>^ EzTasks = { "add", "multiply", "divide", "subtract", "even_or_odd" };
+	array<String^>^ MidTasks = { "better_than_average", "positive_sum", "reverse_seq" };
+	array<String^>^ HardTasks = { "get_count", "high_and_low", "square_digits" };
+	array<String^>^ VeryHardTasks = { "get_char", "symmetric_point", "get_middle" };
+
+	if (hacks) {
 		secondsSpent += 5000;
+		ClassProgress data(User);
+		ClassTasks tasks(User);
+		if (!test) {
+			if (messageNeed) {
+				MessageInfo->Show("Все задачи пройдены", "Тестирование");
+				messageNeed = false;
+			}
+		}
+		else if (secondsSpent >= 70000) {
+			messageNeed = true;
+			test = false;
+			data.SolveTaskSplus();
+			tasks.SetTaskCompletionDate(GetRandomTask(VeryHardTasks));
+		}
+		if (secondsSpent >= 55000) {
+			data.SolveTaskS();
+			tasks.SetTaskCompletionDate(GetRandomTask(HardTasks));
+		}
+		else if (secondsSpent >= 40000) {
+			data.SolveTaskB();
+			tasks.SetTaskCompletionDate(GetRandomTask(MidTasks));
+		}
+		else if (secondsSpent >= 25000) {
+			data.SolveTaskA();
+			tasks.SetTaskCompletionDate(GetRandomTask(EzTasks));
+		}
+	}
 	else
 		++secondsSpent;
+
 	WriteTimeToFile();
 	ReadTimeFromFile();
+	DataLoad();
+	LoadHomePage();
 }
 
 Void mainForm::guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	hacks = true;
-	ClassProgress data(User);
-	data.SolveTaskA();
+	hacks == false ? hacks = true : hacks = false;
+	if (hacks) {
+		MessageInfo->Show("Тестирование приложения включено", "Информация");
+		ClassProgress data(User);
+		ClassTasks tasks(User);
+		data.SolveTaskA();
+		tasks.SetTaskCompletionDate("add");
+	}
+	else {
+		MessageInfo->Show("Тестирование приложения выключено", "Информация");
+	}
 	DataLoad();
 	LoadHomePage();
 }

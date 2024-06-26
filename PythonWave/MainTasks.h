@@ -12,10 +12,7 @@ double animSeconds = 2;
 int secondsToStartAnim = 4;
 bool canSaveFunc = false;
 
-
-
 // Анимации, хайлайты
-
 
 void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	int selectionStart = richTB->SelectionStart;
@@ -402,7 +399,7 @@ void mainForm::PyRun(String^ code) {
 			text = "балла";
 		else if (points > 4)
 			text = "баллов";
-		
+
 		MessageInfo->Show("Задача решена верно. Вы получите " + points + " " + text, "Поздравляем!");
 		UserProgress = progress->GetCurrentProgress();
 	}

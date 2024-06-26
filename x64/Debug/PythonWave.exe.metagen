@@ -98,13 +98,13 @@ Class PythonWave.mainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Windows.Forms.MouseEventHandler mouseDownHandler : Public
-    ClassFade Fade : Public
     System.String User : Public
+    System.String UserRank : Public
     System.String UserSurname : Public
     System.String UserEmail : Public
     System.String UserBirth : Public
     System.String UserSex : Public
     System.String UserName : Public
     System.String[] phrases : Public
-    System.String UserRank : Public
+    ClassFade Fade : Public
+    System.Windows.Forms.MouseEventHandler mouseDownHandler : Public

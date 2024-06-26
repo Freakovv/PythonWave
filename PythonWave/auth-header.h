@@ -16,7 +16,7 @@ int animation_mode = 1; // 1,2,3 - Цепочка анимации регистрации, 4 - Переход на 
 bool greeting = true;
 void authToProfile(String^ construct); // Функция для перехода определена в general.h
 void authToMain(String^ construct); // Функция для перехода определена в general.h
-void SetCenter(Control^ back, Control^ control, int mode); // Функция чтобы установил элемент по середине 
+void SetCenter(Control^ back, Control^ control, int mode); // Функция чтобы установил элемент по середине
 
 // Функция для чтения (Запомнить меня)
 String^ auth::ReadLogFile() {
@@ -63,7 +63,6 @@ Void auth::CreateLogFile() {
 		MessageError->Show(e->Message);
 	}
 }
-
 
 Void auth::LastEnter() {
 	if (greeting) {
@@ -403,20 +402,20 @@ Void auth::timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 
-	Void auth::textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBoxLogin->BorderColor = Color::White;
+Void auth::textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBoxLogin->BorderColor = Color::White;
+}
+Void auth::textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBoxPassword->BorderColor = Color::White;
+}
+void auth::setShadows() {
+	if (Directory::Exists("logs")) {
+		this->borderlessForm->HasFormShadow = false;
 	}
-	Void auth::textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e) {
-		textBoxPassword->BorderColor = Color::White;
+	else if (File::Exists("config.xml")) {
+		Config^ cfg = gcnew Config();
+		cfg->LoadConfig();
+		this->borderlessForm->HasFormShadow = cfg->hasFormShadow;
+		cfg = nullptr;
 	}
-	void auth::setShadows() {
-		if (Directory::Exists("logs")) {
-			this->borderlessForm->HasFormShadow = false;
-		}
-		else if (File::Exists("config.xml")) {
-			Config^ cfg = gcnew Config();
-			cfg->LoadConfig();
-			this->borderlessForm->HasFormShadow = cfg->hasFormShadow;
-			cfg = nullptr;
-		}
-	}
+}

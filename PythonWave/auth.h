@@ -17,56 +17,56 @@ namespace PythonWave {
 
 	public ref class auth : public System::Windows::Forms::Form
 	{
-	// Элементы Windows Forms
-	TabPage^ pageAuth;
-	TabPage^ pageReg;
-	LinkLabel^ Ы;
-	Label^ label1;
-	Label^ labelRemember;
-	TabPage^ pageMain;
-	TabPage^ pageInfo;
-	Timer^ timerTransition;
-	TabPage^ pageWelcome;
-	TabPage^ PageEnd;
-	Panel^ panelMain;
-	Label^ labelMain;
-	IContainer^ components;
-	// Элементы с сторонних фреймворков
-	WinForms::Guna2CircleButton^ buttonClose;
-	WinForms::Guna2CircleButton^ buttonMinimize;
-	WinForms::Guna2ShadowPanel^ panelAuth;
-	UI::WinForms::BunifuPages^ pagesAuthReg;
-	WinForms::Guna2Button^ buttonShowAuth;
-	WinForms::Guna2Button^ buttonShowReg;
-	WinForms::Guna2Button^ buttonComeIn;
-	WinForms::Guna2CircleButton^ buttonQuestion;
-	WinForms::Guna2ToggleSwitch^ SwitchRemember;
-	WinForms::Guna2TextBox^ textBoxPassword;
-	WinForms::Guna2TextBox^ textBoxLogin;
-	WinForms::Guna2Button^ buttonRegister;
-	WinForms::Guna2TextBox^ textBoxPassword_1;
-	WinForms::Guna2TextBox^ textBoxPassword1;
-	WinForms::Guna2TextBox^ textBoxLogin1;
-	UI::WinForms::BunifuCheckBox^ checkBoxTerms;
-	WinForms::Guna2TextBox^ textBoxTerms;
-	UI::WinForms::BunifuPages^ pagesTransition;
-	WinForms::Guna2MessageDialog^ MessageError;
-	WinForms::Guna2CircleButton^ buttonCloseTerms;
-	WinForms::Guna2PictureBox^ guna2PictureBox1;
-	WinForms::Guna2Panel^ guna2Panel1;
-	WinForms::Guna2HtmlLabel^ labelLogo1;
-	WinForms::Guna2HtmlLabel^ labelWelcome;
-	WinForms::Guna2PictureBox^ guna2PictureBox3;
-	WinForms::Guna2PictureBox^ guna2PictureBox4;
-	WinForms::Guna2MessageDialog^ MessageOption;
-	WinForms::Guna2DragControl^ dragControl1;
-	WinForms::Guna2DragControl^ dragControl2;
-	WinForms::Guna2DragControl^ dragControl3;
-	WinForms::Guna2HtmlLabel^ guna2HtmlLabel1;
-	WinForms::Guna2DragControl^ dragControlMain;
-	WinForms::Guna2DragControl^ dragControlMain2;
-	WinForms::Guna2MessageDialog^ MessageWarning;
-	WinForms::Guna2BorderlessForm^ borderlessForm;
+		// Элементы Windows Forms
+		TabPage^ pageAuth;
+		TabPage^ pageReg;
+		LinkLabel^ Ы;
+		Label^ label1;
+		Label^ labelRemember;
+		TabPage^ pageMain;
+		TabPage^ pageInfo;
+		Timer^ timerTransition;
+		TabPage^ pageWelcome;
+		TabPage^ PageEnd;
+		Panel^ panelMain;
+		Label^ labelMain;
+		IContainer^ components;
+		// Элементы с сторонних фреймворков
+		WinForms::Guna2CircleButton^ buttonClose;
+		WinForms::Guna2CircleButton^ buttonMinimize;
+		WinForms::Guna2ShadowPanel^ panelAuth;
+		UI::WinForms::BunifuPages^ pagesAuthReg;
+		WinForms::Guna2Button^ buttonShowAuth;
+		WinForms::Guna2Button^ buttonShowReg;
+		WinForms::Guna2Button^ buttonComeIn;
+		WinForms::Guna2CircleButton^ buttonQuestion;
+		WinForms::Guna2ToggleSwitch^ SwitchRemember;
+		WinForms::Guna2TextBox^ textBoxPassword;
+		WinForms::Guna2TextBox^ textBoxLogin;
+		WinForms::Guna2Button^ buttonRegister;
+		WinForms::Guna2TextBox^ textBoxPassword_1;
+		WinForms::Guna2TextBox^ textBoxPassword1;
+		WinForms::Guna2TextBox^ textBoxLogin1;
+		UI::WinForms::BunifuCheckBox^ checkBoxTerms;
+		WinForms::Guna2TextBox^ textBoxTerms;
+		UI::WinForms::BunifuPages^ pagesTransition;
+		WinForms::Guna2MessageDialog^ MessageError;
+		WinForms::Guna2CircleButton^ buttonCloseTerms;
+		WinForms::Guna2PictureBox^ guna2PictureBox1;
+		WinForms::Guna2Panel^ guna2Panel1;
+		WinForms::Guna2HtmlLabel^ labelLogo1;
+		WinForms::Guna2HtmlLabel^ labelWelcome;
+		WinForms::Guna2PictureBox^ guna2PictureBox3;
+		WinForms::Guna2PictureBox^ guna2PictureBox4;
+		WinForms::Guna2MessageDialog^ MessageOption;
+		WinForms::Guna2DragControl^ dragControl1;
+		WinForms::Guna2DragControl^ dragControl2;
+		WinForms::Guna2DragControl^ dragControl3;
+		WinForms::Guna2HtmlLabel^ guna2HtmlLabel1;
+		WinForms::Guna2DragControl^ dragControlMain;
+		WinForms::Guna2DragControl^ dragControlMain2;
+		WinForms::Guna2MessageDialog^ MessageWarning;
+		WinForms::Guna2BorderlessForm^ borderlessForm;
 
 	public:
 		auth(void)
@@ -1154,36 +1154,36 @@ namespace PythonWave {
 			this->ResumeLayout(false);
 		}
 #pragma endregion
-	String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
+		String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
 
-	// Форма
-private:
-	Void LastEnter();
-	Void auth::loadConfig();
+		// Форма
+	private:
+		Void LastEnter();
+		Void auth::loadConfig();
 
-	Void buttonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
-	Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e);
-	Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e);
-	Void buttonShowReg_Click(System::Object^ sender, System::EventArgs^ e);
-	Void buttonShowAuth_Click(System::Object^ sender, System::EventArgs^ e);
+		Void buttonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
+		Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e);
+		Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e);
+		Void buttonShowReg_Click(System::Object^ sender, System::EventArgs^ e);
+		Void buttonShowAuth_Click(System::Object^ sender, System::EventArgs^ e);
 
-	//Регистрация
-private:
-	Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
-	Void Register();
-	Void buttonCloseTerms_Click(System::Object^ sender, System::EventArgs^ e);
-	Void linkLabelTerms_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
+		//Регистрация
+	private:
+		Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
+		Void Register();
+		Void buttonCloseTerms_Click(System::Object^ sender, System::EventArgs^ e);
+		Void linkLabelTerms_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
 
-	//Вход
-private: 
-	Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
-	Boolean ComeIn();
-	String^ ReadLogFile();
-	Void CreateLogFile();
-	Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
-	Void auth_Load(System::Object^ sender, System::EventArgs^ e);
-	Void textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e);
-	Void textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e);
-	void setShadows();
+		//Вход
+	private:
+		Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
+		Boolean ComeIn();
+		String^ ReadLogFile();
+		Void CreateLogFile();
+		Void buttonQuestion_Click(System::Object^ sender, System::EventArgs^ e);
+		Void auth_Load(System::Object^ sender, System::EventArgs^ e);
+		Void textBoxLogin_Click(System::Object^ sender, System::EventArgs^ e);
+		Void textBoxPassword_Click(System::Object^ sender, System::EventArgs^ e);
+		void setShadows();
 	};
 }

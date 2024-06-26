@@ -68,4 +68,5 @@ E:\.Coding\PythonWave\PythonWave\MainTasks.h(51,14): warning C4244: 'initializin
 E:\.Coding\PythonWave\PythonWave\MainTasks.h(52,15): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
 E:\.Coding\PythonWave\PythonWave\MainTasks.h(423,21): warning C4101: 'e': unreferenced local variable
 D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\xutility(4672,18): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+  main.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   PythonWave.vcxproj -> E:\.Coding\PythonWave\x64\Debug\PythonWave.exe

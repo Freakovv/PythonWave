@@ -261,8 +261,7 @@ Void mainForm::btnCancelChanges_Click(System::Object^ sender, System::EventArgs^
 }
 Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (textBoxUserName->TextLength < 3 || textBoxUserSurname->TextLength < 3) {
-
-		if(textBoxUserName->TextLength < 3)
+		if (textBoxUserName->TextLength < 3)
 			textBoxUserName->BorderColor = Color::Red;
 
 		if (textBoxUserSurname->TextLength < 3)
@@ -283,7 +282,6 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 	DataSave();
 	MessageInfo->Show("Сохранено", "Успешно");
 }
-
 
 Boolean mainForm::CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ field) {
 	if (TB->Text != field) {

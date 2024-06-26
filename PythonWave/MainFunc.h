@@ -179,7 +179,6 @@ void mainForm::DataLoad() {
 	textBoxUserName->Text = UserName;
 	textBoxUserSurname->Text = UserSurname;
 	textBoxEmail->Text = UserEmail;
-
 }
 void mainForm::DataChange() {
 	// Local
@@ -285,16 +284,11 @@ String^ mainForm::SetUserLvl() {
 	else {
 		newRank = "Новичок";
 		StarsUser->Value = 0;
-		writeBinaryFile(fileRankPath, newRank);
 		return newRank;
 	}
 
-	if (UserProgress == 100) {
-		StarsUser->Value = 5;
-	}
-
 	String^ fileRank = User + "//lvl.bin";
-	writeBinaryFile(fileRank, UserRank);
+	writeBinaryFile(fileRank, newRank);
 	return newRank;
 }
 
@@ -303,7 +297,6 @@ Void mainForm::labelRankBar_TextChanged(System::Object^ sender, System::EventArg
 		MessageInfo->Show("Вы получили новый уровень", "Поздравляем, " + UserRank);
 	}
 }
-
 
 Void mainForm::RankUp() {
 }

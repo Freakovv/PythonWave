@@ -139,7 +139,6 @@ void mainForm::LoadHomePage() {
 }
 
 void mainForm::InitializePanelBook() {
-
 	String^ filePath = User + "//book//lastpage.txt";
 	String^ pageName = "none";
 
@@ -157,8 +156,6 @@ void mainForm::InitializePanelBook() {
 		if (tabPageIndex != -1) {
 			Book->SelectTab(tabPageIndex);
 			dropdownPages->SelectedIndex = tabPageIndex;
-
-
 
 			String^ selectedPageText = dropdownPages->Items[tabPageIndex]->ToString();
 

@@ -15,7 +15,6 @@ public:
 
 	MyPython() {}
 
-
 	String^ Start(String^ Code) {
 		String^ tempPath = "script//temp.py";
 		String^ testPath = "script//script.py";
@@ -48,7 +47,7 @@ private:
 			ZeroMemory(&si, sizeof(si));
 			si.cb = sizeof(si);
 			ZeroMemory(&pi, sizeof(pi));
-	label:
+		label:
 			// Создание строки команды для запуска Python
 			std::string commandStr = "py " + stdPath;
 
