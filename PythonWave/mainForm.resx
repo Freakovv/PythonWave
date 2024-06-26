@@ -10889,7 +10889,7 @@
   <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAANWpJREFUeF7t3Xm8ZVdZ5/8mCQmQhIDMKIMgyKyMAh0FJTYgIPPcRAZFQREQG0Rt
+        DAAACwwBP0AiyAAANWpJREFUeF7t3Xm8ZVdZ5/8mCQmQhIDMKIMgyKyMAh0FJTYgIPPcRAZFQREQG0Rt
         ofn5A7SbIU1LM4jMIJg0oVFB4KUyiBAGiRAGgQiRGWROAoSE/j68quDWrU9V7rDPOvs55/PH+w+eUHXP
         3ftZ31VnD2v9h+9+97uSJKk5LEqSpF6wKEmSesGiJEnqBYuSJKkXLEqSpF6wKEmSesGiJEnqBYuSJKkX
         LEqSpF6wKEmSesGiJEnqBYuSJKkXLEqSpF6wKEmSesGiJEnqBYuSJKkXLEqSpF6wKEmSesGiJEnqBYuS
@@ -12015,7 +12015,7 @@
         2CAlqpYAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="gunaStackedBarDataset1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="TasksDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>276, 51</value>
   </metadata>
   <data name="animation2.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -32978,14 +32978,8 @@
   <metadata name="timerAnim.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1206, 14</value>
   </metadata>
-  <metadata name="ANIMFIX.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>460, 51</value>
-  </metadata>
   <metadata name="dragTask.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>499, 14</value>
-  </metadata>
-  <metadata name="gunaDoughnutDataset1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>561, 51</value>
   </metadata>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>741, 51</value>
@@ -33004,5 +32998,8 @@
   </metadata>
   <metadata name="guna2Elipse6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1356, 51</value>
+  </metadata>
+  <metadata name="AppTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>399, 64</value>
   </metadata>
 </root>

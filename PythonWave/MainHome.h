@@ -55,7 +55,6 @@ String^ GetDayOfWeek() {
 
 	return dayName;
 }
-
 void mainForm::InitializePhrazes() {
 	phrases = gcnew array<String^> {
 		"Каждая строка кода приближает тебя к успеху.",
@@ -111,9 +110,32 @@ void mainForm::LoadHomePage() {
 	SetCenter(pnlHome1n1, btnRead, 1);
 	SetCenter(pnlHome1, btnReadBook, 1);
 
-	currentDayOfWeek = GetDayOfWeek();
+	ReadTimeFromFile();
 	InitializePanelBook();
 	circleProgress->Value = UserProgress;
+
+	ClassTasks tasks(User);
+	currentDayOfWeek = GetDayOfWeek();
+
+	array<String^>^ DaysOfWeek = gcnew array<String^>(7);
+	DaysOfWeek[0] = "Пн";
+	DaysOfWeek[1] = "Вт";
+	DaysOfWeek[2] = "Ср";
+	DaysOfWeek[3] = "Чт";
+	DaysOfWeek[4] = "Пт";
+	DaysOfWeek[5] = "Сб";
+	DaysOfWeek[6] = "Вс";
+
+	TasksDataset->DataPoints->Clear();
+
+	DateTime today = DateTime::Now.Date;
+	DateTime startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek::Monday);
+
+	for (int i = 0; i < DaysOfWeek->Length; ++i) {
+		DateTime dayToCheck = startOfWeek.AddDays(i);
+		int completedTasks = tasks.getCompletedCount(dayToCheck, dayToCheck.AddDays(1));
+		TasksDataset->DataPoints->Add(DaysOfWeek[i], completedTasks);
+	}
 }
 
 void mainForm::InitializePanelBook() {
@@ -172,4 +194,47 @@ Void mainForm::btnReadBook_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnRead_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
 	btnBook->Checked = true;
+}
+
+//timer in app
+void mainForm::ReadTimeFromFile()
+{
+	String^ pathToTimer = User + "//time.bin";
+	try
+	{
+		if (File::Exists(pathToTimer))
+		{
+			FileStream^ fs = gcnew FileStream(pathToTimer, FileMode::Open, FileAccess::Read);
+			BinaryReader^ reader = gcnew BinaryReader(fs);
+			String^ line = reader->ReadString();
+			secondsSpent = Int32::Parse(line);
+			reader->Close();
+		}
+		else
+		{
+			secondsSpent = 0;
+		}
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("Error reading time from file: " + ex->Message);
+		secondsSpent = 0;
+	}
+	double hoursSpent = secondsSpent / 3600.0;
+	lblTimerInApp->Text = hoursSpent.ToString("0.0") + "ч";
+}
+void mainForm::WriteTimeToFile()
+{
+	String^ pathToTimer = User + "//time.bin";
+	try
+	{
+		FileStream^ fs = gcnew FileStream(pathToTimer, FileMode::OpenOrCreate, FileAccess::Write);
+		BinaryWriter^ writer = gcnew BinaryWriter(fs);
+		writer->Write(secondsSpent.ToString());
+		writer->Close();
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show("Error writing time to file: " + ex->Message);
+	}
 }

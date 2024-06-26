@@ -4,6 +4,9 @@
 #include "MyPython.h"
 #include "ClassTasks.h"
 
+using namespace PythonWave;
+using namespace System;
+
 int currentAnim = 1;
 double animSeconds = 2;
 int secondsToStartAnim = 4;
@@ -447,6 +450,6 @@ Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
 	}
 	else {
-		MessageWarning->Show("ƒл€ сохранени€ вам нужно успешно протестировать код, затем сразу сохранить его.", "ѕримечание");
+		MessageWarning->Show("ƒл€ сохранени€ вам нужно успешно протестировать код, затем сразу сохранить его.", "¬нимание");
 	}
 }

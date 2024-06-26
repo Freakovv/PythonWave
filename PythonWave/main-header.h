@@ -30,6 +30,8 @@ Void mainForm::main_Load(System::Object^ sender, System::EventArgs^ e) {
 	ClassFade^ Fade = gcnew ClassFade(this);
 	Fade->SetAnimation("in");
 
+	AppTimer->Start();
+
 	SetCenter(panelProfileData, lblLogin, 1);
 	SetCenter(anim1, lblAnim1, 1);
 	SetCenter(pageProfile, pictureProfile, 1);

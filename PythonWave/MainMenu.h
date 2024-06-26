@@ -1,6 +1,9 @@
 #pragma once
 #include "mainForm.h"
 
+using namespace PythonWave;
+using namespace System;
+
 // Для перехода с профиля
 Void mainForm::SetProfileDefaults() {
 	textBoxUserName->Text = UserName;

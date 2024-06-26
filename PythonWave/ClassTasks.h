@@ -20,10 +20,12 @@ private:
 	int completedB_count = 0;
 	int completedS_count = 0;
 	int completedSplus_count = 0;
+
 public:
 	ClassTasks(String^ User) {
-		if (!String::IsNullOrEmpty(User))
+		if (!String::IsNullOrEmpty(User)) {
 			pathToTasksState = User + "//tasks_state.bin";
+		}
 		else {
 			MessageBox::Show("Code: 404\nUser not found", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			Application::Exit();
@@ -40,6 +42,13 @@ public:
 		}
 	}
 
+	void ShowTaskStates() {
+		String^ message = "Task States:\n";
+		for each (KeyValuePair<String^, bool> kvp in taskDict) {
+			message += kvp.Key + ": " + kvp.Value.ToString() + "\n";
+		}
+		MessageBox::Show(message, "Task States", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 	void SolveTask(String^ TaskName) {
 		SetTaskValue(TaskName, true);
 		SetTaskCompletionDate(TaskName);
@@ -53,81 +62,47 @@ public:
 	}
 
 	void SetTaskCompletionDate(String^ taskName) {
-		array<String^>^ EzTasks = gcnew array<String^>(5);
-		array<String^>^ MidTasks = gcnew array<String^>(3);
-		array<String^>^ HardTasks = gcnew array<String^>(3);
-		array<String^>^ VeryHardTasks = gcnew array<String^>(3);
-		EzTasks[0] = "add";
-		EzTasks[1] = "multiply";
-		EzTasks[2] = "divide";
-		EzTasks[3] = "subtract";
-		EzTasks[4] = "even_or_odd";
-
-		MidTasks[0] = "better_than_average";
-		MidTasks[1] = "positive_sum";
-		MidTasks[2] = "reverse_seq";
-
-		HardTasks[0] = "get_count";
-		HardTasks[1] = "high_and_low";
-		HardTasks[2] = "square_digits";
-
-		VeryHardTasks[0] = "get_char";
-		VeryHardTasks[1] = "symmetric_point";
-		VeryHardTasks[2] = "get_middle";
+		array<String^>^ EzTasks = { "add", "multiply", "divide", "subtract", "even_or_odd" };
+		array<String^>^ MidTasks = { "better_than_average", "positive_sum", "reverse_seq" };
+		array<String^>^ HardTasks = { "get_count", "high_and_low", "square_digits" };
+		array<String^>^ VeryHardTasks = { "get_char", "symmetric_point", "get_middle" };
 
 		if (taskDict->ContainsKey(taskName)) {
 			taskCompletionDates[taskName] = DateTime::Now;
 			SaveTaskState();
 
-			for (int i = 0; i < EzTasks->Length; i++) {
-				if (EzTasks[i] == taskName) {
-					++completedB_count;
-					return;
-				}
+			if (Array::IndexOf(EzTasks, taskName) >= 0) {
+				++completedB_count;
+			}
+			else if (Array::IndexOf(MidTasks, taskName) >= 0) {
+				++completedA_count;
+			}
+			else if (Array::IndexOf(HardTasks, taskName) >= 0) {
+				++completedS_count;
+			}
+			else if (Array::IndexOf(VeryHardTasks, taskName) >= 0) {
+				++completedSplus_count;
 			}
 
-			for (int i = 0; i < MidTasks->Length; i++) {
-				if (MidTasks[i] == taskName) {
-					++completedA_count;
-					return;
-				}
-			}
-
-			for (int i = 0; i < HardTasks->Length; i++) {
-				if (HardTasks[i] == taskName) {
-					++completedS_count;
-					return;
-				}
-			}
-
-			for (int i = 0; i < VeryHardTasks->Length; i++) {
-				if (VeryHardTasks[i] == taskName) {
-					++completedSplus_count;
-					return;
-				}
-			}
+			SaveTaskState();
 		}
+	}
+
+	String^ getMaxDifficulty() {
+		if (completedSplus_count > 0)
+			return "Очень сложная";
+		else if (completedS_count > 0)
+			return "Сложная";
+		else if (completedB_count > 0)
+			return "Средняя";
+		else if (completedA_count > 0)
+			return "Легкая";
+		return "Нет выполненных задач";
 	}
 
 	int getCompletedCount(DateTime start, DateTime end) {
 		return CompletedTasksCount(start, end);
 	}
-
-	//int GetTasksCompletedLastTwoWeeks() {
-	//	DateTime endDate = DateTime::Now;
-	//	DateTime startDate = endDate.AddDays(-14);
-	//	return CompletedTasksCount(startDate, endDate);
-	//}
-	//int GetTasksCompletedLastThreeWeeks() {
-	//	DateTime endDate = DateTime::Now;
-	//	DateTime startDate = endDate.AddDays(-21);
-	//	return CompletedTasksCount(startDate, endDate);
-	//}
-	//int GetTasksCompletedLastMonth() {
-	//	DateTime endDate = DateTime::Now;
-	//	DateTime startDate = endDate.AddMonths(-1);
-	//	return CompletedTasksCount(startDate, endDate);
-	//}
 
 private:
 	void SetTaskValue(String^ taskName, bool value) {
@@ -141,22 +116,15 @@ private:
 		taskDict = gcnew Dictionary<String^, bool>();
 		taskCompletionDates = gcnew Dictionary<String^, DateTime>();
 
-		taskDict["add"] = false;
-		taskDict["multiply"] = false;
-		taskDict["divide"] = false;
-		taskDict["subtract"] = false;
-		taskDict["even_or_odd"] = false;
-		taskDict["better_than_average"] = false;
-		taskDict["positive_sum"] = false;
-		taskDict["reverse_seq"] = false;
-		taskDict["get_count"] = false;
-		taskDict["high_and_low"] = false;
-		taskDict["square_digits"] = false;
-		taskDict["get_char"] = false;
-		taskDict["symmetric_point"] = false;
-		taskDict["get_middle"] = false;
+		array<String^>^ tasks = { "add", "multiply", "divide", "subtract", "even_or_odd",
+			"better_than_average", "positive_sum", "reverse_seq",
+			"get_count", "high_and_low", "square_digits",
+			"get_char", "symmetric_point", "get_middle" };
 
-		// Загрузить состояние задач после инициализации словаря
+		for each (String ^ task in tasks) {
+			taskDict[task] = false;
+		}
+
 		LoadTaskState();
 	}
 
@@ -179,9 +147,9 @@ private:
 
 			int index = 0;
 			array<String^>^ keys = gcnew array<String^>(taskDict->Keys->Count);
-			taskDict->Keys->CopyTo(keys, 0); // Создать массив ключей
-			for each (String ^ taskName in keys) { // Перечислять по массиву ключей
-				if (index < decryptedData->Length) {
+			taskDict->Keys->CopyTo(keys, 0);
+			for each (String ^ taskName in keys) {
+				if (index + sizeof(bool) <= decryptedData->Length) {
 					taskDict[taskName] = BitConverter::ToBoolean(decryptedData, index);
 					index += sizeof(bool);
 				}
@@ -190,18 +158,37 @@ private:
 				}
 			}
 
-			// Загрузка дат выполнения задач
-			while (index < decryptedData->Length) {
+			while (index + sizeof(int) <= decryptedData->Length) {
 				int taskNameLength = BitConverter::ToInt32(decryptedData, index);
 				index += sizeof(int);
 
-				String^ taskName = Encoding::UTF8->GetString(decryptedData, index, taskNameLength);
-				index += taskNameLength;
+				if (index + taskNameLength <= decryptedData->Length) {
+					String^ taskName = Encoding::UTF8->GetString(decryptedData, index, taskNameLength);
+					index += taskNameLength;
 
-				DateTime completionDate = DateTime::FromBinary(BitConverter::ToInt64(decryptedData, index));
-				index += sizeof(Int64);
+					if (index + sizeof(Int64) <= decryptedData->Length) {
+						DateTime completionDate = DateTime::FromBinary(BitConverter::ToInt64(decryptedData, index));
+						index += sizeof(Int64);
+						taskCompletionDates[taskName] = completionDate;
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					break;
+				}
+			}
 
-				taskCompletionDates[taskName] = completionDate;
+			if (index + sizeof(int) * 4 <= decryptedData->Length) {
+				completedB_count = BitConverter::ToInt32(decryptedData, index);
+				index += sizeof(int);
+				completedA_count = BitConverter::ToInt32(decryptedData, index);
+				index += sizeof(int);
+				completedS_count = BitConverter::ToInt32(decryptedData, index);
+				index += sizeof(int);
+				completedSplus_count = BitConverter::ToInt32(decryptedData, index);
+				index += sizeof(int);
 			}
 
 			br->Close();
@@ -224,7 +211,6 @@ private:
 				}
 			}
 
-			// Сохранение дат выполнения задач
 			for each (KeyValuePair<String^, DateTime> kvp in taskCompletionDates) {
 				array<Byte>^ taskNameBytes = Encoding::UTF8->GetBytes(kvp.Key);
 				array<Byte>^ taskNameLengthBytes = BitConverter::GetBytes(taskNameBytes->Length);
@@ -236,14 +222,23 @@ private:
 				dataBytes->AddRange(dateBytes);
 			}
 
+			array<Byte>^ bCountBytes = BitConverter::GetBytes(completedB_count);
+			array<Byte>^ aCountBytes = BitConverter::GetBytes(completedA_count);
+			array<Byte>^ sCountBytes = BitConverter::GetBytes(completedS_count);
+			array<Byte>^ sPlusCountBytes = BitConverter::GetBytes(completedSplus_count);
+
+			dataBytes->AddRange(bCountBytes);
+			dataBytes->AddRange(aCountBytes);
+			dataBytes->AddRange(sCountBytes);
+			dataBytes->AddRange(sPlusCountBytes);
+
 			array<Byte>^ encryptedData = gcnew array<Byte>(dataBytes->Count);
 			for (int i = 0; i < dataBytes->Count; i++) {
 				encryptedData[i] = dataBytes[i] ^ key[i % key->Length];
 			}
 
-			FileStream^ fs = gcnew FileStream(pathToTasksState, FileMode::OpenOrCreate, FileAccess::Write);
+			FileStream^ fs = gcnew FileStream(pathToTasksState, FileMode::Create, FileAccess::Write);
 			BinaryWriter^ bw = gcnew BinaryWriter(fs);
-
 			bw->Write(encryptedData);
 			bw->Close();
 			fs->Close();
@@ -253,22 +248,13 @@ private:
 		}
 	}
 
-	int CompletedTasksCount(DateTime startDate, DateTime endDate) {
+	int CompletedTasksCount(DateTime start, DateTime end) {
 		int count = 0;
 		for each (KeyValuePair<String^, DateTime> kvp in taskCompletionDates) {
-			if (kvp.Value >= startDate && kvp.Value <= endDate) {
+			if (kvp.Value >= start && kvp.Value < end) {
 				count++;
 			}
 		}
 		return count;
-	}
-
-public:
-	void ShowTaskStates() {
-		String^ message = "Task States:\n";
-		for each (KeyValuePair<String^, bool> kvp in taskDict) {
-			message += kvp.Key + ": " + kvp.Value.ToString() + "\n";
-		}
-		MessageBox::Show(message, "Task States", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 };
