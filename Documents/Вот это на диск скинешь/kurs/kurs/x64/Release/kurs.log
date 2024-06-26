@@ -1,0 +1,10 @@
+﻿  auth.cpp
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\labs.h(647,20): warning C4101: ex: неиспользованная локальная переменная
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\labs.h(902,21): warning C4101: ex: неиспользованная локальная переменная
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\auth.h(235,27): warning C4101: e: неиспользованная локальная переменная
+  labs.cpp
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\labs.h(647,20): warning C4101: ex: неиспользованная локальная переменная
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\labs.h(902,21): warning C4101: ex: неиспользованная локальная переменная
+  Создание кода...
+  auth.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  kurs.vcxproj -> C:\Users\Vlad\Desktop\kurs\kurs\x64\Release\kurs.exe

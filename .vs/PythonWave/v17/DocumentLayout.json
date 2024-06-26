@@ -1,12 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\.Coding\\PythonWave\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\.Coding\\PythonWave\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|D:\\.Coding\\PythonWave\\PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\mainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|D:\\.Coding\\PythonWave\\PythonWave\\ClassTasks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E7688D2-243E-4715-B0AD-740550CA0F90}|PythonWave\\PythonWave.vcxproj|solutionrelative:PythonWave\\ClassTasks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "mainForm.h [Design]",
+              "DocumentMoniker": "D:\\.Coding\\PythonWave\\PythonWave\\mainForm.h",
+              "RelativeDocumentMoniker": "PythonWave\\mainForm.h",
+              "ToolTip": "D:\\.Coding\\PythonWave\\PythonWave\\mainForm.h [Design]",
+              "RelativeToolTip": "PythonWave\\mainForm.h [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-26T16:56:13.088Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClassTasks.h",
+              "DocumentMoniker": "D:\\.Coding\\PythonWave\\PythonWave\\ClassTasks.h",
+              "RelativeDocumentMoniker": "PythonWave\\ClassTasks.h",
+              "ToolTip": "D:\\.Coding\\PythonWave\\PythonWave\\ClassTasks.h",
+              "RelativeToolTip": "PythonWave\\ClassTasks.h",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-06-26T16:29:48.809Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

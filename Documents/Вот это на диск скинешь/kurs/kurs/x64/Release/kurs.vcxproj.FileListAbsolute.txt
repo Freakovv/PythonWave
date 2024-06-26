@@ -1,0 +1,5 @@
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Release\kurs.vcxproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Release\kurs.vcxproj.ResolveComReference.cache
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Release\kurs.auth.resources
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Release\kurs.labs.resources
+C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Release\kurs.vcxproj.GenerateResource.cache
