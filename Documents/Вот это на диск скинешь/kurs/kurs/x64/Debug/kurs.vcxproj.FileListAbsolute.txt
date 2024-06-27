@@ -1,5 +1,0 @@
-C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Debug\kurs.vcxproj.AssemblyReference.cache
-C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Debug\kurs.vcxproj.ResolveComReference.cache
-C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Debug\kurs.auth.resources
-C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Debug\kurs.vcxproj.GenerateResource.cache
-C:\Users\Vlad\Desktop\kurs\kurs\kurs\x64\Debug\kurs.labs.resources

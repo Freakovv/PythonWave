@@ -222,9 +222,7 @@ Boolean auth::ComeIn() {
 	String^ folderPath = cliLogin;
 	String^ filePath = Path::Combine(folderPath, "data.bin");
 	if (!Directory::Exists(folderPath)) {
-		MessageError->Caption = "Ошибка";
-		MessageError->Text = "Пользователя с указанным логином не существует";
-		MessageError->Show();
+		MessageError->Show("Пользователя с указанным логином не существует", "Ошибка");
 		return false;
 	}
 	std::hash<std::string> hasher;
@@ -236,13 +234,11 @@ Boolean auth::ComeIn() {
 	fileStream->Close();
 	if (hashPasswordInput == hashPasswordFile) {
 		USER = cliLogin;
-		return true; // Пароль совпадает
+		return true;
 	}
 	else {
-		MessageError->Caption = "Предупреждение";
-		MessageError->Text = "Введен неверный пароль";
-		MessageError->Show();
-		return false; // Пароль не совпадает
+		MessageError->Show("Введен неверный пароль", "Предупреждение");
+		return false;
 	}
 }
 Void auth::timerTransition_Tick(System::Object^ sender, System::EventArgs^ e) {
