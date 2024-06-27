@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 namespace PythonWave {
 	using namespace System;
 	using namespace System::Windows;
@@ -8,7 +7,6 @@ namespace PythonWave {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	public ref class profile : public System::Windows::Forms::Form
 	{
 	private:
@@ -87,9 +85,7 @@ namespace PythonWave {
 		Bunifu::UI::WinForms::BunifuLabel^ bunifuLabel3;
 		Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 		Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
-		Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 		System::ComponentModel::IContainer^ components;
-
 	public:
 		String^ UserLogin;
 		profile(String^ login)
@@ -98,14 +94,12 @@ namespace PythonWave {
 			UserLogin = login;
 			srand(static_cast<unsigned int>(time(NULL)));
 		}
-
 		profile(void)
 		{
 			InitializeComponent();
 			MessageError->Show("Пользователь не был передан в форму");
 			Application::Exit();
 		}
-
 	protected:
 		~profile()
 		{
@@ -119,7 +113,6 @@ namespace PythonWave {
 			}
 			Application::Exit();
 		}
-
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
@@ -201,7 +194,6 @@ namespace PythonWave {
 			this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
-			this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->Pages->SuspendLayout();
 			this->pageProfile->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->BeginInit();
@@ -264,7 +256,6 @@ namespace PythonWave {
 			//
 			this->pageProfile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->pageProfile->Controls->Add(this->guna2Button1);
 			this->pageProfile->Controls->Add(this->buttonQuestion);
 			this->pageProfile->Controls->Add(this->label4);
 			this->pageProfile->Controls->Add(this->bunifuDropdownSex);
@@ -666,7 +657,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonResume->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonResume->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
+			this->buttonResume->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
 			this->buttonResume->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonResume.Image")));
 			this->buttonResume->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonResume->ImageSize = System::Drawing::Size(25, 25);
@@ -720,7 +711,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonUpload->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonUpload->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image2")));
+			this->buttonUpload->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
 			this->buttonUpload->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonUpload.Image")));
 			this->buttonUpload->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonUpload->ImageSize = System::Drawing::Size(25, 25);
@@ -853,7 +844,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonSendMail->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image3")));
+			this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image2")));
 			this->buttonSendMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSendMail.Image")));
 			this->buttonSendMail->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonSendMail->ImageSize = System::Drawing::Size(25, 25);
@@ -894,7 +885,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonCheckCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image4")));
+			this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image3")));
 			this->buttonCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCheckCode.Image")));
 			this->buttonCheckCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonCheckCode->ImageSize = System::Drawing::Size(25, 25);
@@ -1447,7 +1438,7 @@ namespace PythonWave {
 				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			this->buttonResume1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->buttonResume1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image5")));
+			this->buttonResume1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image4")));
 			this->buttonResume1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonResume1.Image")));
 			this->buttonResume1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->buttonResume1->ImageSize = System::Drawing::Size(25, 25);
@@ -1633,46 +1624,6 @@ namespace PythonWave {
 			this->guna2BorderlessForm1->DockIndicatorTransparencyValue = 0.6;
 			this->guna2BorderlessForm1->TransparentWhileDrag = true;
 			//
-			// guna2Button1
-			//
-			this->guna2Button1->Animated = true;
-			this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
-			this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->BorderRadius = 20;
-			this->guna2Button1->BorderThickness = 1;
-			this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
-			this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
-				static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
-			this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
-				static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
-			this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
-			this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-				static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-			this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
-				static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
-			this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
-			this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->guna2Button1->ImageSize = System::Drawing::Size(25, 25);
-			this->guna2Button1->Location = System::Drawing::Point(559, 602);
-			this->guna2Button1->Name = L"guna2Button1";
-			this->guna2Button1->Size = System::Drawing::Size(181, 39);
-			this->guna2Button1->TabIndex = 54;
-			this->guna2Button1->Text = L"Продолжить";
-			this->guna2Button1->TextOffset = System::Drawing::Point(10, 0);
-			this->guna2Button1->UseTransparentBackground = true;
-			this->guna2Button1->Click += gcnew System::EventHandler(this, &profile::guna2Button1_Click);
-			//
 			// profile
 			//
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1706,19 +1657,16 @@ namespace PythonWave {
 			this->ResumeLayout(false);
 		}
 #pragma endregion
-		// Custom functions
 	private:
 		Boolean succesful = false;
 		Void profile_Load(Object^ sender, EventArgs^ e);
 		Void SaveData();
 		Void SaveConfig();
-
 		int generateSecurityCode();
 		bool IsValidEmail(String^ email);
 		int SecurityCode = generateSecurityCode();
 		Void enableMail(bool enable);
 		Void DeleteDirectory(String^ folderPath);
-		// Buttons
 	private:
 		Void buttonSendMail_Click(Object^ sender, EventArgs^ e);
 		Void buttonValidateCode_Click(Object^ sender, EventArgs^ e);
@@ -1728,23 +1676,17 @@ namespace PythonWave {
 		Void buttonUpload_Click(Object^ sender, EventArgs^ e);
 		Void buttonResume_Click(Object^ sender, EventArgs^ e);
 		Void buttonResume1_Click(Object^ sender, EventArgs^ e);
-		// TextBoxes
 		Void textBoxMail_Click(Object^ sender, EventArgs^);
-
-		// Timers
 	private:
 		Void timer_Tick(Object^ sender, EventArgs^ e);
 		Void timerTransition_Tick(Object^ sender, EventArgs^ e);
 		Void linkReMail_Click(System::Object^ sender, EventArgs^ e);
-
 		Void textBoxUserName_Click(System::Object^ sender, EventArgs^ e);
 		Void bunifuDropdownSex_Click(System::Object^ sender, EventArgs^ e);
 		Void bunifuDropdownDay_Click(System::Object^ sender, EventArgs^ e);
 		Void bunifuDropdownMonth_Click(System::Object^ sender, EventArgs^ e);
 		Void bunifuDropdownYear_Click(System::Object^ sender, EventArgs^ e);
 		Void buttonCloseEnd_Click(System::Object^ sender, System::EventArgs^ e);
-
-		//Settings
 	private:
 		Void guna2TrackBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
 		Void guna2ToggleSwitch1_CheckedChanged(System::Object^ sender, System::EventArgs^ e);
@@ -1752,6 +1694,5 @@ namespace PythonWave {
 		Void guna2CircleButton1_Click(System::Object^ sender, System::EventArgs^ e);
 		Void guna2TrackBar2_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
 		Void guna2TrackBar3_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e);
-		Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }

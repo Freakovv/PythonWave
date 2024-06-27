@@ -1,32 +1,24 @@
 #pragma once
 #include "mainForm.h"
-
 using namespace System;
-
 Boolean isBookExists = true;
-
-void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox)
-{
+void mainForm::SaveBook(String^ Point, RichTextBox^ richTextBox) {
 	String^ filePath = User + "//book//" + Point + ".rtf";
-
 	FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
 	StreamWriter^ sw = gcnew StreamWriter(fileStream);
 	sw->Write(richTextBox->Rtf);
 	sw->Close();
 }
-void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
-{
+void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox) {
 	String^ filePath = User + "//book//" + Point + ".rtf";
 	if (!File::Exists(filePath)) {
 		filePath = "book//" + Point + ".rtf";
 	}
-
 	if (!File::Exists(filePath)) {
 		MessageBox::Show("Файл:" + filePath + "Не найден", "Ошибка");
 		isBookExists = false;
 		return;
 	}
-
 	try {
 		FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read, FileShare::ReadWrite);
 		StreamReader^ sr = gcnew StreamReader(fileStream);
@@ -42,15 +34,12 @@ void mainForm::LoadPage(String^ Point, RichTextBox^ richTextBox)
 }
 void mainForm::LoadBook() {
 	LoadPage("start", richStart);
-
 	array<RichTextBox^>^ richTextBoxes = { richBook1, richBook2, richBook3, richBook4, richBook5, richBook6, richBook7, richBook8, richBook9, richBook10, richBook11, richBook12, richBook13 };
-
 	int countOfPages = Book->TabCount - 2;
 	for (int i = 0; i < countOfPages; ++i) {
 		String^ str = "r" + Convert::ToString(i + 1);
 		LoadPage(str, richTextBoxes[i]);
 	}
-
 	String^ filePath = User + "//book//lastpage.txt";
 	if (File::Exists(filePath)) {
 		String^ pageName = File::ReadAllText(filePath);
@@ -69,7 +58,6 @@ void mainForm::LoadBook() {
 			dropdownPages->SelectedIndex = tabPageIndex;
 		}
 	}
-
 	if (!isBookExists)
 		MessageWarning->Show("Ошибка загрузки книги", "Файлы повреждены");
 }
@@ -86,7 +74,6 @@ void mainForm::UpdateLastBookPage() {
 		}
 	}
 }
-
 bool mainForm::isCustomBookExists() {
 	return Directory::Exists(User + "//myBook");
 }
@@ -113,16 +100,13 @@ void mainForm::CreateCustomBook() {
 	if (!isCustomBookExists())
 		Directory::CreateDirectory(User + "//book");
 }
-
-void mainForm::ChangeSelectionBackColor(Color color, RichTextBox^ richTB)
-{
+void mainForm::ChangeSelectionBackColor(Color color, RichTextBox^ richTB) {
 	UpdateLastBookPage();
 	CreateCustomBook();
 	if (richTB->SelectionLength <= 0) {
 		MessageInfo->Show("Выделите текст", "Выделение текста");
 		return;
 	}
-
 	richTB->SelectionBackColor = color;
 }
 void mainForm::ChangeSelectionFontStyle(FontStyle style, RichTextBox^ richTB)
@@ -133,10 +117,8 @@ void mainForm::ChangeSelectionFontStyle(FontStyle style, RichTextBox^ richTB)
 		MessageInfo->Show("Выделите текст", "Изменение шрифта");
 		return;
 	}
-
 	Drawing::Font^ currentFont = richTB->SelectionFont;
 	Drawing::Font^ newFont = gcnew Drawing::Font(currentFont, currentFont->Style ^ style);
-
 	richTB->SelectionFont = newFont;
 }
 void mainForm::SetSelectionFontByDefault(RichTextBox^ richTB)
@@ -169,7 +151,6 @@ void mainForm::SetSelectionFontByDefault(RichTextBox^ richTB)
 			MessageError->Show(e->Message, "Неизвестная ошибка");
 	}
 }
-
 Void mainForm::btnHighlight_Click(System::Object^ sender, System::EventArgs^ e) {
 	UpdateLastBookPage();
 	ChangeSelectionBackColor(Color::Gray, CurrentRichBox);
@@ -200,7 +181,6 @@ Void mainForm::btnClearFilters_Click(System::Object^ sender, System::EventArgs^ 
 	SetSelectionFontByDefault(CurrentRichBox);
 	SaveBook(CurrentBookFile, CurrentRichBox);
 }
-
 Void mainForm::dropdownPages_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	int selectedIndex = dropdownPages->SelectedIndex;
 	Book->SetPage(selectedIndex);

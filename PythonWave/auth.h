@@ -17,7 +17,6 @@ namespace PythonWave {
 
 	public ref class auth : public System::Windows::Forms::Form
 	{
-		// Элементы Windows Forms
 		TabPage^ pageAuth;
 		TabPage^ pageReg;
 		LinkLabel^ Ы;
@@ -31,7 +30,6 @@ namespace PythonWave {
 		Panel^ panelMain;
 		Label^ labelMain;
 		IContainer^ components;
-		// Элементы с сторонних фреймворков
 		WinForms::Guna2CircleButton^ buttonClose;
 		WinForms::Guna2CircleButton^ buttonMinimize;
 		WinForms::Guna2ShadowPanel^ panelAuth;
@@ -67,24 +65,21 @@ namespace PythonWave {
 		WinForms::Guna2DragControl^ dragControlMain2;
 		WinForms::Guna2MessageDialog^ MessageWarning;
 		WinForms::Guna2BorderlessForm^ borderlessForm;
-
 	public:
 		auth(void)
 		{
 			InitializeComponent();
 			setShadows();
 		}
-
 	protected:
 		~auth()
 		{
 			if (components)
 			{
-				Application::Exit();
 				delete components;
 			}
+			Application::Exit();
 		}
-
 #pragma region Windows Form Designer generated code
 		void InitializeComponent(void)
 		{
@@ -1155,27 +1150,20 @@ namespace PythonWave {
 		}
 #pragma endregion
 		String^ USER; // Глобальная переменная отвечающая за определение текущего пользователя
-
-		// Форма
-	private:
+	private: // Форма
 		Void LastEnter();
 		Void auth::loadConfig();
-
 		Void buttonMinimize_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e);
 		Void timerTransition_Tick(System::Object^ sender, System::EventArgs^ e);
 		Void buttonShowReg_Click(System::Object^ sender, System::EventArgs^ e);
 		Void buttonShowAuth_Click(System::Object^ sender, System::EventArgs^ e);
-
-		//Регистрация
-	private:
+	private: //Регистрация
 		Void buttonRegister_Click(System::Object^ sender, System::EventArgs^ e);
 		Void Register();
 		Void buttonCloseTerms_Click(System::Object^ sender, System::EventArgs^ e);
 		Void linkLabelTerms_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e);
-
-		//Вход
-	private:
+	private: //Вход
 		Void buttonComeIn_Click(System::Object^ sender, System::EventArgs^ e);
 		Boolean ComeIn();
 		String^ ReadLogFile();

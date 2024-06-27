@@ -200,7 +200,6 @@
     <ClInclude Include="profile.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="general.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="auth.resx">

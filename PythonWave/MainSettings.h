@@ -1,27 +1,22 @@
 #pragma once
 #include "mainForm.h"
-
 Void mainForm::TrackBorderForm_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	borderlessForm->BorderRadius = TrackBorderForm->Value;
 	borderForm = TrackBorderForm->Value;
-
 	labelBorderForm->Text = Convert::ToString(borderForm);
 }
 Void mainForm::TrackBorderBtn_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	borderBtn = TrackBorderBtn->Value;
 	btnSettingsCancel->BorderRadius = TrackBorderBtn->Value;
 	btnSettingsSave->BorderRadius = TrackBorderBtn->Value;
-
 	labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
 }
 Void mainForm::TrackVolume_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	volume = TrackVolume->Value;
-
 	labelVolume->Text = Convert::ToString(volume);
 }
 Void mainForm::toggleTransparent_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	transparentWhileDrag = toggleTransparent->Checked;
-
 	dragMain->TransparentWhileDrag = transparentWhileDrag;
 }
 Void mainForm::toggleGreeting_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -56,11 +51,9 @@ Void mainForm::PythonWaveStyleState(bool enable) {
 		this->FormBorderStyle = Forms::FormBorderStyle::FixedToolWindow;
 		borderForm = 0;
 	}
-
 	btnExit->Visible = enable;
 	btnMinimize->Visible = enable;
 	TrackBorderForm->Enabled = enable;
-
 	borderlessForm->BorderRadius = borderForm;
 	TrackBorderForm->Value = borderForm;
 	labelBorderForm->Text = Convert::ToString(borderForm);
@@ -75,13 +68,11 @@ void mainForm::RegisterMouseDownEvent(Control^ parent, bool enable)
 	{
 		parent->MouseDown -= mouseDownHandler;
 	}
-
 	for each (Control ^ child in parent->Controls)
 	{
 		RegisterMouseDownEvent(child, enable);
 	}
 }
-//textboxes
 Void mainForm::textBoxUserName_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBoxUserName->BorderColor = Color::Silver;
 }

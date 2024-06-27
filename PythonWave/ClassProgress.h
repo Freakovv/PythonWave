@@ -1,27 +1,21 @@
 #pragma once
-
 #include <Windows.h>
 #include <string>
-
 using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
 using namespace System::Windows::Forms;
-
 ref class ClassProgress
 {
 private:
 	double currentProgress;
 	String^ pathToProgress;
-
 	static int StepB = 3;
 	static int StepA = 10;
 	static int StepS = 10;
 	static int StepSplus = 20;
-
 public:
 	Dictionary<int, String^>^ ranks;
-
 	ClassProgress(String^ User) {
 		if (!String::IsNullOrEmpty(User))
 			pathToProgress = User + "//data1.bin";
@@ -30,9 +24,7 @@ public:
 			Application::Exit();
 			return;
 		}
-
 		InitializeRanks();
-
 		if (File::Exists(pathToProgress)) {
 			currentProgress = LoadProgress();
 		}
@@ -41,7 +33,6 @@ public:
 			SaveProgress();
 		}
 	}
-
 	static int getTaskPoint(int difficulty) {
 		switch (difficulty)
 		{
@@ -61,26 +52,21 @@ public:
 			return 0;
 		}
 	}
-
 	int GetCurrentProgress() {
 		return static_cast<int>(currentProgress);
 	}
-
 	void SetProgress(int newProgress) {
 		currentProgress = newProgress;
 		SaveProgress();
 	}
-
 	String^ GetUserRank() {
 		for each (KeyValuePair<int, String^> kvp in ranks) {
 			if (currentProgress < kvp.Key * 20) {
 				return kvp.Value;
 			}
 		}
-		// Если текущий прогресс выше всех определенных уровней, вернуть максимальный ранг
-		return ranks[ranks->Count - 1];
+		return ranks[ranks->Count - 1]; // Если текущий прогресс выше всех определенных уровней, вернуть максимальный ранг
 	}
-
 	int GetUserRankKey() {
 		int maxKey = 0;
 		for each (int key in ranks->Keys) {
@@ -90,7 +76,6 @@ public:
 		}
 		return maxKey;
 	}
-
 	void SolveTaskA() {
 		currentProgress += StepA;
 		SaveProgress();
@@ -107,7 +92,6 @@ public:
 		currentProgress += StepSplus;
 		SaveProgress();
 	}
-
 private:
 	void InitializeRanks() {
 		ranks = gcnew Dictionary<int, String^>();
@@ -118,25 +102,18 @@ private:
 		ranks->Add(4, "Мастер");
 		ranks->Add(5, "Эксперт");
 	}
-
 	double LoadProgress() {
 		FileStream^ fs = gcnew FileStream(pathToProgress, FileMode::Open, FileAccess::Read);
 		BinaryReader^ br = gcnew BinaryReader(fs);
-
 		double progress = br->ReadDouble();
-
 		br->Close();
 		fs->Close();
-
 		return progress;
 	}
-
 	void SaveProgress() {
 		FileStream^ fs = gcnew FileStream(pathToProgress, FileMode::Create, FileAccess::Write);
 		BinaryWriter^ bw = gcnew BinaryWriter(fs);
-
 		bw->Write(currentProgress);
-
 		bw->Close();
 		fs->Close();
 	}

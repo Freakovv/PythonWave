@@ -1,63 +1,38 @@
 #pragma once
-
 #include "mainForm.h"
 #include "MyPython.h"
 #include "ClassTasks.h"
-
 using namespace PythonWave;
 using namespace System;
-
 int currentAnim = 1;
 double animSeconds = 2;
 int secondsToStartAnim = 4;
 bool canSaveFunc = false;
-
-// Анимации, хайлайты
-
 void mainForm::SyntaxHighlight(RichTextBox^ richTB) {
 	int selectionStart = richTB->SelectionStart;
 	int selectionLength = richTB->SelectionLength;
-
 	array<String^>^ keywords = { "False", "None", "True", "and", "as", "assert", "async", "await", "break", "class", "continue", "def", "del", "elif", "else", "except", "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise", "return", "try", "while", "with", "yield", "len", "sum" };
-
 	Color defaultTextColor = Color::FromArgb(238, 238, 238);
 	Color keywordColor = Color::Violet;
-
 	richTB->SelectAll();
 	richTB->SelectionColor = defaultTextColor;
 	richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Regular);
-
-	// Преобразование текста RichTextBox в строку std::string
 	std::string text = msclr::interop::marshal_as<std::string>(richTB->Text);
-
-	// Подготовка регулярного выражения для поиска ключевых слов
 	for each (String ^ keyword in keywords) {
-		// Преобразование ключевого слова в std::string
 		std::string keyword_pattern = msclr::interop::marshal_as<std::string>(keyword);
-
-		// Подготовка регулярного выражения для поиска ключевого слова
 		std::regex word_regex("\\b" + keyword_pattern + "\\b");
-
-		// Поиск всех вхождений ключевого слова в тексте
 		std::sregex_iterator words_begin(text.begin(), text.end(), word_regex);
 		std::sregex_iterator words_end;
-
-		// Обработка каждого найденного вхождения ключевого слова
 		while (words_begin != words_end) {
 			std::smatch match = *words_begin;
 			int start = match.position();
 			int length = match.length();
-
 			richTB->Select(start, length);
 			richTB->SelectionColor = keywordColor;
 			richTB->SelectionFont = gcnew System::Drawing::Font(richTB->Font, FontStyle::Bold);
-
-			// Переход к следующему вхождению
 			++words_begin;
 		}
 	}
-
-	// Восстановление исходного выделения
 	richTB->Select(selectionStart, selectionLength);
 	richTB->SelectionColor = defaultTextColor;
 }
@@ -68,12 +43,10 @@ Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 	{
 		currentAnim = 1;
 		animSeconds = 3;
-
 		Pages->AllowTransitions = true;
 		funcSelectTab(anim1);
 		timerAnim->Start();
 		courseAnimationState = true;
-
 		if (menu) {
 			menu = false;
 			timerMenu->Start();
@@ -82,7 +55,6 @@ Void mainForm::btnCourses_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 Void mainForm::btnSync_Click(System::Object^ sender, System::EventArgs^ e) {
 	Pages->SelectTab(anim4);
-
 	currentAnim = 4;
 	animSeconds = 3;
 	timerAnim->Start();
@@ -156,7 +128,6 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 		Pages->AllowTransitions = false;
 		isCoursesVisited = true;
 		courseAnimationState = false;
-
 		writeBinaryFile("script//logs.bin", Convert::ToString(isCoursesVisited));
 		timerAnim->Stop();
 		break;
@@ -164,39 +135,29 @@ Void mainForm::timerAnim_Tick(System::Object^ sender, System::EventArgs^ e) {
 		break;
 	}
 }
-
 Void mainForm::richTask1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	SyntaxHighlight(richTask);
 	canSaveFunc = false;
 }
-
 Void mainForm::TaskText_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 	TaskText->Multiline = true;
 	TaskText->WordWrap = true;
 	TaskText->ScrollBars = ScrollBars::Vertical;
 }
-
-// Задачи
-
 Void mainForm::LoadTask() {
 	try {
 		String^ pathToText = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".txt";
 		String^ pathToFunc = "script//text//" + CurrentDifficulty + "//" + CurrentTask + ".py";
-
 		FileStream^ fsText = gcnew FileStream(pathToText, FileMode::Open, FileAccess::Read);
 		StreamReader^ srText = gcnew StreamReader(fsText);
-
 		String^ text = srText->ReadToEnd();
 		srText->Close();
 		fsText->Close();
-
 		FileStream^ fsFunc = gcnew FileStream(pathToFunc, FileMode::Open, FileAccess::Read);
 		StreamReader^ srFunc = gcnew StreamReader(fsFunc);
-
 		String^ func = srFunc->ReadToEnd();
 		srFunc->Close();
 		fsFunc->Close();
-
 		TaskText->Text = text;
 		richTask->Text = func;
 		SyntaxHighlight(richTask);
@@ -206,7 +167,6 @@ Void mainForm::LoadTask() {
 		MessageBox::Show(e->Message);
 	}
 }
-
 void mainForm::InitializeTaskArrays() {
 	easyTasks = gcnew array<String^> {"add", "subtract", "multiply", "divide", "even_or_odd"};
 	middleTasks = gcnew array<String^> {"positive_sum", "better_than_average", "reverse_seq"};
@@ -228,7 +188,6 @@ array<String^>^ mainForm::GetTaskArray() {
 	}
 	return nullptr;
 }
-
 Void mainForm::NextTask() {
 	InitializeTaskArrays();
 	array<String^>^ tasks = GetTaskArray();
@@ -236,16 +195,13 @@ Void mainForm::NextTask() {
 		MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
 		return;
 	}
-
 	TaskIndex = Array::IndexOf(tasks, CurrentTask);
 	if (TaskIndex == -1) {
 		MessageError->Show("Error: Invalid Index", "Transition is not possible");
 		return;
 	}
-
 	TaskIndex = (TaskIndex + 1) % tasks->Length;
 	CurrentTask = tasks[TaskIndex];
-
 	LoadTask();
 }
 Void mainForm::PreviousTask() {
@@ -255,19 +211,15 @@ Void mainForm::PreviousTask() {
 		MessageError->Show("Error: Invalid difficulty", "Transition is not possible");
 		return;
 	}
-
 	TaskIndex = Array::IndexOf(tasks, CurrentTask);
 	if (TaskIndex == -1) {
 		MessageError->Show("Error: Invalid Index", "Transition is not possible");
 		return;
 	}
-
 	TaskIndex = (TaskIndex - 1 + tasks->Length) % tasks->Length;
 	CurrentTask = tasks[TaskIndex];
-
 	LoadTask();
 }
-
 Void mainForm::btnPerviousTask_Click(System::Object^ sender, System::EventArgs^ e) {
 	PreviousTask();
 }
@@ -277,20 +229,17 @@ Void mainForm::btnNextTask_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
 	PagesTasks->SelectTab(TasksMain);
 }
-
 Void mainForm::lblPanelTaskInfo_Click(System::Object^ sender, System::EventArgs^ e) {
 	lblPanelTaskInfo->Visible = false;
 }
 Void mainForm::panelTask_Click(System::Object^ sender, System::EventArgs^ e) {
 	lblPanelTaskInfo->Visible = false;
 }
-
 void mainForm::SetTaskAndLoad(String^ task, String^ difficulty) {
 	CurrentTask = task;
 	CurrentDifficulty = difficulty;
 	LoadTask();
 }
-
 Void mainForm::btnTaskAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	SetTaskAndLoad("add", "easy");
 }
@@ -333,41 +282,32 @@ Void mainForm::btnHero_Click(System::Object^ sender, System::EventArgs^ e) {
 Void mainForm::btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs^ e) {
 	SetTaskAndLoad("symmetric_point", "very_hard");
 }
-
-// Проверка кода и его сохранение
 void mainForm::PyRun(String^ code) {
 	if (String::IsNullOrEmpty(CurrentTask)) {
 		MessageError->Show("CurrentTask is Null or Empty", "Ошибка переменной: String^ CurrentTask");
 		return;
 	}
-
 	MyPython PyRunner;
 	String^ PythonOutput = PyRunner.Start(code);
-
 	String^ pathToResult = "script//result.txt";
 	if (!File::Exists(pathToResult)) {
 		return;
 	}
-
 	FileStream^ fs = gcnew FileStream(pathToResult, FileMode::Open, FileAccess::Read);
 	StreamReader^ sr = gcnew StreamReader(fs);
 	String^ result = sr->ReadToEnd()->Trim();
 	sr->Close();
 	fs->Close();
-
 	if (result == "OK") {
 		canSaveFunc = true;
 		ClassTasks^ validate = gcnew ClassTasks(User);
-
 		bool isTaskCompleted = validate->GetTaskValue(CurrentTask);
 		if (isTaskCompleted) {
 			MessageInfo->Show("Задача решена верно.", "Поздравляем!");
 			MessageWarning->Show("Вы не получите баллов за это решение, так как вы уже решили эту задачу ранее.");
 			return;
 		}
-
 		ClassProgress^ progress = gcnew ClassProgress(User);
-
 		int points;
 		if (CurrentDifficulty == "easy") {
 			progress->SolveTaskB();
@@ -393,10 +333,8 @@ void mainForm::PyRun(String^ code) {
 			MessageError->Show("CurrentDifficulty не определена", "Ошибка PyRun()");
 			return;
 		}
-
 		validate->SolveTask(CurrentTask);
 		validate->SetTaskCompletionDate(CurrentTask);
-
 		String^ text = "баллов";
 		if (points == 1)
 			text = "балл";
@@ -404,7 +342,6 @@ void mainForm::PyRun(String^ code) {
 			text = "балла";
 		else if (points > 4)
 			text = "баллов";
-
 		MessageInfo->Show("Задача решена верно. Вы получите " + points + " " + text, "Поздравляем!");
 		UserProgress = progress->GetCurrentProgress();
 	}
@@ -428,23 +365,19 @@ void mainForm::PyRun(String^ code) {
 	}
 	File::Delete(pathToResult);
 }
-
 int mainForm::GetTasksCompletedCount(int substract) {
 	ClassTasks date(User);
 	DateTime end = DateTime::Now;
 	DateTime start = end.AddDays(substract);
 	return date.getCompletedCount(start, end);
 }
-
 Void mainForm::btnTestCode_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ code = richTask->Text;
 	PyRun(code);
 }
-
 Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ pathToFunc = "script/text/" + CurrentDifficulty + "/" + CurrentTask + ".py";
 	String^ code = richTask->Text;
-
 	if (canSaveFunc) {
 		try {
 			FileStream^ fs = gcnew FileStream(pathToFunc, FileMode::Create, FileAccess::Write);
@@ -462,22 +395,17 @@ Void mainForm::btnSaveCode_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageWarning->Show("Для сохранения вам нужно успешно протестировать код, затем сразу сохранить его.", "Внимание");
 	}
 }
-
-
 Void mainForm::btnReport_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ period = dropdownReport->Text;
 	ClassTasks^ data = gcnew ClassTasks(User);
 	String^ taskStates = data->GetTaskStates();
 	int completed = 0;
-
 	if (period == "Период") {
 		MessageWarning->Show("Для получения отчета выберите период", "Внимание");
 		return;
 	}
-
 	DateTime endDate = DateTime::Now;
 	DateTime startDate;
-
 	if (period == "1 Неделя") {
 		startDate = endDate.AddDays(-7);
 	}
@@ -497,21 +425,17 @@ Void mainForm::btnReport_Click(System::Object^ sender, System::EventArgs^ e) {
 		period = "1 Неделя";
 		startDate = endDate.AddDays(-7);
 	}
-
 	completed = data->getCompletedCount(startDate, endDate);
 	String^ MaxDiff = data->getMaxDifficulty();
-
 	array<String^>^ EzTasks = { "add", "multiply", "divide", "subtract", "even_or_odd" };
 	array<String^>^ MidTasks = { "better_than_average", "positive_sum", "reverse_seq" };
 	array<String^>^ HardTasks = { "get_count", "high_and_low", "square_digits" };
 	array<String^>^ VeryHardTasks = { "get_char", "symmetric_point", "get_middle" };
-
 	int ezCount = 0, midCount = 0, hardCount = 0, veryHardCount = 0;
 	String^ ezTasksCompleted = "";
 	String^ midTasksCompleted = "";
 	String^ hardTasksCompleted = "";
 	String^ veryHardTasksCompleted = "";
-
 	for each (KeyValuePair<String^, bool> kvp in data->taskDict) {
 		if (kvp.Value) {
 			if (Array::IndexOf(EzTasks, kvp.Key) != -1) {
@@ -532,56 +456,43 @@ Void mainForm::btnReport_Click(System::Object^ sender, System::EventArgs^ e) {
 			}
 		}
 	}
-
-	// Удаляем последние запятые и пробелы, если есть
 	if (ezTasksCompleted->Length > 0) ezTasksCompleted = ezTasksCompleted->Substring(0, ezTasksCompleted->Length - 2);
 	if (midTasksCompleted->Length > 0) midTasksCompleted = midTasksCompleted->Substring(0, midTasksCompleted->Length - 2);
 	if (hardTasksCompleted->Length > 0) hardTasksCompleted = hardTasksCompleted->Substring(0, hardTasksCompleted->Length - 2);
 	if (veryHardTasksCompleted->Length > 0) veryHardTasksCompleted = veryHardTasksCompleted->Substring(0, veryHardTasksCompleted->Length - 2);
-
 	String^ FullMessage = "Количество решенных задач: " + completed.ToString() + "\n\n";
 	FullMessage += "Легкие задачи:\nКол-во: " + ezCount + "\nРешенные задачи: " + ezTasksCompleted + "\n\n";
 	FullMessage += "Средние задачи:\nКол-во: " + midCount + "\nРешенные задачи: " + midTasksCompleted + "\n\n";
 	FullMessage += "Сложные задачи:\nКол-во: " + hardCount + "\nРешенные задачи: " + hardTasksCompleted + "\n\n";
 	FullMessage += "Очень сложные задачи:\nКол-во: " + veryHardCount + "\nРешенные задачи: " + veryHardTasksCompleted + "\n\n";
 	FullMessage += "Желаете экспортировать отчет?";
-
 	String^ caption = "Отчет за период: " + period;
-
 	if (MessageQuestion->Show(FullMessage, caption) == ::DialogResult::Yes) {
 		SaveReportToFile(FullMessage);
 	}
 }
-
 Void mainForm::SaveReportToFile(String^ reportContent) {
 	SaveFileDialog^ saveFileDialog = gcnew SaveFileDialog();
 	saveFileDialog->Filter = "Text File|*.txt";
 	saveFileDialog->Title = "Сохранить отчет";
-
-	// Генерируем имя файла с текущей датой в формате "ДД.ММ"
 	String^ defaultFileName = "Отчет " + DateTime::Now.ToString("dd.MM") + ".txt";
 	saveFileDialog->FileName = defaultFileName;
-
 	if (saveFileDialog->ShowDialog() == ::DialogResult::OK && saveFileDialog->FileName != "") {
 		try {
 			StreamWriter^ sw = gcnew StreamWriter(saveFileDialog->FileName);
-			// Убираем строку "Желаете экспортировать отчет?"
 			int exportQuestionIndex = reportContent->LastIndexOf("Желаете экспортировать отчет?");
 			if (exportQuestionIndex != -1) {
 				reportContent = reportContent->Substring(0, exportQuestionIndex);
 			}
 			sw->Write(reportContent);
-
-			// Добавляем информацию о дате отчета
 			sw->WriteLine();
 			sw->WriteLine("Отчет создан: " + DateTime::Now.ToString("dd.MM.yyyy HH:mm:ss"));
 			sw->WriteLine("Делитесь своими успехами с окружающими! С уважением PythonWave.");
-
 			sw->Close();
 			MessageBox::Show("Отчет успешно сохранен!", "Успех", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show("Ошибка при сохранении отчета: " + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageError->Show(ex->Message);
 		}
 	}
 }

@@ -1,14 +1,11 @@
 #pragma once
 #include "mainForm.h"
 #include "ClassTasks.h"
-
 using namespace PythonWave;
 using namespace System;
-
 String^ mainForm::GetGreetingBasedOnTime() {
 	DateTime now = DateTime::Now;
 	int hour = now.Hour;
-
 	if (hour >= 5 && hour < 12) {
 		return "Доброе утро, " + UserName + "!";
 	}
@@ -22,11 +19,9 @@ String^ mainForm::GetGreetingBasedOnTime() {
 		return "Доброй ночи, " + UserName;
 	}
 }
-
 String^ GetDayOfWeek() {
 	DateTime now = DateTime::Now;
 	DayOfWeek dayOfWeek = now.DayOfWeek;
-
 	String^ dayName;
 	switch (dayOfWeek)
 	{
@@ -103,19 +98,15 @@ void mainForm::LoadHomePage() {
 	InitializePhrazes();
 	lblHello->Text = GetGreetingBasedOnTime();
 	lblSovet->Text = GetPhraseForToday();
-
 	SetCenter(pageHome, lblHello, 1);
 	SetCenter(pnlHome2, lblPnlHome2, 1);
 	SetCenter(pageHome, lblHello, 1);
 	SetCenter(pnlHome1n1, btnRead, 1);
 	SetCenter(pnlHome1, btnReadBook, 1);
-
 	ReadTimeFromFile();
 	InitializePanelBook();
-
 	ClassTasks tasks(User);
 	currentDayOfWeek = GetDayOfWeek();
-
 	array<String^>^ DaysOfWeek = gcnew array<String^>(7);
 	DaysOfWeek[0] = "Пн";
 	DaysOfWeek[1] = "Вт";
@@ -124,12 +115,9 @@ void mainForm::LoadHomePage() {
 	DaysOfWeek[4] = "Пт";
 	DaysOfWeek[5] = "Сб";
 	DaysOfWeek[6] = "Вс";
-
 	TasksDataset->DataPoints->Clear();
-
 	DateTime today = DateTime::Now.Date;
 	DateTime startOfWeek = today.AddDays(-(int)today.DayOfWeek + (int)DayOfWeek::Monday);
-
 	for (int i = 0; i < DaysOfWeek->Length; ++i) {
 		DateTime dayToCheck = startOfWeek.AddDays(i);
 		int completedTasks = tasks.getCompletedCount(dayToCheck, dayToCheck.AddDays(1));
@@ -137,22 +125,18 @@ void mainForm::LoadHomePage() {
 	}
 	circleProgress->Value = UserProgress;
 }
-
 void mainForm::InitializePanelBook() {
 	String^ filePath = User + "//book//lastpage.txt";
 	String^ pageName = "none";
-
 	if (File::Exists(filePath)) {
 		pageName = File::ReadAllText(filePath);
 		int tabPageIndex = -1;
-
 		for (int i = 0; i < Book->TabCount; ++i) {
 			if (Book->TabPages[i]->Text == pageName) {
 				tabPageIndex = i;
 				break;
 			}
 		}
-
 		if (tabPageIndex != -1) {
 			Book->SelectTab(tabPageIndex);
 			dropdownPages->SelectedIndex = tabPageIndex;
@@ -177,13 +161,11 @@ void mainForm::InitializePanelBook() {
 			pageName = "none";
 		}
 	}
-
 	if (pageName == "none") {
 		pnlHome1->Visible = true;
 		return;
 	}
 }
-
 Void mainForm::btnReadBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
 	btnBook->Checked = true;
@@ -192,8 +174,6 @@ Void mainForm::btnRead_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);
 	btnBook->Checked = true;
 }
-
-//timer in app
 void mainForm::ReadTimeFromFile()
 {
 	String^ pathToTimer = User + "//time.bin";

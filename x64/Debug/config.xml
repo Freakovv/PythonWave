@@ -3,7 +3,7 @@
   <settings>
     <setting name="dragTransparent" value="True" />
     <setting name="hasFormShadow" value="True" />
-    <setting name="greeting" value="True" />
+    <setting name="greeting" value="False" />
     <setting name="alwaysHideMenu" value="False" />
     <setting name="borderForm" value="25" />
     <setting name="borderBtn" value="20" />

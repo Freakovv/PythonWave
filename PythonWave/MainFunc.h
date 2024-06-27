@@ -1,40 +1,31 @@
 #pragma once
 #include "mainForm.h"
 #include "ClassProgress.h"
-
 void mainForm::logsLoad() {
 	if (File::Exists("script//logs.bin"))
 		isCoursesVisited = Convert::ToBoolean(readBinaryFile("script//logs.bin"));
 	else
 		isCoursesVisited = false;
 }
-
 Void mainForm::enableMail(bool enable) {
 	if (enable) {
 		textBoxCode->Clear();
-
 		textBoxEmail->Enabled = true;
 		textBoxCode->Enabled = false;
 		textBoxCodeNew->Enabled = false;
-
 		buttonSendMail->Enabled = true;
 		buttonCheckCode->Enabled = false;
-
 		pictureBoxCheckMail->Enabled = true;
 		pictureBoxCheckCode->Enabled = true;
-
 		pictureBoxCheckMail->Visible = false;
 		pictureBoxCheckCode->Visible = false;
-
 		linkReMail->Visible = false;
 	}
 	else {
 		textBoxEmail->Enabled = true;
 		textBoxCode->Enabled = true;
-
 		buttonSendMail->Enabled = true;
 		buttonCheckCode->Enabled = true;
-
 		pictureBoxCheckMail->Enabled = false;
 		pictureBoxCheckCode->Enabled = false;
 	}
@@ -47,15 +38,12 @@ String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 		FILETIME creationTime = fileInfo.ftCreationTime;
 		SYSTEMTIME systemTime;
 		FileTimeToSystemTime(&creationTime, &systemTime);
-
 		array<String^>^ months = gcnew array<String^> {
 			"Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
 				"Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
 		};
-
 		String^ creationDateString = String::Format("{0} {1} {2}",
 			systemTime.wDay, months[systemTime.wMonth - 1], systemTime.wYear);
-
 		return creationDateString;
 	}
 	else {
@@ -65,7 +53,6 @@ String^ mainForm::GetFolderCreationDate(String^ folderPath) {
 String^ mainForm::readBinaryFile(String^ filePath) {
 	FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
 	BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
-
 	String^ result = binaryReader->ReadString();
 	fileStream->Close();
 	binaryReader->Close();
@@ -76,12 +63,9 @@ size_t mainForm::readPassword(String^ filePath) {
 	try {
 		FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Open, FileAccess::Read);
 		BinaryReader^ binaryReader = gcnew BinaryReader(fileStream);
-
 		size_t result = binaryReader->ReadUInt64();
-
 		binaryReader->Close();
 		fileStream->Close();
-
 		return result;
 	}
 	catch (Exception^ e) {
@@ -92,7 +76,6 @@ size_t mainForm::readPassword(String^ filePath) {
 void mainForm::writeBinaryFile(String^ filePath, String^ content) {
 	FileStream^ fileStream = gcnew FileStream(filePath, FileMode::Create, FileAccess::Write);
 	BinaryWriter^ binaryWriter = gcnew BinaryWriter(fileStream);
-
 	binaryWriter->Write(content);
 	binaryWriter->Close();
 	fileStream->Close();
@@ -108,7 +91,6 @@ void mainForm::DeleteDirectory(String^ folderPath) {
 	try {
 		DirectoryInfo^ directory = gcnew DirectoryInfo(folderPath);
 		if (directory->Exists) {
-			// Удаляем папку и все ее содержимое
 			directory->Delete(true);
 		}
 		else {
@@ -119,17 +101,13 @@ void mainForm::DeleteDirectory(String^ folderPath) {
 		MessageError->Show(e->Message);
 	}
 }
-
-// Data
 void mainForm::DataLoad() {
 	ClassProgress data(User);
-
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserBirth = User + "//userBirth.bin";
 	String^ fileUserSex = User + "//userSex.bin";
 	String^ fileUserName = User + "//userName.bin";
 	String^ fileUserSurname = User + "//userSurname.bin";
-
 	try {
 		UserEmail = readBinaryFile(fileUserEmail);
 		UserBirth = readBinaryFile(fileUserBirth);
@@ -141,14 +119,11 @@ void mainForm::DataLoad() {
 	catch (Exception^ e) {
 		MessageError->Show(e->Message, "Ошибка загрузки данных пользователя");
 	}
-
 	String^ pathToAvatarPng = User + "//avatar.png";
 	String^ pathToAvatarJpg = User + "//avatar.jpg";
-
 	if (File::Exists(fileUserSurname)) {
 		UserSurname = readBinaryFile(fileUserSurname);
 	}
-
 	if (File::Exists(pathToAvatarJpg)) {
 		pictureProfile->ImageLocation = pathToAvatarJpg;
 		pictureUserBar->ImageLocation = pathToAvatarJpg;
@@ -159,7 +134,6 @@ void mainForm::DataLoad() {
 		pictureUserBar->ImageLocation = pathToAvatarPng;
 		pictureProfileEdit->ImageLocation = pathToAvatarPng;
 	}
-
 	lblLogin->Text = User;
 	lblName->Text = "Имя: " + UserName;
 	lblSurname->Text = "Фамилия: " + UserSurname;
@@ -171,45 +145,35 @@ void mainForm::DataLoad() {
 	lblBirthEdit->Text = "Дата рождения:\n" + UserBirth;
 	lblProfileRank->Text = "Уровень: " + UserRank;
 	lblAnim1->Text = "Приветствуем вас на странице заданий, " + UserName + "!";
-
 	labelNameBar->Text = UserName;
 	labelRankBar->Text = UserRank;
 	StarsUser->Location = Point(labelRankBar->Right + 5, labelRankBar->Top);
-
 	textBoxUserName->Text = UserName;
 	textBoxUserSurname->Text = UserSurname;
 	textBoxEmail->Text = UserEmail;
 }
 void mainForm::DataChange() {
-	// Local
 	UserName = textBoxUserName->Text;
 	UserSurname = textBoxUserSurname->Text;
 	UserEmail = textBoxEmail->Text;
-
 	lblName->Text = "Имя: " + UserName;
 	lblSurname->Text = "Фамилия: " + UserSurname;
 	lblEmail->Text = "Email: " + UserEmail;
-
 	labelNameBar->Text = UserName;
 }
 void mainForm::DataSave() {
 	String^ fileUserEmail = User + "//userData.bin";
 	String^ fileUserName = User + "//userName.bin";
 	String^ fileUserSurname = User + "//userSurname.bin";
-
 	writeBinaryFile(fileUserEmail, UserEmail);
 	writeBinaryFile(fileUserName, UserName);
 	writeBinaryFile(fileUserSurname, UserSurname);
 }
-
 void mainForm::cfgLoad() {
 	Config^ config = config->LoadConfig();
-
-	// Переменные
 	borderlessForm->BorderRadius = config->borderForm;
 	borderlessForm->HasFormShadow = config->hasFormShadow;
 	dragMain->TransparentWhileDrag = config->dragTransparent;
-
 	greeting = config->greeting;
 	borderBtn = config->borderBtn;
 	volume = config->volume;
@@ -218,22 +182,17 @@ void mainForm::cfgLoad() {
 	formShadow = config->hasFormShadow;
 	transparentWhileDrag = config->dragTransparent;
 	PythonWaveStyle = config->PythonWaveStyle;
-
-	// Страница настроек
 	TrackBorderBtn->Value = borderBtn;
 	TrackBorderForm->Value = borderForm;
 	TrackVolume->Value = volume;
-
 	labelBorderBtn->Text = Convert::ToString(borderBtn);
 	labelBorderForm->Text = Convert::ToString(borderForm);
 	labelVolume->Text = Convert::ToString(volume);
-
 	toggleAlwaysHide->Checked = alwaysHideMenu;
 	toggleGreeting->Checked = greeting;
 	toggleStyle->Checked = PythonWaveStyle;
 	toggleShadows->Checked = formShadow;
 	toggleTransparent->Checked = transparentWhileDrag;
-
 	RegisterMouseDownEvent(this, alwaysHideMenu);
 	PythonWaveStyleState(PythonWaveStyle);
 }
@@ -247,10 +206,8 @@ void mainForm::cfgSave() {
 	config->PythonWaveStyle = PythonWaveStyle;
 	config->greeting = greeting;
 	config->volume = volume;
-
 	config->SaveConfig();
 }
-
 String^ mainForm::SetUserLvl() {
 	String^ newRank;
 	String^ fileRankPath = User + "//lvl.bin";
@@ -259,7 +216,6 @@ String^ mainForm::SetUserLvl() {
 		writeBinaryFile(fileRankPath, newRank);
 		return newRank;
 	}
-
 	if (UserProgress >= 20 && UserProgress <= 39) {
 		newRank = "Исследователь";
 		StarsUser->Value = 1.5;
@@ -286,21 +242,15 @@ String^ mainForm::SetUserLvl() {
 		StarsUser->Value = 0;
 		return newRank;
 	}
-
 	String^ fileRank = User + "//lvl.bin";
 	writeBinaryFile(fileRank, newRank);
 	return newRank;
 }
-
 Void mainForm::labelRankBar_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (isDataLoaded) {
 		MessageInfo->Show("Вы получили новый уровень", "Поздравляем, " + UserRank);
 	}
 }
-
-Void mainForm::RankUp() {
-}
-
 Void mainForm::HideWAnimation(Forms::Control^ CONTROL) {
 	UI2::AnimatorNS::Animation^ MYANIM = gcnew UI2::AnimatorNS::Animation();
 	gunaTransition->HideSync(dynamic_cast<Forms::Control^>(CONTROL), true, MYANIM->Transparent);

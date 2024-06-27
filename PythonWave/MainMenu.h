@@ -1,10 +1,7 @@
 #pragma once
 #include "mainForm.h"
-
 using namespace PythonWave;
 using namespace System;
-
-// Для перехода с профиля
 Void mainForm::SetProfileDefaults() {
 	textBoxUserName->Text = UserName;
 	textBoxUserSurname->Text = UserSurname;
@@ -33,12 +30,9 @@ Boolean mainForm::CheckSave() {
 	MessageWarning->Buttons = UI2::WinForms::MessageDialogButtons::OK;
 }
 Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
-	// 80 Min 250 Max (menu)
-
 	int newPanelWidth;
 	int newPagesWidth;
 	int newPagesLocationX;
-
 	switch (menu)
 	{
 	case true:
@@ -79,7 +73,6 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 		break;
 	}
 }
-
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
 	LoadHomePage();
 	if (CheckSave() && !courseAnimationState)
@@ -87,15 +80,12 @@ Void mainForm::funcSelectTab(TabPage^ tabPage) {
 	else if (courseAnimationState)
 		btnCourses->Checked = true;
 }
-
 Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (courseAnimationState)
 		return;
-
 	menu == false ? menu = true : menu = false;
 	timerMenu->Start();
 }
-
 Void mainForm::btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageHome);
 }
@@ -115,10 +105,7 @@ Void mainForm::btnSettings_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ executablePath = Application::ExecutablePath;
-
 	Process::Start(executablePath);
-
-	// Выключает remember me
 	if (Directory::Exists("logs")) {
 		try {
 			Directory::Delete("logs", true);
@@ -127,6 +114,5 @@ Void mainForm::btnLogOut_Click(System::Object^ sender, System::EventArgs^ e) {
 			MessageError->Show(e->Message);
 		}
 	}
-
 	Application::Exit();
 }

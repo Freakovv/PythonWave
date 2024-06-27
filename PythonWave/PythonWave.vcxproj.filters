@@ -32,9 +32,6 @@
     <ClInclude Include="profile-header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="general.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ClassFade.h">
       <Filter>Header Files</Filter>
     </ClInclude>
