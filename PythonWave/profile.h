@@ -133,6 +133,7 @@ namespace PythonWave {
 	private: Guna::UI2::WinForms::Guna2MessageDialog^ MessageWarning;
 
 	private: Guna::UI2::WinForms::Guna2BorderlessForm^ guna2BorderlessForm1;
+private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 
 	protected:
 	private: System::ComponentModel::IContainer^ components;
@@ -218,6 +219,7 @@ namespace PythonWave {
 			   this->MessageInfo = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			   this->MessageWarning = (gcnew Guna::UI2::WinForms::Guna2MessageDialog());
 			   this->guna2BorderlessForm1 = (gcnew Guna::UI2::WinForms::Guna2BorderlessForm(this->components));
+			   this->guna2Button1 = (gcnew Guna::UI2::WinForms::Guna2Button());
 			   this->Pages->SuspendLayout();
 			   this->pageProfile->SuspendLayout();
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCheckCode))->BeginInit();
@@ -230,17 +232,17 @@ namespace PythonWave {
 			   this->pageSettings->SuspendLayout();
 			   this->pageEnd->SuspendLayout();
 			   this->SuspendLayout();
-			   //
+			   // 
 			   // borderlessForm
-			   //
+			   // 
 			   this->borderlessForm->BorderRadius = 25;
 			   this->borderlessForm->ContainerControl = this;
 			   this->borderlessForm->DockIndicatorTransparencyValue = 0.6;
 			   this->borderlessForm->ResizeForm = false;
 			   this->borderlessForm->TransparentWhileDrag = true;
-			   //
+			   // 
 			   // Pages
-			   //
+			   // 
 			   this->Pages->Alignment = System::Windows::Forms::TabAlignment::Bottom;
 			   this->Pages->AllowTransitions = true;
 			   this->Pages->Controls->Add(this->pageProfile);
@@ -251,10 +253,10 @@ namespace PythonWave {
 			   this->Pages->Location = System::Drawing::Point(-4, -9);
 			   this->Pages->Multiline = true;
 			   this->Pages->Name = L"Pages";
-			   this->Pages->Page = this->pageSettings;
-			   this->Pages->PageIndex = 2;
-			   this->Pages->PageName = L"pageSettings";
-			   this->Pages->PageTitle = L"pageSettings";
+			   this->Pages->Page = this->pageProfile;
+			   this->Pages->PageIndex = 0;
+			   this->Pages->PageName = L"pageProfile";
+			   this->Pages->PageTitle = L"pageProfile";
 			   this->Pages->SelectedIndex = 0;
 			   this->Pages->Size = System::Drawing::Size(948, 737);
 			   this->Pages->TabIndex = 40;
@@ -275,11 +277,12 @@ namespace PythonWave {
 			   animation1->TransparencyCoeff = 1;
 			   this->Pages->Transition = animation1;
 			   this->Pages->TransitionType = Utilities::BunifuPages::BunifuAnimatorNS::AnimationType::Transparent;
-			   //
+			   // 
 			   // pageProfile
-			   //
+			   // 
 			   this->pageProfile->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			   this->pageProfile->Controls->Add(this->guna2Button1);
 			   this->pageProfile->Controls->Add(this->buttonQuestion);
 			   this->pageProfile->Controls->Add(this->label4);
 			   this->pageProfile->Controls->Add(this->bunifuDropdownSex);
@@ -310,9 +313,9 @@ namespace PythonWave {
 			   this->pageProfile->Size = System::Drawing::Size(940, 711);
 			   this->pageProfile->TabIndex = 0;
 			   this->pageProfile->Text = L"pageProfile";
-			   //
+			   // 
 			   // buttonQuestion
-			   //
+			   // 
 			   this->buttonQuestion->Animated = true;
 			   this->buttonQuestion->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonQuestion->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -335,9 +338,9 @@ namespace PythonWave {
 			   this->buttonQuestion->Text = L"guna2CircleButton1";
 			   this->buttonQuestion->UseTransparentBackground = true;
 			   this->buttonQuestion->Click += gcnew System::EventHandler(this, &profile::buttonQuestion_Click);
-			   //
+			   // 
 			   // label4
-			   //
+			   // 
 			   this->label4->AutoSize = true;
 			   this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
 			   this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -350,9 +353,9 @@ namespace PythonWave {
 			   this->label4->TabIndex = 53;
 			   this->label4->Text = L"Фото профиля";
 			   this->label4->Click += gcnew System::EventHandler(this, &profile::buttonUpload_Click);
-			   //
+			   // 
 			   // bunifuDropdownSex
-			   //
+			   // 
 			   this->bunifuDropdownSex->BackColor = System::Drawing::Color::Transparent;
 			   this->bunifuDropdownSex->BackgroundColor = System::Drawing::Color::White;
 			   this->bunifuDropdownSex->BorderColor = System::Drawing::Color::Silver;
@@ -398,9 +401,9 @@ namespace PythonWave {
 			   this->bunifuDropdownSex->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			   this->bunifuDropdownSex->TextLeftMargin = 4;
 			   this->bunifuDropdownSex->Click += gcnew System::EventHandler(this, &profile::bunifuDropdownSex_Click);
-			   //
+			   // 
 			   // bunifuDropdownDay
-			   //
+			   // 
 			   this->bunifuDropdownDay->BackColor = System::Drawing::Color::Transparent;
 			   this->bunifuDropdownDay->BackgroundColor = System::Drawing::Color::White;
 			   this->bunifuDropdownDay->BorderColor = System::Drawing::Color::Silver;
@@ -451,9 +454,9 @@ namespace PythonWave {
 			   this->bunifuDropdownDay->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			   this->bunifuDropdownDay->TextLeftMargin = 5;
 			   this->bunifuDropdownDay->Click += gcnew System::EventHandler(this, &profile::bunifuDropdownDay_Click);
-			   //
+			   // 
 			   // bunifuDropdownMonth
-			   //
+			   // 
 			   this->bunifuDropdownMonth->BackColor = System::Drawing::Color::Transparent;
 			   this->bunifuDropdownMonth->BackgroundColor = System::Drawing::Color::White;
 			   this->bunifuDropdownMonth->BorderColor = System::Drawing::Color::Silver;
@@ -503,9 +506,9 @@ namespace PythonWave {
 			   this->bunifuDropdownMonth->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			   this->bunifuDropdownMonth->TextLeftMargin = 5;
 			   this->bunifuDropdownMonth->Click += gcnew System::EventHandler(this, &profile::bunifuDropdownMonth_Click);
-			   //
+			   // 
 			   // bunifuDropdownYear
-			   //
+			   // 
 			   this->bunifuDropdownYear->BackColor = System::Drawing::Color::Transparent;
 			   this->bunifuDropdownYear->BackgroundColor = System::Drawing::Color::White;
 			   this->bunifuDropdownYear->BorderColor = System::Drawing::Color::Silver;
@@ -557,9 +560,9 @@ namespace PythonWave {
 			   this->bunifuDropdownYear->TextAlignment = Bunifu::UI::WinForms::BunifuDropdown::TextAlign::Left;
 			   this->bunifuDropdownYear->TextLeftMargin = 5;
 			   this->bunifuDropdownYear->Click += gcnew System::EventHandler(this, &profile::bunifuDropdownYear_Click);
-			   //
+			   // 
 			   // labelTimer
-			   //
+			   // 
 			   this->labelTimer->AutoSize = true;
 			   this->labelTimer->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold));
 			   this->labelTimer->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -570,9 +573,9 @@ namespace PythonWave {
 			   this->labelTimer->TabIndex = 48;
 			   this->labelTimer->Text = L"Отправить повторно через 30 секунд";
 			   this->labelTimer->Visible = false;
-			   //
+			   // 
 			   // pictureBoxCheckCode
-			   //
+			   // 
 			   this->pictureBoxCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckCode.Image")));
 			   this->pictureBoxCheckCode->ImageRotate = 0;
 			   this->pictureBoxCheckCode->Location = System::Drawing::Point(455, 346);
@@ -583,9 +586,9 @@ namespace PythonWave {
 			   this->pictureBoxCheckCode->TabIndex = 47;
 			   this->pictureBoxCheckCode->TabStop = false;
 			   this->pictureBoxCheckCode->Visible = false;
-			   //
+			   // 
 			   // pictureBoxCheckMail
-			   //
+			   // 
 			   this->pictureBoxCheckMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBoxCheckMail.Image")));
 			   this->pictureBoxCheckMail->ImageRotate = 0;
 			   this->pictureBoxCheckMail->Location = System::Drawing::Point(511, 245);
@@ -596,9 +599,9 @@ namespace PythonWave {
 			   this->pictureBoxCheckMail->TabIndex = 46;
 			   this->pictureBoxCheckMail->TabStop = false;
 			   this->pictureBoxCheckMail->Visible = false;
-			   //
+			   // 
 			   // panel1
-			   //
+			   // 
 			   this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(71)));
 			   this->panel1->Controls->Add(this->labelMain);
@@ -608,9 +611,9 @@ namespace PythonWave {
 			   this->panel1->Name = L"panel1";
 			   this->panel1->Size = System::Drawing::Size(940, 30);
 			   this->panel1->TabIndex = 45;
-			   //
+			   // 
 			   // labelMain
-			   //
+			   // 
 			   this->labelMain->AutoSize = true;
 			   this->labelMain->BackColor = System::Drawing::Color::Transparent;
 			   this->labelMain->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -623,9 +626,9 @@ namespace PythonWave {
 			   this->labelMain->TabIndex = 45;
 			   this->labelMain->Text = L"Профиль";
 			   this->labelMain->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			   //
+			   // 
 			   // buttonClose
-			   //
+			   // 
 			   this->buttonClose->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonClose->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonClose.Image")));
 			   this->buttonClose->ImageRotate = 0;
@@ -637,9 +640,9 @@ namespace PythonWave {
 			   this->buttonClose->TabIndex = 31;
 			   this->buttonClose->TabStop = false;
 			   this->buttonClose->Click += gcnew System::EventHandler(this, &profile::ButtonExit_Click);
-			   //
+			   // 
 			   // buttonMin
-			   //
+			   // 
 			   this->buttonMin->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonMin->FillColor = System::Drawing::Color::Transparent;
 			   this->buttonMin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonMin.Image")));
@@ -653,9 +656,9 @@ namespace PythonWave {
 			   this->buttonMin->TabStop = false;
 			   this->buttonMin->UseTransparentBackground = true;
 			   this->buttonMin->Click += gcnew System::EventHandler(this, &profile::ButtonMinimize_Click);
-			   //
+			   // 
 			   // buttonResume
-			   //
+			   // 
 			   this->buttonResume->Animated = true;
 			   this->buttonResume->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonResume->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -681,7 +684,7 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->buttonResume->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			   this->buttonResume->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
+			   this->buttonResume->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
 			   this->buttonResume->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonResume.Image")));
 			   this->buttonResume->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			   this->buttonResume->ImageSize = System::Drawing::Size(25, 25);
@@ -693,9 +696,9 @@ namespace PythonWave {
 			   this->buttonResume->TextOffset = System::Drawing::Point(10, 0);
 			   this->buttonResume->UseTransparentBackground = true;
 			   this->buttonResume->Click += gcnew System::EventHandler(this, &profile::buttonResume_Click);
-			   //
+			   // 
 			   // pictureBoxUploadImage
-			   //
+			   // 
 			   this->pictureBoxUploadImage->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(104)));
 			   this->pictureBoxUploadImage->Cursor = System::Windows::Forms::Cursors::Hand;
@@ -707,9 +710,9 @@ namespace PythonWave {
 			   this->pictureBoxUploadImage->TabIndex = 37;
 			   this->pictureBoxUploadImage->TabStop = false;
 			   this->pictureBoxUploadImage->Click += gcnew System::EventHandler(this, &profile::buttonUpload_Click);
-			   //
+			   // 
 			   // buttonUpload
-			   //
+			   // 
 			   this->buttonUpload->Animated = true;
 			   this->buttonUpload->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonUpload->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -735,7 +738,7 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->buttonUpload->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			   this->buttonUpload->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image1")));
+			   this->buttonUpload->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image2")));
 			   this->buttonUpload->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonUpload.Image")));
 			   this->buttonUpload->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			   this->buttonUpload->ImageSize = System::Drawing::Size(25, 25);
@@ -747,9 +750,9 @@ namespace PythonWave {
 			   this->buttonUpload->TextOffset = System::Drawing::Point(10, 0);
 			   this->buttonUpload->UseTransparentBackground = true;
 			   this->buttonUpload->Click += gcnew System::EventHandler(this, &profile::buttonUpload_Click);
-			   //
+			   // 
 			   // textBoxEmail
-			   //
+			   // 
 			   this->textBoxEmail->Animated = true;
 			   this->textBoxEmail->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
 			   this->textBoxEmail->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
@@ -785,9 +788,9 @@ namespace PythonWave {
 			   this->textBoxEmail->Size = System::Drawing::Size(315, 46);
 			   this->textBoxEmail->TabIndex = 4;
 			   this->textBoxEmail->TextOffset = System::Drawing::Point(2, 0);
-			   //
+			   // 
 			   // linkReMail
-			   //
+			   // 
 			   this->linkReMail->AutoSize = true;
 			   this->linkReMail->DisabledLinkColor = System::Drawing::Color::Gray;
 			   this->linkReMail->Enabled = false;
@@ -803,9 +806,9 @@ namespace PythonWave {
 			   this->linkReMail->Text = L"Отправить повторно";
 			   this->linkReMail->Visible = false;
 			   this->linkReMail->Click += gcnew System::EventHandler(this, &profile::linkReMail_Click);
-			   //
+			   // 
 			   // textBoxCode
-			   //
+			   // 
 			   this->textBoxCode->Animated = true;
 			   this->textBoxCode->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
 			   this->textBoxCode->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
@@ -840,9 +843,9 @@ namespace PythonWave {
 			   this->textBoxCode->Size = System::Drawing::Size(315, 46);
 			   this->textBoxCode->TabIndex = 13;
 			   this->textBoxCode->UseSystemPasswordChar = true;
-			   //
+			   // 
 			   // buttonSendMail
-			   //
+			   // 
 			   this->buttonSendMail->Animated = true;
 			   this->buttonSendMail->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonSendMail->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -868,7 +871,7 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->buttonSendMail->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			   this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image2")));
+			   this->buttonSendMail->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image3")));
 			   this->buttonSendMail->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSendMail.Image")));
 			   this->buttonSendMail->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			   this->buttonSendMail->ImageSize = System::Drawing::Size(25, 25);
@@ -880,9 +883,9 @@ namespace PythonWave {
 			   this->buttonSendMail->TextOffset = System::Drawing::Point(15, 0);
 			   this->buttonSendMail->UseTransparentBackground = true;
 			   this->buttonSendMail->Click += gcnew System::EventHandler(this, &profile::buttonSendMail_Click);
-			   //
+			   // 
 			   // buttonCheckCode
-			   //
+			   // 
 			   this->buttonCheckCode->Animated = true;
 			   this->buttonCheckCode->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonCheckCode->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -909,7 +912,7 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->buttonCheckCode->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			   this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image3")));
+			   this->buttonCheckCode->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image4")));
 			   this->buttonCheckCode->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonCheckCode.Image")));
 			   this->buttonCheckCode->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			   this->buttonCheckCode->ImageSize = System::Drawing::Size(25, 25);
@@ -921,9 +924,9 @@ namespace PythonWave {
 			   this->buttonCheckCode->TextOffset = System::Drawing::Point(14, 0);
 			   this->buttonCheckCode->UseTransparentBackground = true;
 			   this->buttonCheckCode->Click += gcnew System::EventHandler(this, &profile::buttonValidateCode_Click);
-			   //
+			   // 
 			   // label3
-			   //
+			   // 
 			   this->label3->AutoSize = true;
 			   this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
 			   this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -933,9 +936,9 @@ namespace PythonWave {
 			   this->label3->Size = System::Drawing::Size(242, 36);
 			   this->label3->TabIndex = 28;
 			   this->label3->Text = L"Дата рождения";
-			   //
+			   // 
 			   // label1
-			   //
+			   // 
 			   this->label1->AutoSize = true;
 			   this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F));
 			   this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -945,9 +948,9 @@ namespace PythonWave {
 			   this->label1->Size = System::Drawing::Size(239, 36);
 			   this->label1->TabIndex = 24;
 			   this->label1->Text = L"Личные данные";
-			   //
+			   // 
 			   // textBoxUserSurname
-			   //
+			   // 
 			   this->textBoxUserSurname->Animated = true;
 			   this->textBoxUserSurname->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Append;
 			   this->textBoxUserSurname->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
@@ -985,9 +988,9 @@ namespace PythonWave {
 			   this->textBoxUserSurname->SelectedText = L"";
 			   this->textBoxUserSurname->Size = System::Drawing::Size(264, 46);
 			   this->textBoxUserSurname->TabIndex = 27;
-			   //
+			   // 
 			   // label2
-			   //
+			   // 
 			   this->label2->AutoSize = true;
 			   this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -999,9 +1002,9 @@ namespace PythonWave {
 			   this->label2->TabIndex = 25;
 			   this->label2->Text = L"Подтвердите e-mail*";
 			   this->label2->Click += gcnew System::EventHandler(this, &profile::buttonQuestion_Click);
-			   //
+			   // 
 			   // textBoxUserName
-			   //
+			   // 
 			   this->textBoxUserName->Animated = true;
 			   this->textBoxUserName->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(21) {
 				   L"Александр", L"Михаил",
@@ -1045,9 +1048,9 @@ namespace PythonWave {
 			   this->textBoxUserName->Size = System::Drawing::Size(264, 46);
 			   this->textBoxUserName->TabIndex = 26;
 			   this->textBoxUserName->Click += gcnew System::EventHandler(this, &profile::textBoxUserName_Click);
-			   //
+			   // 
 			   // pageSuccessful
-			   //
+			   // 
 			   this->pageSuccessful->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->pageSuccessful->Controls->Add(this->bunifuLabel1);
@@ -1058,9 +1061,9 @@ namespace PythonWave {
 			   this->pageSuccessful->Size = System::Drawing::Size(940, 711);
 			   this->pageSuccessful->TabIndex = 1;
 			   this->pageSuccessful->Text = L"pageSuccessful";
-			   //
+			   // 
 			   // bunifuLabel1
-			   //
+			   // 
 			   this->bunifuLabel1->AllowParentOverrides = false;
 			   this->bunifuLabel1->AutoEllipsis = true;
 			   this->bunifuLabel1->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1076,9 +1079,9 @@ namespace PythonWave {
 			   this->bunifuLabel1->Text = L"Регистрация завершена";
 			   this->bunifuLabel1->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->bunifuLabel1->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // guna2CustomCheckBox1
-			   //
+			   // 
 			   this->guna2CustomCheckBox1->Animated = true;
 			   this->guna2CustomCheckBox1->BackColor = System::Drawing::Color::Transparent;
 			   this->guna2CustomCheckBox1->CheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
@@ -1099,9 +1102,9 @@ namespace PythonWave {
 			   this->guna2CustomCheckBox1->UncheckedState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->guna2CustomCheckBox1->UseTransparentBackground = true;
-			   //
+			   // 
 			   // pageSettings
-			   //
+			   // 
 			   this->pageSettings->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->pageSettings->Controls->Add(this->bunifuLabel3);
@@ -1131,9 +1134,9 @@ namespace PythonWave {
 			   this->pageSettings->Size = System::Drawing::Size(940, 711);
 			   this->pageSettings->TabIndex = 2;
 			   this->pageSettings->Text = L"pageSettings";
-			   //
+			   // 
 			   // bunifuLabel3
-			   //
+			   // 
 			   this->bunifuLabel3->AllowParentOverrides = false;
 			   this->bunifuLabel3->AutoEllipsis = true;
 			   this->bunifuLabel3->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1150,9 +1153,9 @@ namespace PythonWave {
 			   this->bunifuLabel3->Text = L"Другое";
 			   this->bunifuLabel3->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->bunifuLabel3->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // labelBorderBtn
-			   //
+			   // 
 			   this->labelBorderBtn->AutoSize = true;
 			   this->labelBorderBtn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1163,9 +1166,9 @@ namespace PythonWave {
 			   this->labelBorderBtn->Size = System::Drawing::Size(28, 21);
 			   this->labelBorderBtn->TabIndex = 67;
 			   this->labelBorderBtn->Text = L"20";
-			   //
+			   // 
 			   // label12
-			   //
+			   // 
 			   this->label12->AutoSize = true;
 			   this->label12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1176,9 +1179,9 @@ namespace PythonWave {
 			   this->label12->Size = System::Drawing::Size(260, 24);
 			   this->label12->TabIndex = 66;
 			   this->label12->Text = L"Закругленность кнопок";
-			   //
+			   // 
 			   // TrackBorderBtn
-			   //
+			   // 
 			   this->TrackBorderBtn->LargeChange = 2;
 			   this->TrackBorderBtn->Location = System::Drawing::Point(26, 350);
 			   this->TrackBorderBtn->Maximum = 20;
@@ -1189,9 +1192,9 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			   this->TrackBorderBtn->Value = 20;
 			   this->TrackBorderBtn->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &profile::guna2TrackBar3_Scroll);
-			   //
+			   // 
 			   // labelVolume
-			   //
+			   // 
 			   this->labelVolume->AutoSize = true;
 			   this->labelVolume->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1202,9 +1205,9 @@ namespace PythonWave {
 			   this->labelVolume->Size = System::Drawing::Size(28, 21);
 			   this->labelVolume->TabIndex = 64;
 			   this->labelVolume->Text = L"50";
-			   //
+			   // 
 			   // label10
-			   //
+			   // 
 			   this->label10->AutoSize = true;
 			   this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1215,9 +1218,9 @@ namespace PythonWave {
 			   this->label10->Size = System::Drawing::Size(123, 24);
 			   this->label10->TabIndex = 63;
 			   this->label10->Text = L"Громкость";
-			   //
+			   // 
 			   // TrackVolume
-			   //
+			   // 
 			   this->TrackVolume->LargeChange = 2;
 			   this->TrackVolume->Location = System::Drawing::Point(609, 187);
 			   this->TrackVolume->Name = L"TrackVolume";
@@ -1226,9 +1229,9 @@ namespace PythonWave {
 			   this->TrackVolume->ThumbColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(160)), static_cast<System::Int32>(static_cast<System::Byte>(113)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			   this->TrackVolume->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &profile::guna2TrackBar2_Scroll);
-			   //
+			   // 
 			   // labelBorderForm
-			   //
+			   // 
 			   this->labelBorderForm->AutoSize = true;
 			   this->labelBorderForm->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1239,9 +1242,9 @@ namespace PythonWave {
 			   this->labelBorderForm->Size = System::Drawing::Size(28, 21);
 			   this->labelBorderForm->TabIndex = 61;
 			   this->labelBorderForm->Text = L"25";
-			   //
+			   // 
 			   // label8
-			   //
+			   // 
 			   this->label8->AutoSize = true;
 			   this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1252,9 +1255,9 @@ namespace PythonWave {
 			   this->label8->Size = System::Drawing::Size(255, 24);
 			   this->label8->TabIndex = 60;
 			   this->label8->Text = L"Приветствие при входе";
-			   //
+			   // 
 			   // toggleGreeting
-			   //
+			   // 
 			   this->toggleGreeting->Animated = true;
 			   this->toggleGreeting->Checked = true;
 			   this->toggleGreeting->CheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
@@ -1273,9 +1276,9 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(137)), static_cast<System::Int32>(static_cast<System::Byte>(149)));
 			   this->toggleGreeting->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			   this->toggleGreeting->UncheckedState->InnerColor = System::Drawing::Color::White;
-			   //
+			   // 
 			   // guna2CircleButton1
-			   //
+			   // 
 			   this->guna2CircleButton1->BackColor = System::Drawing::Color::Transparent;
 			   this->guna2CircleButton1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2CircleButton1.BackgroundImage")));
 			   this->guna2CircleButton1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
@@ -1294,9 +1297,9 @@ namespace PythonWave {
 			   this->guna2CircleButton1->Size = System::Drawing::Size(26, 25);
 			   this->guna2CircleButton1->TabIndex = 58;
 			   this->guna2CircleButton1->Click += gcnew System::EventHandler(this, &profile::guna2CircleButton1_Click);
-			   //
+			   // 
 			   // label7
-			   //
+			   // 
 			   this->label7->AutoSize = true;
 			   this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1307,9 +1310,9 @@ namespace PythonWave {
 			   this->label7->Size = System::Drawing::Size(172, 24);
 			   this->label7->TabIndex = 57;
 			   this->label7->Text = L"Тень от формы";
-			   //
+			   // 
 			   // toggleShadows
-			   //
+			   // 
 			   this->toggleShadows->Animated = true;
 			   this->toggleShadows->Checked = true;
 			   this->toggleShadows->CheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
@@ -1329,9 +1332,9 @@ namespace PythonWave {
 			   this->toggleShadows->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			   this->toggleShadows->UncheckedState->InnerColor = System::Drawing::Color::White;
 			   this->toggleShadows->CheckedChanged += gcnew System::EventHandler(this, &profile::toggleShadows_CheckedChanged);
-			   //
+			   // 
 			   // label6
-			   //
+			   // 
 			   this->label6->AutoSize = true;
 			   this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1342,9 +1345,9 @@ namespace PythonWave {
 			   this->label6->Size = System::Drawing::Size(247, 24);
 			   this->label6->TabIndex = 55;
 			   this->label6->Text = L"Закругленность краев";
-			   //
+			   // 
 			   // label5
-			   //
+			   // 
 			   this->label5->AutoSize = true;
 			   this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(204)));
@@ -1355,16 +1358,16 @@ namespace PythonWave {
 			   this->label5->Size = System::Drawing::Size(446, 24);
 			   this->label5->TabIndex = 54;
 			   this->label5->Text = L"Прозрачность при перетаскивании окна";
-			   //
+			   // 
 			   // guna2Separator1
-			   //
+			   // 
 			   this->guna2Separator1->Location = System::Drawing::Point(-4, 63);
 			   this->guna2Separator1->Name = L"guna2Separator1";
 			   this->guna2Separator1->Size = System::Drawing::Size(940, 10);
 			   this->guna2Separator1->TabIndex = 52;
-			   //
+			   // 
 			   // bunifuLabel2
-			   //
+			   // 
 			   this->bunifuLabel2->AllowParentOverrides = false;
 			   this->bunifuLabel2->AutoEllipsis = true;
 			   this->bunifuLabel2->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1381,9 +1384,9 @@ namespace PythonWave {
 			   this->bunifuLabel2->Text = L"Внешний вид";
 			   this->bunifuLabel2->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->bunifuLabel2->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // toggleTransparent
-			   //
+			   // 
 			   this->toggleTransparent->Animated = true;
 			   this->toggleTransparent->Checked = true;
 			   this->toggleTransparent->CheckedState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)),
@@ -1403,9 +1406,9 @@ namespace PythonWave {
 			   this->toggleTransparent->UncheckedState->InnerBorderColor = System::Drawing::Color::White;
 			   this->toggleTransparent->UncheckedState->InnerColor = System::Drawing::Color::White;
 			   this->toggleTransparent->CheckedChanged += gcnew System::EventHandler(this, &profile::guna2ToggleSwitch1_CheckedChanged);
-			   //
+			   // 
 			   // TrackBorderForm
-			   //
+			   // 
 			   this->TrackBorderForm->LargeChange = 2;
 			   this->TrackBorderForm->Location = System::Drawing::Point(26, 297);
 			   this->TrackBorderForm->Maximum = 60;
@@ -1416,9 +1419,9 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(113)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			   this->TrackBorderForm->Value = 25;
 			   this->TrackBorderForm->Scroll += gcnew System::Windows::Forms::ScrollEventHandler(this, &profile::guna2TrackBar1_Scroll);
-			   //
+			   // 
 			   // labelSettings
-			   //
+			   // 
 			   this->labelSettings->AllowParentOverrides = false;
 			   this->labelSettings->AutoEllipsis = true;
 			   this->labelSettings->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1434,9 +1437,9 @@ namespace PythonWave {
 			   this->labelSettings->Text = L"Настройки";
 			   this->labelSettings->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->labelSettings->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // buttonResume1
-			   //
+			   // 
 			   this->buttonResume1->Animated = true;
 			   this->buttonResume1->BackColor = System::Drawing::Color::Transparent;
 			   this->buttonResume1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
@@ -1462,7 +1465,7 @@ namespace PythonWave {
 				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->buttonResume1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
-			   this->buttonResume1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image4")));
+			   this->buttonResume1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image5")));
 			   this->buttonResume1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonResume1.Image")));
 			   this->buttonResume1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			   this->buttonResume1->ImageSize = System::Drawing::Size(25, 25);
@@ -1474,9 +1477,9 @@ namespace PythonWave {
 			   this->buttonResume1->TextOffset = System::Drawing::Point(10, 0);
 			   this->buttonResume1->UseTransparentBackground = true;
 			   this->buttonResume1->Click += gcnew System::EventHandler(this, &profile::buttonResume1_Click);
-			   //
+			   // 
 			   // pageEnd
-			   //
+			   // 
 			   this->pageEnd->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(88)));
 			   this->pageEnd->Controls->Add(this->labelClose);
@@ -1488,9 +1491,9 @@ namespace PythonWave {
 			   this->pageEnd->Size = System::Drawing::Size(940, 711);
 			   this->pageEnd->TabIndex = 3;
 			   this->pageEnd->Text = L"pageEnd";
-			   //
+			   // 
 			   // labelClose
-			   //
+			   // 
 			   this->labelClose->AllowParentOverrides = false;
 			   this->labelClose->AutoEllipsis = true;
 			   this->labelClose->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1506,18 +1509,18 @@ namespace PythonWave {
 			   this->labelClose->Text = L"Приложение перезапустится через 5 секунд";
 			   this->labelClose->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->labelClose->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // panel2
-			   //
+			   // 
 			   this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(58)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(71)));
 			   this->panel2->Location = System::Drawing::Point(1, 6);
 			   this->panel2->Name = L"panel2";
 			   this->panel2->Size = System::Drawing::Size(940, 30);
 			   this->panel2->TabIndex = 47;
-			   //
+			   // 
 			   // labelEnd
-			   //
+			   // 
 			   this->labelEnd->AllowParentOverrides = false;
 			   this->labelEnd->AutoEllipsis = true;
 			   this->labelEnd->Cursor = System::Windows::Forms::Cursors::Default;
@@ -1533,123 +1536,163 @@ namespace PythonWave {
 			   this->labelEnd->Text = L"Настройка завершена";
 			   this->labelEnd->TextAlignment = System::Drawing::ContentAlignment::TopCenter;
 			   this->labelEnd->TextFormat = Bunifu::UI::WinForms::BunifuLabel::TextFormattingOptions::Default;
-			   //
+			   // 
 			   // MessageDialogExit
-			   //
+			   // 
 			   this->MessageDialogExit->Buttons = Guna::UI2::WinForms::MessageDialogButtons::YesNo;
 			   this->MessageDialogExit->Caption = L"Вы действительно хотите выйти\?";
 			   this->MessageDialogExit->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
 			   this->MessageDialogExit->Parent = this;
 			   this->MessageDialogExit->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageDialogExit->Text = L"При выходе, ваш аккаунт будет удален...";
-			   //
+			   // 
 			   // MessageDialogQuestion
-			   //
+			   // 
 			   this->MessageDialogQuestion->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			   this->MessageDialogQuestion->Caption = L"Подтвердите e-mail";
 			   this->MessageDialogQuestion->Icon = Guna::UI2::WinForms::MessageDialogIcon::Information;
 			   this->MessageDialogQuestion->Parent = this;
 			   this->MessageDialogQuestion->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageDialogQuestion->Text = L"Это может пригодится в будущем для восстановления вашего аккаунта.";
-			   //
+			   // 
 			   // openFileDialog1
-			   //
+			   // 
 			   this->openFileDialog1->FileName = L"openFileDialog1";
-			   //
+			   // 
 			   // MessageDialogUpload
-			   //
+			   // 
 			   this->MessageDialogUpload->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			   this->MessageDialogUpload->Caption = L"Формат пути не поддерживается";
 			   this->MessageDialogUpload->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
 			   this->MessageDialogUpload->Parent = nullptr;
 			   this->MessageDialogUpload->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageDialogUpload->Text = L"Поддерживаются только png и jpg фоматы";
-			   //
+			   // 
 			   // timerTransition
-			   //
+			   // 
 			   this->timerTransition->Interval = 1000;
 			   this->timerTransition->Tick += gcnew System::EventHandler(this, &profile::timerTransition_Tick);
-			   //
+			   // 
 			   // MessageError
-			   //
+			   // 
 			   this->MessageError->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			   this->MessageError->Caption = L"Ошибка";
 			   this->MessageError->Icon = Guna::UI2::WinForms::MessageDialogIcon::Error;
 			   this->MessageError->Parent = this;
 			   this->MessageError->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageError->Text = nullptr;
-			   //
+			   // 
 			   // timerCheckBox
-			   //
+			   // 
 			   this->timerCheckBox->Interval = 1000;
-			   //
+			   // 
 			   // dragControlPanel
-			   //
+			   // 
 			   this->dragControlPanel->DockIndicatorTransparencyValue = 0.6;
 			   this->dragControlPanel->TargetControl = this->panel1;
 			   this->dragControlPanel->UseTransparentDrag = true;
-			   //
+			   // 
 			   // dragControlProfile
-			   //
+			   // 
 			   this->dragControlProfile->DockIndicatorTransparencyValue = 0.6;
 			   this->dragControlProfile->TargetControl = this->pageProfile;
 			   this->dragControlProfile->UseTransparentDrag = true;
-			   //
+			   // 
 			   // timerReMail
-			   //
+			   // 
 			   this->timerReMail->Interval = 1000;
 			   this->timerReMail->Tick += gcnew System::EventHandler(this, &profile::timer_Tick);
-			   //
+			   // 
 			   // dragSettings
-			   //
+			   // 
 			   this->dragSettings->DockIndicatorTransparencyValue = 0.6;
 			   this->dragSettings->TargetControl = this->pageSettings;
 			   this->dragSettings->UseTransparentDrag = true;
-			   //
+			   // 
 			   // dragEnd
-			   //
+			   // 
 			   this->dragEnd->DockIndicatorTransparencyValue = 0.6;
 			   this->dragEnd->TargetControl = this->pageEnd;
 			   this->dragEnd->UseTransparentDrag = true;
-			   //
+			   // 
 			   // dragSuccessful
-			   //
+			   // 
 			   this->dragSuccessful->DockIndicatorTransparencyValue = 0.6;
 			   this->dragSuccessful->TargetControl = this->pageSuccessful;
 			   this->dragSuccessful->UseTransparentDrag = true;
-			   //
+			   // 
 			   // dragControlPanel2
-			   //
+			   // 
 			   this->dragControlPanel2->DockIndicatorTransparencyValue = 0.6;
 			   this->dragControlPanel2->TargetControl = this->panel2;
 			   this->dragControlPanel2->UseTransparentDrag = true;
-			   //
+			   // 
 			   // MessageInfo
-			   //
+			   // 
 			   this->MessageInfo->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			   this->MessageInfo->Caption = L"Внимание";
 			   this->MessageInfo->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
 			   this->MessageInfo->Parent = this;
 			   this->MessageInfo->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageInfo->Text = nullptr;
-			   //
+			   // 
 			   // MessageWarning
-			   //
+			   // 
 			   this->MessageWarning->Buttons = Guna::UI2::WinForms::MessageDialogButtons::OK;
 			   this->MessageWarning->Caption = L"Внимание";
 			   this->MessageWarning->Icon = Guna::UI2::WinForms::MessageDialogIcon::Warning;
 			   this->MessageWarning->Parent = this;
 			   this->MessageWarning->Style = Guna::UI2::WinForms::MessageDialogStyle::Dark;
 			   this->MessageWarning->Text = nullptr;
-			   //
+			   // 
 			   // guna2BorderlessForm1
-			   //
+			   // 
 			   this->guna2BorderlessForm1->ContainerControl = this;
 			   this->guna2BorderlessForm1->DockIndicatorTransparencyValue = 0.6;
 			   this->guna2BorderlessForm1->TransparentWhileDrag = true;
-			   //
+			   // 
+			   // guna2Button1
+			   // 
+			   this->guna2Button1->Animated = true;
+			   this->guna2Button1->BackColor = System::Drawing::Color::Transparent;
+			   this->guna2Button1->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			   this->guna2Button1->BorderRadius = 20;
+			   this->guna2Button1->BorderThickness = 1;
+			   this->guna2Button1->DisabledState->BorderColor = System::Drawing::Color::DarkGray;
+			   this->guna2Button1->DisabledState->CustomBorderColor = System::Drawing::Color::DarkGray;
+			   this->guna2Button1->DisabledState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(169)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(169)), static_cast<System::Int32>(static_cast<System::Byte>(169)));
+			   this->guna2Button1->DisabledState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(141)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(141)), static_cast<System::Int32>(static_cast<System::Byte>(141)));
+			   this->guna2Button1->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			   this->guna2Button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
+			   this->guna2Button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			   this->guna2Button1->HoverState->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			   this->guna2Button1->HoverState->CustomBorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			   this->guna2Button1->HoverState->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
+			   this->guna2Button1->HoverState->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)),
+				   static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)));
+			   this->guna2Button1->HoverState->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"resource.Image")));
+			   this->guna2Button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"guna2Button1.Image")));
+			   this->guna2Button1->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			   this->guna2Button1->ImageSize = System::Drawing::Size(25, 25);
+			   this->guna2Button1->Location = System::Drawing::Point(559, 602);
+			   this->guna2Button1->Name = L"guna2Button1";
+			   this->guna2Button1->Size = System::Drawing::Size(181, 39);
+			   this->guna2Button1->TabIndex = 54;
+			   this->guna2Button1->Text = L"Продолжить";
+			   this->guna2Button1->TextOffset = System::Drawing::Point(10, 0);
+			   this->guna2Button1->UseTransparentBackground = true;
+			   this->guna2Button1->Click += gcnew System::EventHandler(this, &profile::guna2Button1_Click);
+			   // 
 			   // profile
-			   //
+			   // 
 			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			   this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
@@ -1679,6 +1722,7 @@ namespace PythonWave {
 			   this->pageEnd->ResumeLayout(false);
 			   this->pageEnd->PerformLayout();
 			   this->ResumeLayout(false);
+
 		   }
 
 #pragma endregion
@@ -1748,5 +1792,8 @@ namespace PythonWave {
 		buttonResume1->BorderRadius = TrackBorderBtn->Value;
 		labelBorderBtn->Text = Convert::ToString(TrackBorderBtn->Value);
 	}
-	};
+	private: System::Void guna2Button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Pages->SelectTab(pageSettings);
+	}
+};
 }

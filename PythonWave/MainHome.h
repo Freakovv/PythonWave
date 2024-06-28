@@ -112,7 +112,6 @@ void mainForm::LoadHomePage() {
 
 	ReadTimeFromFile();
 	InitializePanelBook();
-	circleProgress->Value = UserProgress;
 
 	ClassTasks tasks(User);
 	currentDayOfWeek = GetDayOfWeek();
@@ -136,6 +135,7 @@ void mainForm::LoadHomePage() {
 		int completedTasks = tasks.getCompletedCount(dayToCheck, dayToCheck.AddDays(1));
 		TasksDataset->DataPoints->Add(DaysOfWeek[i], completedTasks);
 	}
+	circleProgress->Value = UserProgress;
 }
 
 void mainForm::InitializePanelBook() {

@@ -85,7 +85,7 @@ namespace PythonWave {
 		System::Windows::Forms::Label^ lblLogin;
 		System::Windows::Forms::PictureBox^ pictureProfile;
 		System::Windows::Forms::TabPage^ pageStats;
-		System::Windows::Forms::DataVisualization::Charting::Chart^ chartProductivity;
+
 		System::Windows::Forms::TabPage^ pageSettings;
 		System::Windows::Forms::Label^ label11;
 		Guna::UI2::WinForms::Guna2ToggleSwitch^ toggleStyle;
@@ -322,10 +322,25 @@ private: Guna::UI2::WinForms::Guna2Elipse^ guna2Elipse6;
 private: Guna::UI2::WinForms::Guna2Button^ guna2Button1;
 
 
-private: Guna::Charts::WinForms::GunaStackedBarDataset^ TasksDataset;
+
 private: System::Windows::Forms::Timer^ AppTimer;
+
+
+
+
+
+private: System::Windows::Forms::Label^ lblStatistic;
+private: Guna::Charts::WinForms::GunaStackedBarDataset^ TasksDataset;
+
+private: Guna::Charts::WinForms::GunaLineDataset^ StatsDataset;
 private: Guna::UI2::WinForms::Guna2ShadowPanel^ pnlHome4;
 private: Guna::Charts::WinForms::GunaChart^ chartTasksHome;
+
+
+
+
+
+
 
 
 
@@ -402,12 +417,18 @@ public:
 		void InitializeComponent(void)
 		{
             this->components = (gcnew System::ComponentModel::Container());
-            System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-            System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-            System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+            Guna::Charts::WinForms::LPoint^ lPoint8 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint9 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint10 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint11 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint12 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint13 = (gcnew Guna::Charts::WinForms::LPoint());
+            Guna::Charts::WinForms::LPoint^ lPoint14 = (gcnew Guna::Charts::WinForms::LPoint());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation3 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation2 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
             Utilities::BunifuPages::BunifuAnimatorNS::Animation^ animation4 = (gcnew Utilities::BunifuPages::BunifuAnimatorNS::Animation());
+            Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
+            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
             Guna::Charts::WinForms::LPoint^ lPoint1 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint2 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint3 = (gcnew Guna::Charts::WinForms::LPoint());
@@ -415,8 +436,6 @@ public:
             Guna::Charts::WinForms::LPoint^ lPoint5 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint6 = (gcnew Guna::Charts::WinForms::LPoint());
             Guna::Charts::WinForms::LPoint^ lPoint7 = (gcnew Guna::Charts::WinForms::LPoint());
-            Guna::UI2::AnimatorNS::Animation^ animation1 = (gcnew Guna::UI2::AnimatorNS::Animation());
-            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(mainForm::typeid));
             Guna::Charts::WinForms::ChartFont^ chartFont1 = (gcnew Guna::Charts::WinForms::ChartFont());
             Guna::Charts::WinForms::ChartFont^ chartFont2 = (gcnew Guna::Charts::WinForms::ChartFont());
             Guna::Charts::WinForms::ChartFont^ chartFont3 = (gcnew Guna::Charts::WinForms::ChartFont());
@@ -529,7 +548,8 @@ public:
             this->toggleTransparent = (gcnew Guna::UI2::WinForms::Guna2ToggleSwitch());
             this->TrackBorderForm = (gcnew Guna::UI2::WinForms::Guna2TrackBar());
             this->pageStats = (gcnew System::Windows::Forms::TabPage());
-            this->chartProductivity = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+            this->lblStatistic = (gcnew System::Windows::Forms::Label());
+            this->StatsDataset = (gcnew Guna::Charts::WinForms::GunaLineDataset());
             this->pageProfile = (gcnew System::Windows::Forms::TabPage());
             this->panelProfileData = (gcnew System::Windows::Forms::Panel());
             this->btnProfileEdit = (gcnew Guna::UI2::WinForms::Guna2Button());
@@ -642,7 +662,6 @@ public:
             this->btnReadBook = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->lblReadBook = (gcnew System::Windows::Forms::Label());
             this->lblHello = (gcnew System::Windows::Forms::Label());
-            this->TasksDataset = (gcnew Guna::Charts::WinForms::GunaStackedBarDataset());
             this->anim3 = (gcnew System::Windows::Forms::TabPage());
             this->btnSync = (gcnew Guna::UI2::WinForms::Guna2Button());
             this->lblSync5 = (gcnew System::Windows::Forms::Label());
@@ -660,6 +679,7 @@ public:
             this->guna2Elipse5 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
             this->guna2Elipse6 = (gcnew Guna::UI2::WinForms::Guna2Elipse(this->components));
             this->AppTimer = (gcnew System::Windows::Forms::Timer(this->components));
+            this->TasksDataset = (gcnew Guna::Charts::WinForms::GunaStackedBarDataset());
             this->chartTasksHome = (gcnew Guna::Charts::WinForms::GunaChart());
             this->pnlHome4 = (gcnew Guna::UI2::WinForms::Guna2ShadowPanel());
             this->panelMain->SuspendLayout();
@@ -679,7 +699,6 @@ public:
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfileEdit))->BeginInit();
             this->pageSettings->SuspendLayout();
             this->pageStats->SuspendLayout();
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chartProductivity))->BeginInit();
             this->pageProfile->SuspendLayout();
             this->panelProfileData->SuspendLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureProfile))->BeginInit();
@@ -2767,7 +2786,7 @@ public:
             // 
             this->pageStats->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
                 static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->pageStats->Controls->Add(this->chartProductivity);
+            this->pageStats->Controls->Add(this->lblStatistic);
             this->gunaTransition->SetDecoration(this->pageStats, Guna::UI2::AnimatorNS::DecorationType::None);
             this->pageStats->Location = System::Drawing::Point(4, 4);
             this->pageStats->Name = L"pageStats";
@@ -2775,58 +2794,44 @@ public:
             this->pageStats->TabIndex = 4;
             this->pageStats->Text = L"pageStats";
             // 
-            // chartProductivity
+            // lblStatistic
             // 
-            this->chartProductivity->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->chartProductivity->BorderlineColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->chartProductivity->BorderSkin->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->chartProductivity->BorderSkin->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->chartProductivity->BorderSkin->PageColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)),
-                static_cast<System::Int32>(static_cast<System::Byte>(66)), static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            this->chartProductivity->BorderSkin->SkinStyle = System::Windows::Forms::DataVisualization::Charting::BorderSkinStyle::FrameTitle8;
-            chartArea1->AxisY->MajorGrid->Enabled = false;
-            chartArea1->BackColor = System::Drawing::Color::Transparent;
-            chartArea1->BorderColor = System::Drawing::Color::Empty;
-            chartArea1->Name = L"ChartArea1";
-            this->chartProductivity->ChartAreas->Add(chartArea1);
-            this->gunaTransition->SetDecoration(this->chartProductivity, Guna::UI2::AnimatorNS::DecorationType::None);
-            legend1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
-                static_cast<System::Int32>(static_cast<System::Byte>(88)));
-            legend1->Docking = System::Windows::Forms::DataVisualization::Charting::Docking::Bottom;
-            legend1->ForeColor = System::Drawing::Color::White;
-            legend1->HeaderSeparatorColor = System::Drawing::Color::White;
-            legend1->InterlacedRowsColor = System::Drawing::Color::White;
-            legend1->ItemColumnSeparatorColor = System::Drawing::Color::White;
-            legend1->Name = L"Legend1";
-            legend1->ShadowOffset = 5;
-            legend1->TextWrapThreshold = 15;
-            legend1->TitleBackColor = System::Drawing::Color::White;
-            legend1->TitleForeColor = System::Drawing::Color::White;
-            legend1->TitleSeparatorColor = System::Drawing::Color::White;
-            this->chartProductivity->Legends->Add(legend1);
-            this->chartProductivity->Location = System::Drawing::Point(12, 12);
-            this->chartProductivity->Name = L"chartProductivity";
-            this->chartProductivity->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::None;
-            series1->BackGradientStyle = System::Windows::Forms::DataVisualization::Charting::GradientStyle::LeftRight;
-            series1->BackHatchStyle = System::Windows::Forms::DataVisualization::Charting::ChartHatchStyle::Cross;
-            series1->BorderWidth = 10;
-            series1->ChartArea = L"ChartArea1";
-            series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-            series1->IsXValueIndexed = true;
-            series1->Legend = L"Legend1";
-            series1->Name = L"Series1";
-            series1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::SeaGreen;
-            series1->ShadowColor = System::Drawing::Color::Gray;
-            series1->ShadowOffset = 5;
-            series1->YValuesPerPoint = 2;
-            this->chartProductivity->Series->Add(series1);
-            this->chartProductivity->Size = System::Drawing::Size(660, 541);
-            this->chartProductivity->TabIndex = 0;
-            this->chartProductivity->Text = L"chartProductivity";
+            this->lblStatistic->AutoSize = true;
+            this->lblStatistic->Cursor = System::Windows::Forms::Cursors::Hand;
+            this->gunaTransition->SetDecoration(this->lblStatistic, Guna::UI2::AnimatorNS::DecorationType::None);
+            this->lblStatistic->Font = (gcnew System::Drawing::Font(L"Century Gothic", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(204)));
+            this->lblStatistic->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(238)),
+                static_cast<System::Int32>(static_cast<System::Byte>(238)));
+            this->lblStatistic->Location = System::Drawing::Point(569, 9);
+            this->lblStatistic->Name = L"lblStatistic";
+            this->lblStatistic->Size = System::Drawing::Size(399, 78);
+            this->lblStatistic->TabIndex = 13;
+            this->lblStatistic->Text = L"Статистика";
+            // 
+            // StatsDataset
+            // 
+            this->StatsDataset->BorderColor = System::Drawing::Color::Empty;
+            lPoint8->Label = L"Пн";
+            lPoint8->Y = 2;
+            lPoint9->Label = L"Вт";
+            lPoint9->Y = 6;
+            lPoint10->Label = L"Ср";
+            lPoint10->Y = 4;
+            lPoint11->Label = L"Чт";
+            lPoint11->Y = 5;
+            lPoint12->Label = L"Пт";
+            lPoint12->Y = 3;
+            lPoint13->Label = L"Сб";
+            lPoint13->Y = 6;
+            lPoint14->Label = L"Вс";
+            lPoint14->Y = 12;
+            this->StatsDataset->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
+                lPoint8, lPoint9, lPoint10,
+                    lPoint11, lPoint12, lPoint13, lPoint14
+            });
+            this->StatsDataset->FillColor = System::Drawing::Color::Empty;
+            this->StatsDataset->Label = L"Line1";
             // 
             // pageProfile
             // 
@@ -5167,29 +5172,6 @@ public:
             this->lblHello->Text = L"Добрый день, Пользователь.";
             this->lblHello->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             // 
-            // TasksDataset
-            // 
-            lPoint1->Label = L"Пн";
-            lPoint1->Y = 4;
-            lPoint2->Label = L"Вт";
-            lPoint2->Y = 1;
-            lPoint3->Label = L"Ср";
-            lPoint3->Y = 12;
-            lPoint4->Label = L"Чт";
-            lPoint4->Y = 3;
-            lPoint5->Label = L"Пт";
-            lPoint5->Y = 8;
-            lPoint6->Label = L"Сб";
-            lPoint6->Y = 5;
-            lPoint7->Label = L"Вс";
-            lPoint7->Y = 9;
-            this->TasksDataset->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
-                lPoint1, lPoint2, lPoint3,
-                    lPoint4, lPoint5, lPoint6, lPoint7
-            });
-            this->TasksDataset->Label = L"Решение задач";
-            this->TasksDataset->TargetChart = this->chartTasksHome;
-            // 
             // anim3
             // 
             this->anim3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(66)),
@@ -5398,6 +5380,29 @@ public:
             this->AppTimer->Interval = 1000;
             this->AppTimer->Tick += gcnew System::EventHandler(this, &mainForm::AppTimer_Tick);
             // 
+            // TasksDataset
+            // 
+            lPoint1->Label = L"Пн";
+            lPoint1->Y = 4;
+            lPoint2->Label = L"Вт";
+            lPoint2->Y = 1;
+            lPoint3->Label = L"Ср";
+            lPoint3->Y = 12;
+            lPoint4->Label = L"Чт";
+            lPoint4->Y = 3;
+            lPoint5->Label = L"Пт";
+            lPoint5->Y = 8;
+            lPoint6->Label = L"Сб";
+            lPoint6->Y = 5;
+            lPoint7->Label = L"Вс";
+            lPoint7->Y = 9;
+            this->TasksDataset->DataPoints->AddRange(gcnew cli::array< Guna::Charts::WinForms::LPoint^  >(7) {
+                lPoint1, lPoint2, lPoint3,
+                    lPoint4, lPoint5, lPoint6, lPoint7
+            });
+            this->TasksDataset->Label = L"Решение задач";
+            this->TasksDataset->TargetChart = this->chartTasksHome;
+            // 
             // chartTasksHome
             // 
             this->chartTasksHome->Animation->Duration = 2000;
@@ -5492,6 +5497,7 @@ public:
             this->Text = L"PythonWave";
             this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &mainForm::mainForm_FormClosing);
             this->Load += gcnew System::EventHandler(this, &mainForm::main_Load);
+            this->Resize += gcnew System::EventHandler(this, &mainForm::mainForm_Resize);
             this->panelMain->ResumeLayout(false);
             this->panelMain->PerformLayout();
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnMaximize))->EndInit();
@@ -5515,7 +5521,7 @@ public:
             this->pageSettings->ResumeLayout(false);
             this->pageSettings->PerformLayout();
             this->pageStats->ResumeLayout(false);
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chartProductivity))->EndInit();
+            this->pageStats->PerformLayout();
             this->pageProfile->ResumeLayout(false);
             this->panelProfileData->ResumeLayout(false);
             this->panelProfileData->PerformLayout();
@@ -5683,7 +5689,7 @@ public:
 		//local settings
 		bool menu = true;
 
-		bool alwaysHideMenu = false;
+		bool alwaysHideMenu = true;
 		bool transparentWhileDrag = true;
 		bool greeting = true;
 		bool formShadow = true;
@@ -5824,9 +5830,11 @@ public:
             LoadHomePage();
         }
 
-
         Void mainForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
             WriteTimeToFile();
+        }
+        Void mainForm_Resize(System::Object^ sender, System::EventArgs^ e) {
+            this->Size = Drawing::Size(1600, 900);
         }
 };
 }

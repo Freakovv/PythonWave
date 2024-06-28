@@ -15,20 +15,6 @@ public:
 
 	MyPython() {}
 
-	String^ StartOld(String^ user = "", String^ code = "") {
-		String^ path = "myscript.py";
-		if (user != "") {
-			path = user + "//myscript.py";
-		}
-		FileStream^ fileStream = gcnew FileStream(path, FileMode::Create, FileAccess::Write);
-		StreamWriter^ writer = gcnew StreamWriter(fileStream);
-
-		writer->Write(code);
-		writer->Close();
-		fileStream->Close();
-
-		return gcnew String(PyRun(path).c_str());
-	}
 
 	String^ Start(String^ Code) {
 		String^ tempPath = "script//temp.py";
@@ -62,9 +48,9 @@ private:
 			ZeroMemory(&si, sizeof(si));
 			si.cb = sizeof(si);
 			ZeroMemory(&pi, sizeof(pi));
-
+	label:
 			// Создание строки команды для запуска Python
-			std::string commandStr = "python.exe " + stdPath;
+			std::string commandStr = "py " + stdPath;
 
 			// Конвертация std::string в TCHAR[]
 			std::vector<TCHAR> command(commandStr.begin(), commandStr.end());
@@ -79,6 +65,10 @@ private:
 
 			if (!CreatePipe(&hReadPipe, &hWritePipe, &saAttr, 0)) {
 				result = "Failed to create Pipe";
+				if (commandStr == "py " + stdPath) {
+					commandStr = "python.exe " + stdPath;
+					goto label;
+				}
 				return result;
 			}
 

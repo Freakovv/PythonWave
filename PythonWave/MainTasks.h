@@ -340,15 +340,17 @@ Void mainForm::btnSymmetricPoint_Click(System::Object^ sender, System::EventArgs
 // Проверка кода и его сохранение
 void mainForm::PyRun(String^ code) {
 	if (String::IsNullOrEmpty(CurrentTask)) {
-		MessageError->Show("CurrentTask is Null or Empty", "String^ CurrentTask");
+		MessageError->Show("CurrentTask is Null or Empty", "Ошибка переменной: String^ CurrentTask");
 		return;
 	}
 
 	MyPython PyRunner;
 	String^ PythonOutput = PyRunner.Start(code);
-	MessageBox::Show(PythonOutput);
 
 	String^ pathToResult = "script//result.txt";
+	if (!File::Exists(pathToResult)) {
+		return;
+	}
 
 	FileStream^ fs = gcnew FileStream(pathToResult, FileMode::Open, FileAccess::Read);
 	StreamReader^ sr = gcnew StreamReader(fs);
@@ -359,18 +361,16 @@ void mainForm::PyRun(String^ code) {
 	if (result == "OK") {
 		canSaveFunc = true;
 		ClassTasks^ validate = gcnew ClassTasks(User);
-		ClassProgress^ progress = gcnew ClassProgress(User);
 
 		bool isTaskCompleted = validate->GetTaskValue(CurrentTask);
-		MessageInfo->Show("Кол-во решенных задач за неделю: " + Convert::ToString(GetTasksCompletedCount(-7)), "Поздравляем!");
 		if (isTaskCompleted) {
 			MessageInfo->Show("Задача решена верно.", "Поздравляем!");
 			MessageWarning->Show("Вы не получите баллов за это решение, так как вы уже решили эту задачу ранее.");
 			return;
 		}
 
+		ClassProgress^ progress = gcnew ClassProgress(User);
 		validate->SolveTask(CurrentTask);
-
 		validate->SetTaskCompletionDate(CurrentTask);
 
 		int points;
@@ -391,9 +391,10 @@ void mainForm::PyRun(String^ code) {
 			points = progress->getTaskPoint(4);
 		}
 		else {
-			MessageError->Show("CurrentDifficulty не определена", "PyRun()");
+			MessageError->Show("CurrentDifficulty не определена", "Ошибка PyRun()");
 			return;
 		}
+
 		String^ text = "баллов";
 		if (points == 1)
 			text = "балл";
@@ -401,21 +402,27 @@ void mainForm::PyRun(String^ code) {
 			text = "балла";
 		else if (points > 4)
 			text = "баллов";
-	
-
+		
 		MessageInfo->Show("Задача решена верно. Вы получите " + points + " " + text, "Поздравляем!");
-
-		validate->ShowTaskStates();
+		UserProgress = progress->GetCurrentProgress();
 	}
 	else if (result == "ERROR") {
-		MessageBox::Show(PythonOutput, "Ошибка в коде", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		MessageError->Show("Ошибка в коде", "Внимание");
 	}
 	else if (result == "FAILED") {
 		MessageWarning->Show("Задача решена неверно", "PythonWave");
 	}
 	else {
-		MessageBox::Show("Неопределенный результат");
-		MessageBox::Show(result);
+		MessageBox::Show(result, "Неопределенный результат");
+	}
+	if (result == "ERROR" || result == "FAILED") {
+		try {
+			String^ trimmedResult = PythonOutput->Substring(PythonOutput->IndexOf("Traceback"));
+			MessageBox::Show(trimmedResult, "Вывод Python");
+		}
+		catch (Exception^ e) {
+			MessageBox::Show(PythonOutput, "Вывод Python");
+		}
 	}
 	File::Delete(pathToResult);
 }

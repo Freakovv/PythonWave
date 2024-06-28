@@ -81,6 +81,7 @@ Void mainForm::timerMenu_Tick(System::Object^ sender, System::EventArgs^ e) {
 }
 
 Void mainForm::funcSelectTab(TabPage^ tabPage) {
+	LoadHomePage();
 	if (CheckSave() && !courseAnimationState)
 		Pages->SelectTab(tabPage);
 	else if (courseAnimationState)
@@ -97,7 +98,6 @@ Void mainForm::btnMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 
 Void mainForm::btnHome_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageHome);
-	LoadHomePage();
 }
 Void mainForm::btnBook_Click(System::Object^ sender, System::EventArgs^ e) {
 	funcSelectTab(pageBook);

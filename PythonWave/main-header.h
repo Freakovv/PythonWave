@@ -52,6 +52,7 @@ Void mainForm::btnMaximize_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	else {
 		this->WindowState = FormWindowState::Normal;
+		this->Size = Drawing::Size(1600, 900);
 	}
 }
 

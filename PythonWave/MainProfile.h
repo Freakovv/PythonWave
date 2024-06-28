@@ -288,7 +288,6 @@ Void mainForm::btnProfileSave_Click(System::Object^ sender, System::EventArgs^ e
 Boolean mainForm::CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ field) {
 	if (TB->Text != field) {
 		isProfileSaved = false;
-		MessageInfo->Show(isProfileSaved.ToString(), "isProfileSaved");
 		return false;
 	}
 	return true;
@@ -296,7 +295,6 @@ Boolean mainForm::CheckProfileSave(UI2::WinForms::Guna2TextBox^ TB, String^ fiel
 Void mainForm::textBoxUserName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (textBoxUserName->Text != UserName) {
 		isProfileSaved = false;
-		MessageInfo->Show(isProfileSaved.ToString(), "isProfileSaved");
 	}
 }
 Void mainForm::textBoxUserSurname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
