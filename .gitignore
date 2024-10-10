@@ -1,4 +1,21 @@
-# Precompiled Headers
-ipch
 *.ipch
+.vs
+*.slo
+*.lo
+*.o
+*.obj
+*.d
+*.gch
+*.pch
+*.mod
+*.smod
+*.lai
+*.la
+*.a
+*.lib
+*.exe
+*.out
+*.app
+Documents
 Browse.VC.db
+ipch
