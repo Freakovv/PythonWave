@@ -15,7 +15,13 @@
 *.exe
 *.out
 *.app
-/Documents/
-/.vs/
-/ColorPicker/
-/Resource/
+*.user
+*.suo
+*.userosscache
+*.userprefs
+*.pdb
+*.log
+.vs/
+Documents/
+ColorPicker/
+Resource/

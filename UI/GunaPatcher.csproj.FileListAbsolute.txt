@@ -1,9 +1,0 @@
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\bin\Debug\GunaPatcher.exe.config
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\bin\Debug\GunaPatcher.exe
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\bin\Debug\GunaPatcher.pdb
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\bin\Debug\dnlib.dll
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\obj\Debug\GunaPatcher.csproj.AssemblyReference.cache
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\obj\Debug\GunaPatcher.csproj.CoreCompileInputs.cache
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\obj\Debug\GunaPatc.E00FC1E3.Up2Date
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\obj\Debug\GunaPatcher.exe
-C:\Users\SystemX\Desktop\GunaPatcher-master\GunaPatcher\obj\Debug\GunaPatcher.pdb
