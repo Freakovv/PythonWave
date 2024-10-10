@@ -1,5 +1,4 @@
 *.ipch
-.vs
 *.slo
 *.lo
 *.o
@@ -16,6 +15,7 @@
 *.exe
 *.out
 *.app
-Documents
-Browse.VC.db
-ipch
+/Documents/
+/.vs/
+/ColorPicker/
+/Resource/
